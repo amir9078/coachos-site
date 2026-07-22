@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://amir9078.github.io/coachos-site/sitemap.xml
