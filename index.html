@@ -3,23 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CoachOS — The AI-Powered All-in-One Platform for Coaches & Mentors</title>
-<meta name="description" content="CoachOS is the AI-powered, all-in-one platform for coaches and mentors — AI drafts your summaries, follow-ups, and content across leads, bookings, contracts, client delivery, and payments. You approve everything. Join the waitlist.">
-<meta name="keywords" content="AI coaching platform, AI for coaches, coaching software, all in one coaching platform, coach CRM, executive coaching software, mentor platform, coaching business tools, AI client management, AI session notes">
+<title>CoachOS — Invite-Only Early Access | AI-Powered Platform for Coaches & Mentors</title>
+<meta name="description" content="CoachOS is the AI-powered, all-in-one platform for coaches and mentors — leads, bookings, contracts, client delivery, and payments, with AI drafting the busywork and you approving every word. Currently invite-only. Request early access.">
+<meta name="keywords" content="AI coaching platform, AI for coaches, coaching software, all in one coaching platform, coach CRM, executive coaching software, mentor platform, coaching business tools, AI client management, AI session notes, coaching platform waitlist, invite only coaching software">
 <link rel="canonical" href="https://amir9078.github.io/coachos-site/">
 <meta name="robots" content="index, follow">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="CoachOS — The AI-Powered All-in-One Platform for Coaches & Mentors">
-<meta property="og:description" content="An AI-powered platform where a coach or mentor runs their entire business — leads, bookings, contracts, client delivery, and payments — with AI doing the repetitive work.">
+<meta property="og:title" content="CoachOS — Invite-Only Early Access | AI-Powered Platform for Coaches & Mentors">
+<meta property="og:description" content="An AI-powered platform where a coach or mentor runs their entire business — leads, bookings, contracts, client delivery, and payments — with AI doing the repetitive work. Currently invite-only.">
 <meta property="og:url" content="https://amir9078.github.io/coachos-site/">
 <meta property="og:site_name" content="CoachOS">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="CoachOS — The AI-Powered All-in-One Platform for Coaches & Mentors">
-<meta name="twitter:description" content="An AI-powered platform where a coach or mentor runs their entire business — with AI doing the repetitive work, and humans doing the human work.">
+<meta name="twitter:title" content="CoachOS — Invite-Only Early Access | AI-Powered Platform for Coaches & Mentors">
+<meta name="twitter:description" content="An AI-powered platform where a coach or mentor runs their entire business — with AI doing the repetitive work, and humans doing the human work. Currently invite-only.">
 
 <!-- Structured data for search engines -->
 <script type="application/ld+json">
@@ -29,8 +29,8 @@
   "name": "CoachOS",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
-  "description": "An all-in-one AI-powered platform for coaches and mentors covering leads, bookings, contracts, client delivery, and payments.",
-  "offers": { "@type": "Offer", "priceCurrency": "USD", "price": "29", "description": "Starting monthly price" },
+  "description": "An all-in-one AI-powered platform for coaches and mentors covering leads, bookings, contracts, client delivery, and payments. Currently in invite-only early access.",
+  "offers": { "@type": "Offer", "priceCurrency": "USD", "price": "29", "description": "Founding-member pricing for the invite-only early access cohort", "availability": "https://schema.org/PreOrder" },
   "audience": { "@type": "Audience", "audienceType": "Professional coaches and mentors" }
 }
 </script>
@@ -107,6 +107,24 @@
   .panel .row b{color:var(--bone)}
   .panel .row span{color:rgba(240,235,221,.6)}
 
+  .invite-badge{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--brass);background:var(--brass-soft);border:1px solid rgba(138,106,31,.3);border-radius:20px;padding:.35rem .9rem;margin-left:.5rem}
+  @media(max-width:560px){.invite-badge{display:block;margin:.6rem 0 0;width:fit-content;margin-left:auto;margin-right:auto}}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;counter-reset:step}
+  @media(max-width:760px){.steps{grid-template-columns:1fr}}
+  .step{position:relative;padding-top:.4rem}
+  .step .num{font-family:var(--serif);font-size:2.2rem;color:var(--brass);opacity:.55;display:block;line-height:1}
+  .step h3{font-size:1.05rem;margin:.5rem 0 .5rem}
+  .step p{color:var(--ink-soft);font-size:.92rem}
+
+  .faq{max-width:44rem;margin:0 auto}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1.1rem 1.3rem;margin-bottom:.8rem}
+  .faq summary{font-family:var(--serif);font-weight:600;font-size:1.02rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:'+';font-family:var(--mono);color:var(--brass);font-size:1.2rem;flex:none}
+  .faq details[open] summary::after{content:'−'}
+  .faq p{color:var(--ink-soft);margin-top:.8rem;font-size:.95rem}
+
   .cta{background:var(--ink);color:var(--bone);border-radius:10px;padding:3rem 2rem;text-align:center;margin:0 1.6rem}
   .cta h2{color:var(--bone);font-size:clamp(1.5rem,4vw,2rem);max-width:20ch;margin:.6rem auto 1rem}
   .cta p{color:rgba(240,235,221,.75);max-width:42ch;margin:0 auto 1.8rem}
@@ -131,18 +149,20 @@
     <div class="nav-links">
       <a href="#features">Features</a>
       <a href="#different">Why CoachOS</a>
+      <a href="#how-it-works">Early access</a>
     </div>
-    <a class="nav-cta" href="#waitlist">Join the waitlist</a>
+    <a class="nav-cta" href="#waitlist">Request an invite</a>
   </nav>
 </header>
 
 <section class="hero">
   <div class="wrap">
-    <span class="ai-badge">✦ AI-Powered</span>
+    <span class="ai-badge">✦ AI-Powered</span><span class="invite-badge">🔒 Invite-only — now accepting requests</span>
     <span class="kicker" style="display:block;margin-top:.7rem">For coaches, mentors, and executive advisors</span>
     <h1 style="margin-top:1rem">You coach. <span class="accent">AI runs everything else.</span></h1>
     <p class="sub">The AI-powered operating system for your coaching business — leads, bookings, contracts, client delivery, and payments. AI drafts every summary, follow-up, and piece of content; you approve every word before it ever reaches a client.</p>
-    <a class="btn primary" href="#waitlist">Join the waitlist →</a>
+    <p class="sub" style="font-size:1rem;margin-top:-1.4rem;margin-bottom:2.2rem">CoachOS isn't open to the public yet. We're onboarding a small first cohort of coaches personally, by invite, before opening up more widely.</p>
+    <a class="btn primary" href="#waitlist">Request an invite →</a>
 
     <div class="stat-strip reveal" id="stats">
       <div class="stat"><span class="n">122,974</span><span class="l">professional coaches worldwide</span></div>
@@ -209,16 +229,74 @@
   </div>
 </section>
 
+<section id="how-it-works">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Invite-only, on purpose</span>
+      <h2>How early access works</h2>
+      <p>We're deliberately starting small — a limited first cohort, onboarded personally, so early feedback actually shapes what gets built next. Here's what happens after you request an invite.</p>
+    </div>
+    <div class="steps reveal">
+      <div class="step">
+        <span class="num">01</span>
+        <h3>Request an invite</h3>
+        <p>Leave your email below. Takes ten seconds — no forms, no application to fill out.</p>
+      </div>
+      <div class="step">
+        <span class="num">02</span>
+        <h3>We reach out personally</h3>
+        <p>Every request gets a real reply from the team, not an automated drip campaign — usually with a couple of quick questions about your practice.</p>
+      </div>
+      <div class="step">
+        <span class="num">03</span>
+        <h3>You're onboarded, hands-on</h3>
+        <p>When your cohort opens, you get set up directly with us — plus founding-member pricing locked in for being early.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Questions</span>
+      <h2>Before you request an invite</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>Is CoachOS live right now?</summary>
+        <p>Not to the public. We're in invite-only early access, onboarding a small first cohort of real coaches before opening up more broadly. Requesting an invite gets you in line for the next cohort.</p>
+      </details>
+      <details>
+        <summary>Why invite-only instead of open signup?</summary>
+        <p>A platform this broad — leads, delivery, contracts, payments, all AI-assisted — is worth getting right with a small group first. Invite-only lets us onboard each coach properly and fold real feedback into the product before scaling access.</p>
+      </details>
+      <details>
+        <summary>What does "AI drafts, you approve" actually mean?</summary>
+        <p>AI writes the first draft of summaries, follow-ups, and content across the platform — but nothing sends, posts, or charges a client without you reviewing and approving the exact wording first. No exceptions, anywhere in the product.</p>
+      </details>
+      <details>
+        <summary>How much will it cost?</summary>
+        <p>Pricing is being finalized for the early access cohort. Coaches who join now lock in founding-member pricing when it's confirmed — you won't pay more later for joining early.</p>
+      </details>
+      <details>
+        <summary>Is my client data safe?</summary>
+        <p>Coaching notes are sensitive by nature, and we treat security as non-negotiable — client data stays private to you, is never used to train any model, and an independent security review happens before real client data flows through the platform.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section id="waitlist">
   <div class="cta reveal">
-    <span class="kicker">Early access</span>
-    <h2>Be first to know when CoachOS opens up.</h2>
-    <p>We're building this with real coaches, in a small early pilot. Leave your email and we'll reach out personally.</p>
+    <span class="invite-badge" style="color:var(--brass);background:rgba(240,235,221,.1);border-color:rgba(240,235,221,.25)">🔒 Invite-only early access</span>
+    <h2 style="margin-top:.9rem">Request an invite to CoachOS.</h2>
+    <p>We're building this with real coaches, in a small early cohort. Leave your email and we'll reach out personally — no automated queue, no spam.</p>
     <form class="waitlist-form" id="waitlist-form">
       <input type="email" id="waitlist-email" placeholder="you@example.com" required aria-label="Email address">
-      <button type="submit">Join the waitlist</button>
+      <button type="submit">Request an invite</button>
     </form>
-    <p class="waitlist-note">No spam, ever — just a note when early access opens.</p>
+    <p class="waitlist-note">No spam, ever — just a personal note when your invite is ready.</p>
   </div>
 </section>
 
@@ -240,8 +318,8 @@
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var email = document.getElementById('waitlist-email').value;
-    var subject = encodeURIComponent('CoachOS waitlist signup');
-    var body = encodeURIComponent('Please add this email to the CoachOS early-access waitlist: ' + email);
+    var subject = encodeURIComponent('CoachOS invite request');
+    var body = encodeURIComponent('Please add this email to the CoachOS invite-only early access list: ' + email);
     window.location.href = 'mailto:shaikhamirhussain2000@gmail.com?subject=' + subject + '&body=' + body;
   });
 </script>
