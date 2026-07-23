@@ -129,22 +129,6 @@
   .step h3{font-size:1.05rem;margin:.5rem 0 .5rem}
   .step p{color:var(--ink-soft);font-size:.92rem}
 
-  /* Quiz */
-  .quiz{max-width:640px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:2rem}
-  .quiz-progress{font-family:var(--mono);font-size:.7rem;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.08em;margin-bottom:1.2rem}
-  .quiz-q{margin-bottom:1.5rem}
-  .quiz-q .qtext{font-weight:600;margin-bottom:.7rem;display:block;font-size:1rem}
-  .quiz-q label{display:block;padding:.65rem .9rem;border:1px solid var(--line);border-radius:5px;margin-bottom:.5rem;cursor:pointer;font-size:.93rem;color:var(--ink-soft);transition:border-color .15s,background .15s}
-  .quiz-q label:hover{border-color:var(--brass)}
-  .quiz-q input{margin-right:.6rem}
-  .quiz-actions{text-align:center;margin-top:1.6rem}
-  .quiz-result{display:none;text-align:center}
-  .quiz-result.show{display:block}
-  .quiz-result .score{font-family:var(--serif);font-size:3.2rem;color:var(--brass);line-height:1}
-  .quiz-result .band{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;color:var(--green);margin:.5rem 0 1.1rem;display:block}
-  .quiz-result .blurb{color:var(--ink-soft);max-width:42ch;margin:0 auto 1.6rem}
-  #quiz-form.hidden{display:none}
-
   /* Lead magnet */
   .magnet{display:grid;grid-template-columns:auto 1fr auto;gap:1.4rem;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:1.6rem 1.8rem;max-width:760px;margin:0 auto}
   @media(max-width:640px){.magnet{grid-template-columns:1fr;text-align:center}}
@@ -190,7 +174,8 @@
     <a class="wordmark" href="#">Coach<em>OS</em></a>
     <div class="nav-links">
       <a href="#features">Features</a>
-      <a href="#quiz">AI-readiness quiz</a>
+      <a href="quizzes.html">Assessments</a>
+      <a href="news.html">News</a>
       <a href="#insights">Insights</a>
       <a href="#different">Why CoachOS</a>
       <a href="#faq">FAQ</a>
@@ -300,54 +285,12 @@
 <section id="quiz">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="kicker">60-second evaluation</span>
-      <h2>How AI-ready is your business, right now?</h2>
-      <p>Five quick questions. See where you stand today, and exactly what an AI agent would take off your plate first.</p>
+      <span class="kicker">10 free assessments · ~10–15 min each</span>
+      <h2>Find out what's quietly costing you clients, time, or money.</h2>
+      <p>Lead leakage, retention risk, burnout, billing, marketing, scale-readiness, your online presence, referrals, and more — pick the problem that's been nagging at you, answer honestly, and get a real score plus a personalized breakdown.</p>
     </div>
-    <div class="quiz reveal">
-      <div class="quiz-progress" id="quiz-progress">Question 1 of 5</div>
-      <form id="quiz-form">
-        <div class="quiz-q" data-q="0">
-          <span class="qtext">1. How do you currently handle new leads or enquiries?</span>
-          <label><input type="radio" name="q0" value="0"> I reply manually, whenever I get to it</label>
-          <label><input type="radio" name="q0" value="1"> I have a rough process, but it's still mostly me</label>
-          <label><input type="radio" name="q0" value="2"> I have automated follow-ups already running</label>
-        </div>
-        <div class="quiz-q" data-q="1" style="display:none">
-          <span class="qtext">2. How are your session notes and summaries handled today?</span>
-          <label><input type="radio" name="q1" value="0"> I don't really write them up</label>
-          <label><input type="radio" name="q1" value="1"> I write them myself, after every session</label>
-          <label><input type="radio" name="q1" value="2"> Something already drafts them for me</label>
-        </div>
-        <div class="quiz-q" data-q="2" style="display:none">
-          <span class="qtext">3. What happens when an invoice goes unpaid?</span>
-          <label><input type="radio" name="q2" value="0"> I have to remember to chase it myself</label>
-          <label><input type="radio" name="q2" value="1"> I send a manual reminder, eventually</label>
-          <label><input type="radio" name="q2" value="2"> It's chased automatically without me thinking about it</label>
-        </div>
-        <div class="quiz-q" data-q="3" style="display:none">
-          <span class="qtext">4. How much of your marketing content do you write yourself?</span>
-          <label><input type="radio" name="q3" value="0"> All of it, from scratch, every time</label>
-          <label><input type="radio" name="q3" value="1"> Some templates, but I still write most of it</label>
-          <label><input type="radio" name="q3" value="2"> A draft is already written; I just review and approve</label>
-        </div>
-        <div class="quiz-q" data-q="4" style="display:none">
-          <span class="qtext">5. If you disappeared for two weeks, what would happen to your leads and clients?</span>
-          <label><input type="radio" name="q4" value="0"> Everything would stall until I'm back</label>
-          <label><input type="radio" name="q4" value="1"> Some things would keep moving, most wouldn't</label>
-          <label><input type="radio" name="q4" value="2"> Nearly everything would keep running without me</label>
-        </div>
-        <div class="quiz-actions">
-          <button type="button" class="btn ghost" id="quiz-back" style="display:none">← Back</button>
-          <button type="button" class="btn primary" id="quiz-next">Next →</button>
-        </div>
-      </form>
-      <div class="quiz-result" id="quiz-result">
-        <span class="score" id="quiz-score">0/10</span>
-        <span class="band" id="quiz-band">—</span>
-        <p class="blurb" id="quiz-blurb"></p>
-        <a class="btn primary" href="#waitlist">See what CoachOS would automate for you →</a>
-      </div>
+    <div style="text-align:center">
+      <a class="btn primary" href="quizzes.html">Take an assessment →</a>
     </div>
   </div>
 </section>
@@ -496,8 +439,9 @@
 <footer>
   <div class="foot-links">
     <a href="insights.html">Insights</a>
+    <a href="news.html">News</a>
     <a href="checklist.html">Free checklist</a>
-    <a href="#quiz">AI-readiness quiz</a>
+    <a href="quizzes.html">Assessments</a>
     <a href="mailto:shaikhamirhussain2000@gmail.com?subject=Guest%20contribution%20pitch%20for%20CoachOS%20Insights">Contribute</a>
   </div>
   <div>Coach<b style="color:var(--brass)">OS</b> — the agentic AI operating system for coaches, mentors &amp; freelancers.</div>
@@ -522,74 +466,6 @@
     window.location.href = 'mailto:shaikhamirhussain2000@gmail.com?subject=' + subject + '&body=' + body;
   });
 
-  // AI-Readiness quiz — fully client-side, no backend
-  (function(){
-    var questions = document.querySelectorAll('.quiz-q');
-    var total = questions.length;
-    var current = 0;
-    var progress = document.getElementById('quiz-progress');
-    var nextBtn = document.getElementById('quiz-next');
-    var backBtn = document.getElementById('quiz-back');
-    var quizForm = document.getElementById('quiz-form');
-    var resultBox = document.getElementById('quiz-result');
-    var scoreEl = document.getElementById('quiz-score');
-    var bandEl = document.getElementById('quiz-band');
-    var blurbEl = document.getElementById('quiz-blurb');
-
-    function showQuestion(i){
-      questions.forEach(function(q, idx){ q.style.display = (idx === i) ? 'block' : 'none'; });
-      progress.textContent = 'Question ' + (i + 1) + ' of ' + total;
-      backBtn.style.display = i === 0 ? 'none' : 'inline-flex';
-      nextBtn.textContent = (i === total - 1) ? 'See my score →' : 'Next →';
-    }
-
-    function currentAnswered(){
-      var inputs = questions[current].querySelectorAll('input');
-      for (var j = 0; j < inputs.length; j++){ if (inputs[j].checked) return true; }
-      return false;
-    }
-
-    nextBtn.addEventListener('click', function(){
-      if (!currentAnswered()){
-        questions[current].style.outline = '2px solid #8A6A1F';
-        setTimeout(function(){ questions[current].style.outline = 'none'; }, 900);
-        return;
-      }
-      if (current < total - 1){
-        current++;
-        showQuestion(current);
-      } else {
-        var score = 0;
-        questions.forEach(function(q){
-          var inputs = q.querySelectorAll('input');
-          for (var j = 0; j < inputs.length; j++){ if (inputs[j].checked) score += parseInt(inputs[j].value, 10); }
-        });
-        var band, blurb;
-        if (score <= 3){
-          band = 'AI-Curious';
-          blurb = "You're just getting started — CoachOS would take almost everything off your plate from day one, starting with follow-ups and invoicing.";
-        } else if (score <= 7){
-          band = 'AI-Ready';
-          blurb = "You've already got the instincts. Most of your remaining busywork — content, chasing invoices, session notes — can go on autopilot right away.";
-        } else {
-          band = 'Agentic Operator';
-          blurb = "You already think this way. You're exactly who we built the invite-only cohort for — let's connect the last few pieces.";
-        }
-        scoreEl.textContent = score + '/10';
-        bandEl.textContent = band;
-        blurbEl.textContent = blurb;
-        quizForm.classList.add('hidden');
-        progress.style.display = 'none';
-        resultBox.classList.add('show');
-      }
-    });
-
-    backBtn.addEventListener('click', function(){
-      if (current > 0){ current--; showQuestion(current); }
-    });
-
-    showQuestion(0);
-  })();
 </script>
 
 </body>

@@ -1,0 +1,38 @@
+name: Daily brief
+
+on:
+  schedule:
+    # 06:00 UTC every day
+    - cron: '0 6 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  generate-brief:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate today's brief
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/generate-daily-brief.mjs
+
+      - name: Commit and push if news.html changed
+        run: |
+          git config user.name "coachos-bot"
+          git config user.email "actions@github.com"
+          git add news.html
+          git diff --cached --quiet || git commit -m "Daily brief: $(date -u +%Y-%m-%d)"
+          git push

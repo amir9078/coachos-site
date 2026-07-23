@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>10 Business Health Assessments — Find What's Actually Costing You | CoachOS</title>
+<meta name="description" content="Ten free, in-depth assessments for coaches, mentors, freelancers, and service businesses — lead leakage, retention risk, burnout, billing, marketing, and more. Get your score and a personalized breakdown.">
+<link rel="canonical" href="https://amir9078.github.io/coachos-site/quizzes.html">
+<meta name="robots" content="index, follow">
+<style>
+  :root{
+    --bone:#F0EBDD; --card:#F5F1E6; --well:#E2DAC4;
+    --ink:#1E2B24; --ink-soft:#54604F; --line:rgba(30,43,36,.16);
+    --brass:#8A6A1F; --brass-soft:rgba(138,106,31,.13);
+    --green:#2E6B4F; --green-soft:rgba(46,107,79,.14);
+    --shadow-s:0 1px 2px rgba(20,28,22,.07),0 10px 26px rgba(20,28,22,.08);
+    --serif:'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif;
+    --sans:Seravek,'Gill Sans Nova','Segoe UI',Calibri,'Trebuchet MS',sans-serif;
+    --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bone);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;text-wrap:balance}
+  p{margin:0}
+  a{color:var(--brass)}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 1.6rem}
+  .kicker{font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;color:var(--ink-soft)}
+  header{position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line);background:rgba(240,235,221,.92);backdrop-filter:blur(8px)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.6rem;max-width:1080px;margin:0 auto}
+  .wordmark{font-family:var(--serif);font-size:1.3rem;font-weight:700;text-decoration:none;color:var(--ink)}
+  .wordmark em{font-style:normal;color:var(--brass)}
+  .nav a.back{color:var(--ink-soft);text-decoration:none;font-size:.9rem}
+
+  .hero{padding:3.6rem 0 2.6rem;text-align:center}
+  .hero h1{font-size:clamp(1.9rem,4.8vw,2.7rem);margin:.6rem auto 1rem;max-width:20ch}
+  .hero p{color:var(--ink-soft);font-size:1.08rem;max-width:52ch;margin:0 auto}
+
+  section{padding:2.5rem 0}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem}
+  @media(max-width:700px){.grid{grid-template-columns:1fr}}
+  .qcard{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:1.5rem;cursor:pointer;transition:transform .18s,box-shadow .18s;text-align:left}
+  .qcard:hover{transform:translateY(-3px);box-shadow:var(--shadow-s)}
+  .qcard .glyph{font-family:var(--serif);font-size:1.6rem;color:var(--green);display:block;margin-bottom:.6rem}
+  .qcard h3{font-size:1.05rem;margin-bottom:.5rem}
+  .qcard p{color:var(--ink-soft);font-size:.9rem;margin-bottom:.7rem}
+  .qcard .time{font-family:var(--mono);font-size:.7rem;color:var(--brass);text-transform:uppercase;letter-spacing:.05em}
+
+  .quiz-wrap{max-width:640px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:2rem}
+  #quiz-runner{display:none}
+  .quiz-topic{font-family:var(--mono);font-size:.72rem;color:var(--brass);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;display:block}
+  .quiz-title{font-size:1.3rem;margin-bottom:1.2rem}
+  .quiz-progress{font-family:var(--mono);font-size:.7rem;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.08em;margin-bottom:1.2rem}
+  .qtext{font-weight:600;margin-bottom:.8rem;display:block;font-size:1.02rem}
+  .qopt{display:block;padding:.7rem .9rem;border:1px solid var(--line);border-radius:5px;margin-bottom:.55rem;cursor:pointer;font-size:.94rem;color:var(--ink-soft);transition:border-color .15s}
+  .qopt:hover{border-color:var(--brass)}
+  .qopt input{margin-right:.6rem}
+  .quiz-actions{display:flex;justify-content:space-between;align-items:center;margin-top:1.6rem}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;border-radius:4px;font-size:.96rem;font-weight:600;text-decoration:none;border:1px solid transparent;cursor:pointer}
+  .btn.primary{background:var(--green);color:var(--bone)}
+  .btn.ghost{border-color:var(--ink);color:var(--ink);background:transparent}
+  .btn.small{padding:.5rem 1rem;font-size:.85rem}
+
+  #quiz-result{display:none;text-align:center}
+  #quiz-result .score{font-family:var(--serif);font-size:3.2rem;color:var(--brass);line-height:1}
+  #quiz-result .band{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;font-size:.82rem;color:var(--green);margin:.5rem 0 1.1rem;display:block}
+  #quiz-result .blurb{color:var(--ink-soft);max-width:44ch;margin:0 auto 1.8rem}
+  .lead-form{border-top:1px solid var(--line);padding-top:1.6rem;margin-top:.6rem}
+  .lead-form p.ask{font-size:.95rem;color:var(--ink-soft);max-width:40ch;margin:0 auto 1rem}
+  .lead-form form{display:flex;gap:.6rem;max-width:380px;margin:0 auto 1rem;flex-wrap:wrap;justify-content:center}
+  .lead-form input{flex:1;min-width:200px;padding:.75rem .9rem;border-radius:4px;border:1px solid var(--line);background:#fff;font-size:.94rem}
+  .lead-form button{background:var(--brass);color:var(--ink);border:none;padding:.75rem 1.3rem;border-radius:4px;font-weight:700;cursor:pointer;font-size:.94rem}
+  .lead-note{font-size:.78rem;color:var(--ink-soft);margin-top:.6rem}
+
+  .back-link{text-align:center;margin-top:1.2rem}
+  .back-link a{font-size:.9rem;color:var(--ink-soft);text-decoration:underline}
+
+  footer{padding:2.5rem 1.6rem;text-align:center;color:var(--ink-soft);font-size:.85rem;border-top:1px solid var(--line);margin-top:2rem}
+  footer a{color:var(--ink-soft);text-decoration:underline}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="wordmark" href="index.html">Coach<em>OS</em></a>
+    <a class="back" href="index.html">← Back to CoachOS</a>
+  </nav>
+</header>
+
+<section class="hero wrap">
+  <span class="kicker">10 free assessments · ~10–15 min each</span>
+  <h1>Find out what's quietly costing you clients, time, or money — before it gets worse.</h1>
+  <p>Pick the problem that's been nagging at you. Answer honestly, question by question. Get a real score, a personalized breakdown, and exactly what to fix first — for coaches, mentors, freelancers, and service-based businesses.</p>
+</section>
+
+<section id="picker" class="wrap">
+  <div class="grid" id="quiz-picker"></div>
+</section>
+
+<section id="quiz-runner" class="wrap">
+  <div class="quiz-wrap">
+    <span class="quiz-topic" id="rt-topic"></span>
+    <h2 class="quiz-title" id="rt-title"></h2>
+    <div class="quiz-progress" id="rt-progress"></div>
+
+    <form id="rt-form">
+      <span class="qtext" id="rt-qtext"></span>
+      <div id="rt-options"></div>
+      <div class="quiz-actions">
+        <button type="button" class="btn ghost small" id="rt-back">← Back</button>
+        <button type="button" class="btn primary" id="rt-next">Next →</button>
+      </div>
+    </form>
+
+    <div id="quiz-result">
+      <span class="score" id="rt-score">0/16</span>
+      <span class="band" id="rt-band">—</span>
+      <p class="blurb" id="rt-blurb"></p>
+
+      <div class="lead-form">
+        <p class="ask">Want the full written breakdown — plus exactly what CoachOS would automate for you first — sent to your inbox?</p>
+        <form id="rt-lead-form">
+          <input type="email" id="rt-lead-email" placeholder="you@example.com" required aria-label="Email address">
+          <button type="submit">Email me my results</button>
+        </form>
+        <p class="lead-note">No spam — a real, personal follow-up from the team.</p>
+      </div>
+
+      <div style="margin-top:1.6rem">
+        <a class="btn primary" href="index.html#waitlist">Talk to us about fixing this →</a>
+      </div>
+    </div>
+
+    <div class="back-link">
+      <a href="#" id="rt-restart">← Back to all 10 assessments</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>Coach<b style="color:var(--brass)">OS</b> — the agentic AI operating system for coaches, mentors &amp; freelancers.</div>
+  <div style="margin-top:.5rem"><a href="index.html">Home</a> · <a href="insights.html">Insights</a> · <a href="checklist.html">Free checklist</a> · Questions? <a href="mailto:shaikhamirhussain2000@gmail.com">shaikhamirhussain2000@gmail.com</a></div>
+</footer>
+
+<script>
+/* ---------- Quiz data: 10 assessments, 8 questions each, scored 0-2 per answer (max 16) ---------- */
+var QUIZZES = [
+  {
+    slug:'lead-leakage', glyph:'⚘', title:"Are you losing leads without realizing it?",
+    blurb:"Score how well enquiries actually get followed up, tracked, and converted.", time:"~12 min",
+    questions:[
+      {q:"When someone first reaches out, how fast do they typically hear back from you?", o:["Whenever I get to it, could be days","Same day, usually","Within the hour, every time"]},
+      {q:"If a lead goes quiet after the first reply, what happens next?", o:["Nothing, unless I happen to remember","I follow up once, eventually","A follow-up sequence runs automatically until they respond"]},
+      {q:"Do you know which lead source (referral, social, website) actually converts best for you?", o:["No idea, I don't track sources","Roughly, from memory","Yes, I track it and can name the number"]},
+      {q:"How many active leads are currently \"somewhere in your head\" and not written down anywhere?", o:["Most of them","A few","None — every lead lives in one system"]},
+      {q:"When a discovery call doesn't close, what's your process?", o:["I move on, there isn't really a process","I make a mental note to check back later","There's a defined re-engagement sequence"]},
+      {q:"How do you currently prioritize which leads to focus on first?", o:["I don't — whatever order they came in","Gut feeling, based on how the call felt","A consistent scoring method I actually use"]},
+      {q:"If you were unreachable for a week, would any leads go completely cold?", o:["Definitely, several would","Maybe one or two","No — follow-ups would keep running without me"]},
+      {q:"How often do you look back at leads from more than a month ago?", o:["Never, once they're old they're forgotten","Occasionally, if I remember","Regularly — old leads get re-engaged on a schedule"]}
+    ],
+    bands:[{max:5,label:"Leaking Badly",blurb:"A meaningful share of your enquiries are going cold before they even get a real chance. This is usually the single highest-leverage fix available to a growing practice."},
+           {max:11,label:"Patchy Coverage",blurb:"You're catching some of it, but the leads that need the most attention — the ones gone quiet — are exactly the ones slipping through."},
+           {max:16,label:"Tight Pipeline",blurb:"You're already doing more right than most. The next gain is automating what you're currently doing manually, so it doesn't depend on you remembering."}]
+  },
+  {
+    slug:'retention-risk', glyph:'❧', title:"Is your business retention-ready?",
+    blurb:"See how early you'd actually catch a client quietly disengaging.", time:"~12 min",
+    questions:[
+      {q:"How would you find out today if a long-time client has quietly disengaged?", o:["I'd notice only once they stop booking altogether","I'd notice if I happened to think about them","I have specific signals I watch for"]},
+      {q:"Do you track progress on each client's stated goals?", o:["Not formally, it's mostly in my head","Loosely, in notes here and there","Yes, visible and updated every session"]},
+      {q:"How do you handle package or session credits running low?", o:["I notice when they're already at zero","I mention it around the time it runs out","I flag it well before and start the renewal conversation early"]},
+      {q:"When a client's engagement pattern changes (shorter replies, cancellations), what happens?", o:["Nothing specific — I might not notice","I notice eventually, if it keeps happening","It's flagged early enough for a real conversation"]},
+      {q:"How personalized is a typical session summary or follow-up to each client?", o:["Mostly generic, reused across clients","Personalized, but takes real time to write","Personalized and fast — most drafting is done for me"]},
+      {q:"Do you know your actual renewal/retention rate?", o:["No idea","Rough guess","Yes, I track it as a real number"]},
+      {q:"If a client seemed unhappy but hadn't said anything, how would you find out?", o:["I probably wouldn't, until they left","I might pick up on it if I paid close attention","There are specific signals built into how I track clients"]},
+      {q:"How much of your new revenue currently comes from renewals vs. brand-new clients?", o:["Almost entirely new clients — renewals are rare","A healthy mix, but I couldn't say the split","I know the split, and renewals are a real, tracked part"]}
+    ],
+    bands:[{max:5,label:"Quiet Churn Risk",blurb:"Clients are probably slipping away before you notice — the signals exist, you just don't have a system watching for them yet."},
+           {max:11,label:"Some Signal, Some Blind Spots",blurb:"You catch the obvious cases. The subtle ones — the client who's just quietly cooling off — are still getting past you."},
+           {max:16,label:"Retention-Aware",blurb:"You're already tracking the right things. Automating the watching is the next lever, not building the awareness from scratch."}]
+  },
+  {
+    slug:'burnout', glyph:'☾', title:"Is your business running you, or are you running it?",
+    blurb:"A honest read on how much of your week is admin vs. the work you're actually best at.", time:"~12 min",
+    questions:[
+      {q:"In a typical week, how much time goes to admin vs. the actual work you're best at?", o:["Admin genuinely eats the majority of my week","Roughly balanced, but admin still takes a lot","Admin is a small, contained slice of my week"]},
+      {q:"If you took a real two-week break, what would happen to your business?", o:["Nearly everything would stall until I'm back","Some things would keep moving, most wouldn't","Almost everything would keep running without me"]},
+      {q:"How often do you work evenings/weekends just to keep up with follow-ups and admin?", o:["Most weeks","Occasionally","Rarely — routine work doesn't require it"]},
+      {q:"When something repetitive needs doing (a reminder, a check-in), who does it?", o:["Always me, from scratch, every time","Me, using a template I reuse","It happens on its own; I just approve it"]},
+      {q:"How do you currently decide what to work on first each day?", o:["Whatever feels most urgent in the moment","A rough mental list","A clear, prioritized view of what needs attention"]},
+      {q:"How much of your week is spent re-doing something because you lost track of it?", o:["Fairly often","Occasionally","Rarely — things don't get lost"]},
+      {q:"Do you have a real day off, without checking messages?", o:["Not really","Sometimes","Yes, regularly"]},
+      {q:"If your client load doubled tomorrow, what would break first?", o:["Almost everything — I'm already stretched","A few specific things, but I could adapt","Very little — the systems would mostly hold"]}
+    ],
+    bands:[{max:5,label:"Running On Empty",blurb:"The business currently depends on you personally absorbing every gap. That's not sustainable, and it's the most common reason growth stalls."},
+           {max:11,label:"Holding It Together",blurb:"You're managing, but there's not much slack — one bad week and the cracks show. Worth fixing before it becomes urgent."},
+           {max:16,label:"Systems, Not Just Hustle",blurb:"You've already built real slack into how you work. The next gain is compounding it, not rescuing it."}]
+  },
+  {
+    slug:'billing-health', glyph:'§', title:"Are you getting paid what you're worth, on time?",
+    blurb:"Pricing discipline, invoice follow-through, and package tracking, honestly assessed.", time:"~12 min",
+    questions:[
+      {q:"When was the last time you increased your rates?", o:["Can't remember / never","Within the last year or two","On a regular, deliberate schedule"]},
+      {q:"What happens when an invoice goes unpaid past its due date?", o:["I have to remember to chase it, and often don't right away","I send a manual reminder eventually","It's automatically chased on a set schedule"]},
+      {q:"Do you know, right now, exactly which clients are behind on payment?", o:["No, I'd have to go check","Roughly","Yes, instantly"]},
+      {q:"How do you track package or session-credit usage per client?", o:["I don't track it closely","Loosely, when I remember to check","Precisely, and I'm alerted before it runs low"]},
+      {q:"How much back-and-forth does a typical proposal or contract take before it's signed?", o:["A lot — drafting, chasing signatures, redoing terms","Some, but it's manageable","Almost none — sent, signed, done, same day"]},
+      {q:"Do you have a clear, current view of monthly revenue vs. what's outstanding?", o:["Not really — it's scattered","Roughly, from memory or a spreadsheet","Yes, a real-time, accurate view"]},
+      {q:"How often does pricing confusion or a billing mistake create an awkward client conversation?", o:["Fairly often","Occasionally","Essentially never"]},
+      {q:"If you had to produce a clean income summary for your accountant today, how long would it take?", o:["Hours, pulling from multiple places","Under an hour","Minutes — one export"]}
+    ],
+    bands:[{max:5,label:"Leaving Money on the Table",blurb:"Between stale pricing and unpaid invoices, real revenue is likely slipping through — this is often the fastest fix available."},
+           {max:11,label:"Mostly Under Control",blurb:"You're not losing much, but the manual chasing is costing you time and the occasional awkward conversation."},
+           {max:16,label:"Billing Runs Itself",blurb:"You've got real discipline here already. The remaining gain is speed and visibility, not fixing leaks."}]
+  },
+  {
+    slug:'marketing-consistency', glyph:'✎', title:"Is your marketing actually working, or just busy-work?",
+    blurb:"Cadence, tracking, and whether your content compounds or disappears.", time:"~12 min",
+    questions:[
+      {q:"How consistent is your content/newsletter schedule over the last 3 months?", o:["Sporadic, long gaps","Mostly consistent, some gaps","Reliable, same cadence every time"]},
+      {q:"Do you know which piece of content actually generated a real lead recently?", o:["No idea","A rough sense","Yes, I can name it"]},
+      {q:"How much time does writing a typical post or email take you?", o:["A long time — I stare at a blank page","A while, but I have a rough process","Very little — a draft already exists, I just review"]},
+      {q:"What happens when a piece of content actually performs well?", o:["Nothing in particular follows up on it","I might do something similar next time, if I remember","I know to double down, because I can see it worked"]},
+      {q:"How personalized is your marketing to your actual audience vs. generic advice?", o:["Fairly generic","Somewhat tailored","Built from your own real themes and client questions"]},
+      {q:"If your content stopped going out entirely, how long before you'd notice?", o:["A while — I don't track it closely","Within a few weeks","Immediately"]},
+      {q:"Do you repurpose one piece of content across multiple channels?", o:["Rarely, each piece is one-and-done","Sometimes","Consistently"]},
+      {q:"How confident are you that your current marketing effort matches your actual growth goals?", o:["Not very","Somewhat","Very"]}
+    ],
+    bands:[{max:5,label:"Busy, Not Building",blurb:"Effort is going in, but it's not compounding into anything trackable — the gap between activity and results is usually the real problem."},
+           {max:11,label:"Some Traction, No System",blurb:"Something is working, but you can't reliably repeat it because it's not tracked or systematized."},
+           {max:16,label:"Marketing That Compounds",blurb:"You already know what works. The next gain is removing the manual effort, not finding a new strategy."}]
+  },
+  {
+    slug:'client-delivery', glyph:'◉', title:"Is your client experience actually consistent?",
+    blurb:"Would a brand-new client get the same polish as your oldest one?", time:"~12 min",
+    questions:[
+      {q:"How soon after a session does a client typically receive a written summary?", o:["Days later, if at all","Within a day or two","Same day, every time"]},
+      {q:"Are session notes and homework visible to the client between sessions?", o:["No, it's mostly in my head or private notes","Sometimes, informally","Yes, consistently visible to them"]},
+      {q:"How consistent is the first-session experience across different clients?", o:["It varies a lot depending on my mood/time","Mostly similar, some variation","A defined, repeatable process every time"]},
+      {q:"Do returning clients have to re-explain context you should already know?", o:["Often","Occasionally","Rarely — their history is right there"]},
+      {q:"How do you currently track homework or action items between sessions?", o:["I don't track it formally","Loosely, in notes","A clear checklist both of us can see"]},
+      {q:"If a client asked \"what have we actually covered so far,\" could you answer instantly?", o:["Not without digging","Roughly","Yes, immediately"]},
+      {q:"How much does delivery quality depend specifically on you being sharp that day?", o:["Almost entirely","Somewhat","Very little — the process carries a lot of it"]},
+      {q:"Would a new client notice a difference in polish compared to a longtime client?", o:["Yes, a big one","A little","Not really — the experience is consistent"]}
+    ],
+    bands:[{max:5,label:"Inconsistent by Accident",blurb:"Quality is currently tied to your energy that day, not a repeatable process — that's fragile and clients can feel it."},
+           {max:11,label:"Good, But Depends on You",blurb:"The experience is solid when you're on, but there's no floor under it when you're not."},
+           {max:16,label:"Consistently Polished",blurb:"You've built real consistency already. The next gain is making it effortless, not more consistent."}]
+  },
+  {
+    slug:'scale-readiness', glyph:'⚙', title:"Could you 2x your client load without burning out?",
+    blurb:"What would actually break if volume doubled tomorrow.", time:"~12 min",
+    questions:[
+      {q:"If your client count doubled next month, what would happen to your admin time?", o:["It would roughly double too","It would grow, but not as fast","Barely change — systems handle most of it"]},
+      {q:"How much of your current workflow depends on you personally remembering things?", o:["Almost all of it","A fair amount","Very little — it's written down or automated"]},
+      {q:"Could someone else run your follow-ups for a week without a long explanation first?", o:["No, it's all in my head","Somewhat, with a lot of explaining","Yes, mostly — the process is documented/automated"]},
+      {q:"How do you currently onboard a new client into your system?", o:["Ad hoc, different every time","A rough repeatable process","A defined, mostly automatic sequence"]},
+      {q:"What's your honest plan for the next 10 clients you sign?", o:["Something would probably break","Mostly fine, with some strain","Confident it holds"]},
+      {q:"How much manual, repetitive work still exists in your day-to-day?", o:["A lot","Some","Very little"]},
+      {q:"If you wanted to hire help tomorrow, how ready is your business to hand tasks off?", o:["Not ready at all — nothing is documented","Somewhat — a few things are written down","Ready — real processes exist to follow"]},
+      {q:"Do you know which part of your business would break first under more volume?", o:["No idea","A rough guess","Yes, and I've already started addressing it"]}
+    ],
+    bands:[{max:5,label:"Growth Would Break You",blurb:"More clients right now would mean more strain, not more revenue — the systems aren't there yet to absorb it."},
+           {max:11,label:"Growing Pains Ahead",blurb:"You could grow, but it would hurt in specific, predictable places. Worth fixing before you push volume."},
+           {max:16,label:"Built to Scale",blurb:"You're already set up to absorb growth. The next lever is actually pursuing it, not preparing for it."}]
+  },
+  {
+    slug:'digital-presence', glyph:'◈', title:"Does your online presence match the quality of your work?",
+    blurb:"Website, domain, and searchability — an honest audit.", time:"~12 min",
+    questions:[
+      {q:"When was your website last meaningfully updated?", o:["Years ago, or I don't have one","Within the last year","Recently, and it's kept current"]},
+      {q:"Does your email address look professional (yourname@yourbusiness.com) or personal?", o:["Personal email address","A basic business email, not fully set up","Fully set-up, professional domain email"]},
+      {q:"If a prospect looked you up right now, would your site clearly explain what you do?", o:["Not really, or there's no site","Somewhat","Yes, clearly"]},
+      {q:"Does your website work properly on a phone?", o:["Not sure / no","Mostly","Yes, tested and solid"]},
+      {q:"Do you currently show up when someone searches your name or niche + location?", o:["No idea, probably not","Somewhat","Yes, reliably"]},
+      {q:"How easy is it for a visitor to actually book a call or contact you from your site?", o:["Not obvious, or no clear way","There, but a few steps","One click, obvious"]},
+      {q:"Does your domain match your actual business name?", o:["No, or I don't have my own domain","Close, but not quite","Yes, exactly"]},
+      {q:"If you compared your online presence to your actual skill level, would it undersell you?", o:["Yes, significantly","A little","No, it represents me well"]}
+    ],
+    bands:[{max:5,label:"Undersold Online",blurb:"Your actual work is likely far better than what a prospect sees online first — that gap is costing you enquiries you'd otherwise win."},
+           {max:11,label:"Functional, Not Impressive",blurb:"It works, but it's not doing you any favors. A stronger presence would convert more of the people already looking you up."},
+           {max:16,label:"Presence Matches the Work",blurb:"Your online presence already reflects your work well. Keeping it current is the only remaining task."}]
+  },
+  {
+    slug:'referral-network', glyph:'⚭', title:"Are you leaving referral business on the table?",
+    blurb:"How much of your best business comes from people who already trust you.", time:"~12 min",
+    questions:[
+      {q:"Do you know what percentage of your clients came from a referral?", o:["No idea","Rough guess","Yes, a real tracked number"]},
+      {q:"When a client refers someone, how is that acknowledged?", o:["Not in any particular way","A quick thank-you, informally","A consistent, meaningful acknowledgment every time"]},
+      {q:"Do you actively ask happy clients for referrals?", o:["Almost never","Occasionally","As a regular, built-in habit"]},
+      {q:"Do you have relationships with others outside your niche to exchange referrals with?", o:["Not really","A few, informally","Yes, an active network"]},
+      {q:"If a lead was referred by a happy past client, does your follow-up tone reflect that?", o:["No, same generic message either way","Sometimes","Yes, it's clearly different"]},
+      {q:"How visible are you in your professional community (events, groups, forums)?", o:["Not very","Somewhat","Actively, regularly"]},
+      {q:"Do you track where your best clients actually came from?", o:["No","Loosely","Yes, precisely"]},
+      {q:"If referrals stopped entirely tomorrow, how much would your pipeline suffer?", o:["A lot — they're a bigger share than I realize","Somewhat","Not much — it's one channel among several tracked ones"]}
+    ],
+    bands:[{max:5,label:"Untapped Referral Engine",blurb:"Your happiest clients are probably an underused growth channel — this is often the cheapest lead source available and it's mostly sitting idle."},
+           {max:11,label:"Some Referrals, No System",blurb:"Referrals happen, but by accident rather than by design — a small system here usually pays off fast."},
+           {max:16,label:"Referral-Powered",blurb:"You're already running a real referral engine. The next gain is scaling the network, not building the habit."}]
+  },
+  {
+    slug:'ai-readiness', glyph:'✦', title:"How ready is your business for AI agents?",
+    blurb:"The original assessment — where you stand on actually letting AI run the busywork.", time:"~12 min",
+    questions:[
+      {q:"How do you currently handle new leads or enquiries?", o:["I reply manually, whenever I get to it","I have a rough process, but it's still mostly me","I have automated follow-ups already running"]},
+      {q:"How are your session notes and summaries handled today?", o:["I don't really write them up","I write them myself, after every session","Something already drafts them for me"]},
+      {q:"What happens when an invoice goes unpaid?", o:["I have to remember to chase it myself","I send a manual reminder, eventually","It's chased automatically without me thinking about it"]},
+      {q:"How much of your marketing content do you write yourself?", o:["All of it, from scratch, every time","Some templates, but I still write most of it","A draft is already written; I just review and approve"]},
+      {q:"If you disappeared for two weeks, what would happen to your leads and clients?", o:["Everything would stall until I'm back","Some things would keep moving, most wouldn't","Nearly everything would keep running without me"]},
+      {q:"How comfortable are you letting AI draft something in your voice, as long as you approve it first?", o:["Not comfortable at all","Somewhat, case by case","Very comfortable — I just want the busywork gone"]},
+      {q:"How many separate tools/logins does your business currently depend on?", o:["Many, and they don't talk to each other","A handful","As few as possible, ideally one place"]},
+      {q:"If an AI agent could reliably chase invoices, flag at-risk clients, and draft follow-ups — how much would that change your week?", o:["Completely — that's most of my admin time","Meaningfully","Some, but I've already automated a lot"]}
+    ],
+    bands:[{max:6,label:"AI-Curious",blurb:"You're just getting started — an AI agent would take almost everything off your plate from day one, starting with follow-ups and invoicing."},
+           {max:12,label:"AI-Ready",blurb:"You've already got the instincts. Most of your remaining busywork — content, chasing invoices, session notes — can go on autopilot right away."},
+           {max:16,label:"Agentic Operator",blurb:"You already think this way. You're exactly who we built the invite-only cohort for — let's connect the last few pieces."}]
+  }
+];
+
+/* ---------- Engine ---------- */
+var pickerEl = document.getElementById('quiz-picker');
+var pickerSection = document.getElementById('picker');
+var runnerSection = document.getElementById('quiz-runner');
+var rtForm = document.getElementById('rt-form');
+var rtResult = document.getElementById('quiz-result');
+var current = null; // active quiz object
+var qi = 0; // current question index
+var answers = [];
+
+QUIZZES.forEach(function(quiz, idx){
+  var card = document.createElement('div');
+  card.className = 'qcard';
+  card.innerHTML = '<span class="glyph">'+quiz.glyph+'</span><h3>'+quiz.title+'</h3><p>'+quiz.blurb+'</p><span class="time">'+quiz.time+'</span>';
+  card.addEventListener('click', function(){ startQuiz(idx); });
+  pickerEl.appendChild(card);
+});
+
+function startQuiz(idx){
+  current = QUIZZES[idx];
+  qi = 0;
+  answers = new Array(current.questions.length).fill(null);
+  pickerSection.style.display = 'none';
+  runnerSection.style.display = 'block';
+  rtForm.style.display = 'block';
+  rtResult.style.display = 'none';
+  document.getElementById('rt-topic').textContent = 'Assessment';
+  document.getElementById('rt-title').textContent = current.title;
+  renderQuestion();
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function renderQuestion(){
+  var total = current.questions.length;
+  var item = current.questions[qi];
+  document.getElementById('rt-progress').textContent = 'Question ' + (qi+1) + ' of ' + total;
+  document.getElementById('rt-qtext').textContent = (qi+1) + '. ' + item.q;
+  var opts = document.getElementById('rt-options');
+  opts.innerHTML = '';
+  item.o.forEach(function(text, val){
+    var label = document.createElement('label');
+    label.className = 'qopt';
+    var checked = answers[qi] === val ? 'checked' : '';
+    label.innerHTML = '<input type="radio" name="rtq" value="'+val+'" '+checked+'> ' + text;
+    opts.appendChild(label);
+  });
+  document.getElementById('rt-back').style.display = qi === 0 ? 'none' : 'inline-flex';
+  document.getElementById('rt-next').textContent = (qi === total - 1) ? 'See my score →' : 'Next →';
+}
+
+document.getElementById('rt-next').addEventListener('click', function(){
+  var checked = document.querySelector('input[name="rtq"]:checked');
+  if (!checked){
+    var opts = document.getElementById('rt-options');
+    opts.style.outline = '2px solid #8A6A1F';
+    setTimeout(function(){ opts.style.outline = 'none'; }, 800);
+    return;
+  }
+  answers[qi] = parseInt(checked.value, 10);
+  if (qi < current.questions.length - 1){
+    qi++;
+    renderQuestion();
+  } else {
+    showResult();
+  }
+});
+
+document.getElementById('rt-back').addEventListener('click', function(){
+  if (qi > 0){ qi--; renderQuestion(); }
+});
+
+function showResult(){
+  var score = answers.reduce(function(a,b){ return a + b; }, 0);
+  var max = current.questions.length * 2;
+  var band = current.bands[current.bands.length - 1];
+  for (var i = 0; i < current.bands.length; i++){
+    if (score <= current.bands[i].max){ band = current.bands[i]; break; }
+  }
+  document.getElementById('rt-score').textContent = score + '/' + max;
+  document.getElementById('rt-band').textContent = band.label;
+  document.getElementById('rt-blurb').textContent = band.blurb;
+  rtForm.style.display = 'none';
+  rtResult.style.display = 'block';
+  window._lastQuizResult = { quiz: current.title, score: score, max: max, band: band.label };
+}
+
+document.getElementById('rt-restart').addEventListener('click', function(e){
+  e.preventDefault();
+  runnerSection.style.display = 'none';
+  pickerSection.style.display = 'block';
+  current = null;
+  window.scrollTo({top:0, behavior:'smooth'});
+});
+
+// Email-my-results capture.
+// TODO: this currently opens a mailto draft addressed to the team (consistent with the
+// rest of the site's "we reach out personally" pattern) rather than auto-emailing the
+// visitor directly. To make this fully automatic (visitor's inbox gets the result without
+// the team in the loop), wire up a client-side email service such as EmailJS (free tier,
+// no backend required) here — needs an EmailJS account + service/template/public key.
+document.getElementById('rt-lead-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  var email = document.getElementById('rt-lead-email').value;
+  var r = window._lastQuizResult || {};
+  var subject = encodeURIComponent('CoachOS assessment result: ' + (r.quiz || ''));
+  var body = encodeURIComponent(
+    'Assessment: ' + (r.quiz || '') + '\n' +
+    'Score: ' + (r.score || '') + '/' + (r.max || '') + ' — ' + (r.band || '') + '\n' +
+    'Visitor email for follow-up: ' + email
+  );
+  window.location.href = 'mailto:shaikhamirhussain2000@gmail.com?subject=' + subject + '&body=' + body;
+});
+</script>
+
+</body>
+</html>
