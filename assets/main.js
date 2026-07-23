@@ -2,6 +2,47 @@
 (function () {
   var isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches;
 
+  // ---------- Lead capture (Supabase) ----------
+  // TODO: replace these two placeholders with your real Supabase project's
+  // values once created (Project Settings -> API -> "Project URL" and the
+  // "anon / public" key). The anon key is meant to be public in client-side
+  // code -- see supabase/schema.sql for the Row Level Security policy that
+  // restricts it to insert-only, nothing readable/editable through it.
+  var SUPABASE_URL = 'https://YOUR-PROJECT.supabase.co';
+  var SUPABASE_ANON_KEY = 'YOUR-ANON-PUBLIC-KEY';
+
+  function supabaseConfigured() {
+    return SUPABASE_URL.indexOf('YOUR-PROJECT') === -1 && SUPABASE_ANON_KEY.indexOf('YOUR-ANON') === -1;
+  }
+
+  // Returns a Promise resolving to { ok: true } on success, or
+  // { ok: false, reason: 'not-configured' | 'network' | 'rejected' } —
+  // callers should fall back to the existing mailto: behavior on !ok.
+  window.coachosSubmitLead = function (payload) {
+    return new Promise(function (resolve) {
+      if (!supabaseConfigured()) {
+        resolve({ ok: false, reason: 'not-configured' });
+        return;
+      }
+      fetch(SUPABASE_URL + '/rest/v1/leads', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          apikey: SUPABASE_ANON_KEY,
+          Authorization: 'Bearer ' + SUPABASE_ANON_KEY,
+          Prefer: 'return=minimal',
+        },
+        body: JSON.stringify(payload),
+      })
+        .then(function (res) {
+          resolve(res.ok ? { ok: true } : { ok: false, reason: 'rejected' });
+        })
+        .catch(function () {
+          resolve({ ok: false, reason: 'network' });
+        });
+    });
+  };
+
   // ---------- Scroll progress bar ----------
   var bar = document.getElementById('scroll-progress');
   function updateBar() {

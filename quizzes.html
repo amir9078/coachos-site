@@ -399,23 +399,40 @@ document.getElementById('rt-restart').addEventListener('click', function(e){
   window.scrollTo({top:0, behavior:'smooth'});
 });
 
-// Email-my-results capture.
-// TODO: this currently opens a mailto draft addressed to the team (consistent with the
-// rest of the site's "we reach out personally" pattern) rather than auto-emailing the
-// visitor directly. To make this fully automatic (visitor's inbox gets the result without
-// the team in the loop), wire up a client-side email service such as EmailJS (free tier,
-// no backend required) here — needs an EmailJS account + service/template/public key.
+// Email-my-results capture — writes to Supabase (assets/main.js,
+// window.coachosSubmitLead) once real project credentials are in place;
+// falls back to a mailto draft addressed to the team until then. Auto-
+// emailing the visitor their result directly (rather than the team
+// following up) would need a client-side email service like EmailJS on
+// top of this — not wired up, flagged here in case that's wanted later.
 document.getElementById('rt-lead-form').addEventListener('submit', function(e){
   e.preventDefault();
+  var leadForm = e.target;
   var email = document.getElementById('rt-lead-email').value;
   var r = window._lastQuizResult || {};
-  var subject = encodeURIComponent('CoachOS assessment result: ' + (r.quiz || ''));
-  var body = encodeURIComponent(
-    'Assessment: ' + (r.quiz || '') + '\n' +
-    'Score: ' + (r.score || '') + '/' + (r.max || '') + ' — ' + (r.band || '') + '\n' +
-    'Visitor email for follow-up: ' + email
-  );
-  window.location.href = 'mailto:shaikhamirhussain2000@gmail.com?subject=' + subject + '&body=' + body;
+  var btn = leadForm.querySelector('button');
+  var originalLabel = btn.textContent;
+  btn.textContent = 'Submitting…';
+  window.coachosSubmitLead({
+    email: email,
+    source: 'quiz:' + (r.quiz || ''),
+    quiz_score: typeof r.score === 'number' ? r.score : null,
+    quiz_max: typeof r.max === 'number' ? r.max : null,
+    quiz_band: r.band || null
+  }).then(function(result){
+    if (result.ok){
+      leadForm.outerHTML = '<p style="color:var(--mint);font-weight:700">Sent — we\'ll follow up personally with your full breakdown.</p>';
+    } else {
+      var subject = encodeURIComponent('CoachOS assessment result: ' + (r.quiz || ''));
+      var body = encodeURIComponent(
+        'Assessment: ' + (r.quiz || '') + '\n' +
+        'Score: ' + (r.score || '') + '/' + (r.max || '') + ' — ' + (r.band || '') + '\n' +
+        'Visitor email for follow-up: ' + email
+      );
+      window.location.href = 'mailto:shaikhamirhussain2000@gmail.com?subject=' + subject + '&body=' + body;
+      btn.textContent = originalLabel;
+    }
+  });
 });
 </script>
 
