@@ -7,96 +7,72 @@
 <meta name="description" content="Ten free, in-depth assessments for coaches, mentors, freelancers, and service businesses — lead leakage, retention risk, burnout, billing, marketing, and more. Get your score and a personalized breakdown.">
 <link rel="canonical" href="https://amir9078.github.io/coachos-site/quizzes.html">
 <meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
 <style>
-  :root{
-    --bone:#F0EBDD; --card:#F5F1E6; --well:#E2DAC4;
-    --ink:#1E2B24; --ink-soft:#54604F; --line:rgba(30,43,36,.16);
-    --brass:#8A6A1F; --brass-soft:rgba(138,106,31,.13);
-    --green:#2E6B4F; --green-soft:rgba(46,107,79,.14);
-    --shadow-s:0 1px 2px rgba(20,28,22,.07),0 10px 26px rgba(20,28,22,.08);
-    --serif:'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif;
-    --sans:Seravek,'Gill Sans Nova','Segoe UI',Calibri,'Trebuchet MS',sans-serif;
-    --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;background:var(--bone);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
-  h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;text-wrap:balance}
-  p{margin:0}
-  a{color:var(--brass)}
-  .wrap{max-width:1000px;margin:0 auto;padding:0 1.6rem}
-  .kicker{font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;color:var(--ink-soft)}
-  header{position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line);background:rgba(240,235,221,.92);backdrop-filter:blur(8px)}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.6rem;max-width:1080px;margin:0 auto}
-  .wordmark{font-family:var(--serif);font-size:1.3rem;font-weight:700;text-decoration:none;color:var(--ink)}
-  .wordmark em{font-style:normal;color:var(--brass)}
-  .nav a.back{color:var(--ink-soft);text-decoration:none;font-size:.9rem}
-
-  .hero{padding:3.6rem 0 2.6rem;text-align:center}
-  .hero h1{font-size:clamp(1.9rem,4.8vw,2.7rem);margin:.6rem auto 1rem;max-width:20ch}
-  .hero p{color:var(--ink-soft);font-size:1.08rem;max-width:52ch;margin:0 auto}
-
-  section{padding:2.5rem 0}
-
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem}
-  @media(max-width:700px){.grid{grid-template-columns:1fr}}
-  .qcard{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:1.5rem;cursor:pointer;transition:transform .18s,box-shadow .18s;text-align:left}
-  .qcard:hover{transform:translateY(-3px);box-shadow:var(--shadow-s)}
-  .qcard .glyph{font-family:var(--serif);font-size:1.6rem;color:var(--green);display:block;margin-bottom:.6rem}
-  .qcard h3{font-size:1.05rem;margin-bottom:.5rem}
+  .qcard{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1.5rem;cursor:pointer;transition:transform .18s,box-shadow .18s,border-color .18s;text-align:left}
+  .qcard:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--mint-dim)}
+  .qcard .glyph{font-family:var(--display);font-size:1.6rem;color:var(--mint);display:block;margin-bottom:.6rem}
+  .qcard h3{font-size:1.05rem;margin-bottom:.5rem;font-family:var(--display)}
   .qcard p{color:var(--ink-soft);font-size:.9rem;margin-bottom:.7rem}
-  .qcard .time{font-family:var(--mono);font-size:.7rem;color:var(--brass);text-transform:uppercase;letter-spacing:.05em}
+  .qcard .time{font-family:var(--mono);font-size:.7rem;color:var(--amber);text-transform:uppercase;letter-spacing:.05em}
 
-  .quiz-wrap{max-width:640px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:2rem}
+  .quiz-wrap{max-width:640px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:2rem}
   #quiz-runner{display:none}
-  .quiz-topic{font-family:var(--mono);font-size:.72rem;color:var(--brass);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;display:block}
-  .quiz-title{font-size:1.3rem;margin-bottom:1.2rem}
+  .quiz-topic{font-family:var(--mono);font-size:.72rem;color:var(--mint);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;display:block}
+  .quiz-title{font-size:1.3rem;margin-bottom:1.2rem;font-family:var(--display)}
   .quiz-progress{font-family:var(--mono);font-size:.7rem;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.08em;margin-bottom:1.2rem}
   .qtext{font-weight:600;margin-bottom:.8rem;display:block;font-size:1.02rem}
   .qopt{display:block;padding:.7rem .9rem;border:1px solid var(--line);border-radius:5px;margin-bottom:.55rem;cursor:pointer;font-size:.94rem;color:var(--ink-soft);transition:border-color .15s}
-  .qopt:hover{border-color:var(--brass)}
+  .qopt:hover{border-color:var(--mint-dim)}
   .qopt input{margin-right:.6rem}
   .quiz-actions{display:flex;justify-content:space-between;align-items:center;margin-top:1.6rem}
-  .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;border-radius:4px;font-size:.96rem;font-weight:600;text-decoration:none;border:1px solid transparent;cursor:pointer}
-  .btn.primary{background:var(--green);color:var(--bone)}
-  .btn.ghost{border-color:var(--ink);color:var(--ink);background:transparent}
-  .btn.small{padding:.5rem 1rem;font-size:.85rem}
 
   #quiz-result{display:none;text-align:center}
-  #quiz-result .score{font-family:var(--serif);font-size:3.2rem;color:var(--brass);line-height:1}
-  #quiz-result .band{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;font-size:.82rem;color:var(--green);margin:.5rem 0 1.1rem;display:block}
+  #quiz-result .score{font-family:var(--display);font-size:3.2rem;color:var(--mint);line-height:1}
+  #quiz-result .band{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;font-size:.82rem;color:var(--amber);margin:.5rem 0 1.1rem;display:block}
   #quiz-result .blurb{color:var(--ink-soft);max-width:44ch;margin:0 auto 1.8rem}
   .lead-form{border-top:1px solid var(--line);padding-top:1.6rem;margin-top:.6rem}
   .lead-form p.ask{font-size:.95rem;color:var(--ink-soft);max-width:40ch;margin:0 auto 1rem}
   .lead-form form{display:flex;gap:.6rem;max-width:380px;margin:0 auto 1rem;flex-wrap:wrap;justify-content:center}
-  .lead-form input{flex:1;min-width:200px;padding:.75rem .9rem;border-radius:4px;border:1px solid var(--line);background:#fff;font-size:.94rem}
-  .lead-form button{background:var(--brass);color:var(--ink);border:none;padding:.75rem 1.3rem;border-radius:4px;font-weight:700;cursor:pointer;font-size:.94rem}
-  .lead-note{font-size:.78rem;color:var(--ink-soft);margin-top:.6rem}
+  .lead-form input{flex:1;min-width:200px;padding:.75rem .9rem;border-radius:5px;border:1px solid var(--line-strong);background:var(--bg);color:var(--ink);font-size:.94rem}
+  .lead-form button{background:var(--mint);color:#04140B;border:none;padding:.75rem 1.3rem;border-radius:5px;font-weight:700;cursor:pointer;font-size:.94rem}
+  .lead-note{font-size:.78rem;color:var(--ink-dim);margin-top:.6rem}
 
   .back-link{text-align:center;margin-top:1.2rem}
   .back-link a{font-size:.9rem;color:var(--ink-soft);text-decoration:underline}
-
-  footer{padding:2.5rem 1.6rem;text-align:center;color:var(--ink-soft);font-size:.85rem;border-top:1px solid var(--line);margin-top:2rem}
-  footer a{color:var(--ink-soft);text-decoration:underline}
 </style>
 </head>
 <body>
 
-<header>
+<div id="scroll-progress"></div>
+
+<header class="site">
   <nav class="nav">
-    <a class="wordmark" href="index.html">Coach<em>OS</em></a>
-    <a class="back" href="index.html">← Back to CoachOS</a>
+    <a class="wordmark" href="index.html"><span class="dot"></span>Coach<em>OS</em></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="why.html">Why CoachOS</a>
+      <a href="insights.html">Insights</a>
+      <a href="quizzes.html">Assessments</a>
+    </div>
+    <a class="nav-cta" href="index.html#waitlist">Request an invite</a>
   </nav>
 </header>
 
-<section class="hero wrap">
-  <span class="kicker">10 free assessments · ~10–15 min each</span>
-  <h1>Find out what's quietly costing you clients, time, or money — before it gets worse.</h1>
-  <p>Pick the problem that's been nagging at you. Answer honestly, question by question. Get a real score, a personalized breakdown, and exactly what to fix first — for coaches, mentors, freelancers, and service-based businesses.</p>
+<section class="pagehead">
+  <div class="wrap">
+    <span class="kicker">10 free assessments · ~10–15 min each</span>
+    <h1>Find out what's quietly costing you <span style="color:var(--mint)">clients, time, or money.</span></h1>
+    <p>Pick the problem that's been nagging at you. Answer honestly, question by question. Get a real score, a personalized breakdown, and exactly what to fix first.</p>
+  </div>
 </section>
 
 <section id="picker" class="wrap">
-  <div class="grid" id="quiz-picker"></div>
+  <div class="grid reveal" id="quiz-picker"></div>
 </section>
 
 <section id="quiz-runner" class="wrap">
@@ -139,11 +115,20 @@
   </div>
 </section>
 
-<footer>
-  <div>Coach<b style="color:var(--brass)">OS</b> — the agentic AI operating system for coaches, mentors &amp; freelancers.</div>
-  <div style="margin-top:.5rem"><a href="index.html">Home</a> · <a href="insights.html">Insights</a> · <a href="checklist.html">Free checklist</a> · Questions? <a href="mailto:shaikhamirhussain2000@gmail.com">shaikhamirhussain2000@gmail.com</a></div>
+<footer class="site">
+  <div class="foot-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="why.html">Why CoachOS</a>
+    <a href="access.html">How access works</a>
+    <a href="insights.html">Insights</a>
+    <a href="news.html">News</a>
+    <a href="checklist.html">Free checklist</a>
+  </div>
+  <div class="foot-brand">Coach<b style="color:var(--mint)">OS</b> — the agentic AI nervous system for coaches, mentors &amp; freelancers.</div>
 </footer>
 
+<script src="assets/main.js"></script>
 <script>
 /* ---------- Quiz data: 10 assessments, 8 questions each, scored 0-2 per answer (max 16) ---------- */
 var QUIZZES = [
@@ -373,7 +358,7 @@ document.getElementById('rt-next').addEventListener('click', function(){
   var checked = document.querySelector('input[name="rtq"]:checked');
   if (!checked){
     var opts = document.getElementById('rt-options');
-    opts.style.outline = '2px solid #8A6A1F';
+    opts.style.outline = '2px solid #FFC968';
     setTimeout(function(){ opts.style.outline = 'none'; }, 800);
     return;
   }

@@ -7,63 +7,48 @@
 <meta name="description" content="A free, practical checklist for setting up your first AI-assisted follow-up, invoice reminder, and content workflow — for coaches, mentors, and freelancers.">
 <link rel="canonical" href="https://amir9078.github.io/coachos-site/checklist.html">
 <meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
 <style>
-  :root{
-    --bone:#F0EBDD; --card:#F5F1E6;
-    --ink:#1E2B24; --ink-soft:#54604F; --line:rgba(30,43,36,.16);
-    --brass:#8A6A1F; --green:#2E6B4F; --green-soft:rgba(46,107,79,.14);
-    --serif:'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif;
-    --sans:Seravek,'Gill Sans Nova','Segoe UI',Calibri,'Trebuchet MS',sans-serif;
-    --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bone);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
-  h1,h2{font-family:var(--serif);font-weight:600;margin:0}
-  p{margin:0}
-  a{color:var(--brass)}
-  .wrap{max-width:700px;margin:0 auto;padding:0 1.6rem}
-  .kicker{font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;color:var(--ink-soft)}
-  header{border-bottom:1px solid var(--line);background:rgba(240,235,221,.9)}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.6rem;max-width:1080px;margin:0 auto}
-  .wordmark{font-family:var(--serif);font-size:1.3rem;font-weight:700;text-decoration:none;color:var(--ink)}
-  .wordmark em{font-style:normal;color:var(--brass)}
-  .nav a.back{color:var(--ink-soft);text-decoration:none;font-size:.9rem}
-  .hero{padding:3.5rem 0 1.5rem;text-align:center}
-  .hero h1{font-size:clamp(1.7rem,4.4vw,2.3rem);margin:.6rem 0 .8rem}
-  .hero p{color:var(--ink-soft);font-size:1.05rem;max-width:46ch;margin:0 auto}
-  .block{padding:2rem 0}
-  .item{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1.2rem 1.4rem;margin-bottom:.9rem;display:flex;gap:.9rem;align-items:flex-start}
-  .item .check{color:var(--green);font-size:1.2rem;flex:none;line-height:1.4}
-  .item div h3{font-family:var(--sans);font-size:1rem;font-weight:700;margin-bottom:.25rem}
+  .block{padding:1rem 0 3rem}
+  .item{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1.2rem 1.4rem;margin-bottom:.9rem;display:flex;gap:.9rem;align-items:flex-start;transition:border-color .2s ease,transform .2s ease}
+  .item:hover{border-color:var(--mint-dim);transform:translateX(3px)}
+  .item .check{color:var(--mint);font-size:1.2rem;flex:none;line-height:1.4}
+  .item div h3{font-family:var(--display);font-size:1rem;font-weight:600;margin-bottom:.25rem}
   .item div p{color:var(--ink-soft);font-size:.92rem}
-  h2.section{font-size:1.15rem;margin:2.2rem 0 1rem;color:var(--brass)}
-  .cta{background:var(--ink);color:var(--bone);border-radius:10px;padding:2.4rem 1.8rem;text-align:center;margin:3rem 0}
-  .cta h2{color:var(--bone);font-size:1.5rem;margin-bottom:.7rem}
-  .cta p{color:rgba(240,235,221,.75);max-width:42ch;margin:0 auto 1.4rem}
-  .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.4rem;border-radius:4px;font-size:.95rem;font-weight:600;text-decoration:none;background:var(--brass);color:var(--ink)}
-  footer{padding:2.5rem 1.6rem;text-align:center;color:var(--ink-soft);font-size:.85rem;border-top:1px solid var(--line)}
-  footer a{color:var(--ink-soft);text-decoration:underline}
-  @media print{ header,.cta,footer{display:none} body{background:#fff} }
+  h2.section{font-size:1.1rem;margin:2.4rem 0 1rem;color:var(--mint);font-family:var(--display)}
+  @media print{ header.site,.invite-band,footer.site,#scroll-progress{display:none} body{background:#fff;color:#111} .item{border-color:#ccc} }
 </style>
 </head>
 <body>
 
-<header>
+<div id="scroll-progress"></div>
+
+<header class="site">
   <nav class="nav">
-    <a class="wordmark" href="index.html">Coach<em>OS</em></a>
-    <a class="back" href="index.html">← Back to CoachOS</a>
+    <a class="wordmark" href="index.html"><span class="dot"></span>Coach<em>OS</em></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="why.html">Why CoachOS</a>
+      <a href="insights.html">Insights</a>
+      <a href="quizzes.html">Assessments</a>
+    </div>
+    <a class="nav-cta" href="index.html#waitlist">Request an invite</a>
   </nav>
 </header>
 
-<section class="hero">
-  <div class="wrap">
+<section class="pagehead">
+  <div class="wrap-narrow">
     <span class="kicker">Free checklist</span>
-    <h1>The Solo Business AI-Agent Starter Checklist</h1>
+    <h1>The Solo Business <span style="color:var(--mint)">AI-Agent Starter Checklist.</span></h1>
     <p>Twelve concrete steps for setting up your first AI-assisted follow-up, invoice reminder, and content workflow — usable with or without CoachOS. Print it, or save this page.</p>
   </div>
 </section>
 
-<div class="wrap block">
+<div class="wrap-narrow block reveal">
   <h2 class="section">Leads &amp; follow-up</h2>
   <div class="item"><span class="check">✓</span><div><h3>1. Write down your actual second-follow-up rule</h3><p>Decide, in writing, how many days after silence you follow up, and with what tone — most lost leads are lost to "I meant to," not a bad pitch.</p></div></div>
   <div class="item"><span class="check">✓</span><div><h3>2. Keep one place for every enquiry, not your inbox</h3><p>A spreadsheet, a simple board, anything — as long as "where did this lead come from and what happened" is answerable in ten seconds.</p></div></div>
@@ -84,21 +69,30 @@
 
   <h2 class="section">The agentic layer</h2>
   <div class="item"><span class="check">✓</span><div><h3>11. Decide what you'll never let an AI send unreviewed</h3><p>Draft anything you like with AI — but decide up front what always gets a human read before it goes out. Write that line down.</p></div></div>
-  <div class="item"><span class="check">✓</span><div><h3>12. Take the 60-second AI-readiness check</h3><p>See exactly which of the above an agent could already be doing for you, today.</p></div></div>
+  <div class="item"><span class="check">✓</span><div><h3>12. Take a free assessment</h3><p>See exactly which of the above an agent could already be doing for you, today — <a href="quizzes.html">10 free assessments</a>, pick the one that matches your problem.</p></div></div>
 </div>
 
-<div class="wrap">
-  <div class="cta">
-    <h2>Want this actually automated for you?</h2>
+<section id="waitlist">
+  <div class="invite-band reveal">
+    <h2 style="margin-top:0">Want this actually automated for you?</h2>
     <p>This checklist is what CoachOS's agentic layer runs on autopilot — reviewed and approved by you, every time.</p>
-    <a class="btn" href="index.html#waitlist">Request an invite →</a>
+    <a class="btn primary" href="index.html#waitlist">Request an invite →</a>
   </div>
-</div>
+</section>
 
-<footer>
-  <div>Coach<b style="color:var(--brass)">OS</b> — the agentic AI operating system for coaches, mentors &amp; freelancers.</div>
-  <div style="margin-top:.5rem"><a href="index.html">Home</a> · <a href="insights.html">Insights</a> · <a href="news.html">News</a> · <a href="quizzes.html">Assessments</a> · Questions? <a href="mailto:shaikhamirhussain2000@gmail.com">shaikhamirhussain2000@gmail.com</a></div>
+<footer class="site">
+  <div class="foot-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="why.html">Why CoachOS</a>
+    <a href="access.html">How access works</a>
+    <a href="insights.html">Insights</a>
+    <a href="news.html">News</a>
+    <a href="quizzes.html">Assessments</a>
+  </div>
+  <div class="foot-brand">Coach<b style="color:var(--mint)">OS</b> — the agentic AI nervous system for coaches, mentors &amp; freelancers.</div>
 </footer>
 
+<script src="assets/main.js"></script>
 </body>
 </html>

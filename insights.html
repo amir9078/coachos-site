@@ -7,63 +7,44 @@
 <meta name="description" content="Practical reads on running an AI-assisted coaching, mentoring, or freelance business — from CoachOS.">
 <link rel="canonical" href="https://amir9078.github.io/coachos-site/insights.html">
 <meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
 <style>
-  :root{
-    --bone:#F0EBDD; --card:#F5F1E6; --well:#E2DAC4;
-    --ink:#1E2B24; --ink-soft:#54604F; --line:rgba(30,43,36,.16);
-    --brass:#8A6A1F; --brass-soft:rgba(138,106,31,.13);
-    --green:#2E6B4F;
-    --serif:'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif;
-    --sans:Seravek,'Gill Sans Nova','Segoe UI',Calibri,'Trebuchet MS',sans-serif;
-    --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;background:var(--bone);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
-  h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0}
-  p{margin:0}
-  a{color:var(--brass)}
-  .wrap{max-width:760px;margin:0 auto;padding:0 1.6rem}
-  .kicker{font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;color:var(--ink-soft)}
-  header{border-bottom:1px solid var(--line);background:rgba(240,235,221,.9)}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.6rem;max-width:1080px;margin:0 auto}
-  .wordmark{font-family:var(--serif);font-size:1.3rem;font-weight:700;text-decoration:none;color:var(--ink)}
-  .wordmark em{font-style:normal;color:var(--brass)}
-  .nav a.back{color:var(--ink-soft);text-decoration:none;font-size:.9rem}
-  .hero{padding:3.5rem 0 2rem;text-align:center}
-  .hero h1{font-size:clamp(1.9rem,4.6vw,2.6rem);margin:.6rem 0 .8rem}
-  .hero p{color:var(--ink-soft);font-size:1.05rem;max-width:44ch;margin:0 auto}
-  .toc{display:flex;justify-content:center;gap:1.4rem;flex-wrap:wrap;margin:2rem 0 0;font-size:.9rem}
-  article{padding:3rem 0;border-top:1px solid var(--line)}
-  article .tag-kicker{color:var(--brass)}
-  article h2{font-size:clamp(1.4rem,3.6vw,1.9rem);margin:.6rem 0 1.4rem}
-  article p{color:var(--ink-soft);margin-bottom:1.1rem}
-  article h3{font-size:1.1rem;margin:1.6rem 0 .6rem;color:var(--ink)}
-  article ul{color:var(--ink-soft);padding-left:1.3rem;margin-bottom:1.1rem}
-  article li{margin-bottom:.5rem}
-  .callout{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:1.4rem 1.6rem;margin-top:1rem}
+  .toc{display:flex;justify-content:center;gap:1.4rem;flex-wrap:wrap;margin:1.6rem 0 0;font-size:.9rem}
+  .article-block{padding:3rem 0;border-top:1px solid var(--line)}
+  .article-block h2{font-size:clamp(1.4rem,3.6vw,1.9rem);margin:.6rem 0 1.4rem;font-family:var(--display)}
+  .article-block p{color:var(--ink-soft);margin-bottom:1.1rem}
+  .article-block h3{font-size:1.1rem;margin:1.6rem 0 .6rem;color:var(--ink);font-family:var(--display)}
+  .article-block ul{color:var(--ink-soft);padding-left:1.3rem;margin-bottom:1.1rem}
+  .article-block li{margin-bottom:.5rem}
+  .callout{background:var(--surface);border:1px solid var(--line);border-left:2px solid var(--mint);border-radius:8px;padding:1.4rem 1.6rem;margin-top:1rem}
   .callout p{color:var(--ink-soft);margin:0}
-  .contribute{background:var(--ink);color:var(--bone);border-radius:10px;padding:2.4rem 1.8rem;text-align:center;margin:3rem 0}
-  .contribute h2{color:var(--bone);font-size:1.5rem;margin-bottom:.7rem}
-  .contribute p{color:rgba(240,235,221,.75);max-width:42ch;margin:0 auto 1.4rem}
-  .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.4rem;border-radius:4px;font-size:.95rem;font-weight:600;text-decoration:none;background:var(--brass);color:var(--ink)}
-  footer{padding:2.5rem 1.6rem;text-align:center;color:var(--ink-soft);font-size:.85rem;border-top:1px solid var(--line)}
-  footer a{color:var(--ink-soft);text-decoration:underline}
 </style>
 </head>
 <body>
 
-<header>
+<div id="scroll-progress"></div>
+
+<header class="site">
   <nav class="nav">
-    <a class="wordmark" href="index.html">Coach<em>OS</em></a>
-    <a class="back" href="index.html">← Back to CoachOS</a>
+    <a class="wordmark" href="index.html"><span class="dot"></span>Coach<em>OS</em></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="why.html">Why CoachOS</a>
+      <a href="insights.html">Insights</a>
+      <a href="quizzes.html">Assessments</a>
+    </div>
+    <a class="nav-cta" href="index.html#waitlist">Request an invite</a>
   </nav>
 </header>
 
-<section class="hero">
-  <div class="wrap">
+<section class="pagehead">
+  <div class="wrap-narrow">
     <span class="kicker">Insights &amp; industry notes</span>
-    <h1>Not just a product — a place to learn what's actually working</h1>
+    <h1>Not just a product — <span style="color:var(--mint)">a place to learn what's actually working.</span></h1>
     <p>Short, practical reads on running an AI-assisted coaching, mentoring, or freelance business. Written by our team, and open to guest contributors.</p>
     <div class="toc">
       <a href="#agentic-vs-ai-draft">Explainer: agentic AI</a>
@@ -73,9 +54,9 @@
   </div>
 </section>
 
-<article id="agentic-vs-ai-draft">
-  <div class="wrap">
-    <span class="kicker tag-kicker">Explainer</span>
+<article id="agentic-vs-ai-draft" class="article-block">
+  <div class="wrap-narrow">
+    <span class="kicker" style="color:var(--mint)">Explainer</span>
     <h2>What "agentic AI" actually means for your business — and why it's not the same as an AI chatbot</h2>
     <p>Most "AI-powered" business software does one thing: you give it a prompt, it hands back a draft. A blank field becomes a paragraph. That's genuinely useful, but it's still <em>one step</em> — you ask, it answers, the thinking stops there.</p>
     <p>An <strong>agentic</strong> system does several steps on its own before it hands anything back. Given a lead who's gone quiet, an agent doesn't just draft a generic "just checking in" message. It reads that lead's full history, checks how similar leads actually responded in the past — did a direct pitch work, or a soft check-in — decides what this specific situation calls for, and only then drafts the message in your voice. Then it stops and waits for you to approve it.</p>
@@ -85,13 +66,13 @@
       <li>Agentic systems can reason across more than one thing at once — an overdue invoice <em>and</em> a session tomorrow, a package running low <em>and</em> no renewal sent — patterns a single "draft this email" prompt will never surface on its own.</li>
       <li>The approval step doesn't go away. Agentic doesn't mean autonomous-without-oversight — it means more thinking happens <em>before</em> the draft reaches you, not that anything sends without you.</li>
     </ul>
-    <div class="callout"><p>This is the actual engine behind CoachOS's follow-up and practice-intelligence features — not a marketing label. See what it would flag in your own business with the <a href="index.html#quiz">60-second AI-readiness check</a>.</p></div>
+    <div class="callout"><p>This is the actual engine behind CoachOS's follow-up and practice-intelligence features — not a marketing label. See what it would flag in your own business with a <a href="quizzes.html">free assessment</a>.</p></div>
   </div>
 </article>
 
-<article id="lost-leads">
-  <div class="wrap">
-    <span class="kicker tag-kicker">Practice notes</span>
+<article id="lost-leads" class="article-block">
+  <div class="wrap-narrow">
+    <span class="kicker" style="color:var(--mint)">Practice notes</span>
     <h2>5 places solo practices lose leads without realizing it</h2>
     <p>None of these show up as a single dramatic failure. They show up as a slightly lower response rate, a handful of enquiries that quietly stopped replying, a slow month you can't quite explain. Here's where they usually hide.</p>
     <h3>1. The second follow-up that never happens</h3>
@@ -108,9 +89,9 @@
   </div>
 </article>
 
-<article id="industry-landscape">
-  <div class="wrap">
-    <span class="kicker tag-kicker">Industry brief</span>
+<article id="industry-landscape" class="article-block">
+  <div class="wrap-narrow">
+    <span class="kicker" style="color:var(--mint)">Industry brief</span>
     <h2>AI in coaching &amp; service-business software: where things actually stand</h2>
     <p>The coaching industry is worth an estimated $5.34B globally with over 122,000 professional practitioners (ICF/PwC 2025 Global Coaching Study) — and yet only 19% of coaches invested in new technology last year, while 54% say better tools are a real priority. That gap between demand and adoption is the honest starting point for any claim about "AI-powered" coaching software.</p>
     <p>Several existing platforms in this space have started adding real AI touchpoints — AI-generated session summaries, AI-assisted content drafting. That's genuine progress, and it's worth acknowledging rather than pretending nobody else is doing anything with AI.</p>
@@ -119,18 +100,30 @@
   </div>
 </article>
 
-<div class="wrap">
-  <div class="contribute">
-    <h2>Want to contribute?</h2>
-    <p>We're open to guest posts from coaches, mentors, and freelancers on what's actually working in their practice. Pitch us a topic.</p>
-    <a class="btn" href="mailto:shaikhamirhussain2000@gmail.com?subject=Guest%20contribution%20pitch%20for%20CoachOS%20Insights">Pitch a contribution →</a>
+<section>
+  <div class="wrap-narrow">
+    <div class="invite-band reveal">
+      <h2 style="margin-top:0">Want to contribute?</h2>
+      <p>We're open to guest posts from coaches, mentors, and freelancers on what's actually working in their practice. Pitch us a topic.</p>
+      <a class="btn primary" href="mailto:shaikhamirhussain2000@gmail.com?subject=Guest%20contribution%20pitch%20for%20CoachOS%20Insights">Pitch a contribution →</a>
+    </div>
   </div>
-</div>
+</section>
 
-<footer>
-  <div>Coach<b style="color:var(--brass)">OS</b> — the agentic AI operating system for coaches, mentors &amp; freelancers.</div>
-  <div style="margin-top:.5rem"><a href="index.html">Home</a> · <a href="news.html">News</a> · <a href="checklist.html">Free checklist</a> · <a href="quizzes.html">Assessments</a> · Questions? <a href="mailto:shaikhamirhussain2000@gmail.com">shaikhamirhussain2000@gmail.com</a></div>
+<footer class="site">
+  <div class="foot-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="why.html">Why CoachOS</a>
+    <a href="access.html">How access works</a>
+    <a href="news.html">News</a>
+    <a href="checklist.html">Free checklist</a>
+    <a href="quizzes.html">Assessments</a>
+  </div>
+  <div class="foot-brand">Coach<b style="color:var(--mint)">OS</b> — the agentic AI nervous system for coaches, mentors &amp; freelancers.</div>
+  <div style="margin-top:.5rem">Questions? <a href="mailto:shaikhamirhussain2000@gmail.com">shaikhamirhussain2000@gmail.com</a></div>
 </footer>
 
+<script src="assets/main.js"></script>
 </body>
 </html>
