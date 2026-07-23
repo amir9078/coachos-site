@@ -3,23 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CoachOS — Invite-Only Early Access | AI-Powered Platform for Coaches & Mentors</title>
-<meta name="description" content="CoachOS is the AI-powered, all-in-one platform for coaches and mentors — leads, bookings, contracts, client delivery, and payments, with AI drafting the busywork and you approving every word. Currently invite-only. Request early access.">
-<meta name="keywords" content="AI coaching platform, AI for coaches, coaching software, all in one coaching platform, coach CRM, executive coaching software, mentor platform, coaching business tools, AI client management, AI session notes, coaching platform waitlist, invite only coaching software">
+<title>CoachOS — Invite-Only Agentic AI Platform for Coaches, Mentors & Freelancers</title>
+<meta name="description" content="CoachOS is the agentic AI operating system for coaches, mentors, freelancers, and service-based businesses — leads, bookings, contracts, client delivery, marketing, and payments, with AI agents doing the work and you approving every word. Currently invite-only.">
+<meta name="keywords" content="AI coaching platform, agentic AI for coaches, AI for freelancers, coaching software, all in one coaching platform, coach CRM, mentor platform, freelancer business platform, AI client management, AI session notes, invite only coaching software, AI agents for small business">
 <link rel="canonical" href="https://amir9078.github.io/coachos-site/">
 <meta name="robots" content="index, follow">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="CoachOS — Invite-Only Early Access | AI-Powered Platform for Coaches & Mentors">
-<meta property="og:description" content="An AI-powered platform where a coach or mentor runs their entire business — leads, bookings, contracts, client delivery, and payments — with AI doing the repetitive work. Currently invite-only.">
+<meta property="og:title" content="CoachOS — Invite-Only Agentic AI Platform for Coaches, Mentors & Freelancers">
+<meta property="og:description" content="The agentic AI operating system for coaches, mentors, freelancers, and service businesses — AI agents run the busywork, you approve every word. Currently invite-only.">
 <meta property="og:url" content="https://amir9078.github.io/coachos-site/">
 <meta property="og:site_name" content="CoachOS">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="CoachOS — Invite-Only Early Access | AI-Powered Platform for Coaches & Mentors">
-<meta name="twitter:description" content="An AI-powered platform where a coach or mentor runs their entire business — with AI doing the repetitive work, and humans doing the human work. Currently invite-only.">
+<meta name="twitter:title" content="CoachOS — Invite-Only Agentic AI Platform for Coaches, Mentors & Freelancers">
+<meta name="twitter:description" content="The agentic AI operating system for coaches, mentors, freelancers, and service businesses. AI agents run the busywork, you approve every word. Currently invite-only.">
 
 <!-- Structured data for search engines -->
 <script type="application/ld+json">
@@ -29,9 +29,9 @@
   "name": "CoachOS",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
-  "description": "An all-in-one AI-powered platform for coaches and mentors covering leads, bookings, contracts, client delivery, and payments. Currently in invite-only early access.",
+  "description": "An agentic AI operating system for coaches, mentors, freelancers, and service-based businesses, covering leads, bookings, contracts, client delivery, marketing, and payments. Currently in invite-only early access.",
   "offers": { "@type": "Offer", "priceCurrency": "USD", "price": "29", "description": "Founding-member pricing for the invite-only early access cohort", "availability": "https://schema.org/PreOrder" },
-  "audience": { "@type": "Audience", "audienceType": "Professional coaches and mentors" }
+  "audience": { "@type": "Audience", "audienceType": "Coaches, mentors, freelancers, and service-based business owners" }
 }
 </script>
 
@@ -41,6 +41,7 @@
     --ink:#1E2B24; --ink-soft:#54604F; --line:rgba(30,43,36,.16);
     --brass:#8A6A1F; --brass-soft:rgba(138,106,31,.13);
     --green:#2E6B4F; --green-soft:rgba(46,107,79,.14);
+    --hybrid:#3E6B8A; --hybrid-soft:rgba(62,107,138,.14);
     --shadow-s:0 1px 2px rgba(20,28,22,.07),0 10px 26px rgba(20,28,22,.08);
     --serif:'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif;
     --sans:Seravek,'Gill Sans Nova','Segoe UI',Calibri,'Trebuchet MS',sans-serif;
@@ -52,28 +53,31 @@
   h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;text-wrap:balance}
   p{margin:0}
   a{color:var(--brass)}
-  .wrap{max-width:1040px;margin:0 auto;padding:0 1.6rem}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 1.6rem}
   .kicker{font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;color:var(--ink-soft)}
 
   header{position:sticky;top:0;z-index:10;background:rgba(240,235,221,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.6rem;max-width:1040px;margin:0 auto}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.6rem;max-width:1080px;margin:0 auto}
   .wordmark{font-family:var(--serif);font-size:1.3rem;font-weight:700;text-decoration:none;color:var(--ink)}
   .wordmark em{font-style:normal;color:var(--brass)}
   .nav-cta{background:var(--ink);color:var(--bone);padding:.55rem 1.1rem;border-radius:3px;text-decoration:none;font-size:.88rem;flex:none}
-  .nav-links{display:flex;gap:1.6rem}
-  .nav-links a{color:var(--ink-soft);text-decoration:none;font-size:.9rem}
+  .nav-links{display:flex;gap:1.4rem;flex-wrap:wrap}
+  .nav-links a{color:var(--ink-soft);text-decoration:none;font-size:.88rem}
   .nav-links a:hover{color:var(--ink)}
-  @media(max-width:640px){.nav-links{display:none}}
+  @media(max-width:900px){.nav-links{display:none}}
 
-  .hero{padding:5.5rem 0 4rem;text-align:center}
+  .hero{padding:5rem 0 3.5rem;text-align:center}
   .ai-badge{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--green);background:var(--green-soft);border:1px solid rgba(46,107,79,.3);border-radius:20px;padding:.35rem .9rem}
-  .hero h1{font-size:clamp(2.3rem,6vw,3.6rem);line-height:1.08;margin:0 auto 1.2rem;max-width:16ch}
+  .invite-badge{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--brass);background:var(--brass-soft);border:1px solid rgba(138,106,31,.3);border-radius:20px;padding:.35rem .9rem;margin-left:.5rem}
+  @media(max-width:560px){.invite-badge{display:block;margin:.6rem 0 0;width:fit-content;margin-left:auto;margin-right:auto}}
+  .hero h1{font-size:clamp(2.1rem,5.6vw,3.3rem);line-height:1.1;margin:0 auto 1.2rem;max-width:19ch}
   .hero h1 .accent{color:var(--brass);font-style:italic}
-  .hero .sub{color:var(--ink-soft);font-size:1.2rem;max-width:46ch;margin:0 auto 2.2rem}
+  .hero .sub{color:var(--ink-soft);font-size:1.15rem;max-width:50ch;margin:0 auto 1.4rem}
+  .hero .qualifier{font-size:.98rem;font-style:italic;color:var(--green);max-width:44ch;margin:0 auto 2rem}
   .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.6rem;border-radius:4px;font-size:1rem;font-weight:600;text-decoration:none;border:1px solid transparent;cursor:pointer}
   .btn.primary{background:var(--green);color:var(--bone)}
   .btn.primary:hover{background:#255a41}
-  .btn.ghost{border-color:var(--ink);color:var(--ink)}
+  .btn.ghost{border-color:var(--ink);color:var(--ink);background:transparent}
 
   .stat-strip{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:3rem;padding-top:2.5rem;border-top:1px solid var(--line)}
   .stat{text-align:center}
@@ -81,18 +85,29 @@
   .stat .l{color:var(--ink-soft);font-size:.85rem;max-width:16ch}
 
   section{padding:4rem 0}
-  .sec-head{max-width:52ch;margin:0 auto 2.6rem;text-align:center}
+  .sec-head{max-width:56ch;margin:0 auto 2.6rem;text-align:center}
   .sec-head h2{font-size:clamp(1.6rem,4vw,2.1rem);margin-top:.6rem}
   .sec-head p{color:var(--ink-soft);margin-top:.8rem;font-size:1.05rem}
+
+  .tag{display:inline-flex;align-items:center;gap:.3rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.05em;text-transform:uppercase;padding:.22rem .55rem;border-radius:12px;margin-bottom:.65rem}
+  .tag-human{color:var(--green);background:var(--green-soft);border:1px solid rgba(46,107,79,.3)}
+  .tag-ai{color:var(--brass);background:var(--brass-soft);border:1px solid rgba(138,106,31,.3)}
+  .tag-hybrid{color:var(--hybrid);background:var(--hybrid-soft);border:1px solid rgba(62,107,138,.3)}
+  .tag-service{color:var(--ink);background:var(--well);border:1px solid var(--line)}
+
+  .cat-head{max-width:70ch;margin:0 auto 1.2rem}
+  .cat-head h3{font-size:1.15rem;margin-bottom:.3rem}
+  .cat-head p{color:var(--ink-soft);font-size:.92rem}
+  .cat-block{margin-bottom:2.6rem}
 
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
   @media(max-width:820px){.grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:560px){.grid{grid-template-columns:1fr}}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1.5rem;transition:transform .18s,box-shadow .18s}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1.4rem;transition:transform .18s,box-shadow .18s}
   .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-s)}
-  .card .glyph{font-family:var(--serif);font-size:1.5rem;color:var(--green);display:block;margin-bottom:.7rem}
-  .card h3{font-size:1.05rem;margin-bottom:.5rem}
-  .card p{color:var(--ink-soft);font-size:.92rem}
+  .card .glyph{font-family:var(--serif);font-size:1.4rem;color:var(--green);display:block;margin-bottom:.5rem}
+  .card h3{font-size:1rem;margin-bottom:.45rem}
+  .card p{color:var(--ink-soft);font-size:.9rem}
 
   .split{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
   @media(max-width:760px){.split{grid-template-columns:1fr}}
@@ -107,15 +122,41 @@
   .panel .row b{color:var(--bone)}
   .panel .row span{color:rgba(240,235,221,.6)}
 
-  .invite-badge{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--brass);background:var(--brass-soft);border:1px solid rgba(138,106,31,.3);border-radius:20px;padding:.35rem .9rem;margin-left:.5rem}
-  @media(max-width:560px){.invite-badge{display:block;margin:.6rem 0 0;width:fit-content;margin-left:auto;margin-right:auto}}
-
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;counter-reset:step}
   @media(max-width:760px){.steps{grid-template-columns:1fr}}
   .step{position:relative;padding-top:.4rem}
   .step .num{font-family:var(--serif);font-size:2.2rem;color:var(--brass);opacity:.55;display:block;line-height:1}
   .step h3{font-size:1.05rem;margin:.5rem 0 .5rem}
   .step p{color:var(--ink-soft);font-size:.92rem}
+
+  /* Quiz */
+  .quiz{max-width:640px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:2rem}
+  .quiz-progress{font-family:var(--mono);font-size:.7rem;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.08em;margin-bottom:1.2rem}
+  .quiz-q{margin-bottom:1.5rem}
+  .quiz-q .qtext{font-weight:600;margin-bottom:.7rem;display:block;font-size:1rem}
+  .quiz-q label{display:block;padding:.65rem .9rem;border:1px solid var(--line);border-radius:5px;margin-bottom:.5rem;cursor:pointer;font-size:.93rem;color:var(--ink-soft);transition:border-color .15s,background .15s}
+  .quiz-q label:hover{border-color:var(--brass)}
+  .quiz-q input{margin-right:.6rem}
+  .quiz-actions{text-align:center;margin-top:1.6rem}
+  .quiz-result{display:none;text-align:center}
+  .quiz-result.show{display:block}
+  .quiz-result .score{font-family:var(--serif);font-size:3.2rem;color:var(--brass);line-height:1}
+  .quiz-result .band{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;color:var(--green);margin:.5rem 0 1.1rem;display:block}
+  .quiz-result .blurb{color:var(--ink-soft);max-width:42ch;margin:0 auto 1.6rem}
+  #quiz-form.hidden{display:none}
+
+  /* Lead magnet */
+  .magnet{display:grid;grid-template-columns:auto 1fr auto;gap:1.4rem;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:1.6rem 1.8rem;max-width:760px;margin:0 auto}
+  @media(max-width:640px){.magnet{grid-template-columns:1fr;text-align:center}}
+  .magnet .glyph-lg{font-family:var(--serif);font-size:2.2rem;color:var(--brass)}
+  .magnet h3{font-size:1.1rem;margin-bottom:.35rem}
+  .magnet p{color:var(--ink-soft);font-size:.92rem}
+
+  /* Insights preview */
+  .insight-card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1.4rem;text-decoration:none;color:inherit;display:block;transition:transform .18s,box-shadow .18s}
+  .insight-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-s)}
+  .insight-card h3{font-size:1.02rem;margin:.5rem 0 .5rem;color:var(--ink)}
+  .insight-card p{color:var(--ink-soft);font-size:.9rem}
 
   .faq{max-width:44rem;margin:0 auto}
   .faq details{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1.1rem 1.3rem;margin-bottom:.8rem}
@@ -126,7 +167,7 @@
   .faq p{color:var(--ink-soft);margin-top:.8rem;font-size:.95rem}
 
   .cta{background:var(--ink);color:var(--bone);border-radius:10px;padding:3rem 2rem;text-align:center;margin:0 1.6rem}
-  .cta h2{color:var(--bone);font-size:clamp(1.5rem,4vw,2rem);max-width:20ch;margin:.6rem auto 1rem}
+  .cta h2{color:var(--bone);font-size:clamp(1.5rem,4vw,2rem);max-width:22ch;margin:.6rem auto 1rem}
   .cta p{color:rgba(240,235,221,.75);max-width:42ch;margin:0 auto 1.8rem}
   .waitlist-form{display:flex;gap:.6rem;max-width:420px;margin:0 auto;flex-wrap:wrap;justify-content:center}
   .waitlist-form input{flex:1;min-width:220px;padding:.8rem 1rem;border-radius:4px;border:1px solid rgba(240,235,221,.25);background:rgba(240,235,221,.08);color:var(--bone);font-size:.95rem}
@@ -136,6 +177,7 @@
 
   footer{padding:2.5rem 1.6rem;text-align:center;color:var(--ink-soft);font-size:.85rem;border-top:1px solid var(--line)}
   footer a{color:var(--ink-soft);text-decoration:underline}
+  .foot-links{display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap;margin-bottom:.8rem}
 
   .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
   .reveal.in{opacity:1;transform:none}
@@ -148,8 +190,10 @@
     <a class="wordmark" href="#">Coach<em>OS</em></a>
     <div class="nav-links">
       <a href="#features">Features</a>
+      <a href="#quiz">AI-readiness quiz</a>
+      <a href="#insights">Insights</a>
       <a href="#different">Why CoachOS</a>
-      <a href="#how-it-works">Early access</a>
+      <a href="#faq">FAQ</a>
     </div>
     <a class="nav-cta" href="#waitlist">Request an invite</a>
   </nav>
@@ -157,16 +201,16 @@
 
 <section class="hero">
   <div class="wrap">
-    <span class="ai-badge">✦ AI-Powered</span><span class="invite-badge">🔒 Invite-only — now accepting requests</span>
-    <span class="kicker" style="display:block;margin-top:.7rem">For coaches, mentors, and executive advisors</span>
-    <h1 style="margin-top:1rem">You coach. <span class="accent">AI runs everything else.</span></h1>
-    <p class="sub">The AI-powered operating system for your coaching business — leads, bookings, contracts, client delivery, and payments. AI drafts every summary, follow-up, and piece of content; you approve every word before it ever reaches a client.</p>
-    <p class="sub" style="font-size:1rem;margin-top:-1.4rem;margin-bottom:2.2rem">CoachOS isn't open to the public yet. We're onboarding a small first cohort of coaches personally, by invite, before opening up more widely.</p>
+    <span class="ai-badge">✦ Agentic AI</span><span class="invite-badge">🔒 Invite-only — now accepting requests</span>
+    <span class="kicker" style="display:block;margin-top:.7rem">For coaches, mentors, freelancers &amp; service-based businesses</span>
+    <h1 style="margin-top:1rem">The agentic operating system for your <span class="accent">coaching, mentoring, or freelance business.</span></h1>
+    <p class="sub">One place to run leads, marketing, bookings, contracts, client delivery, and payments — with AI agents doing the repetitive work and a human team behind the parts that genuinely need one. You approve every word before it reaches a client.</p>
+    <p class="qualifier">Built only for people who actually want AI agents running their business — not just talking about AI.</p>
     <a class="btn primary" href="#waitlist">Request an invite →</a>
 
     <div class="stat-strip reveal" id="stats">
       <div class="stat"><span class="n">122,974</span><span class="l">professional coaches worldwide</span></div>
-      <div class="stat"><span class="n">$5.34B</span><span class="l">industry revenue, growing yearly</span></div>
+      <div class="stat"><span class="n">$5.34B</span><span class="l">coaching industry revenue, growing yearly</span></div>
       <div class="stat"><span class="n">19%→54%</span><span class="l">adoption vs. demand for better tools</span></div>
     </div>
   </div>
@@ -176,8 +220,8 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="kicker">The problem</span>
-      <h2>Right now, a coach's business runs on 5–8 disconnected tools</h2>
-      <p>A scheduler here, a CRM there, a separate e-sign tool, a spreadsheet for invoices, a notes app for sessions — none of them built with AI at the core. Only 19% of coaches invested in new technology last year — while 54% say better platforms are a real priority. That gap is the opportunity CoachOS is built for: AI-native from day one, not a legacy tool with a chatbot bolted on.</p>
+      <h2>Right now, your business runs on 5–8 disconnected tools</h2>
+      <p>A scheduler here, a CRM there, a separate e-sign tool, a spreadsheet for invoices, a notes app for sessions, a website you haven't touched since launch — none of it built with AI at the core, and none of it talking to each other. Only 19% of coaches invested in new technology last year — while 54% say better platforms are a real priority. That gap is the opportunity CoachOS is built for: agentic AI from day one, not a legacy tool with a chatbot bolted on.</p>
     </div>
   </div>
 </section>
@@ -186,20 +230,137 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="kicker">What you get</span>
-      <h2>One desk. Every room of your business.</h2>
-      <p>Not eleven separate tools stitched together — one platform, with AI built into the workflow, not bolted on top.</p>
+      <h2>Human expertise. AI execution. One place to run it all.</h2>
+      <p>Every part of your business, tagged plainly by who does it — a human on our team, an AI agent, or both working together. Nothing hidden behind vague "AI-powered" marketing.</p>
     </div>
-    <div class="grid reveal">
-      <div class="card"><span class="glyph">⚘</span><h3>AI-scored leads that never go cold</h3><p>Every enquiry lands on one board, scored by AI automatically. If someone's gone quiet, an AI agent investigates and drafts the follow-up for you.</p></div>
-      <div class="card"><span class="glyph">❧</span><h3>Session notes, written by AI</h3><p>Jot rough notes — even messy ones, or just record the session — and AI turns them into a warm, polished client summary and your own action list, instantly.</p></div>
-      <div class="card"><span class="glyph">◉</span><h3>Meetings built right in</h3><p>Run the session inside CoachOS itself — recorded, transcribed, and summarized by AI, no extra tool required.</p></div>
-      <div class="card"><span class="glyph">◷</span><h3>Bookings that fill themselves</h3><p>Share one link. Reminders go out automatically. No-shows get a one-click rebook invite.</p></div>
-      <div class="card"><span class="glyph">§</span><h3>Contracts &amp; payments, sorted</h3><p>Send an agreement, get it signed on any phone, get paid — with invoices chased automatically if they're late.</p></div>
-      <div class="card"><span class="glyph">✎</span><h3>Marketing AI writes for you</h3><p>A newsletter and content drafted by AI in your own voice, from your real themes — never a blank page again.</p></div>
-      <div class="card"><span class="glyph">⚙</span><h3>The busywork, on AI autopilot</h3><p>AI handles the repeat follow-ups and reminders. You approve the wording once — CoachOS handles the timing.</p></div>
-      <div class="card"><span class="glyph">◈</span><h3>Your whole practice, at a glance</h3><p>Revenue, pipeline, retention — one dashboard, with AI flagging clients who need attention before they disappear.</p></div>
-      <div class="card"><span class="glyph">☀</span><h3>An AI-curated briefing, every morning</h3><p>Top news in your niche, a world catchup, and one thing worth learning — summarized by AI in five minutes, before you even open your calendar.</p></div>
-      <div class="card"><span class="glyph">⚭</span><h3>A real community of coaches</h3><p>Connect, post, and refer business to colleagues outside your niche — the referral network this profession already runs on.</p></div>
+
+    <div class="cat-block reveal">
+      <div class="cat-head">
+        <h3>Getting you live</h3>
+        <p>New: full launch support, done by our team — not a software feature, a real service bundled in for coaches, mentors, and freelancers starting from scratch.</p>
+      </div>
+      <div class="grid">
+        <div class="card"><span class="tag tag-service">Human — done for you</span><h3>Website, built for you</h3><p>A real website for your practice, designed and built by our team — not a template you're left to figure out alone.</p></div>
+        <div class="card"><span class="tag tag-service">Human — done for you</span><h3>Domain setup</h3><p>We register and configure your domain so it's ready on day one, no technical back-and-forth required.</p></div>
+        <div class="card"><span class="tag tag-service">Human — done for you</span><h3>Business email setup</h3><p>A proper business email address, set up and connected for you — not a personal Gmail address on your invoices.</p></div>
+      </div>
+    </div>
+
+    <div class="cat-block reveal">
+      <div class="cat-head">
+        <h3>Filling your pipeline</h3>
+        <p>Getting found, and staying front-of-mind, without writing every post yourself.</p>
+      </div>
+      <div class="grid">
+        <div class="card"><span class="tag tag-hybrid">Human + AI</span><h3>Lead generation</h3><p>Our team and AI working together to help bring the right enquiries to your door, not just any traffic.</p></div>
+        <div class="card"><span class="tag tag-hybrid">Human + AI</span><h3>Email marketing</h3><p>A newsletter and nurture emails, drafted by AI in your own voice, reviewed by you before anything sends.</p></div>
+        <div class="card"><span class="tag tag-hybrid">Human + AI</span><h3>Content marketing</h3><p>Social posts and articles drafted from your real themes — never a blank page, never a generic template.</p></div>
+      </div>
+    </div>
+
+    <div class="cat-block reveal">
+      <div class="cat-head">
+        <h3>Working every lead</h3>
+        <p>Once someone reaches out, nothing falls through the cracks — an AI agent is on it.</p>
+      </div>
+      <div class="grid">
+        <div class="card"><span class="tag tag-ai">AI</span><h3>Lead automation</h3><p>Every enquiry lands on one board, scored automatically. Follow-up sequences run themselves, on the timing you set.</p></div>
+        <div class="card"><span class="tag tag-hybrid">Human + AI</span><h3>Managing leads</h3><p>A clean pipeline board for every conversation, with AI flagging the ones that have gone quiet.</p></div>
+        <div class="card"><span class="tag tag-ai">AI</span><h3>Conversions</h3><p>If a lead has gone cold, an AI agent investigates their history and drafts the exact next message to send.</p></div>
+      </div>
+    </div>
+
+    <div class="cat-block reveal">
+      <div class="cat-head">
+        <h3>Running your practice</h3>
+        <p>Client delivery, contracts, and money — sorted, and visible in one place.</p>
+      </div>
+      <div class="grid">
+        <div class="card"><span class="tag tag-hybrid">Human + AI</span><h3>Managing clients</h3><p>Every client's history, goals, and homework in one record — session notes written up by AI from your rough notes or the recording.</p></div>
+        <div class="card"><span class="tag tag-ai">AI</span><h3>Sending proposals</h3><p>Agreements and packages drafted and sent for signature on any phone — chased automatically if they go quiet.</p></div>
+        <div class="card"><span class="tag tag-hybrid">Human + AI</span><h3>Client sessions</h3><p>Bookings that fill themselves, meetings built right in — recorded, transcribed, and summarized without a separate tool.</p></div>
+        <div class="card"><span class="tag tag-hybrid">Human + AI</span><h3>Records &amp; transparency</h3><p>One dashboard for revenue, pipeline, and retention — everything visible, nothing buried in five different logins.</p></div>
+      </div>
+    </div>
+
+    <div class="cat-block reveal">
+      <div class="cat-head">
+        <h3>The agentic edge</h3>
+        <p>The part that actually makes this different from "AI-powered" software that just autocompletes a sentence.</p>
+      </div>
+      <div class="grid">
+        <div class="card"><span class="tag tag-ai">AI</span><h3>Never lose a follow-up</h3><p>An AI agent tracks every open thread across leads, clients, and invoices — and surfaces exactly what needs attention today.</p></div>
+        <div class="card"><span class="tag tag-ai">AI</span><h3>Make AI work for you</h3><p>Less admin, less busywork, more of your actual time going to the coaching, mentoring, or client work you're best at.</p></div>
+        <div class="card"><span class="tag tag-human">Human</span><h3>A real community</h3><p>Connect and refer business to colleagues outside your niche — the referral network this profession already runs on.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="quiz">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">60-second evaluation</span>
+      <h2>How AI-ready is your business, right now?</h2>
+      <p>Five quick questions. See where you stand today, and exactly what an AI agent would take off your plate first.</p>
+    </div>
+    <div class="quiz reveal">
+      <div class="quiz-progress" id="quiz-progress">Question 1 of 5</div>
+      <form id="quiz-form">
+        <div class="quiz-q" data-q="0">
+          <span class="qtext">1. How do you currently handle new leads or enquiries?</span>
+          <label><input type="radio" name="q0" value="0"> I reply manually, whenever I get to it</label>
+          <label><input type="radio" name="q0" value="1"> I have a rough process, but it's still mostly me</label>
+          <label><input type="radio" name="q0" value="2"> I have automated follow-ups already running</label>
+        </div>
+        <div class="quiz-q" data-q="1" style="display:none">
+          <span class="qtext">2. How are your session notes and summaries handled today?</span>
+          <label><input type="radio" name="q1" value="0"> I don't really write them up</label>
+          <label><input type="radio" name="q1" value="1"> I write them myself, after every session</label>
+          <label><input type="radio" name="q1" value="2"> Something already drafts them for me</label>
+        </div>
+        <div class="quiz-q" data-q="2" style="display:none">
+          <span class="qtext">3. What happens when an invoice goes unpaid?</span>
+          <label><input type="radio" name="q2" value="0"> I have to remember to chase it myself</label>
+          <label><input type="radio" name="q2" value="1"> I send a manual reminder, eventually</label>
+          <label><input type="radio" name="q2" value="2"> It's chased automatically without me thinking about it</label>
+        </div>
+        <div class="quiz-q" data-q="3" style="display:none">
+          <span class="qtext">4. How much of your marketing content do you write yourself?</span>
+          <label><input type="radio" name="q3" value="0"> All of it, from scratch, every time</label>
+          <label><input type="radio" name="q3" value="1"> Some templates, but I still write most of it</label>
+          <label><input type="radio" name="q3" value="2"> A draft is already written; I just review and approve</label>
+        </div>
+        <div class="quiz-q" data-q="4" style="display:none">
+          <span class="qtext">5. If you disappeared for two weeks, what would happen to your leads and clients?</span>
+          <label><input type="radio" name="q4" value="0"> Everything would stall until I'm back</label>
+          <label><input type="radio" name="q4" value="1"> Some things would keep moving, most wouldn't</label>
+          <label><input type="radio" name="q4" value="2"> Nearly everything would keep running without me</label>
+        </div>
+        <div class="quiz-actions">
+          <button type="button" class="btn ghost" id="quiz-back" style="display:none">← Back</button>
+          <button type="button" class="btn primary" id="quiz-next">Next →</button>
+        </div>
+      </form>
+      <div class="quiz-result" id="quiz-result">
+        <span class="score" id="quiz-score">0/10</span>
+        <span class="band" id="quiz-band">—</span>
+        <p class="blurb" id="quiz-blurb"></p>
+        <a class="btn primary" href="#waitlist">See what CoachOS would automate for you →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="magnet">
+  <div class="wrap">
+    <div class="magnet reveal">
+      <span class="glyph-lg">☰</span>
+      <div>
+        <h3>Free: The Solo Business AI-Agent Starter Checklist</h3>
+        <p>A short, practical checklist for setting up your first AI-assisted follow-up, invoice reminder, and content workflow — no CoachOS account required to use it.</p>
+      </div>
+      <a class="btn ghost" href="checklist.html">Read the checklist →</a>
     </div>
   </div>
 </section>
@@ -210,21 +371,53 @@
       <div>
         <span class="k">Why this is different</span>
         <h2>AI infrastructure. Not an AI replacement.</h2>
-        <p>CoachOS is built AI-first — but the AI never coaches your clients for you. It handles the admin around your coaching, so you have more time for the coaching itself.</p>
+        <p>CoachOS is built AI-first — but the AI never coaches, mentors, or does the client relationship for you. It handles the admin and repetition around your work, so more of your time goes to the work itself.</p>
         <ul>
           <li>Every AI draft is reviewed by you before it ever reaches a client — no exceptions.</li>
           <li>AI runs in the background of every module — leads, notes, marketing, briefing — not as a separate add-on chatbot.</li>
-          <li>Built for solo practices and growing teams, at solo-coach pricing.</li>
-          <li>One place for leads, delivery, contracts, and payments — not five subscriptions.</li>
+          <li>Built for solo practices and growing teams, at solo-practice pricing.</li>
+          <li>One place for leads, delivery, contracts, marketing, and payments — not eight subscriptions.</li>
         </ul>
       </div>
       <div class="panel">
-        <div class="row"><b>Session summary</b><span>AI-drafted, coach-approved</span></div>
+        <div class="row"><b>Session summary</b><span>AI-drafted, approved by you</span></div>
         <div class="row"><b>Follow-up to Sarah K.</b><span>Waiting for approval</span></div>
         <div class="row"><b>Invoice — Jonas F.</b><span>Reminder scheduled</span></div>
         <div class="row"><b>Newsletter draft</b><span>In your voice</span></div>
         <div class="row"><b>Nothing sends</b><span style="color:#E7E0CC">without you</span></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="insights">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Insights &amp; industry notes</span>
+      <h2>Not just a product — a place to learn what's actually working</h2>
+      <p>Short, practical reads on running an AI-assisted practice. Written by our team, and open to guest contributors.</p>
+    </div>
+    <div class="grid reveal">
+      <a class="insight-card" href="insights.html#agentic-vs-ai-draft">
+        <span class="kicker">Explainer</span>
+        <h3>What "agentic AI" actually means for your business</h3>
+        <p>The difference between a tool that autocompletes a sentence and one that investigates, decides, and drafts — and why it matters for you.</p>
+      </a>
+      <a class="insight-card" href="insights.html#lost-leads">
+        <span class="kicker">Practice notes</span>
+        <h3>5 places solo practices lose leads without realizing it</h3>
+        <p>The quiet gaps — the enquiry that never got a second follow-up, the invoice nobody chased — that cost more than a bad month of marketing.</p>
+      </a>
+      <a class="insight-card" href="insights.html#industry-landscape">
+        <span class="kicker">Industry brief</span>
+        <h3>AI in coaching &amp; service-business software: where things stand</h3>
+        <p>A grounded look at where AI genuinely helps a solo practice today, and where it's still mostly marketing.</p>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:2rem">
+      <a class="btn ghost" href="insights.html">Read all insights →</a>
+      &nbsp;&nbsp;
+      <a class="btn ghost" href="mailto:shaikhamirhussain2000@gmail.com?subject=Guest%20contribution%20pitch%20for%20CoachOS%20Insights">Pitch us a contribution →</a>
     </div>
   </div>
 </section>
@@ -265,23 +458,23 @@
     <div class="faq reveal">
       <details>
         <summary>Is CoachOS live right now?</summary>
-        <p>Not to the public. We're in invite-only early access, onboarding a small first cohort of real coaches before opening up more broadly. Requesting an invite gets you in line for the next cohort.</p>
+        <p>Not to the public. We're in invite-only early access, onboarding a small first cohort of real coaches, mentors, and freelancers before opening up more broadly. Requesting an invite gets you in line for the next cohort.</p>
       </details>
       <details>
         <summary>Why invite-only instead of open signup?</summary>
-        <p>A platform this broad — leads, delivery, contracts, payments, all AI-assisted — is worth getting right with a small group first. Invite-only lets us onboard each coach properly and fold real feedback into the product before scaling access.</p>
+        <p>A platform this broad — leads, delivery, contracts, marketing, payments, all AI-assisted — is worth getting right with a small group first. Invite-only lets us onboard each business properly and fold real feedback into the product before scaling access.</p>
       </details>
       <details>
-        <summary>What does "AI drafts, you approve" actually mean?</summary>
-        <p>AI writes the first draft of summaries, follow-ups, and content across the platform — but nothing sends, posts, or charges a client without you reviewing and approving the exact wording first. No exceptions, anywhere in the product.</p>
+        <summary>What's actually done by a human vs. AI?</summary>
+        <p>Every capability on this page is tagged plainly — Human, AI, or Human + AI. Some things (your website build, domain setup, the community) are genuinely done by people. Most day-to-day execution — drafting, chasing, flagging, following up — is AI, reviewed and approved by you.</p>
       </details>
       <details>
         <summary>How much will it cost?</summary>
-        <p>Pricing is being finalized for the early access cohort. Coaches who join now lock in founding-member pricing when it's confirmed — you won't pay more later for joining early.</p>
+        <p>Pricing is being finalized for the early access cohort. Coaches, mentors, and freelancers who join now lock in founding-member pricing when it's confirmed — you won't pay more later for joining early.</p>
       </details>
       <details>
         <summary>Is my client data safe?</summary>
-        <p>Coaching notes are sensitive by nature, and we treat security as non-negotiable — client data stays private to you, is never used to train any model, and an independent security review happens before real client data flows through the platform.</p>
+        <p>Client and coaching notes are sensitive by nature, and we treat security as non-negotiable — your data stays private to you, is never used to train any model, and an independent security review happens before real client data flows through the platform.</p>
       </details>
     </div>
   </div>
@@ -291,7 +484,7 @@
   <div class="cta reveal">
     <span class="invite-badge" style="color:var(--brass);background:rgba(240,235,221,.1);border-color:rgba(240,235,221,.25)">🔒 Invite-only early access</span>
     <h2 style="margin-top:.9rem">Request an invite to CoachOS.</h2>
-    <p>We're building this with real coaches, in a small early cohort. Leave your email and we'll reach out personally — no automated queue, no spam.</p>
+    <p>We're building this with real coaches, mentors, and freelancers, in a small early cohort. Leave your email and we'll reach out personally — no automated queue, no spam.</p>
     <form class="waitlist-form" id="waitlist-form">
       <input type="email" id="waitlist-email" placeholder="you@example.com" required aria-label="Email address">
       <button type="submit">Request an invite</button>
@@ -301,7 +494,13 @@
 </section>
 
 <footer>
-  <div>Coach<b style="color:var(--brass)">OS</b> — the AI-powered operating system for coaches &amp; mentors.</div>
+  <div class="foot-links">
+    <a href="insights.html">Insights</a>
+    <a href="checklist.html">Free checklist</a>
+    <a href="#quiz">AI-readiness quiz</a>
+    <a href="mailto:shaikhamirhussain2000@gmail.com?subject=Guest%20contribution%20pitch%20for%20CoachOS%20Insights">Contribute</a>
+  </div>
+  <div>Coach<b style="color:var(--brass)">OS</b> — the agentic AI operating system for coaches, mentors &amp; freelancers.</div>
   <div style="margin-top:.5rem">Questions? <a href="mailto:shaikhamirhussain2000@gmail.com">shaikhamirhussain2000@gmail.com</a></div>
 </footer>
 
@@ -309,7 +508,7 @@
   // Reveal-on-scroll
   var els = document.querySelectorAll('.reveal');
   if('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:.15});
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:.12});
     els.forEach(function(el){ io.observe(el); });
   } else { els.forEach(function(el){ el.classList.add('in'); }); }
 
@@ -322,6 +521,75 @@
     var body = encodeURIComponent('Please add this email to the CoachOS invite-only early access list: ' + email);
     window.location.href = 'mailto:shaikhamirhussain2000@gmail.com?subject=' + subject + '&body=' + body;
   });
+
+  // AI-Readiness quiz — fully client-side, no backend
+  (function(){
+    var questions = document.querySelectorAll('.quiz-q');
+    var total = questions.length;
+    var current = 0;
+    var progress = document.getElementById('quiz-progress');
+    var nextBtn = document.getElementById('quiz-next');
+    var backBtn = document.getElementById('quiz-back');
+    var quizForm = document.getElementById('quiz-form');
+    var resultBox = document.getElementById('quiz-result');
+    var scoreEl = document.getElementById('quiz-score');
+    var bandEl = document.getElementById('quiz-band');
+    var blurbEl = document.getElementById('quiz-blurb');
+
+    function showQuestion(i){
+      questions.forEach(function(q, idx){ q.style.display = (idx === i) ? 'block' : 'none'; });
+      progress.textContent = 'Question ' + (i + 1) + ' of ' + total;
+      backBtn.style.display = i === 0 ? 'none' : 'inline-flex';
+      nextBtn.textContent = (i === total - 1) ? 'See my score →' : 'Next →';
+    }
+
+    function currentAnswered(){
+      var inputs = questions[current].querySelectorAll('input');
+      for (var j = 0; j < inputs.length; j++){ if (inputs[j].checked) return true; }
+      return false;
+    }
+
+    nextBtn.addEventListener('click', function(){
+      if (!currentAnswered()){
+        questions[current].style.outline = '2px solid #8A6A1F';
+        setTimeout(function(){ questions[current].style.outline = 'none'; }, 900);
+        return;
+      }
+      if (current < total - 1){
+        current++;
+        showQuestion(current);
+      } else {
+        var score = 0;
+        questions.forEach(function(q){
+          var inputs = q.querySelectorAll('input');
+          for (var j = 0; j < inputs.length; j++){ if (inputs[j].checked) score += parseInt(inputs[j].value, 10); }
+        });
+        var band, blurb;
+        if (score <= 3){
+          band = 'AI-Curious';
+          blurb = "You're just getting started — CoachOS would take almost everything off your plate from day one, starting with follow-ups and invoicing.";
+        } else if (score <= 7){
+          band = 'AI-Ready';
+          blurb = "You've already got the instincts. Most of your remaining busywork — content, chasing invoices, session notes — can go on autopilot right away.";
+        } else {
+          band = 'Agentic Operator';
+          blurb = "You already think this way. You're exactly who we built the invite-only cohort for — let's connect the last few pieces.";
+        }
+        scoreEl.textContent = score + '/10';
+        bandEl.textContent = band;
+        blurbEl.textContent = blurb;
+        quizForm.classList.add('hidden');
+        progress.style.display = 'none';
+        resultBox.classList.add('show');
+      }
+    });
+
+    backBtn.addEventListener('click', function(){
+      if (current > 0){ current--; showQuestion(current); }
+    });
+
+    showQuestion(0);
+  })();
 </script>
 
 </body>
