@@ -7,15 +7,13 @@
 <meta name="description" content="Why CoachOS is built differently: AI handles the admin and repetition around your coaching, mentoring, or freelance practice — never the client relationship itself.">
 <link rel="canonical" href="https://amir9078.github.io/coachos-site/why.html">
 <meta name="robots" content="index, follow">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <style>
   .compare{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;max-width:900px;margin:0 auto}
   @media(max-width:700px){.compare{grid-template-columns:1fr}}
-  .compare-col{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.8rem}
-  .compare-col.win{border-color:var(--mint-dim);box-shadow:0 0 0 1px rgba(124,255,178,.15)}
+  .compare-col{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.8rem;transition:transform .25s ease}
+  .compare-col.win{border-color:var(--mint-dim);box-shadow:0 0 0 1px rgba(46,107,79,.15)}
+  .compare-col.win:hover{transform:translateY(-4px)}
   .compare-col h3{font-size:1.05rem;margin-bottom:1rem;font-family:var(--display)}
   .compare-col ul{list-style:none;margin:0;padding:0}
   .compare-col li{color:var(--ink-soft);font-size:.92rem;padding:.55rem 0;border-top:1px solid var(--line);display:flex;gap:.6rem}
@@ -47,7 +45,7 @@
 <section class="pagehead">
   <div class="wrap">
     <span class="kicker">Why this is different</span>
-    <h1>AI infrastructure. <span style="color:var(--mint)">Not an AI replacement.</span></h1>
+    <h1><span class="split-text">AI infrastructure. <span class="accent">Not an AI replacement.</span></span></h1>
     <p>CoachOS is built AI-first — but the AI never coaches, mentors, or does the client relationship for you. It handles the admin and repetition around your work, so more of your time goes to the work itself.</p>
   </div>
 </section>

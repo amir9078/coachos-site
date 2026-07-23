@@ -7,9 +7,6 @@
 <meta name="description" content="Every part of running a coaching, mentoring, or freelance business — website and domain setup, lead generation, marketing, client delivery, billing, and more — tagged plainly as Human, AI, or both.">
 <link rel="canonical" href="https://amir9078.github.io/coachos-site/services.html">
 <meta name="robots" content="index, follow">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <style>
   .cat-head{max-width:70ch;margin:0 auto 1.2rem}
@@ -17,10 +14,11 @@
   .cat-head p{color:var(--ink-soft);font-size:.92rem}
   .cat-block{margin-bottom:2.8rem}
   .filter-row{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.6rem}
-  .filter-btn{font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;padding:.45rem 1rem;border-radius:20px;border:1px solid var(--line-strong);background:transparent;color:var(--ink-soft);cursor:pointer;transition:all .15s ease}
-  .filter-btn:hover{border-color:var(--mint-dim);color:var(--ink)}
-  .filter-btn.active{background:var(--mint);color:#04140B;border-color:var(--mint)}
-  .card.faded{opacity:.25;pointer-events:none}
+  .filter-btn{font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;padding:.45rem 1rem;border-radius:20px;border:1px solid var(--line-strong);background:transparent;color:var(--ink-soft);cursor:none;transition:all .2s cubic-bezier(.2,.8,.2,1)}
+  @media(hover:none),(pointer:coarse){ .filter-btn{cursor:pointer} }
+  .filter-btn:hover{border-color:var(--mint-dim);color:var(--ink);transform:translateY(-2px)}
+  .filter-btn.active{background:var(--mint);color:var(--bg);border-color:var(--mint)}
+  .card.faded{opacity:.2;filter:blur(1px);pointer-events:none;transform:scale(.97)!important}
 </style>
 </head>
 <body>
@@ -44,7 +42,7 @@
 <section class="pagehead">
   <div class="wrap">
     <span class="kicker">What you get</span>
-    <h1>Every room of your business, <span class="accent" style="color:var(--mint)">mapped plainly.</span></h1>
+    <h1><span class="split-text">Every room of your business, <span class="accent">mapped plainly.</span></span></h1>
     <p>Nothing hidden behind vague "AI-powered" marketing. Filter by who actually does the work.</p>
   </div>
 </section>

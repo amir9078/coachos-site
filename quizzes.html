@@ -7,12 +7,10 @@
 <meta name="description" content="Ten free, in-depth assessments for coaches, mentors, freelancers, and service businesses — lead leakage, retention risk, burnout, billing, marketing, and more. Get your score and a personalized breakdown.">
 <link rel="canonical" href="https://amir9078.github.io/coachos-site/quizzes.html">
 <meta name="robots" content="index, follow">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <style>
-  .qcard{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1.5rem;cursor:pointer;transition:transform .18s,box-shadow .18s,border-color .18s;text-align:left}
+  .qcard{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1.5rem;cursor:none;transition:transform .18s,box-shadow .18s,border-color .18s;text-align:left}
+  @media(hover:none),(pointer:coarse){ .qcard{cursor:pointer} }
   .qcard:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--mint-dim)}
   .qcard .glyph{font-family:var(--display);font-size:1.6rem;color:var(--mint);display:block;margin-bottom:.6rem}
   .qcard h3{font-size:1.05rem;margin-bottom:.5rem;font-family:var(--display)}
@@ -25,7 +23,8 @@
   .quiz-title{font-size:1.3rem;margin-bottom:1.2rem;font-family:var(--display)}
   .quiz-progress{font-family:var(--mono);font-size:.7rem;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.08em;margin-bottom:1.2rem}
   .qtext{font-weight:600;margin-bottom:.8rem;display:block;font-size:1.02rem}
-  .qopt{display:block;padding:.7rem .9rem;border:1px solid var(--line);border-radius:5px;margin-bottom:.55rem;cursor:pointer;font-size:.94rem;color:var(--ink-soft);transition:border-color .15s}
+  .qopt{display:block;padding:.7rem .9rem;border:1px solid var(--line);border-radius:5px;margin-bottom:.55rem;cursor:none;font-size:.94rem;color:var(--ink-soft);transition:border-color .15s}
+  @media(hover:none),(pointer:coarse){ .qopt{cursor:pointer} }
   .qopt:hover{border-color:var(--mint-dim)}
   .qopt input{margin-right:.6rem}
   .quiz-actions{display:flex;justify-content:space-between;align-items:center;margin-top:1.6rem}
@@ -38,7 +37,8 @@
   .lead-form p.ask{font-size:.95rem;color:var(--ink-soft);max-width:40ch;margin:0 auto 1rem}
   .lead-form form{display:flex;gap:.6rem;max-width:380px;margin:0 auto 1rem;flex-wrap:wrap;justify-content:center}
   .lead-form input{flex:1;min-width:200px;padding:.75rem .9rem;border-radius:5px;border:1px solid var(--line-strong);background:var(--bg);color:var(--ink);font-size:.94rem}
-  .lead-form button{background:var(--mint);color:#04140B;border:none;padding:.75rem 1.3rem;border-radius:5px;font-weight:700;cursor:pointer;font-size:.94rem}
+  .lead-form button{background:var(--mint);color:var(--bg);border:none;padding:.75rem 1.3rem;border-radius:5px;font-weight:700;cursor:none;font-size:.94rem}
+  @media(hover:none),(pointer:coarse){ .lead-form button{cursor:pointer} }
   .lead-note{font-size:.78rem;color:var(--ink-dim);margin-top:.6rem}
 
   .back-link{text-align:center;margin-top:1.2rem}
@@ -66,7 +66,7 @@
 <section class="pagehead">
   <div class="wrap">
     <span class="kicker">10 free assessments · ~10–15 min each</span>
-    <h1>Find out what's quietly costing you <span style="color:var(--mint)">clients, time, or money.</span></h1>
+    <h1><span class="split-text">Find out what's quietly costing you <span class="accent">clients, time, or money.</span></span></h1>
     <p>Pick the problem that's been nagging at you. Answer honestly, question by question. Get a real score, a personalized breakdown, and exactly what to fix first.</p>
   </div>
 </section>
@@ -388,6 +388,7 @@ function showResult(){
   rtForm.style.display = 'none';
   rtResult.style.display = 'block';
   window._lastQuizResult = { quiz: current.title, score: score, max: max, band: band.label };
+  if (window.coachosConfetti) window.coachosConfetti();
 }
 
 document.getElementById('rt-restart').addEventListener('click', function(e){
