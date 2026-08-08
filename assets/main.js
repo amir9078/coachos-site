@@ -217,7 +217,7 @@
   // Hero split-text headings are above the fold on load — reveal immediately
   // rather than waiting on a scroll-triggered observer that may never fire.
   window.addEventListener('load', function () {
-    document.querySelectorAll('.hero .split-text, .pagehead .split-text').forEach(reveal);
+    document.querySelectorAll('.hero .split-text, .pagehead .split-text, .gate .split-text').forEach(reveal);
   });
 
   // ---------- Animated number counters ----------

@@ -60,7 +60,6 @@
   @media(hover:none),(pointer:coarse){ .filter-btn{cursor:pointer} }
   .filter-btn:hover{border-color:var(--mint-dim);color:var(--ink);transform:translateY(-2px)}
   .filter-btn.active{background:var(--mint);color:var(--bg);border-color:var(--mint)}
-  .card.faded{opacity:.2;filter:blur(1px);pointer-events:none;transform:scale(.97)!important}
   .tag-live{color:var(--mint);background:var(--mint-soft);border-color:rgba(46,107,79,.3)}
   .persona-links{display:flex;gap:1.4rem;justify-content:center;flex-wrap:wrap;margin-top:1.2rem}
   .persona-links a{font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;font-size:.75rem}
@@ -127,7 +126,7 @@
       <button class="filter-btn" data-filter="mentors">For Mentors</button>
     </div>
 
-    <div class="cat-block reveal" id="website">
+    <div class="cat-block reveal" id="website" data-filter-group="website">
       <div class="cat-head">
         <h3>Getting you live</h3>
         <p>Everything a real online presence needs — designed, built, and connected by our team, not a template you're left to configure alone.</p>
@@ -140,7 +139,7 @@
       </div>
     </div>
 
-    <div class="cat-block reveal">
+    <div class="cat-block reveal" id="marketing" data-filter-group="marketing">
       <div class="cat-head">
         <h3>Getting you seen</h3>
         <p>Getting found, and staying front-of-mind, without writing every post yourself.</p>
@@ -153,7 +152,7 @@
       </div>
     </div>
 
-    <div class="cat-block reveal" id="leads">
+    <div class="cat-block reveal" id="leads" data-filter-group="leads">
       <div class="cat-head">
         <h3>Getting you paid</h3>
         <p>Once someone reaches out, nothing falls through the cracks, and someone's actually helping you close.</p>
@@ -165,10 +164,10 @@
       </div>
     </div>
 
-    <div class="cat-block reveal" id="mentors">
+    <div class="cat-block reveal" id="mentors" data-filter-group="mentors">
       <div class="cat-head">
         <h3>For mentors</h3>
-        <p>The same foundation, built around one-on-one mentorship specifically.</p>
+        <p>Also taking on 1:1 mentees? The same foundation, built around mentorship specifically — open to anyone, not a separate page.</p>
       </div>
       <div class="grid">
         <a class="card" data-cat="mentors" href="service-mentor-positioning.html"><span class="tag tag-live">Done for you</span><h3>Mentor positioning &amp; offer setup</h3><p>Turn what you know into a mentorship offer people understand in one sentence — not a vague pitch.</p></a>
@@ -222,18 +221,15 @@
 <script src="assets/main.js"></script>
 <script>
   var filterBtns = document.querySelectorAll('.filter-btn');
-  var cards = document.querySelectorAll('.card[data-cat]');
+  var catBlocks = document.querySelectorAll('.cat-block[data-filter-group]');
   filterBtns.forEach(function(btn){
     btn.addEventListener('click', function(){
       filterBtns.forEach(function(b){ b.classList.remove('active'); });
       btn.classList.add('active');
       var filter = btn.getAttribute('data-filter');
-      cards.forEach(function(card){
-        if (filter === 'all' || card.getAttribute('data-cat') === filter){
-          card.classList.remove('faded');
-        } else {
-          card.classList.add('faded');
-        }
+      catBlocks.forEach(function(block){
+        var match = filter === 'all' || block.getAttribute('data-filter-group') === filter;
+        block.hidden = !match;
       });
     });
   });
