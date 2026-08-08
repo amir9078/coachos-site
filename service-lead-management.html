@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lead Management for Coaches &amp; Mentors | CoachOS Services</title>
+<meta name="description" content="A clean pipeline for every conversation, so no enquiry goes quiet just because your week got busy.">
+<link rel="canonical" href="https://amir9078.github.io/coachos-site/service-lead-management.html">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="scroll-progress"></div>
+<header class="site">
+  <nav class="nav">
+    <a class="wordmark" href="index.html"><span class="dot"></span>Coach<em>OS</em></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="platform.html">Platform</a>
+      <a href="insights.html">Insights</a>
+      <a href="quizzes.html">Assessments</a>
+      <a href="why-us.html">Why</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a class="nav-cta" href="#get-started">Get started</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+  </nav>
+</header>
+
+<section class="pagehead">
+  <div class="wrap">
+    <span class="kicker">Leads &amp; Sales</span>
+    <h1><span class="split-text">No enquiry goes quiet — <span class="accent">ever again.</span></span></h1>
+    <p>A clean pipeline for every conversation, not five inboxes and a memory.</p>
+  </div>
+</section>
+
+<section id="problem">
+  <div class="wrap-narrow">
+    <div class="sec-head reveal">
+      <span class="kicker">The problem</span>
+      <h2>Most lost clients were lost to silence</h2>
+      <p>An enquiry comes in on a good week and gets a reply. It comes in on a bad week and sits in an inbox until it's too late to matter. Most lost clients were never lost to a competitor — just to silence.</p>
+    </div>
+  </div>
+</section>
+
+<section id="solution">
+  <div class="wrap-narrow">
+    <div class="sec-head reveal">
+      <span class="kicker">The solution</span>
+      <h2>One pipeline, not five inboxes</h2>
+      <p>We set up a clean pipeline for every conversation, so nothing depends on how busy your week happens to be.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">How we help</span>
+      <h2>What's actually included</h2>
+    </div>
+    <div class="grid reveal">
+      <div class="card"><h3>Everything in one place</h3><p>Every enquiry tracked in one pipeline, not scattered across inboxes and DMs.</p></div>
+      <div class="card"><h3>Follow-up on schedule</h3><p>Happens on a schedule, not on memory — nothing depends on you remembering.</p></div>
+      <div class="card"><h3>Full visibility</h3><p>See exactly where every conversation stands, at a glance.</p></div>
+      <div class="card"><h3>Ready to hand to sales</h3><p>Built to hand straight over the moment someone's ready to talk.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="get-started">
+  <div class="invite-band reveal">
+    <span class="badge badge-mint">✦ No invite needed</span>
+    <h2 style="margin-top:.9rem">Ready for a pipeline that doesn't leak?</h2>
+    <p>Leave your email and we'll reach out personally to scope it.</p>
+    <form class="waitlist-form" id="service-form">
+      <input type="email" id="service-email" placeholder="you@example.com" required aria-label="Email address">
+      <button type="submit">Get started</button>
+    </form>
+    <p class="waitlist-note">No spam, ever — just a personal reply.</p>
+  </div>
+</section>
+
+<section id="related">
+  <div class="wrap-narrow">
+    <div class="sec-head reveal">
+      <span class="kicker">Related</span>
+      <h2>Goes naturally with</h2>
+    </div>
+    <div class="persona-links reveal" style="display:flex;gap:1.4rem;justify-content:center;flex-wrap:wrap">
+      <a href="service-lead-generation.html">Lead generation →</a>
+      <a href="service-sales.html">Sales &amp; closing support →</a>
+      <a href="services.html">← Back to all services</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="foot-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="platform.html">Platform</a>
+    <a href="insights.html">Insights</a>
+    <a href="news.html">News</a>
+    <a href="quizzes.html">Assessments</a>
+    <a href="checklist.html">Free checklist</a>
+    <a href="why-us.html">Why</a>
+    <a href="contact.html">Contact</a>
+    <a href="access.html">How access works</a>
+  </div>
+  <div class="foot-brand">Coach<b style="color:var(--mint)">OS</b> — the agentic AI nervous system for coaches, mentors &amp; freelancers.</div>
+</footer>
+
+<script src="assets/main.js"></script>
+<script>
+  var serviceForm = document.getElementById('service-form');
+  serviceForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = document.getElementById('service-email').value;
+    var btn = serviceForm.querySelector('button');
+    var originalLabel = btn.textContent;
+    btn.textContent = 'Submitting…';
+    window.coachosSubmitLead({ email: email, source: 'service:lead-management' }).then(function(result){
+      if (result.ok){
+        serviceForm.outerHTML = '<p style="color:var(--mint);font-weight:700;font-size:1.05rem">Got it — we\'ll reach out personally soon.</p>';
+      } else {
+        var subject = encodeURIComponent('CoachOS lead management service enquiry');
+        var body = encodeURIComponent('I want to get started with lead management. Please reach out to this email: ' + email);
+        window.location.href = 'mailto:shaikhamirhussain2000@gmail.com?subject=' + subject + '&body=' + body;
+        btn.textContent = originalLabel;
+      }
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getting Matched With Mentees | CoachOS Services</title>
+<meta name="description" content="Listed in the CoachOS coach & mentor directory (invite-only) so the right people can actually find you.">
+<link rel="canonical" href="https://amir9078.github.io/coachos-site/service-mentee-matching.html">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="scroll-progress"></div>
+<header class="site">
+  <nav class="nav">
+    <a class="wordmark" href="index.html"><span class="dot"></span>Coach<em>OS</em></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="platform.html">Platform</a>
+      <a href="insights.html">Insights</a>
+      <a href="quizzes.html">Assessments</a>
+      <a href="why-us.html">Why</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a class="nav-cta" href="#get-started">Get started</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+  </nav>
+</header>
+
+<section class="pagehead">
+  <div class="wrap">
+    <span class="kicker">For Mentors</span>
+    <h1><span class="split-text">Findable by the people <span class="accent">who're actually looking.</span></span></h1>
+    <p>A structured offer goes nowhere if nobody sees it. We put you where the right mentees are actually browsing.</p>
+  </div>
+</section>
+
+<section id="problem">
+  <div class="wrap-narrow">
+    <div class="sec-head reveal">
+      <span class="kicker">The problem</span>
+      <h2>Most matches still happen by accident</h2>
+      <p>Even a well-structured mentorship offer goes nowhere if the people who need it never see it — most mentor-mentee matches still happen by pure chance, not by design.</p>
+    </div>
+  </div>
+</section>
+
+<section id="solution">
+  <div class="wrap-narrow">
+    <div class="sec-head reveal">
+      <span class="kicker">The solution</span>
+      <h2>Listed where people are genuinely looking</h2>
+      <p>Once your offer is set up, we list you in the CoachOS coach &amp; mentor directory — invite-only, so the people browsing it are genuinely looking, not casually scrolling.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">How we help</span>
+      <h2>What's actually included</h2>
+    </div>
+    <div class="grid reveal">
+      <div class="card"><h3>Listed under your specialty</h3><p>Not a generic "mentor" category — findable by exactly what you offer.</p></div>
+      <div class="card"><h3>Discoverable two ways</h3><p>By potential mentees directly, and by other coaches referring business your way.</p></div>
+      <div class="card"><h3>A genuinely useful room</h3><p>Invite-only access keeps the directory made of real, active practices.</p></div>
+      <div class="card"><h3>Requires a Platform invite</h3><p>Part of the invite-only Platform &amp; network — see what that involves.</p></div>
+    </div>
+    <p style="text-align:center;margin-top:2rem"><a class="btn ghost" href="coach-database.html">See the Coach Database →</a></p>
+  </div>
+</section>
+
+<section id="get-started">
+  <div class="invite-band reveal">
+    <span class="badge badge-mint">✦ No invite needed to get set up</span>
+    <h2 style="margin-top:.9rem">Ready to get your mentorship offer set up?</h2>
+    <p>Leave your email and we'll reach out personally to scope it. The directory listing itself opens once you're through the Platform invite.</p>
+    <form class="waitlist-form" id="service-form">
+      <input type="email" id="service-email" placeholder="you@example.com" required aria-label="Email address">
+      <button type="submit">Get started</button>
+    </form>
+    <p class="waitlist-note">No spam, ever — just a personal reply.</p>
+  </div>
+</section>
+
+<section id="related">
+  <div class="wrap-narrow">
+    <div class="sec-head reveal">
+      <span class="kicker">Related</span>
+      <h2>Goes naturally with</h2>
+    </div>
+    <div class="persona-links reveal" style="display:flex;gap:1.4rem;justify-content:center;flex-wrap:wrap">
+      <a href="service-mentor-positioning.html">Mentor positioning &amp; offer setup →</a>
+      <a href="service-mentorship-program.html">1:1 mentorship program setup →</a>
+      <a href="services.html">← Back to all services</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="foot-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="platform.html">Platform</a>
+    <a href="insights.html">Insights</a>
+    <a href="news.html">News</a>
+    <a href="quizzes.html">Assessments</a>
+    <a href="checklist.html">Free checklist</a>
+    <a href="why-us.html">Why</a>
+    <a href="contact.html">Contact</a>
+    <a href="access.html">How access works</a>
+  </div>
+  <div class="foot-brand">Coach<b style="color:var(--mint)">OS</b> — the agentic AI nervous system for coaches, mentors &amp; freelancers.</div>
+</footer>
+
+<script src="assets/main.js"></script>
+<script>
+  var serviceForm = document.getElementById('service-form');
+  serviceForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = document.getElementById('service-email').value;
+    var btn = serviceForm.querySelector('button');
+    var originalLabel = btn.textContent;
+    btn.textContent = 'Submitting…';
+    window.coachosSubmitLead({ email: email, source: 'service:mentee-matching' }).then(function(result){
+      if (result.ok){
+        serviceForm.outerHTML = '<p style="color:var(--mint);font-weight:700;font-size:1.05rem">Got it — we\'ll reach out personally soon.</p>';
+      } else {
+        var subject = encodeURIComponent('CoachOS mentee matching service enquiry');
+        var body = encodeURIComponent('I want to get started, with an eye toward the mentee-matching directory. Please reach out to this email: ' + email);
+        window.location.href = 'mailto:shaikhamirhussain2000@gmail.com?subject=' + subject + '&body=' + body;
+        btn.textContent = originalLabel;
+      }
+    });
+  });
+</script>
+</body>
+</html>

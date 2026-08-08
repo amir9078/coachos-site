@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sales &amp; Closing Support for Coaches &amp; Mentors | CoachOS Services</title>
+<meta name="description" content="Someone in your corner for the conversation that actually closes the deal — scripts, objection handling, and real support on live calls if you want it.">
+<link rel="canonical" href="https://amir9078.github.io/coachos-site/service-sales.html">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="scroll-progress"></div>
+<header class="site">
+  <nav class="nav">
+    <a class="wordmark" href="index.html"><span class="dot"></span>Coach<em>OS</em></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="platform.html">Platform</a>
+      <a href="insights.html">Insights</a>
+      <a href="quizzes.html">Assessments</a>
+      <a href="why-us.html">Why</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a class="nav-cta" href="#get-started">Get started</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+  </nav>
+</header>
+
+<section class="pagehead">
+  <div class="wrap">
+    <span class="kicker">Leads &amp; Sales</span>
+    <h1><span class="split-text">Someone in your corner <span class="accent">when it's time to close.</span></span></h1>
+    <p>Messaging, objection handling, and real support on the calls that actually convert.</p>
+  </div>
+</section>
+
+<section id="problem">
+  <div class="wrap-narrow">
+    <div class="sec-head reveal">
+      <span class="kicker">The problem</span>
+      <h2>Doing the work and selling the work are different skills</h2>
+      <p>Being great at coaching or mentoring and being great at selling it are different skills entirely, and most coaches and mentors were never taught the second one — so good leads quietly go nowhere.</p>
+    </div>
+  </div>
+</section>
+
+<section id="solution">
+  <div class="wrap-narrow">
+    <div class="sec-head reveal">
+      <span class="kicker">The solution</span>
+      <h2>Real support for the conversation that matters</h2>
+      <p>We help with the messaging and the objection handling, and — if you want it — provide real support on the calls where a lead actually becomes a client.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">How we help</span>
+      <h2>What's actually included</h2>
+    </div>
+    <div class="grid reveal">
+      <div class="card"><h3>Messaging &amp; scripts</h3><p>For the conversations that actually convert, not generic sales lines.</p></div>
+      <div class="card"><h3>Objection handling</h3><p>Based on what actually comes up in your specific niche.</p></div>
+      <div class="card"><h3>Support on live calls</h3><p>If and when you want it — not mandatory, always available.</p></div>
+      <div class="card"><h3>Built on your pipeline</h3><p>Works with a system that already knows where every conversation stands.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="get-started">
+  <div class="invite-band reveal">
+    <span class="badge badge-mint">✦ No invite needed</span>
+    <h2 style="margin-top:.9rem">Ready to actually close what's already in your pipeline?</h2>
+    <p>Leave your email and we'll reach out personally to scope it.</p>
+    <form class="waitlist-form" id="service-form">
+      <input type="email" id="service-email" placeholder="you@example.com" required aria-label="Email address">
+      <button type="submit">Get started</button>
+    </form>
+    <p class="waitlist-note">No spam, ever — just a personal reply.</p>
+  </div>
+</section>
+
+<section id="related">
+  <div class="wrap-narrow">
+    <div class="sec-head reveal">
+      <span class="kicker">Related</span>
+      <h2>Goes naturally with</h2>
+    </div>
+    <div class="persona-links reveal" style="display:flex;gap:1.4rem;justify-content:center;flex-wrap:wrap">
+      <a href="service-lead-management.html">Lead management →</a>
+      <a href="service-lead-generation.html">Lead generation →</a>
+      <a href="services.html">← Back to all services</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="foot-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="platform.html">Platform</a>
+    <a href="insights.html">Insights</a>
+    <a href="news.html">News</a>
+    <a href="quizzes.html">Assessments</a>
+    <a href="checklist.html">Free checklist</a>
+    <a href="why-us.html">Why</a>
+    <a href="contact.html">Contact</a>
+    <a href="access.html">How access works</a>
+  </div>
+  <div class="foot-brand">Coach<b style="color:var(--mint)">OS</b> — the agentic AI nervous system for coaches, mentors &amp; freelancers.</div>
+</footer>
+
+<script src="assets/main.js"></script>
+<script>
+  var serviceForm = document.getElementById('service-form');
+  serviceForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = document.getElementById('service-email').value;
+    var btn = serviceForm.querySelector('button');
+    var originalLabel = btn.textContent;
+    btn.textContent = 'Submitting…';
+    window.coachosSubmitLead({ email: email, source: 'service:sales' }).then(function(result){
+      if (result.ok){
+        serviceForm.outerHTML = '<p style="color:var(--mint);font-weight:700;font-size:1.05rem">Got it — we\'ll reach out personally soon.</p>';
+      } else {
+        var subject = encodeURIComponent('CoachOS sales support service enquiry');
+        var body = encodeURIComponent('I want to get started with sales & closing support. Please reach out to this email: ' + email);
+        window.location.href = 'mailto:shaikhamirhussain2000@gmail.com?subject=' + subject + '&body=' + body;
+        btn.textContent = originalLabel;
+      }
+    });
+  });
+</script>
+</body>
+</html>

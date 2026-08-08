@@ -99,7 +99,7 @@
     }
     requestAnimationFrame(animateRing);
 
-    var hoverables = 'a, button, .card, .hub-card, .acc-btn, input, .qcard, .filter-btn';
+    var hoverables = 'a, button, .card, .hub-card, .gate-card, .acc-btn, input, .qcard, .filter-btn';
     document.addEventListener('mouseover', function (e) {
       if (e.target.closest && e.target.closest(hoverables)) ring.classList.add('hover');
     });
@@ -136,7 +136,7 @@
 
   // ---------- Tilt-on-hover cards ----------
   if (!isTouch) {
-    document.querySelectorAll('.card, .hub-card').forEach(function (card) {
+    document.querySelectorAll('.card, .hub-card, .gate-card').forEach(function (card) {
       card.addEventListener('mousemove', function (e) {
         var r = card.getBoundingClientRect();
         var px = (e.clientX - r.left) / r.width - 0.5;
@@ -291,6 +291,24 @@
       }
     });
   });
+
+  // ---------- Mobile nav toggle ----------
+  var navToggle = document.querySelector('.nav-toggle');
+  var navLinks = document.querySelector('.nav-links');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', function () {
+      var open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      navToggle.textContent = open ? '✕' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        navLinks.classList.remove('open');
+        navToggle.textContent = '☰';
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
 
   // ---------- Active nav link ----------
   var here = location.pathname.split('/').pop() || 'index.html';

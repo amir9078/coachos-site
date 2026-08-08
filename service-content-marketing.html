@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Content Marketing for Coaches &amp; Mentors | CoachOS Services</title>
+<meta name="description" content="Articles and posts drafted from your real expertise and themes — never a blank page, never something that sounds like everyone else.">
+<link rel="canonical" href="https://amir9078.github.io/coachos-site/service-content-marketing.html">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="scroll-progress"></div>
+<header class="site">
+  <nav class="nav">
+    <a class="wordmark" href="index.html"><span class="dot"></span>Coach<em>OS</em></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="platform.html">Platform</a>
+      <a href="insights.html">Insights</a>
+      <a href="quizzes.html">Assessments</a>
+      <a href="why-us.html">Why</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a class="nav-cta" href="#get-started">Get started</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+  </nav>
+</header>
+
+<section class="pagehead">
+  <div class="wrap">
+    <span class="kicker">Marketing &amp; Visibility</span>
+    <h1><span class="split-text">Never a blank page — <span class="accent">never generic.</span></span></h1>
+    <p>Articles and posts drafted from your real expertise, reviewed and approved by you.</p>
+  </div>
+</section>
+
+<section id="problem">
+  <div class="wrap-narrow">
+    <div class="sec-head reveal">
+      <span class="kicker">The problem</span>
+      <h2>The blank page always wins</h2>
+      <p>You know exactly what your clients need to hear — and never have the hour it takes to sit down and write it properly, so the blank page always wins and the writing never happens.</p>
+    </div>
+  </div>
+</section>
+
+<section id="solution">
+  <div class="wrap-narrow">
+    <div class="sec-head reveal">
+      <span class="kicker">The solution</span>
+      <h2>Drafted from what you actually know</h2>
+      <p>We draft articles and posts from your real expertise and themes — reviewed and approved by you before anything goes out, so it always sounds like you.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">How we help</span>
+      <h2>What's actually included</h2>
+    </div>
+    <div class="grid reveal">
+      <div class="card"><h3>Drafted from real expertise</h3><p>Built from what you actually know, not generic advice everyone else is already writing.</p></div>
+      <div class="card"><h3>You approve everything</h3><p>Reviewed by you first — nothing publishes without your sign-off.</p></div>
+      <div class="card"><h3>Consistent output</h3><p>Regular content without you ever staring at a blank page.</p></div>
+      <div class="card"><h3>Feeds your other channels</h3><p>Powers your social posts and email marketing, not a separate effort.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="get-started">
+  <div class="invite-band reveal">
+    <span class="badge badge-mint">✦ No invite needed</span>
+    <h2 style="margin-top:.9rem">Ready for content that sounds like you?</h2>
+    <p>Leave your email and we'll reach out personally to scope it.</p>
+    <form class="waitlist-form" id="service-form">
+      <input type="email" id="service-email" placeholder="you@example.com" required aria-label="Email address">
+      <button type="submit">Get started</button>
+    </form>
+    <p class="waitlist-note">No spam, ever — just a personal reply.</p>
+  </div>
+</section>
+
+<section id="related">
+  <div class="wrap-narrow">
+    <div class="sec-head reveal">
+      <span class="kicker">Related</span>
+      <h2>Goes naturally with</h2>
+    </div>
+    <div class="persona-links reveal" style="display:flex;gap:1.4rem;justify-content:center;flex-wrap:wrap">
+      <a href="service-social-marketing.html">Social media marketing →</a>
+      <a href="service-email-marketing.html">Email marketing →</a>
+      <a href="service-personal-branding.html">Personal branding →</a>
+      <a href="services.html">← Back to all services</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="foot-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="platform.html">Platform</a>
+    <a href="insights.html">Insights</a>
+    <a href="news.html">News</a>
+    <a href="quizzes.html">Assessments</a>
+    <a href="checklist.html">Free checklist</a>
+    <a href="why-us.html">Why</a>
+    <a href="contact.html">Contact</a>
+    <a href="access.html">How access works</a>
+  </div>
+  <div class="foot-brand">Coach<b style="color:var(--mint)">OS</b> — the agentic AI nervous system for coaches, mentors &amp; freelancers.</div>
+</footer>
+
+<script src="assets/main.js"></script>
+<script>
+  var serviceForm = document.getElementById('service-form');
+  serviceForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = document.getElementById('service-email').value;
+    var btn = serviceForm.querySelector('button');
+    var originalLabel = btn.textContent;
+    btn.textContent = 'Submitting…';
+    window.coachosSubmitLead({ email: email, source: 'service:content-marketing' }).then(function(result){
+      if (result.ok){
+        serviceForm.outerHTML = '<p style="color:var(--mint);font-weight:700;font-size:1.05rem">Got it — we\'ll reach out personally soon.</p>';
+      } else {
+        var subject = encodeURIComponent('CoachOS content marketing service enquiry');
+        var body = encodeURIComponent('I want to get started with content marketing. Please reach out to this email: ' + email);
+        window.location.href = 'mailto:shaikhamirhussain2000@gmail.com?subject=' + subject + '&body=' + body;
+        btn.textContent = originalLabel;
+      }
+    });
+  });
+</script>
+</body>
+</html>

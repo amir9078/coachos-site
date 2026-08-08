@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mentor Positioning &amp; Offer Setup | CoachOS Services</title>
+<meta name="description" content="Turn what you know into a mentorship offer people understand in one sentence — not a vague pitch.">
+<link rel="canonical" href="https://amir9078.github.io/coachos-site/service-mentor-positioning.html">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="scroll-progress"></div>
+<header class="site">
+  <nav class="nav">
+    <a class="wordmark" href="index.html"><span class="dot"></span>Coach<em>OS</em></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="platform.html">Platform</a>
+      <a href="insights.html">Insights</a>
+      <a href="quizzes.html">Assessments</a>
+      <a href="why-us.html">Why</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a class="nav-cta" href="#get-started">Get started</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+  </nav>
+</header>
+
+<section class="pagehead">
+  <div class="wrap">
+    <span class="kicker">For Mentors</span>
+    <h1><span class="split-text">An offer people understand <span class="accent">in one sentence.</span></span></h1>
+    <p>What you know, turned into something specific enough to actually sell.</p>
+  </div>
+</section>
+
+<section id="problem">
+  <div class="wrap-narrow">
+    <div class="sec-head reveal">
+      <span class="kicker">The problem</span>
+      <h2>"I mentor people" is a category, not an offer</h2>
+      <p>Without a specific, nameable offer, most mentorship happens by accident — through a referral or a post that did well once — never on purpose, and never predictably.</p>
+    </div>
+  </div>
+</section>
+
+<section id="solution">
+  <div class="wrap-narrow">
+    <div class="sec-head reveal">
+      <span class="kicker">The solution</span>
+      <h2>A specific offer, built from what you actually know</h2>
+      <p>We turn your expertise into a specific mentorship offer — who it's for, what it delivers, and why you're the one giving it — something people understand and repeat in one sentence.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">How we help</span>
+      <h2>What's actually included</h2>
+    </div>
+    <div class="grid reveal">
+      <div class="card"><h3>A nameable offer</h3><p>Specific enough to repeat, instead of a vague pitch nobody remembers.</p></div>
+      <div class="card"><h3>Tested positioning</h3><p>Checked against what people in your niche actually search for.</p></div>
+      <div class="card"><h3>Consistent everywhere</h3><p>Across your website, profiles, and directory listing.</p></div>
+      <div class="card"><h3>The foundation for setup</h3><p>Feeds directly into your program structure and pricing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="get-started">
+  <div class="invite-band reveal">
+    <span class="badge badge-mint">✦ No invite needed</span>
+    <h2 style="margin-top:.9rem">Ready to name what you actually offer?</h2>
+    <p>Leave your email and we'll reach out personally to scope it.</p>
+    <form class="waitlist-form" id="service-form">
+      <input type="email" id="service-email" placeholder="you@example.com" required aria-label="Email address">
+      <button type="submit">Get started</button>
+    </form>
+    <p class="waitlist-note">No spam, ever — just a personal reply.</p>
+  </div>
+</section>
+
+<section id="related">
+  <div class="wrap-narrow">
+    <div class="sec-head reveal">
+      <span class="kicker">Related</span>
+      <h2>Goes naturally with</h2>
+    </div>
+    <div class="persona-links reveal" style="display:flex;gap:1.4rem;justify-content:center;flex-wrap:wrap">
+      <a href="service-mentorship-program.html">1:1 mentorship program setup →</a>
+      <a href="service-mentee-matching.html">Getting matched with mentees →</a>
+      <a href="services.html">← Back to all services</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="foot-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="platform.html">Platform</a>
+    <a href="insights.html">Insights</a>
+    <a href="news.html">News</a>
+    <a href="quizzes.html">Assessments</a>
+    <a href="checklist.html">Free checklist</a>
+    <a href="why-us.html">Why</a>
+    <a href="contact.html">Contact</a>
+    <a href="access.html">How access works</a>
+  </div>
+  <div class="foot-brand">Coach<b style="color:var(--mint)">OS</b> — the agentic AI nervous system for coaches, mentors &amp; freelancers.</div>
+</footer>
+
+<script src="assets/main.js"></script>
+<script>
+  var serviceForm = document.getElementById('service-form');
+  serviceForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = document.getElementById('service-email').value;
+    var btn = serviceForm.querySelector('button');
+    var originalLabel = btn.textContent;
+    btn.textContent = 'Submitting…';
+    window.coachosSubmitLead({ email: email, source: 'service:mentor-positioning' }).then(function(result){
+      if (result.ok){
+        serviceForm.outerHTML = '<p style="color:var(--mint);font-weight:700;font-size:1.05rem">Got it — we\'ll reach out personally soon.</p>';
+      } else {
+        var subject = encodeURIComponent('CoachOS mentor positioning service enquiry');
+        var body = encodeURIComponent('I want to get started with mentor positioning & offer setup. Please reach out to this email: ' + email);
+        window.location.href = 'mailto:shaikhamirhussain2000@gmail.com?subject=' + subject + '&body=' + body;
+        btn.textContent = originalLabel;
+      }
+    });
+  });
+</script>
+</body>
+</html>

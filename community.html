@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Coach Community — Invite-Only | CoachOS</title>
+<meta name="description" content="A private community for coaches and mentors who are actually building — discussions, referrals, and course-launch support. Invite-only, and deliberately small.">
+<meta name="keywords" content="coach community, mentor community, private coaching network, referral network for coaches, invite only coach community, launch a course">
+<link rel="canonical" href="https://amir9078.github.io/coachos-site/community.html">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+</style>
+</head>
+<body>
+<div id="scroll-progress"></div>
+<header class="site">
+  <nav class="nav">
+    <a class="wordmark" href="index.html"><span class="dot"></span>Coach<em>OS</em></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="platform.html">Platform</a>
+      <a href="insights.html">Insights</a>
+      <a href="quizzes.html">Assessments</a>
+      <a href="why-us.html">Why</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a class="nav-cta" href="#waitlist">Request an invite</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+  </nav>
+</header>
+
+<section class="pagehead">
+  <div class="wrap">
+    <span class="badge badge-amber">🔒 Invite-only · part of the Platform</span>
+    <h1 style="margin-top:.9rem"><span class="split-text">A room for people <span class="accent">actually building.</span></span></h1>
+    <p>Not a group chat that goes quiet in month two. A private community for coaches and mentors who are past the "figuring it out" stage.</p>
+  </div>
+</section>
+
+<section id="psh">
+  <div class="wrap-narrow">
+    <div class="reality reveal">
+      <p class="lead-in">Sound familiar?</p>
+      <ul>
+        <li>Free communities, full of beginners asking the same three questions.</li>
+        <li>Paid communities, full of people who bought access and never showed up.</li>
+      </ul>
+      <p class="solution">A private, invite-only community instead — discussions and referrals with people running real practices, plus hands-on support if you want to turn what you teach into a proper course. Once you're in, you're in for good — no re-applying, no tiers to climb.</p>
+    </div>
+  </div>
+</section>
+
+<section id="inside">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">What's inside</span>
+      <h2>Two things, done properly</h2>
+    </div>
+    <div class="grid-2 reveal">
+      <div class="card"><span class="glyph">❧</span><h3>Real discussion, real referrals</h3><p>A feed and discussions with coaches and mentors across niches — the referral network this profession already runs on, in one place instead of scattered group chats and old contacts.</p></div>
+      <div class="card"><span class="glyph">☰</span><h3>Course-launch support</h3><p>Turn what you already teach into a structured course — curriculum, hosting, and launch, with our team alongside you, not a generic course-builder template.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Questions</span>
+      <h2>Before you request an invite</h2>
+    </div>
+    <div class="acc reveal">
+      <div class="acc-item">
+        <button class="acc-btn">Is this the same invite as the CoachOS Platform? <span class="plus">+</span></button>
+        <div class="acc-panel"><p>Yes — one invite covers the Platform, the Community, the <a href="coach-network.html">Coach Network</a>, and the <a href="coach-database.html">Coach Database</a>. Four rooms, one door in. See the <a href="platform.html">Platform overview</a>.</p></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-btn">What does course-launch support actually include? <span class="plus">+</span></button>
+        <div class="acc-panel"><p>Structuring your curriculum, choosing and setting up hosting, and a plan for the launch itself — done alongside our team, not a generic template.</p></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-btn">Why keep it this small? <span class="plus">+</span></button>
+        <div class="acc-panel"><p>A referral network is only worth being in if the people in it are real, active practices. Keeping it invite-only is what keeps it that way — more on this on the <a href="access.html">How access works</a> page.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="waitlist">
+  <div class="invite-band reveal">
+    <span class="badge badge-amber">🔒 Invite-only early access</span>
+    <h2 style="margin-top:.9rem">Request an invite to the Community.</h2>
+    <p>Tell us about your practice. We read every request personally.</p>
+    <form class="waitlist-form" id="community-form">
+      <input type="email" id="community-email" placeholder="you@example.com" required aria-label="Email address">
+      <button type="submit">Request an invite</button>
+    </form>
+    <p class="waitlist-note">No spam, ever — just a personal note when your invite is ready.</p>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="foot-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="platform.html">Platform</a>
+    <a href="insights.html">Insights</a>
+    <a href="news.html">News</a>
+    <a href="quizzes.html">Assessments</a>
+    <a href="checklist.html">Free checklist</a>
+    <a href="why-us.html">Why</a>
+    <a href="contact.html">Contact</a>
+    <a href="access.html">How access works</a>
+  </div>
+  <div class="foot-brand">Coach<b style="color:var(--mint)">OS</b> — the agentic AI nervous system for coaches, mentors &amp; freelancers.</div>
+</footer>
+
+<script src="assets/main.js"></script>
+<script>
+  var form = document.getElementById('community-form');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = document.getElementById('community-email').value;
+    var btn = form.querySelector('button');
+    var originalLabel = btn.textContent;
+    btn.textContent = 'Submitting…';
+    window.coachosSubmitLead({ email: email, source: 'community' }).then(function(result){
+      if (result.ok){
+        form.outerHTML = '<p style="color:var(--mint);font-weight:700;font-size:1.05rem">You\'re on the list — we\'ll reach out personally soon.</p>';
+      } else {
+        var subject = encodeURIComponent('CoachOS Community invite request');
+        var body = encodeURIComponent('Please add this email to the CoachOS Community invite list: ' + email);
+        window.location.href = 'mailto:shaikhamirhussain2000@gmail.com?subject=' + subject + '&body=' + body;
+        btn.textContent = originalLabel;
+      }
+    });
+  });
+</script>
+</body>
+</html>
