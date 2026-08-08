@@ -266,20 +266,28 @@ footer.site a:hover{color:var(--mint)}
 .confetti-piece{position:fixed;top:-10px;z-index:150;pointer-events:none;border-radius:2px;animation:confetti-fall linear forwards}
 @keyframes confetti-fall{to{transform:translateY(105vh) rotate(540deg);opacity:.9}}
 
-/* ---------- Niche gate (animated entry picker) ---------- */
-.gate{position:relative;padding:4.4rem 0 3.4rem;text-align:center;overflow:hidden}
-.gate .aurora{position:absolute;inset:-20% -10%;z-index:-1;pointer-events:none;filter:blur(70px);opacity:.5}
-.gate-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;max-width:1000px;margin:2.2rem auto 0}
+/* ---------- Niche gate (animated entry picker, the entire homepage) ---------- */
+.gate-page{min-height:calc(100vh - 73px);display:flex;align-items:center}
+.gate{position:relative;padding:3.2rem 0;text-align:center;overflow:hidden;width:100%}
+.gate .aurora{position:absolute;inset:-20% -10%;z-index:-1;pointer-events:none;filter:blur(70px);opacity:.55}
+.gate-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem;max-width:1080px;margin:2.6rem auto 0}
 @media(max-width:900px){.gate-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.gate-grid{grid-template-columns:1fr}}
-.gate-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.8rem 1.4rem;text-decoration:none;color:inherit;transition:transform .12s ease-out,box-shadow .25s ease,border-color .25s ease;transform-style:preserve-3d;will-change:transform}
+.gate-card{position:relative;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--mint);border-radius:14px;padding:2.1rem 1.5rem;text-decoration:none;color:inherit;transition:transform .12s ease-out,box-shadow .25s ease,border-color .25s ease;transform-style:preserve-3d;will-change:transform}
+.gate-card:nth-child(2){border-top-color:var(--amber)}
+.gate-card:nth-child(3){border-top-color:var(--sky)}
+.gate-card:nth-child(4){border-top-color:var(--mint)}
 .gate-card:hover{box-shadow:var(--shadow);border-color:var(--mint-dim)}
-.gate-card .glyph{font-family:var(--display);font-size:2rem;color:var(--mint);display:block;margin-bottom:.7rem;transition:transform .3s ease}
+.gate-card .glyph{font-family:var(--display);font-size:2.3rem;color:var(--mint);display:block;margin-bottom:.8rem;transition:transform .3s ease}
+.gate-card:nth-child(2) .glyph{color:var(--amber)}
+.gate-card:nth-child(3) .glyph{color:var(--sky)}
 .gate-card:hover .glyph{transform:scale(1.15) rotate(-4deg)}
-.gate-card h3{font-size:1.05rem;margin-bottom:.4rem}
-.gate-card p{color:var(--ink-soft);font-size:.85rem;margin-bottom:.8rem}
-.gate-card .go{font-family:var(--mono);font-size:.72rem;color:var(--mint);text-transform:uppercase;letter-spacing:.06em}
-.gate-skip{display:inline-block;margin-top:1.8rem;font-size:.88rem;color:var(--ink-dim)}
+.gate-card h3{font-size:1.1rem;margin-bottom:.5rem}
+.gate-card p{color:var(--ink-soft);font-size:.86rem;margin-bottom:1rem}
+.gate-card .go{font-family:var(--mono);font-size:.72rem;color:var(--mint);text-transform:uppercase;letter-spacing:.06em;display:inline-flex;align-items:center;gap:.3rem}
+.gate-card .go::after{content:'';width:0;height:1px;background:currentColor;transition:width .3s ease;display:inline-block}
+.gate-card:hover .go::after{width:14px}
+.gate-skip{display:inline-block;margin-top:2.2rem;font-size:.88rem;color:var(--ink-dim);text-decoration:underline}
 .gate-skip:hover{color:var(--mint)}
 
 /* ---------- Real-problems list (no "Problem/Solution" labels) ---------- */
