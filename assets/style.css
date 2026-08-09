@@ -163,6 +163,13 @@ header.site.scrolled .nav{padding:.6rem 1.6rem}
 .stat .n{font-family:var(--display);font-size:2rem;color:var(--mint);font-variant-numeric:tabular-nums;display:block}
 .stat .l{color:var(--ink-soft);font-size:.85rem;max-width:16ch}
 
+/* ---------- Quote-lead: the page heading itself, styled as our own declarative,
+   data-driven statement of the problem — not a citation, no attribution needed ---------- */
+.quote-lead{font-family:var(--display);font-style:italic;font-weight:600;font-size:clamp(1.5rem,3.8vw,2.15rem);line-height:1.35;max-width:34ch;margin:.6rem auto 1.3rem;color:var(--ink)}
+.quote-lead::before,.quote-lead::after{content:'"';color:var(--mint-dim)}
+.quote-lead b{font-style:normal;color:var(--mint)}
+.quote-brief{color:var(--ink-soft);font-size:1.08rem;max-width:52ch;margin:0 auto;font-style:normal}
+
 /* ---------- Pull quote ---------- */
 .pull-quote{max-width:52ch;margin:2rem auto 0;border-left:2px solid var(--mint);padding:.2rem 0 .2rem 1.4rem;text-align:left}
 .pull-quote p{font-family:var(--display);font-size:1.08rem;font-style:italic;color:var(--ink);line-height:1.5;margin:0}
