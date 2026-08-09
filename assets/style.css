@@ -163,6 +163,11 @@ header.site.scrolled .nav{padding:.6rem 1.6rem}
 .stat .n{font-family:var(--display);font-size:2rem;color:var(--mint);font-variant-numeric:tabular-nums;display:block}
 .stat .l{color:var(--ink-soft);font-size:.85rem;max-width:16ch}
 
+/* ---------- Pull quote ---------- */
+.pull-quote{max-width:52ch;margin:2rem auto 0;border-left:2px solid var(--mint);padding:.2rem 0 .2rem 1.4rem;text-align:left}
+.pull-quote p{font-family:var(--display);font-size:1.08rem;font-style:italic;color:var(--ink);line-height:1.5;margin:0}
+.pull-quote cite{display:block;margin-top:.6rem;font-family:var(--mono);font-style:normal;font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft)}
+
 /* ---------- Sections ---------- */
 section{padding:4rem 0}
 .sec-head{max-width:56ch;margin:0 auto 2.6rem;text-align:center}
