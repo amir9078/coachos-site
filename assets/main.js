@@ -310,6 +310,26 @@
     });
   }
 
+  // ---------- Nav dropdown accordion (collapsed by default on mobile) ----------
+  document.querySelectorAll('.nav-item').forEach(function (item) {
+    var dd = item.querySelector('.nav-dropdown');
+    var trigger = item.querySelector('a');
+    if (!dd || !trigger) return;
+    var ddToggle = document.createElement('button');
+    ddToggle.type = 'button';
+    ddToggle.className = 'nav-dd-toggle';
+    ddToggle.setAttribute('aria-label', 'Show ' + trigger.textContent + ' pages');
+    ddToggle.setAttribute('aria-expanded', 'false');
+    ddToggle.textContent = '⌄';
+    item.insertBefore(ddToggle, dd);
+    ddToggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var open = item.classList.toggle('dd-open');
+      ddToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
   // ---------- Active nav link ----------
   var here = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a').forEach(function (a) {
