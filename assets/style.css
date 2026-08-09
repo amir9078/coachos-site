@@ -305,6 +305,11 @@ a.card{display:block;text-decoration:none;color:inherit}
 .thread.thread-compact .thread-node:last-child{padding-bottom:0}
 .thread.thread-compact .thread-node h3{font-size:.98rem;margin-bottom:0}
 
+/* ---------- Numbered grid: auto-indexes cards via CSS counters, no HTML changes needed ---------- */
+.numbered-grid{counter-reset:card-idx}
+.numbered-grid .card{counter-increment:card-idx;position:relative}
+.numbered-grid .card::before{content:counter(card-idx,decimal-leading-zero);position:absolute;top:1.1rem;right:1.2rem;font-family:var(--mono);font-size:.66rem;color:var(--ink-dim);letter-spacing:.04em}
+
 /* ---------- Signal quote: a citation grown out of the thread system,
    not a bolted-on blockquote — used inline within thread/module content ---------- */
 .signal-quote{position:relative;max-width:600px;margin:0 auto;padding:1.6rem 1.8rem;text-align:center;
