@@ -327,6 +327,16 @@
       e.stopPropagation();
       var open = item.classList.toggle('dd-open');
       ddToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) {
+        dd.style.maxHeight = dd.scrollHeight + 'px';
+      } else {
+        dd.style.maxHeight = null;
+      }
+    });
+    window.addEventListener('resize', function () {
+      if (item.classList.contains('dd-open')) {
+        dd.style.maxHeight = dd.scrollHeight + 'px';
+      }
     });
   });
 
