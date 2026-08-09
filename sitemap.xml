@@ -136,17 +136,37 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://amir9078.github.io/coachos-site/community.html</loc>
+    <loc>https://amir9078.github.io/coachos-site/roundtable.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://amir9078.github.io/coachos-site/coach-network.html</loc>
+    <loc>https://amir9078.github.io/coachos-site/nexus.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://amir9078.github.io/coachos-site/coach-database.html</loc>
+    <loc>https://amir9078.github.io/coachos-site/registry.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://amir9078.github.io/coachos-site/coach/platform.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://amir9078.github.io/coachos-site/mentor/platform.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://amir9078.github.io/coachos-site/freelancer/platform.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://amir9078.github.io/coachos-site/business/platform.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

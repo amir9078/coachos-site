@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The CoachOS Platform for Small Businesses — Invite-Only</title>
+<meta name="description" content="CoachOS, the Roundtable, the Nexus, and the Registry — built around real service businesses. Not built for beginners — built for teams already doing the work.">
+<meta name="keywords" content="invite only business platform, small business community, business referral network, verified business directory">
+<link rel="canonical" href="https://amir9078.github.io/coachos-site/business/platform.html">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div id="scroll-progress"></div>
+<header class="site">
+  <nav class="nav">
+    <a class="wordmark" href="index.html"><span class="dot"></span>Coach<em>OS</em></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="platform.html">Platform</a>
+      <a href="../insights.html">Insights</a>
+      <a href="../quizzes.html">Assessments</a>
+      <a href="../why-us.html">Why</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <a class="nav-cta" href="#waitlist">Request an invite</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+  </nav>
+</header>
+
+<section class="pagehead">
+  <div class="wrap">
+    <span class="badge badge-amber">🔒 Invite-only</span>
+    <h1 style="margin-top:.9rem"><span class="split-text">This isn't built for <span class="accent">businesses still figuring out their systems.</span></span></h1>
+    <p>CoachOS, the Roundtable, the Nexus, and the Registry — four rooms, one invite, built around real service businesses. If you're just getting started, <a href="services.html">services for small businesses</a> is where to begin — this comes after.</p>
+  </div>
+</section>
+
+<section id="psh">
+  <div class="wrap-narrow">
+    <div class="reality reveal">
+      <p class="lead-in">Look familiar?</p>
+      <ul>
+        <li>Local business groups where every "connection" turns into a sales pitch.</li>
+        <li>"AI-powered" business software that's one prompt box bolted onto your old spreadsheet.</li>
+      </ul>
+      <p class="solution">We built one thing instead: an agentic AI system that runs the operational side of a real service business, plus a room of business owners doing the same caliber of work — kept small on purpose. Getting in means an invite. We read every request personally.</p>
+    </div>
+  </div>
+</section>
+
+<section id="four">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">What's inside</span>
+      <h2>Four rooms, one invite</h2>
+      <p>Each one stands on its own. Together, they're the actual reason businesses stay past year one.</p>
+    </div>
+    <div class="grid reveal">
+      <a class="card" href="../why.html">
+        <span class="glyph">◈</span>
+        <h3>CoachOS, the Platform</h3>
+        <p>The agentic AI system that runs leads, delivery, contracts, and billing once you're inside.</p>
+      </a>
+      <a class="card" href="../roundtable.html">
+        <span class="glyph">❧</span>
+        <h3>The Roundtable</h3>
+        <p>Discussions and referrals with business owners who are actually building — not a group chat that went quiet.</p>
+      </a>
+      <a class="card" href="../nexus.html">
+        <span class="glyph">⌗</span>
+        <h3>The Nexus</h3>
+        <p>A professional network built for service businesses specifically — referrals that turn into real contracts.</p>
+      </a>
+      <a class="card" href="../registry.html">
+        <span class="glyph">◍</span>
+        <h3>The Registry</h3>
+        <p>A directory that only lists businesses who were let in — searchable by specialty, worth being found in.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="waitlist">
+  <div class="invite-band reveal">
+    <span class="badge badge-amber">🔒 Invite-only early access</span>
+    <h2 style="margin-top:.9rem">Request an invite.</h2>
+    <p>Tell us about your business. We read every request personally — no guarantee you'll get in.</p>
+    <form class="waitlist-form" id="waitlist-form">
+      <input type="email" id="waitlist-email" placeholder="you@example.com" required aria-label="Email address">
+      <button type="submit">Request an invite</button>
+    </form>
+    <p class="waitlist-note">Not there yet? Start with <a href="services.html">live services for small businesses</a> — build the system first.</p>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="foot-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="platform.html">Platform</a>
+    <a href="../insights.html">Insights</a>
+    <a href="../quizzes.html">Assessments</a>
+    <a href="../why-us.html">Why</a>
+    <a href="../contact.html">Contact</a>
+    <a href="../index.html">Not a small business? Switch audience →</a>
+  </div>
+  <div class="foot-brand">Coach<b style="color:var(--mint)">OS</b> — the agentic AI nervous system for coaches, mentors, freelancers &amp; small businesses.</div>
+</footer>
+
+<script src="../assets/main.js"></script>
+<script>
+  var form = document.getElementById('waitlist-form');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = document.getElementById('waitlist-email').value;
+    var btn = form.querySelector('button');
+    var originalLabel = btn.textContent;
+    btn.textContent = 'Submitting…';
+    window.coachosSubmitLead({ email: email, source: 'platform:business' }).then(function(result){
+      if (result.ok){
+        form.outerHTML = '<p style="color:var(--mint);font-weight:700;font-size:1.05rem">You\'re on the list — we\'ll reach out personally soon.</p>';
+      } else {
+        var subject = encodeURIComponent('CoachOS Platform invite request — small business');
+        var body = encodeURIComponent('Please add this email to the CoachOS Platform invite-only early access list: ' + email);
+        window.location.href = 'mailto:shaikhamirhussain2000@gmail.com?subject=' + subject + '&body=' + body;
+        btn.textContent = originalLabel;
+      }
+    });
+  });
+</script>
+</body>
+</html>

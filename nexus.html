@@ -3,14 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Coach Network — Invite-Only | CoachOS</title>
-<meta name="description" content="A professional network built specifically for coaches and mentors — connections and referrals that turn into real business, not just contacts. Invite-only.">
-<meta name="keywords" content="coach networking platform, professional network for coaches, coach connections, mentor networking, invite only professional network">
-<link rel="canonical" href="https://amir9078.github.io/coachos-site/coach-network.html">
+<title>The Nexus — Invite-Only | CoachOS</title>
+<meta name="description" content="The Nexus: a professional network built for coaches, mentors, freelancers, and service business owners — connections and referrals that turn into real business, not just contacts. Invite-only.">
+<meta name="keywords" content="professional network for coaches, freelancer networking, referral network, business owner network, invite only professional network">
+<link rel="canonical" href="https://amir9078.github.io/coachos-site/nexus.html">
 <meta name="robots" content="index, follow">
 <link rel="stylesheet" href="assets/style.css">
-<style>
-</style>
 </head>
 <body>
 <div id="scroll-progress"></div>
@@ -54,10 +52,10 @@
         <a href="platform.html">Platform</a>
         <div class="nav-dropdown simple">
           <a href="platform.html">Platform overview</a>
-          <a href="why.html">CoachOS, the Platform</a>
-          <a href="community.html">Coach Community</a>
-          <a href="coach-network.html">Coach Network</a>
-          <a href="coach-database.html">Coach Database</a>
+          <a href="why.html">CoachOS (the Platform)</a>
+          <a href="roundtable.html">Roundtable</a>
+          <a href="nexus.html">Nexus</a>
+          <a href="registry.html">Registry</a>
         </div>
       </div>
       <div class="nav-item">
@@ -80,8 +78,8 @@
 <section class="pagehead">
   <div class="wrap">
     <span class="badge badge-amber">🔒 Invite-only · part of the Platform</span>
-    <h1 style="margin-top:.9rem"><span class="split-text">Built for coaches, <span class="accent">not for everyone with a job title.</span></span></h1>
-    <p>A professional network the way LinkedIn should have been for this profession — narrow on purpose, useful because of it.</p>
+    <h1 style="margin-top:.9rem"><span class="split-text">Built for this work, <span class="accent">not for everyone with a job title.</span></span></h1>
+    <p>A professional network the way LinkedIn should have been for coaches, mentors, freelancers, and service business owners — narrow on purpose, useful because of it.</p>
   </div>
 </section>
 
@@ -93,7 +91,7 @@
         <li>General-purpose networks built for every industry at once — which means built for none of them well.</li>
         <li>A connection request from a stranger selling something. That's not a network, it's noise.</li>
       </ul>
-      <p class="solution">A network built specifically for coaches and mentors instead — profiles, connections, and referrals that actually mean something because everyone in it was let in the same way you were. Your profile connects to your website and directory listing automatically — one identity, not five profiles to maintain.</p>
+      <p class="solution">The Nexus is built specifically for this line of work instead — profiles, connections, and referrals that actually mean something because everyone in it was let in the same way you were. Your profile connects to your website and Registry listing automatically — one identity, not five profiles to maintain.</p>
     </div>
   </div>
 </section>
@@ -105,7 +103,7 @@
       <h2>What actually makes it useful</h2>
     </div>
     <div class="grid reveal">
-      <div class="card"><h3>Real profiles</h3><p>Built from your actual practice, not a generic résumé format.</p></div>
+      <div class="card"><h3>Real profiles</h3><p>Built from your actual practice or business, not a generic résumé format.</p></div>
       <div class="card"><h3>Connections that convert</h3><p>Referrals between people who've each already been vetted in.</p></div>
       <div class="card"><h3>No cold outreach noise</h3><p>Everyone in the network is here for the same reason you are.</p></div>
     </div>
@@ -115,8 +113,8 @@
 <section id="waitlist">
   <div class="invite-band reveal">
     <span class="badge badge-amber">🔒 Invite-only early access</span>
-    <h2 style="margin-top:.9rem">Request an invite to the Coach Network.</h2>
-    <p>Tell us about your practice. We read every request personally.</p>
+    <h2 style="margin-top:.9rem">Request an invite to the Nexus.</h2>
+    <p>Tell us about your practice or business. We read every request personally.</p>
     <form class="waitlist-form" id="network-form">
       <input type="email" id="network-email" placeholder="you@example.com" required aria-label="Email address">
       <button type="submit">Request an invite</button>
@@ -138,7 +136,7 @@
     <a href="contact.html">Contact</a>
     <a href="access.html">How access works</a>
   </div>
-  <div class="foot-brand">Coach<b style="color:var(--mint)">OS</b> — the agentic AI nervous system for coaches, mentors &amp; freelancers.</div>
+  <div class="foot-brand">Coach<b style="color:var(--mint)">OS</b> — the agentic AI nervous system for coaches, mentors, freelancers &amp; small businesses.</div>
 </footer>
 
 <script src="assets/main.js"></script>
@@ -150,12 +148,12 @@
     var btn = form.querySelector('button');
     var originalLabel = btn.textContent;
     btn.textContent = 'Submitting…';
-    window.coachosSubmitLead({ email: email, source: 'coach-network' }).then(function(result){
+    window.coachosSubmitLead({ email: email, source: 'nexus' }).then(function(result){
       if (result.ok){
         form.outerHTML = '<p style="color:var(--mint);font-weight:700;font-size:1.05rem">You\'re on the list — we\'ll reach out personally soon.</p>';
       } else {
-        var subject = encodeURIComponent('CoachOS Coach Network invite request');
-        var body = encodeURIComponent('Please add this email to the CoachOS Coach Network invite list: ' + email);
+        var subject = encodeURIComponent('CoachOS Nexus invite request');
+        var body = encodeURIComponent('Please add this email to the CoachOS Nexus invite list: ' + email);
         window.location.href = 'mailto:shaikhamirhussain2000@gmail.com?subject=' + subject + '&body=' + body;
         btn.textContent = originalLabel;
       }
