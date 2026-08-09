@@ -169,6 +169,9 @@ header.site.scrolled .nav{padding:.6rem 1.6rem}
 .quote-lead::before,.quote-lead::after{content:'"';color:var(--mint-dim)}
 .quote-lead b{font-style:normal;color:var(--mint)}
 .quote-brief{color:var(--ink-soft);font-size:1.08rem;max-width:52ch;margin:0 auto;font-style:normal}
+.problem-list{list-style:none;margin:0 auto;padding:0;text-align:left;display:inline-block;max-width:60ch}
+.problem-list li{position:relative;padding:.5rem 0 .5rem 1.5rem;color:var(--ink);font-size:1.02rem}
+.problem-list li::before{content:'—';position:absolute;left:0;color:var(--amber)}
 
 /* ---------- Pull quote ---------- */
 .pull-quote{max-width:52ch;margin:2rem auto 0;border-left:2px solid var(--mint);padding:.2rem 0 .2rem 1.4rem;text-align:left}
