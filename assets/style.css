@@ -256,6 +256,56 @@ a.card{display:block;text-decoration:none;color:inherit}
 @media(hover:none),(pointer:coarse){ .waitlist-form button{cursor:pointer} }
 .waitlist-note{font-size:.78rem;color:var(--ink-dim);margin-top:.9rem}
 
+/* ---------- Reasoning thread: the Human+AI signature motif ----------
+   A vertical trace down the left margin. Each node is tagged AI (drafts,
+   executes) or HUMAN (judges, approves) — the visual argument for the
+   brand's actual claim, not a generic timeline. */
+.thread{position:relative;max-width:840px;margin:0 auto;padding-left:2.6rem}
+.thread::before{content:'';position:absolute;left:.6rem;top:.4rem;bottom:.4rem;width:1px;
+  background:linear-gradient(180deg,var(--amber-soft),var(--line-strong) 8%,var(--line-strong) 92%,var(--mint-soft))}
+.thread-node{position:relative;padding-bottom:2.6rem}
+.thread-node:last-child{padding-bottom:0}
+.thread-node::before{content:'';position:absolute;left:-2rem;top:.35rem;width:9px;height:9px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--line-strong);transition:border-color .3s ease,background .3s ease,transform .3s ease}
+.thread-node.in::before{transform:scale(1.15)}
+.thread-node[data-actor="ai"].in::before{border-color:var(--amber);background:var(--amber-soft)}
+.thread-node[data-actor="human"].in::before{border-color:var(--mint);background:var(--mint-soft)}
+.thread-node .actor{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.4rem;margin-bottom:.5rem}
+.thread-node[data-actor="ai"] .actor{color:var(--amber)}
+.thread-node[data-actor="human"] .actor{color:var(--mint)}
+.thread-node .actor::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor;display:inline-block}
+.thread-node[data-actor="ai"] .actor::before{animation:actor-pulse-ai 1.8s ease-in-out infinite}
+@keyframes actor-pulse-ai{0%,100%{opacity:.4}50%{opacity:1}}
+.thread-node h3{font-size:1.08rem;margin-bottom:.4rem}
+.thread-node p{color:var(--ink-soft);font-size:.95rem;max-width:56ch}
+
+/* ---------- Module index: dense editorial listing for services ----------
+   Numbered modules, not icon cards. Reads as a system's table of contents. */
+.module-index{max-width:920px;margin:0 auto}
+.module{border-top:1px solid var(--line);padding:2.6rem 0}
+.module:first-child{border-top:none;padding-top:0}
+.module-head{display:flex;gap:1.4rem;align-items:baseline;margin-bottom:1.3rem}
+.module-num{font-family:var(--mono);font-size:.85rem;color:var(--ink-dim);flex:none;padding-top:.25rem}
+.module-head h3{font-size:1.35rem;line-height:1.25}
+.module-thesis{color:var(--ink-soft);max-width:60ch;margin:0 0 1.6rem 3.4rem}
+.module-rows{margin-left:3.4rem;border-top:1px solid var(--line)}
+@media(max-width:640px){.module-thesis,.module-rows{margin-left:0}}
+.module-row{display:flex;align-items:baseline;justify-content:space-between;gap:1.4rem;padding:1rem 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;transition:padding-left .2s ease}
+.module-row:hover{padding-left:.5rem}
+.module-row .row-main{display:flex;align-items:baseline;gap:.8rem;min-width:0}
+.module-row h4{font-family:var(--sans);font-weight:700;font-size:.98rem;color:var(--ink);flex:none}
+.module-row .row-desc{color:var(--ink-soft);font-size:.88rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.module-row .row-go{font-family:var(--mono);font-size:.72rem;color:var(--ink-dim);flex:none;transition:color .2s ease,transform .2s ease}
+.module-row:hover .row-go{color:var(--mint);transform:translateX(3px)}
+@media(max-width:640px){
+  .module-row{flex-direction:column;align-items:flex-start;gap:.3rem}
+  .module-row .row-main{flex-direction:column;gap:.15rem}
+  .module-row .row-desc{white-space:normal}
+}
+
+/* ---------- Scramble counter: digits compute into place, not just count up ---------- */
+.n.scramble{font-variant-numeric:tabular-nums}
+
 /* ---------- Footer ---------- */
 footer.site{padding:2.8rem 1.6rem 2.2rem;text-align:center;color:var(--ink-soft);font-size:.85rem;border-top:1px solid var(--line);margin-top:2rem}
 footer.site a{color:var(--ink-soft);text-decoration:none}

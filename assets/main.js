@@ -239,13 +239,36 @@
     }
     requestAnimationFrame(step);
   }
+  // Scramble variant: a brief cipher-like flicker of random digits before the
+  // real count-up starts — reads as the number being computed, not just counted.
+  function animateScrambleCounter(el) {
+    var target = parseFloat(el.getAttribute('data-count-to'));
+    var suffix = el.getAttribute('data-count-suffix') || '';
+    var prefix = el.getAttribute('data-count-prefix') || '';
+    var digits = target.toLocaleString('en-US').length;
+    var scrambleDuration = 420;
+    var tickEvery = 45;
+    var elapsed = 0;
+    var timer = setInterval(function () {
+      elapsed += tickEvery;
+      var fake = '';
+      for (var i = 0; i < digits; i++) {
+        fake += Math.random() < 0.15 ? ',' : String(Math.floor(Math.random() * 10));
+      }
+      el.textContent = prefix + fake + suffix;
+      if (elapsed >= scrambleDuration) {
+        clearInterval(timer);
+        animateCounter(el);
+      }
+    }, tickEvery);
+  }
   if (counters.length) {
     if ('IntersectionObserver' in window) {
       var cio = new IntersectionObserver(
         function (entries) {
           entries.forEach(function (entry) {
             if (entry.isIntersecting) {
-              animateCounter(entry.target);
+              (entry.target.classList.contains('scramble') ? animateScrambleCounter : animateCounter)(entry.target);
               cio.unobserve(entry.target);
             }
           });
@@ -258,7 +281,7 @@
         counters.forEach(function (el) {
           var r = el.getBoundingClientRect();
           if (r.top < window.innerHeight && r.bottom > 0 && el.textContent.match(/^0/)) {
-            animateCounter(el);
+            (el.classList.contains('scramble') ? animateScrambleCounter : animateCounter)(el);
             cio.unobserve(el);
           }
         });
