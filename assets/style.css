@@ -301,6 +301,9 @@ a.card{display:block;text-decoration:none;color:inherit}
   .thread-node::before{left:-1.75rem;width:17px;height:17px}
   .thread-node{padding-bottom:2.2rem}
 }
+.thread.thread-compact .thread-node{padding-bottom:1.5rem}
+.thread.thread-compact .thread-node:last-child{padding-bottom:0}
+.thread.thread-compact .thread-node h3{font-size:.98rem;margin-bottom:0}
 
 /* ---------- Signal quote: a citation grown out of the thread system,
    not a bolted-on blockquote — used inline within thread/module content ---------- */
