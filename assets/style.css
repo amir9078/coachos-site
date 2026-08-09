@@ -260,16 +260,32 @@ a.card{display:block;text-decoration:none;color:inherit}
    A vertical trace down the left margin. Each node is tagged AI (drafts,
    executes) or HUMAN (judges, approves) — the visual argument for the
    brand's actual claim, not a generic timeline. */
-.thread{position:relative;max-width:840px;margin:0 auto;padding-left:2.6rem}
-.thread::before{content:'';position:absolute;left:.6rem;top:.4rem;bottom:.4rem;width:1px;
+.thread{position:relative;max-width:840px;margin:0 auto;padding-left:3rem}
+.thread::before{content:'';position:absolute;left:.95rem;top:.4rem;bottom:.4rem;width:1px;
   background:linear-gradient(180deg,var(--amber-soft),var(--line-strong) 8%,var(--line-strong) 92%,var(--mint-soft))}
-.thread-node{position:relative;padding-bottom:2.6rem}
+.thread::after{content:'';position:absolute;left:calc(.95rem - 2px);width:5px;height:5px;border-radius:50%;
+  background:var(--mint);box-shadow:0 0 8px 2px var(--mint-dim);opacity:0;top:0;
+  animation:thread-signal 5.5s cubic-bezier(.3,0,.2,1) infinite;animation-play-state:paused}
+.thread.in-view::after{animation-play-state:running}
+@keyframes thread-signal{
+  0%{top:0;opacity:0}
+  4%{opacity:1}
+  92%{opacity:1}
+  100%{top:100%;opacity:0}
+}
+.thread-node{position:relative;padding-bottom:2.7rem}
 .thread-node:last-child{padding-bottom:0}
-.thread-node::before{content:'';position:absolute;left:-2rem;top:.35rem;width:9px;height:9px;border-radius:50%;
-  background:var(--bg);border:2px solid var(--line-strong);transition:border-color .3s ease,background .3s ease,transform .3s ease}
-.thread-node.in::before{transform:scale(1.15)}
-.thread-node[data-actor="ai"].in::before{border-color:var(--amber);background:var(--amber-soft)}
-.thread-node[data-actor="human"].in::before{border-color:var(--mint);background:var(--mint-soft)}
+.thread-node::before{content:'';position:absolute;left:-2.35rem;top:.3rem;width:20px;height:20px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:.6rem;line-height:1;
+  background:var(--bg);border:1.5px solid var(--line-strong);color:var(--ink-dim);
+  transition:border-color .3s ease,background .3s ease,color .3s ease,transform .4s cubic-bezier(.2,.9,.2,1);
+  transform:scale(.7)}
+.thread-node.in::before{transform:scale(1)}
+.thread-node[data-actor="ai"]::before{content:'✦'}
+.thread-node[data-actor="human"]::before{content:'●'}
+.thread-node[data-actor="human"]::before{font-size:.45rem}
+.thread-node[data-actor="ai"].in::before{border-color:var(--amber);background:var(--amber-soft);color:var(--amber)}
+.thread-node[data-actor="human"].in::before{border-color:var(--mint);background:var(--mint-soft);color:var(--mint)}
 .thread-node .actor{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.4rem;margin-bottom:.5rem}
 .thread-node[data-actor="ai"] .actor{color:var(--amber)}
 .thread-node[data-actor="human"] .actor{color:var(--mint)}
@@ -278,6 +294,21 @@ a.card{display:block;text-decoration:none;color:inherit}
 @keyframes actor-pulse-ai{0%,100%{opacity:.4}50%{opacity:1}}
 .thread-node h3{font-size:1.08rem;margin-bottom:.4rem}
 .thread-node p{color:var(--ink-soft);font-size:.95rem;max-width:56ch}
+@media(max-width:560px){
+  .thread{padding-left:2.3rem}
+  .thread::before{left:.55rem}
+  .thread::after{left:calc(.55rem - 2px)}
+  .thread-node::before{left:-1.75rem;width:17px;height:17px}
+  .thread-node{padding-bottom:2.2rem}
+}
+
+/* ---------- Signal quote: a citation grown out of the thread system,
+   not a bolted-on blockquote — used inline within thread/module content ---------- */
+.signal-quote{position:relative;max-width:600px;margin:0 auto;padding:1.6rem 1.8rem;text-align:center;
+  background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.signal-quote::before{content:'';position:absolute;top:-1px;left:50%;transform:translateX(-50%);width:36px;height:2px;background:var(--mint)}
+.signal-quote p{font-family:var(--display);font-size:1.15rem;font-style:italic;color:var(--ink);line-height:1.5;margin:0}
+.signal-quote cite{display:block;margin-top:.8rem;font-family:var(--mono);font-style:normal;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft)}
 
 /* ---------- Module index: dense editorial listing for services ----------
    Numbered modules, not icon cards. Reads as a system's table of contents. */

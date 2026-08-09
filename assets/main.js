@@ -214,6 +214,22 @@
     els.forEach(reveal);
   }
 
+  // ---------- Reasoning thread: run the signal-pulse animation only while visible ----------
+  var threads = document.querySelectorAll('.thread');
+  if (threads.length && 'IntersectionObserver' in window) {
+    var tio = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          entry.target.classList.toggle('in-view', entry.isIntersecting);
+        });
+      },
+      { threshold: 0.1 }
+    );
+    threads.forEach(function (el) { tio.observe(el); });
+  } else {
+    threads.forEach(function (el) { el.classList.add('in-view'); });
+  }
+
   // Hero split-text headings are above the fold on load — reveal immediately
   // rather than waiting on a scroll-triggered observer that may never fire.
   window.addEventListener('load', function () {
