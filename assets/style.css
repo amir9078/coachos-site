@@ -178,7 +178,7 @@ header.site.scrolled .nav{padding:.6rem 1.6rem}
 /* ---------- Stat strip w/ counters ---------- */
 .stat-strip{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:2.6rem;padding-top:2.2rem;border-top:1px solid var(--line)}
 .stat{text-align:center}
-.stat .n{font-family:var(--display);font-size:2rem;color:var(--mint);font-variant-numeric:tabular-nums;display:block}
+.stat .n{font-family:'Marllena',var(--display);font-weight:400;font-size:2.3rem;color:var(--mint);font-variant-numeric:tabular-nums;display:block}
 .stat .l{color:var(--ink-soft);font-size:.85rem;max-width:16ch}
 
 /* ---------- Quote-lead: the page heading itself, styled as our own declarative,
