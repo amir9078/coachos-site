@@ -28,7 +28,8 @@
   --shadow:0 1px 2px rgba(20,28,22,.07),0 20px 45px rgba(20,28,22,.1);
   --glow:0 0 0 1px rgba(46,107,79,.2),0 0 30px rgba(46,107,79,.12);
 
-  --display:'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif;
+  --display:'Fraunces','Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif;
+  --script:'Beau Rivage',cursive;
   --sans:Seravek,'Gill Sans Nova','Segoe UI',Calibri,'Trebuchet MS',sans-serif;
   --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
 
@@ -374,6 +375,7 @@ footer.site a:hover{color:var(--mint)}
 .gate-header .nav{justify-content:flex-start}
 .gate-page{min-height:calc(100vh - 73px);display:flex;align-items:center}
 .gate{position:relative;padding:3.2rem 0;text-align:center;overflow:hidden;width:100%}
+.gate .kicker{font-family:var(--script);font-size:1.4rem;letter-spacing:normal;text-transform:none;color:var(--mint)}
 .gate .aurora{position:absolute;inset:-20% -10%;z-index:-1;pointer-events:none;filter:blur(70px);opacity:.6}
 .gate .aurora .a4{width:22vw;height:22vw;right:18vw;bottom:-10vw;background:radial-gradient(circle,var(--sky) 0%,transparent 70%);animation:float2 18s ease-in-out infinite reverse}
 .gate-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem;max-width:1080px;margin:2.6rem auto 0}
