@@ -88,7 +88,7 @@ header.site{position:sticky;top:0;z-index:20;background:rgba(240,235,221,.86);ba
 header.site.scrolled{box-shadow:0 4px 24px rgba(20,28,22,.06)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.6rem;max-width:var(--maxw);margin:0 auto;gap:1.5rem;transition:padding .25s ease}
 header.site.scrolled .nav{padding:.6rem 1.6rem}
-.wordmark{font-family:'Marllena',var(--display);font-size:1.7rem;font-weight:400;text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:.4rem}
+.wordmark{font-family:'Les Enfants du Paradis',var(--display);font-size:1.7rem;font-weight:400;text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:.4rem}
 .wordmark .dot{width:7px;height:7px;border-radius:50%;background:var(--mint);display:inline-block;animation:pulse-dot 2.4s ease-in-out infinite}
 @keyframes pulse-dot{0%,100%{box-shadow:0 0 0 0 rgba(46,107,79,.5)}50%{box-shadow:0 0 0 6px rgba(46,107,79,0)}}
 .wordmark em{font-style:normal;color:var(--amber)}
@@ -392,7 +392,7 @@ footer.site a:hover{color:var(--mint)}
 .gate-header .nav{justify-content:flex-start}
 .gate-page{min-height:calc(100vh - 73px);display:flex;align-items:center}
 .gate{position:relative;padding:3.2rem 0;text-align:center;overflow:hidden;width:100%}
-.gate .kicker{font-family:var(--script);font-size:1.4rem;letter-spacing:normal;text-transform:none;color:var(--mint)}
+.gate .kicker{font-family:'Marllena',var(--script);font-size:1.6rem;font-weight:400;letter-spacing:normal;text-transform:none;color:var(--mint)}
 .gate .aurora{position:absolute;inset:-20% -10%;z-index:-1;pointer-events:none;filter:blur(70px);opacity:.6}
 .gate .aurora .a4{width:22vw;height:22vw;right:18vw;bottom:-10vw;background:radial-gradient(circle,var(--sky) 0%,transparent 70%);animation:float2 18s ease-in-out infinite reverse}
 .gate-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem;max-width:1080px;margin:2.6rem auto 0}
