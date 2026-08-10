@@ -13,6 +13,13 @@
   font-style:normal;
   font-display:swap;
 }
+@font-face{
+  font-family:'Marllena';
+  src:url('fonts/marllena.ttf') format('truetype');
+  font-weight:normal;
+  font-style:normal;
+  font-display:swap;
+}
 
 :root{
   --bg:#F0EBDD;
@@ -38,7 +45,7 @@
 
   --display:'Fraunces','Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif;
   --script:'Beau Rivage',cursive;
-  --quote:'Les Enfants du Paradis','Fraunces',serif;
+  --quote:'Marllena','Les Enfants du Paradis','Fraunces',serif;
   --sans:Seravek,'Gill Sans Nova','Segoe UI',Calibri,'Trebuchet MS',sans-serif;
   --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
 
@@ -81,7 +88,7 @@ header.site{position:sticky;top:0;z-index:20;background:rgba(240,235,221,.86);ba
 header.site.scrolled{box-shadow:0 4px 24px rgba(20,28,22,.06)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.6rem;max-width:var(--maxw);margin:0 auto;gap:1.5rem;transition:padding .25s ease}
 header.site.scrolled .nav{padding:.6rem 1.6rem}
-.wordmark{font-family:var(--display);font-size:1.3rem;font-weight:700;text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:.4rem}
+.wordmark{font-family:'Marllena',var(--display);font-size:1.7rem;font-weight:400;text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:.4rem}
 .wordmark .dot{width:7px;height:7px;border-radius:50%;background:var(--mint);display:inline-block;animation:pulse-dot 2.4s ease-in-out infinite}
 @keyframes pulse-dot{0%,100%{box-shadow:0 0 0 0 rgba(46,107,79,.5)}50%{box-shadow:0 0 0 6px rgba(46,107,79,0)}}
 .wordmark em{font-style:normal;color:var(--amber)}
@@ -150,6 +157,7 @@ header.site.scrolled .nav{padding:.6rem 1.6rem}
 @keyframes float2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-3vw,4vw) scale(1.08)}}
 @keyframes float3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(2vw,-3vw) scale(1.15)}}
 
+.hero h1,.pagehead h1,.gate h1{font-family:'Marllena',var(--display);font-weight:400}
 .hero h1{font-size:clamp(2.1rem,5.6vw,3.5rem);line-height:1.08;margin:0 auto 1.2rem;max-width:19ch}
 .hero .sub{color:var(--ink-soft);font-size:1.15rem;max-width:52ch;margin:0 auto 1.6rem}
 .hero-actions{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
@@ -335,7 +343,7 @@ a.card{display:block;text-decoration:none;color:inherit}
 .signal-quote{position:relative;max-width:600px;margin:0 auto;padding:1.6rem 1.8rem;text-align:center;
   background:var(--surface);border:1px solid var(--line);border-radius:10px}
 .signal-quote::before{content:'';position:absolute;top:-1px;left:50%;transform:translateX(-50%);width:36px;height:2px;background:var(--mint)}
-.signal-quote p{font-family:var(--display);font-size:1.15rem;font-style:italic;color:var(--ink);line-height:1.5;margin:0}
+.signal-quote p{font-family:'Marllena',var(--display);font-size:1.3rem;font-style:normal;font-weight:400;color:var(--ink);line-height:1.5;margin:0}
 .signal-quote cite{display:block;margin-top:.8rem;font-family:var(--mono);font-style:normal;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft)}
 
 /* ---------- Module index: dense editorial listing for services ----------
