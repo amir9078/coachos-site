@@ -180,6 +180,9 @@ header.site.scrolled .nav{padding:.6rem 1.6rem}
 .stat{text-align:center}
 .stat .n{font-family:'Marllena',var(--display);font-weight:400;font-size:2.3rem;color:var(--mint);font-variant-numeric:tabular-nums;display:block}
 .stat .l{color:var(--ink-soft);font-size:.85rem;max-width:16ch}
+/* Citation line under a stat strip — signals numbers are sourced, not vibes */
+.stat-source{text-align:center;font-family:var(--mono);font-size:.7rem;letter-spacing:.04em;color:var(--ink-dim);margin-top:1.2rem}
+.stat-source a{color:var(--ink-dim)}
 
 /* ---------- Quote-lead: the page heading itself, styled as our own declarative,
    data-driven statement of the problem — not a citation, no attribution needed ---------- */
@@ -193,6 +196,13 @@ header.site.scrolled .nav{padding:.6rem 1.6rem}
 
 /* ---------- Pull quote ---------- */
 .pull-quote{max-width:52ch;margin:2rem auto 0;border-left:2px solid var(--mint);padding:.2rem 0 .2rem 1.4rem;text-align:left}
+.pull-quote img{width:44px;height:44px;border-radius:50%;object-fit:cover;margin-bottom:.7rem}
+/* Proof strip: customer voices sit inside a bordered panel, not floating — the
+   visual signal that there's real evidence behind the claims above */
+.proof-strip{margin-top:2.6rem;border-top:1px solid var(--line);padding-top:2.4rem}
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+@media(max-width:760px){.proof-grid{grid-template-columns:1fr}}
+.proof-grid .pull-quote{margin:0;max-width:none}
 .pull-quote p{font-family:var(--display);font-size:1.08rem;font-style:italic;color:var(--ink);line-height:1.5;margin:0}
 .pull-quote cite{display:block;margin-top:.6rem;font-family:var(--mono);font-style:normal;font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft)}
 

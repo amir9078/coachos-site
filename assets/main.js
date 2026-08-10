@@ -237,27 +237,53 @@
   });
 
   // ---------- Animated number counters ----------
+  // Readable target values live in the HTML itself (e.g. "122,974", "$5.34B",
+  // "19%"), so the page is correct even with no JS. When JS runs we reset to a
+  // zero placeholder and animate up to the data-count-to target on reveal. If
+  // animation can't run (no observer, reduced motion), we just put the real
+  // value back — the page never sits on a misleading "0".
   var counters = document.querySelectorAll('[data-count-to]');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function fmt(target, prefix, suffix, decimals) {
+    var body = decimals > 0
+      ? target.toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals })
+      : target.toLocaleString('en-US');
+    return prefix + body + suffix;
+  }
+  function setFinal(el) {
+    var suffix = el.getAttribute('data-count-suffix') || '';
+    var prefix = el.getAttribute('data-count-prefix') || '';
+    var decimals = parseInt(el.getAttribute('data-count-decimals') || '0', 10);
+    el.textContent = fmt(parseFloat(el.getAttribute('data-count-to')), prefix, suffix, decimals);
+  }
   function animateCounter(el) {
+    if (el.dataset.counted) return;
+    el.dataset.counted = '1';
+    if (reduceMotion) { setFinal(el); return; }
     var target = parseFloat(el.getAttribute('data-count-to'));
     var suffix = el.getAttribute('data-count-suffix') || '';
     var prefix = el.getAttribute('data-count-prefix') || '';
+    var decimals = parseInt(el.getAttribute('data-count-decimals') || '0', 10);
     var duration = 1400;
     var start = null;
     function step(ts) {
       if (!start) start = ts;
       var progress = Math.min((ts - start) / duration, 1);
       var eased = 1 - Math.pow(1 - progress, 3);
-      var val = Math.floor(target * eased);
-      el.textContent = prefix + val.toLocaleString('en-US') + suffix;
+      var raw = target * eased;
+      var val = decimals > 0 ? raw.toFixed(decimals) : Math.floor(raw).toLocaleString('en-US');
+      el.textContent = prefix + val + suffix;
       if (progress < 1) requestAnimationFrame(step);
-      else el.textContent = prefix + target.toLocaleString('en-US') + suffix;
+      else setFinal(el);
     }
     requestAnimationFrame(step);
   }
   // Scramble variant: a brief cipher-like flicker of random digits before the
   // real count-up starts — reads as the number being computed, not just counted.
   function animateScrambleCounter(el) {
+    if (el.dataset.counted) return;
+    if (reduceMotion) { el.dataset.counted = '1'; setFinal(el); return; }
     var target = parseFloat(el.getAttribute('data-count-to'));
     var suffix = el.getAttribute('data-count-suffix') || '';
     var prefix = el.getAttribute('data-count-prefix') || '';
@@ -265,6 +291,7 @@
     var scrambleDuration = 420;
     var tickEvery = 45;
     var elapsed = 0;
+    el.dataset.counted = '1';
     var timer = setInterval(function () {
       elapsed += tickEvery;
       var fake = '';
@@ -278,32 +305,44 @@
       }
     }, tickEvery);
   }
+  function runCounter(el) {
+    (el.classList.contains('scramble') ? animateScrambleCounter : animateCounter)(el);
+  }
   if (counters.length) {
-    if ('IntersectionObserver' in window) {
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      counters.forEach(setFinal);
+    } else {
       var cio = new IntersectionObserver(
         function (entries) {
           entries.forEach(function (entry) {
             if (entry.isIntersecting) {
-              (entry.target.classList.contains('scramble') ? animateScrambleCounter : animateCounter)(entry.target);
+              runCounter(entry.target);
               cio.unobserve(entry.target);
             }
           });
         },
-        { threshold: 0.4 }
+        { threshold: 0.35 }
       );
       counters.forEach(function (el) { cio.observe(el); });
-      window.addEventListener('load', function () {
-        // Safety net: counters in the hero are visible immediately on load.
+      // Any counter already in view on load: animate it once fonts are ready,
+      // so the reveal/stagger and the count-up read together instead of the
+      // number finishing while the strip is still faded in. The HTML already
+      // shows the correct value regardless — this is purely the flourish.
+      var revealInView = function () {
         counters.forEach(function (el) {
+          if (el.dataset.counted) return;
           var r = el.getBoundingClientRect();
-          if (r.top < window.innerHeight && r.bottom > 0 && el.textContent.match(/^0/)) {
-            (el.classList.contains('scramble') ? animateScrambleCounter : animateCounter)(el);
+          if (r.top < window.innerHeight && r.bottom > 0) {
+            runCounter(el);
             cio.unobserve(el);
           }
         });
-      });
-    } else {
-      counters.forEach(animateCounter);
+      };
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(function () { setTimeout(revealInView, 60); });
+      } else {
+        window.addEventListener('load', function () { setTimeout(revealInView, 60); });
+      }
     }
   }
 
