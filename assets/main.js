@@ -419,7 +419,7 @@
 
   // ---------- Confetti burst (called from quizzes.html on completion) ----------
   window.coachosConfetti = function () {
-    var colors = ['#2E6B4F', '#8A6A1F', '#3E6B8A', '#F0EBDD'];
+    var colors = ['#0E7A4C', '#96702A', '#3E7191', '#EEF1EC'];
     for (var i = 0; i < 60; i++) {
       (function () {
         var piece = document.createElement('div');

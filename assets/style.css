@@ -1,9 +1,9 @@
 /* ===========================================================
    CoachOS — shared design system
-   Original editorial cream/brass/green palette, supercharged
-   with animation: shimmer headings, magnetic/ripple buttons,
-   a custom cursor, tilting cards, and a marquee.
-   Used by every page on the site.
+   Deep Forest: cool paper + deep ink + one locked emerald accent,
+   Bricolage Grotesque display / Manrope body / JetBrains Mono labels.
+   Animation: shimmer headings, magnetic/ripple buttons, a custom
+   cursor, tilting cards, and a marquee. Used by every page on the site.
    =========================================================== */
 
 @font-face{
@@ -22,32 +22,34 @@
 }
 
 :root{
-  --bg:#F0EBDD;
-  --bg-2:#E7E0CC;
-  --surface:#F5F1E6;
-  --surface-2:#E2DAC4;
-  --ink:#1E2B24;
-  --ink-soft:#54604F;
-  --ink-dim:#8A9186;
-  --line:rgba(30,43,36,.14);
-  --line-strong:rgba(30,43,36,.26);
+  --bg:#EEF1EC;
+  --bg-2:#E3E9DF;
+  --surface:#F6F8F4;
+  --surface-2:#DEE6DA;
+  --ink:#12241A;
+  --ink-soft:#47594C;
+  --ink-dim:#7C8A80;
+  --line:rgba(18,36,26,.13);
+  --line-strong:rgba(18,36,26,.26);
 
-  --mint:#2E6B4F;
-  --mint-soft:rgba(46,107,79,.13);
-  --mint-dim:rgba(46,107,79,.4);
-  --amber:#8A6A1F;
-  --amber-soft:rgba(138,106,31,.13);
-  --sky:#3E6B8A;
-  --sky-soft:rgba(62,107,138,.13);
+  --mint:#0E7A4C;
+  --mint-soft:rgba(14,122,76,.13);
+  --mint-dim:rgba(14,122,76,.4);
+  --mint-bright:#34A873;
+  --mint-deep:#0A5C3A;
+  --amber:#96702A;
+  --amber-soft:rgba(150,112,42,.13);
+  --sky:#3E7191;
+  --sky-soft:rgba(62,113,145,.13);
 
-  --shadow:0 1px 2px rgba(20,28,22,.07),0 20px 45px rgba(20,28,22,.1);
-  --glow:0 0 0 1px rgba(46,107,79,.2),0 0 30px rgba(46,107,79,.12);
+  --shadow:0 1px 2px rgba(14,26,20,.08),0 20px 45px rgba(14,26,20,.12);
+  --glow:0 0 0 1px rgba(14,122,76,.22),0 0 30px rgba(14,122,76,.14);
 
-  --display:'Fraunces','Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif;
-  --script:'Beau Rivage',cursive;
-  --quote:'Marllena','Les Enfants du Paradis','Fraunces',serif;
-  --sans:Seravek,'Gill Sans Nova','Segoe UI',Calibri,'Trebuchet MS',sans-serif;
-  --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  --display:'Bricolage Grotesque',ui-sans-serif,-apple-system,'Segoe UI',sans-serif;
+  --script:cursive;
+  --quote:'Marllena','Les Enfants du Paradis',var(--display);
+  --sans:'Manrope',Seravek,'Segoe UI',Calibri,'Trebuchet MS',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
 
   --maxw:1120px;
 }
@@ -64,7 +66,7 @@ body{
 input,textarea,select{cursor:text}
 h1,h2,h3{font-family:var(--display);font-weight:600;margin:0;text-wrap:balance;color:var(--ink)}
 p{margin:0}
-a{color:var(--amber)}
+a{color:var(--mint)}
 img{max-width:100%}
 ::selection{background:var(--mint);color:var(--bg)}
 
@@ -84,13 +86,13 @@ body.cursor-ready #cursor-dot,body.cursor-ready #cursor-ring{opacity:1}
 #scroll-progress{position:fixed;top:0;left:0;height:2.5px;background:linear-gradient(90deg,var(--mint),var(--amber));width:0%;z-index:100;transition:width .08s linear}
 
 /* ---------- Header / nav ---------- */
-header.site{position:sticky;top:0;z-index:20;background:rgba(240,235,221,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:padding .25s ease,box-shadow .25s ease}
-header.site.scrolled{box-shadow:0 4px 24px rgba(20,28,22,.06)}
+header.site{position:sticky;top:0;z-index:20;background:rgba(238,241,236,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:padding .25s ease,box-shadow .25s ease}
+header.site.scrolled{box-shadow:0 4px 24px rgba(14,26,20,.07)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.6rem;max-width:var(--maxw);margin:0 auto;gap:1.5rem;transition:padding .25s ease}
 header.site.scrolled .nav{padding:.6rem 1.6rem}
 .wordmark{font-family:'Les Enfants du Paradis',var(--display);font-size:1.7rem;font-weight:400;text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:.4rem}
 .wordmark .dot{width:7px;height:7px;border-radius:50%;background:var(--mint);display:inline-block;animation:pulse-dot 2.4s ease-in-out infinite}
-@keyframes pulse-dot{0%,100%{box-shadow:0 0 0 0 rgba(46,107,79,.5)}50%{box-shadow:0 0 0 6px rgba(46,107,79,0)}}
+@keyframes pulse-dot{0%,100%{box-shadow:0 0 0 0 rgba(14,122,76,.5)}50%{box-shadow:0 0 0 6px rgba(14,122,76,0)}}
 .wordmark em{font-style:normal;color:var(--amber)}
 .nav-links{display:flex;gap:1.7rem;flex:1;justify-content:center}
 .nav-links a{position:relative;color:var(--ink-soft);text-decoration:none;font-size:.9rem;padding:.3rem 0}
@@ -112,15 +114,15 @@ header.site.scrolled .nav{padding:.6rem 1.6rem}
 
 /* ---------- Badges ---------- */
 .badge{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;border-radius:20px;padding:.35rem .9rem;border:1px solid}
-.badge-mint{color:var(--mint);background:var(--mint-soft);border-color:rgba(46,107,79,.3)}
-.badge-amber{color:var(--amber);background:var(--amber-soft);border-color:rgba(138,106,31,.3)}
-.badge-sky{color:var(--sky);background:var(--sky-soft);border-color:rgba(62,107,138,.3)}
+.badge-mint{color:var(--mint);background:var(--mint-soft);border-color:rgba(14,122,76,.3)}
+.badge-amber{color:var(--amber);background:var(--amber-soft);border-color:rgba(150,112,42,.3)}
+.badge-sky{color:var(--sky);background:var(--sky-soft);border-color:rgba(62,113,145,.3)}
 
 /* ---------- Tags (Human / AI / Hybrid / Service) ---------- */
 .tag{display:inline-flex;align-items:center;gap:.3rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.05em;text-transform:uppercase;padding:.22rem .55rem;border-radius:12px;margin-bottom:.65rem;border:1px solid}
-.tag-human{color:var(--mint);background:var(--mint-soft);border-color:rgba(46,107,79,.3)}
-.tag-ai{color:var(--amber);background:var(--amber-soft);border-color:rgba(138,106,31,.3)}
-.tag-hybrid{color:var(--sky);background:var(--sky-soft);border-color:rgba(62,107,138,.3)}
+.tag-human{color:var(--mint);background:var(--mint-soft);border-color:rgba(14,122,76,.3)}
+.tag-ai{color:var(--amber);background:var(--amber-soft);border-color:rgba(150,112,42,.3)}
+.tag-hybrid{color:var(--sky);background:var(--sky-soft);border-color:rgba(62,113,145,.3)}
 .tag-service{color:var(--ink);background:var(--surface-2);border-color:var(--line-strong)}
 
 /* ---------- Buttons: magnetic + shine sweep + ripple ---------- */
@@ -129,15 +131,15 @@ header.site.scrolled .nav{padding:.6rem 1.6rem}
 .btn::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(115deg,transparent 20%,rgba(255,255,255,.35) 40%,transparent 60%);transform:translateX(-120%);transition:transform .6s ease}
 .btn:hover::before{transform:translateX(120%)}
 .btn.primary{background:var(--mint);color:var(--bg)}
-.btn.primary:hover{box-shadow:0 10px 26px rgba(46,107,79,.32)}
+.btn.primary:hover{box-shadow:0 10px 26px rgba(14,122,76,.32)}
 .btn.ghost{border-color:var(--line-strong);color:var(--ink);background:transparent}
 .btn.ghost:hover{border-color:var(--mint-dim);color:var(--mint)}
 .btn.small{padding:.5rem 1rem;font-size:.85rem}
 .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.55);transform:scale(0);animation:ripple-anim .6s ease-out forwards;pointer-events:none}
 @keyframes ripple-anim{to{transform:scale(3);opacity:0}}
 
-/* ---------- Shimmering accent text (headings) ---------- */
-.accent{background:linear-gradient(90deg,var(--amber),var(--mint),var(--sky),var(--amber));background-size:300% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 6s linear infinite}
+/* ---------- Shimmering accent text (headings) — single-hue, not a rainbow sweep ---------- */
+.accent{background:linear-gradient(90deg,var(--mint-deep),var(--mint),var(--mint-bright),var(--mint));background-size:300% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 6s linear infinite}
 @keyframes shimmer{to{background-position:300% center}}
 
 /* ---------- Split-word heading reveal ---------- */
@@ -203,7 +205,7 @@ header.site.scrolled .nav{padding:.6rem 1.6rem}
 .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
 @media(max-width:760px){.proof-grid{grid-template-columns:1fr}}
 .proof-grid .pull-quote{margin:0;max-width:none}
-.pull-quote p{font-family:var(--display);font-size:1.08rem;font-style:italic;color:var(--ink);line-height:1.5;margin:0}
+.pull-quote p{font-family:var(--sans);font-weight:500;font-size:1.08rem;font-style:italic;color:var(--ink);line-height:1.5;margin:0}
 .pull-quote cite{display:block;margin-top:.6rem;font-family:var(--mono);font-style:normal;font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft)}
 
 /* ---------- Sections ---------- */
@@ -229,7 +231,7 @@ a.card{display:block;text-decoration:none;color:inherit}
 
 /* ---------- Hub cards (home page pillars) ---------- */
 .hub-card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.8rem;text-decoration:none;color:inherit;transition:transform .12s ease-out,box-shadow .25s ease,border-color .25s ease;position:relative;overflow:hidden;transform-style:preserve-3d;will-change:transform}
-.hub-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 0%,rgba(46,107,79,.08),transparent 60%);opacity:0;transition:opacity .25s ease}
+.hub-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 0%,rgba(14,122,76,.08),transparent 60%);opacity:0;transition:opacity .25s ease}
 .hub-card:hover{box-shadow:var(--shadow);border-color:var(--mint-dim)}
 .hub-card:hover::before{opacity:1}
 .hub-card .glyph{font-family:var(--display);font-size:1.8rem;color:var(--mint);display:block;margin-bottom:.8rem;transition:transform .3s ease}
@@ -269,7 +271,7 @@ a.card{display:block;text-decoration:none;color:inherit}
 .split ul{margin:1.1rem 0 0;padding-left:1.2rem;color:var(--ink-soft)}
 .split li{margin-bottom:.5rem}
 .panel{background:var(--ink);border-radius:10px;padding:2rem}
-.panel .row{display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid rgba(240,235,221,.12);font-size:.9rem;opacity:0;transform:translateX(-10px);animation:row-in .5s ease forwards}
+.panel .row{display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid rgba(238,241,236,.12);font-size:.9rem;opacity:0;transform:translateX(-10px);animation:row-in .5s ease forwards}
 .panel .row:nth-child(1){animation-delay:.1s}
 .panel .row:nth-child(2){animation-delay:.22s}
 .panel .row:nth-child(3){animation-delay:.34s}
@@ -278,11 +280,11 @@ a.card{display:block;text-decoration:none;color:inherit}
 @keyframes row-in{to{opacity:1;transform:none}}
 .panel .row:last-child{border-bottom:none}
 .panel .row b{color:var(--bg)}
-.panel .row span{color:rgba(240,235,221,.55)}
+.panel .row span{color:rgba(238,241,236,.55)}
 
 /* ---------- CTA / invite band (shared across every page) ---------- */
 .invite-band{background:linear-gradient(160deg,var(--surface),var(--bg-2));border:1px solid var(--line-strong);border-radius:14px;padding:3rem 2rem;text-align:center;margin:0 1.6rem;position:relative;overflow:hidden}
-.invite-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 120%,rgba(46,107,79,.14),transparent 60%)}
+.invite-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 120%,rgba(14,122,76,.14),transparent 60%)}
 .invite-band>*{position:relative}
 .invite-band h2{font-size:clamp(1.5rem,4vw,2rem);max-width:22ch;margin:.6rem auto 1rem}
 .invite-band p{color:var(--ink-soft);max-width:42ch;margin:0 auto 1.8rem}
@@ -290,7 +292,7 @@ a.card{display:block;text-decoration:none;color:inherit}
 .waitlist-form input{flex:1;min-width:220px;padding:.8rem 1rem;border-radius:5px;border:1px solid var(--line-strong);background:var(--bg);color:var(--ink);font-size:.95rem;transition:border-color .2s ease,box-shadow .2s ease}
 .waitlist-form input:focus{outline:none;border-color:var(--mint-dim);box-shadow:0 0 0 3px var(--mint-soft)}
 .waitlist-form input::placeholder{color:var(--ink-dim)}
-.waitlist-form button{background:var(--amber);color:var(--bg);border:none;padding:.8rem 1.4rem;border-radius:5px;font-weight:700;cursor:none}
+.waitlist-form button{background:var(--mint);color:var(--bg);border:none;padding:.8rem 1.4rem;border-radius:5px;font-weight:700;cursor:none}
 @media(hover:none),(pointer:coarse){ .waitlist-form button{cursor:pointer} }
 .waitlist-note{font-size:.78rem;color:var(--ink-dim);margin-top:.9rem}
 
