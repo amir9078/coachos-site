@@ -166,6 +166,27 @@ header.site.scrolled .nav{padding:.6rem 1.6rem}
 .hero .sub{color:var(--ink-soft);font-size:1.15rem;max-width:52ch;margin:0 auto 1.6rem}
 .hero-actions{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
 
+/* ---------- Hero split: asymmetric two-column hero (copy left, data panel
+   right) instead of centered-stack-of-text. Panel reuses the .panel/.row
+   component already built for why.html so this is a real composition
+   change, not a new visual language to maintain. ---------- */
+.hero-split{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,3.6rem);align-items:center;text-align:left}
+.hero-split .hero-copy{max-width:56ch}
+.hero-split .hero-copy h1{margin:.9rem 0 1.1rem;text-align:left;max-width:none}
+.hero-split .hero-copy .sub{text-align:left;margin:0 0 1.6rem;max-width:none}
+.hero-split .hero-actions{justify-content:flex-start;margin-bottom:0}
+.hero-split .panel{margin:0}
+.hero-split .panel .row b{font-family:var(--display);font-size:1.5rem;font-weight:700;font-variant-numeric:tabular-nums}
+.hero-split .panel .row span{color:rgba(238,241,236,.6);font-size:.82rem;text-align:right}
+@media(max-width:900px){
+  .hero-split{grid-template-columns:1fr;text-align:center}
+  .hero-split .hero-copy{max-width:none;margin:0 auto}
+  .hero-split .hero-copy h1{text-align:center;margin:.9rem auto 1.1rem}
+  .hero-split .hero-copy .sub{text-align:center;margin:0 auto 1.6rem}
+  .hero-split .hero-actions{justify-content:center}
+  .hero-split .panel{max-width:420px;margin:0 auto}
+}
+
 /* ---------- Page header (non-hero, for inner pages) ---------- */
 .pagehead{padding:clamp(1.9rem,6vw,3.4rem) 0 clamp(1.1rem,3vw,2rem);text-align:center;position:relative}
 .pagehead h1{font-size:clamp(1.9rem,4.6vw,2.6rem);margin:.6rem auto 1rem;max-width:22ch}
@@ -425,10 +446,20 @@ footer.site a:hover{color:var(--mint)}
 .gate-page{display:flex;align-items:center}
 @media(min-height:640px){ .gate-page{min-height:calc(100vh - 73px)} }
 .gate{position:relative;padding:clamp(1.8rem,6vw,3.2rem) 0;text-align:center;overflow:hidden;width:100%}
-.gate .kicker{font-family:'Marllena',var(--script);font-size:1.6rem;font-weight:400;letter-spacing:normal;text-transform:none;color:var(--mint)}
+/* Editorial open: intro block left-aligned and width-constrained instead of
+   centered full-width text, closing quote stays centered as a deliberate
+   bookend, not an accident. */
+.gate .wrap>.kicker{font-family:'Marllena',var(--script);font-size:1.6rem;font-weight:400;letter-spacing:normal;text-transform:none;color:var(--mint);display:block;text-align:left}
+.gate .wrap>h1{font-size:clamp(2.3rem,6vw,3.9rem);line-height:1.08;text-align:left;max-width:15ch}
+.gate .wrap>.sub{text-align:left;max-width:46ch;margin:0}
 .gate .aurora{position:absolute;inset:-20% -10%;z-index:-1;pointer-events:none;filter:blur(70px);opacity:.6}
 .gate .aurora .a4{width:22vw;height:22vw;right:18vw;bottom:-10vw;background:radial-gradient(circle,var(--sky) 0%,transparent 70%);animation:float2 18s ease-in-out infinite reverse}
 .gate-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem;max-width:1080px;margin:clamp(1.6rem,4vw,2.6rem) auto 0}
+@media(min-width:901px){
+  /* brick-stagger: breaks the perfectly even 4-up matrix without touching
+     the tilt-on-hover transform main.js applies (margin, not transform) */
+  .gate-grid>:nth-child(2),.gate-grid>:nth-child(4){margin-top:1.7rem}
+}
 @media(max-width:900px){.gate-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.gate-grid{grid-template-columns:1fr}}
 .gate-card{position:relative;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--mint);border-radius:14px;padding:2.1rem 1.5rem;text-decoration:none;color:inherit;transition:transform .12s ease-out,box-shadow .25s ease,border-color .25s ease;transform-style:preserve-3d;will-change:transform;overflow:hidden}
