@@ -90,10 +90,12 @@ header.site{position:sticky;top:0;z-index:20;background:rgba(238,241,236,.86);ba
 header.site.scrolled{box-shadow:0 4px 24px rgba(14,26,20,.07)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.6rem;max-width:var(--maxw);margin:0 auto;gap:1.5rem;transition:padding .25s ease}
 header.site.scrolled .nav{padding:.6rem 1.6rem}
-.wordmark{font-family:'Les Enfants du Paradis',var(--display);font-size:1.7rem;font-weight:400;text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:.4rem}
-.wordmark .dot{width:7px;height:7px;border-radius:50%;background:var(--mint);display:inline-block;animation:pulse-dot 2.4s ease-in-out infinite}
+.wordmark{font-family:var(--display);font-size:1.3rem;font-weight:700;letter-spacing:-.01em;text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:.55rem}
+.wordmark .mark{width:26px;height:26px;flex:none;color:var(--mint)}
+.wordmark .mark .signal{animation:mark-pulse 2.4s ease-in-out infinite;transform-origin:center}
+@keyframes mark-pulse{0%,100%{opacity:1}50%{opacity:.45}}
 @keyframes pulse-dot{0%,100%{box-shadow:0 0 0 0 rgba(14,122,76,.5)}50%{box-shadow:0 0 0 6px rgba(14,122,76,0)}}
-.wordmark em{font-style:normal;color:var(--amber)}
+.wordmark em{font-style:normal;color:var(--mint)}
 .nav-links{display:flex;gap:1.7rem;flex:1;justify-content:center}
 .nav-links a{position:relative;color:var(--ink-soft);text-decoration:none;font-size:.9rem;padding:.3rem 0}
 .nav-links a::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:1.5px;background:var(--mint);transition:width .3s cubic-bezier(.2,.8,.2,1)}
@@ -149,7 +151,7 @@ header.site.scrolled .nav{padding:.6rem 1.6rem}
 .split-text.in .split-word span{transform:translateY(0)}
 
 /* ---------- Hero / aurora (warm, light-theme blobs) ---------- */
-.hero{position:relative;padding:5.5rem 0 3.8rem;text-align:center;overflow:hidden}
+.hero{position:relative;padding:clamp(2.75rem,9vw,5.5rem) 0 clamp(2rem,6vw,3.8rem);text-align:center;overflow:hidden}
 .aurora{position:absolute;inset:-20% -10%;z-index:-1;pointer-events:none;filter:blur(70px);opacity:.55}
 .aurora span{position:absolute;border-radius:50%}
 .aurora .a1{width:38vw;height:38vw;left:-6vw;top:-8vw;background:radial-gradient(circle,var(--mint) 0%,transparent 70%);animation:float1 16s ease-in-out infinite}
@@ -165,7 +167,7 @@ header.site.scrolled .nav{padding:.6rem 1.6rem}
 .hero-actions{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
 
 /* ---------- Page header (non-hero, for inner pages) ---------- */
-.pagehead{padding:3.4rem 0 2rem;text-align:center;position:relative}
+.pagehead{padding:clamp(1.9rem,6vw,3.4rem) 0 clamp(1.1rem,3vw,2rem);text-align:center;position:relative}
 .pagehead h1{font-size:clamp(1.9rem,4.6vw,2.6rem);margin:.6rem auto 1rem;max-width:22ch}
 .pagehead p{color:var(--ink-soft);font-size:1.05rem;max-width:52ch;margin:0 auto}
 
@@ -178,7 +180,7 @@ header.site.scrolled .nav{padding:.6rem 1.6rem}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ---------- Stat strip w/ counters ---------- */
-.stat-strip{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:2.6rem;padding-top:2.2rem;border-top:1px solid var(--line)}
+.stat-strip{display:flex;justify-content:center;gap:clamp(1.6rem,5vw,3rem);flex-wrap:wrap;margin-top:clamp(1.6rem,4vw,2.6rem);padding-top:clamp(1.3rem,3vw,2.2rem);border-top:1px solid var(--line)}
 .stat{text-align:center}
 .stat .n{font-family:'Marllena',var(--display);font-weight:400;font-size:2.3rem;color:var(--mint);font-variant-numeric:tabular-nums;display:block}
 .stat .l{color:var(--ink-soft);font-size:.85rem;max-width:16ch}
@@ -201,7 +203,7 @@ header.site.scrolled .nav{padding:.6rem 1.6rem}
 .pull-quote img{width:44px;height:44px;border-radius:50%;object-fit:cover;margin-bottom:.7rem}
 /* Proof strip: customer voices sit inside a bordered panel, not floating — the
    visual signal that there's real evidence behind the claims above */
-.proof-strip{margin-top:2.6rem;border-top:1px solid var(--line);padding-top:2.4rem}
+.proof-strip{margin-top:clamp(1.6rem,4vw,2.6rem);border-top:1px solid var(--line);padding-top:clamp(1.4rem,3.5vw,2.4rem)}
 .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
 @media(max-width:760px){.proof-grid{grid-template-columns:1fr}}
 .proof-grid .pull-quote{margin:0;max-width:none}
@@ -209,8 +211,11 @@ header.site.scrolled .nav{padding:.6rem 1.6rem}
 .pull-quote cite{display:block;margin-top:.6rem;font-family:var(--mono);font-style:normal;font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft)}
 
 /* ---------- Sections ---------- */
-section{padding:4rem 0}
-.sec-head{max-width:56ch;margin:0 auto 2.6rem;text-align:center}
+/* Fluid rhythm: shrinks meaningfully on small screens instead of a flat
+   value that stacks into dead scroll distance on mobile (~40px at a
+   360px phone up to ~64px on desktop), no media query needed. */
+section{padding:clamp(2.25rem,5vw + .5rem,4rem) 0}
+.sec-head{max-width:56ch;margin:0 auto clamp(1.6rem,4vw,2.6rem);text-align:center}
 .sec-head h2{font-size:clamp(1.6rem,4vw,2.15rem);margin-top:.6rem}
 .sec-head p{color:var(--ink-soft);margin-top:.8rem;font-size:1.05rem}
 
@@ -283,7 +288,7 @@ a.card{display:block;text-decoration:none;color:inherit}
 .panel .row span{color:rgba(238,241,236,.55)}
 
 /* ---------- CTA / invite band (shared across every page) ---------- */
-.invite-band{background:linear-gradient(160deg,var(--surface),var(--bg-2));border:1px solid var(--line-strong);border-radius:14px;padding:3rem 2rem;text-align:center;margin:0 1.6rem;position:relative;overflow:hidden}
+.invite-band{background:linear-gradient(160deg,var(--surface),var(--bg-2));border:1px solid var(--line-strong);border-radius:14px;padding:clamp(1.9rem,6vw,3rem) clamp(1.3rem,4vw,2rem);text-align:center;margin:0 1.6rem;position:relative;overflow:hidden}
 .invite-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 120%,rgba(14,122,76,.14),transparent 60%)}
 .invite-band>*{position:relative}
 .invite-band h2{font-size:clamp(1.5rem,4vw,2rem);max-width:22ch;margin:.6rem auto 1rem}
@@ -339,7 +344,11 @@ a.card{display:block;text-decoration:none;color:inherit}
   .thread::before{left:.55rem}
   .thread::after{left:calc(.55rem - 2px)}
   .thread-node::before{left:-1.75rem;width:17px;height:17px}
-  .thread-node{padding-bottom:2.2rem}
+  .thread-node{padding-bottom:1.7rem}
+  .card,.hub-card{padding:1.25rem}
+  .gate-card{padding:1.6rem 1.25rem}
+  .acc-btn{padding:.9rem 1.1rem}
+  .acc-panel p{padding:0 1.1rem 1rem}
 }
 .thread.thread-compact .thread-node{padding-bottom:1.5rem}
 .thread.thread-compact .thread-node:last-child{padding-bottom:0}
@@ -372,7 +381,7 @@ a.card{display:block;text-decoration:none;color:inherit}
 /* ---------- Module index: dense editorial listing for services ----------
    Numbered modules, not icon cards. Reads as a system's table of contents. */
 .module-index{max-width:920px;margin:0 auto}
-.module{border-top:1px solid var(--line);padding:2.6rem 0}
+.module{border-top:1px solid var(--line);padding:clamp(1.6rem,4vw,2.6rem) 0}
 .module:first-child{border-top:none;padding-top:0}
 .module-head{display:flex;gap:1.4rem;align-items:baseline;margin-bottom:1.3rem}
 .module-num{font-family:var(--mono);font-size:.85rem;color:var(--ink-dim);flex:none;padding-top:.25rem}
@@ -397,7 +406,7 @@ a.card{display:block;text-decoration:none;color:inherit}
 .n.scramble{font-variant-numeric:tabular-nums}
 
 /* ---------- Footer ---------- */
-footer.site{padding:2.8rem 1.6rem 2.2rem;text-align:center;color:var(--ink-soft);font-size:.85rem;border-top:1px solid var(--line);margin-top:2rem}
+footer.site{padding:clamp(1.8rem,5vw,2.8rem) 1.6rem clamp(1.5rem,4vw,2.2rem);text-align:center;color:var(--ink-soft);font-size:.85rem;border-top:1px solid var(--line);margin-top:clamp(1.2rem,3vw,2rem)}
 footer.site a{color:var(--ink-soft);text-decoration:none}
 footer.site a:hover{color:var(--mint)}
 .foot-links{display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap;margin-bottom:1rem}
@@ -413,12 +422,13 @@ footer.site a:hover{color:var(--mint)}
 
 /* ---------- Niche gate (animated entry picker, the entire homepage) ---------- */
 .gate-header .nav{justify-content:flex-start}
-.gate-page{min-height:calc(100vh - 73px);display:flex;align-items:center}
-.gate{position:relative;padding:3.2rem 0;text-align:center;overflow:hidden;width:100%}
+.gate-page{display:flex;align-items:center}
+@media(min-height:640px){ .gate-page{min-height:calc(100vh - 73px)} }
+.gate{position:relative;padding:clamp(1.8rem,6vw,3.2rem) 0;text-align:center;overflow:hidden;width:100%}
 .gate .kicker{font-family:'Marllena',var(--script);font-size:1.6rem;font-weight:400;letter-spacing:normal;text-transform:none;color:var(--mint)}
 .gate .aurora{position:absolute;inset:-20% -10%;z-index:-1;pointer-events:none;filter:blur(70px);opacity:.6}
 .gate .aurora .a4{width:22vw;height:22vw;right:18vw;bottom:-10vw;background:radial-gradient(circle,var(--sky) 0%,transparent 70%);animation:float2 18s ease-in-out infinite reverse}
-.gate-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem;max-width:1080px;margin:2.6rem auto 0}
+.gate-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem;max-width:1080px;margin:clamp(1.6rem,4vw,2.6rem) auto 0}
 @media(max-width:900px){.gate-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.gate-grid{grid-template-columns:1fr}}
 .gate-card{position:relative;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--mint);border-radius:14px;padding:2.1rem 1.5rem;text-decoration:none;color:inherit;transition:transform .12s ease-out,box-shadow .25s ease,border-color .25s ease;transform-style:preserve-3d;will-change:transform;overflow:hidden}
