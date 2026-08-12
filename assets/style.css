@@ -457,18 +457,17 @@ footer.site a:hover{color:var(--mint)}
 .gate .wrap>.sub{text-align:left;max-width:46ch;margin:0}
 .gate .aurora{position:absolute;inset:-20% -10%;z-index:-1;pointer-events:none;filter:blur(70px);opacity:.6}
 .gate .aurora .a4{width:22vw;height:22vw;right:18vw;bottom:-10vw;background:radial-gradient(circle,var(--sky) 0%,transparent 70%);animation:float2 18s ease-in-out infinite reverse}
-.gate-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem;max-width:1080px;margin:clamp(1.6rem,4vw,2.6rem) auto 0}
+.gate-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1.3rem;max-width:1240px;margin:clamp(1.6rem,4vw,2.6rem) auto 0}
+.gate-grid>.gate-card{flex:1 1 240px;max-width:280px}
 @media(min-width:901px){
-  /* brick-stagger: breaks the perfectly even 4-up matrix without touching
+  /* brick-stagger: breaks the perfectly even matrix without touching
      the tilt-on-hover transform main.js applies (margin, not transform) */
-  .gate-grid>:nth-child(2),.gate-grid>:nth-child(4){margin-top:1.7rem}
+  .gate-grid>:nth-child(even){margin-top:1.7rem}
 }
-@media(max-width:900px){.gate-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.gate-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.gate-grid>.gate-card{flex-basis:100%;max-width:420px}}
 .gate-card{position:relative;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--mint);border-radius:14px;padding:2.1rem 1.5rem;text-decoration:none;color:inherit;transition:transform .12s ease-out,box-shadow .25s ease,border-color .25s ease;transform-style:preserve-3d;will-change:transform;overflow:hidden}
-.gate-card:nth-child(2){border-top-color:var(--amber)}
-.gate-card:nth-child(3){border-top-color:var(--sky)}
-.gate-card:nth-child(4){border-top-color:var(--mint)}
+.gate-card:nth-child(3n+2){border-top-color:var(--amber)}
+.gate-card:nth-child(3n){border-top-color:var(--sky)}
 .gate-card:hover{box-shadow:var(--shadow);border-color:var(--mint-dim)}
 .gate-card::after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;
   background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent);
@@ -476,9 +475,10 @@ footer.site a:hover{color:var(--mint)}
 .gate-card:hover::after{left:130%}
 .gate-card .idx{position:absolute;top:1.1rem;right:1.2rem;font-family:var(--mono);font-size:.68rem;color:var(--ink-dim);letter-spacing:.05em}
 .gate-card .glyph{color:var(--mint);display:block;margin-bottom:1rem;animation:glyph-bob 3.2s ease-in-out infinite}
-.gate-card:nth-child(2) .glyph{color:var(--amber);animation-delay:.25s}
-.gate-card:nth-child(3) .glyph{color:var(--sky);animation-delay:.5s}
-.gate-card:nth-child(4) .glyph{animation-delay:.75s}
+.gate-card:nth-child(3n+2) .glyph{color:var(--amber);animation-delay:.25s}
+.gate-card:nth-child(3n) .glyph{color:var(--sky);animation-delay:.5s}
+.gate-card:nth-child(2) .glyph,.gate-card:nth-child(4) .glyph{animation-delay:.75s}
+.gate-card:nth-child(5) .glyph{animation-delay:1s}
 @keyframes glyph-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 .gate-card .glyph svg{width:38px;height:38px;overflow:visible}
 .gate-card .glyph .draw{stroke-dasharray:180;stroke-dashoffset:180;transition:stroke-dashoffset 1.1s cubic-bezier(.2,.7,.2,1)}
@@ -491,8 +491,8 @@ footer.site a:hover{color:var(--mint)}
 .gate-card h3{font-size:1.1rem;margin-bottom:.6rem}
 .gate-card p{color:var(--ink);font-size:.9rem;margin-bottom:.9rem;line-height:1.5}
 .gate-card .solved{display:block;font-family:var(--mono);font-size:.68rem;color:var(--mint);text-transform:uppercase;letter-spacing:.05em;margin-bottom:1rem;padding-top:.8rem;border-top:1px solid var(--line)}
-.gate-card:nth-child(2) .solved{color:var(--amber)}
-.gate-card:nth-child(3) .solved{color:var(--sky)}
+.gate-card:nth-child(3n+2) .solved{color:var(--amber)}
+.gate-card:nth-child(3n) .solved{color:var(--sky)}
 .gate-card .go{font-family:var(--mono);font-size:.72rem;color:var(--mint);text-transform:uppercase;letter-spacing:.06em;display:inline-flex;align-items:center;gap:.3rem}
 .gate-card .go::after{content:'';width:0;height:1px;background:currentColor;transition:width .3s ease;display:inline-block}
 .gate-card:hover .go::after{width:14px}
