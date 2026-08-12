@@ -20,6 +20,13 @@
   font-style:normal;
   font-display:swap;
 }
+@font-face{
+  font-family:'Ballison';
+  src:url('fonts/ballison.ttf') format('truetype');
+  font-weight:normal;
+  font-style:normal;
+  font-display:swap;
+}
 
 :root{
   --bg:#EEF1EC;
@@ -90,11 +97,7 @@ header.site{position:sticky;top:0;z-index:20;background:rgba(238,241,236,.86);ba
 header.site.scrolled{box-shadow:0 4px 24px rgba(14,26,20,.07)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.6rem;max-width:var(--maxw);margin:0 auto;gap:1.5rem;transition:padding .25s ease}
 header.site.scrolled .nav{padding:.6rem 1.6rem}
-.wordmark{font-family:var(--display);font-size:1.3rem;font-weight:700;letter-spacing:-.01em;text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:.55rem}
-.wordmark .mark{width:26px;height:26px;flex:none;color:var(--mint)}
-.wordmark .mark .signal{animation:mark-pulse 2.4s ease-in-out infinite;transform-origin:center}
-@keyframes mark-pulse{0%,100%{opacity:1}50%{opacity:.45}}
-@keyframes pulse-dot{0%,100%{box-shadow:0 0 0 0 rgba(14,122,76,.5)}50%{box-shadow:0 0 0 6px rgba(14,122,76,0)}}
+.wordmark{font-family:'Ballison',var(--display);font-size:1.7rem;font-weight:400;letter-spacing:0;text-decoration:none;color:var(--ink);display:flex;align-items:center}
 .wordmark em{font-style:normal;color:var(--mint)}
 .nav-links{display:flex;gap:1.7rem;flex:1;justify-content:center}
 .nav-links a{position:relative;color:var(--ink-soft);text-decoration:none;font-size:.9rem;padding:.3rem 0}
