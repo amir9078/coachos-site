@@ -457,17 +457,26 @@ footer.site a:hover{color:var(--mint)}
    bookend, not an accident. */
 .gate .wrap>.kicker{font-family:'Marllena',var(--script);font-size:1.6rem;font-weight:400;letter-spacing:normal;text-transform:none;color:var(--mint);display:block;text-align:left}
 .gate .wrap>h1{font-size:clamp(2.3rem,6vw,3.9rem);line-height:1.08;text-align:left;max-width:34ch}
+@media(max-width:600px){.gate .wrap>h1{font-size:1.5rem;line-height:1.3;max-width:none}}
 .gate .wrap>.sub{text-align:left;max-width:46ch;margin:0}
 .gate .aurora{position:absolute;inset:-20% -10%;z-index:-1;pointer-events:none;filter:blur(70px);opacity:.6}
+/* Five persona stats: a real grid, not flex-wrap — so a 3-then-2 wrap keeps
+   row two's items sitting under row one's columns instead of re-centering
+   independently and reading as misaligned. */
+.gate-intro .stat-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:1.6rem 1rem;justify-items:center}
+@media(max-width:860px){.gate-intro .stat-strip{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){.gate-intro .stat-strip{grid-template-columns:repeat(2,1fr)}}
 .gate .aurora .a4{width:22vw;height:22vw;right:18vw;bottom:-10vw;background:radial-gradient(circle,var(--sky) 0%,transparent 70%);animation:float2 18s ease-in-out infinite reverse}
-.gate-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1.3rem;max-width:1240px;margin:clamp(1.6rem,4vw,2.6rem) auto 0}
-.gate-grid>.gate-card{flex:1 1 240px;max-width:280px}
-@media(min-width:901px){
-  /* brick-stagger: breaks the perfectly even matrix without touching
-     the tilt-on-hover transform main.js applies (margin, not transform) */
-  .gate-grid>:nth-child(even){margin-top:1.7rem}
+/* All 5 in one row on desktop — cards shrink/grow to fit rather than
+   wrapping into an uneven 4+1. Falls back to a proper (aligned) grid on
+   tablet, then a single column on mobile, unchanged from before. */
+.gate-grid{display:flex;flex-wrap:nowrap;justify-content:center;gap:1.1rem;max-width:1240px;margin:clamp(1.6rem,4vw,2.6rem) auto 0}
+.gate-grid>.gate-card{flex:1 1 0;min-width:0;max-width:280px}
+@media(max-width:860px){
+  .gate-grid{display:grid;grid-template-columns:repeat(2,1fr);flex-wrap:wrap}
+  .gate-grid>.gate-card{max-width:none}
 }
-@media(max-width:520px){.gate-grid>.gate-card{flex-basis:100%;max-width:420px}}
+@media(max-width:520px){.gate-grid{grid-template-columns:1fr}}
 .gate-card{position:relative;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--mint);border-radius:14px;padding:2.1rem 1.5rem;text-decoration:none;color:inherit;transition:transform .12s ease-out,box-shadow .25s ease,border-color .25s ease;transform-style:preserve-3d;will-change:transform;overflow:hidden}
 .gate-card:nth-child(3n+2){border-top-color:var(--amber)}
 .gate-card:nth-child(3n){border-top-color:var(--sky)}
