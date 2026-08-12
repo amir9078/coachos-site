@@ -257,10 +257,11 @@
     var decimals = parseInt(el.getAttribute('data-count-decimals') || '0', 10);
     el.textContent = fmt(parseFloat(el.getAttribute('data-count-to')), prefix, suffix, decimals);
   }
-  function animateCounter(el) {
-    if (el.dataset.counted) return;
-    el.dataset.counted = '1';
-    if (reduceMotion) { setFinal(el); return; }
+  // Actual count-up logic, shared by the plain and scramble entry points.
+  // Unguarded on purpose — animateCounter/animateScrambleCounter own the
+  // re-entrancy check via dataset.counted, so this always runs to completion
+  // and always lands on the real value via setFinal.
+  function runCountUp(el) {
     var target = parseFloat(el.getAttribute('data-count-to'));
     var suffix = el.getAttribute('data-count-suffix') || '';
     var prefix = el.getAttribute('data-count-prefix') || '';
@@ -279,19 +280,25 @@
     }
     requestAnimationFrame(step);
   }
+  function animateCounter(el) {
+    if (el.dataset.counted) return;
+    el.dataset.counted = '1';
+    if (reduceMotion) { setFinal(el); return; }
+    runCountUp(el);
+  }
   // Scramble variant: a brief cipher-like flicker of random digits before the
   // real count-up starts — reads as the number being computed, not just counted.
   function animateScrambleCounter(el) {
     if (el.dataset.counted) return;
-    if (reduceMotion) { el.dataset.counted = '1'; setFinal(el); return; }
+    el.dataset.counted = '1';
+    if (reduceMotion) { setFinal(el); return; }
     var target = parseFloat(el.getAttribute('data-count-to'));
-    var suffix = el.getAttribute('data-count-suffix') || '';
-    var prefix = el.getAttribute('data-count-prefix') || '';
     var digits = target.toLocaleString('en-US').length;
+    var prefix = el.getAttribute('data-count-prefix') || '';
+    var suffix = el.getAttribute('data-count-suffix') || '';
     var scrambleDuration = 420;
     var tickEvery = 45;
     var elapsed = 0;
-    el.dataset.counted = '1';
     var timer = setInterval(function () {
       elapsed += tickEvery;
       var fake = '';
@@ -301,7 +308,7 @@
       el.textContent = prefix + fake + suffix;
       if (elapsed >= scrambleDuration) {
         clearInterval(timer);
-        animateCounter(el);
+        runCountUp(el);
       }
     }, tickEvery);
   }

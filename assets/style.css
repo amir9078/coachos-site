@@ -97,7 +97,7 @@ header.site{position:sticky;top:0;z-index:20;background:rgba(238,241,236,.86);ba
 header.site.scrolled{box-shadow:0 4px 24px rgba(14,26,20,.07)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.6rem;max-width:var(--maxw);margin:0 auto;gap:1.5rem;transition:padding .25s ease}
 header.site.scrolled .nav{padding:.6rem 1.6rem}
-.wordmark{font-family:'Ballison',var(--display);font-size:1.7rem;font-weight:400;letter-spacing:0;text-decoration:none;color:var(--ink);display:flex;align-items:center}
+.wordmark{font-family:'Ballison',var(--display);font-size:1.85rem;font-weight:700;letter-spacing:0;text-decoration:none;color:var(--ink);display:flex;align-items:center;-webkit-text-stroke:.5px currentColor;text-stroke:.5px currentColor}
 .wordmark em{font-style:normal;color:var(--mint)}
 .nav-links{display:flex;gap:1.7rem;flex:1;justify-content:center}
 .nav-links a{position:relative;color:var(--ink-soft);text-decoration:none;font-size:.9rem;padding:.3rem 0}
@@ -445,15 +445,18 @@ footer.site a:hover{color:var(--mint)}
 @keyframes confetti-fall{to{transform:translateY(105vh) rotate(540deg);opacity:.9}}
 
 /* ---------- Niche gate (animated entry picker, the entire homepage) ---------- */
-.gate-header .nav{justify-content:flex-start}
 .gate-page{display:flex;align-items:center}
 @media(min-height:640px){ .gate-page{min-height:calc(100vh - 73px)} }
 .gate{position:relative;padding:clamp(1.8rem,6vw,3.2rem) 0;text-align:center;overflow:hidden;width:100%}
+/* Aurora is scoped to this intro wrapper, not the whole (now much taller) .gate
+   section — otherwise the glow blobs, sized/positioned off the container's own
+   height, end up stranded near the top/bottom and the middle of the page reads flat. */
+.gate-intro{position:relative;overflow:hidden;padding-bottom:1.4rem}
 /* Editorial open: intro block left-aligned and width-constrained instead of
    centered full-width text, closing quote stays centered as a deliberate
    bookend, not an accident. */
 .gate .wrap>.kicker{font-family:'Marllena',var(--script);font-size:1.6rem;font-weight:400;letter-spacing:normal;text-transform:none;color:var(--mint);display:block;text-align:left}
-.gate .wrap>h1{font-size:clamp(2.3rem,6vw,3.9rem);line-height:1.08;text-align:left;max-width:15ch}
+.gate .wrap>h1{font-size:clamp(2.3rem,6vw,3.9rem);line-height:1.08;text-align:left;max-width:34ch}
 .gate .wrap>.sub{text-align:left;max-width:46ch;margin:0}
 .gate .aurora{position:absolute;inset:-20% -10%;z-index:-1;pointer-events:none;filter:blur(70px);opacity:.6}
 .gate .aurora .a4{width:22vw;height:22vw;right:18vw;bottom:-10vw;background:radial-gradient(circle,var(--sky) 0%,transparent 70%);animation:float2 18s ease-in-out infinite reverse}
@@ -473,23 +476,14 @@ footer.site a:hover{color:var(--mint)}
   background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent);
   transform:skewX(-18deg);transition:left .65s cubic-bezier(.2,.8,.2,1)}
 .gate-card:hover::after{left:130%}
-.gate-card .idx{position:absolute;top:1.1rem;right:1.2rem;font-family:var(--mono);font-size:.68rem;color:var(--ink-dim);letter-spacing:.05em}
-.gate-card .glyph{color:var(--mint);display:block;margin-bottom:1rem;animation:glyph-bob 3.2s ease-in-out infinite}
-.gate-card:nth-child(3n+2) .glyph{color:var(--amber);animation-delay:.25s}
-.gate-card:nth-child(3n) .glyph{color:var(--sky);animation-delay:.5s}
-.gate-card:nth-child(2) .glyph,.gate-card:nth-child(4) .glyph{animation-delay:.75s}
-.gate-card:nth-child(5) .glyph{animation-delay:1s}
-@keyframes glyph-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-.gate-card .glyph svg{width:38px;height:38px;overflow:visible}
-.gate-card .glyph .draw{stroke-dasharray:180;stroke-dashoffset:180;transition:stroke-dashoffset 1.1s cubic-bezier(.2,.7,.2,1)}
-.gate-card.in .glyph .draw{stroke-dashoffset:0;transition-delay:.15s}
-.gate-card .glyph .fill-dot{opacity:0;transition:opacity .3s ease .9s}
-.gate-card.in .glyph .fill-dot{opacity:1}
-.gate-card .glyph .orbit-dot{offset-path:path('M24 8 C33 8 41 15 41 24 C41 33 33 40 24 40 C15 40 7 33 7 24 C7 15 15 8 24 8 Z');animation:orbit-travel 5s linear infinite;opacity:0;transition:opacity .3s ease .9s}
-.gate-card.in .glyph .orbit-dot{opacity:1}
-@keyframes orbit-travel{to{offset-distance:100%}}
+.gate-card .card-num{display:block;font-family:'Marllena',var(--display);font-weight:400;font-size:2.4rem;letter-spacing:normal;color:var(--mint);margin-bottom:1.1rem;transition:transform .3s ease}
+.gate-card:nth-child(3n+2) .card-num{color:var(--amber)}
+.gate-card:nth-child(3n) .card-num{color:var(--sky)}
+.gate-card:hover .card-num{transform:translateX(3px)}
 .gate-card h3{font-size:1.1rem;margin-bottom:.6rem}
 .gate-card p{color:var(--ink);font-size:.9rem;margin-bottom:.9rem;line-height:1.5}
+.gate-card .use-case{color:var(--ink-soft);font-size:.85rem;font-style:italic;line-height:1.55;margin-bottom:1rem}
+.gate-card .use-case b{font-style:normal;font-family:var(--mono);font-size:.66rem;color:var(--ink-dim);text-transform:uppercase;letter-spacing:.05em;margin-right:.45rem}
 .gate-card .solved{display:block;font-family:var(--mono);font-size:.68rem;color:var(--mint);text-transform:uppercase;letter-spacing:.05em;margin-bottom:1rem;padding-top:.8rem;border-top:1px solid var(--line)}
 .gate-card:nth-child(3n+2) .solved{color:var(--amber)}
 .gate-card:nth-child(3n) .solved{color:var(--sky)}
