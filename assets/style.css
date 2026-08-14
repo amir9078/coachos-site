@@ -29,10 +29,10 @@
 }
 
 :root{
-  --bg:#EEF1EC;
-  --bg-2:#E3E9DF;
-  --surface:#F6F8F4;
-  --surface-2:#DEE6DA;
+  --bg:#F4F1EA;
+  --bg-2:#EAE4D6;
+  --surface:#F9F6F0;
+  --surface-2:#E4DCC8;
   --ink:#12241A;
   --ink-soft:#47594C;
   --ink-dim:#7C8A80;
@@ -552,3 +552,50 @@ footer.site a:hover{color:var(--mint)}
 
 /* ---------- Misc ---------- */
 .divider{height:1px;background:var(--line);border:none;margin:0}
+
+/* ---------- Problem deep-dive articles (problems/*.html) ----------
+   Shared by every problem article page so the reading layout lives in one
+   place instead of being duplicated per file. Scoped under .prob-* only. */
+.prob-crumb{font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;color:var(--ink-dim);margin-bottom:1.1rem}
+.prob-crumb a{color:var(--ink-dim);text-decoration:none;border-bottom:1px solid transparent;transition:color .2s ease,border-color .2s ease}
+.prob-crumb a:hover{color:var(--mint);border-bottom-color:var(--mint-dim)}
+.prob-crumb span{margin:0 .45rem;opacity:.5}
+
+.prob-head{max-width:44rem;margin:0 auto}
+.prob-head h1{font-size:clamp(1.85rem,4.2vw,2.9rem);line-height:1.18;letter-spacing:-.015em;margin-bottom:1rem;text-wrap:balance}
+.prob-meta{display:flex;flex-wrap:wrap;gap:.5rem 1.1rem;align-items:center;font-family:var(--mono);font-size:.72rem;letter-spacing:.03em;color:var(--ink-dim);margin-top:.2rem}
+.prob-meta .prob-cat{color:var(--mint)}
+
+/* The lived-experience opener: the emotional hook before any analysis. */
+.prob-voice{max-width:44rem;margin:2.2rem auto 0;position:relative;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--mint-dim);border-radius:4px 12px 12px 4px;padding:1.9rem 2rem 1.7rem}
+.prob-voice::before{content:'\201C';position:absolute;top:.15rem;left:.7rem;font-family:var(--quote);font-size:3.2rem;line-height:1;color:var(--mint-dim);opacity:.55;pointer-events:none}
+.prob-voice p{font-size:1.06rem;line-height:1.72;color:var(--ink);font-style:italic;margin:0;position:relative}
+.prob-voice .prob-voice-tag{display:block;font-family:var(--mono);font-style:normal;font-size:.66rem;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-dim);margin-top:1.1rem}
+
+/* The verified number, given room to land on its own. */
+.prob-figure{max-width:44rem;margin:2.2rem auto 0;padding:1.5rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
+.prob-figure .n{display:block;font-family:var(--quote);font-weight:400;font-size:clamp(2.4rem,6vw,3.4rem);line-height:1;color:var(--mint);font-variant-numeric:tabular-nums;margin-bottom:.6rem}
+.prob-figure .l{display:block;max-width:34rem;margin:0 auto;font-size:.92rem;color:var(--ink-soft);line-height:1.6}
+.prob-figure cite{display:block;font-style:normal;font-family:var(--mono);font-size:.7rem;letter-spacing:.03em;color:var(--ink-dim);margin-top:.8rem}
+
+/* Body copy: a genuine reading measure, not a marketing column. */
+.prob-body{max-width:38rem;margin:0 auto;padding-top:2.6rem}
+.prob-body p{color:var(--ink-soft);font-size:1.03rem;line-height:1.78;margin-bottom:1.35rem}
+.prob-body>p:first-of-type{font-size:1.12rem;color:var(--ink);line-height:1.72}
+.prob-body h3{font-family:var(--display);font-size:1.22rem;letter-spacing:-.01em;color:var(--ink);margin:2.6rem 0 .9rem;text-wrap:balance}
+.prob-body ul{color:var(--ink-soft);padding-left:1.1rem;margin:0 0 1.35rem;list-style:none}
+.prob-body li{position:relative;padding-left:1rem;margin-bottom:.75rem;font-size:1.02rem;line-height:1.7}
+.prob-body li::before{content:'';position:absolute;left:0;top:.72em;width:5px;height:1px;background:var(--mint-dim)}
+.prob-body strong{color:var(--ink);font-weight:700}
+.prob-body a{color:var(--mint);text-decoration:none;border-bottom:1px solid var(--mint-dim);transition:border-color .2s ease}
+.prob-body a:hover{border-bottom-color:var(--mint)}
+.prob-body .callout{background:var(--surface-2);border:none;border-left:2px solid var(--mint);border-radius:0 10px 10px 0;padding:1.4rem 1.6rem;margin:2.4rem 0 0}
+.prob-body .callout p{color:var(--ink-soft);margin:0;font-size:.96rem;line-height:1.7}
+
+/* Sibling problems in the same category, so the page is not a dead end. */
+.prob-related{max-width:44rem;margin:0 auto;padding-top:1rem}
+.prob-related h2{font-size:1.05rem;margin-bottom:1.2rem}
+.prob-related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem}
+@media(max-width:640px){.prob-related-grid{grid-template-columns:1fr}}
+.prob-related-grid a{display:block;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1rem 1.15rem;text-decoration:none;color:var(--ink);font-size:.9rem;line-height:1.45;transition:border-color .2s ease,transform .2s ease}
+.prob-related-grid a:hover{border-color:var(--mint-dim);transform:translateY(-2px)}
