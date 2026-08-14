@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Roster — the professional network for this work only</title>
-<meta name="description" content="A LinkedIn-style network, one profession per room. See the sample feed for your fit — posts, referrals, and the Verified badge — then hit the wall: the real feed is members-only.">
+<meta name="description" content="A LinkedIn-style network, one profession per room. Read the public sliver of your room's feed — posts, carousels, polls, referrals — then hit the wall: the rest is members only.">
 <link rel="canonical" href="https://amir9078.github.io/coachos-site/v2/roster/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="The Roster — the professional network for this work only">
-<meta property="og:description" content="A LinkedIn-style network, one profession per room. See the sample feed for your fit — posts, referrals, and the Verified badge — then hit the wall: the real feed is members-only.">
+<meta property="og:description" content="A LinkedIn-style network, one profession per room. Read the public sliver of your room's feed — posts, carousels, polls, referrals — then hit the wall: the rest is members only.">
 <meta property="og:url" content="https://amir9078.github.io/coachos-site/v2/roster/">
 <meta property="og:site_name" content="CoachOS">
 <meta name="twitter:card" content="summary">
@@ -20,7 +20,7 @@
 .rtabs{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin:0 0 1.8rem}
 .rtab{font-family:var(--display);font-size:.8rem;font-weight:600;padding:.55rem 1.15rem;border-radius:999px;border:1px solid var(--line-strong);background:transparent;color:var(--ink-soft);cursor:pointer;transition:all .25s var(--ease)}
 .rtab.on{background:var(--accent);border-color:var(--accent);color:#fff}
-.rframe{max-width:600px;margin:0 auto;background:#f3f2ef;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow-deep);overflow:hidden}
+.rframe{max-width:620px;margin:0 auto;background:#f3f2ef;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow-deep);overflow:hidden}
 .rchrome{display:flex;align-items:center;gap:.35rem;padding:.6rem .9rem;background:#e8e6e1;font-family:var(--mono);font-size:.68rem;color:#555}
 .rdot{width:9px;height:9px;border-radius:50%;background:#c9c6bf;flex:none}
 .raddr{background:#f7f6f3;border-radius:6px;padding:.28rem .75rem;margin-left:.4rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -42,6 +42,34 @@
 .racts{display:flex;justify-content:space-around;padding:.25rem 0 .3rem}
 .ract{background:none;border:none;font-size:.75rem;font-weight:600;color:#555;padding:.5rem .6rem;border-radius:6px;cursor:pointer;font-family:inherit}
 .ract:hover{background:#f0efec}
+/* tweet card */
+.rtw{border:1px solid #d8d6d0;border-radius:12px;padding:.9rem 1rem;margin-top:.75rem;background:#fff}
+.rtw .twh{display:flex;gap:.5rem;align-items:center}
+.rtw .twh b{font-size:.8rem}
+.rtw .twhandle{font-size:.72rem;color:#777}
+.rtw .twx{margin-left:auto;font-weight:800;font-size:1rem;color:#111}
+.rtw .twt{font-size:.92rem;line-height:1.45;margin-top:.55rem;white-space:pre-line}
+.rtw .twm{display:flex;gap:1.2rem;font-size:.7rem;color:#888;margin-top:.6rem}
+/* carousel */
+.rcar{position:relative;margin-top:.75rem;border-radius:10px;overflow:hidden}
+.rslide{display:none;aspect-ratio:4/3.1;padding:1.5rem 1.4rem;box-sizing:border-box;flex-direction:column;justify-content:center;color:#fff}
+.rslide.on{display:flex}
+.rslide .sk{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;opacity:.75;margin-bottom:.7rem}
+.rslide h4{font-family:var(--display);font-size:1.25rem;line-height:1.25;letter-spacing:-.01em;margin:0}
+.rslide p{font-size:.82rem;line-height:1.5;margin:.7rem 0 0;opacity:.92}
+.rcarnav{position:absolute;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;border:none;background:rgba(255,255,255,.88);color:#111;font-size:.9rem;font-weight:700;cursor:pointer;line-height:1}
+.rcarnav.prev{left:.6rem}.rcarnav.next{right:.6rem}
+.rdots{position:absolute;bottom:.6rem;left:0;right:0;display:flex;gap:.3rem;justify-content:center}
+.rdots span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.45)}
+.rdots span.on{background:#fff}
+.rcarpage{position:absolute;top:.6rem;right:.7rem;font-family:var(--mono);font-size:.62rem;color:rgba(255,255,255,.8)}
+/* poll */
+.rpoll{margin-top:.75rem;display:flex;flex-direction:column;gap:.45rem}
+.rpopt{position:relative;border:1px solid #cfcdc7;border-radius:8px;padding:.55rem .8rem;font-size:.8rem;cursor:pointer;overflow:hidden;background:#fff;text-align:left;font-family:inherit;color:#1c1c1c}
+.rpopt .fill{position:absolute;inset:0;background:#eef1e6;z-index:0;border-radius:8px 0 0 8px}
+.rpopt span{position:relative;z-index:1}
+.rpopt .pct{float:right;font-weight:700}
+.rpollmeta{font-size:.7rem;color:#888;margin-top:.2rem}
 .rteaser{position:relative;max-height:130px;overflow:hidden;cursor:pointer}
 .rteaser::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(243,242,239,0) 0%,#f3f2ef 88%)}
 .rmorewrap{padding:.4rem 0 1.2rem;text-align:center}
@@ -152,9 +180,9 @@
   <div class="wrap pagehero-inner">
     <span class="label crumb">Room 03 / The network &middot; live &mdash; members only</span>
     <h1>LinkedIn, if it were <em>only your people.</em></h1>
-    <p class="sub">One profession per room. Coaches with coaches, mentors with mentors &mdash; posting, connecting, and passing work to people who actually understand theirs. Below is what it looks like inside. We&rsquo;ll show you exactly as much as we&rsquo;re allowed to.</p>
+    <p class="sub">One profession per room. Coaches with coaches, mentors with mentors &mdash; posting, connecting, and passing work to people who actually understand theirs. Reading is open. The rest belongs to members.</p>
     <div class="hero-ctas">
-      <a class="btn btn-primary" href="#peek">Look inside</a>
+      <a class="btn btn-primary" href="#peek">Open your room</a>
     </div>
   </div>
 </section>
@@ -162,9 +190,9 @@
 <section class="sec alt" id="peek">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="label">The prototype &middot; pick your room</span>
-      <h2>Five rooms. <em>One glimpse each.</em></h2>
-      <p class="after">A sample feed, written to show you how your room works. The real one stays inside.</p>
+      <span class="label">The Roster &middot; pick your room</span>
+      <h2>This is the feed. <em>The public end of it.</em></h2>
+      <p class="after">Posts, carousels, polls, referrals &mdash; then the wall. Members see the rest.</p>
     </div>
     <div class="rtabs reveal" id="rtabs"></div>
     <div class="rframe reveal">
@@ -172,7 +200,7 @@
       <div class="rfeed" id="rfeed"></div>
       <div class="rmorewrap"><button class="rmore" id="rmore">See more posts</button></div>
     </div>
-    <noscript><p style="text-align:center;color:var(--ink-dim);margin-top:1rem">The sample feed needs JavaScript &mdash; but the room itself is members-only anyway.</p></noscript>
+    <noscript><p style="text-align:center;color:var(--ink-dim);margin-top:1rem">The feed needs JavaScript &mdash; and the room itself is members-only anyway.</p></noscript>
   </div>
 </section>
 
@@ -214,7 +242,6 @@
         </ul>
       </div>
     </div>
-    <p class="reveal" style="margin-top:2.4rem;color:var(--ink-dim);font-size:.95rem;max-width:640px">To be straight with you: the feed above is a sample we wrote, because members&rsquo; real posts belong to members. That&rsquo;s the whole point of the room.</p>
   </div>
 </section>
 
@@ -244,8 +271,8 @@
 <div class="rmodal" id="rmodal" role="dialog" aria-modal="true" aria-labelledby="rmodal-h">
   <div class="rcard">
     <h3 id="rmodal-h">Oops.</h3>
-    <p>This is only for our members &mdash; we can&rsquo;t show you more than this.</p>
-    <p class="fine">What you just read is a sample feed, written to show you how the Roster works. The real one &mdash; real names, real work, real referrals &mdash; stays inside, with the people we&rsquo;ve chosen.</p>
+    <p>This is only for our members &mdash; we can&rsquo;t allow you more than this.</p>
+    <p class="fine">The feed you&rsquo;ve been reading is the public face of the room. The real one &mdash; members&rsquo; own posts, names, and referrals &mdash; stays inside, with the people we&rsquo;ve chosen.</p>
     <div class="row">
       <a class="btn btn-primary" href="../services.html">Start with the services</a>
       <button class="btn btn-ghost" id="rclose" type="button">Close</button>
@@ -272,78 +299,157 @@
 <script src="../assets/main.js?v=20260814e"></script>
 <script>
 (function(){
+  var G = {
+    orange:'linear-gradient(135deg,#FF6B3D,#C42B00)',
+    blue:'linear-gradient(135deg,#3D6BFF,#122B8A)',
+    green:'linear-gradient(135deg,#0E9F6E,#064E36)',
+    purple:'linear-gradient(135deg,#8B5CF6,#3B1687)',
+    dark:'linear-gradient(135deg,#2B2B2B,#101010)'
+  };
+  var AV = {
+    nadia:{av:'👩🏽‍💼',bg:'linear-gradient(135deg,#FFB199,#FF4A21)'}, tom:{av:'🧔🏻',bg:'linear-gradient(135deg,#9BB8FF,#2D5BFF)'},
+    priya:{av:'👩🏻‍🏫',bg:'linear-gradient(135deg,#C9A0FF,#7B2DFF)'}, jonas:{av:'🧑🏼‍🎨',bg:'linear-gradient(135deg,#8FE3C0,#0E9F6E)'},
+    elena:{av:'👩🏾‍💻',bg:'linear-gradient(135deg,#FFD37A,#E8930C)'}, marcus:{av:'🧔🏾',bg:'linear-gradient(135deg,#FFB199,#FF4A21)'},
+    aisha:{av:'👩🏿‍💼',bg:'linear-gradient(135deg,#C9A0FF,#7B2DFF)'}, rob:{av:'🧑🏻‍🔬',bg:'linear-gradient(135deg,#8FE3C0,#0E9F6E)'},
+    lin:{av:'👩🏼‍🎓',bg:'linear-gradient(135deg,#FFD37A,#E8930C)'}, dev:{av:'🧑🏽‍💻',bg:'linear-gradient(135deg,#9BB8FF,#2D5BFF)'},
+    marta:{av:'👩🏻‍🎨',bg:'linear-gradient(135deg,#FFB199,#FF4A21)'}, chris:{av:'🧔🏼',bg:'linear-gradient(135deg,#8FE3C0,#0E9F6E)'},
+    sam:{av:'🧑🏻‍🎤',bg:'linear-gradient(135deg,#FFD37A,#E8930C)'}, hana:{av:'👩🏽‍🍳',bg:'linear-gradient(135deg,#FFB199,#FF4A21)'},
+    omar:{av:'🧔🏽',bg:'linear-gradient(135deg,#9BB8FF,#2D5BFF)'}, grace:{av:'👩🏼‍🏭',bg:'linear-gradient(135deg,#C9A0FF,#7B2DFF)'},
+    claire:{av:'👩🏻‍💼',bg:'linear-gradient(135deg,#9BB8FF,#2D5BFF)'}, daniel:{av:'🧔🏼',bg:'linear-gradient(135deg,#8FE3C0,#0E9F6E)'},
+    ingrid:{av:'👩🏼‍💻',bg:'linear-gradient(135deg,#C9A0FF,#7B2DFF)'}, kwame:{av:'🧑🏿‍🏫',bg:'linear-gradient(135deg,#FFB199,#FF4A21)'}
+  };
+
   var P = {
     coach: { label:'For coaches', addr:'roster.coachos/coaches — members', posts:[
-      { av:'👩🏽‍💼', bg:'linear-gradient(135deg,#FFB199,#FF4A21)', name:'Nadia R.', role:'Executive coach · 12 yrs', time:'2d', likes:214, cmts:31,
-        txt:'I stopped offering free discovery calls this year.\n\nNot because people abused them — because the wrong people booked them. A paid €40 first session filters for one thing only: seriousness. My close rate went from 1 in 6 to 1 in 2, and the sessions themselves got better.\n\nPrice is a filter, not a wall.',
-        cmt:{ av:'🧔🏻', bg:'linear-gradient(135deg,#9BB8FF,#2D5BFF)', name:'Tom H.', txt:'Tried this after we talked at the Roundtable — same result. The no-shows vanished entirely.' } },
-      { av:'🧔🏻', bg:'linear-gradient(135deg,#9BB8FF,#2D5BFF)', name:'Tom H.', role:'Career transition coach', time:'3d', likes:187, cmts:24,
-        txt:'A client didn’t need another goal this week. She needed permission to quit one.\n\nWe spend so much time helping people commit. Sometimes the coaching is helping them un-commit — out loud, with a witness, without shame.\n\nShe cancelled the certification she’d been dreading for a year. Best session of my month.' },
-      { av:'👩🏻‍🏫', bg:'linear-gradient(135deg,#C9A0FF,#7B2DFF)', name:'Priya M.', role:'Leadership coach · ex-HR director', time:'5d', likes:342, cmts:48,
-        txt:'When I coached “everyone,” I averaged 3 enquiries a month.\n\nWhen I niched to first-time engineering managers, I got 11 the first month — from a smaller audience.\n\nGeneralists get scrolled past. Specialists get forwarded. Your niche isn’t a cage; it’s a referral instruction.' },
-      { av:'🧑🏼‍🎨', bg:'linear-gradient(135deg,#8FE3C0,#0E9F6E)', name:'Jonas K.', role:'Wellness & burnout coach', time:'1w', likes:156, cmts:19,
-        txt:'Eight sessions a day is not a badge of honour. It’s how good coaches quietly become bad ones.\n\nMy rule now: buffers between every session, hard stop at five. Fewer clients, better coaching, higher rate. Every part of that sentence is connected.' },
-      { av:'👩🏾‍💻', bg:'linear-gradient(135deg,#FFD37A,#E8930C)', name:'Elena S.', role:'Business coach for solo founders', time:'1w', likes:268, cmts:35,
-        txt:'The question that’s done the most work for me this year, with stuck clients:\n\n“What are you pretending not to know?”\n\nThen silence. Don’t rescue them from it. The minute they name the thing, the session starts for real.',
-        cmt:{ av:'👩🏽‍💼', bg:'linear-gradient(135deg,#FFB199,#FF4A21)', name:'Nadia R.', txt:'Stealing this for tomorrow’s board-chair session. Will credit you when it works.' } },
-      { av:'🧔🏻', bg:'linear-gradient(135deg,#9BB8FF,#2D5BFF)', name:'Tom H.', role:'Career transition coach', time:'1w', likes:98, cmts:12,
-        txt:'Referral thread: I have two enquiries this month I’m not the right coach for — one exec stepping into a CFO seat, one founder couple. Who should I send them to? Reply below and I’ll make the intro…' } ] },
+      { type:'post', who:AV.nadia, name:'Nadia R.', role:'Executive coach · 12 yrs', time:'2d', likes:1204, cmts:87,
+        txt:'I coached for free for two years. Here’s what it cost me.\n\nNot money — positioning. Free clients treated sessions like podcasts: nice to have, easy to skip. The day I set a real price, the same people started doing the homework.\n\n81% of coaches run the business side by hand, and underpricing is where it starts. Your price is the first piece of coaching the client receives: it teaches them how seriously to take the work.\n\nCharge like it matters. It starts mattering.',
+        cmt:{ who:AV.tom, name:'Tom H.', txt:'The “price is the first intervention” line is going on my wall.' } },
+      { type:'carousel', who:AV.priya, name:'Priya M.', role:'Leadership coach · ex-HR director', time:'4d', likes:2318, cmts:146,
+        cap:'Saved by 900+ people last week. The five questions, one per slide →',
+        bg:G.orange, slides:[
+          {k:'For coaches · 5 slides', h:'The 5 questions that unstick any client', p:'Not advice. Not frameworks. Questions — the only tool that scales to every client.'},
+          {k:'01', h:'“What are you pretending not to know?”', p:'Then silence. Don’t rescue them from it. The session starts when they answer.'},
+          {k:'02', h:'“What would this look like if it were easy?”', p:'Strips the drama off the problem. What’s left is usually a to-do list.'},
+          {k:'03', h:'“What did you do the last time this happened?”', p:'Clients forget they have a track record. Hand it back to them.'},
+          {k:'04', h:'“Whose permission are you waiting for?”', p:'Nine times out of ten, the answer is “nobody’s” — said out loud, it breaks.'},
+          {k:'05', h:'“What will you actually do by Friday?”', p:'A session without a Friday is a conversation. Close every loop with a date.'} ] },
+      { type:'tweet', who:AV.elena, name:'Elena S.', role:'Business coach for solo founders', time:'5d', likes:894, cmts:53,
+        cap:'This one’s been living rent-free in my head all week:',
+        tw:{ av:'🧠', bg:G.dark, name:'The Coaching Letters', handle:'@coachingletters', time:'11:42 · 14 Aug', views:'412K',
+          txt:'Clients don’t pay for your hour.\n\nThey pay for the ten years it took you to know what to say in that hour.\n\nPrice the decade, not the sixty minutes.', rts:'2.1K', tlikes:'18.4K' } },
+      { type:'poll', who:AV.jonas, name:'Jonas K.', role:'Wellness & burnout coach', time:'6d', likes:432, cmts:61,
+        txt:'Honest one, coaches: what actually eats your non-coaching hours? (We keep saying “admin” — let’s get specific.)',
+        poll:{ meta:'1,847 votes · poll closed', opts:[
+          ['Content & posting',38],['Follow-ups & lead admin',27],['Invoices & chasing payment',21],['Website & tech upkeep',14] ] } },
+      { type:'post', who:AV.tom, name:'Tom H.', role:'Career transition coach', time:'1w', likes:1567, cmts:112,
+        txt:'A client didn’t need another goal this week. She needed permission to quit one.\n\nWe spend so much time helping people commit. Sometimes the deepest coaching is helping them un-commit — out loud, with a witness, without shame.\n\nShe cancelled the certification she’d been dreading for a year and cried with relief on the call.\n\nGoals aren’t sacred. Directions are.',
+        cmt:{ who:AV.nadia, name:'Nadia R.', txt:'“Goals aren’t sacred. Directions are.” — forwarding this to three clients today.' } },
+      { type:'teaser', who:AV.priya, name:'Priya M.', role:'Leadership coach · ex-HR director', time:'1w',
+        txt:'Referral thread, August edition: I have two enquiries I’m not right for — a board chair prepping a succession, and a founder duo mid-conflict. Who should I intro? Reply and I’ll connect you. Last month this thread placed four…' } ] },
+
     mentor: { label:'For mentors', addr:'roster.coachos/mentors — members', posts:[
-      { av:'🧔🏾', bg:'linear-gradient(135deg,#FFB199,#FF4A21)', name:'Marcus D.', role:'Product mentor · ex-VP Product', time:'1d', likes:231, cmts:29,
-        txt:'Mentorship isn’t advice. Advice is free and mostly ignored.\n\nMentorship is structure: a goal, a cadence, homework, and someone who remembers what you said you’d do. The advice is maybe 20% of it.\n\nIf your “program” is just calls when they ask — that’s a friendship, and you’re underpricing it.' },
-      { av:'👩🏿‍💼', bg:'linear-gradient(135deg,#C9A0FF,#7B2DFF)', name:'Aisha T.', role:'Founder mentor · 3 exits', time:'2d', likes:198, cmts:22,
-        txt:'I restructured my mentorship into 12 sessions with a written arc — where we start, where we end, what done looks like.\n\nRenewals went from “so… same time next month?” to mentees asking for the next arc before session ten.\n\nPeople renew programs. They drift out of arrangements.',
-        cmt:{ av:'🧑🏻‍🔬', bg:'linear-gradient(135deg,#8FE3C0,#0E9F6E)', name:'Rob F.', txt:'The written arc changed everything for me too. Mentees quote it back in session one.' } },
-      { av:'🧑🏻‍🔬', bg:'linear-gradient(135deg,#8FE3C0,#0E9F6E)', name:'Rob F.', role:'Engineering mentor', time:'4d', likes:145, cmts:17,
-        txt:'Your calendar is not a program.\n\nA program has: an intake question set, a goal doc, session recaps someone writes, and a definition of “we’re done.”\n\nMine took one weekend to build and doubled what I could honestly charge. The mentoring didn’t change — the container did.' },
-      { av:'👩🏼‍🎓', bg:'linear-gradient(135deg,#FFD37A,#E8930C)', name:'Lin W.', role:'Career mentor for new grads', time:'6d', likes:176, cmts:26,
-        txt:'The best matching question I’ve found isn’t “what do you want to learn?”\n\nIt’s “what decision are you facing in the next 90 days?”\n\nMentees don’t need a curriculum. They need someone who’s already made their next decision, badly, once.' },
-      { av:'👩🏻‍🎤', bg:'linear-gradient(135deg,#9BB8FF,#2D5BFF)', name:'Sofia G.', role:'Design leadership mentor', time:'1w', likes:129, cmts:14,
-        txt:'Started logging outcomes at the end of every mentorship — one paragraph, mentee-approved.\n\nTwo years later that document is my entire sales page. No testimonials begged for at awkward moments. Just the record, kept as we went, with consent.' },
-      { av:'🧔🏾', bg:'linear-gradient(135deg,#FFB199,#FF4A21)', name:'Marcus D.', role:'Product mentor · ex-VP Product', time:'1w', likes:87, cmts:9,
-        txt:'Open thread: what do you do when a mentee outgrows you mid-program? Had it happen this month — best possible problem, still a problem. My take below, but first…' } ] },
+      { type:'post', who:AV.marcus, name:'Marcus D.', role:'Product mentor · ex-VP Product', time:'1d', likes:1876, cmts:134,
+        txt:'Guided mentorship succeeds 91% of the time. Unstructured mentorship: about 30%.\n\nSame mentors. Same mentees. Same good intentions. The difference is the container — a goal, a cadence, homework, and someone keeping score.\n\nSo when a mentorship “fizzles out,” stop blaming chemistry. It didn’t fizzle. It was never built.\n\nAdvice is a gift. Mentorship is a structure.',
+        cmt:{ who:AV.aisha, name:'Aisha T.', txt:'That 91/30 split matches my last three years almost exactly. Structure is the product.' } },
+      { type:'carousel', who:AV.aisha, name:'Aisha T.', role:'Founder mentor · 3 exits', time:'3d', likes:2054, cmts:98,
+        cap:'The 12-session arc I rebuilt my mentorship around. Steal it →',
+        bg:G.purple, slides:[
+          {k:'For mentors · 5 slides', h:'12 sessions, one arc', p:'The structure that turned “same time next month?” into renewals asked for by session ten.'},
+          {k:'Sessions 1–2', h:'Map the decision', p:'Not “what do you want to learn” — what decision do you face in the next 90 days?'},
+          {k:'Sessions 3–8', h:'Work the decision', p:'Every session ends with one commitment and a date. The recap carries it forward.'},
+          {k:'Sessions 9–10', h:'Prove the change', p:'Write down what moved, in the mentee’s own words. This becomes your proof — with consent.'},
+          {k:'Sessions 11–12', h:'Open the next arc', p:'The renewal conversation happens before the goodbye session. Always.'},
+          {k:'The rule', h:'People renew programs.', p:'They drift out of arrangements. Which one are you running?'} ] },
+      { type:'tweet', who:AV.rob, name:'Rob F.', role:'Engineering mentor', time:'5d', likes:743, cmts:41,
+        cap:'Every mentor I know needs this taped to their monitor:',
+        tw:{ av:'⚙️', bg:G.dark, name:'Mentor Notes', handle:'@mentornotes', time:'09:15 · 12 Aug', views:'287K',
+          txt:'Your calendar is not a program.\n\nA program has an intake, a goal doc, recaps, and a definition of done.\n\nBuild the container once. Charge for the container forever.', rts:'1.4K', tlikes:'11.2K' } },
+      { type:'poll', who:AV.lin, name:'Lin W.', role:'Career mentor for new grads', time:'6d', likes:389, cmts:44,
+        txt:'Be honest, mentors — do you have a written structure for your mentorship, or is it “calls when they need me”?',
+        poll:{ meta:'1,212 votes · poll closed', opts:[
+          ['Written arc, sessions defined',22],['Half-structured, mostly vibes',31],['Calls whenever they ask',47] ] } },
+      { type:'post', who:AV.lin, name:'Lin W.', role:'Career mentor for new grads', time:'1w', likes:1123, cmts:76,
+        txt:'Started logging outcomes at the end of every mentorship. One paragraph, mentee-approved, dated.\n\nTwo years later, that document is my entire sales page. No chasing testimonials at awkward moments. No “would you mind writing something?” Just the record, kept as we went, with consent built in.\n\nYour proof is being generated in every session. You’re just not writing it down.' },
+      { type:'teaser', who:AV.marcus, name:'Marcus D.', role:'Product mentor · ex-VP Product', time:'1w',
+        txt:'Open thread: a mentee outgrew me mid-program this month. Best possible problem — still a problem. What I did, and what I’d do differently: first, I told them directly that…' } ] },
+
     freelancer: { label:'For freelancers', addr:'roster.coachos/freelancers — members', posts:[
-      { av:'🧑🏽‍💻', bg:'linear-gradient(135deg,#9BB8FF,#2D5BFF)', name:'Dev A.', role:'Brand designer · B2B SaaS', time:'1d', likes:276, cmts:41,
-        txt:'Raised my rate 40% in January. Braced for the exodus.\n\nWhat actually happened: one client left, two said “finally, we felt weird underpaying you,” and the new enquiries got more serious.\n\nYour rate is a positioning statement. A low one says “I’m not sure either.”',
-        cmt:{ av:'👩🏻‍🎨', bg:'linear-gradient(135deg,#FFB199,#FF4A21)', name:'Marta P.', txt:'The “we felt weird underpaying you” club is real. Same experience last year.' } },
-      { av:'👩🏻‍🎨', bg:'linear-gradient(135deg,#FFB199,#FF4A21)', name:'Marta P.', role:'Copywriter · fintech', time:'3d', likes:203, cmts:27,
-        txt:'The follow-up nobody sends is the one that closes.\n\nMy rule: every proposal gets followed up on day 3, day 8, and day 15. Not “just checking in” — each one adds something: a relevant example, an answer to an unasked question, a deadline of mine.\n\nHalf my yeses this year came after day 8.' },
-      { av:'🧔🏼', bg:'linear-gradient(135deg,#8FE3C0,#0E9F6E)', name:'Chris B.', role:'Web developer · e-commerce', time:'5d', likes:167, cmts:21,
-        txt:'Feast-famine isn’t a workload problem. It’s a habit problem.\n\nThe famine starts during the feast — the month you’re too busy to post, follow up, or answer enquiries properly.\n\nThe fix isn’t working more. It’s making sure the business-side keeps moving when you can’t.' },
-      { av:'👩🏾‍🔧', bg:'linear-gradient(135deg,#C9A0FF,#7B2DFF)', name:'Yuki N.', role:'Motion designer', time:'6d', likes:148, cmts:18,
-        txt:'Red flags I now decline politely, from experience:\n\n• “Quick call to pick your brain” before any scope\n• “We’ll have lots more work after this one” as a discount lever\n• Ghosts the contract, rushes the deadline\n\nA bad client costs more than an empty week. Took me four years to believe that.' },
-      { av:'🧑🏻‍🎤', bg:'linear-gradient(135deg,#FFD37A,#E8930C)', name:'Sam O.', role:'SEO consultant', time:'1w', likes:192, cmts:23,
-        txt:'Sent one referral this morning — a project outside my lane, passed to someone in this room who’s perfect for it.\n\nLast month someone here did the same for me.\n\nThis is the whole economy of freelancing that LinkedIn never managed to build: small room, real names, work moving both directions.' },
-      { av:'👩🏻‍🎨', bg:'linear-gradient(135deg,#FFB199,#FF4A21)', name:'Marta P.', role:'Copywriter · fintech', time:'1w', likes:76, cmts:11,
-        txt:'Rate thread, quarterly edition: what are we all charging for a landing page these days? I’ll go first — and before anyone lowballs themselves in public, remember what we said last quarter about…' } ] },
+      { type:'post', who:AV.dev, name:'Dev A.', role:'Brand designer · B2B SaaS', time:'1d', likes:2431, cmts:187,
+        txt:'Raised my rate 40% in January. Braced for the exodus.\n\nWhat actually happened:\n— one client left\n— two said “finally, we felt weird underpaying you”\n— new enquiries got more serious, not fewer\n\nYour rate is a positioning statement. A low one says “I’m not sure either.”\n\nThe market believes what you tell it. Tell it something better.',
+        cmt:{ who:AV.marta, name:'Marta P.', txt:'The “we felt weird underpaying you” club is real. Same words, almost verbatim, last year.' } },
+      { type:'carousel', who:AV.marta, name:'Marta P.', role:'Copywriter · fintech', time:'3d', likes:1892, cmts:121,
+        cap:'Half my yeses this year came after day 8. The follow-up calendar →',
+        bg:G.blue, slides:[
+          {k:'For freelancers · 5 slides', h:'The follow-up calendar that closes proposals', p:'“Just checking in” is not a strategy. This is.'},
+          {k:'Day 3', h:'Add something', p:'A relevant example, a case, an answer to a question they didn’t ask. Value, not pressure.'},
+          {k:'Day 8', h:'Make it easier', p:'Break the scope into phases. A smaller first yes beats a stalled big one.'},
+          {k:'Day 15', h:'Name a deadline — yours', p:'“I’m booking September this week” is honest scarcity. Vague availability closes nothing.'},
+          {k:'Day 21', h:'Close the loop', p:'“Shall I close the file?” gets more replies than any follow-up. Nobody likes a closing door.'},
+          {k:'The math', h:'Most freelancers stop at day 3.', p:'The ones who don’t, eat. Half my yeses this year came after day 8.'} ] },
+      { type:'tweet', who:AV.chris, name:'Chris B.', role:'Web developer · e-commerce', time:'5d', likes:1054, cmts:67,
+        cap:'Needed to hear this one today:',
+        tw:{ av:'💼', bg:G.dark, name:'Freelance Physics', handle:'@freelancephysics', time:'16:03 · 10 Aug', views:'389K',
+          txt:'Scope creep isn’t a client problem.\n\nIt’s a silence problem.\n\nName it the first time, kindly, in writing — and it never becomes a pattern.', rts:'1.9K', tlikes:'15.7K' } },
+      { type:'poll', who:AV.sam, name:'Sam O.', role:'SEO consultant', time:'6d', likes:512, cmts:74,
+        txt:'The famine starts during the feast. Proof — answer honestly: when do you follow up on a sent proposal?',
+        poll:{ meta:'2,306 votes · poll closed', opts:[
+          ['Day 1–3, always',18],['About a week later',24],['When I remember',41],['I don’t. They know where I am',17] ] } },
+      { type:'post', who:AV.sam, name:'Sam O.', role:'SEO consultant', time:'1w', likes:1345, cmts:92,
+        txt:'Sent one referral this morning — a project outside my lane, passed to someone in this room who’s perfect for it.\n\nLast month, someone here did the same for me. That job paid my quarter.\n\nThis is the economy freelancing actually runs on, and the big networks never built a room for it: small enough that names mean something, work moving both directions.\n\nSend the referral. It comes back.' },
+      { type:'teaser', who:AV.marta, name:'Marta P.', role:'Copywriter · fintech', time:'1w',
+        txt:'Rate thread, quarterly edition. What are we charging for a landing page in 2026? I’ll go first — and before anyone lowballs themselves in public, remember what happened to the last person who…' } ] },
+
     business: { label:'For small business', addr:'roster.coachos/business — members', posts:[
-      { av:'👩🏽‍🍳', bg:'linear-gradient(135deg,#FFB199,#FF4A21)', name:'Hana L.', role:'Owner · catering studio', time:'2d', likes:184, cmts:26,
-        txt:'Tracked it for a month: enquiries answered within 10 minutes booked at 4× the rate of ones answered next morning.\n\nSame business. Same prices. Same me. The only variable was speed.\n\nWhoever answers first looks like the professional. Even when they’re not.',
-        cmt:{ av:'🧔🏽', bg:'linear-gradient(135deg,#9BB8FF,#2D5BFF)', name:'Omar S.', txt:'Same numbers in my shop, almost exactly. Speed is the whole game at the enquiry stage.' } },
-      { av:'🧔🏽', bg:'linear-gradient(135deg,#9BB8FF,#2D5BFF)', name:'Omar S.', role:'Owner · auto detailing, 2 locations', time:'4d', likes:159, cmts:19,
-        txt:'The review ask is a system, not a favour.\n\nEvery happy customer gets one message, next morning, with a direct link. That’s it. We went from 31 reviews to 240 in a year, and “found you on Google” became our biggest source.\n\nIf you ask “when you remember,” you never remember.' },
-      { av:'👩🏼‍🏭', bg:'linear-gradient(135deg,#C9A0FF,#7B2DFF)', name:'Grace T.', role:'Owner · boutique fitness studio', time:'5d', likes:171, cmts:22,
-        txt:'Hard lesson from year three: the business can’t need me for everything and also grow.\n\nStarted writing down every decision only I could make. The list was embarrassing — half of it was “approve things I’d already decided the rules for.”\n\nDelegate the rules, keep the judgment calls.' },
-      { av:'🧑🏻‍🔧', bg:'linear-gradient(135deg,#8FE3C0,#0E9F6E)', name:'Viktor M.', role:'Owner · plumbing & heating, 6 staff', time:'1w', likes:132, cmts:15,
-        txt:'Raised prices 15% after five years of “staying competitive.”\n\nLost 3 customers. The ones who stayed stopped haggling. New enquiries started assuming we’re the premium option — and treating us like it.\n\nCompeting on price is a race you win by losing.' },
-      { av:'👩🏾‍💼', bg:'linear-gradient(135deg,#FFD37A,#E8930C)', name:'Neha J.', role:'Owner · tutoring centre', time:'1w', likes:118, cmts:13,
-        txt:'Marketing consistency beats marketing brilliance.\n\nOur worst-performing month this year was the one we “didn’t have time to post.” Not a coincidence — it’s a lag: quiet feed in March, quiet phone in April.\n\nThe feed is the shopfront now. It can’t close for stocktake.' },
-      { av:'👩🏽‍🍳', bg:'linear-gradient(135deg,#FFB199,#FF4A21)', name:'Hana L.', role:'Owner · catering studio', time:'1w', likes:64, cmts:8,
-        txt:'Anyone here worked with a good signage supplier in the Gulf region? Also — following up on last week’s thread about deposit policies, here’s what changed after I…' } ] },
+      { type:'post', who:AV.hana, name:'Hana L.', role:'Owner · catering studio', time:'2d', likes:1687, cmts:143,
+        txt:'Tracked every enquiry for a month. The result changed how I run my business.\n\nAnswered within 10 minutes → booked 4× more often than answered next morning. Same menu. Same prices. Same me.\n\nBuyers contact three businesses and go with whoever answers first — a caller who filled three forms this morning books with the first reply, even if you call back within two hours.\n\nSpeed reads as competence. Silence reads as full.',
+        cmt:{ who:AV.omar, name:'Omar S.', txt:'Same numbers in my shop, almost exactly. Speed is the whole game at enquiry stage.' } },
+      { type:'carousel', who:AV.omar, name:'Omar S.', role:'Owner · auto detailing, 2 locations', time:'4d', likes:1439, cmts:88,
+        cap:'31 reviews to 240 in a year. The system, slide by slide →',
+        bg:G.green, slides:[
+          {k:'For owners · 5 slides', h:'The review engine', p:'Reviews are a system, not a favour. Here’s the one that took us from 31 to 240.'},
+          {k:'01', h:'Ask every happy customer', p:'Not “when you remember.” Every one. The morning after, while the glow is warm.'},
+          {k:'02', h:'One message, one link', p:'No “if you have a moment, maybe…” — a direct link, one sentence, signed with your name.'},
+          {k:'03', h:'Reply to every review', p:'Future customers read your replies more carefully than the reviews themselves.'},
+          {k:'04', h:'Put the number everywhere', p:'“240 five-star reviews” closes more than any ad we’ve run. Social proof compounds.'},
+          {k:'The result', h:'“Found you on Google” became our #1 source', p:'It outran referrals in month eight. A system did that — not luck.'} ] },
+      { type:'tweet', who:AV.grace, name:'Grace T.', role:'Owner · boutique fitness studio', time:'5d', likes:876, cmts:52,
+        cap:'Every owner I know needs this framed:',
+        tw:{ av:'🏪', bg:G.dark, name:'Main Street Notes', handle:'@mainstnotes', time:'08:30 · 11 Aug', views:'256K',
+          txt:'Speed is a feature.\n\nThe first business to reply looks like the best business.\n\nUsually becomes it, too.', rts:'1.1K', tlikes:'9.8K' } },
+      { type:'poll', who:AV.grace, name:'Grace T.', role:'Owner · boutique fitness studio', time:'6d', likes:398, cmts:57,
+        txt:'Owners — no judgment, real numbers only. How fast does a new enquiry actually get answered at your place?',
+        poll:{ meta:'1,594 votes · poll closed', opts:[
+          ['Within the hour',19],['Same day',34],['Next day',29],['When we get to it',18] ] } },
+      { type:'post', who:AV.omar, name:'Omar S.', role:'Owner · auto detailing, 2 locations', time:'1w', likes:1213, cmts:81,
+        txt:'Raised prices 15% after five years of “staying competitive.”\n\nLost 3 customers. The ones who stayed stopped haggling. New enquiries started assuming we’re the premium option — and treating us like it.\n\nHere’s the part nobody says: cheap prices attract the customers who cost the most to serve. The discount hunters left, my Sundays came back, and revenue went up on fewer jobs.\n\nCompeting on price is a race you win by losing.' },
+      { type:'teaser', who:AV.hana, name:'Hana L.', role:'Owner · catering studio', time:'1w',
+        txt:'Following up on last week’s deposit-policy thread — we switched to 50% upfront and here’s the surprise: cancellations didn’t just drop, they basically…' } ] },
+
     corporate: { label:'For corporate & L&D', addr:'roster.coachos/programs — members', posts:[
-      { av:'👩🏻‍💼', bg:'linear-gradient(135deg,#9BB8FF,#2D5BFF)', name:'Claire V.', role:'Head of L&D · 1,200-person firm', time:'2d', likes:167, cmts:24,
-        txt:'Our mentoring program didn’t fail loudly. It failed quietly — pairs stopped meeting around month three and nobody knew until the year-end survey.\n\nThe fix wasn’t motivation posters. It was visibility: session tracking and an early flag when a pair goes quiet.\n\nYou can’t re-energise what you can’t see.',
-        cmt:{ av:'🧔🏼', bg:'linear-gradient(135deg,#8FE3C0,#0E9F6E)', name:'Daniel R.', txt:'Month three is exactly where ours died too. The silence pattern is weirdly universal.' } },
-      { av:'🧔🏼', bg:'linear-gradient(135deg,#8FE3C0,#0E9F6E)', name:'Daniel R.', role:'People programs lead · tech', time:'4d', likes:142, cmts:18,
-        txt:'Stopped reporting satisfaction scores to the exec team.\n\nStarted reporting: pairs active, sessions held, goals progressed, retention of mentees vs. peers.\n\nSame program. Completely different budget conversation. Leadership funds evidence, not vibes.' },
-      { av:'👩🏼‍💻', bg:'linear-gradient(135deg,#C9A0FF,#7B2DFF)', name:'Ingrid B.', role:'Talent development · pharma', time:'6d', likes:128, cmts:16,
-        txt:'Matching on “seniority gap” alone is how you get polite, dead pairings.\n\nWhat worked for us: match on the decision the mentee faces next quarter, plus a conflict check nobody skips.\n\nThe best mentor is the one who made that exact decision — not the most senior person free on Tuesdays.' },
-      { av:'🧑🏿‍🏫', bg:'linear-gradient(135deg,#FFB199,#FF4A21)', name:'Kwame A.', role:'OD consultant · ex-corporate L&D', time:'1w', likes:154, cmts:20,
-        txt:'The mentor experience decides your program’s fate. Everyone obsesses over mentees.\n\nMentors who get onboarding, materials, and a first-session guide stay for multiple cohorts. Mentors who get a spreadsheet row and good wishes quietly drop out — and take the program’s credibility with them.' },
-      { av:'👩🏽‍🔬', bg:'linear-gradient(135deg,#FFD37A,#E8930C)', name:'Lucia F.', role:'HR director · manufacturing', time:'1w', likes:99, cmts:12,
-        txt:'One rule that saved our program politically: insights serve the program, never individual scoring.\n\nThe moment employees suspect mentoring data feeds performance reviews, honesty dies and the program follows.\n\nWe put it in writing, day one. Participation doubled.' },
-      { av:'👩🏻‍💼', bg:'linear-gradient(135deg,#9BB8FF,#2D5BFF)', name:'Claire V.', role:'Head of L&D · 1,200-person firm', time:'1w', likes:58, cmts:7,
-        txt:'Benchmarking thread: how many active pairs per program admin are you all running? We’re at 40:1 and it only works because the chasing is automated. Before that, honestly…' } ] }
+      { type:'post', who:AV.claire, name:'Claire V.', role:'Head of L&D · 1,200-person firm', time:'2d', likes:1102, cmts:97,
+        txt:'Only 11% of HR teams are confident their mentoring program works. I used to be in the other 89% — here’s what changed.\n\nOur program didn’t fail loudly. It failed quietly: pairs stopped meeting around month three and nobody knew until the year-end survey.\n\nThe fix wasn’t motivation posters. It was visibility — session tracking, and an early flag the moment a pair goes quiet.\n\nYou can’t re-energise what you can’t see.',
+        cmt:{ who:AV.daniel, name:'Daniel R.', txt:'Month three is exactly where ours died too. The silence pattern is weirdly universal.' } },
+      { type:'carousel', who:AV.daniel, name:'Daniel R.', role:'People programs lead · tech', time:'4d', likes:1358, cmts:79,
+        cap:'Why mentoring programs die at month 3 — and the four signals that catch it →',
+        bg:G.blue, slides:[
+          {k:'For programs · 5 slides', h:'Programs don’t fail. They fade.', p:'The four signals that catch the fade while it’s still fixable.'},
+          {k:'Signal 01', h:'Sessions stop logging', p:'Not “satisfaction drops” — meetings simply stop happening. Track sessions, not smiles.'},
+          {k:'Signal 02', h:'One side goes quiet', p:'Mentor still books, mentee stops confirming — or the reverse. The asymmetry is the tell.'},
+          {k:'Signal 03', h:'Goals stop moving', p:'A pair can meet monthly and progress nothing. Meeting ≠ mentoring.'},
+          {k:'Signal 04', h:'The admin becomes the bottleneck', p:'When chasing attendance is a person’s job, the program is already dying of friction.'},
+          {k:'The rule', h:'Flag at week 3 of silence.', p:'Not at the year-end survey. By then you’re not fixing — you’re archaeologising.'} ] },
+      { type:'tweet', who:AV.ingrid, name:'Ingrid B.', role:'Talent development · pharma', time:'5d', likes:687, cmts:38,
+        cap:'Sharing because our legal team actually applauded:',
+        tw:{ av:'🏛️', bg:G.dark, name:'The L&D Memo', handle:'@theldmemo', time:'13:20 · 9 Aug', views:'198K',
+          txt:'If your mentoring data feeds performance reviews, you don’t have a mentoring program.\n\nYou have a surveillance program with coffee.\n\nWrite the firewall down. Watch participation double.', rts:'890', tlikes:'7.3K' } },
+      { type:'poll', who:AV.kwame, name:'Kwame A.', role:'OD consultant · ex-corporate L&D', time:'6d', likes:341, cmts:49,
+        txt:'Program owners, honestly: how do you know your mentoring pairs are actually meeting?',
+        poll:{ meta:'987 votes · poll closed', opts:[
+          ['We track sessions, live',16],['Quarterly surveys',38],['We assume good faith',46] ] } },
+      { type:'post', who:AV.kwame, name:'Kwame A.', role:'OD consultant · ex-corporate L&D', time:'1w', likes:934, cmts:66,
+        txt:'The mentor experience decides your program’s fate. Everyone obsesses over mentees.\n\nMentors who get onboarding, materials, and a first-session guide stay for multiple cohorts. Mentors who get a spreadsheet row and good wishes quietly drop out — and take the program’s credibility with them.\n\nYour mentors are volunteers doing you a favour with the scarcest thing they have. Build for them first.' },
+      { type:'teaser', who:AV.claire, name:'Claire V.', role:'Head of L&D · 1,200-person firm', time:'1w',
+        txt:'Benchmarking thread: active pairs per program admin — what’s your ratio? We’re at 40:1, and it only works because the chasing is automated. Before that, honestly, we were…' } ] }
   };
 
   var tabsEl = document.getElementById('rtabs'), feedEl = document.getElementById('rfeed'), addrEl = document.getElementById('raddr');
@@ -355,41 +461,81 @@
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
   document.getElementById('rmore').addEventListener('click', openModal);
 
-  function avatar(av, bg, small){
-    return '<span class="rav' + (small ? ' sm' : '') + '" style="background:' + bg + '" aria-hidden="true">' + av + '</span>';
+  function avatar(w, small){
+    return '<span class="rav' + (small ? ' sm' : '') + '" style="background:' + w.bg + '" aria-hidden="true">' + w.av + '</span>';
   }
-  function postHtml(p, teaser){
-    var h = '<article class="rpost' + (teaser ? ' rteaser' : '') + '">'
-      + '<div class="rhead">' + avatar(p.av, p.bg)
+  function head(p){
+    return '<div class="rhead">' + avatar(p.who)
       + '<span class="rwho"><b>' + p.name + '<span class="rbadge">✓ Verified</span></b>'
-      + '<span class="rrole">' + p.role + '</span><span class="rtime">' + p.time + ' · 🌐</span></span></div>'
-      + '<p class="rtxt">' + p.txt + '</p>';
-    if (!teaser) {
-      h += '<div class="rstats"><span>👍❤️💡 ' + p.likes + '</span><span>' + p.cmts + ' comments</span></div>';
-      if (p.cmt) {
-        h += '<div class="rcmt">' + avatar(p.cmt.av, p.cmt.bg, true)
-          + '<div class="bub"><b>' + p.cmt.name + ' <span style="font-weight:400;color:#888;font-size:.68rem">· member</span></b>' + p.cmt.txt + '</div></div>';
-      }
-      h += '<div class="racts">'
-        + '<button class="ract" type="button">👍 Like</button>'
-        + '<button class="ract" type="button">💬 Comment</button>'
-        + '<button class="ract" type="button">🔁 Repost</button>'
-        + '<button class="ract" type="button">➤ Send</button></div>';
-    }
-    h += '</article>';
+      + '<span class="rrole">' + p.role + '</span><span class="rtime">' + p.time + ' · 🌐</span></span></div>';
+  }
+  function statsActs(p){
+    var h = '<div class="rstats"><span>👍❤️💡 ' + p.likes.toLocaleString('en-US') + '</span><span>' + p.cmts + ' comments</span></div>';
+    if (p.cmt) h += '<div class="rcmt">' + avatar(p.cmt.who, true)
+      + '<div class="bub"><b>' + p.cmt.name + ' <span style="font-weight:400;color:#888;font-size:.68rem">· member</span></b>' + p.cmt.txt + '</div></div>';
+    h += '<div class="racts">'
+      + '<button class="ract" type="button">👍 Like</button>'
+      + '<button class="ract" type="button">💬 Comment</button>'
+      + '<button class="ract" type="button">🔁 Repost</button>'
+      + '<button class="ract" type="button">➤ Send</button></div>';
     return h;
+  }
+  function postHtml(p, idx){
+    if (p.type === 'teaser') {
+      return '<article class="rpost rteaser">' + head(p) + '<p class="rtxt">' + p.txt + '</p></article>';
+    }
+    var body = '';
+    if (p.type === 'post') body = '<p class="rtxt">' + p.txt + '</p>';
+    if (p.type === 'tweet') {
+      body = '<p class="rtxt">' + p.cap + '</p>'
+        + '<div class="rtw"><div class="twh"><span class="rav sm" style="background:' + p.tw.bg + '">' + p.tw.av + '</span>'
+        + '<span><b>' + p.tw.name + '</b><span class="twhandle"> ' + p.tw.handle + '</span></span><span class="twx">𝕏</span></div>'
+        + '<p class="twt">' + p.tw.txt + '</p>'
+        + '<div class="twm"><span>' + p.tw.time + '</span><span>👁 ' + p.tw.views + '</span><span>🔁 ' + p.tw.rts + '</span><span>❤️ ' + p.tw.tlikes + '</span></div></div>';
+    }
+    if (p.type === 'carousel') {
+      var slides = p.slides.map(function(s, i){
+        return '<div class="rslide' + (i === 0 ? ' on' : '') + '" style="background:' + p.bg + '">'
+          + '<span class="sk">' + s.k + '</span><h4>' + s.h + '</h4><p>' + s.p + '</p></div>';
+      }).join('');
+      var dots = p.slides.map(function(_, i){ return '<span' + (i === 0 ? ' class="on"' : '') + '></span>'; }).join('');
+      body = '<p class="rtxt">' + p.cap + '</p>'
+        + '<div class="rcar" data-car="' + idx + '">' + slides
+        + '<button class="rcarnav prev" type="button" aria-label="Previous slide">‹</button>'
+        + '<button class="rcarnav next" type="button" aria-label="Next slide">›</button>'
+        + '<span class="rcarpage">1/' + p.slides.length + '</span>'
+        + '<div class="rdots">' + dots + '</div></div>';
+    }
+    if (p.type === 'poll') {
+      var opts = p.poll.opts.map(function(o){
+        return '<button class="rpopt" type="button"><span class="fill" style="width:' + o[1] + '%"></span>'
+          + '<span>' + o[0] + '<span class="pct">' + o[1] + '%</span></span></button>';
+      }).join('');
+      body = '<p class="rtxt">' + p.txt + '</p><div class="rpoll">' + opts + '</div><p class="rpollmeta">' + p.poll.meta + '</p>';
+    }
+    return '<article class="rpost">' + head(p) + body + statsActs(p) + '</article>';
   }
   function render(key){
     var d = P[key];
     addrEl.textContent = d.addr;
-    var html = '';
-    for (var i = 0; i < d.posts.length; i++) html += postHtml(d.posts[i], i === d.posts.length - 1);
-    feedEl.innerHTML = html;
-    feedEl.querySelectorAll('.ract').forEach(function(b){ b.addEventListener('click', openModal); });
+    feedEl.innerHTML = d.posts.map(postHtml).join('');
+    feedEl.querySelectorAll('.ract, .rpopt').forEach(function(b){ b.addEventListener('click', openModal); });
     var t = feedEl.querySelector('.rteaser'); if (t) t.addEventListener('click', openModal);
+    feedEl.querySelectorAll('.rcar').forEach(function(car){
+      var slides = car.querySelectorAll('.rslide'), dots = car.querySelectorAll('.rdots span'), page = car.querySelector('.rcarpage');
+      var i = 0;
+      function show(n){
+        i = (n + slides.length) % slides.length;
+        slides.forEach(function(s, k){ s.classList.toggle('on', k === i); });
+        dots.forEach(function(s, k){ s.classList.toggle('on', k === i); });
+        page.textContent = (i + 1) + '/' + slides.length;
+      }
+      car.querySelector('.prev').addEventListener('click', function(e){ e.stopPropagation(); show(i - 1); });
+      car.querySelector('.next').addEventListener('click', function(e){ e.stopPropagation(); show(i + 1); });
+    });
     tabsEl.querySelectorAll('.rtab').forEach(function(b){ b.classList.toggle('on', b.dataset.key === key); });
   }
-  Object.keys(P).forEach(function(key, i){
+  Object.keys(P).forEach(function(key){
     var b = document.createElement('button');
     b.type = 'button'; b.className = 'rtab'; b.dataset.key = key; b.textContent = P[key].label;
     b.addEventListener('click', function(){ render(key); });
