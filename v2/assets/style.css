@@ -413,6 +413,14 @@ html[data-theme="light"] .btn-ghost:hover{background:#DBD7CC}
 .voice .bubble blockquote{margin:0;padding:0;border:none;font-style:italic;color:var(--ink-soft);font-size:.94rem}
 .voice .bubble cite{display:block;font-style:normal;font-family:var(--display);font-weight:700;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-dim);margin-top:.6rem}
 
+/* the after — mirrored resolution bubble */
+.voice.rx{flex-direction:row-reverse;margin-top:.9rem}
+.voice.rx .av{background:var(--accent);color:#fff;font-size:1rem}
+.voice.rx .bubble{background:var(--accent-wash);border-radius:14px 4px 14px 14px}
+.voice.rx .bubble .after-line{font-weight:700;color:var(--ink);font-size:.96rem;font-family:var(--display);letter-spacing:-.01em}
+.voice.rx .bubble .ans-text{color:var(--ink-soft);font-size:.9rem;margin-top:.5rem}
+.voice.rx .bubble cite{color:var(--accent)}
+
 /* ---------- Service stage intros ---------- */
 .svc-group .stage-intro{color:var(--ink-soft);font-size:.98rem;max-width:720px;margin:.9rem 0 1.2rem}
 .svc .chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.8rem}
