@@ -11,7 +11,7 @@
     if(t==='light'){ document.documentElement.setAttribute('data-theme','light'); }
     else { document.documentElement.removeAttribute('data-theme'); }
     if(themeBtn){
-      themeBtn.textContent = t==='light' ? 'Dark' : 'Light';
+      themeBtn.setAttribute('aria-checked', t==='light' ? 'true' : 'false');
       themeBtn.setAttribute('aria-label', t==='light' ? 'Switch to dark mode' : 'Switch to light mode');
     }
   }

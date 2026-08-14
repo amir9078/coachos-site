@@ -422,13 +422,23 @@ footer.site{border-top:1px solid var(--line);padding:2.6rem 0;background:var(--b
 .foot nav a{font-family:var(--display);font-size:.82rem;font-weight:500;color:var(--ink-soft);text-decoration:none}
 .foot nav a:hover{color:var(--ink)}
 
-/* ---------- Theme toggle ---------- */
+/* ---------- Theme toggle (switch) ---------- */
 .theme-btn{
-  font-family:var(--display);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-  background:var(--card-2);color:var(--ink);border:none;border-radius:var(--r-pill);
-  padding:.6rem 1.1rem;cursor:pointer;transition:background .3s var(--ease),color .3s var(--ease);flex:none;
+  position:relative;width:48px;height:26px;flex:none;padding:0;cursor:pointer;
+  background:var(--card-2);border:1px solid var(--line-strong);border-radius:var(--r-pill);
+  transition:background .3s var(--ease),border-color .3s var(--ease);
 }
-.theme-btn:hover{background:var(--accent);color:#fff}
+.theme-btn::before{
+  content:'\2600\FE0E';position:absolute;top:50%;right:7px;transform:translateY(-50%);
+  font-size:11px;line-height:1;color:var(--ink-dim);
+}
+html[data-theme="light"] .theme-btn::before{content:'\263E\FE0E';right:auto;left:7px}
+.theme-btn::after{
+  content:'';position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;
+  background:var(--accent);transition:transform .25s var(--ease);
+}
+html[data-theme="light"] .theme-btn::after{transform:translateX(22px)}
+.theme-btn:hover{border-color:var(--accent)}
 html[data-theme="light"] .btn-ghost:hover{background:#DBD7CC}
 
 /* ---------- Voice cards (problems in users' words) ---------- */
