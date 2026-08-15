@@ -61,6 +61,22 @@
 .slmcard p{color:var(--ink-soft);margin-top:.9rem;font-size:.95rem;line-height:1.55}
 .slmcard .fine{font-size:.8rem;color:var(--ink-dim)}
 .slmcard .row{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem}
+.slback{background:none;border:none;font-size:.78rem;font-weight:700;color:#555;cursor:pointer;padding:.2rem 0 .6rem;font-family:inherit;text-align:left;display:block}
+.slback:hover{color:#111}
+.slphead .slav{width:72px;height:72px;font-size:38px}
+.slpgrid{display:grid;grid-template-columns:1fr 280px;gap:.9rem;align-items:start}
+.slpsec{background:#fff;border:1px solid #e0ded9;border-radius:12px;padding:1.1rem 1.2rem;margin-bottom:.9rem;text-align:left}
+.slpsec h4{margin:0 0 .5rem;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#999}
+.slpsec p{font-size:.83rem;color:#333;line-height:1.55;margin:.4rem 0 0}
+.slsteps{margin:.4rem 0 0;padding-left:1.2rem;font-size:.83rem;color:#333;line-height:1.6}
+.slplan{background:#fff;border:1px solid #e0ded9;border-radius:12px;padding:1.2rem;text-align:left}
+.slplan .slprice{font-size:1.4rem}
+.slpinc{list-style:none;margin:.8rem 0 0;padding:0;font-size:.8rem;color:#333}
+.slpinc li{padding:.3rem 0 .3rem 1.3rem;position:relative}
+.slpinc li::before{content:'✓';position:absolute;left:0;color:#1f6f36;font-weight:700}
+.slplanrow{display:flex;justify-content:space-between;font-size:.75rem;color:#555;border-top:1px solid #f0eeea;padding:.45rem 0}
+.slnext{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#888;text-align:left;margin:.4rem 0 0;padding:0 .1rem}
+@media(max-width:700px){.slpgrid{grid-template-columns:1fr}}
 @media(max-width:640px){.slcard{flex-wrap:wrap}.slside{flex-direction:row;align-items:center;justify-content:space-between;width:100%;min-width:0}}
 </style>
 </head>
@@ -302,6 +318,43 @@
       { av:'👩🏾‍⚕️', bg:G.green, name:'Noor H.', role:'External bench · healthcare leadership', langs:'EN · AR', loc:'Remote · GCC', reply:'Program-vetted', tags:['Clinical leaders','Healthcare ops','Cohorts'], blurb:'Knows why healthcare mentoring pairs go quiet — and how to stop it.', price:'Program', unit:'rates on request' } ] }
   };
 
+
+  var PROF = {
+    coach: { about1:'Nadia spent nine years inside two consultancies coaching the partners nobody else would give honest feedback to, then went independent in 2019. Her practice is deliberately small — twelve executive clients at a time, most of them founders or board-level, most arriving mid-something-difficult.', about2:'Sessions are direct. Expect to leave each one with the sentence you were avoiding said out loud, and a decision attached to it.', steps:['A 30-minute intro call — fit, goals, and whether she’s the right coach for this','A written scope: cadence, price, and what done looks like','Sessions on your rhythm — notes and commitments after every one'], includes:['60-minute video sessions','Written notes after every session','Email between sessions — answered < 24h','Quarterly review of the engagement'], proof:'Outcomes from past engagements are shared on enquiry, each with the client’s written permission. No public reviews — that’s the Shortlist’s rule, not a gap.', note:'Enquiries land directly on Nadia’s Desk board. Typical reply: same working day.' },
+    business: { about1:'Fourteen years of catering, a permanent team of nine, and a kitchen that runs corporate weekly contracts alongside events. Her best week moved 975 orders without a single missed drop.', about2:'Menus are seasonal and built around your event, not a laminated list. Corporate clients get a standing menu that rotates monthly.', steps:['A tasting and scoping call — headcount, dietary map, venue','A written quote the same week, per head, no surprises','Delivery day, staffed and set — with a follow-up call after'], includes:['Menu design & tasting session','Staffing, setup, and clear-down','Dietary planning across the full menu','Same-week written quotes'], proof:'References from standing corporate clients are shared on enquiry, with each client’s permission. No public reviews — that’s the Shortlist’s rule, not a gap.', note:'Enquiries land directly on Hana’s Desk board. Typical reply: same working day.' },
+    freelancer: { about1:'Dev builds brand systems for B2B SaaS — the kind that make sales calls easier, not just decks prettier. Eight years in, the last four fully independent, booked four to six weeks out.', about2:'He works in fixed scopes with revision rounds written into the contract, so nobody discovers the budget’s gone at round five.', steps:['A 30-minute intro call — the problem, the timeline, the fit','A written proposal within three days: scope, price, dates','A focused sprint, with a mid-point review baked in'], includes:['Full brand system & guidelines','Deck and site asset kit','Two revision rounds — in the contract','Complete handover files'], proof:'Case studies and client references are shared on enquiry, each with permission. No public reviews — that’s the Shortlist’s rule, not a gap.', note:'Enquiries land directly on Dev’s Desk board. Typical reply: within 24 hours.' },
+    mentor: { about1:'Marcus ran product at two scale-ups — through one acquisition and one very educational failure — before moving to full-time mentoring. He works in twelve-session arcs with a written goal, because people renew programs and drift out of arrangements.', about2:'His mentees are usually ICs stepping into leads, or leads stepping into rooms where the questions get harder.', steps:['A 30-minute intro call — the decision you’re facing in the next 90 days','A written arc: goal, cadence, and what done looks like','Monthly sessions with homework that carries forward'], includes:['Two 60-minute sessions per month','Written recap after every session','Async questions — answered < 48h','Goal review at sessions 6 and 12'], proof:'Outcomes are logged through the arc, mentee-approved, and shared on enquiry. No public reviews — that’s the Shortlist’s rule, not a gap.', note:'Enquiries land directly on Marcus’s Desk board. Typical reply: within 24 hours.' },
+    corporate: { about1:'Marcus mentors inside corporate programs as external bench — for the cohorts your senior leaders don’t have hours for. Program-vetted, firewall-trained, and experienced across multiple cohort cycles.', about2:'He reports participation to your program admin, never personal content — the firewall is contractual, not a promise.', steps:['A program-fit call with your L&D lead','Cohort scoping and an onboarding pack for your admin','Quarterly participation reporting, firewall intact'], includes:['Cohort mentoring seats','Mentor onboarding materials','Participation reports — never personal content','Multi-cohort continuity'], proof:'Program references are shared on enquiry with each organisation’s permission. No public reviews — that’s the Shortlist’s rule, not a gap.', note:'Enquiries route to your program scoping call. Typical reply: within 24 hours.' }
+  };
+  function renderProfile(key){
+    var d = SL[key], p = PROF[key], l = d.listings[0];
+    listEl.innerHTML = '<button class="slback" type="button">&larr; Back to the shortlist</button>'
+      + '<div class="slcard slphead">'
+      + '<span class="slav" style="background:' + l.bg + '" aria-hidden="true">' + l.av + '</span>'
+      + '<div class="slmain"><div class="slname" style="font-size:1.15rem">' + l.name + '<span class="slbadge">✓ Vetted</span></div>'
+      + '<div class="slrole">' + l.role + '</div>'
+      + '<div class="slmeta"><span>🌐 ' + l.langs + '</span><span>📍 ' + l.loc + '</span><span>⚡ ' + l.reply + '</span></div>'
+      + '<div class="sltags">' + l.tags.map(function(t){ return '<span class="sltag">' + t + '</span>'; }).join('') + '</div></div></div>'
+      + '<div class="slpgrid"><div>'
+      + '<div class="slpsec"><h4>About</h4><p>' + p.about1 + '</p><p>' + p.about2 + '</p></div>'
+      + '<div class="slpsec"><h4>How an engagement runs</h4><ol class="slsteps">' + p.steps.map(function(s){ return '<li>' + s + '</li>'; }).join('') + '</ol></div>'
+      + '<div class="slpsec"><h4>Proof, with consent</h4><p>' + p.proof + '</p></div>'
+      + '</div>'
+      + '<div class="slplan"><span class="slprice">' + l.price + '<small>' + l.unit + '</small></span>'
+      + '<ul class="slpinc">' + p.includes.map(function(s){ return '<li>' + s + '</li>'; }).join('') + '</ul>'
+      + '<div class="slplanrow" style="margin-top:.8rem"><span>Languages</span><span>' + l.langs + '</span></div>'
+      + '<div class="slplanrow"><span>Location</span><span>' + l.loc + '</span></div>'
+      + '<div class="slplanrow"><span>Response</span><span>' + l.reply + '</span></div>'
+      + '<button class="slbtn gate" type="button" style="width:100%;margin-top:.9rem;padding:.7rem">Enquire via the Shortlist</button>'
+      + '<p style="font-size:.68rem;color:#888;margin:.6rem 0 0;text-align:left">' + p.note + '</p></div></div>'
+      + '<h4 class="slnext">Next on this shelf — members see them all</h4>'
+      + locked(d.listings[1]);
+    listEl.querySelector('.slback').addEventListener('click', function(){ render(key); });
+    document.querySelectorAll('.slframe .gate').forEach(function(b){
+      if (b.dataset.g) return; b.dataset.g = '1';
+      b.addEventListener('click', openModal);
+    });
+  }
   var tabsEl = null, listEl = document.getElementById('sllist');
   var addrEl = document.getElementById('sladdr'), countEl = document.getElementById('slcount');
   var modal = document.getElementById('slmodal');
@@ -311,7 +364,7 @@
   modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
 
-  function card(l){
+  function card(l, first){
     return '<div class="slcard">'
       + '<span class="slav" style="background:' + l.bg + '" aria-hidden="true">' + l.av + '</span>'
       + '<div class="slmain"><div class="slname">' + l.name + '<span class="slbadge">✓ Vetted</span></div>'
@@ -320,7 +373,7 @@
       + '<div class="sltags">' + l.tags.map(function(t){ return '<span class="sltag">' + t + '</span>'; }).join('') + '</div>'
       + '<p class="slblurb">' + l.blurb + '</p></div>'
       + '<div class="slside"><span class="slprice">' + l.price + '<small>' + l.unit + '</small></span>'
-      + '<button class="slbtn gate" type="button">View profile</button></div></div>';
+      + (first ? '<button class="slbtn viewp" type="button">View profile</button>' : '<button class="slbtn gate" type="button">View profile</button>') + '</div></div>';
   }
   function gateCard(){
     return '<div class="slgate"><b>That’s the public sliver.</b>'
@@ -335,11 +388,12 @@
     var d = SL[key];
     addrEl.textContent = d.addr;
     countEl.innerHTML = d.count;
-    listEl.innerHTML = d.listings.map(card).join('') + gateCard() + d.locked.map(locked).join('');
+    listEl.innerHTML = d.listings.map(function(l, i){ return card(l, i === 0); }).join('') + gateCard() + d.locked.map(locked).join('');
     document.querySelectorAll('.slframe .gate').forEach(function(b){
       if (b.dataset.g) return; b.dataset.g = '1';
       b.addEventListener('click', openModal);
     });
+    var vp = listEl.querySelector('.viewp'); if (vp) vp.addEventListener('click', function(){ renderProfile(key); });
   }
   render('mentor');
 })();
