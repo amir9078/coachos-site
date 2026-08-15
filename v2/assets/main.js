@@ -59,6 +59,20 @@
     });
   }
 
+  // Mobile: expandable dropdown sections inside the hamburger menu
+  document.querySelectorAll('.nav-item').forEach(function(item){
+    if(!item.querySelector('.nav-drop')) return;
+    var btn=document.createElement('button');
+    btn.type='button'; btn.className='nd-toggle'; btn.innerHTML='▾';
+    btn.setAttribute('aria-label','Show section links');
+    btn.setAttribute('aria-expanded','false');
+    btn.addEventListener('click',function(){
+      var open=item.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open?'true':'false');
+    });
+    item.appendChild(btn);
+  });
+
   // Marquee: duplicate track content once for a seamless loop
   document.querySelectorAll('.marquee .track').forEach(function(track){
     track.innerHTML+=track.innerHTML;
