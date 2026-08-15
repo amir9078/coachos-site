@@ -180,7 +180,7 @@ header.site.scrolled{border-bottom-color:var(--line)}
 .hero{position:relative;padding:clamp(4.5rem,10vw,8.5rem) 0 clamp(4rem,8vw,6.5rem)}
 .hero-inner{position:relative;text-align:left;max-width:1080px}
 .hero .topline{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;font-size:.85rem;color:var(--ink-soft)}
-.hero .topline span{background:var(--card-2);border-radius:var(--r-pill);padding:.45rem 1.05rem}
+.hero .topline>span{background:var(--card-2);border-radius:var(--r-pill);padding:.45rem 1.05rem}
 .hero .topline b{font-weight:700;color:var(--ink)}
 .hero h1{font-size:clamp(3rem,9.5vw,7rem);margin-top:2rem;text-transform:uppercase;letter-spacing:-.035em;line-height:.96}
 .hero h1 .line{display:block;overflow:hidden;padding-bottom:.05em}
