@@ -429,6 +429,15 @@ footer.site{border-top:1px solid var(--line);padding:2.6rem 0;background:var(--b
 .foot nav a{font-family:var(--display);font-size:.82rem;font-weight:500;color:var(--ink-soft);text-decoration:none}
 .foot nav a:hover{color:var(--ink)}
 
+/* ---------- Home simplicity variants ---------- */
+.svc-rows.plain .svc-row{background:transparent;border-radius:0;box-shadow:none;border:none;border-top:1px solid var(--line);padding:1.35rem 0}
+.svc-rows.plain .svc-row:last-child{border-bottom:1px solid var(--line)}
+.numbers.rail .num{background:transparent;border-radius:0;box-shadow:none;border:none;border-left:2px solid var(--accent);padding:.3rem 0 .3rem 1.2rem}
+.steps.plain{grid-template-columns:1fr;gap:.4rem}
+.steps.plain .step{background:transparent;box-shadow:none;border:none;padding:.85rem 0;display:flex;gap:1.1rem;align-items:flex-start}
+.steps.plain .step .n{flex:none}
+.steps.plain .step h3{margin-top:.1rem}
+
 /* ---------- Theme toggle (switch) ---------- */
 .theme-btn{
   position:relative;width:48px;height:26px;flex:none;padding:0;cursor:pointer;
