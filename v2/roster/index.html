@@ -89,6 +89,52 @@
 .rcard p{color:var(--ink-soft);margin-top:.9rem;font-size:.95rem;line-height:1.55}
 .rcard .fine{font-size:.8rem;color:var(--ink-dim)}
 .rcard .row{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem}
+
+/* full-board layout */
+.rtopbar{display:flex;align-items:center;gap:.7rem;padding:.55rem .9rem;background:#fff;border-bottom:1px solid #e0ded9;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+.rtopbar .rlogo{font-weight:800;font-size:.9rem;color:#111;white-space:nowrap}
+.rtopbar .rlogo span{color:var(--accent)}
+.rsearch{flex:1;max-width:220px;background:#eef3f8;border:none;border-radius:4px;padding:.4rem .7rem;font-size:.75rem;color:#555;text-align:left;cursor:pointer;font-family:inherit}
+.rico{background:none;border:none;font-size:1rem;cursor:pointer;position:relative;padding:.3rem .45rem;border-radius:6px}
+.rico:hover{background:#f0efec}
+.rico .dotb{position:absolute;top:2px;right:2px;background:#c22;color:#fff;font-size:.55rem;font-weight:700;border-radius:999px;padding:0 .25rem;line-height:1.4}
+.rgrid{display:grid;grid-template-columns:215px 1fr 235px;gap:.9rem;padding:.9rem;align-items:start;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+.rrail{display:flex;flex-direction:column;gap:.9rem;position:sticky;top:.9rem}
+.rcardx{background:#fff;border:1px solid #e0ded9;border-radius:10px;padding:1rem;color:#1c1c1c;text-align:left}
+.rcardx h5{margin:0 0 .5rem;font-size:.8rem}
+.rcardx .mut{font-size:.72rem;color:#777;line-height:1.45}
+.rlockrow{display:flex;justify-content:space-between;font-size:.72rem;color:#999;padding:.35rem 0;border-top:1px solid #f0eeea}
+.rmemrow{display:flex;gap:.5rem;align-items:center;padding:.35rem 0}
+.rmemrow b{font-size:.75rem;display:block;color:#111}
+.rmemrow .mr{font-size:.66rem;color:#888}
+.rviewall{font-size:.74rem;font-weight:600;color:#555;background:none;border:none;cursor:pointer;padding:.4rem 0 0;font-family:inherit}
+.rviewall:hover{color:#111}
+.rcomposer{background:#fff;border:1px solid #e0ded9;border-radius:10px;padding:.9rem 1rem;text-align:left}
+.rcomposer .rin{width:100%;border:1px solid #d5d3cd;border-radius:999px;background:#fff;padding:.65rem 1rem;font-size:.8rem;color:#888;text-align:left;cursor:pointer;font-family:inherit}
+.rcomposer .rbtns{display:flex;justify-content:space-around;margin-top:.55rem}
+.rcomposer .rcb{background:none;border:none;font-size:.74rem;font-weight:600;color:#555;cursor:pointer;padding:.45rem .5rem;border-radius:6px;font-family:inherit}
+.rcomposer .rcb:hover{background:#f0efec}
+.ranon .rav{background:linear-gradient(135deg,#4a4a52,#17171c)!important}
+.ranon .anontag{display:inline-block;font-size:.6rem;font-weight:700;background:#ececf2;color:#55555e;border-radius:4px;padding:.08rem .38rem;margin-left:.4rem;vertical-align:1px}
+.ranon .privnote{display:flex;gap:.45rem;align-items:center;background:#f6f5f8;border:1px dashed #d9d7e0;border-radius:8px;padding:.5rem .7rem;font-size:.72rem;color:#66666e;margin-top:.6rem}
+.rarticle{overflow:hidden;padding:0!important}
+.rarticle .band{padding:1.3rem 1.2rem;color:#fff}
+.rarticle .band .atag{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;opacity:.8}
+.rarticle .band h4{font-family:var(--display);font-size:1.2rem;margin:.4rem 0 0;line-height:1.25}
+.rarticle .abody{padding:.85rem 1.1rem}
+.rarticle .abody .am{font-size:.72rem;color:#888}
+.rarticle .abody p{font-size:.82rem;color:#444;margin:.45rem 0 .6rem;line-height:1.45}
+.rarticle .aread{font-size:.78rem;font-weight:700;color:var(--accent);background:none;border:none;cursor:pointer;padding:0;font-family:inherit}
+.rgate{background:linear-gradient(180deg,#fff,#faf9f7);border:1px solid #e0ded9;border-radius:10px;padding:1.1rem;text-align:center}
+.rgate b{font-size:.85rem;color:#111;display:block}
+.rgate p{font-size:.74rem;color:#888;margin:.35rem 0 .6rem}
+.rgate .rmore{padding:.55rem 1.3rem;font-size:.78rem}
+.rlocked{position:relative;overflow:hidden}
+.rlocked .inner{filter:blur(7px);user-select:none;pointer-events:none}
+.rlocked .veil{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(243,242,239,.35);cursor:pointer}
+.rlocked .veil span{background:#fff;border:1px solid #e0ded9;border-radius:999px;padding:.45rem 1rem;font-size:.72rem;font-weight:700;color:#555}
+@media(max-width:900px){.rgrid{grid-template-columns:1fr}.rrail{display:none}.rframe{max-width:620px}}
+.rframe{max-width:1020px}
 </style>
 </head>
 <body>
@@ -188,7 +234,7 @@
   <div class="wrap pagehero-inner">
     <span class="label crumb">Room 03 / The network &middot; live &mdash; members only</span>
     <h1>LinkedIn, if it were <em>only your people.</em></h1>
-    <p class="sub">One profession per room. Coaches with coaches, mentors with mentors &mdash; posting, connecting, and passing work to people who actually understand theirs. Reading is open. The rest belongs to members.</p>
+    <p class="sub">One profession per room. Coaches with coaches, mentors with mentors &mdash; full posts, quick takes, articles, and questions you can ask anonymously. No connection requests: being in the room is the connection. Reading the public sliver is open. The rest belongs to members.</p>
     <div class="hero-ctas">
       <a class="btn btn-primary" href="#peek">Open your room</a>
     </div>
@@ -205,10 +251,45 @@
     <div class="rtabs reveal" id="rtabs"></div>
     <div class="rframe reveal">
       <div class="rchrome"><span class="rdot"></span><span class="rdot"></span><span class="rdot"></span><span class="raddr" id="raddr">roster.coachos &mdash; members</span></div>
-      <div class="rfeed" id="rfeed"></div>
-      <div class="rmorewrap"><button class="rmore" id="rmore">See more posts</button></div>
+      <div class="rtopbar">
+        <span class="rlogo">Roster<span>.</span> <span id="rroom" style="color:#666;font-weight:600;font-size:.78rem"></span></span>
+        <button class="rsearch gate" type="button">Search the room&hellip;</button>
+        <span style="flex:1"></span>
+        <button class="rico gate" type="button" aria-label="Home">🏠</button>
+        <button class="rico gate" type="button" aria-label="Notifications">🔔<span class="dotb">3</span></button>
+        <button class="rico gate" type="button" aria-label="Profile">🙂</button>
+      </div>
+      <div class="rgrid">
+        <div class="rrail" id="rleft"></div>
+        <div style="min-width:0">
+          <div class="rcomposer" style="margin-bottom:.9rem">
+            <button class="rin gate" type="button">Share something with the room&hellip;</button>
+            <div class="rbtns">
+              <button class="rcb gate" type="button">📝 Post</button>
+              <button class="rcb gate" type="button">🕶️ Ask anonymously</button>
+              <button class="rcb gate" type="button">📄 Article</button>
+            </div>
+          </div>
+          <div class="rfeed" id="rfeed" style="padding:0"></div>
+        </div>
+        <div class="rrail" id="rright"></div>
+      </div>
     </div>
     <noscript><p style="text-align:center;color:var(--ink-dim);margin-top:1rem">The feed needs JavaScript &mdash; and the room itself is members-only anyway.</p></noscript>
+  </div>
+</section>
+
+<section class="sec-tight">
+  <div class="wrap-narrow">
+    <div class="sec-head left reveal">
+      <span class="label">The part nobody else built</span>
+      <h2>Ask without <em>your name on it</em></h2>
+    </div>
+    <div class="reveal" style="color:var(--ink-soft);font-size:1.05rem">
+      <p>Every profession has questions its people can&rsquo;t ask in public. What you really charge. The client relationship that&rsquo;s gone wrong. The month you couldn&rsquo;t pay yourself. On every other network those questions stay unasked, because your name &mdash; and your clients &mdash; are watching.</p>
+      <p style="margin-top:1.1rem">On the Roster, any member can post a question anonymously. The room sees the question, never the asker. The answers come back privately &mdash; only the asker reads them, nothing ever appears on their profile, and even we present it unlinked. It&rsquo;s the confessional the profession never had, sitting inside the network it always needed.</p>
+      <p style="margin-top:1.1rem">And when you have something bigger to say than a post: write an article. Something smaller: a two-line take. The feed carries all of it &mdash; full posts, quick takes, articles, polls, and the questions nobody signs.</p>
+    </div>
   </div>
 </section>
 
@@ -465,7 +546,6 @@
   document.getElementById('rclose').addEventListener('click', closeModal);
   modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
-  document.getElementById('rmore').addEventListener('click', openModal);
 
   function avatar(w, small){
     return '<span class="rav' + (small ? ' sm' : '') + '" style="background:' + w.bg + '" aria-hidden="true">' + w.av + '</span>';
@@ -543,26 +623,89 @@
     }
     return '<article class="rpost">' + head(p) + body + statsActs(p) + '</article>';
   }
+var ANON = {
+    coach: { q:'Am I the only one who still feels like a fraud charging €150/hr after six years? A client praised me today and my first thought was “if only you knew.” How do the rest of you deal with this — honestly?', n:'5 answers delivered — visible only to the asker' },
+    mentor: { q:'A mentee’s company is about to do layoffs, and I know before they do. Where exactly is the ethical line between mentor and insider here? I need answers from people who’ve actually been in this seat.', n:'7 answers delivered — visible only to the asker' },
+    freelancer: { q:'My biggest client is 70% of my income and their payments keep arriving later each month. I’m terrified to push. What would you actually do — realistically, not the confident-post version?', n:'9 answers delivered — visible only to the asker' },
+    business: { q:'Revenue looks fine from the outside, but I haven’t paid myself properly in four months and I’m ashamed to tell my spouse. Has anyone here actually broken this pattern — and how?', n:'6 answers delivered — visible only to the asker' },
+    corporate: { q:'Leadership wants me to report who’s “engaged” in mentoring for succession planning. I promised participants a firewall. How do I push back without getting the program cut?', n:'4 answers delivered — visible only to the asker' }
+  };
+  function anonHtml(key, label){
+    var a = ANON[key];
+    return '<article class="rpost ranon">'
+      + '<div class="rhead"><span class="rav" aria-hidden="true">🕶️</span>'
+      + '<span class="rwho"><b>Anonymous member<span class="anontag">identity hidden</span></b>'
+      + '<span class="rrole">' + label + ' · question to the room</span><span class="rtime">3h</span></span></div>'
+      + '<p class="rtxt">' + a.q + '</p>'
+      + '<div class="privnote">🔒 ' + a.n + ' — anonymous questions are answered in private, never on a profile.</div>'
+      + '<div class="racts">'
+      + '<button class="ract gate" type="button">💬 Answer privately</button>'
+      + '<button class="ract gate" type="button">🕶️ Ask your own</button></div></article>';
+  }
+  function articleHtml(car){
+    return '<article class="rpost rarticle">'
+      + '<div class="band" style="background:' + car.bg + '"><span class="atag">Article</span><h4>' + car.slides[0].h + '</h4></div>'
+      + '<div class="abody"><span class="am">' + car.name + ' · ' + car.role + ' · 7 min read</span>'
+      + '<p>' + car.slides[0].p + '</p>'
+      + '<button class="aread gate" type="button">Read the full article →</button></div></article>';
+  }
+  function gateHtml(){
+    return '<div class="rgate"><b>You’ve reached the guest limit.</b>'
+      + '<p>The rest of today’s room — and everything blurred below — is members only.</p>'
+      + '<button class="rmore gate" type="button">View all posts</button></div>';
+  }
+  function lockedHtml(p){
+    return '<div class="rpost rlocked" style="padding:0;border:none"><div class="inner">' + postHtml(p) + '</div>'
+      + '<div class="veil gate"><span>🔒 Members-only post</span></div></div>';
+  }
+  function railLeft(){
+    return '<div class="rcardx"><div style="display:flex;gap:.6rem;align-items:center">'
+      + '<span class="rav" style="background:linear-gradient(135deg,#8a8a92,#3c3c44);color:#fff;font-size:18px;font-weight:700">?</span>'
+      + '<span><b style="font-size:.85rem">You, maybe</b><span class="mut" style="display:block">Guest view — the public sliver</span></span></div>'
+      + '<div class="rlockrow" style="margin-top:.7rem;border-top:none"><span>Profile views</span><span>🔒</span></div>'
+      + '<div class="rlockrow"><span>Post impressions</span><span>🔒</span></div>'
+      + '<div class="rlockrow"><span>Saved posts</span><span>🔒</span></div></div>'
+      + '<div class="rcardx"><h5>🕶️ Anonymous mode</h5><p class="mut">Ask what you can’t ask with your name on it. The room answers; only you see the answers. Nothing ever shows on your profile.</p>'
+      + '<button class="rviewall gate" type="button">Ask a question →</button></div>';
+  }
+  function railRight(d){
+    var seen = {}, rows = '';
+    for (var i = 0; i < d.posts.length && Object.keys(seen).length < 4; i++) {
+      var p = d.posts[i];
+      if (!p.name || seen[p.name]) continue;
+      seen[p.name] = 1;
+      rows += '<div class="rmemrow">' + avatar(p.who, true)
+        + '<span><b>' + p.name + '</b><span class="mr">' + p.role + '</span></span></div>';
+    }
+    return '<div class="rcardx"><h5>In this room</h5>' + rows
+      + '<button class="rviewall gate" type="button">and 200+ more · View all →</button></div>'
+      + '<div class="rcardx"><h5>How this room works</h5><p class="mut">No connection requests — being in the room is the connection. Everyone here was chosen. No AI posts on anyone’s behalf. Anonymous questions are answered privately.</p></div>';
+  }
   function render(key){
     var d = P[key];
     addrEl.textContent = d.addr;
-    feedEl.innerHTML = d.posts.map(postHtml).join('');
-    feedEl.querySelectorAll('.ract, .rpopt').forEach(function(b){ b.addEventListener('click', openModal); });
-    var t = feedEl.querySelector('.rteaser'); if (t) t.addEventListener('click', openModal);
-    feedEl.querySelectorAll('.rcar').forEach(function(car){
-      var slides = car.querySelectorAll('.rslide'), dots = car.querySelectorAll('.rdots span'), page = car.querySelector('.rcarpage');
-      var i = 0;
-      function show(n){
-        i = (n + slides.length) % slides.length;
-        slides.forEach(function(s, k){ s.classList.toggle('on', k === i); });
-        dots.forEach(function(s, k){ s.classList.toggle('on', k === i); });
-        page.textContent = (i + 1) + '/' + slides.length;
-      }
-      car.querySelector('.prev').addEventListener('click', function(e){ e.stopPropagation(); show(i - 1); });
-      car.querySelector('.next').addEventListener('click', function(e){ e.stopPropagation(); show(i + 1); });
+    document.getElementById('rroom').textContent = '— ' + d.label.replace('For ', '') + ' room';
+    document.getElementById('rleft').innerHTML = railLeft();
+    document.getElementById('rright').innerHTML = railRight(d);
+    // order: full post, anonymous question, short take, poll, article, gated big post, gate, blurred members-only
+    feedEl.innerHTML = postHtml(d.posts[0])
+      + anonHtml(key, d.label.replace('For ', ''))
+      + postHtml(d.posts[2])
+      + postHtml(d.posts[3])
+      + articleHtml(d.posts[1])
+      + postHtml(d.posts[6])
+      + gateHtml()
+      + lockedHtml(d.posts[5])
+      + lockedHtml(d.posts[4]);
+    var frame = document.querySelector('.rframe');
+    frame.querySelectorAll('.ract, .rpopt, .gate').forEach(function(b){
+      if (b.dataset.g) return; b.dataset.g = '1';
+      b.addEventListener('click', openModal);
     });
+    var t = feedEl.querySelector('.rteaser'); if (t) t.addEventListener('click', openModal);
     tabsEl.querySelectorAll('.rtab').forEach(function(b){ b.classList.toggle('on', b.dataset.key === key); });
   }
+
   Object.keys(P).forEach(function(key){
     var b = document.createElement('button');
     b.type = 'button'; b.className = 'rtab'; b.dataset.key = key; b.textContent = P[key].label;
