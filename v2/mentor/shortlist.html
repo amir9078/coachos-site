@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Shortlist for mentors — members only, chosen</title>
-<meta name="description" content="A directory where every listing was checked, not just paid for. Clients search by specialty, price, and language — and every enquiry lands straight on your own Desk leads board. 0% of your revenue, always.">
+<meta name="description" content="A directory where every listing was checked, not just paid for. Browse the public sliver — specialties, languages, rates — then hit the wall: the full Shortlist is members only.">
 <link rel="canonical" href="https://amir9078.github.io/coachos-site/v2/mentor/shortlist.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="The Shortlist for mentors">
-<meta property="og:description" content="A directory where every listing was checked, not just paid for. Clients search by specialty, price, and language — and every enquiry lands straight on your own Desk leads board. 0% of your revenue, always.">
+<meta property="og:title" content="The Shortlist for mentors — members only, chosen">
+<meta property="og:description" content="A directory where every listing was checked, not just paid for. Browse the public sliver — specialties, languages, rates — then hit the wall: the full Shortlist is members only.">
 <meta property="og:url" content="https://amir9078.github.io/coachos-site/v2/mentor/shortlist.html">
 <meta property="og:site_name" content="CoachOS">
 <meta name="twitter:card" content="summary">
@@ -16,6 +16,53 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css?v=20260814g">
+<style>
+.sltabs{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin:0 0 1.8rem}
+.sltab{font-family:var(--display);font-size:.8rem;font-weight:600;padding:.55rem 1.15rem;border-radius:999px;border:1px solid var(--line-strong);background:transparent;color:var(--ink-soft);cursor:pointer;transition:all .25s var(--ease)}
+.sltab.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.slframe{max-width:840px;margin:0 auto;background:#f3f2ef;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow-deep);overflow:hidden}
+.slchrome{display:flex;align-items:center;gap:.35rem;padding:.6rem .9rem;background:#e8e6e1;font-family:var(--mono);font-size:.68rem;color:#555}
+.sldot{width:9px;height:9px;border-radius:50%;background:#c9c6bf;flex:none}
+.sladdr{background:#f7f6f3;border-radius:6px;padding:.28rem .75rem;margin-left:.4rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.slhead{padding:1.3rem 1.2rem .9rem;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+.slcount{font-size:.75rem;color:#777;margin:0 0 .7rem}
+.slcount b{color:#1c1c1c}
+.slsearch{width:100%;border:1px solid #d5d3cd;border-radius:10px;background:#fff;padding:.85rem 1.1rem;font-size:.88rem;color:#888;text-align:left;cursor:pointer;font-family:inherit}
+.slfilters{display:flex;gap:.45rem;flex-wrap:wrap;margin-top:.7rem}
+.slpill{font-size:.74rem;font-weight:600;color:#444;background:#fff;border:1px solid #d5d3cd;border-radius:999px;padding:.4rem .85rem;cursor:pointer;font-family:inherit}
+.slpill:hover{border-color:#999}
+.sllist{padding:.4rem .9rem 0;display:flex;flex-direction:column;gap:.9rem;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+.slcard{background:#fff;border:1px solid #e0ded9;border-radius:12px;padding:1.1rem 1.2rem;display:flex;gap:1rem;align-items:flex-start;text-align:left;color:#1c1c1c}
+.slav{width:56px;height:56px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-size:30px}
+.slmain{flex:1;min-width:0}
+.slname{font-size:.95rem;font-weight:700;color:#111}
+.slbadge{display:inline-block;font-size:.6rem;font-weight:700;background:#e7f3e7;color:#1f6f36;border-radius:4px;padding:.08rem .38rem;margin-left:.45rem;vertical-align:1px}
+.slrole{font-size:.8rem;color:#555;margin-top:.1rem}
+.slmeta{display:flex;gap:.9rem;flex-wrap:wrap;font-size:.7rem;color:#888;margin-top:.4rem}
+.sltags{display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.55rem}
+.sltag{font-size:.66rem;font-weight:600;background:#f0efec;color:#555;border-radius:5px;padding:.22rem .5rem}
+.slblurb{font-size:.8rem;color:#444;line-height:1.45;margin-top:.55rem}
+.slside{flex:none;display:flex;flex-direction:column;align-items:flex-end;gap:.5rem;min-width:110px}
+.slprice{font-size:.95rem;font-weight:800;color:#111}
+.slprice small{display:block;font-size:.62rem;font-weight:500;color:#888;text-align:right}
+.slbtn{font-size:.75rem;font-weight:700;background:var(--accent);color:#fff;border:none;border-radius:999px;padding:.5rem 1rem;cursor:pointer;font-family:inherit}
+.slgate{background:linear-gradient(180deg,#fff,#faf9f7);border:1px solid #e0ded9;border-radius:12px;padding:1.2rem;text-align:center;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+.slgate b{font-size:.88rem;color:#111;display:block}
+.slgate p{font-size:.75rem;color:#888;margin:.35rem 0 .65rem}
+.sllocked{position:relative;overflow:hidden;border-radius:12px}
+.sllocked .inner{filter:blur(7px);user-select:none;pointer-events:none}
+.sllocked .veil{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(243,242,239,.35);cursor:pointer}
+.sllocked .veil span{background:#fff;border:1px solid #e0ded9;border-radius:999px;padding:.45rem 1rem;font-size:.72rem;font-weight:700;color:#555}
+.slfoot{padding:.9rem;text-align:center}
+.slmodal{position:fixed;inset:0;background:rgba(10,10,12,.74);display:none;align-items:center;justify-content:center;z-index:80;padding:1.2rem}
+.slmodal.open{display:flex}
+.slmcard{background:var(--card);border:1px solid var(--line-strong);border-radius:16px;max-width:480px;padding:2.4rem 2.2rem;text-align:center;box-shadow:var(--shadow-deep)}
+.slmcard h3{font-family:var(--display);font-size:1.7rem;letter-spacing:-.02em}
+.slmcard p{color:var(--ink-soft);margin-top:.9rem;font-size:.95rem;line-height:1.55}
+.slmcard .fine{font-size:.8rem;color:var(--ink-dim)}
+.slmcard .row{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem}
+@media(max-width:640px){.slcard{flex-wrap:wrap}.slside{flex-direction:row;align-items:center;justify-content:space-between;width:100%;min-width:0}}
+</style>
 </head>
 <body>
 
@@ -103,16 +150,42 @@
   <div class="lattice" aria-hidden="true"></div>
   <span class="stamp abs reveal">Members only</span>
   <div class="wrap pagehero-inner">
-    <span class="label crumb">Room 04 / The directory &middot; live &mdash; members only &middot; for mentors</span>
-    <h1>Findable because <em>not everyone&rsquo;s in it.</em></h1>
-    <p class="sub">Open directories list anyone who signs up, so a search result tells a client nothing. Every listing on the Shortlist was checked, not just paid for &mdash; and it only grows as fast as the vetting does.</p>
+    <span class="label crumb">The Shortlist &middot; mentors &middot; live &mdash; members only</span>
+    <h1>The mentors&rsquo; shelf. <em>Guest view.</em></h1>
+    <p class="sub">Open directories list anyone who signs up, so a search result tells a client nothing. Every listing on the Shortlist was checked, not just paid for. Browse the public sliver below &mdash; the full directory belongs to members and their clients.</p>
     <div class="hero-ctas">
-      <a class="btn btn-primary" href="contact.html">Talk to us</a>
+      <a class="btn btn-primary" href="#browse">Browse the directory</a>
     </div>
   </div>
 </section>
 
-<section class="sec-tight alt">
+<section class="sec alt" id="browse">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label">The Shortlist &middot; your shelf</span>
+      <h2>This is the directory. <em>The public end of it.</em></h2>
+      <p class="after">Specialties, languages, rates &mdash; then the wall. Members and their clients see the rest.</p>
+    </div>
+    <div class="slframe reveal">
+      <div class="slchrome"><span class="sldot"></span><span class="sldot"></span><span class="sldot"></span><span class="sladdr" id="sladdr">shortlist.coachos &mdash; members</span></div>
+      <div class="slhead">
+        <p class="slcount" id="slcount"></p>
+        <button class="slsearch gate" type="button">Search by specialty, language, or price&hellip;</button>
+        <div class="slfilters">
+          <button class="slpill gate" type="button">Specialty &#9662;</button>
+          <button class="slpill gate" type="button">Price &#9662;</button>
+          <button class="slpill gate" type="button">Language &#9662;</button>
+          <button class="slpill gate" type="button">Video / In person</button>
+        </div>
+      </div>
+      <div class="sllist" id="sllist"></div>
+      <div class="slfoot"></div>
+    </div>
+    <noscript><p style="text-align:center;color:var(--ink-dim);margin-top:1rem">The directory needs JavaScript &mdash; and the full Shortlist is members-only anyway.</p></noscript>
+  </div>
+</section>
+
+<section class="sec-tight">
   <div class="wrap-narrow">
     <div class="sec-head left reveal">
       <span class="label">How it works</span>
@@ -120,62 +193,21 @@
     </div>
     <div class="reveal" style="color:var(--ink-soft);font-size:1.05rem">
       <p>A client searches by what actually matters &mdash; specialty, price range, language, video or in person &mdash; and chooses among people who all came through the same vetted door. The narrowing has already been done, so being found here means something.</p>
-      <p style="margin-top:1.1rem">Your listing is built from the positioning work we do together in the services, and it stays linked to your website and your <a href="roster.html">Roster</a> profile &mdash; one identity everywhere. And when someone enquires, it doesn&rsquo;t go to a separate inbox you&rsquo;ll forget to check: it lands straight on your own <a href="desk.html">Desk</a> leads board, where the follow-up is already drafted.</p>
-      <p style="margin-top:1.1rem">One number that matters: the Shortlist takes <b style="color:var(--ink)">0% of your revenue</b>. Open directories charge 15&ndash;30% of every sale, and marketplace minimum fees can eat up to 28% of a smaller plan. This is a listing, never a commission. Your rate is your rate.</p>
+      <p style="margin-top:1.1rem">Your listing is built from the positioning work we do together in the services, and it stays linked to your website and your <a href="../roster/">Roster</a> profile &mdash; one identity everywhere. When someone enquires, it lands straight on your own <a href="../desk/">Desk</a> leads board, where the follow-up is already drafted.</p>
+      <p style="margin-top:1.1rem">One number that matters: the Shortlist takes <b style="color:var(--ink)">0% of your revenue</b>. Open directories charge 15&ndash;30% of every sale, and marketplace minimum fees can eat up to 28% of a smaller plan. This is a listing, never a commission. And the proof on a listing is drawn from real client engagements, published only with that client&rsquo;s explicit yes &mdash; no purchased reviews, no imported star ratings.</p>
+      <p style="margin-top:1.1rem;color:var(--ink-dim);font-size:.95rem">The Shortlist grows deliberately. A directory full of noise is worse than no directory &mdash; so it opens wider only as real, vetted supply comes in, never to hit a number.</p>
     </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="label">What&rsquo;s inside</span>
-      <h2>Found by the people looking for you</h2>
-    </div>
-    <div class="packages">
-      <div class="package reveal">
-        <span class="numeral">i.</span>
-        <h3>Search that narrows</h3>
-        <p class="tag">Specialty, price, language, format</p>
-        <ul>
-          <li>Filtered by exactly what you do and how you work</li>
-          <li>Niche and specialty up front, never buried in a flat list</li>
-          <li>Rates and languages stated, so enquiries arrive qualified</li>
-        </ul>
-      </div>
-      <div class="package reveal">
-        <span class="numeral">ii.</span>
-        <h3>Straight to your board</h3>
-        <p class="tag">No second inbox</p>
-        <ul>
-          <li>Every enquiry drops onto your own Desk leads pipeline</li>
-          <li>You reply from the place you already work</li>
-          <li>Nothing sits unseen in a portal you never open</li>
-        </ul>
-      </div>
-      <div class="package reveal">
-        <span class="numeral">iii.</span>
-        <h3>Proof with consent</h3>
-        <p class="tag">Real work, real permission</p>
-        <ul>
-          <li>Testimonials drawn from real client engagements</li>
-          <li>Each one published only with that client&rsquo;s explicit yes</li>
-          <li>No purchased reviews, no imported star ratings</li>
-        </ul>
-      </div>
-    </div>
-    <p class="reveal" style="margin-top:2.4rem;color:var(--ink-dim);font-size:.95rem;max-width:640px">The Shortlist grows deliberately. A directory full of noise is worse than no directory &mdash; so it opens wider only as real, vetted supply comes in, never to hit a number.</p>
   </div>
 </section>
 
 <section class="rooms-strip">
   <div class="lattice" aria-hidden="true"></div>
   <div class="wrap inner reveal">
-    <h2>The other three rooms, on the same invite.</h2>
+    <h2>The other three rooms, on the same membership.</h2>
     <div class="links">
-      <a href="desk.html">CoachOS Desk</a>
-      <a href="roundtable.html">The Roundtable</a>
-      <a href="roster.html">The Roster</a>
+      <a href="../desk/">CoachOS Desk</a>
+      <a href="../roundtable/">The Roundtable</a>
+      <a href="../roster/">The Roster</a>
     </div>
     <p class="note">Four rooms, one door in &mdash; and we hold the door.</p>
   </div>
@@ -186,27 +218,131 @@
     <span class="label">Membership &middot; chosen, not sold</span>
     <h2>Get on the Shortlist.</h2>
     <p class="under" style="margin-top:1rem">Members come from the people we build for. Start there, and let the work speak.</p>
-    <a class="btn btn-primary" href="services.html">Start with the services</a>
-    <p class="under">Think you already belong inside? <a href="contact.html">Talk to us.</a></p>
+    <a class="btn btn-primary" href="../services.html">Start with the services</a>
+    <p class="under">Think you already belong inside? <a href="../contact.html">Talk to us.</a></p>
   </div>
 </section>
+
+<div class="slmodal" id="slmodal" role="dialog" aria-modal="true" aria-labelledby="slmodal-h">
+  <div class="slmcard">
+    <h3 id="slmodal-h">Oops.</h3>
+    <p>The full Shortlist is members-only &mdash; we can&rsquo;t show you more than this.</p>
+    <p class="fine">What you&rsquo;re browsing is the public face of the directory. Members&rsquo; full listings &mdash; calendars, proof, and contact &mdash; stay inside, for their clients and the people we&rsquo;ve chosen.</p>
+    <div class="row">
+      <a class="btn btn-primary" href="../services.html">Start with the services</a>
+      <button class="btn btn-ghost" id="slclose" type="button">Close</button>
+    </div>
+  </div>
+</div>
 
 <footer class="site">
   <div class="foot">
     <p>CoachOS &mdash; AI-run services, human sign-off. We do the work you never signed up for &mdash; for coaches, mentors, freelancers &amp; small teams.</p>
     <nav>
       <a href="../index.html#doors">Find your fit</a>
-      <a href="services.html">Services</a>
-      <a href="problems.html">Problems</a>
-      <a href="desk.html">Desk</a>
-      <a href="roundtable.html">Roundtable</a>
-      <a href="roster.html">Roster</a>
-      <a href="why.html">Why</a>
-      <a href="contact.html">Contact</a>
+      <a href="../services.html">Services</a>
+      <a href="../problems.html">Problems</a>
+      <a href="../desk/">Desk</a>
+      <a href="../roundtable/">Roundtable</a>
+      <a href="../roster/">Roster</a>
+      <a href="../why.html">Why</a>
+      <a href="../contact.html">Contact</a>
     </nav>
   </div>
 </footer>
 
 <script src="../assets/main.js?v=20260814g"></script>
+<script>
+(function(){
+  var G = {
+    orange:'linear-gradient(135deg,#FFB199,#FF4A21)', blue:'linear-gradient(135deg,#9BB8FF,#2D5BFF)',
+    green:'linear-gradient(135deg,#8FE3C0,#0E9F6E)', purple:'linear-gradient(135deg,#C9A0FF,#7B2DFF)',
+    gold:'linear-gradient(135deg,#FFD37A,#E8930C)'
+  };
+  var SL = {
+    coach: { label:'Coaches', addr:'shortlist.coachos/coaches — members', count:'<b>41 vetted listings</b> · executive, career, wellness, leadership & business coaching', listings:[
+      { av:'👩🏽‍💼', bg:G.orange, name:'Nadia R.', role:'Executive coach · boards & founders', langs:'EN · DE', loc:'Remote · EU', reply:'Replies < 24h', tags:['Executive','Founders','Board prep'], blurb:'Twelve years coaching executives through the conversations they’d rather avoid.', price:'€160', unit:'per session' },
+      { av:'👩🏻‍🏫', bg:G.purple, name:'Priya M.', role:'Leadership coach · new managers', langs:'EN · HI', loc:'Remote', reply:'Replies < 24h', tags:['First-time managers','Engineering leaders','1:1'], blurb:'Ex-HR director. Builds confident managers out of newly promoted engineers.', price:'€140', unit:'per session' },
+      { av:'🧔🏻', bg:G.blue, name:'Tom H.', role:'Career transition coach', langs:'EN', loc:'Remote · UK', reply:'Replies < 48h', tags:['Career change','Interviews','Positioning'], blurb:'Three career changes of his own; thirty-one clients through theirs last year.', price:'€110', unit:'per session' },
+      { av:'🧑🏼‍🎨', bg:G.green, name:'Jonas K.', role:'Wellness & burnout coach', langs:'EN · NO', loc:'Remote', reply:'Replies < 24h', tags:['Burnout','Boundaries','High performers'], blurb:'For the people who got the success and lost the sleep.', price:'€95', unit:'per session' } ],
+      locked:[
+      { av:'👩🏾‍💻', bg:G.gold, name:'Elena S.', role:'Business coach · solo founders', langs:'EN · ES', loc:'Remote', reply:'Replies < 24h', tags:['Pricing','Offers','Solo founders'], blurb:'Turns good work into a business that charges like it.', price:'€120', unit:'per session' },
+      { av:'👩🏼‍✈️', bg:G.blue, name:'Maren D.', role:'Team coach · leadership teams', langs:'EN · DE', loc:'Hybrid · DACH', reply:'Replies < 48h', tags:['Leadership teams','Offsites','Conflict'], blurb:'Gets leadership teams saying the thing they’ve been managing around.', price:'€1,400', unit:'per offsite day' } ] },
+    business: { label:'Small business', addr:'shortlist.coachos/business — members', count:'<b>36 vetted listings</b> · services, studios, trades & local businesses', listings:[
+      { av:'👩🏽‍🍳', bg:G.orange, name:'Hana L.', role:'Catering studio · events & corporate', langs:'EN · AR', loc:'Dubai', reply:'Replies < 24h', tags:['Corporate events','Weddings','Office weekly'], blurb:'Fourteen years in; her best week moved 975 orders.', price:'From €40', unit:'per head' },
+      { av:'🧔🏽', bg:G.blue, name:'Omar S.', role:'Auto detailing · two locations', langs:'EN · AR', loc:'Two branches', reply:'Same-day quotes', tags:['Ceramic coating','Fleet','Full detail'], blurb:'Fleet contracts and weekend queues — book ahead.', price:'From €120', unit:'per vehicle' },
+      { av:'👩🏼‍🏭', bg:G.purple, name:'Grace T.', role:'Boutique fitness studio', langs:'EN', loc:'Three locations', reply:'Replies < 24h', tags:['Classes','Personal training','Corporate wellness'], blurb:'Small classes, real coaching, no lost-in-the-crowd memberships.', price:'From €25', unit:'per class' },
+      { av:'🧑🏻‍🔧', bg:G.green, name:'Viktor M.', role:'Plumbing & heating · 6 staff', langs:'EN · PL', loc:'Citywide', reply:'Same-day quotes', tags:['Emergency','Boilers','Maintenance contracts'], blurb:'Twelve years, six vans, and quotes that arrive the same day you ask.', price:'Same-day', unit:'quotes' } ],
+      locked:[
+      { av:'👩🏾‍💼', bg:G.gold, name:'Neha J.', role:'Tutoring centre · maths & sciences', langs:'EN · HI', loc:'In person & remote', reply:'Replies < 24h', tags:['Maths','Sciences','Exam prep'], blurb:'They sell hours. We sell the moment your kid stops needing us.', price:'From €30', unit:'per session' },
+      { av:'🧔🏼', bg:G.blue, name:'Stefan K.', role:'Joinery & fit-out workshop', langs:'EN · DE', loc:'Regional', reply:'Replies < 48h', tags:['Interiors','Retail fit-out','Custom'], blurb:'The workshop other trades recommend when it has to be right.', price:'By scope', unit:'quoted' } ] },
+    freelancer: { label:'Freelancers', addr:'shortlist.coachos/freelancers — members', count:'<b>52 vetted listings</b> · design, copy, development, motion & growth', listings:[
+      { av:'🧑🏽‍💻', bg:G.blue, name:'Dev A.', role:'Brand designer · B2B SaaS', langs:'EN', loc:'Remote · EU', reply:'Replies < 24h', tags:['Brand systems','B2B SaaS','Decks'], blurb:'Brands that make sales calls easier. Booked 4–6 weeks out.', price:'€520', unit:'per day' },
+      { av:'👩🏻‍🎨', bg:G.orange, name:'Marta P.', role:'Copywriter · fintech', langs:'EN · PL', loc:'Remote', reply:'Replies < 24h', tags:['Landing pages','Email','Fintech'], blurb:'Copy that survives compliance review and still sells.', price:'€480', unit:'per day' },
+      { av:'🧔🏼', bg:G.green, name:'Chris B.', role:'Web developer · e-commerce', langs:'EN', loc:'Remote · UK', reply:'Replies < 48h', tags:['Shopify','Performance','Migrations'], blurb:'Stores that load fast and don’t break on launch day.', price:'€560', unit:'per day' },
+      { av:'👩🏾‍🔧', bg:G.purple, name:'Yuki N.', role:'Motion designer', langs:'EN · JP', loc:'Remote', reply:'Replies < 24h', tags:['Product launches','Explainers','Social'], blurb:'Launch films and explainers for products that deserve better than a template.', price:'€500', unit:'per day' } ],
+      locked:[
+      { av:'🧑🏻‍🎤', bg:G.gold, name:'Sam O.', role:'SEO consultant', langs:'EN', loc:'Remote', reply:'Replies < 24h', tags:['Technical SEO','Content strategy','Local'], blurb:'Rankings you can trace to revenue, reported monthly.', price:'€490', unit:'per day' },
+      { av:'👩🏻‍🎤', bg:G.orange, name:'Ada P.', role:'Illustrator & visual identity', langs:'EN · FR', loc:'Remote', reply:'Replies < 48h', tags:['Illustration','Icon systems','Editorial'], blurb:'The illustration style your competitors will try to copy next year.', price:'€450', unit:'per day' } ] },
+    mentor: { label:'Mentors', addr:'shortlist.coachos/mentors — members', count:'<b>28 vetted listings</b> · product, engineering, founders & early career', listings:[
+      { av:'🧔🏾', bg:G.orange, name:'Marcus D.', role:'Product mentor · ex-VP Product', langs:'EN', loc:'Remote', reply:'Replies < 24h', tags:['Product leadership','ICs to leads','Roadmaps'], blurb:'Twelve-session arcs with a written goal. People renew programs.', price:'€220', unit:'per month' },
+      { av:'👩🏿‍💼', bg:G.purple, name:'Aisha T.', role:'Founder mentor · 3 exits', langs:'EN', loc:'Remote', reply:'Replies < 48h', tags:['Founders','Fundraising','First hires'], blurb:'For founders facing a decision in the next 90 days, not someday.', price:'€280', unit:'per month' },
+      { av:'🧑🏻‍🔬', bg:G.green, name:'Rob F.', role:'Engineering mentor', langs:'EN', loc:'Remote · EU', reply:'Replies < 24h', tags:['Staff+ engineers','Architecture','Career'], blurb:'A written structure, a monthly slot, and the thing nobody else will say to your face.', price:'€180', unit:'per month' },
+      { av:'👩🏼‍🎓', bg:G.gold, name:'Lin W.', role:'Career mentor · new grads', langs:'EN · ZH', loc:'Remote', reply:'Replies < 24h', tags:['First job','Negotiation','Early career'], blurb:'From first offer to first promotion, with homework between sessions.', price:'€120', unit:'per month' } ],
+      locked:[
+      { av:'👩🏻‍🎤', bg:G.blue, name:'Sofia G.', role:'Design leadership mentor', langs:'EN · IT', loc:'Remote', reply:'Replies < 48h', tags:['Design leads','Portfolio','Teams'], blurb:'Outcomes logged with consent — her sales page is the record itself.', price:'€200', unit:'per month' },
+      { av:'👩🏽‍🔬', bg:G.purple, name:'Elif A.', role:'Data leadership mentor', langs:'EN · TR', loc:'Remote', reply:'Replies < 24h', tags:['Data teams','Analytics leaders','Hiring'], blurb:'Builds analytics leaders who can defend a number in a boardroom.', price:'€210', unit:'per month' } ] },
+    corporate: { label:'Corporate & L&D', addr:'shortlist.coachos/programs — members', count:'<b>19 vetted bench mentors</b> · for programs whose internal pool runs thin', listings:[
+      { av:'🧔🏾', bg:G.orange, name:'Marcus D.', role:'External bench · product leadership', langs:'EN', loc:'Remote', reply:'Program-vetted', tags:['Cohort experience','Product leaders','Firewall-trained'], blurb:'Slots into existing programs; reports participation, never personal content.', price:'Program', unit:'rates on request' },
+      { av:'👩🏿‍💼', bg:G.purple, name:'Aisha T.', role:'External bench · founder & exec track', langs:'EN', loc:'Remote', reply:'Program-vetted', tags:['Executive track','High-potential','Cohorts'], blurb:'For the mentees your senior leaders don’t have hours for.', price:'Program', unit:'rates on request' },
+      { av:'🧑🏻‍🔬', bg:G.green, name:'Rob F.', role:'External bench · engineering', langs:'EN', loc:'Remote · EU', reply:'Program-vetted', tags:['Staff+ engineers','Structured arcs','Multi-cohort'], blurb:'Stays for multiple cohorts — onboarding materials included.', price:'Program', unit:'rates on request' },
+      { av:'👩🏻‍🎤', bg:G.blue, name:'Sofia G.', role:'External bench · design leadership', langs:'EN · IT', loc:'Remote', reply:'Program-vetted', tags:['Design leads','Creative teams','Workshops'], blurb:'Mentoring plus working sessions your design team will actually attend.', price:'Program', unit:'rates on request' } ],
+      locked:[
+      { av:'👩🏽‍🔬', bg:G.purple, name:'Elif A.', role:'External bench · data leadership', langs:'EN · TR', loc:'Remote', reply:'Program-vetted', tags:['Data teams','Analytics','Leadership'], blurb:'For programs building a data-leadership pipeline from scratch.', price:'Program', unit:'rates on request' },
+      { av:'👩🏾‍⚕️', bg:G.green, name:'Noor H.', role:'External bench · healthcare leadership', langs:'EN · AR', loc:'Remote · GCC', reply:'Program-vetted', tags:['Clinical leaders','Healthcare ops','Cohorts'], blurb:'Knows why healthcare mentoring pairs go quiet — and how to stop it.', price:'Program', unit:'rates on request' } ] }
+  };
+
+  var tabsEl = null, listEl = document.getElementById('sllist');
+  var addrEl = document.getElementById('sladdr'), countEl = document.getElementById('slcount');
+  var modal = document.getElementById('slmodal');
+  function openModal(){ modal.classList.add('open'); }
+  function closeModal(){ modal.classList.remove('open'); }
+  document.getElementById('slclose').addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+
+  function card(l){
+    return '<div class="slcard">'
+      + '<span class="slav" style="background:' + l.bg + '" aria-hidden="true">' + l.av + '</span>'
+      + '<div class="slmain"><div class="slname">' + l.name + '<span class="slbadge">✓ Vetted</span></div>'
+      + '<div class="slrole">' + l.role + '</div>'
+      + '<div class="slmeta"><span>🌐 ' + l.langs + '</span><span>📍 ' + l.loc + '</span><span>⚡ ' + l.reply + '</span></div>'
+      + '<div class="sltags">' + l.tags.map(function(t){ return '<span class="sltag">' + t + '</span>'; }).join('') + '</div>'
+      + '<p class="slblurb">' + l.blurb + '</p></div>'
+      + '<div class="slside"><span class="slprice">' + l.price + '<small>' + l.unit + '</small></span>'
+      + '<button class="slbtn gate" type="button">View profile</button></div></div>';
+  }
+  function gateCard(){
+    return '<div class="slgate"><b>That’s the public sliver.</b>'
+      + '<p>The full Shortlist — every listing, calendar, and enquiry button — is members-only.</p>'
+      + '<button class="slbtn gate" type="button" style="padding:.6rem 1.4rem">Unlock the full Shortlist</button></div>';
+  }
+  function locked(l){
+    return '<div class="sllocked"><div class="inner">' + card(l) + '</div>'
+      + '<div class="veil gate"><span>🔒 Members-only listing</span></div></div>';
+  }
+  function render(key){
+    var d = SL[key];
+    addrEl.textContent = d.addr;
+    countEl.innerHTML = d.count;
+    listEl.innerHTML = d.listings.map(card).join('') + gateCard() + d.locked.map(locked).join('');
+    document.querySelectorAll('.slframe .gate').forEach(function(b){
+      if (b.dataset.g) return; b.dataset.g = '1';
+      b.addEventListener('click', openModal);
+    });
+  }
+  render('mentor');
+})();
+</script>
 </body>
 </html>
