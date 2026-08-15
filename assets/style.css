@@ -132,6 +132,10 @@ header.site.scrolled{border-bottom-color:var(--line)}
   .nav-links .nav-cta{margin-left:.4rem}
   .theme-btn{margin-left:.2rem}
 }
+@media(max-width:980px){
+  .nav{justify-content:flex-start;gap:1.1rem}
+  .theme-btn{margin-left:auto}
+}
 
 /* ---------- Nav dropdowns ---------- */
 .nav-item{position:relative}
