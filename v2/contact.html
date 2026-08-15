@@ -3,136 +3,78 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact CoachOS — a person reads this, and replies</title>
-<meta name="description" content="Not sure where you fit — the services, the rooms, or something else? Tell us your situation and a real person will write back.">
+<title>Contact CoachOS</title>
+<meta name="description" content="Not sure where you fit — services, the Platform, or something else entirely? Tell us your situation and we'll reply personally.">
 <link rel="canonical" href="https://amir9078.github.io/coachos-site/v2/contact.html">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Contact CoachOS — a person reads this, and replies">
-<meta property="og:description" content="Not sure where you fit — the services, the rooms, or something else? Tell us your situation and a real person will write back.">
-<meta property="og:url" content="https://amir9078.github.io/coachos-site/v2/contact.html">
-<meta property="og:site_name" content="CoachOS">
-<meta name="twitter:card" content="summary">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="assets/style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=20260814g">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  .contact-wrap{max-width:560px;margin:0 auto}
+  .contact-form{display:flex;flex-direction:column;gap:1.1rem;margin-top:2.2rem}
+  .contact-form label{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);margin-bottom:.4rem;display:block}
+  .contact-form input,.contact-form select,.contact-form textarea{width:100%;padding:.85rem 1rem;border-radius:6px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);font-size:.95rem;font-family:var(--sans);transition:border-color .2s ease,box-shadow .2s ease}
+  .contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{outline:none;border-color:var(--mint-dim);box-shadow:0 0 0 3px var(--mint-soft)}
+  .contact-form textarea{resize:vertical;min-height:120px}
+  .contact-form button{background:var(--mint);color:var(--bg);border:none;padding:.9rem 1.4rem;border-radius:6px;font-weight:700;font-size:.98rem;cursor:none;margin-top:.4rem}
+  @media(hover:none),(pointer:coarse){ .contact-form button{cursor:pointer} }
+  .calm-note{color:var(--ink-dim);font-size:.85rem;text-align:center;margin-top:1.6rem;line-height:1.7}
+  .direct-email{text-align:center;margin-top:2.4rem;padding-top:2.4rem;border-top:1px solid var(--line);color:var(--ink-soft);font-size:.92rem}
+</style>
 </head>
 <body>
-
-<header class="site">
+<div id="scroll-progress"></div>
+<header class="site gate-header">
   <nav class="nav">
-    <a class="wordmark" href="index.html" aria-label="CoachOS home">
-      <span>Coach<em>OS</em></span>
-    </a>
+    <a class="wordmark" href="index.html">Coach<em>OS</em></a>
     <div class="nav-links">
       <div class="nav-item">
-        <a href="index.html#doors">Find your fit</a>
-        <div class="nav-drop" hidden>
-          <div class="nd-col">
-            <span class="nd-h">Five doors</span>
-          <a href="coach/">Coach</a>
+        <a href="index.html">Find your fit</a>
+        <div class="nav-dropdown simple">
           <a href="business/">Small business</a>
           <a href="freelancer/">Freelancer</a>
           <a href="mentor/">Mentor</a>
-          <a href="corporate/">Corporate &amp; enterprise</a>
-          </div>
+          <a href="coach/">Coach</a>
+          <a href="corporate/">Corporate &amp; Enterprise</a>
         </div>
       </div>
-      <div class="nav-item">
-        <a href="services.html">Services</a>
-        <div class="nav-drop" hidden>
-          <div class="nd-col">
-            <a class="nd-all" href="services.html">All services &rarr;</a>
-          </div>
-          <div class="nd-col">
-            <span class="nd-h">Strategy</span>
-            <a href="services/business-strategy-consulting.html">Strategy &amp; consulting</a>
-            <span class="nd-h">Position</span>
-            <a href="services/personal-branding.html">Personal branding</a>
-          </div>
-          <div class="nd-col">
-            <span class="nd-h">Launch</span>
-            <a href="services/website.html">Website</a>
-            <a href="services/hosting-domain.html">Hosting &amp; domain</a>
-            <a href="services/business-email.html">Business email</a>
-            <a href="services/social-handles.html">Social handles</a>
-            <span class="nd-h">Grow</span>
-            <a href="services/social-media-marketing.html">Social media marketing</a>
-            <a href="services/content-marketing.html">Content marketing</a>
-            <a href="services/email-marketing.html">Email marketing</a>
-            <a href="services/lead-generation.html">Lead generation</a>
-            <a href="services/paid-ads-management.html">Paid ads management</a>
-          </div>
-          <div class="nd-col">
-            <span class="nd-h">Run</span>
-            <a href="services/lead-management.html">Lead management</a>
-            <a href="services/sales-closing-support.html">Sales &amp; closing</a>
-            <span class="nd-h">Courses</span>
-            <a href="services/course-creation.html">Course creation</a>
-          </div>
-        </div>
-      </div>
-      <div class="nav-item">
-        <a href="problems.html">Problems</a>
-        <div class="nav-drop" hidden>
-          <div class="nd-col">
-            <a class="nd-all" href="problems.html">The full research &rarr;</a>
-            <span class="nd-h">By fit</span>
-            <a href="coach/problems.html">Coach</a>
-            <a href="business/problems.html">Small business</a>
-            <a href="freelancer/problems.html">Freelancer</a>
-            <a href="mentor/problems.html">Mentor</a>
-            <a href="corporate/problems.html">Corporate &amp; enterprise</a>
-          </div>
-        </div>
-      </div>
-      <div class="nav-item">
-        <a href="platform.html">Platform</a>
-        <div class="nav-drop" hidden>
-          <div class="nd-col">
-            <a class="nd-all" href="platform.html">The Platform &rarr;</a>
-            <span class="nd-h">The four parts</span>
-            <a href="desk/">CoachOS Desk</a>
-            <a href="roundtable/">The Roundtable</a>
-            <a href="roster/">The Roster</a>
-            <a href="shortlist/">The Shortlist</a>
-          </div>
-        </div>
-      </div>
-      <a href="why.html">Why</a>
-      <a href="contact.html" class="active">Contact</a>
-      <a class="nav-cta" href="contact.html">Talk to us</a>
+      <a href="problems.html">Problems We Solve</a>
+      <a href="why-us.html">Why</a>
+      <a href="contact.html">Contact</a>
     </div>
-    <button class="theme-btn" role="switch" aria-checked="false" aria-label="Switch to light mode"></button>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
   </nav>
 </header>
 
-<section class="pagehero">
-  <div class="lattice" aria-hidden="true"></div>
-  <div class="wrap pagehero-inner">
-    <span class="label crumb">Talk to us directly</span>
-    <h1>Tell us where <em>you&rsquo;re stuck.</em></h1>
-    <p class="sub">No form logic, no auto-reply. A real person reads this and writes back.</p>
+<section class="pagehead">
+  <div class="wrap">
+    <span class="kicker">Talk to us directly</span>
+    <h1><span class="split-text">Tell us where you're <span class="accent">actually stuck.</span></span></h1>
+    <p>No form logic, no auto-reply. A real person reads this and writes back.</p>
   </div>
 </section>
 
-<section class="sec-tight alt">
-  <div class="wrap">
-    <div class="founder reveal">
-      <div class="mark">SA<img src="assets/founder.jpg" alt="Shaikh Amir Hussain, founder of CoachOS" onerror="this.remove()"></div>
+<section style="padding-top:0">
+  <div class="wrap-narrow">
+    <div class="split reveal" style="align-items:center;gap:2.2rem">
+      <div style="flex:none;max-width:220px;margin:0 auto;text-align:center">
+        <div style="width:180px;height:180px;border-radius:50%;background:linear-gradient(160deg,var(--surface-2),var(--bg-2));border:1px solid var(--line-strong);display:flex;align-items:center;justify-content:center;margin:0 auto;font-family:var(--display);font-size:3rem;color:var(--ink-dim)">SA</div>
+        <p style="margin-top:.9rem;font-size:.86rem;color:var(--ink-soft)"><strong>Shaikh Amir Hussain</strong><br>Founder, CoachOS</p>
+      </div>
       <div>
-        <h2>Your message lands with me &mdash; the founder, not a support queue.</h2>
-        <p>I&rsquo;m Shaikh. Before CoachOS, I worked inside the coaching industry itself &mdash; at an established coach-training academy &mdash; and spent years as a freelancer: building, marketing, and chasing leads as a one-person shop, living the exact feast-or-famine cycle this site describes. The feedback I kept getting from the coaches I served there &mdash; that this work took real weight off them &mdash; is what convinced me it should be a company. I built CoachOS because solo coaches and small businesses shouldn&rsquo;t need three subscriptions, a freelancer, and a degree in Zapier to look professional and keep leads moving. Everywhere else on this site, the model is the same: AI systems draft the work, a specialist reviews it, and it ships under your name. This form skips the AI entirely &mdash; you write in, I read it, and I reply.</p>
-        <p>If your project needs more hands &mdash; design, copy, ads &mdash; I bring in the right specialists and stay accountable for the result. One person answers to you, never a team chat you&rsquo;re left managing.</p>
-        <p class="who">Shaikh Amir Hussain &middot; Founder, CoachOS</p>
+        <span class="k">Why you'll actually hear back</span>
+        <h2 style="font-size:1.4rem;margin-bottom:.7rem">There's no "team" — it's me, and a small crew I hire per job.</h2>
+        <p style="margin-bottom:.9rem">I'm Shaikh. I built CoachOS because solo coaches and small businesses shouldn't need three subscriptions, a freelancer, and a degree in Zapier to look professional and keep leads moving. This site — its pages, its follow-ups, its daily brief — is built and run the exact way I'd run yours. You write in; I read it and reply. That's it.</p>
+        <p style="color:var(--ink-soft);font-size:.92rem">If the scope needs more hands — design, copy, ads — I bring them in and own the result either way. One accountable person, not a team chat you're left managing.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="sec">
-  <div class="wrap">
+<section>
+  <div class="wrap contact-wrap">
     <form class="contact-form reveal" id="contact-form">
       <div>
         <label for="c-name">Your name</label>
@@ -143,40 +85,60 @@
         <input type="email" id="c-email" required autocomplete="email">
       </div>
       <div>
-        <label for="c-topic">What&rsquo;s this about</label>
+        <label for="c-topic">What's this about</label>
         <select id="c-topic">
-          <option value="services">Services &mdash; website, marketing, leads, sales</option>
-          <option value="rooms">The rooms &mdash; Desk, Roundtable, Roster, or Shortlist</option>
+          <option value="services">Live services — website, marketing, leads, sales</option>
+          <option value="platform">The Platform, Community, Network, or Database</option>
           <option value="press">Press or partnership</option>
           <option value="other">Something else</option>
         </select>
       </div>
       <div>
-        <label for="c-message">What&rsquo;s going on</label>
-        <textarea id="c-message" required placeholder="Tell us about your practice and what you're stuck on — the more specific, the better we can help."></textarea>
+        <label for="c-message">What's going on</label>
+        <textarea id="c-message" required placeholder="Tell us about your practice and what you're stuck on — the more specific, the better we can actually help."></textarea>
       </div>
       <button type="submit">Send it</button>
     </form>
-    <p class="calm-note">We read every message ourselves. If you don&rsquo;t hear back within a couple of days, it slipped through &mdash; email <a href="mailto:shaikhamirhussain2000@gmail.com">shaikhamirhussain2000@gmail.com</a> directly.</p>
+    <p class="calm-note">We read every message ourselves. If you don't hear back in a couple of days, it means it slipped through — email us directly instead.</p>
+    <div class="direct-email">Prefer email? Write to <a href="mailto:shaikhamirhussain2000@gmail.com">shaikhamirhussain2000@gmail.com</a> directly.</div>
   </div>
 </section>
 
 <footer class="site">
-  <div class="foot">
-    <p>CoachOS &mdash; AI-run services, human sign-off. We do the work you never signed up for &mdash; for coaches, mentors, freelancers &amp; small teams.</p>
-    <nav>
-      <a href="index.html#doors">Find your fit</a>
-      <a href="services.html">Services</a>
-      <a href="problems.html">Problems</a>
-      <a href="desk/">Desk</a>
-      <a href="roundtable/">Roundtable</a>
-      <a href="roster/">Roster</a>
-      <a href="shortlist/">Shortlist</a>
-      <a href="why.html">Why</a>
-    </nav>
+  <div class="foot-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="platform.html">Platform</a>
+    <a href="insights.html">Insights</a>
+    <a href="news.html">News</a>
+    <a href="quizzes.html">Assessments</a>
+    <a href="checklist.html">Free checklist</a>
+    <a href="why-us.html">Why</a>
+    <a href="contact.html">Contact</a>
+    <a href="access.html">How access works</a>
   </div>
+  <div class="foot-brand">Coach<b style="color:var(--mint)">OS</b> — the agentic AI nervous system for coaches, mentors, freelancers &amp; small businesses.</div>
 </footer>
 
-<script src="assets/main.js?v=20260814g"></script>
+<script src="assets/main.js"></script>
+<script>
+  var form = document.getElementById('contact-form');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('c-name').value;
+    var email = document.getElementById('c-email').value;
+    var topic = document.getElementById('c-topic').value;
+    var message = document.getElementById('c-message').value;
+    var btn = form.querySelector('button');
+    var originalLabel = btn.textContent;
+    btn.textContent = 'Sending…';
+    window.coachosSubmitLead({ email: email, source: 'contact:' + topic }).then(function(){
+      var subject = encodeURIComponent('CoachOS contact form — ' + topic);
+      var body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nTopic: ' + topic + '\n\n' + message);
+      window.location.href = 'mailto:shaikhamirhussain2000@gmail.com?subject=' + subject + '&body=' + body;
+      form.outerHTML = '<p style="color:var(--mint);font-weight:700;font-size:1.05rem;text-align:center">Opening your email client to send this — if nothing opens, write to shaikhamirhussain2000@gmail.com directly.</p>';
+    });
+  });
+</script>
 </body>
 </html>

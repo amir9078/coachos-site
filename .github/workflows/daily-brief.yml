@@ -33,6 +33,6 @@ jobs:
         run: |
           git config user.name "coachos-bot"
           git config user.email "actions@github.com"
-          git add news.html
+          git add v2/news.html
           git diff --cached --quiet || git commit -m "Daily brief: $(date -u +%Y-%m-%d)"
           git push

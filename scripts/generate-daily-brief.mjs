@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const newsPath = path.join(__dirname, '..', 'news.html');
+const newsPath = path.join(__dirname, '..', 'v2', 'news.html');
 
 const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD (UTC)
 

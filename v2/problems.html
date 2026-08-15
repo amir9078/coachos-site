@@ -3,585 +3,430 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Problems CoachOS solves — in the words of the people living them</title>
-<meta name="description" content="The research behind CoachOS: real problems in websites, marketing, leads, sales, mentoring programs, and marketplaces — told in the words of the people living them, each mapped to the exact service that fixes it.">
+<title>Problems We Solve &mdash; 42 Real, Sourced Business Problems | CoachOS</title>
+<meta name="description" content="42 real problems coaches, mentors, freelancers, small businesses and internal mentoring programs actually run into. Each one sourced, with a full breakdown of what it costs and what fixes it.">
+<meta name="keywords" content="small business problems, freelancer challenges, coaching business problems, lead response time, mentoring program problems, marketing consistency, client acquisition">
 <link rel="canonical" href="https://amir9078.github.io/coachos-site/v2/problems.html">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Problems CoachOS solves — in the words of the people living them">
-<meta property="og:description" content="The research behind CoachOS: real problems in websites, marketing, leads, sales, mentoring programs, and marketplaces — told in the words of the people living them, each mapped to the exact service that fixes it.">
-<meta property="og:url" content="https://amir9078.github.io/coachos-site/v2/problems.html">
-<meta property="og:site_name" content="CoachOS">
-<meta name="twitter:card" content="summary">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="assets/style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=20260814g">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Problems We Solve &mdash; 42 Real, Sourced Business Problems">
+<meta property="og:description" content="42 real problems, each sourced and broken down: what it costs, why the usual fixes fail, and what a working setup looks like.">
+<meta property="og:url" content="https://amir9078.github.io/coachos-site/v2/problems.html">
+<meta property="og:site_name" content="CoachOS">
+<style>
+  .problem-section{border-top:1px solid var(--line);padding-top:clamp(2.5rem,6vw,4rem)}
+  .problem-section:first-of-type{border-top:none}
+  .problem-section:nth-of-type(3n+2) .sec-head>.kicker{color:var(--amber)}
+  .problem-section:nth-of-type(3n) .sec-head>.kicker{color:var(--sky)}
+  .problem-section:nth-of-type(3n+2) .figure{color:var(--amber)}
+  .problem-section:nth-of-type(3n) .figure{color:var(--sky)}
+  .problem-section:nth-of-type(3n+2) .problem-card:hover{border-color:var(--amber)}
+  .problem-section:nth-of-type(3n) .problem-card:hover{border-color:var(--sky)}
+  .jump-nav{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.8rem}
+  .jump-nav a{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-soft);border:1px solid var(--line-strong);border-radius:20px;padding:.45rem 1rem;text-decoration:none;transition:border-color .2s ease,color .2s ease}
+  .jump-nav a:hover{border-color:var(--mint);color:var(--mint)}
+  .method-note{max-width:840px;margin:1.8rem auto 0;background:var(--surface-2);border:1px solid var(--line-strong);border-radius:10px;padding:1.2rem 1.5rem;text-align:left}
+  .method-note p{margin:0 0 .7rem;font-size:.87rem;color:var(--ink-soft);line-height:1.6}
+  .method-note p:last-child{margin-bottom:0}
+  .method-note b{color:var(--ink)}
+  .problem-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem;max-width:1080px;margin:2.2rem auto 0;align-items:stretch}
+  @media(max-width:760px){.problem-grid{grid-template-columns:1fr}}
+  .problem-card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.7rem;text-decoration:none;color:inherit;transition:border-color .25s ease,transform .2s ease,box-shadow .25s ease}
+  .problem-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+  .problem-card .figure{font-family:var(--quote);font-weight:400;font-size:2.15rem;color:var(--mint);font-variant-numeric:tabular-nums;line-height:1;display:block;margin-bottom:.7rem}
+  .problem-card h3{font-size:.98rem;margin-bottom:.75rem;font-weight:700;color:var(--ink);line-height:1.35}
+  .problem-card .voice{font-size:.86rem;color:var(--ink-soft);line-height:1.68;font-style:italic;margin:0 0 1.1rem;padding-left:.9rem;border-left:2px solid var(--line-strong)}
+  .problem-card .read-on{margin-top:auto;font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:var(--mint)}
+</style>
 </head>
 <body>
-
-<header class="site">
+<div id="scroll-progress"></div>
+<header class="site gate-header">
   <nav class="nav">
-    <a class="wordmark" href="index.html" aria-label="CoachOS home">
-      <span>Coach<em>OS</em></span>
-    </a>
+    <a class="wordmark" href="index.html">Coach<em>OS</em></a>
     <div class="nav-links">
       <div class="nav-item">
-        <a href="index.html#doors">Find your fit</a>
-        <div class="nav-drop" hidden>
-          <div class="nd-col">
-            <span class="nd-h">Five doors</span>
-          <a href="coach/">Coach</a>
+        <a href="index.html">Find your fit</a>
+        <div class="nav-dropdown simple">
           <a href="business/">Small business</a>
           <a href="freelancer/">Freelancer</a>
           <a href="mentor/">Mentor</a>
-          <a href="corporate/">Corporate &amp; enterprise</a>
-          </div>
+          <a href="coach/">Coach</a>
+          <a href="corporate/">Corporate &amp; Enterprise</a>
         </div>
       </div>
-      <div class="nav-item">
-        <a href="services.html">Services</a>
-        <div class="nav-drop" hidden>
-          <div class="nd-col">
-            <a class="nd-all" href="services.html">All services &rarr;</a>
-          </div>
-          <div class="nd-col">
-            <span class="nd-h">Strategy</span>
-            <a href="services/business-strategy-consulting.html">Strategy &amp; consulting</a>
-            <span class="nd-h">Position</span>
-            <a href="services/personal-branding.html">Personal branding</a>
-          </div>
-          <div class="nd-col">
-            <span class="nd-h">Launch</span>
-            <a href="services/website.html">Website</a>
-            <a href="services/hosting-domain.html">Hosting &amp; domain</a>
-            <a href="services/business-email.html">Business email</a>
-            <a href="services/social-handles.html">Social handles</a>
-            <span class="nd-h">Grow</span>
-            <a href="services/social-media-marketing.html">Social media marketing</a>
-            <a href="services/content-marketing.html">Content marketing</a>
-            <a href="services/email-marketing.html">Email marketing</a>
-            <a href="services/lead-generation.html">Lead generation</a>
-            <a href="services/paid-ads-management.html">Paid ads management</a>
-          </div>
-          <div class="nd-col">
-            <span class="nd-h">Run</span>
-            <a href="services/lead-management.html">Lead management</a>
-            <a href="services/sales-closing-support.html">Sales &amp; closing</a>
-            <span class="nd-h">Courses</span>
-            <a href="services/course-creation.html">Course creation</a>
-          </div>
-        </div>
-      </div>
-      <div class="nav-item">
-        <a href="problems.html" class="active">Problems</a>
-        <div class="nav-drop" hidden>
-          <div class="nd-col">
-            <a class="nd-all" href="problems.html">The full research &rarr;</a>
-            <span class="nd-h">By fit</span>
-            <a href="coach/problems.html">Coach</a>
-            <a href="business/problems.html">Small business</a>
-            <a href="freelancer/problems.html">Freelancer</a>
-            <a href="mentor/problems.html">Mentor</a>
-            <a href="corporate/problems.html">Corporate &amp; enterprise</a>
-          </div>
-        </div>
-      </div>
-      <div class="nav-item">
-        <a href="platform.html">Platform</a>
-        <div class="nav-drop" hidden>
-          <div class="nd-col">
-            <a class="nd-all" href="platform.html">The Platform &rarr;</a>
-            <span class="nd-h">The four parts</span>
-            <a href="desk/">CoachOS Desk</a>
-            <a href="roundtable/">The Roundtable</a>
-            <a href="roster/">The Roster</a>
-            <a href="shortlist/">The Shortlist</a>
-          </div>
-        </div>
-      </div>
-      <a href="why.html">Why</a>
+      <a href="problems.html">Problems We Solve</a>
+      <a href="why-us.html">Why</a>
       <a href="contact.html">Contact</a>
-      <a class="nav-cta" href="contact.html">Talk to us</a>
     </div>
-    <button class="theme-btn" role="switch" aria-checked="false" aria-label="Switch to light mode"></button>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
   </nav>
 </header>
 
-<section class="pagehero">
-  <div class="lattice" aria-hidden="true"></div>
-  <div class="wrap pagehero-inner">
-    <span class="label crumb">The research, in their words</span>
-    <h1>The problems, told by <em>the people living them.</em></h1>
-    <p class="sub">This started as a question: what&rsquo;s going wrong for the people we build this for? So we went and looked &mdash; industry studies, response-time research, freelancer and HR surveys, documented cases. Below: the ones we hear most, in the words of the people living them, each with the exact service that fixes it.</p>
+<section class="pagehead">
+  <div class="wrap">
+    <span class="kicker">The research, laid out plainly</span>
+    <h1><span class="split-text">42 real problems. <span class="accent">Sourced, not guessed at.</span></span></h1>
+    <p>This started as a question: what's actually going wrong for the people we build this for? So we went and looked &mdash; industry studies, response-time research, freelancer and HR surveys, documented cases. Each one below opens into a full breakdown: why it happens, what it costs, why the usual fixes fail, and what a working setup looks like.</p>
+    <div class="jump-nav reveal">
+      <a href="#presence">Website &amp; Presence</a>
+      <a href="#marketing">Marketing &amp; Visibility</a>
+      <a href="#leads">Leads &amp; Follow-Up</a>
+      <a href="#sales">Sales &amp; Closing</a>
+      <a href="#programs">Programs &amp; Structure</a>
+      <a href="#platform">Community &amp; Marketplaces</a>
+    </div>
+    <div class="method-note reveal">
+      <p><b>How this was put together:</b> every account is a realistic composite written to show the pattern clearly, not a verbatim quote pulled from one person's post, since we don't have that kind of platform access set up and won't pretend otherwise. Every statistic is a different matter: each is checked against its original source, and anything we couldn't independently verify was cut rather than kept for effect. If you check a source and find we got it wrong, tell us. This page only works if it's actually true.</p>
+      <p><b>Where CoachOS fits in:</b> each breakdown ends with one plain note on what changes when this is handled for you, and by whom. Our AI systems draft and monitor the repetitive parts; a specialist on our team reviews before anything reaches you or a client. Not an autonomous AI running unsupervised.</p>
+    </div>
   </div>
 </section>
 
-<section class="sec-tight alt">
+<section class="problem-section" id="presence">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="label">Documented, not invented</span>
-      <h2>The same problems, in the open internet&rsquo;s words</h2>
-      <p class="after">Before our composites below: here&rsquo;s the public record saying the same thing, with links you can check.</p>
+      <span class="kicker">Website &amp; Presence</span>
+      <h2>What's true if the only proof you exist is a social feed</h2>
     </div>
-    <div class="pains">
-      <div class="pain reveal"><span class="numeral">&#10022;</span><p><b>62% of small business owners report burnout at least monthly</b> &mdash; <a href="https://me.walmart.com/content/b2b/en_us/articles/prevent-small-business-burnout" rel="noopener">Walmart Business survey</a>.</p></div>
-      <div class="pain reveal"><span class="numeral">&#10022;</span><p><b>Roughly 6 hours a week goes to social media alone</b> for small businesses &mdash; <a href="https://www.nbcnews.com/news/amp/wbna49748817" rel="noopener">VerticalResponse survey, via NBC</a>.</p></div>
-      <div class="pain reveal"><span class="numeral">&#10022;</span><p><b>Coaching software reviewers keep saying the same sentence:</b> the tool manages clients &mdash; finding them is still your job &mdash; <a href="https://luisazhou.com/blog/paperbell-alternatives/" rel="noopener">alternatives guides</a> &middot; <a href="https://www.capterra.com/p/206052/Paperbell/reviews/" rel="noopener">Capterra reviews</a>.</p></div>
-      <div class="pain reveal"><span class="numeral">&#10022;</span><p><b>Mentorship marketplace minimum fees can reach ~28% of a small plan</b> &mdash; <a href="https://help.mentorcruise.com/article/61-what-fees-does-mentorcruise-take" rel="noopener">MentorCruise&rsquo;s own fee documentation</a> &middot; <a href="https://flexiple.com/reviews/mentorcruise" rel="noopener">independent review</a>.</p></div>
-      <div class="pain reveal"><span class="numeral">&#10022;</span><p><b>Coaching buyers now demand process and proof</b> after years of being burned by hype &mdash; <a href="https://abilevinemoneyqueen.substack.com/p/the-dirty-secret-why-some-coaches" rel="noopener">industry commentary</a>.</p></div>
+    <div class="problem-grid reveal">
+      <a class="problem-card" href="problems/small-business-no-website.html">
+        <span class="figure" data-count-to="17" data-count-suffix="%">17%</span>
+        <h3>No real website, so a prospect can't verify you're legitimate</h3>
+        <p class="voice">Someone asked for my website on a Tuesday and I sent them my Instagram. She said thanks, that's great, and then just — nothing. I'd been telling myself the site could wait because everything came through referrals anyway, and it did, mostly. It's the ones that don't come through that you never hear about. The domain's been sitting in a cart since March.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/slow-website-load-time.html">
+        <span class="figure" data-count-to="53" data-count-suffix="%">53%</span>
+        <h3>A slow site loses people before they see what is on it</h3>
+        <p class="voice">We ran ads for three weeks and I kept checking the numbers on my phone at night, wondering why the clicks weren't turning into anything. Turned out the homepage took about nine seconds on a phone. On my laptop in the office it was instant, which is exactly why I never caught it — I'd only ever looked at it there. There was a video header nobody asked for and a hero photo that was 8MB. So we paid for a few hundred people to look at a white screen.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/expired-domain-renewal-outage.html">
+        <span class="figure">~1 week</span>
+        <h3>A missed domain renewal takes the whole business offline</h3>
+        <p class="voice">The email went first. I thought it was Outlook being Outlook, restarted my laptop twice, then a client rang to say my site was showing a page of adverts. The renewal notices had been going to an address on that same domain, which — yeah. Card on file had expired in January and I never updated it. We got it back on the Thursday but the ten days of bounced enquiries are just gone.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/incorrect-business-listing-information.html">
+        <span class="figure" data-count-to="68" data-count-suffix="%">68%</span>
+        <h3>Wrong address or phone number on one directory, and clients show up at the wrong place</h3>
+        <p class="voice">A woman stood outside our old unit on a Saturday morning texting me 'am I in the right place?' We'd moved in the February. I'd updated Google the week we moved so I assumed that was that — I didn't know there were six other places carrying the old address, some of which I've never signed up for in my life. One of them still lists a landline we gave up. She rebooked, to be fair, but I don't think everyone does.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/inconsistent-social-media-handles.html">
+        <span class="figure">23–33%</span>
+        <h3>The handle available on one platform is already gone on the next</h3>
+        <p class="voice">I'm one thing on Instagram, the same thing with an underscore on TikTok, and something completely different on LinkedIn because that was set up before the business had a name. A client told me she'd searched for me on TikTok, found an account using my old logo, messaged it and got nothing back. That account isn't mine. I don't know whose it is. The business cards I printed in 2023 have the underscore version on them, so those are wrong now too.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
     </div>
-    <p class="reveal" style="margin-top:2rem;color:var(--ink-soft);max-width:760px">Below, every problem is paired with its <b style="color:var(--ink)">after</b> &mdash; the state we build to, told the same human way. We label them honestly: they&rsquo;re our standard, not client quotes. As clients give permission, their real stories take these slots.</p>
   </div>
 </section>
 
-<section class="sec">
+<section class="problem-section" id="marketing">
   <div class="wrap">
-
-    <div class="prob-cat reveal">
-      <div class="chead"><span class="gnum">01 /</span><h3>Website &amp; presence</h3><span class="sub">if the only proof you exist is a feed</span></div>
-
-      <div class="prob">
-        <span class="pstat">17%</span>
-        <div>
-          <h4>No real website, so a prospect can&rsquo;t verify you&rsquo;re legitimate</h4>
-          <div class="voice">
-            <span class="av">CO</span>
-            <div class="bubble">
-              <blockquote>&ldquo;Someone asked for my website on a Tuesday and I sent them my Instagram. She said thanks, that&rsquo;s great, and then just &mdash; nothing. I&rsquo;d been telling myself the site could wait because everything came through referrals anyway. It&rsquo;s the ones that don&rsquo;t come through that you never hear about.&rdquo;</blockquote>
-              <cite>Coach &middot; composite account</cite>
-            </div>
-          </div>
-          <div class="voice rx">
-            <span class="av">&#10003;</span>
-            <div class="bubble">
-              <p class="after-line">Tuesday&rsquo;s &ldquo;what&rsquo;s your website?&rdquo; gets a real link &mdash; fast, specific, with booking built in. &rarr; <a href="services.html">Website, built for you</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="prob">
-        <span class="pstat">~1 week</span>
-        <div>
-          <h4>A missed domain renewal takes the whole business offline</h4>
-          <div class="voice">
-            <span class="av">SB</span>
-            <div class="bubble">
-              <blockquote>&ldquo;The email went first. Then a client rang to say my site was showing a page of adverts. The renewal notices had been going to an address on that same domain &mdash; and the card on file had expired in January. The ten days of bounced enquiries are just gone.&rdquo;</blockquote>
-              <cite>Small-business owner &middot; composite account</cite>
-            </div>
-          </div>
-          <div class="voice rx">
-            <span class="av">&#10003;</span>
-            <div class="bubble">
-              <p class="after-line">Renewal notices come to us, and the card on file is ours to watch. The site simply stays up. &rarr; <a href="services.html">Hosting &amp; domain</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="prob">
-        <span class="pstat">23&ndash;33%</span>
-        <div>
-          <h4>The handle available on one platform is already gone on the next</h4>
-          <div class="voice">
-            <span class="av">SB</span>
-            <div class="bubble">
-              <blockquote>&ldquo;I&rsquo;m one thing on Instagram, the same thing with an underscore on TikTok, and something completely different on LinkedIn. A client messaged an account using my old logo and got nothing back. That account isn&rsquo;t mine. I don&rsquo;t know whose it is.&rdquo;</blockquote>
-              <cite>Small-business owner &middot; composite account</cite>
-            </div>
-          </div>
-          <div class="voice rx">
-            <span class="av">&#10003;</span>
-            <div class="bubble">
-              <p class="after-line">One name, every platform, old accounts cleaned up &mdash; your printed cards match the internet again. &rarr; <a href="services.html">Social handle setup</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="sec-head reveal">
+      <span class="kicker">Marketing &amp; Visibility</span>
+      <h2>What actually happens to marketing when the real work gets busy</h2>
     </div>
-
-    <div class="prob-cat reveal">
-      <div class="chead"><span class="gnum">02 /</span><h3>Marketing &amp; visibility</h3><span class="sub">what happens when the real work gets busy</span></div>
-
-      <div class="prob">
-        <span class="pstat">51%</span>
-        <div>
-          <h4>Posting stops the moment client work picks up &mdash; and nobody notices until the pipeline does</h4>
-          <div class="voice">
-            <span class="av">CO</span>
-            <div class="bubble">
-              <blockquote>&ldquo;I checked the analytics on a Tuesday and realised the last thing I&rsquo;d posted was in March. It&rsquo;s May. Nothing dramatic happened &mdash; I signed two clients in April and just stopped. Enquiries kept trickling in off older stuff for a while. They&rsquo;ve stopped now.&rdquo;</blockquote>
-              <cite>Coach &middot; composite account</cite>
-            </div>
-          </div>
-          <div class="voice rx">
-            <span class="av">&#10003;</span>
-            <div class="bubble">
-              <p class="after-line">Three weeks into a full cohort, the feed is still publishing &mdash; you approved it two Sundays ago, in ten minutes. &rarr; <a href="services.html">Social media marketing</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="prob">
-        <span class="pstat">49%</span>
-        <div>
-          <h4>Feast-or-famine repeats because marketing only restarts once the pipeline is already empty</h4>
-          <div class="voice">
-            <span class="av">FR</span>
-            <div class="bubble">
-              <blockquote>&ldquo;January and February I was turning work away. By April I was down to two clients, so I started posting and emailing again. That work landed in June &mdash; by which point I was flat out and stopped doing all of it. Fourth year running. Same shape every time.&rdquo;</blockquote>
-              <cite>Freelancer &middot; composite account</cite>
-            </div>
-          </div>
-          <div class="voice rx">
-            <span class="av">&#10003;</span>
-            <div class="bubble">
-              <p class="after-line">The June work lands while April is still busy &mdash; because the posting never stopped. &rarr; <a href="services.html">Marketing &amp; visibility</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="prob">
-        <span class="pstat">122,974</span>
-        <div>
-          <h4>Generic positioning gets lost in an increasingly crowded field</h4>
-          <div class="voice">
-            <span class="av">EC</span>
-            <div class="bubble">
-              <blockquote>&ldquo;Someone at a networking thing asked what I do and I said &lsquo;executive coaching, mainly leadership and confidence&rsquo; &mdash; and watched her face do absolutely nothing. Which is fair. The other two coaches in the room said more or less the same. My website says it as well, just with better photos.&rdquo;</blockquote>
-              <cite>Executive coach &middot; composite account</cite>
-            </div>
-          </div>
-          <div class="voice rx">
-            <span class="av">&#10003;</span>
-            <div class="bubble">
-              <p class="after-line">The networking answer takes one sentence now. Faces react. Referrals follow. &rarr; <a href="services.html">Personal branding</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="problem-grid reveal">
+      <a class="problem-card" href="problems/inconsistent-social-media-posting.html">
+        <span class="figure" data-count-to="51" data-count-suffix="%">51%</span>
+        <h3>Posting stops the moment client work picks up, and nobody notices until the pipeline does</h3>
+        <p class="voice">I checked the analytics on a Tuesday and realised the last thing I'd posted was in March. It's May. Nothing dramatic happened — I signed two clients in April and just stopped, and I didn't notice because enquiries kept trickling in for a while off older stuff. They've stopped now. So I'm posting again and it's like the first month all over again.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/marketing-burnout-solo-practitioners.html">
+        <span class="figure" data-count-to="77" data-count-suffix="%">77%</span>
+        <h3>Doing marketing solo quietly becomes a second full-time job</h3>
+        <p class="voice">I do client work during the day and the marketing after nine at night, so the marketing gets whatever's left of me. That was fine for about eight months. Then I missed the Friday newsletter twice, and after that I stopped writing captions properly and just posted the photo. I wouldn't say I burned out, exactly. I just went quieter and quieter until there wasn't much left going out.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/blog-traffic-decline-ai-search.html">
+        <span class="figure" data-count-to="8" data-count-suffix="%">8%</span>
+        <h3>Blog content increasingly gets written for nobody to click</h3>
+        <p class="voice">I spent most of two Sundays on a 2,000-word piece about how to price a programme — proper research, worked examples, the lot. It's had 31 visits since February and I'm fairly sure a chunk of those are me checking. I don't think the article is bad. I still think it's one of the better things I've written. Nobody's coming to it, is all.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/email-list-decay.html">
+        <span class="figure" data-count-to="71.9" data-count-decimals="1" data-count-suffix="%">71.9%</span>
+        <h3>An email list decays whether or not it is ever touched</h3>
+        <p class="voice">My list is about 900 people and I email it maybe four times a year, usually when I want something. Last send, roughly forty bounced — mostly people who'd changed jobs since I collected the address. Opens were down and I honestly can't tell if that's the subject line or just that half of them have forgotten who I am. Probably the second one.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/feast-famine-cycle-freelancers.html">
+        <span class="figure" data-count-to="49" data-count-suffix="%">49%</span>
+        <h3>The feast-or-famine cycle repeats because marketing only restarts once the pipeline is already empty</h3>
+        <p class="voice">January and February I was turning work away. By April I was down to two clients and a lot of free afternoons, so I started posting and emailing people again. That work landed in June — by which point I was flat out and stopped doing any of it. Fourth year running. Same shape every time, roughly the same months.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/generic-coaching-positioning.html">
+        <span class="figure" data-count-to="122974">122,974</span>
+        <h3>Generic positioning gets lost in an increasingly crowded field</h3>
+        <p class="voice">Someone asked me at a networking thing what I do and I said &quot;executive coaching, mainly leadership and confidence&quot;, and watched her face do absolutely nothing. Which is fair — the other two coaches in the room said more or less the same. My website says it as well, just with better photos. I keep meaning to sit down and work out what's actually different about what I do, and then a client emails.&lt;/p&gt;</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
     </div>
-
-    <div class="prob-cat reveal">
-      <div class="chead"><span class="gnum">03 /</span><h3>Leads &amp; follow-up</h3><span class="sub">what the research says happens to an inbound lead</span></div>
-
-      <div class="prob">
-        <span class="pstat">21&times;</span>
-        <div>
-          <h4>A callback within two hours can still lose to one within twenty minutes</h4>
-          <div class="voice">
-            <span class="av">CO</span>
-            <div class="bubble">
-              <blockquote>&ldquo;The enquiry came in at 9:40 and I rang back at half eleven. Two hours &mdash; felt fine to me. She was lovely about it. Said she&rsquo;d already booked a call with someone for Thursday. Turns out she&rsquo;d filled in three forms that morning before she finished her coffee.&rdquo;</blockquote>
-              <cite>Coach &middot; composite account</cite>
-            </div>
-          </div>
-          <div class="voice rx">
-            <span class="av">&#10003;</span>
-            <div class="bubble">
-              <p class="after-line">The 9:40 inquiry gets a 9:44 reply &mdash; booked before the coffee&rsquo;s done. Hers, not yours. &rarr; <a href="services.html">Lead management</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="prob">
-        <span class="pstat">42 hrs</span>
-        <div>
-          <h4>The average business takes 42 hours to respond to its own leads</h4>
-          <div class="voice">
-            <span class="av">SB</span>
-            <div class="bubble">
-              <blockquote>&ldquo;The contact form goes to an inbox that also gets invoices, newsletters, and whatever the accountant is sending. Found four quote requests sitting in there once, the oldest from Monday. Replied to all four at half nine at night. One wrote back to say thanks &mdash; they&rsquo;d sorted it.&rdquo;</blockquote>
-              <cite>Small-business owner &middot; composite account</cite>
-            </div>
-          </div>
-          <div class="voice rx">
-            <span class="av">&#10003;</span>
-            <div class="bubble">
-              <p class="after-line">Quote requests stop sharing a room with invoices. The oldest unanswered lead is minutes old, not from Monday. &rarr; <a href="services.html">Lead management</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="prob">
-        <span class="pstat">69%</span>
-        <div>
-          <h4>Most small businesses track leads on a spreadsheet, or nowhere at all</h4>
-          <div class="voice">
-            <span class="av">SO</span>
-            <div class="bubble">
-              <blockquote>&ldquo;Somebody messaged in November asking about corporate sessions and I replied from the train. Meant to log it that evening. Found the thread again in February &mdash; she&rsquo;d followed up once and I never saw it. The spreadsheet has 214 rows, and the status column stopped being accurate around row 90.&rdquo;</blockquote>
-              <cite>Studio owner &middot; composite account</cite>
-            </div>
-          </div>
-          <div class="voice rx">
-            <span class="av">&#10003;</span>
-            <div class="bubble">
-              <p class="after-line">Row 90 doesn&rsquo;t exist anymore. Every conversation reads booked, declined, or waiting &mdash; and nothing waits long. &rarr; <a href="services.html">Lead management</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="prob-cat reveal">
-      <div class="chead"><span class="gnum">04 /</span><h3>Sales &amp; closing</h3><span class="sub">what kills a deal that felt basically done</span></div>
-
-      <div class="prob">
-        <span class="pstat">8 touches</span>
-        <div>
-          <h4>Deals that closed needed far more follow-up than most people ever attempt</h4>
-          <div class="voice">
-            <span class="av">FR</span>
-            <div class="bubble">
-              <blockquote>&ldquo;I sent two emails and decided she wasn&rsquo;t interested. Found out in March she&rsquo;d signed with someone else &mdash; someone who emailed her six times. Six. I sat there looking at my sent folder, and the second email was from November. It didn&rsquo;t feel like giving up at the time. It felt like being polite.&rdquo;</blockquote>
-              <cite>Freelancer &middot; composite account</cite>
-            </div>
-          </div>
-          <div class="voice rx">
-            <span class="av">&#10003;</span>
-            <div class="bubble">
-              <p class="after-line">Touches three, five, and seven go out on schedule, warm and specific. Polite no longer means gone. &rarr; <a href="services.html">Sales &amp; closing support</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="prob">
-        <span class="pstat">70&ndash;80%</span>
-        <div>
-          <h4>A booked call is not the same as a call that happens</h4>
-          <div class="voice">
-            <span class="av">CO</span>
-            <div class="bubble">
-              <blockquote>&ldquo;The two o&rsquo;clock on Thursday is the one that gets me. I clear the hour before it, read the intake form, sit there with the link open. Then nothing &mdash; and at twelve past I send the &lsquo;no worries, want to find another time?&rsquo; message I keep saved in my notes app, because I send it so often.&rdquo;</blockquote>
-              <cite>Coach &middot; composite account</cite>
-            </div>
-          </div>
-          <div class="voice rx">
-            <span class="av">&#10003;</span>
-            <div class="bubble">
-              <p class="after-line">The Thursday two o&rsquo;clock shows up &mdash; reminded yesterday, confirmed this morning. &rarr; <a href="services.html">Lead management</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="prob-cat reveal">
-      <div class="chead"><span class="gnum">05 /</span><h3>Programs &amp; structure</h3><span class="sub">mentoring without a system underneath it</span></div>
-
-      <div class="prob">
-        <span class="pstat">$244/hr</span>
-        <div>
-          <h4>Years of mentoring, and still no real answer when someone asks what you offer</h4>
-          <div class="voice">
-            <span class="av">ME</span>
-            <div class="bubble">
-              <blockquote>&ldquo;A woman at my nephew&rsquo;s christening asked what I do, and eleven years in, I heard myself say &lsquo;it depends.&rsquo; I can tell you exactly what happened with any one of my mentees. I can&rsquo;t tell you what the thing is that I sell. My rate hasn&rsquo;t changed since 2019, because I wouldn&rsquo;t know what to say to justify changing it.&rdquo;</blockquote>
-              <cite>Mentor &middot; composite account</cite>
-            </div>
-          </div>
-          <div class="voice rx">
-            <span class="av">&#10003;</span>
-            <div class="bubble">
-              <p class="after-line">The christening question gets a one-line answer with a price in it &mdash; and a page to send afterward. &rarr; <a href="services.html">Mentor positioning</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="prob">
-        <span class="pstat">25&ndash;50</span>
-        <div>
-          <h4>Manual matching tops out at 25&ndash;50 people &mdash; most cohorts are bigger</h4>
-          <div class="voice">
-            <span class="av">HR</span>
-            <div class="bubble">
-              <blockquote>&ldquo;Cohort one was 32 people and I did the matching in an evening with a cup of tea. Cohort two was 58 and took a whole weekend, two screens &mdash; and on Sunday night I found I&rsquo;d matched someone with her own line manager and had to redo a third of it. Cohort three is meant to be 90. I haven&rsquo;t worked out what I&rsquo;m doing about that yet.&rdquo;</blockquote>
-              <cite>HR lead &middot; composite account</cite>
-            </div>
-          </div>
-          <div class="voice rx">
-            <span class="av">&#10003;</span>
-            <div class="bubble">
-              <p class="after-line">Cohort three&rsquo;s ninety people: matched in days, zero line managers paired, zero Sunday redos. &rarr; <a href="services.html">Mentee matching</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="prob">
-        <span class="pstat">4.2/5</span>
-        <div>
-          <h4>A satisfaction score is not a number a CFO can act on</h4>
-          <div class="voice">
-            <span class="av">LD</span>
-            <div class="bubble">
-              <blockquote>&ldquo;The finance review is in November and the only real number I have is 4.2 out of 5, from a survey most people ignored. The CFO asked what would happen if we didn&rsquo;t run the program. I said something about engagement, and I could hear how thin it sounded while I was saying it.&rdquo;</blockquote>
-              <cite>L&amp;D manager &middot; composite account</cite>
-            </div>
-          </div>
-          <div class="voice rx">
-            <span class="av">&#10003;</span>
-            <div class="bubble">
-              <p class="after-line">November&rsquo;s finance review gets participation, goals met, and outcomes per pair &mdash; sitting next to the budget line they defend. &rarr; <a href="corporate/">CoachOS for enterprise</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="prob-cat reveal">
-      <div class="chead"><span class="gnum">06 /</span><h3>Communities &amp; marketplaces</h3><span class="sub">what the alternatives cost</span></div>
-
-      <div class="prob">
-        <span class="pstat">22&ndash;34%</span>
-        <div>
-          <h4>Marketplace fees quietly take a much bigger bite than the headline rate</h4>
-          <div class="voice">
-            <span class="av">FR</span>
-            <div class="bubble">
-              <blockquote>&ldquo;I only worked it out because I was doing my tax return and the numbers didn&rsquo;t match what I thought I&rsquo;d earned. Gross was fine. Then the commission, then the Connects I&rsquo;d bought in a panic at 11pm, then the wire fee every month. It came to more than my rent. I&rsquo;m not even angry &mdash; I genuinely didn&rsquo;t know.&rdquo;</blockquote>
-              <cite>Freelancer &middot; composite account</cite>
-            </div>
-          </div>
-          <div class="voice rx">
-            <span class="av">&#10003;</span>
-            <div class="bubble">
-              <p class="after-line">The tax return matches what you actually earned. Nothing is skimmed between the work and the money. &rarr; <a href="services.html">The services</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="prob">
-        <span class="pstat">$500+</span>
-        <div>
-          <h4>Paying for a lead does not mean being the only one who paid for it</h4>
-          <div class="voice">
-            <span class="av">SV</span>
-            <div class="bubble">
-              <blockquote>&ldquo;The notification came in at 7:40. I paid for the lead, wrote a proper reply inside four minutes &mdash; actual sentences about her situation. She already had three others, one at half my price. I never heard back from her at all, and the fee doesn&rsquo;t come back either.&rdquo;</blockquote>
-              <cite>Service-business owner &middot; composite account</cite>
-            </div>
-          </div>
-          <div class="voice rx">
-            <span class="av">&#10003;</span>
-            <div class="bubble">
-              <p class="after-line">The 7:40 lead is yours alone &mdash; nobody else paid for her, and the reply was out by 7:44. &rarr; <a href="services.html">Lead generation</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="prob">
-        <span class="pstat">90%</span>
-        <div>
-          <h4>A paid community can still leave every real question unanswered</h4>
-          <div class="voice">
-            <span class="av">CO</span>
-            <div class="bubble">
-              <blockquote>&ldquo;Seventy-nine a month. I&rsquo;ve asked four questions since March &mdash; two got a thumbs-up emoji, and one got answered by somebody who was clearly warming me up to sell me something. I ended up back on Google anyway. So I&rsquo;m paying for a Slack I&rsquo;ve muted.&rdquo;</blockquote>
-              <cite>Coach &middot; composite account</cite>
-            </div>
-          </div>
-          <div class="voice rx">
-            <span class="av">&#10003;</span>
-            <div class="bubble">
-              <p class="after-line">Questions get answers from people running real practices &mdash; because nobody else got in. &rarr; <a href="roundtable/">The Roundtable</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="prob-cat reveal" style="margin-top:3.6rem">
-      <div class="chead"><span class="gnum">07 /</span><h3>The whole arc</h3><span class="sub">one engagement, start to finish</span></div>
-      <p class="stage-intro" style="color:var(--ink-soft);font-size:.98rem;max-width:760px;margin:.9rem 0 1.4rem">Single problems get single fixes. But most people arrive with five of them tangled together &mdash; so here&rsquo;s how a whole engagement runs, and what&rsquo;s different at the end of it. These are representative arcs of how our builds work, told honestly: composites, not named clients.</p>
-
-      <div class="svc">
-        <h4>The coach with a full roster and an empty pipeline</h4>
-        <div>
-          <p><b style="color:var(--ink)">Arrives with:</b> a calendar full for this cohort and silent for the next one. Feed dead since week three, inquiries landing on a page that still says &ldquo;coaching services,&rdquo; follow-ups living in her head.</p>
-          <p style="margin-top:.6rem"><b style="color:var(--ink)">Weeks 1&ndash;4:</b> strategy call and the one-sentence positioning first. Then the site rebuilt around her actual specialty, handles unified, a content calendar drafted from her own thinking, and lead management switched on &mdash; every inquiry answered in minutes, even mid-session.</p>
-          <p style="margin-top:.6rem;margin-bottom:.6rem"><b style="color:var(--accent)">The difference:</b></p>
-          <div class="chips"><span class="chip">Marketing no longer stops when coaching starts</span><span class="chip">The next cohort fills while this one runs</span><span class="chip">Sunday nights are hers again</span></div>
-        </div>
-      </div>
-
-      <div class="svc">
-        <h4>The freelancer in year four of feast-or-famine</h4>
-        <div>
-          <p><b style="color:var(--ink)">Arrives with:</b> the same annual shape every year &mdash; busy spring, empty April, panic posting, June recovery. Two-email follow-ups, marketplace commissions eating the margin.</p>
-          <p style="margin-top:.6rem"><b style="color:var(--ink)">Weeks 1&ndash;4:</b> rate and niche strategy, then a portfolio site off the marketplaces. Referral asks timed to happy clients, content publishing while he delivers, the eight-touch follow-through running on every open deal, one pipeline view.</p>
-          <p style="margin-top:.6rem;margin-bottom:.6rem"><b style="color:var(--accent)">The difference:</b></p>
-          <div class="chips"><span class="chip">The pipeline fills during delivery months, not after them</span><span class="chip">Deals stop dying at touch two</span><span class="chip">Nothing skimmed between the work and the money</span></div>
-        </div>
-      </div>
-
-      <div class="svc">
-        <h4>The HR lead with a 90-person cohort and a spreadsheet</h4>
-        <div>
-          <p><b style="color:var(--ink)">Arrives with:</b> matching that eats a weekend and still pairs someone with her line manager, no visibility into which pairs meet, and a 4.2-out-of-5 to show the CFO.</p>
-          <p style="margin-top:.6rem"><b style="color:var(--ink)">The first cycle:</b> criteria workshop, the whole cohort matched in days with conflicts caught before pairing, light session tracking with quiet-pair flags in week six, and a per-pair outcomes report ready for the finance review.</p>
-          <p style="margin-top:.6rem;margin-bottom:.6rem"><b style="color:var(--accent)">The difference:</b></p>
-          <div class="chips"><span class="chip">The weekend comes back</span><span class="chip">Problems fixed in week 6, not found at the survey</span><span class="chip">A number the budget can stand on</span></div>
-        </div>
-      </div>
-
-      <p class="reveal" style="margin-top:1.6rem;color:var(--ink-dim);font-size:.9rem">Your version of one of these arcs starts with one email &mdash; <a href="contact.html">tell us what&rsquo;s tangled</a>. And when the first clients allow it, their real arcs replace these, named and dated.</p>
-    </div>
-
-    <div class="method reveal">
-      <b>How this was put together:</b> every account is a realistic composite written to show the pattern clearly, not a verbatim quote from one person &mdash; we don&rsquo;t have that kind of platform access and won&rsquo;t pretend otherwise. The statistics are a different matter: each is checked against its original source, and anything we couldn&rsquo;t verify was cut rather than kept for effect. If you check a source and find we got it wrong, tell us. This page only works if it&rsquo;s true.
-    </div>
-
   </div>
 </section>
 
-<section class="rooms-strip">
-  <div class="lattice" aria-hidden="true"></div>
-  <div class="wrap inner reveal">
-    <h2>Every answer above is a service our team runs today.</h2>
-    <div class="links">
-      <a href="services.html">Every service, stage by stage</a>
-      <a href="index.html#doors">Find your fit</a>
+<section class="problem-section" id="leads">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Leads &amp; Follow-Up</span>
+      <h2>What the research says actually happens to an inbound lead</h2>
     </div>
-    <p class="note">If you saw yourself in a few of these, that&rsquo;s the point. Write in and describe what&rsquo;s happening &mdash; a person reads it and replies.</p>
+    <div class="problem-grid reveal">
+      <a class="problem-card" href="problems/rising-ad-costs-per-lead.html">
+        <span class="figure" data-count-to="27.66" data-count-decimals="2" data-count-prefix="$">$27.66</span>
+        <h3>The same ad budget buys roughly half the leads it used to</h3>
+        <p class="voice">We were sitting at about £11 a lead in March. I checked on a Sunday night because I couldn't sleep and it was £26. Same ad, same audience — I actually went into the version history to see whether I'd changed something and forgotten about it. Now the same money brings in maybe half the enquiries and honestly a lot of them are worse. I keep meaning to sit down properly and work out whether it still adds up.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/shared-leads-resold-competitors.html">
+        <span class="figure" data-count-to="7.2" data-count-decimals="1" data-count-prefix="$" data-count-suffix="M">$7.2M</span>
+        <h3>A purchased lead is often sold to several competitors at once</h3>
+        <p class="voice">Bought a batch of them, forty quid each. Rang the first one at ten past eight on a Tuesday and the bloke said I was the third that morning — one of the others had already been out to look at the job. I did try the refund thing; you've got 48 hours and they want call recordings, and I had recordings for about half. Ended up quoting low on two just so the month wasn't a total write-off. Still buying them, which probably says something.&lt;/p&gt;</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/freelance-client-acquisition-challenge.html">
+        <span class="figure" data-count-to="62" data-count-suffix="%">62%</span>
+        <h3>New client acquisition is the single biggest challenge, not pricing or workload</h3>
+        <p class="voice">I had three clients in February and by April I had one. Nothing went wrong exactly — the work just finished and I hadn't spoken to anybody new since January because I was heads-down delivering. So then you're sat there on a Wednesday afternoon rewriting your LinkedIn headline. I took a project at about two-thirds my normal rate in May and I'm still on it. The annoying part is that I know precisely why it happened and I'll probably do it again.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/lead-tracking-spreadsheet-small-business.html">
+        <span class="figure" data-count-to="69" data-count-suffix="%">69%</span>
+        <h3>Most small businesses track leads on a spreadsheet, or nowhere at all</h3>
+        <p class="voice">Somebody messaged the Instagram account in November asking about corporate sessions and I replied from my phone on the train. Meant to put her in the sheet that evening. Found the thread again in February when I was scrolling for something else — she'd followed up once and I never saw it. The spreadsheet's got 214 rows and the status column stopped being accurate somewhere around row 90. I don't actually know how many I've lost, which is sort of the point.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/five-minute-lead-response-window.html">
+        <span class="figure" data-count-to="21" data-count-suffix="x">21x</span>
+        <h3>A callback within two hours can still lose to one within twenty minutes</h3>
+        <p class="voice">The enquiry came in at 9:40 on a Tuesday and I rang back at half eleven. Two hours. Same morning, felt fine to me. She was lovely about it — said she'd already booked a call with someone for Thursday. Turns out she'd filled in three forms that morning before she'd finished her coffee, which, honestly, is exactly what I'd have done.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/average-lead-response-time.html">
+        <span class="figure" data-count-to="42" data-count-suffix=" hrs">42 hrs</span>
+        <h3>The average business takes 42 hours to respond to its own leads</h3>
+        <p class="voice">The contact form goes to an inbox that also gets invoices, newsletters and whatever the accountant is sending, and I properly open it when there's a gap — which some weeks means Thursday night. Found four quote requests sitting in there once, oldest one from the Monday. Replied to all four at about half nine at night. One came back to say thanks, they'd sorted it. Not cross, not anything really. Just sorted.&lt;/p&gt;</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/unanswered-contact-form-leads.html">
+        <span class="figure" data-count-to="63.5" data-count-decimals="1" data-count-suffix="%">63.5%</span>
+        <h3>Most companies never reply to a submitted lead at all</h3>
+        <p class="voice">A friend filled in our contact form on a Saturday as a test, pretending she wanted coaching for her team. Nothing came out the other end. No confirmation to her, no notification to me — the alerts had been going to an old shared address nobody had logged into since we changed who handled admin. Best guess is about three weeks. I still don't know how many, because there's no record of what never arrived.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/missed-calls-lost-customers.html">
+        <span class="figure" data-count-to="78" data-count-suffix="%">78%</span>
+        <h3>A missed call very often means a lost customer, not a rescheduled one</h3>
+        <p class="voice">Missed a call at 3:12 on a Friday, mid-session, phone on silent in my bag. Rang back at about ten past four and got their voicemail, left a message, heard nothing. Two weeks later I saw their name in a testimonial on somebody else's site. My phone stays on silent when I'm with a client and I'm not changing that, so — I don't know.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+    </div>
   </div>
 </section>
 
-<section class="close-sec">
-  <div class="wrap reveal">
-    <span class="label">CoachOS</span>
-    <h2>Recognized your week somewhere up there? <em>Tell us which one.</em></h2>
-    <a class="btn btn-primary" href="contact.html">Write in</a>
+<section class="problem-section" id="sales">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Sales &amp; Closing</span>
+      <h2>What actually kills a deal that felt basically done</h2>
+    </div>
+    <div class="problem-grid reveal">
+      <a class="problem-card" href="problems/sales-follow-up-abandoned-too-early.html">
+        <span class="figure" data-count-to="8" data-count-suffix=" touches">8 touches</span>
+        <h3>Deals that closed needed far more follow-up than most people ever attempt</h3>
+        <p class="voice">I sent two emails and then decided she wasn't interested. Found out in March she'd signed with someone else — someone who apparently emailed her six times. Six. I remember sitting there on a Tuesday night looking at my sent folder, and the second email was from November, and I'd just stopped. It didn't feel like giving up at the time. It felt like being polite.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/discovery-call-no-show-rate.html">
+        <span class="figure">70–80%</span>
+        <h3>A booked call is not the same as a call that happens</h3>
+        <p class="voice">The two o'clock on Thursday is the one that gets me. I clear the hour before it to read the intake form, make a coffee, sit there with the link open. Then nothing, and at twelve past I send the &quot;no worries, want to find another time?&quot; message I've got saved in my notes app because I send it so often. It's about one in four. And it's never the flaky-sounding ones — it's usually whoever seemed keenest on the booking form.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="problem-section" id="programs">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Programs &amp; Structure</span>
+      <h2>What happens to mentoring, one relationship or a whole company's worth, without a system underneath it</h2>
+    </div>
+    <div class="problem-grid reveal">
+      <a class="problem-card" href="problems/define-your-mentoring-offer.html">
+        <span class="figure" data-count-to="244" data-count-prefix="$" data-count-suffix="/hr">$244/hr</span>
+        <h3>Years of mentoring, and still no real answer when someone asks what you offer</h3>
+        <p class="voice">A woman at my nephew's christening asked what I do and I gave her about forty seconds of something before I heard myself say &quot;it depends&quot;. Eleven years I've been doing this. I can tell you exactly what happened with any one of them — the guy who moved out of sales into product, the woman who finally left her firm — but I can't tell you what the thing is that I sell. My rate hasn't changed since 2019 because I wouldn't know what to say to justify changing it.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/measuring-mentoring-outcomes.html">
+        <span class="figure" data-count-to="75" data-count-suffix="%">75%</span>
+        <h3>Without a goal set at the start, there is no way to prove anything changed</h3>
+        <p class="voice">Nine months in with someone and I genuinely think it went well. Then I sit down to ask for a testimonial and there's nothing to point at — no &quot;here's where you were in March, here's where you are now&quot;. Because nobody wrote down where she was in March. The last three all sort of tapered off, a reschedule and then another one and then nothing, and honestly I can't tell whether they got what they needed or just couldn't tell either.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/coach-website-online-visibility.html">
+        <span class="figure" data-count-to="41" data-count-suffix="%">41%</span>
+        <h3>Every mentee so far has come through someone who already knew the mentor personally</h3>
+        <p class="voice">Every single person I've mentored came through somebody who already knew me. Old colleague, someone's sister, a bloke from a course I did in 2018. I bought the domain about two years ago and it's still parked — the renewal email lands every March and I think, right, this month. Meanwhile there are people typing &quot;find a mentor&quot; into Google at eleven at night and not one of them will ever get anywhere near me.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/mentorship-demand-gap.html">
+        <span class="figure" data-count-to="37" data-count-suffix="%">37%</span>
+        <h3>Plenty of people want this. There is no system connecting them to it</h3>
+        <p class="voice">I've got maybe six hours a month I'd happily give to this and nowhere obvious to put them. Everyone keeps saying demand is enormous and I believe it — I just can't see any of it from where I'm sitting. Someone messaged me in February asking if I &quot;knew anyone&quot;, and I didn't, so that went nowhere either. It isn't a shortage. It's that neither side has any way of seeing the other one.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/affinity-bias-mentor-matching.html">
+        <span class="figure" data-count-to="71" data-count-suffix="%">71%</span>
+        <h3>Willing, qualified mentors get passed over because matching just means who is already in the room</h3>
+        <p class="voice">Third year I've put my name on the mentor list. Two matches in that time, both of them people I already ate lunch with anyway. Then the pairings came out in June and a colleague of mine had four — lovely bloke, genuinely good at it, and also the same background as most of the people doing the matching. I'm not saying anybody did anything on purpose. I'm saying nobody had to think about it and it still came out that way.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/mentoring-intake-process-boundaries.html">
+        <span class="figure" data-count-to="70" data-count-suffix="%">70%</span>
+        <h3>&quot;Just 20 minutes&quot; with no intake process eats an entire weekend</h3>
+        <p class="voice">&quot;Just twenty minutes&quot; turned into a call on Thursday, then a document they sent me on Friday night, then me rewriting chunks of it on Sunday afternoon at the kitchen table with the football on. None of it was unreasonable on its own — that's the thing, every single piece of it was small. I've got four of these running now. Last month I turned down actual paid work because the calendar looked full, and when I looked at what was in it, most of it was this.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/mentoring-program-low-engagement.html">
+        <span class="figure" data-count-to="98" data-count-suffix="%">98%</span>
+        <h3>The program is universal. Whether it actually helps anyone is a separate, unasked question</h3>
+        <p class="voice">We launched in March and 240 people signed up, which everyone treated as the result. Then in October I went through the check-in logs and about half the pairs had met once. Once, and then nothing. The ones going well were going well because two people happened to get on, not because of anything I did. I still put the sign-up number in the quarterly deck, because that's the number people ask for.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/manual-mentor-matching-spreadsheet-limits.html">
+        <span class="figure">25–50</span>
+        <h3>The spreadsheet that worked at 30 people stops working entirely past 60</h3>
+        <p class="voice">Cohort one was 32 people and I did the matching in an evening with a cup of tea. Cohort two was 58 and it took a whole weekend, two screens, one with the export and one with the tab where I'd colour-coded who got paired last round. Sunday night I found I'd matched someone with her own line manager and had to redo about a third of it. Cohort three is meant to be 90. I haven't worked out what I'm doing about that yet.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/workplace-mentor-supply-shortage.html">
+        <span class="figure" data-count-to="83" data-count-suffix="%">83%</span>
+        <h3>Mentoring demand is real and rising. The pool of willing mentors is not keeping pace</h3>
+        <p class="voice">We opened mentee sign-ups and got 140 in about a week, a lot of them writing really specific things about what they wanted help with. Then we opened mentor sign-ups and got 31, and eleven of those were the same people who did it last year. One replied saying happy to help but she's already carrying three, which I took as a no and I don't blame her. So there's a waitlist I don't advertise, and a group of grads who signed up in April and have heard nothing.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/mentoring-program-roi-measurement.html">
+        <h3>A 4.2-out-of-5 satisfaction score is not a number a CFO can act on</h3>
+        <p class="voice">The finance review is in November and the only real number I have is 4.2 out of 5 from a survey most people ignored. Last year that was fine. This year the CFO asked what would happen if we didn't run it, and I said something about engagement, and I could hear how thin it sounded while I was saying it. The people who got the most out of it are the ones I can't put in a deck — it's stuff like, she didn't leave. I've got no way of showing that was us.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/manager-coaching-training-not-sticking.html">
+        <span class="figure" data-count-to="45" data-count-suffix="%">45%</span>
+        <h3>A one-day coaching workshop rarely survives contact with an actual quarter</h3>
+        <p class="voice">We did the coaching day in February — role plays, a decent facilitator, a laminated card with the model on it. I used it twice. Then Q1 came in soft and my one-to-ones went straight back to being status updates, because that's what fits in twenty-five minutes when someone's chasing you for numbers. The card's still in my drawer. I know the questions, I just don't have the meeting to ask them in.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/low-mentoring-program-satisfaction.html">
+        <span class="figure" data-count-to="26" data-count-suffix="%">26%</span>
+        <h3>Only about a quarter of employees would actually rate the mentoring program well</h3>
+        <p class="voice">We got 140 sign-ups, which for a company our size was a lot. The six-month survey came back and mentoring scored a 6.2 — same as the canteen. I read through the comments on a Thursday night and the most common one was some version of &quot;my mentor is lovely, we just haven't met since March.&quot; Nobody was unhappy exactly. I think that's the bit I keep getting stuck on.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/mentoring-vs-sponsorship-gap.html">
+        <span class="figure" data-count-to="23" data-count-suffix="%">23%</span>
+        <h3>Mentoring built for equity rarely translates into who actually gets sponsored</h3>
+        <p class="voice">We ran two cohorts, a bit over 200 pairs, and the feedback was genuinely warm — not polite-warm, actually warm. Then the promotion list came out in January and I put it next to the mentee spreadsheet and there were two names on both. Two. And the mentors weren't slacking, that's the thing — none of them were in the room when those decisions got made, so what exactly were they meant to do. I still haven't worked out how to say that to the exec team without it sounding like an excuse.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/mentor-training-gap-programs.html">
+        <span class="figure" data-count-to="53" data-count-suffix="%">53%</span>
+        <h3>Recruiting volunteer mentors is only half the job, most never get trained to mentor</h3>
+        <p class="voice">I said yes to mentoring because the email made it sound like fifteen minutes a month and I liked the person who sent it. First session I talked for about forty minutes straight. I could hear myself doing it — just telling her what I'd have done, which wasn't what she'd asked. The training was a 45-minute call about the platform and the code of conduct and then you're on your own. I didn't sign up for the second round and nobody asked why.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/mentor-burnout-program-capacity.html">
+        <h3>The mentors everyone wants are usually the ones already closest to burnout</h3>
+        <p class="voice">At one point I had six mentees, plus the two who aren't officially mine but message me anyway. All of it sits in the 7am to 9am slot because that's the only gap left. Last Wednesday I ran a session where I genuinely could not remember what we'd talked about the time before — I was scrolling my own notes while she was speaking. She said it was helpful. That's the part I keep thinking about.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="problem-section" id="platform">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Community &amp; Marketplaces</span>
+      <h2>What the alternatives to building this properly actually cost</h2>
+    </div>
+    <div class="problem-grid reveal">
+      <a class="problem-card" href="problems/freelance-marketplace-fees-true-cost.html">
+        <span class="figure">22–34%</span>
+        <h3>Marketplace fees quietly take a much bigger bite than the headline rate suggests</h3>
+        <p class="voice">I only worked it out because I was doing my tax return on a Sunday and the numbers didn't match what I thought I'd earned. Gross was fine. Then there's the commission, then the Connects I'd bought in that panic way at 11pm because a good job had just posted, then the wire fee every month because I never got round to changing the payout method. It came to more than my rent. I'm not even angry about it, I just genuinely didn't know.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/gig-platform-price-undercutting.html">
+        <span class="figure" data-count-to="20" data-count-suffix="%">20%</span>
+        <h3>Undercut by $5 gigs, then charged a commission on top</h3>
+        <p class="voice">There's someone in my category offering what looks like the same thing for fifteen quid. Fifteen. I know it isn't the same thing and my repeat clients know it isn't, but the person scrolling at half ten at night has no way of telling. So I went from £120 down to £85 to see what happened — more orders, less money, and then the twenty percent comes off that too. I've put it back up since. Mostly.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/shared-leads-cost-per-acquisition.html">
+        <span class="figure">$500+</span>
+        <h3>Paying for a lead does not mean being the only one who paid for it</h3>
+        <p class="voice">The notification came in at 7:40 on a Tuesday. Paid for it, wrote a proper reply inside about four minutes — not a template, actual sentences about her situation. She already had three others. One of them was half my price and I never heard back from her at all, and the fee doesn't come back either. I still buy them, which is the part I can't really defend.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/freelance-proposal-reply-rates.html">
+        <span class="figure">7–15%</span>
+        <h3>Applying costs money, and most applications get no reply at all</h3>
+        <p class="voice">Sixteen proposals in a fortnight. Two replies, one of which was &quot;what's your rate&quot; and then nothing after that. I keep a note of it in a spreadsheet because otherwise I'd talk myself into thinking it was going fine. The bit that gets me isn't really the money, it's writing something specific about somebody's project at half eleven at night and then watching the job close without a single hire.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/client-ghosting-mid-project.html">
+        <span class="figure" data-count-to="72" data-count-suffix="%">72%</span>
+        <h3>Clients disappear mid-project with effectively no recourse</h3>
+        <p class="voice">Three weeks of work, two rounds of revisions, then nothing. Sent the invoice on a Thursday, chased the Monday after, chased again the Monday after that. The last message in the thread is mine and it's been read. I still don't know whether something happened at their end or whether he just decided not to deal with it, and honestly the not knowing takes up more room in my head than the money does.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+      <a class="problem-card" href="problems/dead-paid-online-communities.html">
+        <span class="figure" data-count-to="90" data-count-suffix="%">90%</span>
+        <h3>A paid community can still leave every real question unanswered</h3>
+        <p class="voice">Seventy-nine quid a month and I've asked four questions since March. Two of them got a thumbs up emoji. One got answered by somebody who was clearly warming me up to sell me something. I ended up back on Google anyway, which means I'm paying seventy-nine quid for a Slack I've muted. I keep meaning to cancel and then there's a call in the calendar and I think, well, maybe that one.</p>
+        <span class="read-on">Read the full breakdown &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="waitlist">
+  <div class="invite-band reveal">
+    <span class="badge badge-mint">&#10022; Every service above is live, not a roadmap item</span>
+    <h2 style="margin-top:.9rem">If you saw yourself in a few of these, that's the point.</h2>
+    <p>Pick your fit, look at the full service list, or just write in and describe what's actually happening. A person reads it and replies.</p>
+    <div class="hero-actions" style="margin-top:0">
+      <a class="btn primary" href="services.html">See all services &rarr;</a>
+      <a class="btn ghost" href="index.html">Find your fit &rarr;</a>
+    </div>
   </div>
 </section>
 
 <footer class="site">
-  <div class="foot">
-    <p>CoachOS &mdash; AI-run services, human sign-off. We do the work you never signed up for &mdash; for coaches, mentors, freelancers &amp; small teams.</p>
-    <nav>
-      <a href="index.html#doors">Find your fit</a>
-      <a href="services.html">Services</a>
-      <a href="desk/">Desk</a>
-      <a href="roundtable/">Roundtable</a>
-      <a href="roster/">Roster</a>
-      <a href="shortlist/">Shortlist</a>
-      <a href="why.html">Why</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <div class="foot-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="platform.html">Platform</a>
+    <a href="insights.html">Insights</a>
+    <a href="problems.html">Problems We Solve</a>
+    <a href="why-us.html">Why</a>
+    <a href="contact.html">Contact</a>
   </div>
+  <div class="foot-brand">Coach<b style="color:var(--mint)">OS</b> &mdash; the agentic AI nervous system for coaches, mentors, freelancers, small businesses &amp; the teams running programs like these at scale.</div>
 </footer>
-
-<script src="assets/main.js?v=20260814g"></script>
+<script src="assets/main.js"></script>
 </body>
 </html>
