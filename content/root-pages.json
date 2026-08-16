@@ -1,15 +1,15 @@
 {
   "index.html": {
-    "title": "CoachOS — the operating system for coaches, mentors & independent practices",
-    "metaDescription": "You coach. CoachOS runs everything else — one desk for leads, bookings, agreements, client delivery, and marketing. Start with done-for-you services; grow into the Platform. AI drafts. You approve.",
+    "title": "CoachOS — done-for-you website, marketing, and lead follow-up",
+    "metaDescription": "Business owners rarely lose the business because they're bad at their job. They lose it doing the work nobody taught them — so CoachOS runs website, marketing, leads, and follow-up for coaches, mentors, freelancers, and small businesses. AI drafts, a specialist reviews, you approve.",
     "hero": {
-      "topline": "The operating system for coaching & mentoring practices",
+      "topline": "Website, marketing, and follow-up — run for you",
       "h1Lines": [
-        "You coach.",
-        "CoachOS runs",
-        "everything else."
+        "Bad work doesn't",
+        "lose you the business.",
+        "The work nobody taught you does."
       ],
-      "sub": "One platform replaces the 5–8 disconnected tools a practice runs on today — plus a human team that can build and run your website, marketing, and lead follow-up while you work. AI drafts. You approve. Every time.",
+      "sub": "The posting, the follow-ups, the website that's three months stale — that's the work that quietly kills good businesses. CoachOS runs it for you, under your name.",
       "ctaPrimary": "Find your fit",
       "ctaSecondary": "See how it works"
     },
