@@ -1,44 +1,110 @@
 {
   "problemsAudience": {
-    "label": "Problems we fix",
-    "h1Lines": ["Sound familiar?", "There is a fix."],
-    "sub": "The same struggles — mapped to a service, written for your kind of work."
+    "coach": {
+      "label": "Problems we fix · coaches",
+      "h1Lines": ["Full roster.", "Stale website.", "That's the tradeoff."],
+      "sub": "122,974 coaches worldwide (ICF 2025) — when you're in session, marketing stops and the next inquiry lands on a page that still says last quarter."
+    },
+    "business": {
+      "label": "Problems we fix · small business",
+      "h1Lines": ["54% manage marketing alone.", "Leads sit for days.", "Sound familiar?"],
+      "sub": "BrightLocal 2025: more than half of SMB owners run marketing themselves — while quote requests die in an inbox next to invoices."
+    },
+    "freelancer": {
+      "label": "Problems we fix · freelancers",
+      "h1Lines": ["63% cite irregular income.", "Project ends.", "Pipeline empty."],
+      "sub": "Remote 2025: irregular income is the top freelancer challenge — because marketing stops the moment paid work starts."
+    },
+    "mentor": {
+      "label": "Problems we fix · mentors",
+      "h1Lines": ["72% stay with structure.", "49% without it.", "Which side are you on?"],
+      "sub": "Sun Microsystems/Chronus — formal mentoring holds retention at 72% vs 49% without. Most mentors still answer \"it depends.\""
+    },
+    "corporate": {
+      "label": "Problems we fix · corporate",
+      "h1Lines": ["Only 26% rate programs 8/10.", "Matching eats weekends.", "Proof still missing."],
+      "sub": "HR.com: just 26% of employees rate company mentoring 8/10 or higher — while matching lives in spreadsheets and leadership gets a satisfaction score, not outcomes."
+    }
   },
   "audienceWhy": {
-    "label": "Why CoachOS",
-    "h1Lines": ["One team.", "Your name on it.", "Start to finish."],
-    "sub": "Website, marketing, leads, follow-up — built and run for you. You approve every word."
+    "coach": {
+      "label": "Why CoachOS · coaches",
+      "h1Lines": ["59% expect growth this year.", "Marketing can't wait", "for an empty calendar."],
+      "sub": "ICF 2025 — growth needs visibility between sessions. Agencies build sites and leave; CoachOS runs website, marketing, leads, and follow-up."
+    },
+    "business": {
+      "label": "Why CoachOS · small business",
+      "h1Lines": ["54% do all marketing alone.", "62% won't delegate.", "That's two jobs, one person."],
+      "sub": "BrightLocal & QuickBooks 2025 — you're running the shop and the marketing stack. CoachOS is one team under your name."
+    },
+    "freelancer": {
+      "label": "Why CoachOS · freelancers",
+      "h1Lines": ["63% fear irregular income.", "61% can't find work", "consistently enough."],
+      "sub": "Remote 2025 — feast-or-famine isn't talent, it's pipeline. CoachOS keeps outreach and marketing running while you deliver."
+    },
+    "mentor": {
+      "label": "Why CoachOS · mentors",
+      "h1Lines": ["83% want a mentor.", "Only 52% have one.", "Structure is the gap."],
+      "sub": "Adobe — demand is there; formal programs retain at 72% vs 49% without (Sun Microsystems). CoachOS builds the offer, page, and flow."
+    },
+    "corporate": {
+      "label": "Why CoachOS · corporate",
+      "h1Lines": ["98% of Fortune 500 run programs.", "Only 26% rated 8/10.", "Spreadsheets aren't proof."],
+      "sub": "MentorcliQ & HR.com — programs exist; outcomes don't. CoachOS runs matching, tracking, and reporting leadership can defend."
+    }
   },
   "audienceContact": {
-    "label": "Talk to us",
-    "h1Lines": ["Tell us what's stuck.", "A person writes back."],
-    "sub": "No bot. No auto-reply. Just a real reply."
+    "coach": {
+      "label": "Talk to us · coaches",
+      "h1Lines": ["Full calendar.", "Quiet pipeline.", "Tell us which."],
+      "sub": "Leads contacted within 5 minutes convert far better than at 42 hours (Harvard Business Review). A person reads this and writes back."
+    },
+    "business": {
+      "label": "Talk to us · small business",
+      "h1Lines": ["Quote in the inbox.", "Answered days later.", "Tell us what's stuck."],
+      "sub": "Average SMB lead response: 42 hours. HBR: five minutes wins. A person reads this and writes back."
+    },
+    "freelancer": {
+      "label": "Talk to us · freelancers",
+      "h1Lines": ["Project wrapped Friday.", "Pipeline zero Monday.", "Tell us where you are."],
+      "sub": "63% cite irregular income as their top challenge (Remote 2025). A person reads this and writes back."
+    },
+    "mentor": {
+      "label": "Talk to us · mentors",
+      "h1Lines": ["Still answering \"it depends.\"", "No page to send.", "Tell us what's stuck."],
+      "sub": "72% mentee retention with formal programs vs 49% without. A person reads this and writes back."
+    },
+    "corporate": {
+      "label": "Talk to us · corporate",
+      "h1Lines": ["Next cohort in six weeks.", "Matching still manual.", "Tell us what's hurting."],
+      "sub": "Only 26% rate internal mentoring 8/10 or higher (HR.com). A person reads this and writes back."
+    }
   },
   "audienceServicesIndex": {
     "coach": {
-      "h1": "Built for coaching.",
-      "h1Em": "Run for you.",
-      "sub": "Every service on this page — written for a coaching practice, run under your name."
+      "h1": "59% expect growth.",
+      "h1Em": "Marketing stops when you're booked.",
+      "sub": "ICF 2025 — every service below runs your website, posts, and leads while you're in session. You approve before it ships."
     },
     "business": {
-      "h1": "Built for your business.",
-      "h1Em": "Run for you.",
-      "sub": "Every service on this page — written for a one-person shop, run while you run the shop."
+      "h1": "54% manage marketing alone.",
+      "h1Em": "These services replace that Sunday night.",
+      "sub": "BrightLocal 2025 — website, posts, leads, and follow-up run while you run the shop."
     },
     "freelancer": {
-      "h1": "Built for freelancing.",
-      "h1Em": "Run for you.",
-      "sub": "Every service on this page — written for a one-person pipeline, run while you deliver."
+      "h1": "63% cite irregular income.",
+      "h1Em": "Pipeline work runs while you deliver.",
+      "sub": "Remote 2025 — portfolio, outreach, and follow-up keep moving between projects."
     },
     "mentor": {
-      "h1": "Built for mentoring.",
-      "h1Em": "Run for you.",
-      "sub": "Every service on this page — written for real mentoring, run under your name."
+      "h1": "49% retention without structure.",
+      "h1Em": "72% with it.",
+      "sub": "Sun Microsystems/Chronus — offer, page, program, and mentee flow built for real mentoring."
     },
     "corporate": {
-      "h1": "Built for your program.",
-      "h1Em": "Run for you.",
-      "sub": "Every service on this page — written for internal programs, run off your team's plate."
+      "h1": "26% rate programs 8/10.",
+      "h1Em": "These services run the cycle for you.",
+      "sub": "HR.com — matching, tracking, onboarding, and reporting off your team's plate."
     }
   }
 }

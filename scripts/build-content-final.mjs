@@ -38,6 +38,15 @@ const catalog = JSON.parse(readFileSync(join(ROOT, 'data/service-catalog.json'),
 const audiencePages = JSON.parse(readFileSync(join(ROOT, 'content/audience-pages.json'), 'utf8'));
 const taglines = JSON.parse(readFileSync(join(ROOT, 'content/taglines.json'), 'utf8'));
 
+function pickAudienceHero(section, audience) {
+  const block = taglines[section];
+  if (!block) return null;
+  if (audience && block[audience]) return block[audience];
+  if (block.default) return block.default;
+  if (block.h1Lines || block.h1 || block.h1Em) return block;
+  return null;
+}
+
 const FINAL_BANNER = `<div id="content-final-banner" style="position:fixed;top:0;left:0;right:0;z-index:9999;background:#312e81;color:#fff;font:500 13px/1.4 'IBM Plex Mono',monospace;padding:10px 16px;text-align:center;border-bottom:2px solid #a5b4fc">Final version — product-aligned copy. <a href="http://127.0.0.1:8080/" style="color:#c7d2fe;margin-left:8px">Original site</a> · <a href="http://127.0.0.1:8081/" style="color:#c7d2fe;margin-left:8px">Previous demo</a></div>`;
 
 const FOOTER_TAGLINE = globalCopy.footerTagline;
@@ -544,7 +553,7 @@ function processFile(filePath) {
   if (rel.endsWith('/problems.html')) {
     const c = rootPages['problems.html'];
     const aud = rel.split('/')[0];
-    const hero = taglines.problemsAudience;
+    const hero = pickAudienceHero('problemsAudience', aud);
     setMeta($, c.title.replace('CoachOS', `CoachOS ${aud}`), c.metaDescription);
     setPageHero($, {
       label: hero.label,
@@ -600,11 +609,11 @@ function processFile(filePath) {
           });
         }
       } else if (page === 'why') {
-        const hero = taglines.audienceWhy;
+        const hero = pickAudienceHero('audienceWhy', audience);
         setPageHero($, { label: hero.label, h1Lines: hero.h1Lines, sub: hero.sub });
       } else if (page === 'contact') {
         rewriteContact($, c);
-        const hero = taglines.audienceContact;
+        const hero = pickAudienceHero('audienceContact', audience);
         setPageHero($, { label: hero.label, h1Lines: hero.h1Lines, sub: hero.sub });
       }
     }

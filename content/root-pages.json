@@ -9,7 +9,7 @@
         "on the work you know.",
         "You lose it on the work nobody taught you."
       ],
-      "sub": "The post at midnight. The lead gone quiet. The website still saying last year — CoachOS runs all of it, under your name.",
+      "sub": "54% of owners manage marketing alone (BrightLocal 2025). Leads go cold after 42 hours (Harvard Business Review). CoachOS runs the rest — under your name.",
       "ctaPrimary": "Find your fit",
       "ctaSecondary": "See how it works"
     },
@@ -129,11 +129,11 @@
     "hero": {
       "label": "The services",
       "h1Lines": [
-        "You do the work",
-        "you're great at.",
-        "We run the rest."
+        "54% manage marketing alone.",
+        "Leads die at 42 hours.",
+        "We run what you're losing."
       ],
-      "sub": "Website, marketing, leads, follow-up — one team, your name on everything. You approve before it ships.",
+      "sub": "BrightLocal 2025 · Harvard Business Review lead response — website, marketing, leads, and follow-up, one team, your name on everything.",
       "ctaPrimary": "Tell us what you need",
       "ctaSecondary": "Start from the problem instead"
     },
@@ -267,11 +267,11 @@
     "hero": {
       "label": "The research",
       "h1Lines": [
-        "Real problems.",
-        "Real sources.",
-        "Real fixes."
+        "54% manage marketing alone.",
+        "63% cite irregular income.",
+        "These numbers have names below."
       ],
-      "sub": "What we hear most — documented, not invented — and the service that fixes each one.",
+      "sub": "Documented sources — ICF, BrightLocal, Remote, HR.com, Harvard Business Review — and the service that fixes each problem.",
       "ctaPrimary": "See the services",
       "ctaSecondary": "Find your fit"
     },
@@ -322,11 +322,11 @@
     "hero": {
       "label": "Why CoachOS",
       "h1Lines": [
-        "One team.",
-        "Your name on it.",
-        "Start to finish."
+        "Eight logins.",
+        "Zero connection.",
+        "Still paying for all of it."
       ],
-      "sub": "Website, marketing, leads, follow-up — we build it, run it, and stay with it. Compare the options below yourself.",
+      "sub": "122,974 coaches worldwide; 54% of SMB owners manage marketing alone (ICF & BrightLocal 2025). Agencies hand off websites — CoachOS runs website, marketing, leads, and follow-up.",
       "ctaPrimary": "Find your fit",
       "ctaSecondary": "See the services"
     },
@@ -398,11 +398,11 @@
       "label": "The CoachOS Platform · members only",
       "stamp": "Members only",
       "h1Lines": [
-        "Four rooms.",
-        "One door in.",
-        "Your whole practice."
+        "5–8 tools stitched together.",
+        "One practice.",
+        "Hours lost every week."
       ],
-      "sub": "Desk, Roundtable, Roster, Shortlist — one system for the work around your craft. AI drafts. You approve.",
+      "sub": "CRM in one tab, invoicing in another, marketing in a third — Desk is one record from enquiry to invoice. AI drafts. You approve.",
       "ctaPrimary": "See the core product",
       "ctaSecondary": "Talk to us"
     },
@@ -470,10 +470,11 @@
     "hero": {
       "label": "Talk to us",
       "h1Lines": [
-        "Tell us what's stuck.",
-        "A person writes back."
+        "42 hours to answer a lead.",
+        "It goes cold in five.",
+        "Tell us what's stuck."
       ],
-      "sub": "No bot. No auto-reply. Just a real conversation.",
+      "sub": "Harvard Business Review lead response research — no bot, no auto-reply. A person reads this and writes back.",
       "ctaPrimary": "Send a message",
       "ctaSecondary": "See the services first"
     },
