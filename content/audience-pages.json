@@ -6,7 +6,7 @@
       "crumb": "For coaches",
       "h1": "You coach.",
       "h1Em": "We run the rest.",
-      "sub": "Website, marketing, leads — built and run while you're with clients. Nothing goes out until you've read it.",
+      "sub": "Most coaches don't have a lead problem — they have a credibility problem. We run the site, the posts, and the follow-up under your name.",
       "stats": [
         {
           "value": "122,974",
@@ -172,8 +172,11 @@
       "note": "CoachOS Desk is the practice OS — leads, Marketing Studio, bookings, agreements, client delivery, and more. Membership is chosen, not sold; services are how most members start."
     },
     "platformHero": {
-      "h1Lines": ["Your coaching never needed ten tools.", "The admin did."],
-      "sub": "Desk runs the admin between sessions. The other rooms open when you're ready — one membership, chosen not sold."
+      "h1Lines": [
+        "Your coaching never needed ten tools.",
+        "The admin did."
+      ],
+      "sub": "Desk, Roundtable, Roster, Shortlist — one membership when the foundation is ready. Chosen, not sold."
     },
     "close": {
       "label": "CoachOS for coaches",
@@ -191,7 +194,7 @@
       "crumb": "For small business owners",
       "h1": "You run the business.",
       "h1Em": "We run the marketing.",
-      "sub": "Your site, your posts, your inbox — handled while you run the shop. You approve before anything ships.",
+      "sub": "Posting consistently sounds simple until you're running the shop. We take the hours back — what you're actually good at stays yours.",
       "stats": [
         {
           "value": "54%",
@@ -360,8 +363,11 @@
       "note": "CoachOS Desk is the practice OS — leads, Marketing Studio, bookings, agreements, client delivery, and more. Membership is chosen, not sold; services are how most members start."
     },
     "platformHero": {
-      "h1Lines": ["You opened a business,", "not a software stack."],
-      "sub": "One desk instead of five tabs after close. Membership opens when the foundation is in place."
+      "h1Lines": [
+        "You opened a business,",
+        "not a software stack."
+      ],
+      "sub": "One desk instead of five tabs after close. Membership when you're ready — we run it, you approve every word."
     },
     "close": {
       "label": "CoachOS for small business",
@@ -379,7 +385,7 @@
       "crumb": "For freelancers",
       "h1": "You deliver.",
       "h1Em": "We keep the next one coming.",
-      "sub": "Portfolio, outreach, pipeline — kept warm while you're on client work. You approve before anything ships.",
+      "sub": "The tech side is fine. Finding clients is the part that breaks the cycle. Pipeline and outreach run while you're on billable work.",
       "stats": [
         {
           "value": "63%",
@@ -542,8 +548,11 @@
       "note": "CoachOS Desk is the practice OS — leads, Marketing Studio, bookings, agreements, client delivery, and more. Membership is chosen, not sold; services are how most members start."
     },
     "platformHero": {
-      "h1Lines": ["Ten subscriptions. One of you.", "That math never worked."],
-      "sub": "Pipeline, marketing, and follow-up in one place — not another app stack between projects."
+      "h1Lines": [
+        "Ten subscriptions. One of you.",
+        "That math never worked."
+      ],
+      "sub": "Pipeline and follow-up in one place between projects — not another stack to learn."
     },
     "close": {
       "label": "CoachOS for freelancers",
@@ -561,7 +570,7 @@
       "crumb": "For mentors",
       "h1": "You have the judgment.",
       "h1Em": "We build the rest.",
-      "sub": "A clear offer, a real program, a way for the right people to find you — built with you, run for you.",
+      "sub": "Spreadsheet matching works until the program grows. Offer, page, structure, and flow — built with you, run for you.",
       "stats": [
         {
           "value": "72%",
@@ -730,8 +739,11 @@
       "note": "CoachOS Desk is the practice OS — leads, Marketing Studio, bookings, agreements, client delivery, and more. Membership is chosen, not sold; services are how most members start."
     },
     "platformHero": {
-      "h1Lines": ["You're here to mentor.", "Everything else is ours."],
-      "sub": "Offer, sessions, and mentee flow on one desk — the rooms around it when membership opens."
+      "h1Lines": [
+        "You're here to mentor.",
+        "Everything else is ours."
+      ],
+      "sub": "Program flow on one desk — mentee matching, sessions, proof — when membership opens."
     },
     "close": {
       "label": "CoachOS for mentors",
@@ -749,7 +761,7 @@
       "crumb": "For corporate & enterprise",
       "h1": "Keep the program.",
       "h1Em": "Lose the spreadsheet.",
-      "sub": "Matching, tracking, reporting — run for your team, with outcomes leadership can actually use.",
+      "sub": "Ten minutes to match a pair. Breaks past fifty people. We run matching, tracking, and reporting on your criteria.",
       "stats": [
         {
           "value": "26%",
@@ -903,8 +915,11 @@
       "note": "The Shortlist is our vetted, members-only directory — every listing checked, not just paid for."
     },
     "platformHero": {
-      "h1Lines": ["A program this size,", "still run on spreadsheets?"],
-      "sub": "Run the program without rebuilding it every cohort — start with services, platform when you're ready."
+      "h1Lines": [
+        "A program this size,",
+        "still run on spreadsheets?"
+      ],
+      "sub": "Cohort matching, session tracking, reporting leadership can use — services first, platform when you're ready."
     },
     "close": {
       "label": "CoachOS for corporate & enterprise",

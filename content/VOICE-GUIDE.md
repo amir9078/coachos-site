@@ -1,51 +1,58 @@
 # CoachOS marketing voice
 
-How we write on the site — for anyone editing `content/*.json`.
+Based on **CoachOS Market Research & Brand Strategy** (August 16, 2026). Source data: `content/research-voices.json`.
 
 ## What we sound like
 
-Plain, warm, direct. Like a founder who has done the work, not a SaaS landing page generator.
+Plain, warm, direct — the market's own words, lightly edited. Not corpo-speak. Not stat-stacked headlines.
 
-**Inspiration (tone, not copy):** Basecamp clarity, Stripe confidence without jargon, coach-industry respect (ICF-adjacent seriousness without corporate stiffness).
+**Five phrases that recur everywhere** (use in subs and body, not all at once in h1):
+
+1. *DIY works for a week — I don't stick with it*
+2. *Expensive and hard to trust*
+3. *They had already signed with someone else*
+4. *The tech side is fine, but finding clients is tough*
+5. *What I'm actually good at*
+
+The **homepage owns #4** (*You lose it on the work nobody taught you.*). Other pages speak #1, #2, #3, and #5 in their register.
 
 ## Headlines (h1 / h1Lines)
 
-- Short lines. Often two beats + a turn in the last line (*italic* / `<em>`).
-- Poetic or quote-shaped — easy to read aloud.
-- Name a **felt moment**, not a statistic.
-- Good: *You coach. We run the rest.* · *Four rooms. One door in. Your whole practice.*
-- Bad: *54% manage marketing alone. Leads die at 42 hours.*
+- Short. Quote-shaped. Read aloud.
+- **Felt moment or reframe** — not a research slide.
+- Good: *You coach. We run the rest.* · *They signed with someone else.* · *DIY works for a week.*
+- Bad: *54% manage marketing alone. 63% cite irregular income.*
 
 ## Subheads (hero `.sub`)
 
-- One or two sentences max.
-- **Scene + promise:** what life looks like now, then what CoachOS does.
-- Stats belong here only when the page is *about* research (see below) — and even then, prefer the stat strip or citations block.
+- Scene + promise in plain language.
+- One research phrase is enough.
+- Stats → stat strips, problems citations, body copy.
 
 ## Where numbers live
 
 | Place | Role |
 |-------|------|
-| Audience index **stat strip** | Credibility (ICF, BrightLocal, etc.) |
-| **problems.html** citations section | Research-backed problems |
-| Body copy, compare tables | Receipts when useful |
+| Audience **stat strip** | ICF, BrightLocal, MIT speed-to-lead, etc. |
+| **problems.html** citations | Full research table (Part III) |
+| Service **genericProblem** | Can cite one number when it's the story (e.g. Friday→Monday) |
 | **Hero h1** | Almost never |
 
-## Product truth (do not blur)
+## Product truth
 
-1. **Services** — human team; AI drafts → specialist reviews → you approve.
-2. **Platform (Desk)** — Practice Agent drafts → **you** approve; nothing sends alone.
-3. **Membership** — chosen, not sold; services are the usual front door.
-4. **Shortlist** — vetted directory, **0% commission** on session fees.
-5. Never claim AI coaches clients or that Desk is fully GA if it isn't.
+1. **Services** — AI drafts → specialist reviews → you approve.
+2. **Desk** — Practice Agent drafts → you approve; nothing sends alone.
+3. **Membership** — chosen, not sold.
+4. **Shortlist** — vetted, **0% commission**.
+5. Never claim AI coaches clients or full GA before it's true.
 
 ## Homepage vs coach door
 
-- **Home:** universal — all-in-one for your business; losing-business quote.
-- **Coach / Platform:** *You coach. CoachOS runs everything else.* is allowed.
+- **Home:** universal all-in-one + untaught-work quote.
+- **Coach door / Platform:** *You coach. CoachOS runs everything else.*
 
-## Check before ship
+## Editing workflow
 
-- Read it out loud. If it sounds like AI wrote it, cut adjectives and add a concrete noun.
-- If three stats appear in the hero, move them down the page.
-- If a sentence needs a glossary, rewrite it.
+1. Change copy in `content/*.json` or `data/service-catalog.json` (via `research-voices.json` + `node scripts/apply-research-voices.mjs`).
+2. `node scripts/build-content-final.mjs`
+3. Preview `final/` on port 8082.

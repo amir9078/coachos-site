@@ -1,0 +1,177 @@
+{
+  "meta": {
+    "source": "CoachOS Market Research & Brand Strategy — Complete Edition, August 16, 2026",
+    "fivePhrases": [
+      "DIY works for a week — I don't stick with it",
+      "Expensive and hard to trust",
+      "They had already signed with someone else",
+      "The tech side is fine, but finding clients is tough",
+      "What I'm actually good at"
+    ]
+  },
+  "services": {
+    "business-strategy-consulting": {
+      "genericH1": "Hit a ceiling nobody at your table can break.",
+      "genericSub": "A written 90-day plan — what you sell, to whom, at what price — reviewed with you each quarter.",
+      "genericProblem": "Most owners wing it and know it. Strategy is the work nobody taught you to write down."
+    },
+    "personal-branding": {
+      "genericH1": "Forgettable, not bad.",
+      "genericSub": "Clear positioning beats more content — one sentence that works everywhere you appear.",
+      "genericProblem": "If perfect prospects landed on your profile today, how many would trust you enough to reach out? That's positioning, not traffic."
+    },
+    "website": {
+      "genericH1": "You don't need to be loud.",
+      "genericSub": "You need to be findable — a site that says who you help and what changes, kept current by us.",
+      "genericProblem": "If you think you don't need to market, you're already invisible — and invisible doesn't get referred anymore."
+    },
+    "hosting-domain": {
+      "genericH1": "Launch delays hide in the details.",
+      "genericSub": "DNS, renewals, and the card on file — our problem, not yours.",
+      "genericProblem": "Domain, hosting, and email look simple until they're not — and the business goes dark on a missed renewal."
+    },
+    "business-email": {
+      "genericH1": "Gmail says side hustle.",
+      "genericSub": "Mail on your domain, deliverability sorted — quotes and follow-ups that look like a real business.",
+      "genericProblem": "Right or wrong, a free inbox reads fly-by-night. Your domain says you're staying."
+    },
+    "social-handles": {
+      "genericH1": "Your name was already taken.",
+      "genericSub": "One handle, claimed and consistent everywhere people search — old accounts cleaned up.",
+      "genericProblem": "New company, wrong @ on Instagram — customers find someone else."
+    },
+    "social-media-marketing": {
+      "genericH1": "DIY works for a week.",
+      "genericSub": "Posts drafted in your voice, kept running through your busiest months — you approve in batches.",
+      "genericProblem": "Posting consistently sounds simple until you're running the business. Then it stops."
+    },
+    "content-marketing": {
+      "genericH1": "Not another corpo-speak post.",
+      "genericSub": "Articles and pages written to be found — specific, not fancy pictures with meaningless captions.",
+      "genericProblem": "Competitors post boring content that looks professional and converts nothing. Yours shouldn't."
+    },
+    "email-marketing": {
+      "genericH1": "Wish you'd started the list sooner.",
+      "genericSub": "Newsletters and sequences on a rhythm that survives busy months — drafted for your approval.",
+      "genericProblem": "Every month without a list is a month of repeat customers you can't reach."
+    },
+    "lead-generation": {
+      "genericH1": "Drowning, then begging.",
+      "genericSub": "Inquiries from channels suited to your work — an always-on pipeline, not a cold start after every project.",
+      "genericProblem": "One moment you're overbooked. The next you're pitching from zero. That cycle is structural."
+    },
+    "paid-ads-management": {
+      "genericH1": "A budget watch, not a money pit.",
+      "genericSub": "Campaigns run daily, spend protected, results in plain numbers — not mystery clicks.",
+      "genericProblem": "Most owners have been burned once — paying for traffic with nothing to show. Daily oversight is the fix."
+    },
+    "lead-management": {
+      "genericH1": "They signed with someone else.",
+      "genericSub": "Replies in minutes, under your name — while the lead is still warm.",
+      "genericProblem": "Form on Friday afternoon. Follow-up Monday morning. By then they'd already moved on — the most expensive weekend you'll have."
+    },
+    "sales-closing-support": {
+      "genericH1": "Polite does not mean closed.",
+      "genericSub": "Follow-through on open deals — drafted for your approval until there's a yes or a clear no.",
+      "genericProblem": "When a client says your rate is too high, discounting is the wrong reflex. Diagnose, then respond."
+    },
+    "course-creation": {
+      "genericH1": "Built it. Launched it. Crickets.",
+      "genericSub": "Curriculum, production, hosting, and a launch plan sized to the audience you actually have.",
+      "genericProblem": "A polished course with a tiny list sells zero copies. Launch needs an audience first."
+    }
+  },
+  "doors": {
+    "coach": {
+      "h1": "You coach.",
+      "h1Em": "We run the rest.",
+      "sub": "Most coaches don't have a lead problem — they have a credibility problem. We run the site, the posts, and the follow-up under your name."
+    },
+    "business": {
+      "h1": "You run the business.",
+      "h1Em": "We run the marketing.",
+      "sub": "Posting consistently sounds simple until you're running the shop. We take the hours back — what you're actually good at stays yours."
+    },
+    "freelancer": {
+      "h1": "You deliver.",
+      "h1Em": "We keep the next one coming.",
+      "sub": "The tech side is fine. Finding clients is the part that breaks the cycle. Pipeline and outreach run while you're on billable work."
+    },
+    "mentor": {
+      "h1": "You have the judgment.",
+      "h1Em": "We build the rest.",
+      "sub": "Spreadsheet matching works until the program grows. Offer, page, structure, and flow — built with you, run for you."
+    },
+    "corporate": {
+      "h1": "Keep the program.",
+      "h1Em": "Lose the spreadsheet.",
+      "sub": "Ten minutes to match a pair. Breaks past fifty people. We run matching, tracking, and reporting on your criteria."
+    }
+  },
+  "platform": {
+    "desk": {
+      "h1": "One desk.",
+      "h1Em": "Every room of the business.",
+      "sub": "Five tools. Five logins. Client info scattered everywhere — Desk is one record from enquiry to invoice. AI drafts. You approve."
+    },
+    "roundtable": {
+      "h1": "Not one feed.",
+      "h1Em": "A room for each of you.",
+      "sub": "Building alone is real. Practice rooms by specialty — plus a Quiet Room when you need to ask without a name."
+    },
+    "roster": {
+      "h1": "Your people,",
+      "h1Em": "not the whole feed.",
+      "sub": "Referrals bring most clients. Directories bring almost none. Peers who already get the work — inside the system you use."
+    },
+    "shortlist": {
+      "h1": "Findable because",
+      "h1Em": "not everyone's in it.",
+      "sub": "Warm and specific — not cold \"pick your brain\" outreach. Vetted listings, 0% commission, every enquiry to your Desk."
+    }
+  },
+  "problemsAudience": {
+    "coach": {
+      "h1Lines": ["Not a lead problem.", "A credibility problem."],
+      "sub": "Forgettable profile, quiet feed, slow follow-up — below, what coaches tell us, and what we run for you."
+    },
+    "business": {
+      "h1Lines": ["DIY works for a week.", "Then the shop wins."],
+      "sub": "Agencies feel expensive and hard to trust. Consistency collapses when you're actually running the business — each pain maps to a service."
+    },
+    "freelancer": {
+      "h1Lines": ["The tech side is fine.", "Finding clients isn't."],
+      "sub": "Feast, famine, repeat — the pipeline math is below, with the services that keep the next project warm."
+    },
+    "mentor": {
+      "h1Lines": ["Fifty people in.", "Spreadsheet breaks."],
+      "sub": "Structure, offer, visibility — what program leads describe, and what we build with you."
+    },
+    "corporate": {
+      "h1Lines": ["Ten minutes a pair.", "Program won't scale."],
+      "sub": "Matching by hand, proof in a survey — what's breaking at scale, and what we run off your team's plate."
+    }
+  },
+  "platformHero": {
+    "coach": {
+      "h1Lines": ["Your coaching never needed ten tools.", "The admin did."],
+      "sub": "Desk, Roundtable, Roster, Shortlist — one membership when the foundation is ready. Chosen, not sold."
+    },
+    "business": {
+      "h1Lines": ["You opened a business,", "not a software stack."],
+      "sub": "One desk instead of five tabs after close. Membership when you're ready — we run it, you approve every word."
+    },
+    "freelancer": {
+      "h1Lines": ["Ten subscriptions. One of you.", "That math never worked."],
+      "sub": "Pipeline and follow-up in one place between projects — not another stack to learn."
+    },
+    "mentor": {
+      "h1Lines": ["You're here to mentor.", "Everything else is ours."],
+      "sub": "Program flow on one desk — mentee matching, sessions, proof — when membership opens."
+    },
+    "corporate": {
+      "h1Lines": ["A program this size,", "still run on spreadsheets?"],
+      "sub": "Cohort matching, session tracking, reporting leadership can use — services first, platform when you're ready."
+    }
+  }
+}

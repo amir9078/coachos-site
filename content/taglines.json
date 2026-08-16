@@ -3,38 +3,38 @@
     "default": {
       "label": "Problems we fix",
       "h1Lines": ["Sound familiar?", "There is a fix."],
-      "sub": "What people in your line of work actually say — each problem paired with a service, not a sales pitch."
+      "sub": "Five pains show up in almost every conversation — consistency, trust, speed, the untaught work, hours stolen from what you're good at. Each maps to a service below."
     },
     "coach": {
       "label": "Problems we fix · coaches",
-      "h1Lines": ["Full calendar.", "Quiet marketing.", "Sound familiar?"],
-      "sub": "When you're in session, the site goes still and the follow-up waits — below, what coaches tell us, and what we run for you."
+      "h1Lines": ["Not a lead problem.", "A credibility problem."],
+      "sub": "Forgettable profile, quiet feed, slow follow-up — what coaches tell us, and what we run under your name."
     },
     "business": {
       "label": "Problems we fix · small business",
-      "h1Lines": ["Run the shop.", "Write the posts.", "Same person."],
-      "sub": "Marketing happens in the hours after close — here's what owners tell us, and the service that takes each piece back."
+      "h1Lines": ["DIY works for a week.", "Then the shop wins."],
+      "sub": "Agencies feel expensive and hard to trust. Consistency collapses when you're running the business — each pain maps to a service."
     },
     "freelancer": {
       "label": "Problems we fix · freelancers",
-      "h1Lines": ["Project lands.", "Outreach stops.", "Pipeline thins."],
-      "sub": "Paid work always wins the week — below, the pattern freelancers describe, and how we keep the next one warm."
+      "h1Lines": ["The tech side is fine.", "Finding clients isn't."],
+      "sub": "Feast, famine, repeat — eight years of the same thread. Below, the pipeline fixes that break the cycle."
     },
     "mentor": {
       "label": "Problems we fix · mentors",
-      "h1Lines": ["Years of judgment.", "Still \"it depends.\"", "No page to send."],
-      "sub": "The mentoring is real; the offer and the visibility aren't — each gap below maps to something we build with you."
+      "h1Lines": ["Fifty people in.", "Spreadsheet breaks."],
+      "sub": "Offer still \"it depends,\" no page to send, every mentee through luck — structure and visibility, built with you."
     },
     "corporate": {
       "label": "Problems we fix · corporate",
-      "h1Lines": ["Big program.", "Small proof.", "Spreadsheets everywhere."],
-      "sub": "Matching by hand, outcomes in a survey — what program leads tell us, and what we run off their plate."
+      "h1Lines": ["Ten minutes a pair.", "Program won't scale."],
+      "sub": "Matching by hand, quiet pairs found too late, proof that won't survive a budget review — what we run instead."
     }
   },
   "audienceWhy": {
     "label": "Why CoachOS",
     "h1Lines": ["One team.", "Your name on it.", "Start to finish."],
-    "sub": "Agencies build your site and leave. Software adds another login. We build, run, and follow up — you approve every word that ships."
+    "sub": "Agencies feel expensive and hard to trust. All-in-one software takes weeks to learn. We build, run, and follow up — specialist-reviewed, ships as you."
   },
   "audienceContact": {
     "label": "Talk to us",
@@ -45,27 +45,27 @@
     "coach": {
       "h1": "Every service,",
       "h1Em": "written for coaching.",
-      "sub": "Website, marketing, leads, follow-up — one list, your name on all of it. You approve before anything goes out."
+      "sub": "Credibility, visibility, follow-up — fourteen services, one list, your name on all of it."
     },
     "business": {
       "h1": "Every service,",
       "h1Em": "written for your shop.",
-      "sub": "Built for a business run by one person — run while you're on the floor, not after hours."
+      "sub": "The marketing that stops when you're on the floor — run for you, approved by you."
     },
     "freelancer": {
       "h1": "Every service,",
       "h1Em": "written for one-person work.",
-      "sub": "Portfolio, pipeline, outreach — kept moving while you're heads-down on the job that pays."
+      "sub": "Pipeline between projects — portfolio, outreach, follow-up kept warm while you deliver."
     },
     "mentor": {
       "h1": "Every service,",
       "h1Em": "written for mentoring.",
-      "sub": "Offer, page, program, visibility — structured the way your sessions already are, run under your name."
+      "sub": "Offer, page, program, matching — structured the way your sessions already are."
     },
     "corporate": {
       "h1": "Every service,",
       "h1Em": "written for your program.",
-      "sub": "Matching, tracking, reporting — the cycle L&D shouldn't have to rebuild every cohort."
+      "sub": "Matching, tracking, reporting — the cycle your team shouldn't rebuild every cohort."
     }
   }
 }
