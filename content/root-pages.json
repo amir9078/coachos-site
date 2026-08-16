@@ -1,13 +1,13 @@
 {
   "index.html": {
     "title": "CoachOS — the all-in-one solution for your business",
-    "metaDescription": "The all-in-one solution for your business — website, marketing, leads, and follow-up for coaches, mentors, freelancers, and small businesses. You're not bad at the work; CoachOS runs what nobody taught you. AI drafts. You approve.",
+    "metaDescription": "The all-in-one solution for your business — website, marketing, leads, and follow-up for coaches, mentors, freelancers, and small businesses. You don't lose the business on the work you know — CoachOS runs the rest. AI drafts. You approve.",
     "hero": {
       "topline": "The all-in-one solution for your business.",
       "h1Lines": [
-        "You're not bad at the work.",
-        "You're buried in the work",
-        "nobody taught you."
+        "You don't lose the business",
+        "on the work you know.",
+        "You lose it on the work nobody taught you."
       ],
       "sub": "The post at midnight. The lead gone quiet. The website still saying last year — CoachOS runs all of it, under your name.",
       "ctaPrimary": "Find your fit",

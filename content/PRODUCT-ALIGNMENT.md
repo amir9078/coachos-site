@@ -12,7 +12,7 @@ This document maps marketing copy to the CoachOS product repo (`amir9078/coachos
 ## Product terms to use on marketing surfaces
 
 - **Tagline (coach / Platform):** You coach. CoachOS runs everything else.
-- **Homepage (all fits):** Topline — *The all-in-one solution for your business.* Hero quote — *You're not bad at the work. You're buried in the work nobody taught you.*
+- **Homepage (all fits):** Topline — *The all-in-one solution for your business.* Hero quote — *You don't lose the business on the work you know. You lose it on the work nobody taught you.*
 - **Desk** — the core product (not “CRM” alone)
 - **Marketing Studio**, **Practice Intelligence**, **Autopilot**, **Daily Briefing**
 - **Pipeline Agent** / **Practice Agent** — drafts and pauses; never sends alone
