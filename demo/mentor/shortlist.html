@@ -1,0 +1,512 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Shortlist for mentors — members only, chosen</title>
+<meta name="description" content="A directory where every listing was checked, not just paid for. Browse the public sliver — specialties, languages, rates — then hit the wall: the full Shortlist is members only.">
+<link rel="canonical" href="https://amir9078.github.io/coachos-site/mentor/shortlist.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Shortlist for mentors — members only, chosen">
+<meta property="og:description" content="A directory where every listing was checked, not just paid for. Browse the public sliver — specialties, languages, rates — then hit the wall: the full Shortlist is members only.">
+<meta property="og:url" content="https://amir9078.github.io/coachos-site/mentor/shortlist.html">
+<meta property="og:site_name" content="CoachOS">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css?v=20260815c">
+<style>
+.sltabs{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin:0 0 1.8rem}
+.sltab{font-family:var(--display);font-size:.8rem;font-weight:600;padding:.55rem 1.15rem;border-radius:999px;border:1px solid var(--line-strong);background:transparent;color:var(--ink-soft);cursor:pointer;transition:all .25s var(--ease)}
+.sltab.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.slframe{max-width:840px;margin:0 auto;background:#f3f2ef;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow-deep);overflow:hidden}
+.slchrome{display:flex;align-items:center;gap:.35rem;padding:.6rem .9rem;background:#e8e6e1;font-family:var(--mono);font-size:.68rem;color:#555}
+.sldot{width:9px;height:9px;border-radius:50%;background:#c9c6bf;flex:none}
+.sladdr{background:#f7f6f3;border-radius:6px;padding:.28rem .75rem;margin-left:.4rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.slhead{padding:1.3rem 1.2rem .9rem;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+.slcount{font-size:.75rem;color:#777;margin:0 0 .7rem}
+.slcount b{color:#1c1c1c}
+.slsearch{width:100%;border:1px solid #d5d3cd;border-radius:10px;background:#fff;padding:.85rem 1.1rem;font-size:.88rem;color:#888;text-align:left;cursor:pointer;font-family:inherit}
+.slfilters{display:flex;gap:.45rem;flex-wrap:wrap;margin-top:.7rem}
+.slpill{font-size:.74rem;font-weight:600;color:#444;background:#fff;border:1px solid #d5d3cd;border-radius:999px;padding:.4rem .85rem;cursor:pointer;font-family:inherit}
+.slpill:hover{border-color:#999}
+.slfeat{display:flex;gap:.9rem;overflow-x:auto;padding:.4rem .9rem 1rem;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;scrollbar-width:thin}
+.slfeatlab{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#888;text-align:left;padding:.7rem .9rem 0}
+.slfc{min-width:212px;max-width:212px;background:#fff;border:1px solid #e0ded9;border-radius:14px;padding:.8rem;text-align:left;flex:none}
+.slfc .port{aspect-ratio:1/1;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:92px;position:relative;overflow:hidden}
+.slfc .port .vt{position:absolute;bottom:.5rem;right:.5rem;background:#fff;color:#1f6f36;font-size:.62rem;font-weight:800;border-radius:999px;padding:.2rem .5rem}
+.slfc b{display:block;font-size:1.02rem;color:#111;margin-top:.65rem;font-family:Georgia,'Times New Roman',serif}
+.slfc .fr{font-size:.74rem;color:#555;margin-top:.15rem;min-height:2.1em}
+.slfc .ftags{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.5rem}
+.slfc .slbtn{margin-top:.7rem;width:100%;padding:.55rem}
+.slfc.lockd .port{filter:blur(0px)}
+.slfc.lockd .port::after{content:'🔒 Members only';position:absolute;inset:auto .5rem .5rem .5rem;background:rgba(255,255,255,.92);border-radius:8px;font-size:.66rem;font-weight:700;color:#555;text-align:center;padding:.35rem}
+.slfc.lockd b,.slfc.lockd .fr{filter:blur(5px);user-select:none}
+.sllist{padding:.4rem .9rem 0;display:flex;flex-direction:column;gap:.9rem;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+.slcard{background:#fff;border:1px solid #e0ded9;border-radius:12px;padding:1.1rem 1.2rem;display:flex;gap:1rem;align-items:flex-start;text-align:left;color:#1c1c1c}
+.slav{width:56px;height:56px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-size:30px}
+.slmain{flex:1;min-width:0}
+.slname{font-size:.95rem;font-weight:700;color:#111}
+.slbadge{display:inline-block;font-size:.6rem;font-weight:700;background:#e7f3e7;color:#1f6f36;border-radius:4px;padding:.08rem .38rem;margin-left:.45rem;vertical-align:1px}
+.slrole{font-size:.8rem;color:#555;margin-top:.1rem}
+.slmeta{display:flex;gap:.9rem;flex-wrap:wrap;font-size:.7rem;color:#888;margin-top:.4rem}
+.sltags{display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.55rem}
+.sltag{font-size:.66rem;font-weight:600;background:#f0efec;color:#555;border-radius:5px;padding:.22rem .5rem}
+.slblurb{font-size:.8rem;color:#444;line-height:1.45;margin-top:.55rem}
+.slside{flex:none;display:flex;flex-direction:column;align-items:flex-end;gap:.5rem;min-width:110px}
+.slprice{font-size:.95rem;font-weight:800;color:#111}
+.slprice small{display:block;font-size:.62rem;font-weight:500;color:#888;text-align:right}
+.slbtn{font-size:.75rem;font-weight:700;background:var(--accent);color:#fff;border:none;border-radius:999px;padding:.5rem 1rem;cursor:pointer;font-family:inherit}
+.slgate{background:linear-gradient(180deg,#fff,#faf9f7);border:1px solid #e0ded9;border-radius:12px;padding:1.2rem;text-align:center;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+.slgate b{font-size:.88rem;color:#111;display:block}
+.slgate p{font-size:.75rem;color:#888;margin:.35rem 0 .65rem}
+.sllocked{position:relative;overflow:hidden;border-radius:12px}
+.sllocked .inner{filter:blur(7px);user-select:none;pointer-events:none}
+.sllocked .veil{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(243,242,239,.35);cursor:pointer}
+.sllocked .veil span{background:#fff;border:1px solid #e0ded9;border-radius:999px;padding:.45rem 1rem;font-size:.72rem;font-weight:700;color:#555}
+.slfoot{padding:.9rem;text-align:center}
+.slmodal{position:fixed;inset:0;background:rgba(10,10,12,.74);display:none;align-items:center;justify-content:center;z-index:80;padding:1.2rem}
+.slmodal.open{display:flex}
+.slmcard{background:var(--card);border:1px solid var(--line-strong);border-radius:16px;max-width:480px;padding:2.4rem 2.2rem;text-align:center;box-shadow:var(--shadow-deep)}
+.slmcard h3{font-family:var(--display);font-size:1.7rem;letter-spacing:-.02em}
+.slmcard p{color:var(--ink-soft);margin-top:.9rem;font-size:.95rem;line-height:1.55}
+.slmcard .fine{font-size:.8rem;color:var(--ink-dim)}
+.slmcard .row{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem}
+.slai{background:linear-gradient(135deg,#fff6f2,#ffffff);border:1px solid #f0d3c6;border-radius:12px;padding:1.1rem 1.2rem;margin-bottom:.9rem;text-align:left}
+.slai h4{margin:0 0 .5rem;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#c2542f}
+.slai p{font-size:.83rem;color:#333;line-height:1.55;margin:.4rem 0 0}
+.slai .bfl{font-size:.68rem;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:.1em;margin:.8rem 0 .35rem}
+.slai .bfrow{display:flex;gap:.35rem;flex-wrap:wrap}
+.slai .bf{font-size:.7rem;font-weight:600;background:#fff;border:1px solid #ecd9cf;color:#444;border-radius:999px;padding:.28rem .65rem}
+.slai .nf{font-size:.76rem;color:#666;margin-top:.6rem;font-style:italic}
+.slai .gen{font-size:.66rem;color:#999;margin-top:.8rem;border-top:1px dashed #eddccf;padding-top:.6rem}
+.slback{background:none;border:none;font-size:.78rem;font-weight:700;color:#555;cursor:pointer;padding:.2rem 0 .6rem;font-family:inherit;text-align:left;display:block}
+.slback:hover{color:#111}
+.slphead .slav{width:72px;height:72px;font-size:38px}
+.slpgrid{display:grid;grid-template-columns:1fr 280px;gap:.9rem;align-items:start}
+.slpsec{background:#fff;border:1px solid #e0ded9;border-radius:12px;padding:1.1rem 1.2rem;margin-bottom:.9rem;text-align:left}
+.slpsec h4{margin:0 0 .5rem;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#999}
+.slpsec p{font-size:.83rem;color:#333;line-height:1.55;margin:.4rem 0 0}
+.slsteps{margin:.4rem 0 0;padding-left:1.2rem;font-size:.83rem;color:#333;line-height:1.6}
+.slplan{background:#fff;border:1px solid #e0ded9;border-radius:12px;padding:1.2rem;text-align:left}
+.slplan .slprice{font-size:1.4rem}
+.slpinc{list-style:none;margin:.8rem 0 0;padding:0;font-size:.8rem;color:#333}
+.slpinc li{padding:.3rem 0 .3rem 1.3rem;position:relative}
+.slpinc li::before{content:'✓';position:absolute;left:0;color:#1f6f36;font-weight:700}
+.slplanrow{display:flex;justify-content:space-between;font-size:.75rem;color:#555;border-top:1px solid #f0eeea;padding:.45rem 0}
+.slnext{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#888;text-align:left;margin:.4rem 0 0;padding:0 .1rem}
+.slcats{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.7rem}
+.slcat{font-size:.72rem;font-weight:700;color:#1c1c1c;background:#eceae4;border:none;border-radius:7px;padding:.4rem .8rem;cursor:pointer;font-family:inherit}
+.slcat:hover{background:#e2dfd7}
+.slactive{display:inline-flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:700;color:#1f6f36;background:#e7f3e7;border-radius:999px;padding:.35rem .7rem}
+.slstatus{display:inline-flex;align-items:center;gap:.3rem;font-size:.68rem;font-weight:600;color:#1f6f36}
+.slstatus::before{content:'';width:7px;height:7px;border-radius:50%;background:#2e8b57}
+.slsave{background:#fff;border:1px solid #d5d3cd;border-radius:8px;width:34px;height:30px;cursor:pointer;font-size:.85rem;flex:none}
+.slsave:hover{border-color:#999}
+.sltagline{font-size:.98rem;font-weight:600;color:#1c1c1c;margin-top:.6rem;line-height:1.4}
+.slcred{display:inline-block;font-size:.66rem;font-weight:700;color:#666;background:#f0efec;border-radius:5px;padding:.18rem .5rem;margin-left:.4rem;vertical-align:1px}
+.slskills{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.5rem}
+.sloneoff{display:flex;justify-content:space-between;align-items:center;gap:.8rem;padding:.7rem 0;border-top:1px solid #f0eeea;font-size:.8rem}
+.sloneoff b{display:block;color:#111}
+.sloneoff small{color:#888;font-size:.68rem}
+.sloneoff .op{font-weight:800;color:#111;white-space:nowrap}
+.slfine2{font-size:.68rem;color:#888;display:flex;gap:.8rem;flex-wrap:wrap;margin-top:.7rem}
+.slsoc{display:flex;gap:.4rem;margin-top:.6rem}
+.slsocb{width:32px;height:32px;border:1px solid #d5d3cd;border-radius:8px;background:#fff;cursor:pointer;font-size:.8rem;font-weight:800;color:#0a66c2;display:flex;align-items:center;justify-content:center;font-family:inherit}
+.slsocb.x{color:#111}
+.slsocb:hover{border-color:#999}
+.slknow{display:flex;gap:.8rem;align-items:center;background:#fff;border:1px solid #e0ded9;border-radius:12px;padding:.9rem 1rem;cursor:pointer;text-align:left}
+.slknow:hover{border-color:#bbb}
+.slknow b{font-size:.82rem;color:#111;display:block}
+.slknow small{font-size:.72rem;color:#777}
+.slknow .arr{margin-left:auto;color:#999;font-weight:700}
+.slnotify{font-size:.74rem;color:#888;margin:.55rem 0 0}
+.slnotify u{cursor:pointer;font-weight:700;color:#555;text-decoration-color:#bbb}
+.sloneofflink{display:block;text-align:center;font-size:.74rem;font-weight:700;color:#555;margin-top:.6rem;cursor:pointer;background:none;border:none;font-family:inherit;width:100%}
+.sloneofflink:hover{color:#111}
+.slsim{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:.4rem}
+.slsimcard{background:#fff;border:1px solid #e0ded9;border-radius:12px;padding:.9rem 1rem;display:flex;gap:.7rem;align-items:center;text-align:left;cursor:pointer}
+.slsimcard:hover{border-color:#bbb}
+.slsimcard .slav{width:44px;height:44px;font-size:24px}
+.slsimcard b{font-size:.82rem;color:#111;display:block}
+.slsimcard .sr{font-size:.7rem;color:#666;display:block}
+.slsimcard .sp{margin-left:auto;font-weight:800;font-size:.82rem;color:#111;white-space:nowrap}
+@media(max-width:700px){.slpgrid{grid-template-columns:1fr}.slsim{grid-template-columns:1fr}}
+@media(max-width:640px){.slcard{flex-wrap:wrap}.slside{flex-direction:row;align-items:center;justify-content:space-between;width:100%;min-width:0}}
+</style>
+<style>body{padding-top:44px!important}#content-demo-banner a:hover{text-decoration:underline}</style></head>
+<body><div id="content-demo-banner" style="position:fixed;top:0;left:0;right:0;z-index:9999;background:#1a4d2e;color:#fff;font:500 13px/1.4 'IBM Plex Mono',monospace;padding:10px 16px;text-align:center;border-bottom:2px solid #4ade80">Content demo — rewritten copy for review. <a href="http://127.0.0.1:8080/" style="color:#bbf7d0;margin-left:8px">Original site</a> · <strong style="color:#fff">You are viewing the updated version</strong></div>
+
+<header class="site">
+  <nav class="nav">
+    <a class="wordmark" href="../index.html" aria-label="CoachOS home">
+      <span>Coach<em>OS</em></span>
+    </a>
+    <div class="nav-links">
+      <div class="nav-item">
+        <a href="index.html">For mentor</a>
+        <div class="nav-drop" hidden="">
+          <div class="nd-col">
+            <span class="nd-h">Switch fit</span>
+          <a href="../coach/">Coach</a>
+          <a href="../business/">Small business</a>
+          <a href="../freelancer/">Freelancer</a>
+          <a href="../corporate/">Corporate &amp; enterprise</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="services.html">Services</a>
+        <div class="nav-drop" hidden="">
+          <div class="nd-col">
+            <a class="nd-all" href="services.html">All services for this fit →</a>
+            <span class="nd-h">For mentors</span>
+            <a href="services/mentor-positioning-and-offer-setup.html">Mentor positioning &amp; offer setup</a>
+            <a href="services/1-1-program-structure.html">1:1 program structure</a>
+            <a href="services/mentee-matching.html">Mentee matching</a>
+            <a href="services/renewals-and-proof.html">Renewals &amp; proof</a>
+          </div>
+          <div class="nd-col">
+            <span class="nd-h">Strategy</span>
+            <a href="services/business-strategy-and-consulting.html">Business strategy &amp; consulting</a>
+            <span class="nd-h">Position</span>
+            <a href="services/personal-branding.html">Personal branding</a>
+          </div>
+          <div class="nd-col">
+            <span class="nd-h">Launch</span>
+            <a href="services/a-page-worth-sending.html">A page worth sending</a>
+            <a href="services/hosting-domain.html">Hosting &amp; domain</a>
+            <a href="services/business-email.html">Business email</a>
+            <a href="services/social-handles.html">Social handle setup</a>
+            <span class="nd-h">Grow</span>
+            <a href="services/social-media-marketing.html">Social media marketing</a>
+            <a href="services/content-that-shows-your-thinking.html">Content that shows your thinking</a>
+            <a href="services/email-marketing.html">Email marketing</a>
+            <a href="services/lead-generation.html">Lead generation</a>
+            <a href="services/paid-ads-management.html">Paid ads management</a>
+          </div>
+          <div class="nd-col">
+            <span class="nd-h">Run</span>
+            <a href="services/lead-management.html">Lead management</a>
+            <a href="services/sales-closing-support.html">Sales &amp; closing support</a>
+            <span class="nd-h">Courses</span>
+            <a href="services/course-creation-and-launch.html">Course creation &amp; launch</a>
+          </div>
+        </div>
+      </div>
+      <a href="problems.html">Problems</a>
+      <div class="nav-item">
+        <a href="platform.html" class="active">Platform</a>
+        <div class="nav-drop" hidden="">
+          <div class="nd-col">
+            <a class="nd-all" href="platform.html">The Platform →</a>
+            <span class="nd-h">The four parts</span>
+            <a href="desk.html">CoachOS Desk</a>
+            <a href="roundtable.html">The Roundtable</a>
+            <a href="roster.html">The Roster</a>
+            <a href="shortlist.html">The Shortlist</a>
+          </div>
+        </div>
+      </div>
+      <a href="why.html">Why</a>
+      <a href="contact.html">Contact</a>
+      <a class="nav-cta" href="contact.html">Talk to us</a>
+    </div>
+    <button class="theme-btn" role="switch" aria-checked="false" aria-label="Switch to light mode"></button>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+  </nav>
+</header>
+
+<section class="pagehero">
+  <div class="lattice" aria-hidden="true"></div>
+  <span class="stamp abs reveal">Members only</span>
+  <div class="wrap pagehero-inner">
+    <span class="label crumb">The Shortlist · mentors · live — members only</span>
+    <h1>The mentors’ shelf. <em>Guest view.</em></h1>
+    <p class="sub">A vetted directory clients search by specialty and language. Every enquiry lands on your Desk board. 0% revenue share.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#browse">Browse the directory</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="browse">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label">The Shortlist · your shelf</span>
+      <h2>This is the directory. <em>The public end of it.</em></h2>
+      <p class="after">Specialties, languages, rates — then the wall. Members and their clients see the rest.</p>
+    </div>
+    <div class="slframe reveal">
+      <div class="slchrome"><span class="sldot"></span><span class="sldot"></span><span class="sldot"></span><span class="sladdr" id="sladdr">shortlist.coachos — members</span></div>
+      <div class="slhead">
+        <p class="slcount" id="slcount"></p>
+        <button class="slsearch gate" type="button">Search by specialty, language, or price…</button>
+        <div class="slfilters">
+          <button class="slpill gate" type="button">Skills ▾</button>
+          <button class="slpill gate" type="button">Price ▾</button>
+          <button class="slpill gate" type="button">Languages ▾</button>
+          <button class="slpill gate" type="button">Country ▾</button>
+          <button class="slpill gate" type="button">Availability ▾</button>
+          <button class="slpill gate" type="button">Quick responders</button>
+          <span class="slactive">Price: under €200 <b style="cursor:pointer">×</b></span>
+        </div>
+        <div class="slcats" id="slcats"></div>
+      </div>
+      <p class="slfeatlab" id="slfeatlab">Featured this month</p>
+      <div class="slfeat" id="slfeat"></div>
+      <div class="sllist" id="sllist"></div>
+      <div class="slfoot"></div>
+    </div>
+    <noscript><p style="text-align:center;color:var(--ink-dim);margin-top:1rem">The directory needs JavaScript &mdash; and the full Shortlist is members-only anyway.</p></noscript>
+  </div>
+</section>
+
+<section class="sec-tight">
+  <div class="wrap-narrow">
+    <div class="sec-head left reveal">
+      <span class="label">How it works</span>
+      <h2>A directory that means something</h2>
+    </div>
+    <div class="reveal" style="color:var(--ink-soft);font-size:1.05rem">
+      <p>A client searches by what actually matters — specialty, price range, language, video or in person — and chooses among people who all came through the same vetted door. The narrowing has already been done, so being found here means something.</p>
+      <p style="margin-top:1.1rem">Your listing is built from the positioning work we do together in the services, and it stays linked to your website and your <a href="../roster/">Roster</a> profile — one identity everywhere. When someone enquires, it lands straight on your own <a href="../desk/">Desk</a> leads board, where the follow-up is already drafted.</p>
+      <p style="margin-top:1.1rem">One number that matters: the Shortlist takes <b style="color:var(--ink)">0% of your revenue</b>. Open directories charge 15–30% of every sale, and marketplace minimum fees can eat up to 28% of a smaller plan. This is a listing, never a commission. And the proof on a listing is drawn from real client engagements, published only with that client’s explicit yes — no purchased reviews, no imported star ratings.</p>
+      <p style="margin-top:1.1rem;color:var(--ink-dim);font-size:.95rem">The Shortlist grows deliberately. A directory full of noise is worse than no directory — so it opens wider only as real, vetted supply comes in, never to hit a number.</p>
+    </div>
+  </div>
+</section>
+
+<section class="rooms-strip">
+  <div class="lattice" aria-hidden="true"></div>
+  <div class="wrap inner reveal">
+    <h2>The other three rooms, on the same membership.</h2>
+    <div class="links">
+      <a href="../desk/">CoachOS Desk</a>
+      <a href="../roundtable/">The Roundtable</a>
+      <a href="../roster/">The Roster</a>
+    </div>
+    <p class="note">Four rooms, one door in — and we hold the door.</p>
+  </div>
+</section>
+
+<section class="close-sec">
+  <div class="wrap reveal">
+    <span class="label">Membership · chosen, not sold</span>
+    <h2>Get on the Shortlist.</h2>
+    <p class="under" style="margin-top:1rem">Members come from the people we build for. Start there, and let the work speak.</p>
+    <a class="btn btn-primary" href="../services.html">Start with the services</a>
+    <p class="under">Think you already belong inside? <a href="../contact.html">Talk to us.</a></p>
+  </div>
+</section>
+
+<div class="slmodal" id="slmodal" role="dialog" aria-modal="true" aria-labelledby="slmodal-h">
+  <div class="slmcard">
+    <h3 id="slmodal-h">Oops.</h3>
+    <p>The full Shortlist is members-only — we can’t show you more than this.</p>
+    <p class="fine">What you’re browsing is the public face of the directory. Members’ full listings — calendars, proof, and contact — stay inside, for their clients and the people we’ve chosen.</p>
+    <div class="row">
+      <a class="btn btn-primary" href="../services.html">Start with the services</a>
+      <button class="btn btn-ghost" id="slclose" type="button">Close</button>
+    </div>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="foot">
+    <p>CoachOS — done-for-you website, marketing, and lead follow-up. AI drafts, a specialist reviews, you approve.</p>
+    <nav>
+      <a href="../index.html#doors">Find your fit</a>
+      <a href="../services.html">Services</a>
+      <a href="../problems.html">Problems</a>
+      <a href="../desk/">Desk</a>
+      <a href="../roundtable/">Roundtable</a>
+      <a href="../roster/">Roster</a>
+      <a href="../why.html">Why</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../assets/main.js?v=20260815c"></script>
+<script>
+(function(){
+  var G = {
+    orange:'linear-gradient(135deg,#FFB199,#FF4A21)', blue:'linear-gradient(135deg,#9BB8FF,#2D5BFF)',
+    green:'linear-gradient(135deg,#8FE3C0,#0E9F6E)', purple:'linear-gradient(135deg,#C9A0FF,#7B2DFF)',
+    gold:'linear-gradient(135deg,#FFD37A,#E8930C)'
+  };
+  var CATS = {
+    coach: ['Executive','Career','Leadership','Wellness','Business','Team'],
+    business: ['Food & events','Auto','Fitness','Trades','Education','Retail'],
+    freelancer: ['Design','Copy','Development','Motion','SEO','Illustration'],
+    mentor: ['Product','Engineering','Founders','Design','Data','Early career'],
+    corporate: ['Product','Engineering','Design','Data','Healthcare','Exec track']
+  };
+  var SL = {
+    coach: { label:'Coaches', addr:'shortlist.coachos/coaches — members', count:'<b>41 vetted listings</b> · executive, career, wellness, leadership & business coaching', listings:[
+      { av:'👩🏽‍💼', bg:G.orange, name:'Nadia R.', role:'Executive coach · boards & founders', langs:'EN · DE', loc:'Remote · EU 🇪🇺', reply:'Replies < 24h', tags:['Executive','Founders','Board prep'], blurb:'Twelve years coaching executives through the conversations they’d rather avoid.', price:'€160', unit:'per session' },
+      { av:'👩🏻‍🏫', bg:G.purple, name:'Priya M.', role:'Leadership coach · new managers', langs:'EN · HI', loc:'Remote', reply:'Replies < 24h', tags:['First-time managers','Engineering leaders','1:1'], blurb:'Ex-HR director. Builds confident managers out of newly promoted engineers.', price:'€140', unit:'per session' },
+      { av:'🧔🏻', bg:G.blue, name:'Tom H.', role:'Career transition coach', langs:'EN', loc:'Remote · UK 🇬🇧', reply:'Replies < 48h', tags:['Career change','Interviews','Positioning'], blurb:'Three career changes of his own; thirty-one clients through theirs last year.', price:'€110', unit:'per session' },
+      { av:'🧑🏼‍🎨', bg:G.green, name:'Jonas K.', role:'Wellness & burnout coach', langs:'EN · NO', loc:'Remote', reply:'Replies < 24h', tags:['Burnout','Boundaries','High performers'], blurb:'For the people who got the success and lost the sleep.', price:'€95', unit:'per session' } ],
+      locked:[
+      { av:'👩🏾‍💻', bg:G.gold, name:'Elena S.', role:'Business coach · solo founders', langs:'EN · ES', loc:'Remote', reply:'Replies < 24h', tags:['Pricing','Offers','Solo founders'], blurb:'Turns good work into a business that charges like it.', price:'€120', unit:'per session' },
+      { av:'👩🏼‍✈️', bg:G.blue, name:'Maren D.', role:'Team coach · leadership teams', langs:'EN · DE', loc:'Hybrid · DACH 🇩🇪', reply:'Replies < 48h', tags:['Leadership teams','Offsites','Conflict'], blurb:'Gets leadership teams saying the thing they’ve been managing around.', price:'€1,400', unit:'per offsite day' } ] },
+    business: { label:'Small business', addr:'shortlist.coachos/business — members', count:'<b>36 vetted listings</b> · services, studios, trades & local businesses', listings:[
+      { av:'👩🏽‍🍳', bg:G.orange, name:'Hana L.', role:'Catering studio · events & corporate', langs:'EN · AR', loc:'Dubai 🇦🇪', reply:'Replies < 24h', tags:['Corporate events','Weddings','Office weekly'], blurb:'Fourteen years in; her best week moved 975 orders.', price:'From €40', unit:'per head' },
+      { av:'🧔🏽', bg:G.blue, name:'Omar S.', role:'Auto detailing · two locations', langs:'EN · AR', loc:'Two branches 🇦🇪', reply:'Same-day quotes', tags:['Ceramic coating','Fleet','Full detail'], blurb:'Fleet contracts and weekend queues — book ahead.', price:'From €120', unit:'per vehicle' },
+      { av:'👩🏼‍🏭', bg:G.purple, name:'Grace T.', role:'Boutique fitness studio', langs:'EN', loc:'Three locations', reply:'Replies < 24h', tags:['Classes','Personal training','Corporate wellness'], blurb:'Small classes, real coaching, no lost-in-the-crowd memberships.', price:'From €25', unit:'per class' },
+      { av:'🧑🏻‍🔧', bg:G.green, name:'Viktor M.', role:'Plumbing & heating · 6 staff', langs:'EN · PL', loc:'Citywide', reply:'Same-day quotes', tags:['Emergency','Boilers','Maintenance contracts'], blurb:'Twelve years, six vans, and quotes that arrive the same day you ask.', price:'Same-day', unit:'quotes' } ],
+      locked:[
+      { av:'👩🏾‍💼', bg:G.gold, name:'Neha J.', role:'Tutoring centre · maths & sciences', langs:'EN · HI', loc:'In person & remote', reply:'Replies < 24h', tags:['Maths','Sciences','Exam prep'], blurb:'They sell hours. We sell the moment your kid stops needing us.', price:'From €30', unit:'per session' },
+      { av:'🧔🏼', bg:G.blue, name:'Stefan K.', role:'Joinery & fit-out workshop', langs:'EN · DE', loc:'Regional', reply:'Replies < 48h', tags:['Interiors','Retail fit-out','Custom'], blurb:'The workshop other trades recommend when it has to be right.', price:'By scope', unit:'quoted' } ] },
+    freelancer: { label:'Freelancers', addr:'shortlist.coachos/freelancers — members', count:'<b>52 vetted listings</b> · design, copy, development, motion & growth', listings:[
+      { av:'🧑🏽‍💻', bg:G.blue, name:'Dev A.', role:'Brand designer · B2B SaaS', langs:'EN', loc:'Remote · EU 🇪🇺', reply:'Replies < 24h', tags:['Brand systems','B2B SaaS','Decks'], blurb:'Brands that make sales calls easier. Booked 4–6 weeks out.', price:'€520', unit:'per day' },
+      { av:'👩🏻‍🎨', bg:G.orange, name:'Marta P.', role:'Copywriter · fintech', langs:'EN · PL', loc:'Remote', reply:'Replies < 24h', tags:['Landing pages','Email','Fintech'], blurb:'Copy that survives compliance review and still sells.', price:'€480', unit:'per day' },
+      { av:'🧔🏼', bg:G.green, name:'Chris B.', role:'Web developer · e-commerce', langs:'EN', loc:'Remote · UK 🇬🇧', reply:'Replies < 48h', tags:['Shopify','Performance','Migrations'], blurb:'Stores that load fast and don’t break on launch day.', price:'€560', unit:'per day' },
+      { av:'👩🏾‍🔧', bg:G.purple, name:'Yuki N.', role:'Motion designer', langs:'EN · JP', loc:'Remote', reply:'Replies < 24h', tags:['Product launches','Explainers','Social'], blurb:'Launch films and explainers for products that deserve better than a template.', price:'€500', unit:'per day' } ],
+      locked:[
+      { av:'🧑🏻‍🎤', bg:G.gold, name:'Sam O.', role:'SEO consultant', langs:'EN', loc:'Remote', reply:'Replies < 24h', tags:['Technical SEO','Content strategy','Local'], blurb:'Rankings you can trace to revenue, reported monthly.', price:'€490', unit:'per day' },
+      { av:'👩🏻‍🎤', bg:G.orange, name:'Ada P.', role:'Illustrator & visual identity', langs:'EN · FR', loc:'Remote', reply:'Replies < 48h', tags:['Illustration','Icon systems','Editorial'], blurb:'The illustration style your competitors will try to copy next year.', price:'€450', unit:'per day' } ] },
+    mentor: { label:'Mentors', addr:'shortlist.coachos/mentors — members', count:'<b>28 vetted listings</b> · product, engineering, founders & early career', listings:[
+      { av:'🧔🏾', bg:G.orange, name:'Marcus D.', role:'Product mentor · ex-VP Product', langs:'EN', loc:'Remote', reply:'Replies < 24h', tags:['Product leadership','ICs to leads','Roadmaps'], blurb:'Twelve-session arcs with a written goal. People renew programs.', price:'€220', unit:'per month' },
+      { av:'👩🏿‍💼', bg:G.purple, name:'Aisha T.', role:'Founder mentor · 3 exits', langs:'EN', loc:'Remote', reply:'Replies < 48h', tags:['Founders','Fundraising','First hires'], blurb:'For founders facing a decision in the next 90 days, not someday.', price:'€280', unit:'per month' },
+      { av:'🧑🏻‍🔬', bg:G.green, name:'Rob F.', role:'Engineering mentor', langs:'EN', loc:'Remote · EU 🇪🇺', reply:'Replies < 24h', tags:['Staff+ engineers','Architecture','Career'], blurb:'A written structure, a monthly slot, and the thing nobody else will say to your face.', price:'€180', unit:'per month' },
+      { av:'👩🏼‍🎓', bg:G.gold, name:'Lin W.', role:'Career mentor · new grads', langs:'EN · ZH', loc:'Remote', reply:'Replies < 24h', tags:['First job','Negotiation','Early career'], blurb:'From first offer to first promotion, with homework between sessions.', price:'€120', unit:'per month' } ],
+      locked:[
+      { av:'👩🏻‍🎤', bg:G.blue, name:'Sofia G.', role:'Design leadership mentor', langs:'EN · IT', loc:'Remote', reply:'Replies < 48h', tags:['Design leads','Portfolio','Teams'], blurb:'Outcomes logged with consent — her sales page is the record itself.', price:'€200', unit:'per month' },
+      { av:'👩🏽‍🔬', bg:G.purple, name:'Elif A.', role:'Data leadership mentor', langs:'EN · TR', loc:'Remote', reply:'Replies < 24h', tags:['Data teams','Analytics leaders','Hiring'], blurb:'Builds analytics leaders who can defend a number in a boardroom.', price:'€210', unit:'per month' } ] },
+    corporate: { label:'Corporate & L&D', addr:'shortlist.coachos/programs — members', count:'<b>19 vetted bench mentors</b> · for programs whose internal pool runs thin', listings:[
+      { av:'🧔🏾', bg:G.orange, name:'Marcus D.', role:'External bench · product leadership', langs:'EN', loc:'Remote', reply:'Program-vetted', tags:['Cohort experience','Product leaders','Firewall-trained'], blurb:'Slots into existing programs; reports participation, never personal content.', price:'Program', unit:'rates on request' },
+      { av:'👩🏿‍💼', bg:G.purple, name:'Aisha T.', role:'External bench · founder & exec track', langs:'EN', loc:'Remote', reply:'Program-vetted', tags:['Executive track','High-potential','Cohorts'], blurb:'For the mentees your senior leaders don’t have hours for.', price:'Program', unit:'rates on request' },
+      { av:'🧑🏻‍🔬', bg:G.green, name:'Rob F.', role:'External bench · engineering', langs:'EN', loc:'Remote · EU 🇪🇺', reply:'Program-vetted', tags:['Staff+ engineers','Structured arcs','Multi-cohort'], blurb:'Stays for multiple cohorts — onboarding materials included.', price:'Program', unit:'rates on request' },
+      { av:'👩🏻‍🎤', bg:G.blue, name:'Sofia G.', role:'External bench · design leadership', langs:'EN · IT', loc:'Remote', reply:'Program-vetted', tags:['Design leads','Creative teams','Workshops'], blurb:'Mentoring plus working sessions your design team will actually attend.', price:'Program', unit:'rates on request' } ],
+      locked:[
+      { av:'👩🏽‍🔬', bg:G.purple, name:'Elif A.', role:'External bench · data leadership', langs:'EN · TR', loc:'Remote', reply:'Program-vetted', tags:['Data teams','Analytics','Leadership'], blurb:'For programs building a data-leadership pipeline from scratch.', price:'Program', unit:'rates on request' },
+      { av:'👩🏾‍⚕️', bg:G.green, name:'Noor H.', role:'External bench · healthcare leadership', langs:'EN · AR', loc:'Remote · GCC 🇦🇪', reply:'Program-vetted', tags:['Clinical leaders','Healthcare ops','Cohorts'], blurb:'Knows why healthcare mentoring pairs go quiet — and how to stop it.', price:'Program', unit:'rates on request' } ] }
+  };
+
+
+  var PROF = {
+    coach: { ai:{ sum:'Across her listing, Roster activity, and consented outcomes, Nadia profiles as a high-directness, high-structure coach: written scopes, short arcs, and a pattern of surfacing avoided conversations early. Clients arriving mid-crisis — board tension, succession, a difficult exit — appear most often in her engagement history. Response signals are consistently fast.', best:['Founders in a board or co-founder crunch','Executives preparing a hard transition','People who want direct feedback, fast'], nf:'Maybe not for: a gentler, open-ended exploration pace — see the wellness listings on this shelf.' }, tagline:'I help executives say the difficult thing early — before it costs a quarter.', cred:['ex-strategy consultancy','12 yrs independent'], status:'Active today', respond:'Usually responds in a few hours', skills:['Executive presence','Board preparation','Founder coaching','Difficult conversations','Succession','Conflict','Delegation','Burnout prevention','360 debriefs','First 100 days','Exec offsites','Decision hygiene'], plansave:'Save 10% on a 3-month engagement', trial:'First 30-minute intro call — free', oneoffs:[['Clarity session','30 min','€60'],['Deep-dive session','60 min','€110'],['Board-prep intensive','90 min','€220']], about1:'Nadia spent nine years inside two consultancies coaching the partners nobody else would give honest feedback to, then went independent in 2019. Her practice is deliberately small — twelve executive clients at a time, most of them founders or board-level, most arriving mid-something-difficult.', about2:'Sessions are direct. Expect to leave each one with the sentence you were avoiding said out loud, and a decision attached to it.', steps:['A 30-minute intro call — fit, goals, and whether she’s the right coach for this','A written scope: cadence, price, and what done looks like','Sessions on your rhythm — notes and commitments after every one'], includes:['60-minute video sessions','Written notes after every session','Email between sessions — answered < 24h','Quarterly review of the engagement'], proof:'Outcomes from past engagements are shared on enquiry, each with the client’s written permission. No public reviews — that’s the Shortlist’s rule, not a gap.', note:'Enquiries land directly on Nadia’s Desk board. Typical reply: same working day.' },
+    business: { ai:{ sum:'Signals across this listing point to volume-tested reliability: fourteen years trading, standing corporate contracts, and a delivery record that includes a 975-order week. Dietary planning and staffed service recur across her consented references; same-week quoting is consistent.', best:['Weekly office catering contracts','Corporate events of 50+ heads','Dietary-heavy menus'], nf:'Maybe not for: last-minute single drops under 10 heads — minimums apply.' }, tagline:'Feeding offices and events for fourteen years — without a missed drop.', cred:['14 yrs trading','Team of 9'], status:'Active today', respond:'Usually responds in a few hours', skills:['Corporate catering','Event menus','Dietary planning','Weekly contracts','Tastings','Staffed service','Seasonal menus','Venue logistics','Same-week quotes','Buffet & plated','Coffee service','Clear-down'], plansave:'Standing weekly contracts — priority scheduling', trial:'Tasting session — free for contracts over 50 heads', oneoffs:[['Office lunch drop','up to 20 heads','€40/head'],['Event service','staffed, 50+ heads','From €52/head'],['Tasting session','60 min','€90']], about1:'Fourteen years of catering, a permanent team of nine, and a kitchen that runs corporate weekly contracts alongside events. Her best week moved 975 orders without a single missed drop.', about2:'Menus are seasonal and built around your event, not a laminated list. Corporate clients get a standing menu that rotates monthly.', steps:['A tasting and scoping call — headcount, dietary map, venue','A written quote the same week, per head, no surprises','Delivery day, staffed and set — with a follow-up call after'], includes:['Menu design & tasting session','Staffing, setup, and clear-down','Dietary planning across the full menu','Same-week written quotes'], proof:'References from standing corporate clients are shared on enquiry, with each client’s permission. No public reviews — that’s the Shortlist’s rule, not a gap.', note:'Enquiries land directly on Hana’s Desk board. Typical reply: same working day.' },
+    freelancer: { ai:{ sum:'Dev profiles as a systems-first designer: fixed scopes, contractual revision rounds, and brand work built to support sales rather than decoration. His queue signals consistent demand — typically booked four to six weeks ahead — and his consented case studies cluster in B2B SaaS.', best:['B2B SaaS rebrands','Sales-led design systems','Teams that want a fixed scope'], nf:'Maybe not for: same-week turnarounds — his queue runs 4–6 weeks.' }, tagline:'Brand systems that make B2B sales calls easier — booked 4–6 weeks out.', cred:['ex-agency lead','8 yrs in'], status:'Active this week', respond:'Usually responds within a day', skills:['Brand systems','Visual identity','B2B SaaS','Sales decks','Design systems','Guidelines','Logo & mark','Web design','Pitch assets','Naming support','Rebrand','Launch kits'], plansave:'Multi-sprint bookings hold the day rate', trial:'First 30-minute scoping call — free', oneoffs:[['Brand audit','recorded review','€180'],['Deck rescue','48h turnaround','€420'],['Full sprint','2–3 weeks','From €4,800']], about1:'Dev builds brand systems for B2B SaaS — the kind that make sales calls easier, not just decks prettier. Eight years in, the last four fully independent, booked four to six weeks out.', about2:'He works in fixed scopes with revision rounds written into the contract, so nobody discovers the budget’s gone at round five.', steps:['A 30-minute intro call — the problem, the timeline, the fit','A written proposal within three days: scope, price, dates','A focused sprint, with a mid-point review baked in'], includes:['Full brand system & guidelines','Deck and site asset kit','Two revision rounds — in the contract','Complete handover files'], proof:'Case studies and client references are shared on enquiry, each with permission. No public reviews — that’s the Shortlist’s rule, not a gap.', note:'Enquiries land directly on Dev’s Desk board. Typical reply: within 24 hours.' },
+    mentor: { ai:{ sum:'Marcus reads as a structure-led mentor: twelve-session arcs with written goals, homework that carries forward, and renewal patterns that suggest mentees finish what they start with him. His history clusters around ICs stepping into leadership and PMs preparing for harder rooms.', best:['ICs stepping into lead roles','PMs preparing leadership interviews','People who want homework'], nf:'Maybe not for: ad-hoc calls without a goal — his format is the arc.' }, tagline:'I mentor ICs into leads, and leads into rooms where the questions get harder.', cred:['ex-VP Product','2 scale-ups'], status:'Active today', respond:'Usually responds in a few hours', skills:['Product leadership','Roadmaps','Stakeholders','IC to lead','Hiring PMs','Prioritisation','Metrics','Board reporting','Career arcs','Interview prep','Team topology','Strategy docs'], plansave:'Save 10% on the full 12-session arc', trial:'First 30-minute intro call — free', oneoffs:[['Ask me anything','30 min','€70'],['Work review','45 min','€95'],['Interview preparation','60 min','€120']], about1:'Marcus ran product at two scale-ups — through one acquisition and one very educational failure — before moving to full-time mentoring. He works in twelve-session arcs with a written goal, because people renew programs and drift out of arrangements.', about2:'His mentees are usually ICs stepping into leads, or leads stepping into rooms where the questions get harder.', steps:['A 30-minute intro call — the decision you’re facing in the next 90 days','A written arc: goal, cadence, and what done looks like','Monthly sessions with homework that carries forward'], includes:['Two 60-minute sessions per month','Written recap after every session','Async questions — answered < 48h','Goal review at sessions 6 and 12'], proof:'Outcomes are logged through the arc, mentee-approved, and shared on enquiry. No public reviews — that’s the Shortlist’s rule, not a gap.', note:'Enquiries land directly on Marcus’s Desk board. Typical reply: within 24 hours.' },
+    corporate: { ai:{ sum:'As external bench, Marcus profiles for program reliability: multi-cohort continuity, onboarding materials included, and a contractual firewall on personal content. Participation reporting is consistent across his program history; admins renew him.', best:['Programs short on senior mentors','Exec-track cohorts','Multi-cohort continuity'], nf:'Maybe not for: unstructured one-off mentoring outside a program frame.' }, tagline:'External bench for cohorts your senior leaders don’t have hours for.', cred:['Program-vetted','Multi-cohort'], status:'Active this week', respond:'Usually responds within a day', skills:['Cohort mentoring','Program onboarding','Participation reporting','Firewall compliance','Exec-track mentees','High-potential cohorts','Workshops','Office hours','Curriculum input','Admin liaison','Renewal continuity','Scale mentoring'], plansave:'Multi-cohort agreements hold the rate', trial:'Program-fit call with your L&D lead — free', oneoffs:[['Pilot seat','one mentee, one quarter','On request'],['Cohort block','6–10 mentees','On request'],['Workshop add-on','90 min','On request']], about1:'Marcus mentors inside corporate programs as external bench — for the cohorts your senior leaders don’t have hours for. Program-vetted, firewall-trained, and experienced across multiple cohort cycles.', about2:'He reports participation to your program admin, never personal content — the firewall is contractual, not a promise.', steps:['A program-fit call with your L&D lead','Cohort scoping and an onboarding pack for your admin','Quarterly participation reporting, firewall intact'], includes:['Cohort mentoring seats','Mentor onboarding materials','Participation reports — never personal content','Multi-cohort continuity'], proof:'Program references are shared on enquiry with each organisation’s permission. No public reviews — that’s the Shortlist’s rule, not a gap.', note:'Enquiries route to your program scoping call. Typical reply: within 24 hours.' }
+  };
+  function renderProfile(key){
+    var fl = document.getElementById('slfeatlab'), fe = document.getElementById('slfeat');
+    if (fl) fl.style.display = 'none'; if (fe) fe.style.display = 'none';
+    var d = SL[key], p = PROF[key], l = d.listings[0];
+    listEl.innerHTML = '<button class="slback" type="button">&larr; Back to the shortlist</button>'
+      + '<div class="slcard slphead">'
+      + '<span class="slav" style="background:' + l.bg + '" aria-hidden="true">' + l.av + '</span>'
+      + '<div class="slmain"><div class="slname" style="font-size:1.15rem">' + l.name + '<span class="slbadge">✓ Vetted</span>' + p.cred.map(function(c){ return '<span class="slcred">' + c + '</span>'; }).join('') + '</div>'
+      + '<div class="slrole">' + l.role + '</div>'
+      + '<div class="slmeta"><span class="slstatus">' + p.status + '</span><span>🌐 ' + l.langs + '</span><span>📍 ' + l.loc + '</span><span>⚡ ' + l.reply + '</span></div>'
+      + '<p class="sltagline">&ldquo;' + p.tagline + '&rdquo;</p>'
+      + '<div class="slmeta" style="margin-top:.45rem"><span>💬 ' + p.respond + '</span></div>'
+      + '<div class="slsoc"><button class="slsocb gate" type="button" aria-label="LinkedIn">in</button><button class="slsocb x gate" type="button" aria-label="X">𝕏</button><button class="slsocb x gate" type="button" aria-label="Website">🔗</button></div></div>'
+      + '<div style="display:flex;gap:.4rem"><button class="slsave gate" type="button" aria-label="Save">🔖</button><button class="slpill gate" type="button">Message</button></div></div>'
+      + '<div class="slpgrid"><div>'
+      + '<div class="slai"><h4>✦ AI summary</h4><p>' + p.ai.sum + '</p>'
+      + '<div class="bfl">Best for</div><div class="bfrow">' + p.ai.best.map(function(b){ return '<span class="bf">' + b + '</span>'; }).join('') + '</div>'
+      + '<p class="nf">' + p.ai.nf + '</p>'
+      + '<p class="gen">✦ Generated by CoachOS from this member&rsquo;s listing, Roster activity, and consented outcomes &middot; reviewed by the member &middot; refreshed weekly</p></div>'
+      + '<div class="slpsec"><h4>About</h4><p>' + p.about1 + '</p><p>' + p.about2 + '</p></div>'
+      + '<div class="slknow gate">'
+      + '<span class="slav" style="background:' + l.bg + ';width:44px;height:44px;font-size:24px">' + l.av + '</span>'
+      + '<span><b>Get to know ' + l.name.split(' ')[0] + ' — on the Roster</b><small>Posts, referrals, and the room she works in. Members only.</small></span><span class="arr">&rarr;</span></div>'
+      + '<div class="slpsec" style="margin-top:.9rem"><h4>Skills &amp; focus</h4><div class="slskills">' + p.skills.map(function(s){ return '<span class="sltag">' + s + '</span>'; }).join('') + '</div></div>'
+      + '<div class="slpsec"><h4>How an engagement runs</h4><ol class="slsteps">' + p.steps.map(function(s){ return '<li>' + s + '</li>'; }).join('') + '</ol></div>'
+      + '<div class="slpsec"><h4>Sessions &amp; one-offs</h4>' + p.oneoffs.map(function(o){ return '<div class="sloneoff"><span><b>' + o[0] + '</b><small>' + o[1] + '</small></span><span class="op">' + o[2] + '</span></div>'; }).join('') + '<p style="font-size:.7rem;color:#888;margin:.6rem 0 0">One-off bookings are members-only &mdash; like everything past this page.</p></div>'
+      + '<div class="slpsec"><h4>Proof, with consent</h4><p>' + p.proof + '</p></div>'
+      + '</div>'
+      + '<div class="slplan"><span class="slprice">' + l.price + '<small>' + l.unit + '</small></span>'
+      + '<p style="font-size:.7rem;color:#1f6f36;font-weight:700;margin:.4rem 0 0">' + p.plansave + '</p>'
+      + '<p style="font-size:.72rem;color:#555;margin:.35rem 0 0">' + p.trial + '</p>'
+      + '<ul class="slpinc">' + p.includes.map(function(s){ return '<li>' + s + '</li>'; }).join('') + '</ul>'
+      + '<div class="slplanrow" style="margin-top:.8rem"><span>Languages</span><span>' + l.langs + '</span></div>'
+      + '<div class="slplanrow"><span>Location</span><span>' + l.loc + '</span></div>'
+      + '<div class="slplanrow"><span>Response</span><span>' + l.reply + '</span></div>'
+      + '<button class="slbtn gate" type="button" style="width:100%;margin-top:.9rem;padding:.7rem">Enquire via the Shortlist</button>'
+      + '<button class="sloneofflink gate" type="button">Just need one session? Book a one-off &rarr;</button>'
+      + '<div class="slfine2"><span>Cancel anytime</span><span>No contract lock-in</span><span>0% commission</span></div>'
+      + '<p style="font-size:.68rem;color:#888;margin:.6rem 0 0;text-align:left">' + p.note + '</p></div></div>'
+      + '<h4 class="slnext">Similar on this shelf</h4>'
+      + '<div class="slsim">' + [d.listings[1], d.listings[2]].map(function(s){ return '<div class="slsimcard gate"><span class="slav" style="background:' + s.bg + '">' + s.av + '</span><span><b>' + s.name + '</b><span class="sr">' + s.role + '</span></span><span class="sp">' + s.price + '</span></div>'; }).join('') + '</div>'
+      + '<h4 class="slnext" style="margin-top:1rem">Next on this shelf — members see them all</h4>'
+      + locked(d.listings[3]);
+    listEl.querySelector('.slback').addEventListener('click', function(){
+      var fl2 = document.getElementById('slfeatlab'), fe2 = document.getElementById('slfeat');
+      if (fl2) fl2.style.display = ''; if (fe2) fe2.style.display = '';
+      render(key);
+    });
+    document.querySelectorAll('.slframe .gate').forEach(function(b){
+      if (b.dataset.g) return; b.dataset.g = '1';
+      b.addEventListener('click', openModal);
+    });
+  }
+  var tabsEl = null, listEl = document.getElementById('sllist');
+  var addrEl = document.getElementById('sladdr'), countEl = document.getElementById('slcount');
+  var modal = document.getElementById('slmodal');
+  function openModal(){ modal.classList.add('open'); }
+  function closeModal(){ modal.classList.remove('open'); }
+  document.getElementById('slclose').addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+
+  function featCard(l, i){
+    var lockd = i >= 3;
+    var fits = [96, 93, 91, 89, 88];
+    return '<div class="slfc' + (lockd ? ' lockd' : '') + '">'
+      + '<div class="port" style="background:' + l.bg + '"><span aria-hidden="true">' + l.av + '</span><span class="vt">✦ ' + fits[i] + '% AI fit</span></div>'
+      + '<b>' + l.name + '</b><span class="fr">' + l.role + '</span>'
+      + '<div class="ftags">' + l.tags.slice(0, 3).map(function(t){ return '<span class="sltag">' + t + '</span>'; }).join('') + '</div>'
+      + '<button class="slbtn ' + (i === 0 ? 'viewp2' : 'gate') + '" type="button">View profile</button></div>';
+  }
+  function card(l, first){
+    return '<div class="slcard">'
+      + '<span class="slav" style="background:' + l.bg + '" aria-hidden="true">' + l.av + '</span>'
+      + '<div class="slmain"><div class="slname">' + l.name + '<span class="slbadge">✓ Vetted</span></div>'
+      + '<div class="slrole">' + l.role + '</div>'
+      + '<div class="slmeta"><span class="slstatus">' + (l.status || 'Active this week') + '</span><span>🌐 ' + l.langs + '</span><span>📍 ' + l.loc + '</span><span>⚡ ' + l.reply + '</span></div>'
+      + '<div class="sltags">' + l.tags.map(function(t){ return '<span class="sltag">' + t + '</span>'; }).join('') + '</div>'
+      + '<p class="slblurb">' + l.blurb + '</p></div>'
+      + '<div class="slside"><div style="display:flex;gap:.4rem;align-items:center"><button class="slsave gate" type="button" aria-label="Save">🔖</button><span class="slprice">' + l.price + '<small>' + l.unit + '</small></span></div>'
+      + (first ? '<button class="slbtn viewp" type="button">View profile</button>' : '<button class="slbtn gate" type="button">View profile</button>') + '</div></div>';
+  }
+  function gateCard(){
+    return '<div class="slgate"><b>That’s the public sliver.</b>'
+      + '<p>The full Shortlist — every listing, calendar, and enquiry button — is members-only.</p>'
+      + '<button class="slbtn gate" type="button" style="padding:.6rem 1.4rem">Unlock the full Shortlist</button>'
+      + '<p class="slnotify">New listing joins this shelf? <u class="gate">Members get notified first.</u></p></div>';
+  }
+  function locked(l){
+    return '<div class="sllocked"><div class="inner">' + card(l) + '</div>'
+      + '<div class="veil gate"><span>🔒 Members-only listing</span></div></div>';
+  }
+  function render(key){
+    var d = SL[key];
+    addrEl.textContent = d.addr;
+    countEl.innerHTML = d.count;
+    var catsEl = document.getElementById('slcats');
+    if (catsEl) catsEl.innerHTML = CATS[key].map(function(c){ return '<button class="slcat gate" type="button">' + c + '</button>'; }).join('');
+    listEl.innerHTML = d.listings.map(function(l, i){ return card(l, i === 0); }).join('') + gateCard() + d.locked.map(locked).join('');
+    document.querySelectorAll('.slframe .gate').forEach(function(b){
+      if (b.dataset.g) return; b.dataset.g = '1';
+      b.addEventListener('click', openModal);
+    });
+    var featEl = document.getElementById('slfeat');
+    if (featEl) {
+      featEl.innerHTML = d.listings.concat(d.locked).slice(0, 5).map(function(l, i){ return featCard(l, i); }).join('');
+      var vp2 = featEl.querySelector('.viewp2'); if (vp2) vp2.addEventListener('click', function(){ renderProfile(key); });
+      featEl.querySelectorAll('.gate').forEach(function(b){ if (!b.dataset.g) { b.dataset.g = '1'; b.addEventListener('click', openModal); } });
+    }
+    var vp = listEl.querySelector('.viewp'); if (vp) vp.addEventListener('click', function(){ renderProfile(key); });
+  }
+  render('mentor');
+})();
+</script>
+
+
+</body></html>

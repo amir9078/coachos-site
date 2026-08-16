@@ -395,7 +395,7 @@
     omar:{av:'🧔🏽',bg:'linear-gradient(135deg,#9BB8FF,#2D5BFF)'}, grace:{av:'👩🏼‍🏭',bg:'linear-gradient(135deg,#C9A0FF,#7B2DFF)'},
     claire:{av:'👩🏻‍💼',bg:'linear-gradient(135deg,#9BB8FF,#2D5BFF)'}, daniel:{av:'🧔🏼',bg:'linear-gradient(135deg,#8FE3C0,#0E9F6E)'},
     ingrid:{av:'👩🏼‍💻',bg:'linear-gradient(135deg,#C9A0FF,#7B2DFF)'}, kwame:{av:'🧑🏿‍🏫',bg:'linear-gradient(135deg,#FFB199,#FF4A21)'}
-  };
+  };;
 
   var P = {
     coach: { label:'For coaches', addr:'roster.coachos/coaches — members', posts:[
@@ -526,7 +526,7 @@
         txt:'Year-end mentoring survey:\n\n“Did your pair meet regularly?” — 94% yes\nCalendar data: 31% met after March\n\nAnyway. That’s why we track sessions now, not vibes. 🙃' },
       { type:'teaser', who:AV.claire, name:'Claire V.', role:'Head of L&D · 1,200-person firm', time:'1w',
         txt:'It’s been 90 days since we rebuilt our mentoring program, and I owe this community an update.\n\nIn March I posted that our program was dying quietly: 214 pairs on paper, and I couldn’t tell you how many had met that month. The year-end survey said “great.” The calendars said otherwise.\n\nI wasn’t sure publishing that was wise. Neither was my CHRO.\n\nHere’s what 90 days of visibility changed:\n✦ Active pairs: 31% → 78%\n✦ Quiet pairs get flagged at week three — five saved matches last month alone\n✦ The quarterly report went from a satisfaction slide to…' } ] }
-  };
+  };;
 
   var tabsEl = null, feedEl = document.getElementById('rfeed'), addrEl = document.getElementById('raddr');
   var modal = document.getElementById('rmodal');
@@ -613,20 +613,20 @@
     return '<article class="rpost">' + head(p) + body + statsActs(p) + '</article>';
   }
 var EXTRA = [
-    { type:'post', who:AV.lin, name:'Sofia G.', role:'Design leadership mentor', time:'2w', likes:768, cmts:55,
-        txt:'My mentee got the promotion today. Her message: “I used your exact words in the room.”\n\nThat’s the strange economics of mentoring — sentences you’ve forgotten keep compounding in other people’s careers.' },
-    { type:'post', who:AV.rob, name:'Rob F.', role:'Engineering mentor', time:'2w', likes:521, cmts:66,
-        txt:'Polled 30 mentors at a dinner last month.\n\n26 had no written structure.\nThe 4 who did charge 3–5× more.\n\nSame experience. Same networks.\n\nThe container is the price.' },
-    { type:'post', who:AV.lin, name:'Lin W.', role:'Career mentor for new grads', time:'3w', likes:689, cmts:49,
-        txt:'Stop telling mentees “my door is always open.”\n\nDoors don’t schedule themselves.\n\nGive them a monthly slot and watch what changes.' }
-  ];
+    { type:'post', who:AV.priya, name:'Priya M.', role:'Leadership coach · ex-HR director', time:'2w', likes:743, cmts:61,
+        txt:'Ran the numbers on my last 40 discovery calls.\n\nWon 9 of the 11 where I named a price on the call.\nWon 2 of the 29 where I “sent a proposal after.”\n\nThe proposal isn’t a document. It’s a delay.' },
+    { type:'post', who:AV.jonas, name:'Jonas K.', role:'Wellness & burnout coach', time:'2w', likes:892, cmts:74,
+        txt:'A client ended today’s session with: “That’s the first time I’ve said that out loud.”\n\nSix years in, that sentence is still the entire job.\n\nEverything else — the website, the funnel, the content — exists so that sentence can happen.' },
+    { type:'post', who:AV.elena, name:'Elena S.', role:'Business coach for solo founders', time:'3w', likes:655, cmts:88,
+        txt:'Unpopular opinion: your package names are costing you sales.\n\n“Signature 1:1 Transformation Journey” tells me nothing.\n“Twelve weeks to a calmer Monday” sells itself.\n\nName the after, not the process.' }
+  ];;
   var ANON = {
     coach: { q:'Am I the only one who still feels like a fraud charging €150/hr after six years? A client praised me today and my first thought was “if only you knew.” How do the rest of you deal with this — honestly?', n:'5 answers delivered — visible only to the asker' },
     mentor: { q:'A mentee’s company is about to do layoffs, and I know before they do. Where exactly is the ethical line between mentor and insider here? I need answers from people who’ve actually been in this seat.', n:'7 answers delivered — visible only to the asker' },
     freelancer: { q:'My biggest client is 70% of my income and their payments keep arriving later each month. I’m terrified to push. What would you actually do — realistically, not the confident-post version?', n:'9 answers delivered — visible only to the asker' },
     business: { q:'Revenue looks fine from the outside, but I haven’t paid myself properly in four months and I’m ashamed to tell my spouse. Has anyone here actually broken this pattern — and how?', n:'6 answers delivered — visible only to the asker' },
     corporate: { q:'Leadership wants me to report who’s “engaged” in mentoring for succession planning. I promised participants a firewall. How do I push back without getting the program cut?', n:'4 answers delivered — visible only to the asker' }
-  };
+  };;
   function anonHtml(key, label){
     var a = ANON[key];
     return '<article class="rpost ranon">'
