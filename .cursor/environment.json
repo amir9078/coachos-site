@@ -1,0 +1,17 @@
+{
+  "name": "CoachOS Marketing Site",
+  "install": "npm ci",
+  "terminals": [
+    {
+      "name": "preview",
+      "command": "python3 -m http.server 8080 --bind 0.0.0.0",
+      "description": "Static site preview server for the marketing pages"
+    }
+  ],
+  "ports": [
+    {
+      "port": 8080,
+      "name": "Site preview"
+    }
+  ]
+}
