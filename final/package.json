@@ -1,0 +1,9 @@
+{
+  "name": "coachos-site-scripts",
+  "private": true,
+  "type": "module",
+  "description": "Build-time scripts for the CoachOS marketing site (e.g. the daily news brief generator). Not part of the static site itself.",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.68.0"
+  }
+}

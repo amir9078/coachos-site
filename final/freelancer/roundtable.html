@@ -1,0 +1,615 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Roundtable — practice rooms for members</title>
+<meta name="description" content="The Roundtable is CoachOS's members-only community — rooms by coaching specialty, mentoring practice, freelancer work, small business, L&amp;D, and open topics, plus a Quiet Room for anonymous questions.">
+<link rel="canonical" href="https://amir9078.github.io/coachos-site/freelancer/roundtable.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Roundtable — practice rooms for members">
+<meta property="og:description" content="The Roundtable is CoachOS's members-only community — rooms by coaching specialty, mentoring practice, freelancer work, small business, L&amp;D, and open topics, plus a Quiet Room for anonymous questions.">
+<meta property="og:url" content="https://amir9078.github.io/coachos-site/freelancer/roundtable.html">
+<meta property="og:site_name" content="CoachOS">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css?v=20260815c">
+<style>
+/* ============ The Roundtable — community spaces prototype ============ */
+/* fixed hairline, not var(--line): the app inside is always light, so in light
+   mode the page background sits only a few values away and the edge vanishes */
+.cframe{max-width:1120px;margin:0 auto;background:#f5f4f1;border-radius:14px;border:1px solid rgba(25,24,19,.19);box-shadow:var(--shadow-deep);overflow:hidden}
+.cchrome{display:flex;align-items:center;gap:.35rem;padding:.6rem .9rem;background:#e8e6e1;font-family:var(--mono);font-size:.68rem;color:#555}
+.cdot{width:9px;height:9px;border-radius:50%;background:#c9c6bf;flex:none}
+.caddr{background:#f7f6f3;border-radius:6px;padding:.28rem .75rem;margin-left:.4rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.capp{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#1c1c1c}
+.ctop{display:flex;align-items:center;gap:.7rem;padding:.6rem 1rem;background:#fff;border-bottom:1px solid #e3e1dc}
+.ctop .clogo{font-weight:800;font-size:.9rem;color:#111;white-space:nowrap}
+.ctop .clogo span{color:var(--accent)}
+.csearch{flex:1;max-width:240px;background:#f0eeea;border:none;border-radius:6px;padding:.42rem .75rem;font-size:.75rem;color:#666;text-align:left;cursor:pointer;font-family:inherit}
+.cico{background:none;border:none;font-size:1rem;cursor:pointer;position:relative;padding:.3rem .45rem;border-radius:6px}
+.cico:hover{background:#f0efec}
+.cico .dotb{position:absolute;top:2px;right:2px;background:#c22;color:#fff;font-size:.55rem;font-weight:700;border-radius:999px;padding:0 .25rem;line-height:1.4}
+
+/* ---- three-pane ---- */
+.cgrid{display:grid;grid-template-columns:232px 1fr 262px;gap:0;align-items:stretch;min-height:640px}
+.cside{background:#efedea;border-right:1px solid #e3e1dc;padding:1rem .7rem;overflow:hidden}
+.cmain{padding:1rem 1.1rem;min-width:0;background:#f5f4f1}
+.crail{background:#efedea;border-left:1px solid #e3e1dc;padding:1rem .8rem}
+
+/* ---- spaces sidebar ---- */
+.cgroup{margin-bottom:1.15rem}
+.cgh{display:flex;align-items:center;justify-content:space-between;font-size:.63rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#8d8a83;padding:0 .5rem .45rem}
+.cspace{display:flex;align-items:center;gap:.55rem;width:100%;background:none;border:none;text-align:left;font-family:inherit;font-size:.8rem;color:#3f3d38;padding:.44rem .5rem;border-radius:7px;cursor:pointer;line-height:1.3}
+.cspace:hover{background:#e5e2dd}
+.cspace.on{background:#fff;color:#111;font-weight:600;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+.cspace .cgl{width:22px;height:22px;border-radius:6px;flex:none;display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff}
+.cspace .cnm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cspace .cct{font-size:.65rem;color:#96938c;font-variant-numeric:tabular-nums}
+.cspace.on .cct{color:var(--accent);font-weight:700}
+.clocktag{font-size:.58rem;font-weight:700;background:#e6e3dd;color:#7d7a72;border-radius:4px;padding:.05rem .3rem}
+.cassigned{font-size:.62rem;color:#96938c;padding:.15rem .5rem .5rem;line-height:1.4}
+
+/* ---- space header ---- */
+.chead{background:#fff;border:1px solid #e3e1dc;border-radius:10px;padding:1rem 1.1rem;margin-bottom:.85rem}
+.chead .ctitle{display:flex;align-items:center;gap:.6rem}
+.chead .cgl{width:34px;height:34px;border-radius:9px;flex:none;display:flex;align-items:center;justify-content:center;font-size:17px;color:#fff}
+.chead h4{margin:0;font-size:1.02rem;color:#111;font-family:inherit;font-weight:700;letter-spacing:0}
+.chead .cmeta{font-size:.72rem;color:#8d8a83;margin-top:.12rem}
+.chead p{font-size:.8rem;color:#5f5c56;margin:.7rem 0 0;line-height:1.5}
+.cjoin{margin-left:auto;background:var(--accent);color:#fff;border:none;border-radius:999px;padding:.42rem 1rem;font-size:.75rem;font-weight:700;cursor:pointer;font-family:inherit;flex:none}
+
+/* ---- composer ---- */
+.ccomp{background:#fff;border:1px solid #e3e1dc;border-radius:10px;padding:.85rem 1rem;margin-bottom:.85rem}
+.ccomp .cin{width:100%;border:1px solid #d9d6d0;border-radius:8px;background:#fbfaf8;padding:.6rem .85rem;font-size:.8rem;color:#8d8a83;text-align:left;cursor:pointer;font-family:inherit}
+.ccomp .cbtns{display:flex;gap:.3rem;margin-top:.55rem;flex-wrap:wrap}
+.ccomp .ccb{background:none;border:none;font-size:.73rem;font-weight:600;color:#5f5c56;cursor:pointer;padding:.42rem .6rem;border-radius:6px;font-family:inherit}
+.ccomp .ccb:hover{background:#f0efec}
+.ccomp .ccb.anon{color:#55555e;background:#f2f1f5}
+.ccomp .ccb.ai{color:var(--accent);background:var(--accent-wash)}
+
+/* ---- posts ---- */
+.cpost{background:#fff;border:1px solid #e3e1dc;border-radius:10px;padding:1rem 1.1rem .5rem;margin-bottom:.85rem}
+.cph{display:flex;gap:.6rem;align-items:center}
+.cav{width:38px;height:38px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-size:20px}
+.cav.sm{width:27px;height:27px;font-size:14px}
+.cwho{line-height:1.3;min-width:0}
+.cwho b{font-size:.83rem;display:block;color:#111}
+.crole{font-size:.7rem;color:#84817b;display:block}
+.ctime{font-size:.68rem;color:#96938c}
+.cvbadge{display:inline-block;font-size:.58rem;font-weight:700;background:#ffe9e2;color:#c33d18;border-radius:4px;padding:.06rem .35rem;margin-left:.35rem;vertical-align:1px}
+.ctxt{font-size:.85rem;line-height:1.58;margin-top:.75rem;white-space:pre-line;color:#2c2a26}
+.cstats{display:flex;gap:1.1rem;font-size:.7rem;color:#8d8a83;padding:.6rem 0 .45rem;border-bottom:1px solid #efedea;margin-top:.55rem}
+.cacts{display:flex;gap:.2rem;padding:.3rem 0}
+.cact{background:none;border:none;font-size:.73rem;font-weight:600;color:#5f5c56;padding:.42rem .6rem;border-radius:6px;cursor:pointer;font-family:inherit}
+.cact:hover{background:#f0efec}
+
+/* ---- threaded replies ---- */
+.creplies{border-top:1px solid #efedea;margin-top:.15rem;padding-top:.6rem}
+.crep{display:flex;gap:.55rem;padding:.35rem 0 .5rem}
+.crep .bub{background:#f5f4f1;border-radius:0 10px 10px 10px;padding:.55rem .8rem;font-size:.78rem;line-height:1.52;color:#2c2a26;min-width:0}
+.crep .bub b{font-size:.74rem;display:block;color:#111;margin-bottom:.18rem}
+.crep .bub b span{font-weight:400;color:#8d8a83;font-size:.68rem}
+.cmorerep{font-size:.72rem;font-weight:600;color:#5f5c56;background:none;border:none;cursor:pointer;padding:.35rem 0 .5rem;font-family:inherit}
+.cmorerep:hover{color:#111}
+
+/* ---- anonymous room ---- */
+.canon .cav{background:linear-gradient(135deg,#54545e,#1b1b21)!important}
+.canontag{display:inline-block;font-size:.58rem;font-weight:700;background:#ebeaf0;color:#55555e;border-radius:4px;padding:.06rem .35rem;margin-left:.35rem;vertical-align:1px}
+.cprivnote{display:flex;gap:.45rem;align-items:flex-start;background:#f5f4f8;border:1px dashed #d9d7e0;border-radius:8px;padding:.55rem .75rem;font-size:.72rem;color:#66666e;margin-top:.65rem;line-height:1.45}
+.cquietbanner{background:linear-gradient(180deg,#26262c,#1a1a1f);border-radius:10px;padding:1rem 1.15rem;margin-bottom:.85rem;color:#d6d5da}
+.cquietbanner b{display:block;font-size:.85rem;color:#fff;margin-bottom:.35rem}
+.cquietbanner p{font-size:.76rem;line-height:1.55;margin:0;color:#a3a2aa}
+
+/* ---- right rail ---- */
+.crc{background:#fff;border:1px solid #e3e1dc;border-radius:10px;padding:.9rem;margin-bottom:.8rem}
+.crc h5{margin:0 0 .55rem;font-size:.76rem;color:#111;font-family:inherit;font-weight:700;letter-spacing:0}
+.crc .mut{font-size:.71rem;color:#84817b;line-height:1.5;margin:0}
+.cmem{display:flex;gap:.5rem;align-items:center;padding:.3rem 0}
+.cmem b{font-size:.73rem;display:block;color:#111}
+.cmem .mr{font-size:.64rem;color:#8d8a83}
+.cviewall{font-size:.72rem;font-weight:600;color:#5f5c56;background:none;border:none;cursor:pointer;padding:.4rem 0 0;font-family:inherit}
+.cviewall:hover{color:#111}
+.crule{display:flex;gap:.45rem;font-size:.71rem;color:#5f5c56;padding:.32rem 0;line-height:1.45}
+.crule span:first-child{color:var(--accent);flex:none}
+
+/* ---- agent card in rail ---- */
+.cagentcard{background:linear-gradient(165deg,#2a2a30,#1a1a1f);border-radius:10px;padding:.95rem;color:#d6d5da;margin-bottom:.8rem}
+.cagentcard h5{color:#fff;font-size:.76rem;margin:0 0 .3rem;display:flex;align-items:center;gap:.4rem}
+.cagentcard .agl{width:18px;height:18px;border-radius:5px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex:none}
+.cagentcard p{font-size:.71rem;color:#a3a2aa;line-height:1.5;margin:0 0 .6rem}
+.cagentcard button{width:100%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);color:#fff;border-radius:7px;padding:.42rem;font-size:.72rem;font-weight:600;cursor:pointer;font-family:inherit}
+.cagentcard button:hover{background:rgba(255,255,255,.16)}
+
+/* ---- gating ---- */
+.cgate{background:linear-gradient(180deg,#fff,#faf9f7);border:1px solid #e3e1dc;border-radius:10px;padding:1.1rem;text-align:center;margin-bottom:.85rem}
+.cgate b{font-size:.85rem;color:#111;display:block}
+.cgate p{font-size:.74rem;color:#8d8a83;margin:.35rem 0 .65rem}
+.cgate .cmore{background:var(--accent);color:#fff;border:none;border-radius:999px;padding:.5rem 1.3rem;font-size:.78rem;font-weight:700;cursor:pointer;font-family:inherit}
+.clocked{position:relative;overflow:hidden;border-radius:10px;margin-bottom:.85rem}
+.clocked .inner{filter:blur(7px);user-select:none;pointer-events:none}
+.clocked .inner .cpost{margin-bottom:0}
+.clocked .veil{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(245,244,241,.35);cursor:pointer}
+.clocked .veil span{background:#fff;border:1px solid #e3e1dc;border-radius:999px;padding:.45rem 1rem;font-size:.72rem;font-weight:700;color:#5f5c56}
+
+/* ---- modal ---- */
+.cmodal{position:fixed;inset:0;background:rgba(10,10,12,.74);display:none;align-items:center;justify-content:center;z-index:80;padding:1.2rem}
+.cmodal.open{display:flex}
+.ccard{background:var(--card);border:1px solid var(--line-strong);border-radius:16px;max-width:480px;padding:2.4rem 2.2rem;text-align:center;box-shadow:var(--shadow-deep)}
+.ccard h3{font-family:var(--display);font-size:1.7rem;letter-spacing:-.02em}
+.ccard p{color:var(--ink-soft);margin-top:.9rem;font-size:.95rem;line-height:1.55}
+.ccard .fine{font-size:.8rem;color:var(--ink-dim)}
+.ccard .row{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem}
+
+/* ---- agent prototype (page section, dark) ---- */
+.agwrap{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem;align-items:start}
+@media(max-width:900px){.agwrap{grid-template-columns:1fr}}
+.agpanel{background:var(--card);border-radius:var(--r-card);overflow:hidden;border:1px solid var(--line)}
+.agpanel .agh{display:flex;align-items:center;gap:.6rem;padding:.9rem 1.1rem;border-bottom:1px solid var(--line);background:var(--card-2)}
+.agpanel .agh .agl{width:26px;height:26px;border-radius:7px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:13px;color:#fff;flex:none}
+.agpanel .agh b{font-size:.88rem;color:var(--ink);font-family:var(--display)}
+.agpanel .agh .agsub{font-size:.7rem;color:var(--ink-dim);display:block;font-weight:400}
+.agthread{padding:1.1rem;display:flex;flex-direction:column;gap:.75rem}
+.agmsg{max-width:86%;font-size:.86rem;line-height:1.6;padding:.7rem .95rem;border-radius:12px}
+.agmsg.member{align-self:flex-end;background:var(--accent);color:#fff;border-bottom-right-radius:4px}
+.agmsg.agent{align-self:flex-start;background:var(--card-2);color:var(--ink-soft);border-bottom-left-radius:4px}
+.agmsg.agent b{color:var(--ink)}
+.agquiet .agh{background:#1c1c21}
+.agquiet .agmsg.member{background:#3a3a44}
+.agnever{list-style:none;margin:1.6rem 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem}
+@media(max-width:700px){.agnever{grid-template-columns:1fr}}
+.agnever li{background:var(--card);border-radius:10px;padding:.85rem 1rem;font-size:.88rem;color:var(--ink-soft);display:flex;gap:.6rem;align-items:flex-start}
+.agnever li span{color:var(--accent);font-weight:700;flex:none}
+
+/* ---- responsive ---- */
+.cmobiletabs{display:none;gap:.4rem;overflow-x:auto;padding:.7rem .9rem;background:#efedea;border-bottom:1px solid #e3e1dc}
+.cmobiletabs button{flex:none;background:#fff;border:1px solid #e3e1dc;border-radius:999px;padding:.35rem .8rem;font-size:.72rem;font-family:inherit;color:#5f5c56;cursor:pointer;white-space:nowrap}
+.cmobiletabs button.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+@media(max-width:1000px){.cgrid{grid-template-columns:200px 1fr}.crail{display:none}}
+@media(max-width:760px){.cgrid{grid-template-columns:1fr}.cside{display:none}.cmobiletabs{display:flex}}
+
+</style>
+<style>body{padding-top:44px!important}#content-final-banner a:hover{text-decoration:underline}</style></head>
+<body><div id="content-final-banner" style="position:fixed;top:0;left:0;right:0;z-index:9999;background:#312e81;color:#fff;font:500 13px/1.4 'IBM Plex Mono',monospace;padding:10px 16px;text-align:center;border-bottom:2px solid #a5b4fc">Final version — product-aligned copy. <a href="http://127.0.0.1:8080/" style="color:#c7d2fe;margin-left:8px">Original site</a> · <a href="http://127.0.0.1:8081/" style="color:#c7d2fe;margin-left:8px">Previous demo</a></div>
+
+<header class="site">
+  <nav class="nav">
+    <a class="wordmark" href="../index.html" aria-label="CoachOS home">
+      <span>Coach<em>OS</em></span>
+    </a>
+    <div class="nav-links">
+      <div class="nav-item">
+        <a href="index.html">For freelancer</a>
+        <div class="nav-drop" hidden="">
+          <div class="nd-col">
+            <span class="nd-h">Switch fit</span>
+          <a href="../coach/">Coach</a>
+          <a href="../business/">Small business</a>
+          <a href="../mentor/">Mentor</a>
+          <a href="../corporate/">Corporate &amp; enterprise</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="services.html">Services</a>
+        <div class="nav-drop" hidden="">
+          <div class="nd-col">
+            <a class="nd-all" href="services.html">All services for this fit →</a>
+            <span class="nd-h">For freelancers</span>
+            <a href="services/referral-outreach.html">Referral outreach</a>
+          </div>
+          <div class="nd-col">
+            <span class="nd-h">Strategy</span>
+            <a href="services/business-strategy-and-consulting.html">Business strategy &amp; consulting</a>
+            <span class="nd-h">Position</span>
+            <a href="services/positioning-and-pricing.html">Positioning &amp; pricing</a>
+          </div>
+          <div class="nd-col">
+            <span class="nd-h">Launch</span>
+            <a href="services/portfolio-website-that-sells.html">Portfolio website that sells</a>
+            <a href="services/hosting-domain.html">Hosting &amp; domain</a>
+            <a href="services/business-email.html">Business email</a>
+            <a href="services/social-handles.html">Social handle setup</a>
+            <span class="nd-h">Grow</span>
+            <a href="services/social-media-marketing.html">Social media marketing</a>
+            <a href="services/content-marketing.html">Content marketing</a>
+            <a href="services/email-marketing.html">Email marketing</a>
+            <a href="services/lead-generation.html">Lead generation</a>
+            <a href="services/paid-ads-management.html">Paid ads management</a>
+          </div>
+          <div class="nd-col">
+            <span class="nd-h">Run</span>
+            <a href="services/proposals-follow-ups-and-pipeline.html">Proposals, follow-ups &amp; pipeline</a>
+            <a href="services/sales-closing-support.html">Sales &amp; closing support</a>
+            <span class="nd-h">Courses</span>
+            <a href="services/course-creation.html">Course creation &amp; launch</a>
+          </div>
+        </div>
+      </div>
+      <a href="problems.html">Problems</a>
+      <div class="nav-item">
+        <a href="platform.html" class="active">Platform</a>
+        <div class="nav-drop" hidden="">
+          <div class="nd-col">
+            <a class="nd-all" href="platform.html">The Platform →</a>
+            <span class="nd-h">The four parts</span>
+            <a href="desk.html">CoachOS Desk</a>
+            <a href="roundtable.html">The Roundtable</a>
+            <a href="roster.html">The Roster</a>
+            <a href="shortlist.html">The Shortlist</a>
+          </div>
+        </div>
+      </div>
+      <a href="why.html">Why</a>
+      <a href="contact.html">Contact</a>
+      <a class="nav-cta" href="contact.html">Talk to us</a>
+    </div>
+    <button class="theme-btn" role="switch" aria-checked="false" aria-label="Switch to light mode"></button>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+  </nav>
+</header>
+
+<section class="pagehero">
+  <div class="lattice" aria-hidden="true"></div>
+  <span class="stamp abs reveal">Members only</span>
+  <div class="wrap pagehero-inner">
+    <span class="label crumb">Room 02 / The community · live — members only · for freelancers</span>
+    <h1>Not one feed. <em>A room for each of you.</em></h1>
+    <p class="sub">Subject rooms for coaches, mentors, freelancers, and program leads — not a generic forum. Ask in the open, or use the Quiet Room when you need to ask without a name attached.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#rooms">Open the rooms</a>
+      <a class="btn btn-ghost" href="#quiet">The anonymous room</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="rooms">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label">The Roundtable · eleven rooms</span>
+      <h2>Pick a room. <em>This is what’s in it.</em></h2>
+      <p class="after">Every post below is a real account from our research, in the words it was told to us. The replies are seeded from the same research. Members only — you’re reading the public end of it.</p>
+    </div>
+
+    <div class="cframe reveal">
+      <div class="cchrome"><span class="cdot"></span><span class="cdot"></span><span class="cdot"></span><span class="caddr" id="caddr">roundtable.coachos — members</span></div>
+      <div class="capp">
+        <div class="ctop">
+          <span class="clogo">Roundtable<span>.</span></span>
+          <button class="csearch gate" type="button">Search every room…</button>
+          <span style="flex:1"></span>
+          <button class="cico gate" type="button" aria-label="Notifications">🔔<span class="dotb">5</span></button>
+          <button class="cico gate" type="button" aria-label="Your profile">🙂</button>
+        </div>
+        <div class="cmobiletabs" id="cmobiletabs"></div>
+        <div class="cgrid">
+          <aside class="cside" id="cside"></aside>
+          <div class="cmain" id="cmain"></div>
+          <aside class="crail" id="crail"></aside>
+        </div>
+      </div>
+    </div>
+    <noscript><p style="text-align:center;color:var(--ink-dim);margin-top:1rem">The rooms need JavaScript &mdash; and they&rsquo;re members-only anyway.</p></noscript>
+  </div>
+</section>
+
+<section class="sec-tight">
+  <div class="wrap-narrow">
+    <div class="sec-head left reveal">
+      <span class="label">How you end up somewhere</span>
+      <h2>Assigned once, <em>then it’s yours</em></h2>
+    </div>
+    <div class="reveal" style="color:var(--ink-soft);font-size:1.05rem">
+      <p>Your first room is decided by the work you actually do, not by a box you tick. A coach lands with coaches. Someone running an internal mentoring programme lands with the people who run internal mentoring programmes. That room is small on purpose — the problems in it are your problems, and nobody has to explain the basics.</p>
+      <p style="margin-top:1.1rem">The open rooms are the other axis. Pricing, getting found, leads, programme structure, and what AI has actually done to this work. A freelancer and an L&amp;D lead can sit in the same pricing room and both be right, because the subject is the same even when the practice isn’t. You join those yourself, and you leave them yourself.</p>
+      <p style="margin-top:1.1rem">No AI writes a post here on anyone’s behalf. Ever. Every word in every room was written by the person whose name sits above it — the same rule that governs everything on the <a href="desk.html">Desk</a>. A share carries the author’s name with it. Report and block work from day one, and a person reads what gets flagged.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="quiet">
+  <div class="wrap-narrow">
+    <div class="sec-head left reveal">
+      <span class="label">The room with no names</span>
+      <h2>The Quiet Room</h2>
+    </div>
+    <div class="reveal" style="color:var(--ink-soft);font-size:1.05rem">
+      <p>Every profession has questions its people can’t ask out loud. What you actually charge. The client relationship that has gone wrong. The month you couldn’t pay yourself. Whether you are any good at this. On every other network those questions stay unasked, because your name — and your clients — are watching.</p>
+      <p style="margin-top:1.1rem">In the Quiet Room any member can post without a name on it. The room sees the question and never the asker. Answers come back privately, only the asker reads them, nothing ever appears on a profile, and we hold it unlinked at our end too.</p>
+      <p style="margin-top:1.1rem">An anonymous question doesn’t stay in one room either. It reaches members across every Roundtable room <em>and</em> the <a href="roster.html">Roster</a>, because the person who has sat exactly where you are might not share your job title. The freelancer frightened of chasing an invoice gets read by the studio owner who did chase it. You never learn who answered from where. You just get the answers.</p>
+      <p style="margin-top:1.1rem">It isn’t only about work. If what’s actually going on is heavier than a business problem, the room says so plainly and points you at people rather than at posts. Moderators take private messages, and there is a member line answered by a person.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label">The assistant in the room</span>
+      <h2>The Usher — <em>and what it will not do</em></h2>
+      <p class="after">Finds the thread that answered this, and the person who lived it.</p>
+    </div>
+
+    <div class="reveal" style="color:var(--ink-soft);font-size:1.05rem;max-width:820px;margin-bottom:2.4rem">
+      <p><b style="color:var(--ink)">This is not the same agent that runs your business.</b> The other assistant does the work of your business, drafting the client emails and invoices that go out with your name on them once you approve. I never write in your voice and nothing I do leaves this room; I only help you find what the room already worked out and who in it can help.</p>
+    </div>
+
+    <div class="agwrap">
+      <div class="agpanel reveal">
+        <div class="agh">
+          <span class="agl">◈</span>
+          <span><b>The Usher</b><span class="agsub">in a room · finding what’s already been answered</span></span>
+        </div>
+        <div class="agthread">
+        <div class="agmsg member">Just posted this in the main room but I'll say it here too. My biggest client has gone from paying in about 15 days to about 50, and the last invoice is past even that. They're roughly 60% of my income. I'm scared that if I chase it properly they'll just quietly stop sending work.</div>
+        <div class="agmsg agent">The part about them going quiet is what people in here talk about more than the money itself. Three threads sit close to what you've described. There's "Client stretched from 30 to 75 days, do I stop work" from March, "Late payment when it's your anchor client" from last autumn, and a shorter one in the invoicing channel about moving to part payment upfront. The autumn one is the nearest match, same income concentration, same fear.</div>
+        <div class="agmsg member">I think I read the autumn one. It got long and turned into an argument about contracts.</div>
+        <div class="agmsg agent">It did. Past the contract argument, what it actually landed on was two things. And the people who got paid soonest went to a named person in the client's finance or ops team rather than back through their usual contact. The contract disagreement was about penalty clauses and it never resolved, so you can skip that stretch.</div>
+        <div class="agmsg member">Okay. That's more useful than I expected.</div>
+        <div class="agmsg agent">Three people in here have lived a version of this. Priya Raman had one client covering most of her income who slipped to 60 days; she stopped starting new work for them until the oldest invoice cleared, and she says the relationship held. Tom Iversen went the other way and moved that client onto retainer billed in advance, which took him months of conversations. Dee Okafor is the one I'd point at for the fear specifically. She sat on an unpaid invoice for a long time before saying anything and has written about why. All three are still active here.</div>
+        <div class="agmsg member">Dee's the one I'd want to talk to, honestly. I also don't know what I'd even say to the client.</div>
+        <div class="agmsg agent">I won't write that for you, and I'd be poor at it anyway, since I don't know how the two of you talk. What I can ask is this: do you want the money for this one invoice, or do you want the way they pay you to change from here on? The room answers those two very differently, and Dee and Tom went down different roads because of it. Say which and I'll flag Dee and pull the threads up in whatever order you want them.</div>
+        </div>
+      </div>
+      <div class="agpanel agquiet reveal">
+        <div class="agh">
+          <span class="agl" style="background:#3A3A44">🕶</span>
+          <span><b>The Usher</b><span class="agsub">in the Quiet Room · a different job entirely</span></span>
+        </div>
+        <div class="agthread">
+        <div class="agmsg member">Anonymous because I can't say this anywhere else. I haven't taken any money out of the business since April. My wife thinks we're fine. I don't know how to tell her and I've stopped sleeping properly.</div>
+        <div class="agmsg agent">That's four months of holding it on your own. I'm not going to try to fix the business side of it here, and I'd be the wrong thing to lean on for the part about your wife or the sleeping. Can I ask what would actually help in the next hour? Some people want to be pointed at other people. Some just want to have said it once and nothing else.</div>
+        <div class="agmsg member">I don't know. Not advice. I think I didn't want to be the only one.</div>
+        <div class="agmsg agent">You're not. This has been posted in here anonymously before and the replies stayed up. There's one from February from someone who went five months without paying themselves and told their partner in the end, and an older one that's mostly other members saying they'd been in the same place and hadn't told anyone either. I can bring either up. Neither is advice. They're just people.</div>
+        <div class="agmsg member">Maybe the February one.</div>
+        <div class="agmsg agent">I'll put it here. One more thing and then I'll stop. The money part the room can genuinely help with. The not sleeping, and four months of not saying anything to the person you live with, is not something to carry alone, and I'm not the right thing to carry it with. Two moderators here take private messages, and the member support line in the sidebar is answered by an actual person, tonight included. If any of this has got heavier than money, please use one of those rather than the room.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-head left reveal" style="margin-top:3.4rem;margin-bottom:0">
+      <span class="label">Its boundaries, in its own words</span>
+    </div>
+    <ul class="agnever reveal">
+      <li><span>×</span>I never draft anything for you to send.</li>
+      <li><span>×</span>I never post or reply under your name.</li>
+      <li><span>×</span>I don't give medical, clinical, legal or financial advice.</li>
+      <li><span>×</span>I don't stand in for a real person when you need one.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="rooms-strip">
+  <div class="lattice" aria-hidden="true"></div>
+  <div class="wrap inner reveal">
+    <h2>The other three rooms, on the same invite.</h2>
+    <div class="links">
+      <a href="desk.html">CoachOS Desk</a>
+      <a href="roster.html">The Roster</a>
+      <a href="shortlist.html">The Shortlist</a>
+    </div>
+    <p class="note">Four rooms, one door in — and we hold the door.</p>
+  </div>
+</section>
+
+<section class="close-sec">
+  <div class="wrap reveal">
+    <span class="label">Membership · chosen, not sold</span>
+    <h2>Take a seat <em>at the table.</em></h2>
+    <p class="under" style="margin-top:1rem">Members come from the people we build for. Start there, and let the work speak.</p>
+    <a class="btn btn-primary" href="services.html">Start with the services</a>
+    <p class="under">Think you already belong inside? <a href="contact.html">Talk to us.</a></p>
+  </div>
+</section>
+
+<div class="cmodal" id="cmodal" role="dialog" aria-modal="true" aria-labelledby="cmodal-h">
+  <div class="ccard">
+    <h3 id="cmodal-h">Oops.</h3>
+    <p>This is only for our members — we can’t allow you more than this.</p>
+    <p class="fine">What you’ve been reading is the public end of each room. The rest — the replies, the names, and everything in the Quiet Room — stays inside, with the people we’ve chosen.</p>
+    <div class="row">
+      <a class="btn btn-primary" href="services.html">Start with the services</a>
+      <button class="btn btn-ghost" id="cclose" type="button">Close</button>
+    </div>
+  </div>
+</div>
+
+
+<footer class="site">
+  <div class="foot">
+    <p>CoachOS — the operating system for coaching &amp; mentoring practices. Services today; Desk, Roundtable, Roster, and Shortlist for members.</p>
+    <nav>
+      <a href="../index.html#doors">Find your fit</a>
+      <a href="services.html">Services</a>
+      <a href="problems.html">Problems</a>
+      <a href="desk.html">Desk</a>
+      <a href="roster.html">Roster</a>
+      <a href="shortlist.html">Shortlist</a>
+      <a href="why.html">Why</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../assets/main.js?v=20260815c"></script>
+<script>
+(function(){
+  var S = {"coaches":{"name":"Coaches","blurb":"Working coaches with paying clients: the practice, the clients in it, and the business around the coaching.","members":412,"today":9,"glyph":"◈","color":"#C4562A","posts":[{"who":{"av":"👩🏻‍🎨","bg":"linear-gradient(135deg,#9BB8FF,#2D5BFF)"},"name":"Rachel M.","role":"Executive coach · 4 yrs solo","time":"2h","likes":134,"txt":"Someone asked me at a networking thing what I do and I said &quot;executive coaching, mainly leadership and confidence&quot;, and watched her face do absolutely nothing. Which is fair — the other two coaches in the room said more or less the same. My website says it as well, just with better photos. I keep meaning to sit down and work out what's actually different about what I do, and then a client emails.","replies":[{"who":{"av":"👩🏻‍🏫"},"name":"Tomás L.","role":"Leadership coach · ex-ops manager"},{"who":{"av":"🧑🏿‍🏫"},"name":"Priya N.","role":"Career coach · 6 yrs"},{"who":{"av":"👩🏽‍💼","bg":"linear-gradient(135deg,#C9A0FF,#7B2DFF)"},"name":"Dev A.","role":"Exec coach · two days a week"}]},{"who":{"av":"👨🏽‍🔧"},"name":"Jonathan K.","role":"Business coach · 1:1 only","time":"5h","likes":122,"txt":"The two o'clock on Thursday is the one that gets me. I clear the hour before it to read the intake form, make a coffee, sit there with the link open. Then nothing, and at twelve past I send the &quot;no worries, want to find another time?&quot; message I've got saved in my notes app because I send it so often. It's about one in four. And it's never the flaky-sounding ones — it's usually whoever seemed keenest on the booking form.","replies":[{"who":{"av":"👩🏼‍🏭","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Sinead O.","role":"Team coach · SMEs"},{"who":{"av":"🧑🏿‍🏫","bg":"linear-gradient(135deg,#7FD4E8,#1189AD)"},"name":"Marcus B.","role":"Business coach · 3 yrs full time"},{"who":{"av":"👩🏻‍💼","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Fen W.","role":"Coach · career changers"}]},{"who":{"av":"🧑🏼‍🎨","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Hannah W.","role":"Wellbeing coach · solo practice","time":"9h","likes":136,"txt":"I do client work during the day and the marketing after nine at night, so the marketing gets whatever's left of me. That was fine for about eight months. Then I missed the Friday newsletter twice, and after that I stopped writing captions properly and just posted the photo. I wouldn't say I burned out, exactly. I just went quieter and quieter until there wasn't much left going out.","replies":[{"who":{"av":"🧔🏼","bg":"linear-gradient(135deg,#9BB8FF,#2D5BFF)"},"name":"Gerry D.","role":"Executive coach · solo, 9 yrs"},{"who":{"av":"👩🏼‍🎓","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Aisha R.","role":"Leadership coach · public sector clients"},{"who":{"av":"👩🏾‍🔬"},"name":"Sam H.","role":"Coach · small group programmes"}]},{"who":{"av":"👩🏾‍💻","bg":"linear-gradient(135deg,#FFD37A,#E8930C)"},"name":"Nicola B.","role":"Performance coach · rented room","time":"1d","likes":26,"txt":"Missed a call at 3:12 on a Friday, mid-session, phone on silent in my bag. Rang back at about ten past four and got their voicemail, left a message, heard nothing. Two weeks later I saw their name in a testimonial on somebody else's site. My phone stays on silent when I'm with a client and I'm not changing that, so — I don't know.","replies":[{"who":{"av":"🧑🏽‍💻","bg":"linear-gradient(135deg,#9BB8FF,#2D5BFF)"},"name":"Owen T.","role":"Confidence coach · in-person"},{"who":{"av":"👩🏿‍💼","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Lucia F.","role":"Business coach · owner-managers"},{"who":{"av":"👩🏽‍🍳","bg":"linear-gradient(135deg,#C9A0FF,#7B2DFF)"},"name":"Ade O.","role":"Career coach · evenings and weekends"}]}]},"mentors":{"name":"Mentors","blurb":"For people mentoring one to one: how you structure it, what you charge, where mentees come from.","members":268,"today":6,"glyph":"❧","color":"#7B4FA8","posts":[{"who":{"av":"👨🏽‍🔧","bg":"linear-gradient(135deg,#9BB8FF,#2D5BFF)"},"name":"Aoife B.","role":"Mentor · sales into product, 11 yrs","time":"2h","likes":66,"txt":"A woman at my nephew's christening asked what I do and I gave her about forty seconds of something before I heard myself say &quot;it depends&quot;. Eleven years I've been doing this. I can tell you exactly what happened with any one of them — the guy who moved out of sales into product, the woman who finally left her firm — but I can't tell you what the thing is that I sell. My rate hasn't changed since 2019 because I wouldn't know what to say to justify changing it.","replies":[{"who":{"av":"👩🏽‍🍳","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Gareth L.","role":"Mentor · ex-agency, 6 yrs"},{"who":{"av":"👩🏼‍🏭","bg":"linear-gradient(135deg,#8FE3C0,#0E9F6E)"},"name":"Marta P.","role":"Career mentor · one-to-one"},{"who":{"av":"🧔🏻"},"name":"Dele O.","role":"Mentor · finance, 8 yrs"}]},{"who":{"av":"👩🏾‍💻"},"name":"Tom H.","role":"Informal mentor · engineering lead","time":"5h","likes":69,"txt":"&quot;Just twenty minutes&quot; turned into a call on Thursday, then a document they sent me on Friday night, then me rewriting chunks of it on Sunday afternoon at the kitchen table with the football on. None of it was unreasonable on its own — that's the thing, every single piece of it was small. I've got four of these running now. Last month I turned down actual paid work because the calendar looked full, and when I looked at what was in it, most of it was this.","replies":[{"who":{"av":"👩🏿‍💼","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Saskia V.","role":"Mentor · design, 4 mentees"},{"who":{"av":"👩🏾‍🔬"},"name":"Fiona D.","role":"Mentor · charity sector"},{"who":{"av":"👩🏿‍💼","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Ismail C.","role":"Owner · tutoring centre"}]},{"who":{"av":"🧔🏽","bg":"linear-gradient(135deg,#8FE3C0,#0E9F6E)"},"name":"Yvonne A.","role":"Career mentor · 5 yrs, one-to-one","time":"9h","likes":55,"txt":"Nine months in with someone and I genuinely think it went well. Then I sit down to ask for a testimonial and there's nothing to point at — no &quot;here's where you were in March, here's where you are now&quot;. Because nobody wrote down where she was in March. The last three all sort of tapered off, a reschedule and then another one and then nothing, and honestly I can't tell whether they got what they needed or just couldn't tell either.","replies":[{"who":{"av":"👩🏽‍💼"},"name":"Bartek W.","role":"Mentor · in-house scheme, manufacturing"},{"who":{"av":"👩🏻‍🏫","bg":"linear-gradient(135deg,#FFD37A,#E8930C)"},"name":"Claire T.","role":"Leadership mentor · 9 yrs"},{"who":{"av":"🧑🏻‍🎤"},"name":"Nnamdi E.","role":"Mentor · early-career developers"}]},{"who":{"av":"🧑🏻‍🔬"},"name":"Ruairi M.","role":"Mentor · ex-ops director","time":"1d","likes":37,"txt":"Every single person I've mentored came through somebody who already knew me. Old colleague, someone's sister, a bloke from a course I did in 2018. I bought the domain about two years ago and it's still parked — the renewal email lands every March and I think, right, this month. Meanwhile there are people typing &quot;find a mentor&quot; into Google at eleven at night and not one of them will ever get anywhere near me.","replies":[{"who":{"av":"👩🏾‍🔬"},"name":"Hannah S.","role":"Mentor · retail management"},{"who":{"av":"🧑🏻‍🎤","bg":"linear-gradient(135deg,#C9A0FF,#7B2DFF)"},"name":"Jun-seo K.","role":"Mentor · product, freelance"},{"who":{"av":"👩🏽‍🍳","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Rachel F.","role":"L&D lead · mentors outside work"}]}]},"freelancers":{"name":"Freelancers","blurb":"For people working for themselves: where the next job comes from, and getting paid for the last one.","members":531,"today":14,"glyph":"◆","color":"#2D6BB8","posts":[{"who":{"av":"🧔🏻","bg":"linear-gradient(135deg,#C9A0FF,#7B2DFF)"},"name":"Rasheed M.","role":"Freelance copywriter · 9 yrs","time":"2h","likes":56,"txt":"January and February I was turning work away. By April I was down to two clients and a lot of free afternoons, so I started posting and emailing people again. That work landed in June — by which point I was flat out and stopped doing any of it. Fourth year running. Same shape every time, roughly the same months.","replies":[{"who":{"av":"👩🏿‍💼"},"name":"Sinéad D.","role":"Fractional ops consultant"},{"who":{"av":"👩🏿‍💼"},"name":"Rob C.","role":"Freelance editor · 12 yrs"},{"who":{"av":"👩🏽‍💼"},"name":"Hana V.","role":"Independent L&D consultant"}]},{"who":{"av":"👩🏽‍💼","bg":"linear-gradient(135deg,#FFD37A,#E8930C)"},"name":"Marta K.","role":"Independent brand consultant","time":"5h","likes":107,"txt":"I had three clients in February and by April I had one. Nothing went wrong exactly — the work just finished and I hadn't spoken to anybody new since January because I was heads-down delivering. So then you're sat there on a Wednesday afternoon rewriting your LinkedIn headline. I took a project at about two-thirds my normal rate in May and I'm still on it. The annoying part is that I know precisely why it happened and I'll probably do it again.","replies":[{"who":{"av":"👩🏿‍💼"},"name":"Jorge M.","role":"Contract data analyst"},{"who":{"av":"👩🏽‍💼"},"name":"Ruth K.","role":"Freelance translator · 8 yrs"},{"who":{"av":"👩🏼‍🏭"},"name":"Kwame B.","role":"Independent research consultant"}]},{"who":{"av":"👨🏽‍🔧"},"name":"Tom B.","role":"Freelance illustrator · 5 yrs","time":"9h","likes":166,"txt":"Three weeks of work, two rounds of revisions, then nothing. Sent the invoice on a Thursday, chased the Monday after, chased again the Monday after that. The last message in the thread is mine and it's been read. I still don't know whether something happened at their end or whether he just decided not to deal with it, and honestly the not knowing takes up more room in my head than the money does.","replies":[{"who":{"av":"👩🏿‍💼","bg":"linear-gradient(135deg,#7FD4E8,#1189AD)"},"name":"Lena P.","role":"Freelance photographer"},{"who":{"av":"👩🏽‍🍳","bg":"linear-gradient(135deg,#9BB8FF,#2D5BFF)"},"name":"Yusuf A.","role":"Freelance web developer"},{"who":{"av":"👩🏻‍💼","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Clara W.","role":"Solo UX researcher"}]},{"who":{"av":"🧔🏽","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Elin T.","role":"Freelance developer · sole trader","time":"1d","likes":159,"txt":"Sixteen proposals in a fortnight. Two replies, one of which was &quot;what's your rate&quot; and then nothing after that. I keep a note of it in a spreadsheet because otherwise I'd talk myself into thinking it was going fine. The bit that gets me isn't really the money, it's writing something specific about somebody's project at half eleven at night and then watching the job close without a single hire.","replies":[{"who":{"av":"🧔🏼","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Nell T.","role":"Freelance motion designer"},{"who":{"av":"👨🏽‍🔧","bg":"linear-gradient(135deg,#C9A0FF,#7B2DFF)"},"name":"Dev S.","role":"Independent SEO consultant"},{"who":{"av":"👨🏽‍🔧"},"name":"Fiona M.","role":"Freelance bookkeeper"}]}]},"business":{"name":"Small business","blurb":"For people running small service businesses — premises, staff, enquiries coming in, and being found in the first place.","members":389,"today":11,"glyph":"▲","color":"#1E8A63","posts":[{"who":{"av":"🧑🏻‍🔬"},"name":"Dervla M.","role":"Owner · sports massage clinic","time":"2h","likes":128,"txt":"Someone asked for my website on a Tuesday and I sent them my Instagram. She said thanks, that's great, and then just — nothing. I'd been telling myself the site could wait because everything came through referrals anyway, and it did, mostly. It's the ones that don't come through that you never hear about. The domain's been sitting in a cart since March.","replies":[{"who":{"av":"👩🏽‍💼","bg":"linear-gradient(135deg,#7FD4E8,#1189AD)"},"name":"Marcus O.","role":"Owner · man-and-van removals, 9 yrs"},{"who":{"av":"👩🏻‍🎨","bg":"linear-gradient(135deg,#C9A0FF,#7B2DFF)"},"name":"Kofi A.","role":"Owner · dog grooming, two vans"},{"who":{"av":"🧔🏽","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Ade F.","role":"Director · commercial cleaning, 11 staff"}]},{"who":{"av":"🧑🏻‍🔬","bg":"linear-gradient(135deg,#FFD37A,#E8930C)"},"name":"Nadia R.","role":"Owner · beauty salon, two treatment rooms","time":"5h","likes":136,"txt":"A woman stood outside our old unit on a Saturday morning texting me 'am I in the right place?' We'd moved in the February. I'd updated Google the week we moved so I assumed that was that — I didn't know there were six other places carrying the old address, some of which I've never signed up for in my life. One of them still lists a landline we gave up. She rebooked, to be fair, but I don't think everyone does.","replies":[{"who":{"av":"👩🏽‍🍳","bg":"linear-gradient(135deg,#C9A0FF,#7B2DFF)"},"name":"Marguerite D.","role":"Owner · physiotherapy practice"},{"who":{"av":"👩🏻‍💼","bg":"linear-gradient(135deg,#C9A0FF,#7B2DFF)"},"name":"Wojciech L.","role":"Owner · MOT and service garage"},{"who":{"av":"🧔🏼","bg":"linear-gradient(135deg,#FFD37A,#E8930C)"},"name":"Rachel D.","role":"Practice manager · dental surgery"}]},{"who":{"av":"👩🏾‍💻"},"name":"Tobias N.","role":"Founder · wellbeing studio, corporate work","time":"9h","likes":138,"txt":"Somebody messaged the Instagram account in November asking about corporate sessions and I replied from my phone on the train. Meant to put her in the sheet that evening. Found the thread again in February when I was scrolling for something else — she'd followed up once and I never saw it. The spreadsheet's got 214 rows and the status column stopped being accurate somewhere around row 90. I don't actually know how many I've lost, which is sort of the point.","replies":[{"who":{"av":"🧑🏼‍🎨","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Gemma T.","role":"Owner · corporate catering, six staff"},{"who":{"av":"👩🏾‍🔬","bg":"linear-gradient(135deg,#7FD4E8,#1189AD)"},"name":"Samir K.","role":"Owner · driving school, four instructors"},{"who":{"av":"👩🏾‍💻","bg":"linear-gradient(135deg,#7FD4E8,#1189AD)"},"name":"Bea H.","role":"Owner · picture framing shop"}]},{"who":{"av":"🧑🏿‍🏫"},"name":"Krzysztof W.","role":"Owner · accountancy practice, 8 yrs","time":"1d","likes":155,"txt":"The email went first. I thought it was Outlook being Outlook, restarted my laptop twice, then a client rang to say my site was showing a page of adverts. The renewal notices had been going to an address on that same domain, which — yeah. Card on file had expired in January and I never updated it. We got it back on the Thursday but the ten days of bounced enquiries are just gone.","replies":[{"who":{"av":"👩🏾‍🔬","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Simran K.","role":"Owner · independent letting agency"},{"who":{"av":"🧔🏾","bg":"linear-gradient(135deg,#8FE3C0,#0E9F6E)"},"name":"Owen P.","role":"Owner · plumbing and heating, three vans"},{"who":{"av":"👩🏽‍🍳"},"name":"Ines V.","role":"Owner · small language school"}]}]},"programs":{"name":"Corporate &amp; L&amp;D","blurb":"For people running internal coaching and mentoring programmes: matching, engagement, mentor supply, and proving it worked.","members":174,"today":4,"glyph":"◍","color":"#B8862D","posts":[{"who":{"av":"🧔🏾","bg":"linear-gradient(135deg,#8FE3C0,#0E9F6E)"},"name":"Lorcan H.","role":"L&D lead · financial services","time":"2h","likes":159,"txt":"We launched in March and 240 people signed up, which everyone treated as the result. Then in October I went through the check-in logs and about half the pairs had met once. Once, and then nothing. The ones going well were going well because two people happened to get on, not because of anything I did. I still put the sign-up number in the quarterly deck, because that's the number people ask for.","replies":[{"who":{"av":"👩🏻‍🎨","bg":"linear-gradient(135deg,#7FD4E8,#1189AD)"},"name":"Sadia R.","role":"Internal coaching programme · healthcare group"},{"who":{"av":"👩🏻‍🏫"},"name":"Beatriz S.","role":"Head of people development · retail"},{"who":{"av":"👩🏻‍🏫"},"name":"Hannah L.","role":"Talent programmes · engineering consultancy"}]},{"who":{"av":"🧑🏽‍💻"},"name":"Tom W.","role":"People development manager · 900-person firm","time":"5h","likes":136,"txt":"Cohort one was 32 people and I did the matching in an evening with a cup of tea. Cohort two was 58 and it took a whole weekend, two screens, one with the export and one with the tab where I'd colour-coded who got paired last round. Sunday night I found I'd matched someone with her own line manager and had to redo about a third of it. Cohort three is meant to be 90. I haven't worked out what I'm doing about that yet.","replies":[{"who":{"av":"🧔🏻"},"name":"Ravi S.","role":"L&D manager · manufacturing"},{"who":{"av":"👩🏽‍💼","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Elena M.","role":"Mentoring programme owner · insurance"},{"who":{"av":"👩🏿‍💼","bg":"linear-gradient(135deg,#FFD37A,#E8930C)"},"name":"Fiona McG.","role":"Head of talent development · housing association"}]},{"who":{"av":"🧔🏾","bg":"linear-gradient(135deg,#C9A0FF,#7B2DFF)"},"name":"Ewan R.","role":"Head of talent · public sector","time":"9h","likes":70,"txt":"The finance review is in November and the only real number I have is 4.2 out of 5 from a survey most people ignored. Last year that was fine. This year the CFO asked what would happen if we didn't run it, and I said something about engagement, and I could hear how thin it sounded while I was saying it. The people who got the most out of it are the ones I can't put in a deck — it's stuff like, she didn't leave. I've got no way of showing that was us.","replies":[{"who":{"av":"🧑🏿‍🏫","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Nadia H.","role":"L&D business partner · logistics"},{"who":{"av":"👨🏽‍🔧"},"name":"Kwame O.","role":"People programmes lead · professional services"},{"who":{"av":"🧔🏻","bg":"linear-gradient(135deg,#9BB8FF,#2D5BFF)"},"name":"Joachim T.","role":"Internal coaching lead · energy sector"}]},{"who":{"av":"👨🏽‍🔧"},"name":"Dermot K.","role":"Early careers & mentoring · engineering group","time":"1d","likes":50,"txt":"We opened mentee sign-ups and got 140 in about a week, a lot of them writing really specific things about what they wanted help with. Then we opened mentor sign-ups and got 31, and eleven of those were the same people who did it last year. One replied saying happy to help but she's already carrying three, which I took as a no and I don't blame her. So there's a waitlist I don't advertise, and a group of grads who signed up in April and have heard nothing.","replies":[{"who":{"av":"👩🏿‍💼"},"name":"Beatriz C.","role":"Head of L&D · media"},{"who":{"av":"🧑🏻‍🎤","bg":"linear-gradient(135deg,#C9A0FF,#7B2DFF)"},"name":"Alan McD.","role":"People development · 2,000-person retailer"},{"who":{"av":"🧔🏽","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Wei-Ling T.","role":"Graduate programmes & mentoring · pharma"}]}]},"ai-practice":{"name":"AI in practice","blurb":"What AI has actually changed in the day-to-day work, including the bits it quietly broke.","members":236,"today":7,"glyph":"⬡","color":"#4A6FA5","posts":[{"who":{"av":"👩🏻‍🏫","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Rhian D.","role":"Leadership coach · 11 yrs","time":"2h","likes":99,"txt":"I spent most of two Sundays on a 2,000-word piece about how to price a programme — proper research, worked examples, the lot. It's had 31 visits since February and I'm fairly sure a chunk of those are me checking. I don't think the article is bad. I still think it's one of the better things I've written. Nobody's coming to it, is all.","replies":[{"who":{"av":"🧑🏿‍🏫"},"name":"Nadège P.","role":"Freelance instructional designer"},{"who":{"av":"👩🏿‍💼","bg":"linear-gradient(135deg,#8FE3C0,#0E9F6E)"},"name":"Callum B.","role":"Exec coach · 12 yrs"},{"who":{"av":"🧔🏽"},"name":"Ines M.","role":"Owner · small training company"}]},{"who":{"av":"🧑🏽‍💻"},"name":"Tomasz W.","role":"L&D lead · manufacturing","time":"5h","likes":148,"txt":"My list is about 900 people and I email it maybe four times a year, usually when I want something. Last send, roughly forty bounced — mostly people who'd changed jobs since I collected the address. Opens were down and I honestly can't tell if that's the subject line or just that half of them have forgotten who I am. Probably the second one.","replies":[{"who":{"av":"🧑🏻‍🔬"},"name":"Hannah G.","role":"Career coach · 7 yrs"},{"who":{"av":"🧑🏼‍🎨","bg":"linear-gradient(135deg,#FFD37A,#E8930C)"},"name":"Yusuf K.","role":"L&D manager · logistics"},{"who":{"av":"🧔🏽"},"name":"Deborah A.","role":"Freelance copywriter · B2B"}]}]},"pricing":{"name":"Pricing &amp; positioning","blurb":"What to charge, how to explain what you do, and what to do when someone undercuts you.","members":604,"today":12,"glyph":"◐","color":"#A83E5C","posts":[{"who":{"av":"🧑🏻‍🔬","bg":"linear-gradient(135deg,#7FD4E8,#1189AD)"},"name":"Dee O.","role":"CV and interview coach · 5 yrs","time":"2h","likes":106,"txt":"There's someone in my category offering what looks like the same thing for fifteen quid. Fifteen. I know it isn't the same thing and my repeat clients know it isn't, but the person scrolling at half ten at night has no way of telling. So I went from £120 down to £85 to see what happened — more orders, less money, and then the twenty percent comes off that too. I've put it back up since. Mostly.","replies":[{"who":{"av":"👩🏽‍💼"},"name":"Hiroshi T.","role":"Freelance copywriter · 9 yrs"},{"who":{"av":"👩🏾‍💻","bg":"linear-gradient(135deg,#7FD4E8,#1189AD)"},"name":"Caitlin V.","role":"Leadership coach · ex-HR"},{"who":{"av":"👩🏽‍💼","bg":"linear-gradient(135deg,#7FD4E8,#1189AD)"},"name":"Fiona McA.","role":"L&D manager · logistics, freelances weekends"}]},{"who":{"av":"👩🏻‍🏫","bg":"linear-gradient(135deg,#C9A0FF,#7B2DFF)"},"name":"Rahim S.","role":"Freelance instructional designer · 3 yrs","time":"5h","likes":62,"txt":"I only worked it out because I was doing my tax return on a Sunday and the numbers didn't match what I thought I'd earned. Gross was fine. Then there's the commission, then the Connects I'd bought in that panic way at 11pm because a good job had just posted, then the wire fee every month because I never got round to changing the payout method. It came to more than my rent. I'm not even angry about it, I just genuinely didn't know.","replies":[{"who":{"av":"👩🏻‍💼"},"name":"Osman D.","role":"Web developer · sole trader"},{"who":{"av":"🧔🏽","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Katarzyna W.","role":"Bookkeeper · works with freelancers"},{"who":{"av":"👩🏻‍🎨","bg":"linear-gradient(135deg,#C9A0FF,#7B2DFF)"},"name":"Ade B.","role":"Business mentor · independent retail"}]},{"who":{"av":"🧑🏼‍🎨","bg":"linear-gradient(135deg,#FFD37A,#E8930C)"},"name":"Verity L.","role":"Owner · small tutoring centre","time":"9h","likes":73,"txt":"The notification came in at 7:40 on a Tuesday. Paid for it, wrote a proper reply inside about four minutes — not a template, actual sentences about her situation. She already had three others. One of them was half my price and I never heard back from her at all, and the fee doesn't come back either. I still buy them, which is the part I can't really defend.","replies":[{"who":{"av":"👩🏼‍🎓","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Elaine T.","role":"Executive coach · 11 yrs"},{"who":{"av":"🧑🏽‍💻"},"name":"Sam R.","role":"Sports massage · own studio"},{"who":{"av":"👩🏾‍🔬","bg":"linear-gradient(135deg,#9BB8FF,#2D5BFF)"},"name":"Marcus D.","role":"Careers adviser, now freelance"}]}]},"getfound":{"name":"Getting found","blurb":"Handles, profiles, search results and websites. What people find when they look you up, and what to fix.","members":588,"today":10,"glyph":"◎","color":"#2E8C8C","posts":[{"who":{"av":"🧑🏽‍💻","bg":"linear-gradient(135deg,#9BB8FF,#2D5BFF)"},"name":"Emeka N.","role":"Leadership coach · solo","time":"2h","likes":111,"txt":"I checked the analytics on a Tuesday and realised the last thing I'd posted was in March. It's May. Nothing dramatic happened — I signed two clients in April and just stopped, and I didn't notice because enquiries kept trickling in for a while off older stuff. They've stopped now. So I'm posting again and it's like the first month all over again.","replies":[{"who":{"av":"👩🏿‍💼"},"name":"Priya M.","role":"Career coach · 6 yrs"},{"who":{"av":"👩🏻‍🎨"},"name":"Doug W.","role":"Freelance copywriter"},{"who":{"av":"👩🏿‍💼","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Elena S.","role":"L&D manager · manufacturing"}]},{"who":{"av":"🧔🏽"},"name":"Rosalind F.","role":"Owner · pilates studio","time":"5h","likes":110,"txt":"I'm one thing on Instagram, the same thing with an underscore on TikTok, and something completely different on LinkedIn because that was set up before the business had a name. A client told me she'd searched for me on TikTok, found an account using my old logo, messaged it and got nothing back. That account isn't mine. I don't know whose it is. The business cards I printed in 2023 have the underscore version on them, so those are wrong now too.","replies":[{"who":{"av":"🧑🏽‍💻"},"name":"Ruairi O.","role":"Freelance illustrator"},{"who":{"av":"👨🏽‍🔧"},"name":"Bianca F.","role":"Owner · language school"},{"who":{"av":"👩🏾‍💻","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Jakub M.","role":"Sales trainer · freelance"}]},{"who":{"av":"👩🏾‍💻"},"name":"Kwame A.","role":"Marketing lead · training firm","time":"9h","likes":46,"txt":"We ran ads for three weeks and I kept checking the numbers on my phone at night, wondering why the clicks weren't turning into anything. Turned out the homepage took about nine seconds on a phone. On my laptop in the office it was instant, which is exactly why I never caught it — I'd only ever looked at it there. There was a video header nobody asked for and a hero photo that was 8MB. So we paid for a few hundred people to look at a white screen.","replies":[{"who":{"av":"👨🏽‍🔧"},"name":"Hana T.","role":"Founder · accountancy practice"},{"who":{"av":"🧔🏻","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Selina G.","role":"Freelance web designer"},{"who":{"av":"👩🏼‍🎓","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Aled P.","role":"Mentor · startup programme"}]}]},"leads":{"name":"Leads &amp; follow-up","blurb":"The messy bit between an enquiry landing and someone booking: response times, follow-up, leads that vanish.","members":649,"today":15,"glyph":"➤","color":"#C4562A","posts":[{"who":{"av":"🧑🏿‍🏫","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Rhona M.","role":"Leadership coach · solo practice","time":"2h","likes":101,"txt":"The enquiry came in at 9:40 on a Tuesday and I rang back at half eleven. Two hours. Same morning, felt fine to me. She was lovely about it — said she'd already booked a call with someone for Thursday. Turns out she'd filled in three forms that morning before she'd finished her coffee, which, honestly, is exactly what I'd have done.","replies":[{"who":{"av":"🧑🏿‍🏫"},"name":"Priya N.","role":"Career coach · 6 yrs"},{"who":{"av":"👩🏾‍🔬"},"name":"Malcolm F.","role":"Sales trainer · freelance"},{"who":{"av":"🧑🏻‍🔬","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Sinéad O.","role":"Owner · tutoring centre"}]},{"who":{"av":"🧑🏽‍💻","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Deji A.","role":"Director · team coaching firm","time":"5h","likes":152,"txt":"A friend filled in our contact form on a Saturday as a test, pretending she wanted coaching for her team. Nothing came out the other end. No confirmation to her, no notification to me — the alerts had been going to an old shared address nobody had logged into since we changed who handled admin. Best guess is about three weeks. I still don't know how many, because there's no record of what never arrived.","replies":[{"who":{"av":"👨🏽‍🔧"},"name":"Anneke V.","role":"Co-owner · design studio"},{"who":{"av":"👩🏿‍💼"},"name":"Tariq S.","role":"Freelance ops consultant"},{"who":{"av":"👩🏾‍🔬"},"name":"Colin R.","role":"Executive coach · 11 yrs"}]},{"who":{"av":"👩🏻‍💼"},"name":"Fenella C.","role":"Business coach · 4 yrs","time":"9h","likes":68,"txt":"I sent two emails and then decided she wasn't interested. Found out in March she'd signed with someone else — someone who apparently emailed her six times. Six. I remember sitting there on a Tuesday night looking at my sent folder, and the second email was from November, and I'd just stopped. It didn't feel like giving up at the time. It felt like being polite.","replies":[{"who":{"av":"👨🏽‍🔧","bg":"linear-gradient(135deg,#C9A0FF,#7B2DFF)"},"name":"Mateo R.","role":"Team coach · ex-HR"},{"who":{"av":"🧑🏼‍🎨"},"name":"Ingrid H.","role":"Owner · small accountancy"},{"who":{"av":"🧑🏻‍🔬"},"name":"Wei L.","role":"L&D manager · retail"}]},{"who":{"av":"👩🏻‍🏫","bg":"linear-gradient(135deg,#8FE3C0,#0E9F6E)"},"name":"Chidi O.","role":"Owner · driving school","time":"1d","likes":134,"txt":"We were sitting at about £11 a lead in March. I checked on a Sunday night because I couldn't sleep and it was £26. Same ad, same audience — I actually went into the version history to see whether I'd changed something and forgotten about it. Now the same money brings in maybe half the enquiries and honestly a lot of them are worse. I keep meaning to sit down properly and work out whether it still adds up.","replies":[{"who":{"av":"👨🏽‍🔧","bg":"linear-gradient(135deg,#7FD4E8,#1189AD)"},"name":"Nadia S.","role":"Nutrition coach · solo"},{"who":{"av":"🧑🏿‍🏫","bg":"linear-gradient(135deg,#9BB8FF,#2D5BFF)"},"name":"Greg P.","role":"Owner · commercial cleaning"},{"who":{"av":"🧑🏿‍🏫","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Bernadette C.","role":"Mentor · founders programme"}]}]},"structure":{"name":"Programs &amp; structure","blurb":"Designing mentoring and coaching programmes that are still running in month six, not just month one.","members":301,"today":5,"glyph":"⬢","color":"#6B7A3D","posts":[{"who":{"av":"👩🏼‍🎓","bg":"linear-gradient(135deg,#7FD4E8,#1189AD)"},"name":"Delphine A.","role":"Volunteer mentor · engineering, 2 yrs","time":"2h","likes":47,"txt":"I said yes to mentoring because the email made it sound like fifteen minutes a month and I liked the person who sent it. First session I talked for about forty minutes straight. I could hear myself doing it — just telling her what I'd have done, which wasn't what she'd asked. The training was a 45-minute call about the platform and the code of conduct and then you're on your own. I didn't sign up for the second round and nobody asked why.","replies":[{"who":{"av":"👩🏾‍🔬"},"name":"Rory K.","role":"Programme lead · charity mentoring scheme"},{"who":{"av":"👩🏻‍🎨","bg":"linear-gradient(135deg,#FFD37A,#E8930C)"},"name":"Sunita J.","role":"Mentor trainer · freelance, 8 yrs"},{"who":{"av":"👨🏽‍🔧","bg":"linear-gradient(135deg,#7FD4E8,#1189AD)"},"name":"Sinead H.","role":"L&D partner · manufacturing"}]},{"who":{"av":"👩🏾‍💻"},"name":"Ruth O.","role":"Mentor · public sector scheme","time":"5h","likes":136,"txt":"Third year I've put my name on the mentor list. Two matches in that time, both of them people I already ate lunch with anyway. Then the pairings came out in June and a colleague of mine had four — lovely bloke, genuinely good at it, and also the same background as most of the people doing the matching. I'm not saying anybody did anything on purpose. I'm saying nobody had to think about it and it still came out that way.","replies":[{"who":{"av":"👩🏾‍💻"},"name":"Adebayo K.","role":"Programme designer · professional body"},{"who":{"av":"🧔🏾"},"name":"Helen M.","role":"Scheme coordinator · alumni programme"},{"who":{"av":"🧔🏼","bg":"linear-gradient(135deg,#FFD37A,#E8930C)"},"name":"Bjorn L.","role":"Mentor · finance, 5 yrs"}]},{"who":{"av":"🧑🏻‍🎤"},"name":"Maeve N.","role":"Senior mentor · in-house scheme","time":"9h","likes":77,"txt":"At one point I had six mentees, plus the two who aren't officially mine but message me anyway. All of it sits in the 7am to 9am slot because that's the only gap left. Last Wednesday I ran a session where I genuinely could not remember what we'd talked about the time before — I was scrolling my own notes while she was speaking. She said it was helpful. That's the part I keep thinking about.","replies":[{"who":{"av":"👩🏼‍🎓","bg":"linear-gradient(135deg,#8FE3C0,#0E9F6E)"},"name":"Bea L.","role":"Coach · independent"},{"who":{"av":"👩🏼‍🎓","bg":"linear-gradient(135deg,#FFB199,#FF4A21)"},"name":"Krishnan R.","role":"Head of mentoring · tech scale-up"},{"who":{"av":"👩🏻‍🏫","bg":"linear-gradient(135deg,#C9A0FF,#7B2DFF)"},"name":"Órla D.","role":"Mentoring coordinator · charity sector"}]},{"who":{"av":"👩🏻‍🎨","bg":"linear-gradient(135deg,#9BB8FF,#2D5BFF)"},"name":"Callum F.","role":"Team manager · operations","time":"1d","likes":56,"txt":"We did the coaching day in February — role plays, a decent facilitator, a laminated card with the model on it. I used it twice. Then Q1 came in soft and my one-to-ones went straight back to being status updates, because that's what fits in twenty-five minutes when someone's chasing you for numbers. The card's still in my drawer. I know the questions, I just don't have the meeting to ask them in.","replies":[{"who":{"av":"🧔🏽"},"name":"Frankie B.","role":"L&D lead · retail"},{"who":{"av":"👩🏻‍🏫"},"name":"Jonas E.","role":"Team lead · logistics"},{"who":{"av":"👩🏼‍🎓"},"name":"Zainab I.","role":"Coaching lead · professional services"}]}]},"quiet":{"name":"The Quiet Room","blurb":"Anything you cannot put your name to. The room answers; the answers come back to you alone.","members":0,"today":0,"glyph":"🕶","color":"#3A3A44","anon":true,"posts":[{"room":"Coaches","time":"3h","answers":5,"txt":"Am I the only one who still feels like a fraud charging €150/hr after six years? A client praised me today and my first thought was &ldquo;if only you knew.&rdquo; How do the rest of you deal with this — honestly?"},{"room":"Small business","time":"6h","answers":6,"txt":"Revenue looks fine from the outside, but I haven&rsquo;t paid myself properly in four months and I&rsquo;m ashamed to tell my spouse. Has anyone here actually broken this pattern — and how?"},{"room":"Freelancers","time":"11h","answers":9,"txt":"My biggest client is 70% of my income and their payments keep arriving later each month. I&rsquo;m terrified to push. What would you actually do — realistically, not the confident-post version?"},{"room":"Mentors","time":"1d","answers":7,"txt":"A mentee&rsquo;s company is about to do layoffs, and I know before they do. Where exactly is the ethical line between mentor and insider here? I need answers from people who&rsquo;ve actually been in this seat."},{"room":"Corporate &amp; L&amp;D","time":"1d","answers":4,"txt":"Leadership wants me to report who&rsquo;s &ldquo;engaged&rdquo; in mentoring for succession planning. I promised participants a firewall. How do I push back without getting the program cut?"},{"room":"Coaches","time":"2d","answers":8,"txt":"Seventy-nine quid a month and I've asked four questions since March. Two of them got a thumbs up emoji. One got answered by somebody who was clearly warming me up to sell me something. I ended up back on Google anyway, which means I'm paying seventy-nine quid for a Slack I've muted. I keep meaning to cancel and then there's a call in the calendar and I think, well, maybe that one."}]}};
+  var GROUPS = [{"label":"Your rooms","note":"Assigned when you join, from the practice you actually run.","keys":["coaches","mentors","freelancers","business","programs"]},{"label":"Open rooms","note":"Join any. Cross-profession, one subject each.","keys":["ai-practice","pricing","getfound","leads","structure"]},{"label":"Private","note":"","keys":["quiet"]}];
+
+  var sideEl = document.getElementById('cside'),
+      mainEl = document.getElementById('cmain'),
+      railEl = document.getElementById('crail'),
+      tabsEl = document.getElementById('cmobiletabs'),
+      addrEl = document.getElementById('caddr'),
+      modal  = document.getElementById('cmodal');
+
+  function openModal(){ modal.classList.add('open'); }
+  function closeModal(){ modal.classList.remove('open'); }
+  document.getElementById('cclose').addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+
+  function esc(s){ return s; }
+  function avatar(w, small){
+    return '<span class="cav' + (small ? ' sm' : '') + '" style="background:' + w.bg + '" aria-hidden="true">' + w.av + '</span>';
+  }
+
+  function sidebar(active){
+    var h = '';
+    GROUPS.forEach(function(g){
+      h += '<div class="cgroup"><div class="cgh"><span>' + g.label + '</span></div>';
+      if (g.note) h += '<div class="cassigned">' + g.note + '</div>';
+      g.keys.forEach(function(k){
+        var s = S[k]; if(!s) return;
+        h += '<button class="cspace' + (k === active ? ' on' : '') + '" data-k="' + k + '" type="button">'
+          +  '<span class="cgl" style="background:' + s.color + '">' + s.glyph + '</span>'
+          +  '<span class="cnm">' + s.name + '</span>'
+          +  (s.anon ? '<span class="clocktag">private</span>' : '<span class="cct">' + s.today + '</span>')
+          +  '</button>';
+      });
+      h += '</div>';
+    });
+    return h;
+  }
+
+  function tabs(active){
+    var h = '';
+    GROUPS.forEach(function(g){ g.keys.forEach(function(k){
+      var s = S[k]; if(!s) return;
+      h += '<button data-k="' + k + '" class="' + (k === active ? 'on' : '') + '" type="button">' + s.name + '</button>';
+    }); });
+    return h;
+  }
+
+  function postHtml(p){
+    var reps = p.replies.map(function(r){
+      return '<div class="crep">' + avatar(r.who, true)
+        + '<div class="bub"><b>' + r.name + ' <span>&middot; ' + r.role + '</span></b>' + r.txt + '</div></div>';
+    }).join('');
+    return '<article class="cpost">'
+      + '<div class="cph">' + avatar(p.who)
+      + '<span class="cwho"><b>' + p.name + '<span class="cvbadge">&#10003; Verified</span></b>'
+      + '<span class="crole">' + p.role + '</span><span class="ctime">' + p.time + '</span></span></div>'
+      + '<p class="ctxt">' + p.txt + '</p>'
+      + '<div class="cstats"><span>' + p.likes + ' found this useful</span><span>' + p.replies.length + ' replies</span></div>'
+      + '<div class="cacts">'
+      + '<button class="cact gate" type="button">Useful</button>'
+      + '<button class="cact gate" type="button">Reply</button>'
+      + '<button class="cact gate" type="button">Share with credit</button></div>'
+      + (reps ? '<div class="creplies">' + reps + '<button class="cmorerep gate" type="button">Show all ' + p.replies.length + ' replies &rarr;</button></div>' : '')
+      + '</article>';
+  }
+
+  function anonHtml(p){
+    return '<article class="cpost canon">'
+      + '<div class="cph"><span class="cav" aria-hidden="true">&#128374;</span>'
+      + '<span class="cwho"><b>Anonymous member<span class="canontag">identity hidden</span></b>'
+      + '<span class="crole">Posted from the ' + p.room + ' room</span><span class="ctime">' + p.time + '</span></span></div>'
+      + '<p class="ctxt">' + p.txt + '</p>'
+      + '<div class="cprivnote"><span>&#128274;</span><span>' + p.answers + ' answers delivered privately &mdash; visible only to the person who asked. Nothing from this room ever appears on a profile.</span></div>'
+      + '<div class="cacts">'
+      + '<button class="cact gate" type="button">Answer privately</button>'
+      + '<button class="cact gate" type="button">Ask your own</button></div>'
+      + '</article>';
+  }
+
+  function lockedHtml(inner){
+    return '<div class="clocked"><div class="inner">' + inner + '</div>'
+      + '<div class="veil gate"><span>&#128274; Members-only</span></div></div>';
+  }
+
+  function gateHtml(){
+    return '<div class="cgate"><b>You&rsquo;ve reached the guest limit.</b>'
+      + '<p>The rest of this room &mdash; and everything blurred below &mdash; is members only.</p>'
+      + '<button class="cmore gate" type="button">See the whole room</button></div>';
+  }
+
+  function header(s, k){
+    return '<div class="chead"><div class="ctitle">'
+      + '<span class="cgl" style="background:' + s.color + '">' + s.glyph + '</span>'
+      + '<span><h4>' + s.name + '</h4><span class="cmeta">'
+      + (s.anon ? 'Private &middot; no names, ever' : s.members + ' members &middot; ' + s.today + ' new today')
+      + '</span></span>'
+      + (s.anon ? '' : '<button class="cjoin gate" type="button">Join room</button>')
+      + '</div><p>' + s.blurb + '</p></div>';
+  }
+
+  function composer(s){
+    return '<div class="ccomp"><button class="cin gate" type="button">'
+      + (s.anon ? 'Ask the room something you can&rsquo;t put your name to&hellip;' : 'Share something with this room&hellip;')
+      + '</button><div class="cbtns">'
+      + (s.anon
+          ? '<button class="ccb anon gate" type="button">&#128374; Ask anonymously</button>'
+          : '<button class="ccb gate" type="button">Post</button><button class="ccb anon gate" type="button">&#128374; Ask anonymously</button>')
+      + '<button class="ccb ai gate" type="button">Ask The Usher</button>'
+      + '</div></div>';
+  }
+
+  function rail(s){
+    var h = '';
+    if (s.anon) {
+      h += '<div class="crc"><h5>How the Quiet Room works</h5>'
+        + '<p class="mut">The room sees the question, never the asker. Answers arrive privately and only the asker reads them. Nothing appears on a profile, and we hold it unlinked at our end too.</p></div>';
+      h += '<div class="crc"><h5>Who can answer</h5>'
+        + '<p class="mut">Everyone. A question here reaches members in every Roundtable room and on the Roster, not just your own. You never find out who answered from where.</p></div>';
+      h += '<div class="crc"><h5>If it&rsquo;s heavier than work</h5>'
+        + '<p class="mut">Two moderators take private messages, and the member line is answered by a person. Please use those rather than the room.</p>'
+        + '<button class="cviewall gate" type="button">Member support &rarr;</button></div>';
+    } else {
+      var seen = {}, rows = '';
+      s.posts.forEach(function(p){
+        if (seen[p.name]) return; seen[p.name] = 1;
+        rows += '<div class="cmem">' + avatar(p.who, true) + '<span><b>' + p.name + '</b><span class="mr">' + p.role + '</span></span></div>';
+      });
+      h += '<div class="crc"><h5>In this room</h5>' + rows
+        + '<button class="cviewall gate" type="button">and ' + (s.members - Object.keys(seen).length) + ' more &rarr;</button></div>';
+    }
+    h += '<div class="cagentcard"><h5><span class="agl">&#9672;</span>The Usher</h5>'
+      + '<p>Finds the thread that answered this, and the person who lived it. It never writes anything for you and never posts under your name.</p>'
+      + '<button class="gate" type="button">Ask it where this was answered</button></div>';
+    h += '<div class="crc"><h5>House rules</h5>'
+      + '<div class="crule"><span>&bull;</span><span>No AI posts on anyone&rsquo;s behalf. Ever.</span></div>'
+      + '<div class="crule"><span>&bull;</span><span>A share always carries the author&rsquo;s name.</span></div>'
+      + '<div class="crule"><span>&bull;</span><span>Report and block work from day one.</span></div>'
+      + '<div class="crule"><span>&bull;</span><span>Everyone here was chosen, one at a time.</span></div></div>';
+    return h;
+  }
+
+  function render(k){
+    var s = S[k];
+    addrEl.textContent = 'roundtable.coachos/' + k + ' — members';
+    sideEl.innerHTML = sidebar(k);
+    tabsEl.innerHTML = tabs(k);
+    railEl.innerHTML = rail(s);
+
+    var body = header(s, k) + composer(s);
+    if (s.anon) {
+      body += '<div class="cquietbanner"><b>Nobody in this room has a name.</b>'
+        + '<p>Not to each other, and not on any profile. Answers go back to the person who asked and stop there. Members from every room can answer.</p></div>';
+      body += anonHtml(s.posts[0]) + anonHtml(s.posts[1]) + anonHtml(s.posts[2]);
+      body += gateHtml();
+      body += lockedHtml(anonHtml(s.posts[3])) + lockedHtml(anonHtml(s.posts[4]));
+    } else {
+      var open = s.posts.slice(0, 2).map(postHtml).join('');
+      var shut = s.posts.slice(2).map(postHtml).join('');
+      body += open + gateHtml() + (shut ? lockedHtml(shut) : '');
+    }
+    mainEl.innerHTML = body;
+
+    document.querySelectorAll('.cspace, .cmobiletabs button').forEach(function(b){
+      b.addEventListener('click', function(){ render(b.dataset.k); });
+    });
+    document.querySelectorAll('.cframe .gate').forEach(function(b){
+      if (b.dataset.g) return; b.dataset.g = '1';
+      b.addEventListener('click', openModal);
+    });
+  }
+
+  render('coaches');
+})();
+</script>
+
+
+</body></html>

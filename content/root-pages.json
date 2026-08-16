@@ -1,0 +1,510 @@
+{
+  "index.html": {
+    "title": "CoachOS — the operating system for coaches, mentors & independent practices",
+    "metaDescription": "You coach. CoachOS runs everything else — one desk for leads, bookings, agreements, client delivery, and marketing. Start with done-for-you services; grow into the Platform. AI drafts. You approve.",
+    "hero": {
+      "topline": "The operating system for coaching & mentoring practices",
+      "h1Lines": [
+        "You coach.",
+        "CoachOS runs",
+        "everything else."
+      ],
+      "sub": "One platform replaces the 5–8 disconnected tools a practice runs on today — plus a human team that can build and run your website, marketing, and lead follow-up while you work. AI drafts. You approve. Every time.",
+      "ctaPrimary": "Find your fit",
+      "ctaSecondary": "See how it works"
+    },
+    "doors": {
+      "heading": "Five doors. Pick yours.",
+      "sub": "Each door leads to a version of CoachOS written for that kind of work.",
+      "cards": [
+        {
+          "stat": "54%",
+          "who": "Small business",
+          "body": "54% of SMB owners manage marketing alone (BrightLocal SMB Marketing Report 2025). A gym owner writing Sunday posts instead of planning next month's classes."
+        },
+        {
+          "stat": "63%",
+          "who": "Freelancer",
+          "body": "63% of freelancers cite irregular income as their top challenge (Remote Global Freelancer Report). Finish a project, skip the referral ask, cold-pitch from zero."
+        },
+        {
+          "stat": "72%",
+          "who": "Mentor",
+          "body": "72% mentee retention with formal mentoring vs 49% without (Sun Microsystems/Chronus). The gap is structure, a clear offer, and a page worth sending."
+        },
+        {
+          "stat": "122,974",
+          "who": "Coach",
+          "body": "122,974 coaches worldwide in a $5.34B industry (ICF Global Coaching Study 2025). Your calendar fills when you market — and you cannot market when it is full."
+        },
+        {
+          "stat": "26%",
+          "who": "Corporate & enterprise",
+          "body": "Only 26% of employees rate company mentoring programs 8/10 or higher (HR.com). Matching lives in spreadsheets; leadership gets satisfaction scores, not proof."
+        }
+      ]
+    },
+    "marquee": [
+      "The Sunday-night post",
+      "Follow-up #4",
+      "The website from March",
+      "The unpaid invoice",
+      "The domain renewal",
+      "The 11pm inquiry",
+      "The referral you never asked for",
+      "The DM that was actually a lead",
+      "The newsletter you keep meaning to start",
+      "The CRM nobody updates"
+    ],
+    "servicesSection": {
+      "heading": "From first client to full calendar",
+      "sub": "Five stages in the order a business actually grows. Start at yours.",
+      "stages": [
+        {
+          "num": "00",
+          "title": "Strategy & consulting",
+          "desc": "Before we run anything, we plan what you sell, to whom, at what price, and what the next 90 days should do. Every other service builds on this.",
+          "chips": ["Business audit", "90-day plan", "Pricing & offer strategy", "Quarterly reviews"]
+        },
+        {
+          "num": "01",
+          "title": "Position",
+          "desc": "A clear answer to what you offer and why you — the one-sentence version that gets you referred.",
+          "chips": ["Personal branding", "Positioning & offer setup"]
+        },
+        {
+          "num": "02",
+          "title": "Launch",
+          "desc": "Look established from day one: a site that stays current, hosting that never lapses, and one name everywhere people search.",
+          "chips": ["Website", "Hosting & domain", "Business email", "Social handles"]
+        },
+        {
+          "num": "03",
+          "title": "Grow",
+          "desc": "Marketing that keeps publishing through your busiest months, and inquiries that arrive ready to talk.",
+          "chips": ["Social media marketing", "Content marketing", "Email marketing", "Lead generation", "Paid ads"]
+        },
+        {
+          "num": "04",
+          "title": "Run",
+          "desc": "Every lead answered while it is warm. Harvard Business Review lead response research: a 5-minute reply beats a 42-hour average.",
+          "chips": ["Lead management", "Sales & closing support"]
+        }
+      ]
+    },
+    "howSection": {
+      "heading": "AI drafts. You approve. Always.",
+      "sub": "On services, a CoachOS specialist reviews before you. On the Platform, the Practice Agent drafts and pauses — you see exact words before anything sends.",
+      "steps": [
+        {
+          "num": "1",
+          "title": "AI drafts the work",
+          "desc": "Follow-ups, posts, session summaries, prep briefs, and invoices — from your voice, templates, and practice history."
+        },
+        {
+          "num": "2",
+          "title": "You see it before it sends",
+          "desc": "Services add a specialist review. Desk puts everything in one approval queue — edit or reject before it goes out."
+        },
+        {
+          "num": "3",
+          "title": "You approve — it ships from you",
+          "desc": "Email Connections send from your address. Clients get you, not a bot. CoachOS never coaches your clients for you."
+        }
+      ],
+      "feedNote": "A typical Desk day, illustrated. Every outbound item waits for your approval."
+    },
+    "closeSection": {
+      "label": "CoachOS",
+      "heading": "Start with services.",
+      "headingEm": "Grow into the Platform.",
+      "sub": "Website, marketing, and lead follow-up — open to everyone. CoachOS Desk, Roundtable, Roster, and Shortlist — members only, chosen not sold.",
+      "ctaPrimary": "Start this week",
+      "ctaSecondary": "See the services"
+    }
+  },
+  "services.html": {
+    "title": "CoachOS services — website, marketing, leads, and follow-up, done for you",
+    "metaDescription": "CoachOS services by stage: strategy, positioning, website and hosting, marketing, lead generation, lead management, sales support, and course creation. AI drafts, specialists review, you approve.",
+    "hero": {
+      "label": "The services · end to end",
+      "h1Lines": [
+        "Website, marketing, leads,",
+        "and follow-up —",
+        "run for you."
+      ],
+      "sub": "CoachOS builds and runs each stage for coaches, mentors, freelancers, and small businesses. AI drafts the work. A specialist reviews it. You approve before it ships under your name.",
+      "ctaPrimary": "Tell us what you need",
+      "ctaSecondary": "Start from the problem instead"
+    },
+    "servicesSection": {
+      "heading": "Every stage. One team accountable.",
+      "sub": "Enter at the stage you are in. We take it from there.",
+      "stages": [
+        {
+          "num": "00",
+          "title": "Strategy — plan it before we run it",
+          "desc": "A working session on the business, then a written 90-day plan and quarterly reviews.",
+          "chips": ["Business audit", "Written 90-day plan", "Pricing & offer strategy", "Quarterly reviews"],
+          "services": [
+            {
+              "name": "Business strategy & consulting",
+              "desc": "We look at what you sell, to whom, at what price, and what the next quarter should do — then write it down and review it with you."
+            }
+          ]
+        },
+        {
+          "num": "01",
+          "title": "Position — know what you sell",
+          "desc": "Before a website or a single post, you need a sharp offer and a reason to pick you.",
+          "chips": ["Positioning session", "Voice & message guide", "Every bio rewritten", "Visual direction"],
+          "services": [
+            {
+              "name": "Personal branding",
+              "desc": "A concrete answer to what is different about you — worked out with you, then applied everywhere you appear."
+            }
+          ]
+        },
+        {
+          "num": "02",
+          "title": "Launch — look real from day one",
+          "desc": "Site, email, handles, and hosting that stay current and say the same thing about you.",
+          "chips": ["Design & copywriting", "Domain & renewals managed", "Mailbox on your domain", "Handles claimed"],
+          "services": [
+            {
+              "name": "Website, built for you",
+              "desc": "Designed, written, launched, and kept current. When your prices or hours change, the site changes after you approve."
+            },
+            {
+              "name": "Hosting & domain",
+              "desc": "Renewals, DNS, and the card on file are our problem. Your business does not go dark because a notice went to a dead inbox."
+            },
+            {
+              "name": "Business email",
+              "desc": "An address on your own domain with deliverability sorted so quotes and follow-ups stop landing in spam."
+            },
+            {
+              "name": "Social handle setup",
+              "desc": "One name, claimed and consistent on every platform that matters — old accounts cleaned up."
+            }
+          ]
+        },
+        {
+          "num": "03",
+          "title": "Grow — get found, get clients",
+          "desc": "Marketing that keeps running when client work gets heavy — the stage that usually stops first.",
+          "chips": ["Content calendar", "Articles written for search", "Nurture sequences", "Campaigns run for you", "Daily budget watch"],
+          "services": [
+            {
+              "name": "Social media marketing",
+              "desc": "Posts drafted from your thinking, scheduled ahead, and kept running through your busiest months."
+            },
+            {
+              "name": "Content marketing",
+              "desc": "Articles written to be found by people searching, not just admired by people who already know you."
+            },
+            {
+              "name": "Email marketing",
+              "desc": "Newsletters and sequences drafted for your approval, sent on a rhythm that survives busy months."
+            },
+            {
+              "name": "Lead generation",
+              "desc": "Inquiries from channels suited to your practice — sourced for you, not resold lists."
+            },
+            {
+              "name": "Paid ads management",
+              "desc": "Campaigns planned, run, and watched daily — budgets protected, creatives refreshed, results in plain numbers."
+            }
+          ]
+        },
+        {
+          "num": "04",
+          "title": "Run — keep it full, keep it moving",
+          "desc": "Every inquiry tracked and answered while it is warm. Harvard Business Review: respond in 5 minutes, not 42 hours.",
+          "chips": ["Replies in minutes", "One pipeline view", "Follow-up sequences", "Proposals drafted"],
+          "services": [
+            {
+              "name": "Lead management",
+              "desc": "Every inquiry tracked and answered while it is warm. Nothing dies in row 90 of a spreadsheet."
+            },
+            {
+              "name": "Sales & closing support",
+              "desc": "Follow-through on open deals — polite does not mean gone."
+            }
+          ]
+        },
+        {
+          "num": "05",
+          "title": "Courses — sell what you know",
+          "desc": "When the practice runs itself, package what is already in your head and launch it properly.",
+          "chips": ["Curriculum design", "Production & hosting", "Pricing & launch plan", "Evergreen funnel"],
+          "services": [
+            {
+              "name": "Course creation & launch",
+              "desc": "Your knowledge structured into a curriculum, produced, hosted, and launched with a real plan."
+            }
+          ]
+        }
+      ]
+    },
+    "fitSection": {
+      "heading": "Want these services shaped to your work?",
+      "sub": "Every fit has its own version — problems, examples, and details written for that work.",
+      "links": ["Small business", "Freelancer", "Mentor", "Coach", "Corporate"]
+    },
+    "closeSection": {
+      "label": "CoachOS services",
+      "heading": "Tell us what is eating your week.",
+      "headingEm": "We will take it from there.",
+      "sub": "Not sure which services you need? Start from the problem — each one maps to its fix.",
+      "ctaPrimary": "Start this week",
+      "ctaSecondary": "See the problems page"
+    }
+  },
+  "problems.html": {
+    "title": "Problems CoachOS solves — research, sources, and fixes",
+    "metaDescription": "Documented problems in websites, marketing, leads, sales, and mentoring programs — with research sources and the CoachOS service that fixes each one.",
+    "hero": {
+      "label": "The research, in their words",
+      "h1Lines": [
+        "CoachOS fixes the work",
+        "nobody trained you for —",
+        "mapped to proof."
+      ],
+      "sub": "CoachOS builds and runs website, marketing, and lead follow-up for coaches, mentors, freelancers, and small businesses. Below: the problems we hear most, with sources you can check and the service that fixes each one.",
+      "ctaPrimary": "See the services",
+      "ctaSecondary": "Find your fit"
+    },
+    "citationsIntro": {
+      "label": "Documented, not invented",
+      "heading": "The public record says the same thing",
+      "sub": "Before the composite stories below, here is the research — with source names.",
+      "citations": [
+        {
+          "stat": "54% of SMB owners manage marketing alone",
+          "source": "BrightLocal SMB Marketing Report 2025"
+        },
+        {
+          "stat": "63% of freelancers cite irregular income as their top challenge",
+          "source": "Remote Global Freelancer Report"
+        },
+        {
+          "stat": "72% mentee retention with formal mentoring vs 49% without",
+          "source": "Sun Microsystems/Chronus"
+        },
+        {
+          "stat": "122,974 coaches worldwide; $5.34B industry revenue",
+          "source": "ICF Global Coaching Study 2025"
+        },
+        {
+          "stat": "26% of employees rate company mentoring programs 8/10 or higher",
+          "source": "HR.com"
+        },
+        {
+          "stat": "Leads contacted within 5 minutes convert far better than at 42 hours",
+          "source": "Harvard Business Review lead response research"
+        }
+      ],
+      "afterNote": "Below, each problem is paired with the state we build to. Composite voices are labeled honestly. Real client stories replace them when permission is given."
+    },
+    "closeSection": {
+      "label": "CoachOS",
+      "heading": "Every problem above maps to a service.",
+      "headingEm": "Start where you are stuck.",
+      "sub": "AI drafts the fix. A specialist reviews it. You approve before it ships.",
+      "ctaPrimary": "Talk to us",
+      "ctaSecondary": "See all services"
+    }
+  },
+  "why.html": {
+    "title": "Why CoachOS — one team for website, marketing, and follow-up",
+    "metaDescription": "Why CoachOS: one team that builds your website, runs your marketing, answers leads, and stays accountable. Compare public prices and what they actually cover.",
+    "hero": {
+      "label": "Judge it yourself",
+      "h1Lines": [
+        "One team builds, runs,",
+        "and follows up —",
+        "under your name."
+      ],
+      "sub": "CoachOS is done-for-you website, marketing, and lead follow-up. AI drafts, a specialist reviews, you approve. Public competitor prices are linked below so you can compare yourself.",
+      "ctaPrimary": "Find your fit",
+      "ctaSecondary": "See the services"
+    },
+    "shortSection": {
+      "label": "The short version",
+      "heading": "We have not found another company doing this combination",
+      "paragraphs": [
+        "Agencies build your website and leave. AI tools give you software and a ticket queue. Directories sell you a listing and take a cut. CoachOS is the operating system for your practice — plus a team that can build, run, and follow up under your name.",
+        "If you have found one company that genuinely does all of that under one roof, we would like to know.",
+        "Our founder worked inside the coaching industry and spent years freelancing before CoachOS. This is the system he wished existed while doing both."
+      ]
+    },
+    "compareSection": {
+      "label": "Check the receipts",
+      "heading": "What the named options charge, and what they do",
+      "sub": "Named prices are public and linked. The retainer row is a typical market range.",
+      "note": "Already paying for one of these? Bringing your client list, contracts, and calendar over is part of onboarding."
+    },
+    "statsSection": {
+      "heading": "The market is large. The tools are disconnected.",
+      "stats": [
+        {
+          "value": "122,974",
+          "label": "professional coaches worldwide",
+          "source": "ICF Global Coaching Study 2025"
+        },
+        {
+          "value": "$5.34B",
+          "label": "global coaching industry revenue",
+          "source": "ICF Global Coaching Study 2025"
+        },
+        {
+          "value": "54%",
+          "label": "of SMB owners manage marketing alone",
+          "source": "BrightLocal SMB Marketing Report 2025"
+        }
+      ],
+      "closing": "Most people buy one more disconnected tool. The gap is not a shortage of options — nothing connects website, marketing, leads, and follow-up."
+    },
+    "compare3": {
+      "columns": [
+        {
+          "title": "A typical agency",
+          "points": ["Builds the website, hands it off", "No system for what happens after launch", "No peer network, no ongoing relationship"]
+        },
+        {
+          "title": "A typical AI tool",
+          "points": ["Software only — you build the practice first", "One more login in a stack of eight", "A ticket queue that does not know your practice"]
+        },
+        {
+          "title": "CoachOS",
+          "points": ["Practice OS (Desk) plus done-for-you services", "Approval-first AI — you coach, CoachOS runs the admin", "Roundtable, Roster, Shortlist when membership opens"]
+        }
+      ]
+    },
+    "closeSection": {
+      "label": "See it for yourself",
+      "heading": "Start with the services.",
+      "headingEm": "Enter at your stage.",
+      "sub": "Or see what the members-only Platform involves, starting with CoachOS Desk.",
+      "ctaPrimary": "Find your fit",
+      "ctaSecondary": "See CoachOS Desk"
+    }
+  },
+  "platform.html": {
+    "title": "The CoachOS Platform — Desk, Roundtable, Roster & Shortlist",
+    "metaDescription": "The CoachOS Platform: CoachOS Desk (practice OS), The Roundtable (community rooms), The Roster (professional network), and The Shortlist (vetted directory, 0% commission). AI drafts; you approve. Membership chosen, not sold.",
+    "hero": {
+      "label": "The CoachOS Platform · members only",
+      "stamp": "Members only",
+      "h1Lines": [
+        "Four parts.",
+        "One practice",
+        "operating system."
+      ],
+      "sub": "Services are human-delivered work for anyone. The Platform is the product — CoachOS Desk plus Roundtable, Roster, and Shortlist. AI drafts; the Practice Agent pauses; you approve before anything sends.",
+      "ctaPrimary": "See the core product",
+      "ctaSecondary": "Talk to us"
+    },
+    "roomsSection": {
+      "label": "The four parts",
+      "heading": "One membership opens all of it",
+      "sub": "Every member came through the same door: chosen by us, brought in by hand.",
+      "rooms": [
+        {
+          "num": "01",
+          "label": "The core product",
+          "title": "CoachOS Desk",
+          "desc": "Leads, Marketing Studio, bookings, agreements & billing, client delivery, Practice Intelligence, Autopilot, Daily Briefing, and Email Connections — one desk, not eight logins.",
+          "status": "Members only"
+        },
+        {
+          "num": "02",
+          "label": "The community",
+          "title": "The Roundtable",
+          "desc": "Practice rooms by specialty and topic — coaches, mentors, freelancers, L&D — plus a Quiet Room for anonymous questions.",
+          "status": "Members only"
+        },
+        {
+          "num": "03",
+          "label": "The network",
+          "title": "The Roster",
+          "desc": "Coach Community as a professional network — connect, post, refer, and share inside the system you already work in.",
+          "status": "Members only"
+        },
+        {
+          "num": "04",
+          "label": "The directory",
+          "title": "The Shortlist",
+          "desc": "The Coach & Mentor Directory — vetted listings, clients search by specialty, every enquiry routes to your Leads pipeline. 0% commission on session fees.",
+          "status": "Members only"
+        }
+      ],
+      "ledgerNote": "We could show screenshots of what is inside. We will not — the value of every room is who is in it. Membership is chosen, one name at a time."
+    },
+    "ruleSection": {
+      "label": "The rule all four run on",
+      "heading": "AI drafts. You approve.",
+      "body": "The Practice Agent drafts follow-ups, summaries, and reminders — then pauses. You see exact words before anything sends from your email. Our services layer adds a CoachOS specialist in the loop; Desk itself is approval-first, not autopilot outbound."
+    },
+    "admissionSection": {
+      "label": "Admission",
+      "heading": "Why you cannot just sign up",
+      "paragraphs": [
+        "Communities open to anyone who pays fill up with people who have not started yet. Most AI platforms are a chat box on old software. We built the Platform with a small founding group and still onboard each member by hand.",
+        "Not there yet? Start with the services — open to everyone, and how most members got ready."
+      ]
+    },
+    "closeSection": {
+      "label": "Membership · chosen, not sold",
+      "heading": "The door is",
+      "headingEm": "the work.",
+      "sub": "Members come from the people we build for. Start with the services, and let the work speak.",
+      "ctaPrimary": "Start with the services",
+      "ctaSecondary": "Talk to us"
+    }
+  },
+  "contact.html": {
+    "title": "Contact CoachOS — a person reads this, and replies",
+    "metaDescription": "Tell CoachOS where you are stuck — website, marketing, leads, or the Platform. A real person reads your message and writes back.",
+    "hero": {
+      "label": "Talk to us directly",
+      "h1Lines": [
+        "Tell us where",
+        "you are stuck —",
+        "a person replies."
+      ],
+      "sub": "CoachOS builds and runs website, marketing, and lead follow-up. No auto-reply. No form logic deciding your answer.",
+      "ctaPrimary": "Send a message",
+      "ctaSecondary": "See the services first"
+    },
+    "founderSection": {
+      "heading": "Your message lands with me — the founder, not a support queue.",
+      "paragraphs": [
+        "I am Shaikh. Before CoachOS, I worked inside the coaching industry and spent years freelancing — building, marketing, and chasing leads as a one-person shop. CoachOS exists because solo coaches and small businesses should not need three subscriptions, a freelancer, and a stack of Zapier zaps to look professional and keep leads moving.",
+        "Everywhere else on this site: AI drafts the work, a specialist reviews it, and it ships under your name. This form skips the AI — you write in, I read it, and I reply.",
+        "If your project needs more hands — design, copy, ads — I bring in the right specialists and stay accountable for the result."
+      ],
+      "who": "Shaikh Amir Hussain · Founder, CoachOS"
+    },
+    "formSection": {
+      "topicOptions": [
+        "Services — website, marketing, leads, sales",
+        "The Platform — Desk, Roundtable, Roster, or Shortlist",
+        "Press or partnership",
+        "Something else"
+      ],
+      "messagePlaceholder": "Tell us about your practice and what you are stuck on — the more specific, the better we can help.",
+      "submitLabel": "Send it",
+      "note": "We read every message ourselves. If you do not hear back within a couple of days, email shaikhamirhussain2000@gmail.com directly."
+    },
+    "closeSection": {
+      "label": "CoachOS",
+      "heading": "Not sure where you fit?",
+      "headingEm": "That is fine.",
+      "sub": "Describe your situation. We will point you to the right services or fit page.",
+      "ctaPrimary": "Find your fit",
+      "ctaSecondary": "Read the problems page"
+    }
+  }
+}

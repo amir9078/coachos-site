@@ -1,0 +1,55 @@
+{
+  "productTagline": "You coach. CoachOS runs everything else.",
+  "productDefinition": "The operating system for coaching and mentoring practices — one desk for leads, marketing, bookings, agreements, billing, and client delivery.",
+  "servicesDefinition": "Done-for-you website, marketing, and lead follow-up — built and run by our team while you work.",
+  "approvalRule": "CoachOS never sends anything — an email, a post, a summary — without you seeing the exact words first and choosing to send.",
+  "servicesLoop": {
+    "heading": "Our services: AI drafts, a specialist reviews, you approve.",
+    "steps": [
+      {
+        "title": "We draft from your brief",
+        "desc": "Website copy, posts, follow-ups, and proposals — in your voice, not generic templates."
+      },
+      {
+        "title": "A CoachOS specialist reviews",
+        "desc": "A person on our team checks every draft before you see it. Anything off gets fixed or stopped."
+      },
+      {
+        "title": "You approve, then it ships",
+        "desc": "Nothing goes out under your name until you say yes."
+      }
+    ]
+  },
+  "platformLoop": {
+    "heading": "The Platform: AI drafts, you approve.",
+    "steps": [
+      {
+        "title": "AI drafts — the Practice Agent reasons first",
+        "desc": "Follow-ups, session summaries, prep briefs, and marketing copy — drafted from your history and AI Voice & Rules settings."
+      },
+      {
+        "title": "You see the exact words",
+        "desc": "Every outbound item lands in one approval queue. Edit if you want. Nothing sends on its own."
+      },
+      {
+        "title": "You approve — it sends from your email",
+        "desc": "Replies land in your real inbox. Clients get you, not a robot."
+      }
+    ]
+  },
+  "footerTagline": "CoachOS — the operating system for coaching & mentoring practices. Services today; Desk, Roundtable, Roster, and Shortlist for members.",
+  "keywords": [
+    "coaching practice management",
+    "mentor platform",
+    "lead pipeline",
+    "session summaries",
+    "coaching CRM",
+    "Practice Agent",
+    "Autopilot",
+    "Marketing Studio",
+    "Client Delivery",
+    "Coach & Mentor Directory",
+    "done-for-you marketing",
+    "approval-first AI"
+  ]
+}

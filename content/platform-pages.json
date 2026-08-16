@@ -1,0 +1,119 @@
+{
+  "desk": {
+    "title": "CoachOS Desk — one desk for your whole practice",
+    "metaDescription": "CoachOS Desk runs leads, Marketing Studio, bookings, agreements, billing, client delivery, Practice Intelligence, Autopilot, and Daily Briefing in one system. AI drafts; you approve. Members only.",
+    "hero": {
+      "label": "The CoachOS Platform · the core product · members only",
+      "h1": "One desk.",
+      "h1Em": "Every room of the business.",
+      "sub": "Not another CRM on the pile. CoachOS Desk replaces the 5–8 tools a coach or mentor stitches together — leads, marketing, bookings, contracts, payments, and client delivery — with AI built into each workflow. AI drafts. You approve. Nothing sends alone."
+    },
+    "ruleSection": {
+      "label": "The rule on everything",
+      "heading": "AI drafts. You approve.",
+      "headingEm": "Every time.",
+      "intro": "The Practice Agent reads context — pipeline history, session notes, open invoices — and drafts the next move. Autopilot handles timing after you approve the wording once. Optional Practice+ adds done-for-you marketing from our team.",
+      "steps": [
+        {
+          "title": "AI drafts the work",
+          "body": "Follow-ups, summaries, prep briefs, newsletters, and reminders — generated from your voice and templates, then paused for you."
+        },
+        {
+          "title": "You review exact words",
+          "body": "One approval queue. Edit or reject. The agent never sends outbound on its own — including on Autopilot recipes."
+        },
+        {
+          "title": "You approve — it sends from you",
+          "body": "Email Connections mean replies land in your real inbox, from your address. Clients get you."
+        }
+      ]
+    },
+    "problemClosing": "Desk closes both gaps at once: one record from enquiry to invoice, and AI that drafts the admin — never replaces the human in the room. Starting from zero? Launch Services cover website, domain, and business email before Desk opens.",
+    "journeyIntro": "One client, end to end. Her name typed once:",
+    "rooms": [
+      {
+        "title": "01 — Leads",
+        "desc": "Enquiries from your site, social, email, or Shortlist listing land on one pipeline board — Enquiry → Discovery → Proposal → Won. AI scores inbound leads. When someone goes quiet, the Pipeline Agent reads the history and drafts the next follow-up, waiting for your approval.",
+        "chips": ["Multi-source capture", "AI lead scoring", "Pipeline board", "Drafted follow-ups", "Landing pages & lead magnets", "Pipeline Agent"]
+      },
+      {
+        "title": "02 — Marketing Studio",
+        "desc": "Posts, newsletters, and email sequences drafted in your voice from your AI Voice & Rules settings and anonymized session themes. You approve in batches; sends go out from your own address via Email Connections. Social posts are drafted for you — direct publishing expands in later releases.",
+        "chips": ["Content calendar", "Newsletters in your voice", "Nurture sequences", "Listmonk-powered sends", "Opens & replies tracked", "Optional done-for-you marketing"]
+      },
+      {
+        "title": "03 — Bookings & meetings",
+        "desc": "One booking link syncs to your calendar; every booking logs under the right Lead or Client. Sessions run on CoachOS Meet or your Zoom/Meet — recorded, transcribed, and ready for Client Delivery. Reminders and no-show recovery run on your rules.",
+        "chips": ["Booking page", "Calendar sync", "CoachOS Meet", "Recording → transcript", "Auto-logged to record", "No-show recovery"]
+      },
+      {
+        "title": "04 — Agreements & billing",
+        "desc": "Coaching agreement templates pre-fill from the record. E-sign on a phone, legally binding. Invoices queue on acceptance; overdue invoices get chased on the cadence you set — after you approve the reminder wording once.",
+        "chips": ["Pre-filled agreements", "E-sign", "Stripe billing", "Package & subscription pricing", "Invoice chasing", "Payment links"]
+      },
+      {
+        "title": "05 — Client delivery",
+        "desc": "Rough session notes become a warm summary email, private action items, and the next agenda — nothing reaches the client until you approve. Prep briefs arrive 30 minutes before each session. Optional client portal for homework, goals, and progress timeline.",
+        "chips": ["Notes → summary", "Prep briefs", "Client portal", "Homework & goals", "Progress timeline", "Family & team units"]
+      },
+      {
+        "title": "06 — Practice intelligence",
+        "desc": "Revenue, sessions, pipeline health, and retention on one dashboard. AI flags at-risk clients from signals you choose — missed sessions, slower replies, stalled goals — with suggested next actions, not bare numbers.",
+        "chips": ["Revenue dashboard", "At-risk flags", "Pipeline health", "Forecasting", "Practice Agent insights", "Export for your accountant"]
+      },
+      {
+        "title": "07 — Autopilot",
+        "desc": "Ready-made recipes you switch on: quiet lead for six days → follow-up; invoice three days late → reminder; session tomorrow → prep brief. You approve the exact wording when you turn a recipe on. After that Autopilot only handles timing — it never invents new words.",
+        "chips": ["One-toggle recipes", "Quiet-lead follow-up", "Overdue-invoice nudges", "Prep-brief scheduling", "Wording approved once"]
+      },
+      {
+        "title": "08 — Daily briefing",
+        "desc": "Open Desk already caught up: top headlines in your niche, a quick world catch-up, and one thing worth learning today — five minutes, every item linked to its source. One shared edition per niche category, refreshed daily.",
+        "chips": ["Niche headlines", "World catchup", "5-minute learn", "Sources linked", "In-app & public page"]
+      },
+      {
+        "title": "09 — Yours, not ours",
+        "desc": "Email Connections send from Gmail, Outlook, or custom SMTP — your address, your inbox. Full data export anytime. Per-coach API key and MCP access for the tools you already use. Your business; Desk runs the admin.",
+        "chips": ["Your email address", "Gmail / Outlook / SMTP", "Full data export", "Your retention rules", "Per-coach API key"]
+      }
+    ],
+    "membership": {
+      "heading": "We don't sell seats.",
+      "headingEm": "We choose members.",
+      "paragraphs": [
+        "No public signup page. Members are coaches and mentors we already work with through services — people whose practices we know because we helped build the foundation.",
+        "When Desk opens for you, it's because we brought you in. That keeps every room worth being in."
+      ]
+    }
+  },
+  "roundtable": {
+    "title": "The Roundtable — practice rooms for members",
+    "metaDescription": "The Roundtable is CoachOS's members-only community — rooms by coaching specialty, mentoring practice, freelancer work, small business, L&D, and open topics, plus a Quiet Room for anonymous questions.",
+    "hero": {
+      "sub": "Subject rooms for coaches, mentors, freelancers, and program leads — not a generic forum. Ask in the open, or use the Quiet Room when you need to ask without a name attached."
+    },
+    "intro": "The Roundtable is how Coach Community shows up for members today — rooms by practice, not one endless feed. The product roadmap adds a LinkedIn-style network in The Roster; Roundtable is where structured conversation lives."
+  },
+  "roster": {
+    "title": "The Roster — your professional network",
+    "metaDescription": "The Roster is CoachOS's members-only professional network — one profile built from your practice, with posts, referrals, and peer connections that mean something.",
+    "hero": {
+      "sub": "One profile built from your real practice — specialty, offers, credentials — with a feed for what you're learning and referrals that come with context. Public sliver; members-only depth."
+    },
+    "intro": "The Roster is the network layer of Coach Community — connect, post, comment, and share inside the place you already work, instead of scattered group chats."
+  },
+  "shortlist": {
+    "title": "The Shortlist — vetted Coach & Mentor Directory",
+    "metaDescription": "The Shortlist is CoachOS's vetted directory — clients search by specialty, price, and language. Every enquiry routes to your Desk leads board. Listing model: 0% revenue share on what you charge.",
+    "hero": {
+      "sub": "Clients search by specialty, price, and language. Every enquiry lands on your Desk pipeline — not a marketplace inbox that takes a cut. Every listing is checked; 0% commission on session fees."
+    },
+    "intro": "The Shortlist is how the Coach & Mentor Directory shows up for members — our own acquisition channel, not a commission marketplace. Listings are vetted; enquiries become Leads in your pipeline."
+  },
+  "platform": {
+    "ruleSection": {
+      "heading": "The rule all four run on",
+      "body": "On the Platform, AI drafts and the Practice Agent proposes — you always see exact words before anything sends. Our services layer adds a CoachOS specialist in the loop; Desk itself is approval-first, not autopilot outbound."
+    }
+  }
+}
