@@ -99,6 +99,116 @@
       "genericH1": "Built it. Launched it. Crickets.",
       "genericSub": "Curriculum, production, hosting, and a launch plan sized to the audience you actually have.",
       "genericProblem": "A polished course with a tiny list sells zero copies. Launch needs an audience first."
+    },
+    "mentor/mentor-positioning-and-offer-setup": {
+      "genericH1": "Eleven years in. Still no answer when someone asks what you offer.",
+      "genericSub": "One-line offer, tiers, intake, and sales copy — so your rate has something to stand on.",
+      "genericProblem": "It depends pricing attracts wrong-fit mentees and keeps your rate frozen since 2019.",
+      "voice": {
+        "quote": "A woman at my nephew's christening asked what I do, and eleven years in, I heard myself say 'it depends.' I can tell you exactly what happened with any one of my mentees. I can't tell you what the thing is that I sell.",
+        "role": "Mentor · independent practice",
+        "answer": "We turn your experience into a one-line offer with a price in it — and a page worth forwarding."
+      }
+    },
+    "mentor/mentee-matching": {
+      "genericH1": "Matching tops out at fifty people.",
+      "genericSub": "Application, screening, and matching workflow — before you commit your calendar.",
+      "genericProblem": "Spreadsheet matching works until the program grows — then Sunday nights disappear.",
+      "voice": {
+        "quote": "Cohort one was 32 people and I did the matching in an evening. Cohort two was 58 and took a whole weekend — and on Sunday night I found I'd matched someone with her own line manager. Cohort three is meant to be 90.",
+        "role": "HR programs lead · enterprise",
+        "answer": "We run matching on your criteria — conflicts caught before confirm, no Sunday redos."
+      }
+    },
+    "mentor/1-1-program-structure": {
+      "genericH1": "No structure underneath the mentoring.",
+      "genericSub": "Session cadence, boundaries, check-ins, and renewal scripts — documented before mentee two.",
+      "genericProblem": "Informal mentoring eats your calendar because every piece feels small on its own.",
+      "voice": {
+        "quote": "\"Just twenty minutes\" turned into a call on Thursday, then a document they sent me on Friday night, then me rewriting chunks of it on Sunday afternoon at the kitchen table with the football on. None of it was unreasonable on its own — that's the thing, every single piece of it was small.",
+        "role": "Informal mentor · engineering lead",
+        "answer": "We document cadence, boundaries, and check-ins so mentoring has edges — and you keep your evenings."
+      }
+    },
+    "mentor/renewals-and-proof": {
+      "genericH1": "Nine months in. Nothing to point at.",
+      "genericSub": "Goal tracking from day one, renewal timing, and testimonial asks when the work is visible.",
+      "genericProblem": "Without written baselines, you can't show progress — and renewals taper off quietly.",
+      "voice": {
+        "quote": "Nine months in with someone and I genuinely think it went well. Then I sit down to ask for a testimonial and there's nothing to point at — no \"here's where you were in March, here's where you are now\". Because nobody wrote down where she was in March.",
+        "role": "Career mentor · 5 yrs, one-to-one",
+        "answer": "We track goals from session one, flag drift mid-program, and capture proof before the last session."
+      }
+    },
+    "mentor/a-page-worth-sending": {
+      "genericH1": "The domain renewal email lands every March.",
+      "genericSub": "A forwardable mentoring page — who you mentor, how it works, how to apply.",
+      "genericProblem": "Every mentee came through someone who already knew you — people searching at eleven at night never find you.",
+      "voice": {
+        "quote": "Every single person I've mentored came through somebody who already knew me. Old colleague, someone's sister, a bloke from a course I did in 2018. I bought the domain about two years ago and it's still parked — the renewal email lands every March and I think, right, this month.",
+        "role": "Mentor · ex-ops director",
+        "answer": "We build the page, wire applications, and keep it live — so strangers can find you without a warm intro."
+      }
+    },
+    "mentor/content-that-shows-your-thinking": {
+      "genericH1": "Mentees read nothing before they apply.",
+      "genericSub": "Posts drafted from real experience — so serious mentees know your thinking before the intro call.",
+      "genericProblem": "Without proof in public, every application starts cold and you screen on gut alone.",
+      "voice": {
+        "quote": "I can tell you exactly what happened with any one of them — the guy who moved out of sales into product, the woman who finally left her firm — but I can't tell you what the thing is that I sell. My rate hasn't changed since 2019 because I wouldn't know what to say to justify changing it.",
+        "role": "Mentor · sales into product, 11 yrs",
+        "answer": "We turn your best mentee stories into posts and pages mentees read before they apply."
+      }
+    },
+    "corporate/matching-run-on-your-criteria": {
+      "genericH1": "Cohort three is ninety people.",
+      "genericSub": "Matching rules from HR criteria — batch runs in days, not spreadsheet weekends.",
+      "genericProblem": "Manual matching tops out at fifty; line-manager pairings slip through when you're tired on Sunday night.",
+      "voice": {
+        "quote": "Cohort one was 32 people and I did the matching in an evening with a cup of tea. Cohort two was 58 and it took a whole weekend, two screens, one with the export and one with the tab where I'd colour-coded who got paired last round. Sunday night I found I'd matched someone with her own line manager and had to redo about a third of it. Cohort three is meant to be 90. I haven't worked out what I'm doing about that yet.",
+        "role": "People development manager · 900-person firm",
+        "answer": "We encode your criteria, run conflict checks before confirm, and match the whole cohort without a spreadsheet weekend."
+      }
+    },
+    "corporate/conflict-checks-and-re-matching": {
+      "genericH1": "Sunday night, you paired someone with her line manager.",
+      "genericSub": "Manager conflict rules encoded — bad pairs caught before anyone gets the email.",
+      "genericProblem": "Manual review misses reporting lines when cohorts scale past one screen.",
+      "voice": {
+        "quote": "Sunday night I found I'd matched someone with her own line manager and had to redo about a third of it.",
+        "role": "People development manager · 900-person firm",
+        "answer": "We run automated conflict checks and re-match without restarting the whole cohort."
+      }
+    },
+    "corporate/session-tracking-and-early-flags": {
+      "genericH1": "Half the pairs met once. Then nothing.",
+      "genericSub": "Session logging mentors will use — quiet pairs flagged in week three, not at the survey.",
+      "genericProblem": "Sign-up numbers look fine in the deck; calendars tell a different story by October.",
+      "voice": {
+        "quote": "We launched in March and 240 people signed up, which everyone treated as the result. Then in October I went through the check-in logs and about half the pairs had met once. Once, and then nothing. The ones going well were going well because two people happened to get on, not because of anything I did.",
+        "role": "L&D lead · financial services",
+        "answer": "We track sessions lightly, flag quiet pairs early, and nudge before pairs drift off the radar."
+      }
+    },
+    "corporate/mentor-onboarding": {
+      "genericH1": "Thirty-one mentors. Eleven were last year's volunteers.",
+      "genericSub": "Mentor welcome pack, mentee onboarding, and launch checklist — ready before sign-ups open.",
+      "genericProblem": "Mentee demand outruns mentor supply when onboarding is ad hoc every cohort.",
+      "voice": {
+        "quote": "We opened mentee sign-ups and got 140 in about a week, a lot of them writing really specific things about what they wanted help with. Then we opened mentor sign-ups and got 31, and eleven of those were the same people who did it last year.",
+        "role": "Early careers & mentoring · engineering group",
+        "answer": "We onboard mentors and mentees with role docs, FAQs, and a launch checklist HR can repeat each cohort."
+      }
+    },
+    "corporate/reporting-leadership-can-act-on": {
+      "genericH1": "4.2 out of 5 is not a number a CFO can act on.",
+      "genericSub": "Participation, goals met, and outcomes per pair — sitting next to the budget line they defend.",
+      "genericProblem": "Satisfaction surveys sound fine until finance asks what happens if you stop running the program.",
+      "voice": {
+        "quote": "The finance review is in November and the only real number I have is 4.2 out of 5 from a survey most people ignored. Last year that was fine. This year the CFO asked what would happen if we didn't run it, and I said something about engagement, and I could hear how thin it sounded while I was saying it.",
+        "role": "Head of talent · public sector",
+        "answer": "We report participation, goals met, and per-pair outcomes — numbers leadership can defend in November."
+      }
     }
   },
   "doors": {

@@ -15,6 +15,12 @@ import {
 } from 'node:fs';
 import { join, relative } from 'node:path';
 import * as cheerio from 'cheerio';
+import {
+  baseServiceSlug,
+  pageAudience,
+  resolveCatalogEntry,
+  serviceKey,
+} from './service-slug-utils.mjs';
 
 const ROOT = process.cwd();
 const FINAL_ROOT = join(ROOT, 'final');
@@ -42,6 +48,8 @@ const audienceServicesPages = JSON.parse(
   readFileSync(join(ROOT, 'content/audience-services-pages.json'), 'utf8')
 );
 const researchVoices = JSON.parse(readFileSync(join(ROOT, 'content/research-voices.json'), 'utf8'));
+const roundtableFeed = JSON.parse(readFileSync(join(ROOT, 'content/roundtable-feed.json'), 'utf8'));
+const rosterFeed = JSON.parse(readFileSync(join(ROOT, 'content/roster-feed.json'), 'utf8'));
 
 function pickAudienceHero(section, audience) {
   const block = taglines[section];
@@ -367,12 +375,6 @@ function rewriteAudienceServicesPage($, audience, prefix = '') {
   }
 }
 
-function baseServiceSlug(key) {
-  if (!key) return null;
-  const parts = key.split('/');
-  return parts[parts.length - 1];
-}
-
 function rewriteAudienceIndex($, data) {
   setMeta($, data.title, data.metaDescription);
   setPageHero($, { label: data.hero.crumb, h1: data.hero.h1, h1Em: data.hero.h1Em, sub: data.hero.sub });
@@ -452,33 +454,32 @@ function rewriteAudienceIndex($, data) {
   $('.close-sec .btn-primary').text(cl.cta);
 }
 
-function serviceKey(relPath) {
-  const p = relPath.replace(/\\/g, '/');
-  if (p.startsWith('services/')) return p.replace('services/', '').replace('.html', '');
-  const m = p.match(/^(coach|business|freelancer|mentor|corporate)\/services\/(.+)\.html$/);
-  if (m) return `${m[1]}/${m[2]}`;
-  return null;
-}
-
 function rewriteServicePage($, relPath) {
   const key = serviceKey(relPath);
   if (!key) return false;
-  const entry = catalog[key] || catalog['defaultTemplate'];
-  if (!entry) return false;
+  const { key: catalogKey, entry } = resolveCatalogEntry(key, catalog);
+  if (!entry) {
+    console.warn(`No catalog entry for ${relPath} (${key})`);
+    return false;
+  }
 
-  const audience = relPath.split('/')[0];
+  const audience = pageAudience(relPath, catalogKey);
   const variant =
     audience && entry.audienceVariants?.[audience]
       ? entry.audienceVariants[audience]
-      : { title: entry.genericTitle, h1: entry.genericH1, sub: entry.genericSub };
+      : { title: entry.genericTitle };
 
-  setMeta($, `${variant.title} — CoachOS`, `${variant.sub} ${entry.genericProblem}`);
+  const problemH1 = entry.genericH1;
+  const solutionSub = entry.genericSub;
+  const pageTitle = variant.title || entry.genericTitle;
+
+  setMeta($, `${pageTitle} — CoachOS`, `${solutionSub} ${entry.genericProblem}`);
 
   const h1 = $('.pagehero h1').first();
-  const h1Text = variant.h1.replace(/\.$/, '');
+  const h1Text = problemH1.replace(/\.$/, '');
   if (h1.find('em').length) h1.html(`${esc(h1Text)}<em>.</em>`);
   else h1.html(`${esc(h1Text)} <em>.</em>`);
-  $('.pagehero .sub').text(variant.sub);
+  $('.pagehero .sub').text(solutionSub);
 
   const probSec = $('.sec-tight.alt');
   const slug = baseServiceSlug(key);
@@ -687,6 +688,36 @@ function rewriteRoundtableIntro($) {
   const intro = globalCopy.roundtableRoomsIntro;
   if (!intro) return;
   $('#rooms .sec-head .after, section#rooms .sec-head .after').first().text(intro);
+}
+
+function replaceInlineVar(html, varName, value, nextMarkerPattern) {
+  const re = new RegExp(
+    `(var ${varName} = )([\\s\\S]+?)(;\\s*\\n\\s*${nextMarkerPattern})`
+  );
+  if (!re.test(html)) return html;
+  return html.replace(re, `$1${value}$3`);
+}
+
+function rewritePlatformFeeds(html, rel) {
+  if (/roundtable/.test(rel)) {
+    html = replaceInlineVar(html, 'S', roundtableFeed.S, 'var GROUPS');
+    html = replaceInlineVar(html, 'GROUPS', roundtableFeed.GROUPS, 'var (sideEl|tabsEl|cmobiletabs)');
+  }
+  if (/roster/.test(rel) && !/\/index\.html$/.test(rel)) {
+    html = replaceInlineVar(html, 'AV', rosterFeed.AV, 'var P');
+    html = replaceInlineVar(html, 'P', rosterFeed.P, 'var (tabsEl|rail|EXTRA|ANON)');
+    if (/var EXTRA = /.test(html)) {
+      html = replaceInlineVar(html, 'EXTRA', rosterFeed.EXTRA, 'var ANON');
+    }
+    if (/var ANON = /.test(html)) {
+      html = replaceInlineVar(html, 'ANON', rosterFeed.ANON, 'function anonHtml');
+    }
+  }
+  if (rel === 'roster/index.html') {
+    html = replaceInlineVar(html, 'AV', rosterFeed.AV, 'var P');
+    html = replaceInlineVar(html, 'P', rosterFeed.P, 'var tabsEl');
+  }
+  return html;
 }
 
 function rewriteProblemsRoot($, c) {
@@ -995,7 +1026,9 @@ function commitPage($, filePath, rel) {
     rewriteDeskFeed($);
   }
   sanitizeProductCopy($);
-  writeFileSync(filePath, $.html());
+  let out = $.html();
+  out = rewritePlatformFeeds(out, rel);
+  writeFileSync(filePath, out);
 }
 
 function processFile(filePath) {

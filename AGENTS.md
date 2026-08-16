@@ -50,6 +50,8 @@ In Cursor Desktop, open the **Ports** panel and forward port **8082** if you are
 
 ### Copy system
 
-- Source of truth: `content/research-voices.json` + `content/root-pages.json` + `content/audience-services-pages.json` + `content/problems-pages.json` + audience/platform/taglines JSON
+- Source of truth: `content/research-voices.json` + `content/root-pages.json` + `content/audience-services-pages.json` + `content/problems-pages.json` + `content/roundtable-feed.json` + `content/roster-feed.json` + audience/platform/taglines JSON
 - Voice rules: `content/VOICE-GUIDE.md`
 - Research PDF: `content/CoachOS-Market-Research-Report.pdf`
+- Service pages: build resolves HTML slugs via `scripts/service-slug-utils.mjs` (e.g. `business-strategy-and-consulting` → catalog key). Heroes use **problem `genericH1` + solution `genericSub`** — never `defaultTemplate` “Runs while you…”.
+- Roundtable/Roster demo feeds: canonical post bodies live in `content/roundtable-feed.json` and `content/roster-feed.json` (extract from `roundtable/index.html` / `roster/index.html` with `node scripts/extract-platform-posts.mjs`). Build injects them word-for-word into every roundtable/roster HTML copy.
