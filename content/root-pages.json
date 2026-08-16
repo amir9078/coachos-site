@@ -93,8 +93,8 @@
       ]
     },
     "howSection": {
-      "heading": "AI drafts. You approve. Always.",
-      "sub": "On services, a CoachOS specialist reviews before you. On the Platform, the Practice Agent drafts and pauses — you see exact words before anything sends.",
+      "heading": "AI drafts. You approve.",
+      "sub": "On services, we review before you. On the Platform, you see every word before it sends.",
       "steps": [
         {
           "num": "1",
@@ -118,7 +118,7 @@
       "label": "CoachOS",
       "heading": "Start with services.",
       "headingEm": "Grow into the Platform.",
-      "sub": "Website, marketing, and lead follow-up — open to everyone. CoachOS Desk, Roundtable, Roster, and Shortlist — members only, chosen not sold.",
+      "sub": "Open to everyone today. Members-only rooms when you're ready.",
       "ctaPrimary": "Start this week",
       "ctaSecondary": "See the services"
     }
@@ -127,13 +127,13 @@
     "title": "CoachOS services — website, marketing, leads, and follow-up, done for you",
     "metaDescription": "CoachOS services by stage: strategy, positioning, website and hosting, marketing, lead generation, lead management, sales support, and course creation. AI drafts, specialists review, you approve.",
     "hero": {
-      "label": "The services · end to end",
+      "label": "The services",
       "h1Lines": [
-        "Website, marketing, leads,",
-        "and follow-up —",
-        "run for you."
+        "You do the work",
+        "you're great at.",
+        "We run the rest."
       ],
-      "sub": "CoachOS builds and runs each stage for coaches, mentors, freelancers, and small businesses. AI drafts the work. A specialist reviews it. You approve before it ships under your name.",
+      "sub": "Website, marketing, leads, follow-up — one team, your name on everything. You approve before it ships.",
       "ctaPrimary": "Tell us what you need",
       "ctaSecondary": "Start from the problem instead"
     },
@@ -254,9 +254,9 @@
     },
     "closeSection": {
       "label": "CoachOS services",
-      "heading": "Tell us what is eating your week.",
-      "headingEm": "We will take it from there.",
-      "sub": "Not sure which services you need? Start from the problem — each one maps to its fix.",
+      "heading": "What's eating your week?",
+      "headingEm": "Hand it over.",
+      "sub": "Not sure where to start? Every problem maps to a service.",
       "ctaPrimary": "Start this week",
       "ctaSecondary": "See the problems page"
     }
@@ -265,13 +265,13 @@
     "title": "Problems CoachOS solves — research, sources, and fixes",
     "metaDescription": "Documented problems in websites, marketing, leads, sales, and mentoring programs — with research sources and the CoachOS service that fixes each one.",
     "hero": {
-      "label": "The research, in their words",
+      "label": "The research",
       "h1Lines": [
-        "CoachOS fixes the work",
-        "nobody trained you for —",
-        "mapped to proof."
+        "Real problems.",
+        "Real sources.",
+        "Real fixes."
       ],
-      "sub": "CoachOS builds and runs website, marketing, and lead follow-up for coaches, mentors, freelancers, and small businesses. Below: the problems we hear most, with sources you can check and the service that fixes each one.",
+      "sub": "What we hear most — documented, not invented — and the service that fixes each one.",
       "ctaPrimary": "See the services",
       "ctaSecondary": "Find your fit"
     },
@@ -309,9 +309,9 @@
     },
     "closeSection": {
       "label": "CoachOS",
-      "heading": "Every problem above maps to a service.",
-      "headingEm": "Start where you are stuck.",
-      "sub": "AI drafts the fix. A specialist reviews it. You approve before it ships.",
+      "heading": "Every problem maps",
+      "headingEm": "to a fix.",
+      "sub": "Start where you're stuck. We take it from there.",
       "ctaPrimary": "Talk to us",
       "ctaSecondary": "See all services"
     }
@@ -320,13 +320,13 @@
     "title": "Why CoachOS — one team for website, marketing, and follow-up",
     "metaDescription": "Why CoachOS: one team that builds your website, runs your marketing, answers leads, and stays accountable. Compare public prices and what they actually cover.",
     "hero": {
-      "label": "Judge it yourself",
+      "label": "Why CoachOS",
       "h1Lines": [
-        "One team builds, runs,",
-        "and follows up —",
-        "under your name."
+        "One team.",
+        "Your name on it.",
+        "Start to finish."
       ],
-      "sub": "CoachOS is done-for-you website, marketing, and lead follow-up. AI drafts, a specialist reviews, you approve. Public competitor prices are linked below so you can compare yourself.",
+      "sub": "Website, marketing, leads, follow-up — we build it, run it, and stay with it. Compare the options below yourself.",
       "ctaPrimary": "Find your fit",
       "ctaSecondary": "See the services"
     },
@@ -384,9 +384,9 @@
     },
     "closeSection": {
       "label": "See it for yourself",
-      "heading": "Start with the services.",
-      "headingEm": "Enter at your stage.",
-      "sub": "Or see what the members-only Platform involves, starting with CoachOS Desk.",
+      "heading": "Start with services.",
+      "headingEm": "Stay for the Platform.",
+      "sub": "Or see what membership opens — starting with CoachOS Desk.",
       "ctaPrimary": "Find your fit",
       "ctaSecondary": "See CoachOS Desk"
     }
@@ -398,11 +398,11 @@
       "label": "The CoachOS Platform · members only",
       "stamp": "Members only",
       "h1Lines": [
-        "Four parts.",
-        "One practice",
-        "operating system."
+        "Four rooms.",
+        "One door in.",
+        "Your whole practice."
       ],
-      "sub": "Services are human-delivered work for anyone. The Platform is the product — CoachOS Desk plus Roundtable, Roster, and Shortlist. AI drafts; the Practice Agent pauses; you approve before anything sends.",
+      "sub": "Desk, Roundtable, Roster, Shortlist — one system for the work around your craft. AI drafts. You approve.",
       "ctaPrimary": "See the core product",
       "ctaSecondary": "Talk to us"
     },
@@ -444,8 +444,8 @@
     },
     "ruleSection": {
       "label": "The rule all four run on",
-      "heading": "AI drafts. You approve.",
-      "body": "The Practice Agent drafts follow-ups, summaries, and reminders — then pauses. You see exact words before anything sends from your email. Our services layer adds a CoachOS specialist in the loop; Desk itself is approval-first, not autopilot outbound."
+      "heading": "Nothing sends",
+      "body": "Until you've read the exact words and said yes. AI drafts. You approve. Every time."
     },
     "admissionSection": {
       "label": "Admission",
@@ -459,7 +459,7 @@
       "label": "Membership · chosen, not sold",
       "heading": "The door is",
       "headingEm": "the work.",
-      "sub": "Members come from the people we build for. Start with the services, and let the work speak.",
+      "sub": "Most members start with services. Let the work speak.",
       "ctaPrimary": "Start with the services",
       "ctaSecondary": "Talk to us"
     }
@@ -468,13 +468,12 @@
     "title": "Contact CoachOS — a person reads this, and replies",
     "metaDescription": "Tell CoachOS where you are stuck — website, marketing, leads, or the Platform. A real person reads your message and writes back.",
     "hero": {
-      "label": "Talk to us directly",
+      "label": "Talk to us",
       "h1Lines": [
-        "Tell us where",
-        "you are stuck —",
-        "a person replies."
+        "Tell us what's stuck.",
+        "A person writes back."
       ],
-      "sub": "CoachOS builds and runs website, marketing, and lead follow-up. No auto-reply. No form logic deciding your answer.",
+      "sub": "No bot. No auto-reply. Just a real conversation.",
       "ctaPrimary": "Send a message",
       "ctaSecondary": "See the services first"
     },
@@ -501,8 +500,8 @@
     "closeSection": {
       "label": "CoachOS",
       "heading": "Not sure where you fit?",
-      "headingEm": "That is fine.",
-      "sub": "Describe your situation. We will point you to the right services or fit page.",
+      "headingEm": "That's fine.",
+      "sub": "Describe your situation. We'll point you to the right door.",
       "ctaPrimary": "Find your fit",
       "ctaSecondary": "Read the problems page"
     }

@@ -6,7 +6,7 @@
       "label": "The CoachOS Platform · the core product · members only",
       "h1": "One desk.",
       "h1Em": "Every room of the business.",
-      "sub": "Not another CRM on the pile. CoachOS Desk replaces the 5–8 tools a coach or mentor stitches together — leads, marketing, bookings, contracts, payments, and client delivery — with AI built into each workflow. AI drafts. You approve. Nothing sends alone."
+      "sub": "Leads, marketing, bookings, billing — one place. AI drafts. You approve. Nothing sends alone."
     },
     "ruleSection": {
       "label": "The rule on everything",
@@ -90,7 +90,9 @@
     "title": "The Roundtable — practice rooms for members",
     "metaDescription": "The Roundtable is CoachOS's members-only community — rooms by coaching specialty, mentoring practice, freelancer work, small business, L&D, and open topics, plus a Quiet Room for anonymous questions.",
     "hero": {
-      "sub": "Subject rooms for coaches, mentors, freelancers, and program leads — not a generic forum. Ask in the open, or use the Quiet Room when you need to ask without a name attached."
+      "h1": "Not one feed.",
+      "h1Em": "A room for each of you.",
+      "sub": "Practice rooms by specialty — ask in the open, or go quiet when you need to."
     },
     "intro": "The Roundtable is how Coach Community shows up for members today — rooms by practice, not one endless feed. The product roadmap adds a LinkedIn-style network in The Roster; Roundtable is where structured conversation lives."
   },
@@ -98,7 +100,9 @@
     "title": "The Roster — your professional network",
     "metaDescription": "The Roster is CoachOS's members-only professional network — one profile built from your practice, with posts, referrals, and peer connections that mean something.",
     "hero": {
-      "sub": "One profile built from your real practice — specialty, offers, credentials — with a feed for what you're learning and referrals that come with context. Public sliver; members-only depth."
+      "h1": "LinkedIn, if it were",
+      "h1Em": "only your people.",
+      "sub": "One profile from your real practice — posts, referrals, and peers who already get the work."
     },
     "intro": "The Roster is the network layer of Coach Community — connect, post, comment, and share inside the place you already work, instead of scattered group chats."
   },
@@ -106,7 +110,9 @@
     "title": "The Shortlist — vetted Coach & Mentor Directory",
     "metaDescription": "The Shortlist is CoachOS's vetted directory — clients search by specialty, price, and language. Every enquiry routes to your Desk leads board. Listing model: 0% revenue share on what you charge.",
     "hero": {
-      "sub": "Clients search by specialty, price, and language. Every enquiry lands on your Desk pipeline — not a marketplace inbox that takes a cut. Every listing is checked; 0% commission on session fees."
+      "h1": "Findable because",
+      "h1Em": "not everyone's in it.",
+      "sub": "Clients search by specialty and language. Every enquiry lands on your Desk — vetted listings, 0% commission."
     },
     "intro": "The Shortlist is how the Coach & Mentor Directory shows up for members — our own acquisition channel, not a commission marketplace. Listings are vetted; enquiries become Leads in your pipeline."
   },

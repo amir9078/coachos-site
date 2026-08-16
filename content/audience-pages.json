@@ -6,7 +6,7 @@
       "crumb": "For coaches",
       "h1": "You coach.",
       "h1Em": "We run the rest.",
-      "sub": "Your website, your marketing, your leads — built and run for you while you're in session. When you're ready, CoachOS Desk runs the full practice. AI drafts; you approve.",
+      "sub": "Your website, marketing, and leads — built and run while you're in session. You approve before it ships.",
       "stats": [
         {
           "value": "122,974",
@@ -171,10 +171,14 @@
       ],
       "note": "CoachOS Desk is the practice OS — leads, Marketing Studio, bookings, agreements, client delivery, and more. Membership is chosen, not sold; services are how most members start."
     },
+    "platformHero": {
+      "h1Lines": ["Your coaching never needed ten tools.", "The admin did."],
+      "sub": "Four rooms. One membership. Desk, Roundtable, Roster, Shortlist — when the foundation is ready."
+    },
     "close": {
       "label": "CoachOS for coaches",
-      "h2": "Ready to get your practice live?",
-      "h2Em": "Start with one email.",
+      "h2": "Ready to get live?",
+      "h2Em": "One email starts it.",
       "cta": "Get started",
       "under": "Not a coach? Switch to your version.",
       "underLink": "../index.html#doors"
@@ -187,7 +191,7 @@
       "crumb": "For small business owners",
       "h1": "You run the business.",
       "h1Em": "We run the marketing.",
-      "sub": "Your website, your posts, your leads — built and run for you while you run the shop. AI drafts the work, a specialist checks it, and you approve it before it goes out.",
+      "sub": "Your website, posts, and leads — built and run while you run the shop. You approve before it ships.",
       "stats": [
         {
           "value": "54%",
@@ -355,10 +359,14 @@
       ],
       "note": "CoachOS Desk is the practice OS — leads, Marketing Studio, bookings, agreements, client delivery, and more. Membership is chosen, not sold; services are how most members start."
     },
+    "platformHero": {
+      "h1Lines": ["You opened a business,", "not a software stack."],
+      "sub": "Four rooms. One membership. Desk, Roundtable, Roster, Shortlist — when the foundation is ready."
+    },
     "close": {
       "label": "CoachOS for small business",
-      "h2": "Ready to hand it over?",
-      "h2Em": "Start with one email.",
+      "h2": "Too much on your plate?",
+      "h2Em": "Hand it over.",
       "cta": "Get started",
       "under": "Not a business owner? Switch to your version.",
       "underLink": "../index.html#doors"
@@ -371,7 +379,7 @@
       "crumb": "For freelancers",
       "h1": "You deliver.",
       "h1Em": "We keep the next one coming.",
-      "sub": "Your portfolio, your outreach, your pipeline — built and run for you while you're heads-down on client work. AI drafts the work, a specialist checks it, and you approve it before it goes out.",
+      "sub": "Your portfolio, outreach, and pipeline — built and run while you're heads-down on client work. You approve before it ships.",
       "stats": [
         {
           "value": "63%",
@@ -533,10 +541,14 @@
       ],
       "note": "CoachOS Desk is the practice OS — leads, Marketing Studio, bookings, agreements, client delivery, and more. Membership is chosen, not sold; services are how most members start."
     },
+    "platformHero": {
+      "h1Lines": ["Ten subscriptions. One of you.", "That math never worked."],
+      "sub": "Four rooms. One membership. Desk, Roundtable, Roster, Shortlist — when the foundation is ready."
+    },
     "close": {
       "label": "CoachOS for freelancers",
-      "h2": "Ready to end feast-or-famine?",
-      "h2Em": "Start with one email.",
+      "h2": "Tired of feast-or-famine?",
+      "h2Em": "One email starts it.",
       "cta": "Get started",
       "under": "Not a freelancer? Switch to your version.",
       "underLink": "../index.html#doors"
@@ -549,7 +561,7 @@
       "crumb": "For mentors",
       "h1": "You have the judgment.",
       "h1Em": "We build the rest.",
-      "sub": "A clear offer, a structured program, and a way for the right mentees to find you — built with you and run for you. AI drafts the work, a specialist checks it, and you approve it before it goes out.",
+      "sub": "A clear offer, a real program, and a way for the right mentees to find you — built with you, run for you. You approve before it ships.",
       "stats": [
         {
           "value": "72%",
@@ -717,10 +729,14 @@
       ],
       "note": "CoachOS Desk is the practice OS — leads, Marketing Studio, bookings, agreements, client delivery, and more. Membership is chosen, not sold; services are how most members start."
     },
+    "platformHero": {
+      "h1Lines": ["You're here to mentor.", "Everything else is ours."],
+      "sub": "Four rooms. One membership. Desk, Roundtable, Roster, Shortlist — when the foundation is ready."
+    },
     "close": {
       "label": "CoachOS for mentors",
-      "h2": "Ready to make it a real program?",
-      "h2Em": "Start with one email.",
+      "h2": "Ready for a real program?",
+      "h2Em": "One email starts it.",
       "cta": "Get started",
       "under": "Not a mentor? Switch to your version.",
       "underLink": "../index.html#doors"
@@ -733,7 +749,7 @@
       "crumb": "For corporate & enterprise",
       "h1": "Keep the program.",
       "h1Em": "Lose the spreadsheet.",
-      "sub": "Matching, tracking, and reporting for your internal mentoring program — run for you, with numbers your leadership team can act on. Your criteria, your branding, our system and our hours.",
+      "sub": "Matching, tracking, and reporting for your internal program — run for you, with numbers leadership can act on.",
       "stats": [
         {
           "value": "26%",
@@ -886,10 +902,14 @@
       ],
       "note": "The Shortlist is our vetted, members-only directory — every listing checked, not just paid for."
     },
+    "platformHero": {
+      "h1Lines": ["A program this size,", "still run on spreadsheets?"],
+      "sub": "Desk, Roundtable, Roster, Shortlist — or start with the services that get you there."
+    },
     "close": {
       "label": "CoachOS for corporate & enterprise",
-      "h2": "Ready for a program people show up to?",
-      "h2Em": "Start with one email.",
+      "h2": "Ready for a program",
+      "h2Em": "people show up to?",
       "cta": "Talk to us",
       "under": "Not running a program? Switch to your version.",
       "underLink": "../index.html#doors"

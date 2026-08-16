@@ -1,0 +1,44 @@
+{
+  "problemsAudience": {
+    "label": "Problems we fix",
+    "h1Lines": ["Sound familiar?", "There is a fix."],
+    "sub": "The same struggles — mapped to a service, written for your kind of work."
+  },
+  "audienceWhy": {
+    "label": "Why CoachOS",
+    "h1Lines": ["One team.", "Your name on it.", "Start to finish."],
+    "sub": "Website, marketing, leads, follow-up — built and run for you. You approve every word."
+  },
+  "audienceContact": {
+    "label": "Talk to us",
+    "h1Lines": ["Tell us what's stuck.", "A person writes back."],
+    "sub": "No bot. No auto-reply. Just a real reply."
+  },
+  "audienceServicesIndex": {
+    "coach": {
+      "h1": "Built for coaching.",
+      "h1Em": "Run for you.",
+      "sub": "Every service on this page — written for a coaching practice, run under your name."
+    },
+    "business": {
+      "h1": "Built for your business.",
+      "h1Em": "Run for you.",
+      "sub": "Every service on this page — written for a one-person shop, run while you run the shop."
+    },
+    "freelancer": {
+      "h1": "Built for freelancing.",
+      "h1Em": "Run for you.",
+      "sub": "Every service on this page — written for a one-person pipeline, run while you deliver."
+    },
+    "mentor": {
+      "h1": "Built for mentoring.",
+      "h1Em": "Run for you.",
+      "sub": "Every service on this page — written for real mentoring, run under your name."
+    },
+    "corporate": {
+      "h1": "Built for your program.",
+      "h1Em": "Run for you.",
+      "sub": "Every service on this page — written for internal programs, run off your team's plate."
+    }
+  }
+}

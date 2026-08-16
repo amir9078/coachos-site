@@ -36,6 +36,7 @@ const rootPages = JSON.parse(readFileSync(join(ROOT, 'content/root-pages.json'),
 const platformPages = JSON.parse(readFileSync(join(ROOT, 'content/platform-pages.json'), 'utf8'));
 const catalog = JSON.parse(readFileSync(join(ROOT, 'data/service-catalog.json'), 'utf8')).services;
 const audiencePages = JSON.parse(readFileSync(join(ROOT, 'content/audience-pages.json'), 'utf8'));
+const taglines = JSON.parse(readFileSync(join(ROOT, 'content/taglines.json'), 'utf8'));
 
 const FINAL_BANNER = `<div id="content-final-banner" style="position:fixed;top:0;left:0;right:0;z-index:9999;background:#312e81;color:#fff;font:500 13px/1.4 'IBM Plex Mono',monospace;padding:10px 16px;text-align:center;border-bottom:2px solid #a5b4fc">Final version — product-aligned copy. <a href="http://127.0.0.1:8080/" style="color:#c7d2fe;margin-left:8px">Original site</a> · <a href="http://127.0.0.1:8081/" style="color:#c7d2fe;margin-left:8px">Previous demo</a></div>`;
 
@@ -460,7 +461,22 @@ function rewritePlatformSubpage($, name) {
   const page = platformPages[name];
   if (!page) return;
   if (page.title) setMeta($, page.title, page.metaDescription || $('meta[name="description"]').attr('content'));
-  if (page.hero?.sub) $('.pagehero .sub').text(page.hero.sub);
+  const hero = page.hero || {};
+  setPageHero($, {
+    label: hero.label,
+    h1: hero.h1,
+    h1Em: hero.h1Em,
+    h1Lines: hero.h1Lines,
+    sub: hero.sub,
+  });
+  if (page.intro) {
+    $('p').each((_, el) => {
+      const t = $(el).text();
+      if (t.includes('Roundtable is how Coach Community') || t.includes('Roster is the network layer') || t.includes('Shortlist is how the Coach')) {
+        $(el).text(page.intro);
+      }
+    });
+  }
 }
 
 function walk(dir, files = []) {
@@ -527,15 +543,26 @@ function processFile(filePath) {
 
   if (rel.endsWith('/problems.html')) {
     const c = rootPages['problems.html'];
-    setMeta($, c.title.replace('CoachOS', `CoachOS ${rel.split('/')[0]}`), c.metaDescription);
+    const aud = rel.split('/')[0];
+    const hero = taglines.problemsAudience;
+    setMeta($, c.title.replace('CoachOS', `CoachOS ${aud}`), c.metaDescription);
     setPageHero($, {
-      label: 'Problems we fix',
-      h1: 'Research-backed problems.',
-      h1Em: 'Clear fixes.',
-      sub: c.hero.sub,
+      label: hero.label,
+      h1Lines: hero.h1Lines,
+      sub: hero.sub,
     });
     writeFileSync(filePath, $.html());
     return { rel, type: 'problems-audience' };
+  }
+
+  const audServicesMatch = rel.match(/^(coach|business|freelancer|mentor|corporate)\/services\.html$/);
+  if (audServicesMatch) {
+    const hero = taglines.audienceServicesIndex[audServicesMatch[1]];
+    if (hero) {
+      setPageHero($, { h1: hero.h1, h1Em: hero.h1Em, sub: hero.sub });
+    }
+    writeFileSync(filePath, $.html());
+    return { rel, type: 'audience-services-index' };
   }
 
   const platDirMatch = rel.match(/^(desk|roundtable|roster|shortlist)\/index\.html$/);
@@ -549,17 +576,37 @@ function processFile(filePath) {
   const platMatch = rel.match(/(?:^|\/)(desk|roundtable|roster|shortlist)\.html$/);
   if (platMatch) {
     rewritePlatformSubpage($, platMatch[1]);
+    if (platMatch[1] === 'desk') rewriteDesk($, platformPages.desk);
     writeFileSync(filePath, $.html());
     return { rel, type: 'platform-sub' };
   }
 
-  if (rel.match(/^(coach|business|freelancer|mentor|corporate)\/(why|contact|platform)\.html$/)) {
-    const page = rel.split('/')[1].replace('.html', '');
+  const audSubMatch = rel.match(/^(coach|business|freelancer|mentor|corporate)\/(why|contact|platform)\.html$/);
+  if (audSubMatch) {
+    const [, audience, page] = audSubMatch;
     const c = rootPages[`${page}.html`];
     if (c) {
       setMeta($, c.title, c.metaDescription);
-      if (page === 'platform') rewritePlatform($, c);
-      else setPageHero($, c.hero);
+      if (page === 'platform') {
+        rewritePlatform($, c);
+        const ph = audiencePages[audience]?.platformHero;
+        if (ph) {
+          setPageHero($, {
+            label: c.hero.label,
+            h1Lines: ph.h1Lines,
+            h1: ph.h1,
+            h1Em: ph.h1Em,
+            sub: ph.sub || c.hero.sub,
+          });
+        }
+      } else if (page === 'why') {
+        const hero = taglines.audienceWhy;
+        setPageHero($, { label: hero.label, h1Lines: hero.h1Lines, sub: hero.sub });
+      } else if (page === 'contact') {
+        rewriteContact($, c);
+        const hero = taglines.audienceContact;
+        setPageHero($, { label: hero.label, h1Lines: hero.h1Lines, sub: hero.sub });
+      }
     }
     writeFileSync(filePath, $.html());
     return { rel, type: 'audience-' + page };
