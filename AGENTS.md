@@ -8,8 +8,24 @@ The **final** site is generated — do not edit HTML in `final/` directly. Edit 
 
 ```bash
 node scripts/apply-research-voices.mjs
-node scripts/build-content-final.mjs
+node scripts/build-content-final.mjs --preview
 ```
+
+### Publish to GitHub Pages (live site)
+
+GitHub Pages serves the **repo root** on `main`. To ship research-aligned copy:
+
+```bash
+npm run build:live
+# or: node scripts/publish-live.mjs
+git add -A '*.html' .nojekyll
+git commit -m "Publish research-aligned site to root"
+git push origin main
+```
+
+Live URL: https://amir9078.github.io/coachos-site/
+
+The preview banner (localhost links) only appears when building with `--preview` for port **8082**. Published root HTML has no banner.
 
 **Preview URLs** (servers start automatically via `.cursor/environment.json`):
 

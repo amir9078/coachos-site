@@ -1,6 +1,6 @@
 {
   "name": "CoachOS Marketing Site",
-  "install": "npm ci\nnode scripts/build-content-final.mjs",
+  "install": "npm ci\nnode scripts/apply-research-voices.mjs\nnode scripts/build-content-final.mjs --preview",
   "terminals": [
     {
       "name": "site-original",

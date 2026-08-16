@@ -47,7 +47,10 @@ function pickAudienceHero(section, audience) {
   return null;
 }
 
-const FINAL_BANNER = `<div id="content-final-banner" style="position:fixed;top:0;left:0;right:0;z-index:9999;background:#312e81;color:#fff;font:500 13px/1.4 'IBM Plex Mono',monospace;padding:10px 16px;text-align:center;border-bottom:2px solid #a5b4fc">Final version — product-aligned copy. <a href="http://127.0.0.1:8080/" style="color:#c7d2fe;margin-left:8px">Original site</a> · <a href="http://127.0.0.1:8081/" style="color:#c7d2fe;margin-left:8px">Previous demo</a></div>`;
+const PREVIEW =
+  process.argv.includes('--preview') || process.env.PREVIEW_BANNER === '1';
+
+const FINAL_BANNER = `<div id="content-final-banner" style="position:fixed;top:0;left:0;right:0;z-index:9999;background:#312e81;color:#fff;font:500 13px/1.4 'IBM Plex Mono',monospace;padding:10px 16px;text-align:center;border-bottom:2px solid #a5b4fc">Preview — research-aligned copy (port 8082). Live site: <a href="https://amir9078.github.io/coachos-site/" style="color:#c7d2fe;margin-left:8px">GitHub Pages</a></div>`;
 
 const FOOTER_TAGLINE = globalCopy.footerTagline;
 
@@ -84,6 +87,7 @@ function setMeta($, title, desc) {
 }
 
 function addFinalBanner($) {
+  if (!PREVIEW) return;
   $('body').prepend(FINAL_BANNER);
   $('head').append(
     '<style>body{padding-top:44px!important}#content-final-banner a:hover{text-decoration:underline}</style>'
@@ -502,7 +506,7 @@ function processFile(filePath) {
   let html = readFileSync(filePath, 'utf8');
 
   if (html.includes('http-equiv="refresh"') && html.length < 800) {
-    html = html.replace('<body>', `<body>${FINAL_BANNER}`);
+    if (PREVIEW) html = html.replace('<body>', `<body>${FINAL_BANNER}`);
     writeFileSync(filePath, html);
     return { rel, type: 'redirect' };
   }
