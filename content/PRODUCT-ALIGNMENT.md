@@ -11,7 +11,8 @@ This document maps marketing copy to the CoachOS product repo (`amir9078/coachos
 
 ## Product terms to use on marketing surfaces
 
-- **Tagline:** You coach. CoachOS runs everything else.
+- **Tagline (coach / Platform):** You coach. CoachOS runs everything else.
+- **Homepage (all fits):** The all-in-one solution for your business.
 - **Desk** — the core product (not “CRM” alone)
 - **Marketing Studio**, **Practice Intelligence**, **Autopilot**, **Daily Briefing**
 - **Pipeline Agent** / **Practice Agent** — drafts and pauses; never sends alone
@@ -21,7 +22,7 @@ This document maps marketing copy to the CoachOS product repo (`amir9078/coachos
 
 ## What we fixed from the earlier demo
 
-1. Homepage leads with product tagline, not pain-only or services-only headline
+1. Homepage uses all-in-one business tagline (all five fits); coach tagline stays on coach + Platform pages
 2. Platform pages no longer claim a specialist reviews every Desk action
 3. Desk no longer claims “Done, not suggested” or LinkedIn scraping
 4. Marketing Studio copy matches product spec (draft + approve; optional done-for-you on Practice+)
