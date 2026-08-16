@@ -1,14 +1,15 @@
 {
   "index.html": {
     "title": "CoachOS — the all-in-one solution for your business",
-    "metaDescription": "CoachOS is the all-in-one solution for your business — website, marketing, leads, and follow-up for coaches, mentors, freelancers, and small businesses. AI drafts, a specialist reviews, you approve.",
+    "metaDescription": "The all-in-one solution for your business — website, marketing, leads, and follow-up for coaches, mentors, freelancers, and small businesses. You're not bad at the work; CoachOS runs what nobody taught you. AI drafts. You approve.",
     "hero": {
       "topline": "The all-in-one solution for your business.",
       "h1Lines": [
-        "The all-in-one solution",
-        "for your business."
+        "You're not bad at the work.",
+        "You're buried in the work",
+        "nobody taught you."
       ],
-      "sub": "Not another tool to manage. CoachOS builds and runs your website, marketing, and lead follow-up — and opens into one Platform when you're ready. AI drafts. You approve. Everything ships under your name.",
+      "sub": "The post at midnight. The lead gone quiet. The website still saying last year — CoachOS runs all of it, under your name.",
       "ctaPrimary": "Find your fit",
       "ctaSecondary": "See how it works"
     },
