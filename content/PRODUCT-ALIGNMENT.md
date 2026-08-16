@@ -37,6 +37,10 @@ python3 -m http.server 8082 --directory final
 
 Open http://127.0.0.1:8082/
 
+## Voice
+
+See `content/VOICE-GUIDE.md` — headlines stay human and quote-shaped; research stats live in stat strips and the problems citations section, not in hero lines.
+
 ## Sources
 
 - Product: `/workspace/coachos-product/` (README, docs/02, docs/06, docs/04)

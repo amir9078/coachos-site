@@ -4,9 +4,9 @@
     "metaDescription": "CoachOS for coaches: done-for-you website, marketing, and leads — plus CoachOS Desk for leads, bookings, session summaries, and billing. AI drafts; you approve. Live in about 3 weeks.",
     "hero": {
       "crumb": "For coaches",
-      "h1": "Your calendar fills.",
-      "h1Em": "Your marketing stops.",
-      "sub": "122,974 coaches worldwide (ICF 2025) — when you're in session, the site and feed go quiet, and the next inquiry lands on stale copy.",
+      "h1": "You coach.",
+      "h1Em": "We run the rest.",
+      "sub": "Website, marketing, leads — built and run while you're with clients. Nothing goes out until you've read it.",
       "stats": [
         {
           "value": "122,974",
@@ -172,8 +172,8 @@
       "note": "CoachOS Desk is the practice OS — leads, Marketing Studio, bookings, agreements, client delivery, and more. Membership is chosen, not sold; services are how most members start."
     },
     "platformHero": {
-      "h1Lines": ["59% expect growth this year.", "Ten tools won't get you there."],
-      "sub": "ICF 2025 — coaches stitch 5–8 apps together while the calendar fills. Desk, Roundtable, Roster, Shortlist — one membership when you're ready."
+      "h1Lines": ["Your coaching never needed ten tools.", "The admin did."],
+      "sub": "Desk runs the admin between sessions. The other rooms open when you're ready — one membership, chosen not sold."
     },
     "close": {
       "label": "CoachOS for coaches",
@@ -189,9 +189,9 @@
     "metaDescription": "Website, marketing, and leads for small business owners — built and run for you while you run the shop. AI drafts, a specialist reviews, you approve. Live in about 3 weeks.",
     "hero": {
       "crumb": "For small business owners",
-      "h1": "54% manage marketing alone.",
-      "h1Em": "You're probably one of them.",
-      "sub": "BrightLocal 2025 — Sunday-night posts instead of planning next month. Leads sit 42 hours on average while the shop keeps running.",
+      "h1": "You run the business.",
+      "h1Em": "We run the marketing.",
+      "sub": "Your site, your posts, your inbox — handled while you run the shop. You approve before anything ships.",
       "stats": [
         {
           "value": "54%",
@@ -361,7 +361,7 @@
     },
     "platformHero": {
       "h1Lines": ["You opened a business,", "not a software stack."],
-      "sub": "62% of owners handle half or more of work they could delegate (QuickBooks 2025). Desk replaces the CRM, calendar, and invoice tabs."
+      "sub": "One desk instead of five tabs after close. Membership opens when the foundation is in place."
     },
     "close": {
       "label": "CoachOS for small business",
@@ -377,9 +377,9 @@
     "metaDescription": "Portfolio, marketing, and pipeline for freelancers — built and run for you while you're heads-down delivering. AI drafts, a specialist reviews, you approve. Live in about 3 weeks.",
     "hero": {
       "crumb": "For freelancers",
-      "h1": "63% cite irregular income.",
-      "h1Em": "The pipeline is why.",
-      "sub": "Remote 2025 — project lands, marketing stops, six weeks later you're pitching from zero again.",
+      "h1": "You deliver.",
+      "h1Em": "We keep the next one coming.",
+      "sub": "Portfolio, outreach, pipeline — kept warm while you're on client work. You approve before anything ships.",
       "stats": [
         {
           "value": "63%",
@@ -542,8 +542,8 @@
       "note": "CoachOS Desk is the practice OS — leads, Marketing Studio, bookings, agreements, client delivery, and more. Membership is chosen, not sold; services are how most members start."
     },
     "platformHero": {
-      "h1Lines": ["61% can't find work consistently.", "Ten subscriptions won't fix that."],
-      "sub": "Remote 2025 — one person can't run eight tools between projects. Desk keeps pipeline, marketing, and follow-up in one place."
+      "h1Lines": ["Ten subscriptions. One of you.", "That math never worked."],
+      "sub": "Pipeline, marketing, and follow-up in one place — not another app stack between projects."
     },
     "close": {
       "label": "CoachOS for freelancers",
@@ -559,9 +559,9 @@
     "metaDescription": "Positioning, program structure, and mentee matching for mentors — built with you and run for you. AI drafts, a specialist reviews, you approve. Live in about 3 weeks.",
     "hero": {
       "crumb": "For mentors",
-      "h1": "72% stay with formal mentoring.",
-      "h1Em": "49% without it.",
-      "sub": "Sun Microsystems/Chronus — 83% want a mentor, only 52% have one (Adobe). Structure, a clear offer, and a page worth sending are what's missing.",
+      "h1": "You have the judgment.",
+      "h1Em": "We build the rest.",
+      "sub": "A clear offer, a real program, a way for the right people to find you — built with you, run for you.",
       "stats": [
         {
           "value": "72%",
@@ -730,8 +730,8 @@
       "note": "CoachOS Desk is the practice OS — leads, Marketing Studio, bookings, agreements, client delivery, and more. Membership is chosen, not sold; services are how most members start."
     },
     "platformHero": {
-      "h1Lines": ["Still answering \"it depends.\"", "No page. No program OS."],
-      "sub": "Formal mentoring retains at 72% vs 49% without structure — Desk runs mentee flow, sessions, and proof when you're ready."
+      "h1Lines": ["You're here to mentor.", "Everything else is ours."],
+      "sub": "Offer, sessions, and mentee flow on one desk — the rooms around it when membership opens."
     },
     "close": {
       "label": "CoachOS for mentors",
@@ -747,9 +747,9 @@
     "metaDescription": "Matching, tracking, and reporting for internal mentoring programs — run for L&D and HR teams, with proof leadership can act on. Only 26% rate their program 8/10 or higher.",
     "hero": {
       "crumb": "For corporate & enterprise",
-      "h1": "Only 26% rate programs 8/10.",
-      "h1Em": "Spreadsheets don't fix that.",
-      "sub": "HR.com — 98% of Fortune 500 run mentoring programs (MentorcliQ), but matching still eats weekends and leadership gets satisfaction scores, not proof.",
+      "h1": "Keep the program.",
+      "h1Em": "Lose the spreadsheet.",
+      "sub": "Matching, tracking, reporting — run for your team, with outcomes leadership can actually use.",
       "stats": [
         {
           "value": "26%",
@@ -903,8 +903,8 @@
       "note": "The Shortlist is our vetted, members-only directory — every listing checked, not just paid for."
     },
     "platformHero": {
-      "h1Lines": ["98% run programs.", "Only 26% rated 8/10 or higher."],
-      "sub": "HR.com & MentorcliQ — cohort matching, session tracking, and reporting that survives a budget review."
+      "h1Lines": ["A program this size,", "still run on spreadsheets?"],
+      "sub": "Run the program without rebuilding it every cohort — start with services, platform when you're ready."
     },
     "close": {
       "label": "CoachOS for corporate & enterprise",
