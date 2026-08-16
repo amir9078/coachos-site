@@ -15,6 +15,7 @@ for (const [key, voice] of Object.entries(voices.services)) {
     genericSub: voice.genericSub,
     genericProblem: voice.genericProblem,
   });
+  if (voice.voice) catalog.services[key].voice = voice.voice;
   patched++;
 }
 

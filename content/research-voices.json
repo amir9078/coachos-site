@@ -13,17 +13,32 @@
     "business-strategy-consulting": {
       "genericH1": "Hit a ceiling nobody at your table can break.",
       "genericSub": "A written 90-day plan — what you sell, to whom, at what price — reviewed with you each quarter.",
-      "genericProblem": "Most owners wing it and know it. Strategy is the work nobody taught you to write down."
+      "genericProblem": "Most owners wing it and know it. Strategy is the work nobody taught you to write down.",
+      "voice": {
+        "quote": "I know what I am good at — I just never wrote down what the business should do next quarter.",
+        "role": "Business owner, third year solo",
+        "answer": "We audit the practice, write the 90-day plan, and review it with you every quarter."
+      }
     },
     "personal-branding": {
       "genericH1": "Forgettable, not bad.",
       "genericSub": "Clear positioning beats more content — one sentence that works everywhere you appear.",
-      "genericProblem": "If perfect prospects landed on your profile today, how many would trust you enough to reach out? That's positioning, not traffic."
+      "genericProblem": "If perfect prospects landed on your profile today, how many would trust you enough to reach out? That's positioning, not traffic.",
+      "voice": {
+        "quote": "Who do you work with? — I still take two minutes to answer that.",
+        "role": "Executive coach, six years in",
+        "answer": "We work out one sentence with you, then put it on your site, bios, and proposals."
+      }
     },
     "website": {
       "genericH1": "You don't need to be loud.",
       "genericSub": "You need to be findable — a site that says who you help and what changes, kept current by us.",
-      "genericProblem": "If you think you don't need to market, you're already invisible — and invisible doesn't get referred anymore."
+      "genericProblem": "If you think you don't need to market, you're already invisible — and invisible doesn't get referred anymore.",
+      "voice": {
+        "quote": "My site still says coaching services next to a stock photo from 2019.",
+        "role": "Leadership coach, referral-only practice",
+        "answer": "We build around your specialty, keep copy current, and wire booking — you approve every change."
+      }
     },
     "hosting-domain": {
       "genericH1": "Launch delays hide in the details.",
@@ -68,7 +83,12 @@
     "lead-management": {
       "genericH1": "They signed with someone else.",
       "genericSub": "Replies in minutes, under your name — while the lead is still warm.",
-      "genericProblem": "Form on Friday afternoon. Follow-up Monday morning. By then they'd already moved on — the most expensive weekend you'll have."
+      "genericProblem": "Form on Friday afternoon. Follow-up Monday morning. By then they'd already moved on — the most expensive weekend you'll have.",
+      "voice": {
+        "quote": "They had already signed with someone else — I called back Tuesday.",
+        "role": "Career coach, full calendar",
+        "answer": "We answer in minutes, book discovery calls, and follow up until yes or clear no."
+      }
     },
     "sales-closing-support": {
       "genericH1": "Polite does not mean closed.",

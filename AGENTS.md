@@ -50,6 +50,6 @@ In Cursor Desktop, open the **Ports** panel and forward port **8082** if you are
 
 ### Copy system
 
-- Source of truth: `content/research-voices.json` + `content/root-pages.json` + audience/platform/taglines JSON
+- Source of truth: `content/research-voices.json` + `content/root-pages.json` + `content/audience-services-pages.json` + `content/problems-pages.json` + audience/platform/taglines JSON
 - Voice rules: `content/VOICE-GUIDE.md`
 - Research PDF: `content/CoachOS-Market-Research-Report.pdf`

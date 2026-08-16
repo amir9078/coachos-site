@@ -38,6 +38,10 @@ const catalog = JSON.parse(readFileSync(join(ROOT, 'data/service-catalog.json'),
 const audiencePages = JSON.parse(readFileSync(join(ROOT, 'content/audience-pages.json'), 'utf8'));
 const taglines = JSON.parse(readFileSync(join(ROOT, 'content/taglines.json'), 'utf8'));
 const problemsPages = JSON.parse(readFileSync(join(ROOT, 'content/problems-pages.json'), 'utf8'));
+const audienceServicesPages = JSON.parse(
+  readFileSync(join(ROOT, 'content/audience-services-pages.json'), 'utf8')
+);
+const researchVoices = JSON.parse(readFileSync(join(ROOT, 'content/research-voices.json'), 'utf8'));
 
 function pickAudienceHero(section, audience) {
   const block = taglines[section];
@@ -191,10 +195,182 @@ function rewriteIndex($, c) {
   if (how.feedNote) $('.feed .fnote').text(how.feedNote);
   rewriteDeskFeed($);
 
+  const proof = c.proofSection;
+  if (proof) {
+    $('#proof .sec-head .label').text(proof.label);
+    $('#proof .sec-head h2').html(
+      `${esc(proof.heading)} <em>${esc(proof.headingEm)}</em>`
+    );
+    $('#proof .sec-head .after').html(proof.sub);
+    if (proof.bigQuote) {
+      $('#proof .bigquote p').html(
+        `${esc(proof.bigQuote)} <em style="color:var(--accent)">${esc(proof.bigQuoteEm)}</em>`
+      );
+    }
+    $('#proof .numbers.rail .num').each((i, el) => {
+      const t = proof.timeline?.[i];
+      if (!t) return;
+      $(el).find('.n em').text(t.when);
+      $(el).find('.l').text(t.text);
+    });
+    if (proof.founderNote) {
+      $('#proof .rooms-note').html(proof.founderNote);
+    }
+  }
+
+  const rooms = c.roomsSection;
+  if (rooms) {
+    $('#rooms .sec-head .label').text(rooms.label);
+    $('#rooms .sec-head h2').html(
+      `${esc(rooms.heading)} <em>${esc(rooms.headingEm)}</em>`
+    );
+    $('#rooms .rooms-strip h2').text(rooms.stripHeading);
+    if (rooms.note) $('#rooms .rooms-strip .note').html(rooms.note);
+  }
+
+  const foot = c.footcta || c.closeSection;
+  if (foot) {
+    $('.footcta .label').text(foot.label);
+    $('.footcta h2').html(`${esc(foot.heading)} <em>${esc(foot.headingEm)}</em>`);
+    if (foot.sub) $('.footcta .under').text(foot.sub);
+    $('.footcta .btn-primary').text(foot.ctaPrimary);
+    if (foot.ctaSecondary) $('.footcta .btn-ghost').text(foot.ctaSecondary);
+  }
+
   const close = c.closeSection;
-  $('.close-sec .label').last().text(close.label);
-  $('.close-sec h2').last().html(`${esc(close.heading)} <em>${esc(close.headingEm)}</em>`);
-  $('.close-sec .btn-primary').last().text(close.ctaPrimary);
+  if (close && $('.close-sec').length) {
+    $('.close-sec .label').last().text(close.label);
+    $('.close-sec h2').last().html(`${esc(close.heading)} <em>${esc(close.headingEm)}</em>`);
+    $('.close-sec .btn-primary').last().text(close.ctaPrimary);
+  }
+}
+
+function renderServiceEntry(svc, prefix = '') {
+  const href = prefix + svc.href;
+  const chips = (svc.chips || [])
+    .map((ch) => `<span class="chip">${esc(ch)}</span>`)
+    .join('');
+  return `<div class="svc">
+        <h4><a href="${href}" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--line-strong)">${esc(svc.name)}</a></h4>
+        <div>
+          <p>${esc(svc.desc)}</p>
+          ${chips ? `<div class="chips">${chips}</div>` : ''}
+        </div>
+      </div>`;
+}
+
+function renderSvcGroup(stage, prefix = '') {
+  const services = (stage.services || [])
+    .map((s) => renderServiceEntry(s, prefix))
+    .join('\n');
+  return `<div class="svc-group reveal">
+      <div class="ghead"><span class="gnum">${esc(stage.num)} /</span><h3>${esc(stage.title)}</h3>${stage.gcount ? `<span class="gcount">${esc(stage.gcount)}</span>` : ''}</div>
+      ${stage.stageIntro ? `<p class="stage-intro">${esc(stage.stageIntro)}</p>` : ''}
+      ${services}
+    </div>`;
+}
+
+function rewriteServicesPage($, c, prefix = '') {
+  setMeta($, c.title, c.metaDescription);
+  setPageHero($, {
+    label: c.hero.label,
+    h1Lines: c.hero.h1Lines,
+    sub: c.hero.sub,
+  });
+  if (c.hero.ctaPrimary) {
+    $('.hero-ctas .btn-primary').text(c.hero.ctaPrimary);
+    if (c.hero.ctaSecondary) $('.hero-ctas .btn-ghost').text(c.hero.ctaSecondary);
+  }
+
+  const secHead = $('section.sec').not('.sec-tight').first().find('.sec-head');
+  if (secHead.length && c.servicesSection) {
+    secHead.find('h2').text(c.servicesSection.heading);
+    secHead.find('.after').text(c.servicesSection.sub);
+  }
+
+  const wrap = $('section.sec').not('.sec-tight').first().find('> .wrap').first();
+  if (wrap.length && c.servicesSection?.stages) {
+    wrap.find('.svc-group').remove();
+    const html = c.servicesSection.stages.map((st) => renderSvcGroup(st, prefix)).join('\n');
+    wrap.prepend(html);
+    if (c.servicesSection.footnote) {
+      let note = wrap.find('.rooms-note');
+      if (!note.length) {
+        note = $(`<p class="rooms-note reveal" style="margin-top:2.4rem"></p>`);
+        wrap.append(note);
+      }
+      note.html(
+        `Mentoring and program services are not listed here — they live inside their fits: <a href="mentor/services.html">for mentors</a> and <a href="corporate/services.html">for corporate programs</a>.`
+      );
+    }
+  }
+
+  const fit = c.fitSection;
+  if (fit) {
+    $('.rooms-strip h2').text(fit.heading);
+    $('.rooms-strip .note').text(fit.sub);
+  }
+
+  const close = c.closeSection;
+  if (close) {
+    $('.close-sec .label').text(close.label);
+    $('.close-sec h2').html(`${esc(close.heading)} <em>${esc(close.headingEm)}</em>`);
+    $('.close-sec .btn-primary').text(close.ctaPrimary);
+    if (close.sub) $('.close-sec .under').html(close.sub);
+  }
+}
+
+function rewriteAudienceServicesPage($, audience, prefix = '') {
+  const page = audienceServicesPages[audience];
+  if (!page) return;
+
+  const hero = taglines.audienceServicesIndex[audience];
+  if (hero) {
+    setPageHero($, { h1: hero.h1, h1Em: hero.h1Em, sub: hero.sub });
+  }
+
+  const strip = page.problemsStrip;
+  if (strip) {
+    const alt = $('.sec-tight.alt').first();
+    alt.find('.sec-head .label').text(strip.label);
+    alt.find('.sec-head h2').text(strip.heading);
+    const pains = alt.find('.pains');
+    pains.empty();
+    strip.stats.forEach((s) => {
+      pains.append(
+        `<div class="pain reveal"><span class="numeral">${esc(s.stat)}</span><p><b>${esc(s.title)}</b> ${esc(s.body)}</p></div>`
+      );
+    });
+    alt.find('p.reveal').last().html(strip.after);
+  }
+
+  const svcSec = page.servicesSection;
+  if (svcSec) {
+    const sec = $('section.sec').not('.sec-tight').first();
+    sec.find('.sec-head .label').text(svcSec.label);
+    sec.find('.sec-head h2').text(svcSec.heading);
+    sec.find('.sec-head .after').text(svcSec.sub);
+  }
+
+  const close = page.closeSection;
+  if (close) {
+    const closeSec = $('.sec-tight.alt').last();
+    closeSec.find('.sec-head .label').text(close.label);
+    closeSec.find('.sec-head h2').text(close.heading);
+    closeSec.find('.sec-head .after').text(close.sub);
+    closeSec.find('.btn-primary').text(close.ctaPrimary);
+    const ghost = closeSec.find('.btn-ghost');
+    if (ghost.length && close.ctaSecondary) {
+      ghost.text(close.ctaSecondary);
+      if (close.ctaSecondaryHref) ghost.attr('href', close.ctaSecondaryHref);
+    }
+  }
+}
+
+function baseServiceSlug(key) {
+  if (!key) return null;
+  const parts = key.split('/');
+  return parts[parts.length - 1];
 }
 
 function rewriteAudienceIndex($, data) {
@@ -305,9 +481,25 @@ function rewriteServicePage($, relPath) {
   $('.pagehero .sub').text(variant.sub);
 
   const probSec = $('.sec-tight.alt');
-  if (probSec.length && entry.genericProblem) {
-    probSec.find('.sec-head h2').text('Why this service exists');
-    probSec.find('.pain p').first().html(esc(entry.genericProblem));
+  const slug = baseServiceSlug(key);
+  const voice = entry.voice || researchVoices.services[slug]?.voice;
+  if (probSec.length && (entry.genericProblem || voice)) {
+    probSec.find('.sec-head .label').text('The problem it fixes');
+    probSec.find('.sec-head h2').text(voice ? 'What people tell us' : 'Why this service exists');
+    const pains = probSec.find('.pains');
+    pains.empty();
+    if (voice) {
+      pains.append(
+        `<div class="pain reveal"><span class="numeral">&#10022;</span><div class="voice"><span class="av">${esc(voice.role?.charAt(0) || '?')}</span><div class="bubble"><blockquote>&ldquo;${esc(voice.quote)}&rdquo;</blockquote><cite>${esc(voice.role)}</cite></div></div></div>`
+      );
+      pains.after(
+        `<p class="reveal" style="margin-top:1.2rem;color:var(--ink-soft);max-width:720px"><b style="color:var(--ink)">What we run:</b> ${esc(voice.answer)}</p>`
+      );
+    } else {
+      pains.append(
+        `<div class="pain reveal"><span class="numeral">&#10022;</span><p>${esc(entry.genericProblem)}</p></div>`
+      );
+    }
   }
 
   const incSec = $('.sec').not('.sec-tight').first();
@@ -355,6 +547,7 @@ function sanitizeProductCopy($) {
     if (!html) return;
     $(el).html(
       html
+        .replace(/The problem is documented\./gi, 'The gaps are real.')
         .replace(/from our research/gi, 'from members')
         .replace(/seeded from the same research/gi, 'from peers in the same room')
         .replace(/the research says/gi, 'the numbers say')
@@ -570,6 +763,31 @@ function rewriteWhy($, c) {
       if (paras[i]) $(el).text(paras[i]);
     });
   }
+  const cmp = c.compareSection;
+  if (cmp) {
+    $('.sec .sec-head .label').first().text(cmp.label);
+    $('.sec .sec-head h2').first().text(cmp.heading);
+    $('.sec .sec-head .after').first().text(cmp.sub);
+  }
+  const table = c.compareTable;
+  if (table?.rows) {
+    const tbody = $('.cmp tbody');
+    tbody.empty();
+    table.rows.forEach((row) => {
+      tbody.append(
+        `<tr>
+            <td><strong>${esc(row.name)}</strong><br><span class="who">${esc(row.who)}</span></td>
+            <td class="price">${esc(row.price)}</td>
+            <td>${esc(row.does)}</td>
+            <td>${esc(row.gap)}</td>
+          </tr>`
+      );
+    });
+    const notes = $('.cmp-note');
+    notes.each((i, el) => {
+      if (table.footnotes?.[i]) $(el).html(table.footnotes[i]);
+    });
+  }
   const stats = c.statsSection;
   if (stats) {
     $('.stat-strip div').each((i, el) => {
@@ -595,11 +813,31 @@ function rewriteWhy($, c) {
       col.points.forEach((pt) => ul.append(`<li>${esc(pt)}</li>`));
     });
   }
+  const close = c.closeSection;
+  if (close) {
+    $('.close-sec .label').text(close.label);
+    $('.close-sec h2').html(`${esc(close.heading)} <em>${esc(close.headingEm)}</em>`);
+    $('.close-sec .btn-primary').text(close.ctaPrimary);
+    if (close.sub) $('.close-sec .under').html(close.sub);
+  }
 }
 
 function rewritePlatform($, c) {
   setMeta($, c.title, c.metaDescription);
   setPageHero($, { label: c.hero.label, h1Lines: c.hero.h1Lines, sub: c.hero.sub });
+  const rs = c.roomsSection;
+  if (rs) {
+    $('.rooms .sec-head .label, section .sec-head .label').first().text(rs.label);
+    $('.rooms .sec-head h2, .sec-head h2').first().html(
+      `${esc(rs.heading.split('.')[0])}. <em>${esc(rs.heading.split('.').slice(1).join('.').trim() || '')}</em>`
+    );
+    if (rs.sub) $('.rooms .sec-head .after').text(rs.sub);
+    if (rs.ledgerNote) {
+      $('p').each((_, el) => {
+        if ($(el).text().includes('We could show screenshots')) $(el).text(rs.ledgerNote);
+      });
+    }
+  }
   $('.rooms .room').each((i, el) => {
     const r = c.roomsSection.rooms[i];
     if (!r) return;
@@ -612,6 +850,29 @@ function rewritePlatform($, c) {
     $('.sec-tight .sec-head h2').first().text(rule.heading);
     $('.sec-tight .wrap-narrow p, .sec-tight p').first().text(rule.body);
   }
+  const adm = c.admissionSection;
+  if (adm) {
+    $('h2').each((_, el) => {
+      if ($(el).text().includes('cannot just sign up') || $(el).text().includes("can't just sign up")) {
+        $(el).text(adm.heading);
+      }
+    });
+    const block = adm.paragraphs;
+    $('.wrap-narrow p, section p').each((i, el) => {
+      const t = $(el).text();
+      if (t.includes('Communities open to anyone') || t.includes('Not there yet')) {
+        const idx = t.includes('Communities open') ? 0 : 1;
+        if (block[idx]) $(el).text(block[idx]);
+      }
+    });
+  }
+  const close = c.closeSection;
+  if (close) {
+    $('.close-sec .label').text(close.label);
+    $('.close-sec h2').html(`${esc(close.heading)} <em>${esc(close.headingEm)}</em>`);
+    if (close.sub) $('.close-sec .under').text(close.sub);
+    $('.close-sec .btn-primary').text(close.ctaPrimary);
+  }
 }
 
 function rewriteContact($, c) {
@@ -620,10 +881,31 @@ function rewriteContact($, c) {
   const fs = c.founderSection;
   if (fs) {
     $('section .wrap-narrow h2, .founder h2').first().text(fs.heading);
+    const paras = fs.paragraphs;
+    if (paras?.length) {
+      $('.wrap-narrow p, section .wrap-narrow .reveal p').each((i, el) => {
+        if (paras[i]) $(el).text(paras[i]);
+      });
+    }
+    if (fs.who) {
+      $('cite, .who').each((_, el) => {
+        if ($(el).text().includes('Shaikh') || $(el).hasClass('who')) $(el).text(fs.who);
+      });
+    }
   }
   const form = c.formSection;
   if (form) {
     $('textarea[name="message"], #message').attr('placeholder', form.messagePlaceholder);
+    if (form.submitLabel) $('button[type="submit"], input[type="submit"]').val(form.submitLabel);
+  }
+  const close = c.closeSection;
+  if (close) {
+    $('.close-sec .label').text(close.label);
+    $('.close-sec h2').html(
+      `${esc(close.heading || close.h2)} <em>${esc(close.headingEm || close.h2Em)}</em>`
+    );
+    if (close.sub) $('.close-sec .under').text(close.sub);
+    if (close.ctaPrimary) $('.close-sec .btn-primary').text(close.ctaPrimary);
   }
 }
 
@@ -748,10 +1030,7 @@ function processFile(filePath) {
     else if (rel === 'why.html') rewriteWhy($, c);
     else if (rel === 'platform.html') rewritePlatform($, c);
     else if (rel === 'contact.html') rewriteContact($, c);
-    else if (rel === 'services.html') {
-      setMeta($, c.title, c.metaDescription);
-      setPageHero($, { label: c.hero.label, h1Lines: c.hero.h1Lines, sub: c.hero.sub });
-    }
+    else if (rel === 'services.html') rewriteServicesPage($, c);
     commitPage($, filePath, rel);
     return { rel, type: 'root-' + rel };
   }
@@ -778,10 +1057,7 @@ function processFile(filePath) {
 
   const audServicesMatch = rel.match(/^(coach|business|freelancer|mentor|corporate)\/services\.html$/);
   if (audServicesMatch) {
-    const hero = taglines.audienceServicesIndex[audServicesMatch[1]];
-    if (hero) {
-      setPageHero($, { h1: hero.h1, h1Em: hero.h1Em, sub: hero.sub });
-    }
+    rewriteAudienceServicesPage($, audServicesMatch[1], `${audServicesMatch[1]}/`);
     commitPage($, filePath, rel);
     return { rel, type: 'audience-services-index' };
   }

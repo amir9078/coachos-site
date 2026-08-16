@@ -114,11 +114,33 @@
       ],
       "feedNote": "Live modules from CoachOS Desk. Every outbound item waits in your approval queue."
     },
-    "closeSection": {
+    "proofSection": {
+      "label": "03 / The proof",
+      "heading": "The gaps are real.",
+      "headingEm": "The fix is dated.",
+      "sub": "Every pain on the <a href=\"problems.html\">what we fix</a> page maps to a service. Here: what changes, and when.",
+      "bigQuote": "The first month, dated.",
+      "bigQuoteEm": "Hold us to it.",
+      "timeline": [
+        { "when": "Day 1", "text": "Business audit starts; handles and listings claimed and corrected" },
+        { "when": "Week 1", "text": "Strategy call done, written scope with a fixed price in your hands" },
+        { "when": "Week 3", "text": "Website live, business email working, one name everywhere" },
+        { "when": "Week 4", "text": "Marketing publishing on schedule; every inquiry answered in minutes" }
+      ],
+      "founderNote": "Built by a founder who ran a practice and a freelance shop before CoachOS. <a href=\"contact.html\">His story →</a>"
+    },
+    "roomsSection": {
+      "label": "05 / The CoachOS Platform",
+      "heading": "The services are for everyone.",
+      "headingEm": "The Platform is not.",
+      "stripHeading": "One product. Four rooms. Chosen, not sold.",
+      "note": "That is all we say out here. <a href=\"platform.html\" style=\"color:inherit\">The rest is on the Platform page →</a>"
+    },
+    "footcta": {
       "label": "CoachOS",
       "heading": "Start with services.",
       "headingEm": "Grow into the Platform.",
-      "sub": "Open to everyone today. Members-only rooms when you're ready.",
+      "sub": "Open to everyone today. Members-only rooms when the foundation is real.",
       "ctaPrimary": "Start this week",
       "ctaSecondary": "See the services"
     }
@@ -144,108 +166,149 @@
         {
           "num": "00",
           "title": "Strategy — plan it before we run it",
+          "gcount": "Where every engagement starts",
+          "stageIntro": "Before any service switches on, we look at the whole business — what you sell, to whom, at what price, and what the next quarter should do. Consulting, not setup: the thinking every other stage executes.",
           "desc": "A working session on the business, then a written 90-day plan and quarterly reviews.",
           "chips": ["Business audit", "Written 90-day plan", "Pricing & offer strategy", "Quarterly reviews"],
           "services": [
             {
               "name": "Business strategy & consulting",
-              "desc": "We look at what you sell, to whom, at what price, and what the next quarter should do — then write it down and review it with you."
+              "href": "services/business-strategy-consulting.html",
+              "desc": "A working session on the business itself, then a written 90-day plan — and a standing quarterly review where we look at what the numbers did and decide the next quarter together.",
+              "chips": ["Business audit", "Written 90-day plan", "Pricing & offer strategy", "Quarterly reviews"]
             }
           ]
         },
         {
           "num": "01",
           "title": "Position — know what you sell",
+          "gcount": "Where every practice starts",
+          "stageIntro": "Before a website or a single post, you need a sharp answer to two questions: what exactly do you offer, and why you. Everything in the next stages is built on it.",
           "desc": "Before a website or a single post, you need a sharp offer and a reason to pick you.",
           "chips": ["Positioning session", "Voice & message guide", "Every bio rewritten", "Visual direction"],
           "services": [
             {
               "name": "Personal branding",
-              "desc": "A concrete answer to what is different about you — worked out with you, then applied everywhere you appear."
+              "href": "services/personal-branding.html",
+              "desc": "A concrete answer to what is different about you — worked out with you, then applied everywhere you appear, from bio to proposal.",
+              "chips": ["Positioning session", "Voice & message guide", "Every bio rewritten", "Visual direction"]
             }
           ]
         },
         {
           "num": "02",
           "title": "Launch — look real from day one",
+          "gcount": "Your foundation, built for you",
+          "stageIntro": "When someone hears your name and looks you up, everything they find — site, email, handles — says the same thing: this person is established. We build all of it and keep it alive.",
           "desc": "Site, email, handles, and hosting that stay current and say the same thing about you.",
           "chips": ["Design & copywriting", "Domain & renewals managed", "Mailbox on your domain", "Handles claimed"],
           "services": [
             {
               "name": "Website, built for you",
-              "desc": "Designed, written, launched, and kept current. When your prices or hours change, the site changes after you approve."
+              "href": "services/website.html",
+              "desc": "Designed, written, launched, and kept current. When your prices or hours change, the site changes after you approve.",
+              "chips": ["Design & copywriting", "Build & launch", "Ongoing edits", "Kept current monthly"]
             },
             {
               "name": "Hosting & domain",
-              "desc": "Renewals, DNS, and the card on file are our problem. Your business does not go dark because a notice went to a dead inbox."
+              "href": "services/hosting-domain.html",
+              "desc": "Renewals, DNS, and the card on file are our problem. Your business does not go dark because a notice went to a dead inbox.",
+              "chips": ["Domain & renewals managed", "DNS & SSL", "Uptime monitoring", "Backups"]
             },
             {
               "name": "Business email",
-              "desc": "An address on your own domain with deliverability sorted so quotes and follow-ups stop landing in spam."
+              "href": "services/business-email.html",
+              "desc": "An address on your own domain with deliverability sorted so quotes and follow-ups stop landing in spam.",
+              "chips": ["Mailbox on your domain", "Deliverability setup", "Signatures", "Old-mail migration"]
             },
             {
               "name": "Social handle setup",
-              "desc": "One name, claimed and consistent on every platform that matters — old accounts cleaned up."
+              "href": "services/social-handles.html",
+              "desc": "One name, claimed and consistent on every platform that matters — old accounts cleaned up.",
+              "chips": ["Name audit", "Handles claimed", "Old accounts cleaned up", "Bios & avatars matched"]
             }
           ]
         },
         {
           "num": "03",
           "title": "Grow — get found, get clients",
+          "gcount": "Marketing that does not stop",
+          "stageIntro": "This is the stage that dies first when client work gets heavy — and the one we never let stop. Drafted in your voice, approved by you, published through your busiest months.",
           "desc": "Marketing that keeps running when client work gets heavy — the stage that usually stops first.",
           "chips": ["Content calendar", "Articles written for search", "Nurture sequences", "Campaigns run for you", "Daily budget watch"],
           "services": [
             {
               "name": "Social media marketing",
-              "desc": "Posts drafted from your thinking, scheduled ahead, and kept running through your busiest months."
+              "href": "services/social-media-marketing.html",
+              "desc": "Posts drafted from your thinking, scheduled ahead, and kept running through your busiest months.",
+              "chips": ["Content calendar", "Posts in your voice", "Scheduled & published", "Monthly review"]
             },
             {
               "name": "Content marketing",
-              "desc": "Articles written to be found by people searching, not just admired by people who already know you."
+              "href": "services/content-marketing.html",
+              "desc": "Articles written to be found by people searching, not just admired by people who already know you.",
+              "chips": ["Topic research", "Articles written for search", "On-page SEO", "Internal linking"]
             },
             {
               "name": "Email marketing",
-              "desc": "Newsletters and sequences drafted for your approval, sent on a rhythm that survives busy months."
+              "href": "services/email-marketing.html",
+              "desc": "Newsletters and sequences drafted for your approval, sent on a rhythm that survives busy months.",
+              "chips": ["List setup & hygiene", "Newsletters drafted", "Nurture sequences", "Open & reply reporting"]
             },
             {
               "name": "Lead generation",
-              "desc": "Inquiries from channels suited to your practice — sourced for you, not resold lists."
+              "href": "services/lead-generation.html",
+              "desc": "Inquiries from channels suited to your practice — sourced for you, not resold lists.",
+              "chips": ["Channel plan", "Campaigns run for you", "Landing pages", "Lead capture"]
             },
             {
               "name": "Paid ads management",
-              "desc": "Campaigns planned, run, and watched daily — budgets protected, creatives refreshed, results in plain numbers."
+              "href": "services/paid-ads-management.html",
+              "desc": "Campaigns planned, run, and watched daily — budgets protected, creatives refreshed, results in plain numbers.",
+              "chips": ["Campaign strategy", "Creatives & copy", "Daily budget watch", "Plain-number reporting"]
             }
           ]
         },
         {
           "num": "04",
           "title": "Run — keep it full, keep it moving",
+          "gcount": "The successful-business stage",
+          "stageIntro": "A full calendar creates its own admin: leads to answer, deals to follow up, programs to structure. Every conversation tracked to a resolution — nothing dropped.",
           "desc": "Every inquiry tracked and answered while it is warm. Minutes decide it, not days. Nothing dies in row 90 of a spreadsheet.",
           "chips": ["Replies in minutes", "One pipeline view", "Follow-up sequences", "Proposals drafted"],
           "services": [
             {
               "name": "Lead management",
-              "desc": "Every inquiry tracked and answered while it is warm. Nothing dies in row 90 of a spreadsheet."
+              "href": "services/lead-management.html",
+              "desc": "Every inquiry tracked and answered while it is warm. Nothing dies in row 90 of a spreadsheet.",
+              "chips": ["Replies in minutes", "One pipeline view", "Follow-up sequences", "Booking reminders"]
             },
             {
               "name": "Sales & closing support",
-              "desc": "Follow-through on open deals — polite does not mean gone."
+              "href": "services/sales-closing-support.html",
+              "desc": "Follow-through on open deals — polite does not mean gone.",
+              "chips": ["Proposals drafted", "Eight-touch follow-through", "Call scheduling", "Deal notes"]
             }
           ]
         },
         {
           "num": "05",
           "title": "Courses — sell what you know",
+          "gcount": "Your expertise, packaged",
+          "stageIntro": "When the practice runs itself, the next revenue stream is what is already in your head. We turn it into a course people can buy — and launch it properly.",
           "desc": "When the practice runs itself, package what is already in your head and launch it properly.",
           "chips": ["Curriculum design", "Production & hosting", "Pricing & launch plan", "Evergreen funnel"],
           "services": [
             {
               "name": "Course creation & launch",
-              "desc": "Your knowledge structured into a curriculum, produced, hosted, and launched with a real plan."
+              "href": "services/course-creation.html",
+              "desc": "Your knowledge structured into a curriculum, produced, hosted, and launched with a real plan.",
+              "chips": ["Curriculum design", "Production & hosting", "Pricing & launch plan", "Evergreen funnel"]
             }
           ]
         }
-      ]
+      ],
+      "footnote": "Mentoring and program services are not listed here — they live inside their fits: for mentors and for corporate programs."
     },
     "fitSection": {
       "heading": "Want these services shaped to your work?",
@@ -256,7 +319,7 @@
       "label": "CoachOS services",
       "heading": "What's eating your week?",
       "headingEm": "Hand it over.",
-      "sub": "Not sure where to start? Every problem maps to a service.",
+      "sub": "Not sure where to start? <a href=\"problems.html\">Start from the problem</a> — each one maps to its fix.",
       "ctaPrimary": "Start this week",
       "ctaSecondary": "See the problems page"
     }
@@ -313,6 +376,43 @@
       "sub": "Named prices are public and linked. The retainer row is a typical market range.",
       "note": "Already paying for one of these? Bringing your client list, contracts, and calendar over is part of onboarding."
     },
+    "compareTable": {
+      "rows": [
+        {
+          "name": "A coaching platform",
+          "who": "Paperbell, HoneyBook, CoachAccountable",
+          "price": "$9–$57/mo",
+          "does": "CRM, contracts, payments — after you have built the practice.",
+          "gap": "DIY. No one builds your site, runs your marketing, or answers a lead for you."
+        },
+        {
+          "name": "A template-site agency",
+          "who": "CoachingWebsites, Brighter Vision",
+          "price": "$69–$99/mo + setup",
+          "does": "A website, hosting, maybe an email address.",
+          "gap": "They build and leave. No platform, no leads, no one accountable after launch."
+        },
+        {
+          "name": "A directory listing",
+          "who": "Noomii Pro / Elite",
+          "price": "$447–$1,164/yr + 15–30% of revenue",
+          "does": "A lead source — clients who find you in a directory.",
+          "gap": "Open listing, no vetting, and they take a slice of every sale you make."
+        },
+        {
+          "name": "A marketing retainer",
+          "who": "Any coach-marketing agency",
+          "price": "$750–$1,500/mo",
+          "does": "Real marketing — posting, maybe ads.",
+          "gap": "One piece of the job. You still glue on the site, the CRM, the follow-up, the network."
+        }
+      ],
+      "footnotes": [
+        "Prices from each company public page, checked January 2026 — <a href=\"https://paperbell.com/pricing\" rel=\"noopener\">Paperbell</a> · <a href=\"https://www.honeybook.com/pricing\" rel=\"noopener\">HoneyBook</a> · <a href=\"https://www.coachaccountable.com/pricing\" rel=\"noopener\">CoachAccountable</a> · <a href=\"https://www.coachingwebsites.com/pricing/\" rel=\"noopener\">CoachingWebsites</a> · <a href=\"https://www.brightervision.com/pricing/\" rel=\"noopener\">Brighter Vision</a> · <a href=\"https://www.noomii.com/\" rel=\"noopener\">Noomii</a>. Linked so you can verify — not because we endorse them.",
+        "Already paying for one of these? Bringing your client list, contracts, and calendar over is part of onboarding — not a second project you have to find time for.",
+        "Paperbell brings no marketing — you find the clients, it manages them after. CoachAccountable price climbs as your list grows. MentorCruise takes roughly 28% on small plans. The gap in the market is the gap in this table."
+      ]
+    },
     "statsSection": {
       "heading": "The market is large. The tools are disconnected.",
       "stats": [
@@ -351,7 +451,7 @@
       "label": "See it for yourself",
       "heading": "Start with services.",
       "headingEm": "Stay for the Platform.",
-      "sub": "Or see what membership opens — starting with CoachOS Desk.",
+      "sub": "Or see what membership opens — starting with <a href=\"desk/\">CoachOS Desk</a>.",
       "ctaPrimary": "Find your fit",
       "ctaSecondary": "See CoachOS Desk"
     }
