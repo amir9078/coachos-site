@@ -12,16 +12,22 @@ Plain, warm, direct — like a real product, not a research deck. Numbers are st
 4. *The tech side is fine, but finding clients is tough*
 5. *What I'm actually good at*
 
-## Headlines (h1 / h1Lines)
+## Service page heroes (h1 + `.sub`)
 
-- Short. Quote-shaped. Read aloud.
-- Felt moment or reframe — not a stat slide.
-- Good: *You coach. We run the rest.* · *They signed with someone else.*
+Every service page uses the same spine:
 
-## Subheads (hero `.sub`)
+1. **h1 — the problem, plain.** Say what's wrong in one sentence anyone in that role recognizes. Name the situation (no plan, Gmail inbox, site offline, slow reply). No metaphors ("ceiling", "forgettable not bad"). No taglines ("Runs while you coach").
+2. **sub — the service + what we do.** Start with the service name, then one sentence: *We [verb]…* with concrete deliverables.
 
-- Scene + promise in plain language.
-- Stats live in stat strips and problem cards — not in h1.
+Good pair:
+
+- *You never wrote down what the business should do next quarter.*
+- *Business strategy and consulting — we audit your practice, write the 90-day plan, and review offers, pricing, and priorities with you every quarter.*
+
+Bad pair:
+
+- *Hit a ceiling nobody at your table can break.* (clever; reader has to decode it)
+- *A written 90-day plan…* (deliverable list with no service name; doesn't say who runs it)
 
 ## Product truth
 

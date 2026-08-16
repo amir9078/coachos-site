@@ -11,8 +11,8 @@
   },
   "services": {
     "business-strategy-consulting": {
-      "genericH1": "Hit a ceiling nobody at your table can break.",
-      "genericSub": "A written 90-day plan — what you sell, to whom, at what price — reviewed with you each quarter.",
+      "genericH1": "You never wrote down what the business should do next quarter.",
+      "genericSub": "Business strategy and consulting — we audit your practice, write the 90-day plan, and review offers, pricing, and priorities with you every quarter.",
       "genericProblem": "Most owners wing it and know it. Strategy is the work nobody taught you to write down.",
       "voice": {
         "quote": "I know what I am good at — I just never wrote down what the business should do next quarter.",
@@ -21,8 +21,8 @@
       }
     },
     "personal-branding": {
-      "genericH1": "Forgettable, not bad.",
-      "genericSub": "Clear positioning beats more content — one sentence that works everywhere you appear.",
+      "genericH1": "People ask what you do and you still take two minutes to answer.",
+      "genericSub": "Personal branding — we write one positioning sentence with you and put it on your site, bios, and proposals.",
       "genericProblem": "If perfect prospects landed on your profile today, how many would trust you enough to reach out? That's positioning, not traffic.",
       "voice": {
         "quote": "Who do you work with? — I still take two minutes to answer that.",
@@ -31,8 +31,8 @@
       }
     },
     "website": {
-      "genericH1": "You don't need to be loud.",
-      "genericSub": "You need to be findable — a site that says who you help and what changes, kept current by us.",
+      "genericH1": "Your site still says \"coaching services\" next to a stock photo from 2019.",
+      "genericSub": "Website — we build around who you help, keep copy current, and wire booking. You approve every change.",
       "genericProblem": "If you think you don't need to market, you're already invisible — and invisible doesn't get referred anymore.",
       "voice": {
         "quote": "My site still says coaching services next to a stock photo from 2019.",
@@ -41,43 +41,43 @@
       }
     },
     "hosting-domain": {
-      "genericH1": "Launch delays hide in the details.",
-      "genericSub": "DNS, renewals, and the card on file — our problem, not yours.",
+      "genericH1": "Your site went offline because a renewal notice went to a dead inbox.",
+      "genericSub": "Hosting and domain — we register, renew, and monitor DNS, SSL, and backups so you stay online.",
       "genericProblem": "Domain, hosting, and email look simple until they're not — and the business goes dark on a missed renewal."
     },
     "business-email": {
-      "genericH1": "Gmail says side hustle.",
-      "genericSub": "Mail on your domain, deliverability sorted — quotes and follow-ups that look like a real business.",
+      "genericH1": "Quotes and discovery emails still go out from Gmail.",
+      "genericSub": "Business email — mailboxes on your domain with SPF, DKIM, signatures, and deliverability sorted.",
       "genericProblem": "Right or wrong, a free inbox reads fly-by-night. Your domain says you're staying."
     },
     "social-handles": {
-      "genericH1": "Your name was already taken.",
-      "genericSub": "One handle, claimed and consistent everywhere people search — old accounts cleaned up.",
+      "genericH1": "Your @ on Instagram is not the name on your site or your cards.",
+      "genericSub": "Social handles — we claim one username everywhere that matters and clean up the dead accounts.",
       "genericProblem": "New company, wrong @ on Instagram — customers find someone else."
     },
     "social-media-marketing": {
-      "genericH1": "DIY works for a week.",
-      "genericSub": "Posts drafted in your voice, kept running through your busiest months — you approve in batches.",
+      "genericH1": "Posting stops the moment your calendar fills.",
+      "genericSub": "Social media marketing — we draft a month of posts in your voice; you approve in batches; we keep publishing through busy months.",
       "genericProblem": "Posting consistently sounds simple until you're running the business. Then it stops."
     },
     "content-marketing": {
-      "genericH1": "Not another corpo-speak post.",
-      "genericSub": "Articles and pages written to be found — specific, not fancy pictures with meaningless captions.",
+      "genericH1": "Nobody finds you when they search the question your clients actually ask.",
+      "genericSub": "Content marketing — we research topics, write SEO articles, and publish pages that bring enquiries.",
       "genericProblem": "Competitors post boring content that looks professional and converts nothing. Yours shouldn't."
     },
     "email-marketing": {
-      "genericH1": "Wish you'd started the list sooner.",
-      "genericSub": "Newsletters and sequences on a rhythm that survives busy months — drafted for your approval.",
+      "genericH1": "You have no list — so past clients and warm leads go cold.",
+      "genericSub": "Email marketing — we build the list, draft newsletters and nurture sequences, and keep sends on a steady rhythm.",
       "genericProblem": "Every month without a list is a month of repeat customers you can't reach."
     },
     "lead-generation": {
-      "genericH1": "Drowning, then begging.",
-      "genericSub": "Inquiries from channels suited to your work — an always-on pipeline, not a cold start after every project.",
+      "genericH1": "Full calendar, then silence — then you're pitching from zero again.",
+      "genericSub": "Lead generation — we run the channels, landing pages, and forms that keep enquiries coming between projects.",
       "genericProblem": "One moment you're overbooked. The next you're pitching from zero. That cycle is structural."
     },
     "paid-ads-management": {
-      "genericH1": "A budget watch, not a money pit.",
-      "genericSub": "Campaigns run daily, spend protected, results in plain numbers — not mystery clicks.",
+      "genericH1": "You paid for clicks and got nothing to show for it.",
+      "genericSub": "Paid ads — we run campaigns daily, protect spend, and report cost per enquiry in plain numbers.",
       "genericProblem": "Most owners have been burned once — paying for traffic with nothing to show. Daily oversight is the fix."
     },
     "lead-management": {
@@ -91,18 +91,18 @@
       }
     },
     "sales-closing-support": {
-      "genericH1": "Polite does not mean closed.",
-      "genericSub": "Follow-through on open deals — drafted for your approval until there's a yes or a clear no.",
+      "genericH1": "You sent two follow-ups and stopped — they went quiet and you assumed no.",
+      "genericSub": "Sales and closing support — eight-touch follow-through on open deals, drafted for your approval until yes or clear no.",
       "genericProblem": "When a client says your rate is too high, discounting is the wrong reflex. Diagnose, then respond."
     },
     "course-creation": {
-      "genericH1": "Built it. Launched it. Crickets.",
-      "genericSub": "Curriculum, production, hosting, and a launch plan sized to the audience you actually have.",
+      "genericH1": "You built the course and nobody bought it.",
+      "genericSub": "Course creation — we package what you teach, produce it, host it, and launch to the audience you actually have.",
       "genericProblem": "A polished course with a tiny list sells zero copies. Launch needs an audience first."
     },
     "mentor/mentor-positioning-and-offer-setup": {
-      "genericH1": "Eleven years in. Still no answer when someone asks what you offer.",
-      "genericSub": "One-line offer, tiers, intake, and sales copy — so your rate has something to stand on.",
+      "genericH1": "Eleven years in and you still say \"it depends\" when someone asks what you sell.",
+      "genericSub": "Mentor positioning — we turn your experience into a one-line offer with a price, tiers, intake, and a page to send.",
       "genericProblem": "It depends pricing attracts wrong-fit mentees and keeps your rate frozen since 2019.",
       "voice": {
         "quote": "A woman at my nephew's christening asked what I do, and eleven years in, I heard myself say 'it depends.' I can tell you exactly what happened with any one of my mentees. I can't tell you what the thing is that I sell.",
@@ -111,8 +111,8 @@
       }
     },
     "mentor/mentee-matching": {
-      "genericH1": "Matching tops out at fifty people.",
-      "genericSub": "Application, screening, and matching workflow — before you commit your calendar.",
+      "genericH1": "Cohort three is ninety people and you're still matching in a spreadsheet.",
+      "genericSub": "Mentee matching — we run applications, screening, and pairing on your criteria before you commit your calendar.",
       "genericProblem": "Spreadsheet matching works until the program grows — then Sunday nights disappear.",
       "voice": {
         "quote": "Cohort one was 32 people and I did the matching in an evening. Cohort two was 58 and took a whole weekend — and on Sunday night I found I'd matched someone with her own line manager. Cohort three is meant to be 90.",
@@ -121,8 +121,8 @@
       }
     },
     "mentor/1-1-program-structure": {
-      "genericH1": "No structure underneath the mentoring.",
-      "genericSub": "Session cadence, boundaries, check-ins, and renewal scripts — documented before mentee two.",
+      "genericH1": "\"Just twenty minutes\" turned into your whole Sunday.",
+      "genericSub": "Program structure — session cadence, boundaries, check-ins, and renewal scripts documented before mentee two.",
       "genericProblem": "Informal mentoring eats your calendar because every piece feels small on its own.",
       "voice": {
         "quote": "\"Just twenty minutes\" turned into a call on Thursday, then a document they sent me on Friday night, then me rewriting chunks of it on Sunday afternoon at the kitchen table with the football on. None of it was unreasonable on its own — that's the thing, every single piece of it was small.",
@@ -131,8 +131,8 @@
       }
     },
     "mentor/renewals-and-proof": {
-      "genericH1": "Nine months in. Nothing to point at.",
-      "genericSub": "Goal tracking from day one, renewal timing, and testimonial asks when the work is visible.",
+      "genericH1": "Nine months in and you have nothing written down to show it worked.",
+      "genericSub": "Renewals and proof — goal tracking from day one, renewal timing, and testimonial asks when the progress is visible.",
       "genericProblem": "Without written baselines, you can't show progress — and renewals taper off quietly.",
       "voice": {
         "quote": "Nine months in with someone and I genuinely think it went well. Then I sit down to ask for a testimonial and there's nothing to point at — no \"here's where you were in March, here's where you are now\". Because nobody wrote down where she was in March.",
@@ -141,8 +141,8 @@
       }
     },
     "mentor/a-page-worth-sending": {
-      "genericH1": "The domain renewal email lands every March.",
-      "genericSub": "A forwardable mentoring page — who you mentor, how it works, how to apply.",
+      "genericH1": "Every mentee came through someone who already knew you.",
+      "genericSub": "A mentoring page — who you mentor, how it works, how to apply — built, hosted, and kept live.",
       "genericProblem": "Every mentee came through someone who already knew you — people searching at eleven at night never find you.",
       "voice": {
         "quote": "Every single person I've mentored came through somebody who already knew me. Old colleague, someone's sister, a bloke from a course I did in 2018. I bought the domain about two years ago and it's still parked — the renewal email lands every March and I think, right, this month.",
@@ -151,8 +151,8 @@
       }
     },
     "mentor/content-that-shows-your-thinking": {
-      "genericH1": "Mentees read nothing before they apply.",
-      "genericSub": "Posts drafted from real experience — so serious mentees know your thinking before the intro call.",
+      "genericH1": "Serious mentees apply cold because they've read nothing from you in public.",
+      "genericSub": "Content for mentors — posts and pages drafted from your real experience so applicants know your thinking before the call.",
       "genericProblem": "Without proof in public, every application starts cold and you screen on gut alone.",
       "voice": {
         "quote": "I can tell you exactly what happened with any one of them — the guy who moved out of sales into product, the woman who finally left her firm — but I can't tell you what the thing is that I sell. My rate hasn't changed since 2019 because I wouldn't know what to say to justify changing it.",
@@ -161,8 +161,8 @@
       }
     },
     "corporate/matching-run-on-your-criteria": {
-      "genericH1": "Cohort three is ninety people.",
-      "genericSub": "Matching rules from HR criteria — batch runs in days, not spreadsheet weekends.",
+      "genericH1": "Cohort two took a whole weekend — and you paired someone with her line manager.",
+      "genericSub": "Cohort matching — we encode HR criteria, run conflict checks, and match the full cohort in days, not spreadsheet weekends.",
       "genericProblem": "Manual matching tops out at fifty; line-manager pairings slip through when you're tired on Sunday night.",
       "voice": {
         "quote": "Cohort one was 32 people and I did the matching in an evening with a cup of tea. Cohort two was 58 and it took a whole weekend, two screens, one with the export and one with the tab where I'd colour-coded who got paired last round. Sunday night I found I'd matched someone with her own line manager and had to redo about a third of it. Cohort three is meant to be 90. I haven't worked out what I'm doing about that yet.",
@@ -171,8 +171,8 @@
       }
     },
     "corporate/conflict-checks-and-re-matching": {
-      "genericH1": "Sunday night, you paired someone with her line manager.",
-      "genericSub": "Manager conflict rules encoded — bad pairs caught before anyone gets the email.",
+      "genericH1": "You matched someone with their own line manager.",
+      "genericSub": "Conflict checks — manager and reporting-line rules run before confirm; bad pairs caught before anyone gets the email.",
       "genericProblem": "Manual review misses reporting lines when cohorts scale past one screen.",
       "voice": {
         "quote": "Sunday night I found I'd matched someone with her own line manager and had to redo about a third of it.",
@@ -181,8 +181,8 @@
       }
     },
     "corporate/session-tracking-and-early-flags": {
-      "genericH1": "Half the pairs met once. Then nothing.",
-      "genericSub": "Session logging mentors will use — quiet pairs flagged in week three, not at the survey.",
+      "genericH1": "Half your pairs met once — then nothing — and you found out in October.",
+      "genericSub": "Session tracking — mentors log lightly; quiet pairs get flagged in week three, not at the year-end survey.",
       "genericProblem": "Sign-up numbers look fine in the deck; calendars tell a different story by October.",
       "voice": {
         "quote": "We launched in March and 240 people signed up, which everyone treated as the result. Then in October I went through the check-in logs and about half the pairs had met once. Once, and then nothing. The ones going well were going well because two people happened to get on, not because of anything I did.",
@@ -191,8 +191,8 @@
       }
     },
     "corporate/mentor-onboarding": {
-      "genericH1": "Thirty-one mentors. Eleven were last year's volunteers.",
-      "genericSub": "Mentor welcome pack, mentee onboarding, and launch checklist — ready before sign-ups open.",
+      "genericH1": "140 mentees signed up — and you got thirty-one mentors, mostly last year's volunteers.",
+      "genericSub": "Mentor onboarding — welcome packs, mentee onboarding, FAQs, and a launch checklist HR can repeat each cohort.",
       "genericProblem": "Mentee demand outruns mentor supply when onboarding is ad hoc every cohort.",
       "voice": {
         "quote": "We opened mentee sign-ups and got 140 in about a week, a lot of them writing really specific things about what they wanted help with. Then we opened mentor sign-ups and got 31, and eleven of those were the same people who did it last year.",
@@ -201,8 +201,8 @@
       }
     },
     "corporate/reporting-leadership-can-act-on": {
-      "genericH1": "4.2 out of 5 is not a number a CFO can act on.",
-      "genericSub": "Participation, goals met, and outcomes per pair — sitting next to the budget line they defend.",
+      "genericH1": "The CFO asked what happens if you stop running the program — and 4.2 out of 5 was all you had.",
+      "genericSub": "Program reporting — participation, goals met, and outcomes per pair, ready for the finance review.",
       "genericProblem": "Satisfaction surveys sound fine until finance asks what happens if you stop running the program.",
       "voice": {
         "quote": "The finance review is in November and the only real number I have is 4.2 out of 5 from a survey most people ignored. Last year that was fine. This year the CFO asked what would happen if we didn't run it, and I said something about engagement, and I could hear how thin it sounded while I was saying it.",
