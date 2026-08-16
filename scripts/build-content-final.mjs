@@ -37,6 +37,7 @@ const platformPages = JSON.parse(readFileSync(join(ROOT, 'content/platform-pages
 const catalog = JSON.parse(readFileSync(join(ROOT, 'data/service-catalog.json'), 'utf8')).services;
 const audiencePages = JSON.parse(readFileSync(join(ROOT, 'content/audience-pages.json'), 'utf8'));
 const taglines = JSON.parse(readFileSync(join(ROOT, 'content/taglines.json'), 'utf8'));
+const problemsPages = JSON.parse(readFileSync(join(ROOT, 'content/problems-pages.json'), 'utf8'));
 
 function pickAudienceHero(section, audience) {
   const block = taglines[section];
@@ -188,6 +189,7 @@ function rewriteIndex($, c) {
     $(el).find('p').text(step.desc);
   });
   if (how.feedNote) $('.feed .fnote').text(how.feedNote);
+  rewriteDeskFeed($);
 
   const close = c.closeSection;
   $('.close-sec .label').last().text(close.label);
@@ -211,7 +213,7 @@ function rewriteAudienceIndex($, data) {
         `<div><span class="n"${attrs}>${esc(s.value)}</span><span class="l">${esc(s.label)}</span></div>`
       );
     });
-    $('.stat-source').text(data.hero.statSource);
+    $('.stat-source').remove();
   }
 
   const ps = data.painsSection;
@@ -331,30 +333,229 @@ function rewriteServicePage($, relPath) {
   return true;
 }
 
+function fixGlobalNav($) {
+  const label = globalCopy.navProblemsLabel || 'What we fix';
+  $('a[href*="problems.html"]').each((_, el) => {
+    const text = $(el).text().trim();
+    if (/research|full research/i.test(text)) {
+      $(el).html(`${label} &rarr;`);
+    }
+  });
+}
+
+function sanitizeProductCopy($) {
+  fixGlobalNav($);
+  $('.method').remove();
+  $('cite').each((_, el) => {
+    const t = $(el).text().replace(/\s*·\s*composite account/gi, '').trim();
+    $(el).text(t);
+  });
+  $('.sec-head .after, p, .note, .desc').each((_, el) => {
+    const html = $(el).html();
+    if (!html) return;
+    $(el).html(
+      html
+        .replace(/from our research/gi, 'from members')
+        .replace(/seeded from the same research/gi, 'from peers in the same room')
+        .replace(/the research says/gi, 'the numbers say')
+        .replace(/Full research on the/gi, 'Every problem on the')
+        .replace(/the full research/gi, 'what we fix')
+        .replace(/Documented, not invented/gi, 'The pattern')
+        .replace(/composite account/gi, '')
+    );
+  });
+  $('title, meta[name="description"], meta[property="og:title"], meta[property="og:description"]').each(
+    (_, el) => {
+      const attr = el.tagName === 'title' ? 'text' : 'content';
+      const val = $(el).attr(attr);
+      if (val && /research|composite|documented problems/i.test(val)) {
+        $(el).attr(
+          attr,
+          val
+            .replace(/research, sources, and fixes/gi, 'website, marketing, leads, and follow-up')
+            .replace(/Documented problems.*?fixes each one\./gi, 'The gaps we fix — mapped to services.')
+            .replace(/with research sources and the CoachOS service/gi, 'and the CoachOS service')
+        );
+      }
+    }
+  );
+}
+
+function renderRootProblemItem(item, prefix = '') {
+  const href = prefix + item.serviceHref;
+  return `<div class="prob">
+        <span class="pstat">${esc(item.stat)}</span>
+        <div>
+          <h4>${esc(item.title)}</h4>
+          <div class="voice">
+            <span class="av">${esc(item.avatar)}</span>
+            <div class="bubble">
+              <blockquote>&ldquo;${esc(item.quote)}&rdquo;</blockquote>
+              <cite>${esc(item.role)}</cite>
+            </div>
+          </div>
+          <div class="voice rx">
+            <span class="av">&#10003;</span>
+            <div class="bubble">
+              <p class="after-line">${esc(item.after)} &rarr; <a href="${href}">${esc(item.service)}</a></p>
+            </div>
+          </div>
+        </div>
+      </div>`;
+}
+
+function renderAudienceProblemItem(item, prefix = '') {
+  const href = prefix + (item.serviceHrefAudience || item.serviceHref || 'services.html');
+  return `<div class="prob">
+        <span class="pstat">${esc(item.stat)}</span>
+        <div>
+          <h4>${esc(item.title)}</h4>
+          <div class="voice">
+            <span class="av">${esc(item.avatar)}</span>
+            <div class="bubble">
+              <blockquote>&ldquo;${esc(item.quote)}&rdquo;</blockquote>
+              <cite>${esc(item.role)}</cite>
+            </div>
+          </div>
+          <p class="ans"><b>The answer</b>${esc(item.after)} &rarr; <a href="${href}">${esc(item.service)}</a></p>
+        </div>
+      </div>`;
+}
+
+function renderProblemsCategories(categories, prefix = '', audience = null) {
+  return categories
+    .map((cat) => {
+      const items = audience
+        ? cat.items.filter((it) => it.audiences?.includes(audience))
+        : cat.items;
+      if (!items.length) return '';
+      const probs = items.map((it) => renderRootProblemItem(it, prefix)).join('\n');
+      return `<div class="prob-cat reveal">
+      <div class="chead"><span class="gnum">${esc(cat.num)} /</span><h3>${esc(cat.title)}</h3><span class="sub">${esc(cat.sub)}</span></div>
+${probs}
+    </div>`;
+    })
+    .join('\n');
+}
+
+function renderAudienceProblemsCategories(categories, audience, prefix = '') {
+  const items = [];
+  for (const cat of categories) {
+    for (const it of cat.items) {
+      if (it.audiences?.includes(audience)) items.push(it);
+    }
+  }
+  return items.map((it) => renderAudienceProblemItem(it, prefix)).join('\n');
+}
+
+function renderArcsSection(arcs, prefix = '') {
+  const arcItems = arcs.items
+    .map(
+      (a) => `<div class="svc">
+        <h4>${esc(a.title)}</h4>
+        <div>
+          <p><b style="color:var(--ink)">Arrives with:</b> ${esc(a.arrives)}</p>
+          <p style="margin-top:.6rem"><b style="color:var(--ink)">Weeks 1&ndash;4:</b> ${esc(a.weeks)}</p>
+          <p style="margin-top:.6rem;margin-bottom:.6rem"><b style="color:var(--accent)">The difference:</b></p>
+          <div class="chips">${a.chips.map((c) => `<span class="chip">${esc(c)}</span>`).join('')}</div>
+        </div>
+      </div>`
+    )
+    .join('\n');
+  return `<div class="prob-cat reveal">
+      <div class="chead"><span class="gnum">${esc(arcs.num)} /</span><h3>${esc(arcs.title)}</h3><span class="sub">${esc(arcs.sub)}</span></div>
+      <p class="stage-intro" style="color:var(--ink-soft);font-size:.98rem;max-width:760px;margin:.9rem 0 1.4rem">${esc(arcs.intro)}</p>
+${arcItems}
+      <p class="reveal" style="margin-top:1.6rem;color:var(--ink-dim);font-size:.9rem">${esc(arcs.footnote)} <a href="${prefix}contact.html">Tell us what&rsquo;s tangled</a>.</p>
+    </div>`;
+}
+
+function rewriteDeskFeed($) {
+  const feed = globalCopy.deskFeed;
+  if (!feed) return;
+  const head = $('.feed .fhead');
+  if (head.length) {
+    head.find('span').first().html(`<span class="status-dot"></span>${esc(feed.heading)}`);
+    head.find('span').last().text(feed.subheading);
+  }
+  const list = $('#feed-list');
+  if (list.length && feed.items?.length) {
+    list.empty();
+    feed.items.forEach((it) => {
+      list.append(
+        `<li><span class="ic">${it.ic}</span><span>${it.html}</span><span class="t">${esc(it.t)}</span></li>`
+      );
+    });
+  }
+  if (feed.note) $('.feed .fnote').text(feed.note);
+}
+
+function rewriteRoundtableIntro($) {
+  const intro = globalCopy.roundtableRoomsIntro;
+  if (!intro) return;
+  $('#rooms .sec-head .after, section#rooms .sec-head .after').first().text(intro);
+}
+
 function rewriteProblemsRoot($, c) {
   setMeta($, c.title, c.metaDescription);
   setPageHero($, c.hero);
 
-  const intro = c.citationsIntro;
+  const intro = problemsPages.intro;
   $('.sec-tight.alt .sec-head .label').first().text(intro.label);
   $('.sec-tight.alt .sec-head h2').first().text(intro.heading);
   $('.sec-tight.alt .sec-head .after').first().text(intro.sub);
 
   const pains = $('.sec-tight.alt .pains').first();
   pains.empty();
-  intro.citations.forEach((cit) => {
+  intro.stats.forEach((s) => {
     pains.append(
-      `<div class="pain reveal"><span class="numeral">&#10022;</span><p><b>${esc(cit.stat)}</b> &mdash; ${esc(cit.source)}.</p></div>`
+      `<div class="pain reveal"><span class="numeral">&#10022;</span><p><b>${esc(s.stat)}</b> &mdash; ${esc(s.text)}.</p></div>`
     );
   });
+  pains.nextAll('p.reveal').remove();
   pains.after(
     `<p class="reveal" style="margin-top:2rem;color:var(--ink-soft);max-width:760px">${esc(intro.afterNote)}</p>`
   );
+
+  const main = $('section.sec').not('.sec-tight').first().find('> .wrap').first();
+  main.find('.prob-cat, .method, .stage-intro').remove();
+  const bodyHtml =
+    renderProblemsCategories(problemsPages.categories) +
+    renderArcsSection(problemsPages.arcs);
+  main.prepend(bodyHtml);
 
   const close = c.closeSection;
   $('.close-sec .label').text(close.label);
   $('.close-sec h2').html(`${esc(close.heading)} <em>${esc(close.headingEm)}</em>`);
   $('.close-sec p').first().text(close.sub);
+}
+
+function rewriteAudienceProblemsPage($, audience) {
+  const hero = pickAudienceHero('problemsAudience', audience);
+  const c = rootPages['problems.html'];
+  setMeta($, c.title.replace('CoachOS', `CoachOS · ${audience}`), c.metaDescription);
+  setPageHero($, {
+    label: hero.label,
+    h1Lines: hero.h1Lines,
+    sub: hero.sub,
+  });
+
+  const main = $('section.sec').not('.sec-tight').first().find('> .wrap').first();
+  main.find('.prob-cat, .method').remove();
+  main.prepend(
+    `<div class="prob-cat reveal">${renderAudienceProblemsCategories(problemsPages.categories, audience)}</div>`
+  );
+
+  const strip = problemsPages.audienceClose[audience];
+  if (strip) {
+    $('.rooms-strip h2').text(strip.heading);
+    const links = $('.rooms-strip .links');
+    links.empty();
+    strip.links.forEach((l) => {
+      links.append(`<a href="${l.href}">${esc(l.text)}</a>`);
+    });
+    $('.rooms-strip .note').text(strip.note);
+  }
 }
 
 function rewriteWhy($, c) {
@@ -377,6 +578,11 @@ function rewriteWhy($, c) {
       $(el).find('.n').text(s.value);
       $(el).find('.l').text(s.label);
     });
+    if (stats.closing) {
+      const closing = $('.stat-strip').next('p.reveal');
+      if (closing.length) closing.text(stats.closing);
+    }
+    $('.stat-source').remove();
   }
   const c3 = c.compare3;
   if (c3) {
@@ -501,6 +707,15 @@ function walk(dir, files = []) {
   return files;
 }
 
+function commitPage($, filePath, rel) {
+  if (/roundtable/.test(rel)) rewriteRoundtableIntro($);
+  if (rel === 'index.html' || rel === 'desk/index.html' || rel.endsWith('/desk.html')) {
+    rewriteDeskFeed($);
+  }
+  sanitizeProductCopy($);
+  writeFileSync(filePath, $.html());
+}
+
 function processFile(filePath) {
   const rel = relative(FINAL_ROOT, filePath);
   let html = readFileSync(filePath, 'utf8');
@@ -517,13 +732,13 @@ function processFile(filePath) {
 
   if (rel === 'index.html') {
     rewriteIndex($, rootPages['index.html']);
-    writeFileSync(filePath, $.html());
+    commitPage($, filePath, rel);
     return { rel, type: 'index' };
   }
 
   if (rel === 'desk/index.html') {
     rewriteDesk($, platformPages.desk);
-    writeFileSync(filePath, $.html());
+    commitPage($, filePath, rel);
     return { rel, type: 'desk' };
   }
 
@@ -537,34 +752,27 @@ function processFile(filePath) {
       setMeta($, c.title, c.metaDescription);
       setPageHero($, { label: c.hero.label, h1Lines: c.hero.h1Lines, sub: c.hero.sub });
     }
-    writeFileSync(filePath, $.html());
+    commitPage($, filePath, rel);
     return { rel, type: 'root-' + rel };
   }
 
   const audMatch = rel.match(/^(coach|business|freelancer|mentor|corporate)\/index\.html$/);
   if (audMatch && audiencePages[audMatch[1]]) {
     rewriteAudienceIndex($, audiencePages[audMatch[1]]);
-    writeFileSync(filePath, $.html());
+    commitPage($, filePath, rel);
     return { rel, type: 'audience-index' };
   }
 
   if (rel.includes('/services/') || rel.startsWith('services/')) {
     rewriteServicePage($, rel);
-    writeFileSync(filePath, $.html());
+    commitPage($, filePath, rel);
     return { rel, type: 'service' };
   }
 
   if (rel.endsWith('/problems.html')) {
-    const c = rootPages['problems.html'];
     const aud = rel.split('/')[0];
-    const hero = pickAudienceHero('problemsAudience', aud);
-    setMeta($, c.title.replace('CoachOS', `CoachOS ${aud}`), c.metaDescription);
-    setPageHero($, {
-      label: hero.label,
-      h1Lines: hero.h1Lines,
-      sub: hero.sub,
-    });
-    writeFileSync(filePath, $.html());
+    rewriteAudienceProblemsPage($, aud);
+    commitPage($, filePath, rel);
     return { rel, type: 'problems-audience' };
   }
 
@@ -574,7 +782,7 @@ function processFile(filePath) {
     if (hero) {
       setPageHero($, { h1: hero.h1, h1Em: hero.h1Em, sub: hero.sub });
     }
-    writeFileSync(filePath, $.html());
+    commitPage($, filePath, rel);
     return { rel, type: 'audience-services-index' };
   }
 
@@ -582,7 +790,7 @@ function processFile(filePath) {
   if (platDirMatch) {
     rewritePlatformSubpage($, platDirMatch[1]);
     if (platDirMatch[1] === 'desk') rewriteDesk($, platformPages.desk);
-    writeFileSync(filePath, $.html());
+    commitPage($, filePath, rel);
     return { rel, type: 'platform-dir-' + platDirMatch[1] };
   }
 
@@ -590,7 +798,7 @@ function processFile(filePath) {
   if (platMatch) {
     rewritePlatformSubpage($, platMatch[1]);
     if (platMatch[1] === 'desk') rewriteDesk($, platformPages.desk);
-    writeFileSync(filePath, $.html());
+    commitPage($, filePath, rel);
     return { rel, type: 'platform-sub' };
   }
 
@@ -621,11 +829,11 @@ function processFile(filePath) {
         setPageHero($, { label: hero.label, h1Lines: hero.h1Lines, sub: hero.sub });
       }
     }
-    writeFileSync(filePath, $.html());
+    commitPage($, filePath, rel);
     return { rel, type: 'audience-' + page };
   }
 
-  writeFileSync(filePath, $.html());
+  commitPage($, filePath, rel);
   return { rel, type: 'banner-only' };
 }
 

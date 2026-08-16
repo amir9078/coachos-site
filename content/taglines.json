@@ -1,9 +1,9 @@
 {
   "problemsAudience": {
     "default": {
-      "label": "Problems we fix",
+      "label": "What we fix",
       "h1Lines": ["Sound familiar?", "There is a fix."],
-      "sub": "Five pains show up in almost every conversation — consistency, trust, speed, the untaught work, hours stolen from what you're good at. Each maps to a service below."
+      "sub": "Five gaps show up in almost every conversation — consistency, trust, speed, the untaught work, hours stolen from what you're good at. Each maps to a service below."
     },
     "coach": {
       "label": "Problems we fix · coaches",
