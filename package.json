@@ -3,7 +3,12 @@
   "private": true,
   "type": "module",
   "description": "Build-time scripts for the CoachOS marketing site (e.g. the daily news brief generator). Not part of the static site itself.",
+  "scripts": {
+    "build:final": "node scripts/apply-research-voices.mjs && node scripts/build-content-final.mjs --preview",
+    "build:live": "node scripts/publish-live.mjs"
+  },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.68.0"
+    "@anthropic-ai/sdk": "^0.68.0",
+    "cheerio": "^1.2.0"
   }
 }

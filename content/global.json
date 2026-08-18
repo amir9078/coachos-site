@@ -1,0 +1,77 @@
+{
+  "productTagline": "You coach. CoachOS runs everything else.",
+  "productDefinition": "The operating system for coaching and mentoring practices — one desk for leads, marketing, bookings, agreements, billing, and client delivery.",
+  "servicesDefinition": "Done-for-you website, marketing, and lead follow-up — built and run by our team while you work.",
+  "approvalRule": "CoachOS never sends anything — an email, a post, a summary — without you seeing the exact words first and choosing to send.",
+  "servicesLoop": {
+    "heading": "AI drafts. A specialist reviews. You approve — nothing ships until you say yes.",
+    "steps": [
+      {
+        "title": "We draft from your brief",
+        "desc": "Website copy, posts, follow-ups, and proposals — in your voice, not generic templates."
+      },
+      {
+        "title": "A CoachOS specialist reviews",
+        "desc": "A person on our team checks every draft before you see it. Anything off gets fixed or stopped."
+      },
+      {
+        "title": "You approve, then it ships",
+        "desc": "Nothing goes out under your name until you say yes."
+      }
+    ]
+  },
+  "platformLoop": {
+    "heading": "The Platform: AI drafts, you approve.",
+    "steps": [
+      {
+        "title": "AI drafts — the Practice Agent reasons first",
+        "desc": "Follow-ups, session summaries, prep briefs, and marketing copy — drafted from your history and AI Voice & Rules settings."
+      },
+      {
+        "title": "You see the exact words",
+        "desc": "Every outbound item lands in one approval queue. Edit if you want. Nothing sends on its own."
+      },
+      {
+        "title": "You approve — it sends from your email",
+        "desc": "Replies land in your real inbox. Clients get you, not a robot."
+      }
+    ]
+  },
+  "footerTagline": "CoachOS — the operating system for coaching & mentoring practices. Services today; Desk, Roundtable, Roster, and Shortlist for members.",
+  "navProblemsLabel": "What we fix",
+  "roundtableRoomsIntro": "Eleven practice rooms, live inside CoachOS. Posts below are from members — names shortened, topics unchanged. Replies are from peers in the same room.",
+  "deskFeed": {
+    "heading": "CoachOS Desk — approval queue",
+    "subheading": "Tuesday · member practice",
+    "note": "Real Desk modules: Leads, Marketing Studio, Agreements & billing, Client delivery. Nothing sends until you approve.",
+    "items": [
+      { "ic": "✉", "html": "<b>Pipeline Agent</b> drafted follow-up for Sarah K. — quiet 6 days after discovery", "t": "now" },
+      { "ic": "📣", "html": "<b>Marketing Studio</b> queued 4 LinkedIn drafts from your Voice &amp; Rules settings", "t": "2m" },
+      { "ic": "📄", "html": "<b>Agreement</b> pre-filled from accepted proposal — waiting for your sign-off", "t": "5m" },
+      { "ic": "✍", "html": "<b>Client delivery</b> session summary drafted — nothing sends until you approve", "t": "8m" },
+      { "ic": "💰", "html": "<b>Stripe invoice</b> raised — reminder cadence armed per your Autopilot recipe", "t": "11m" },
+      { "ic": "📅", "html": "<b>Booking</b> confirmed — prep brief scheduled 30 minutes before session", "t": "14m" }
+    ],
+    "rotatePool": [
+      { "ic": "✉", "html": "<b>Lead reply</b> drafted — 2 minutes after Shortlist enquiry landed", "t": "now" },
+      { "ic": "📣", "html": "<b>Newsletter</b> draft ready in Marketing Studio — Listmonk send after approval", "t": "3m" },
+      { "ic": "🔁", "html": "<b>Autopilot</b> touch 3 of 8 on open proposal — wording you approved last month", "t": "6m" },
+      { "ic": "📄", "html": "<b>Proposal</b> sent from lead card — opened twice, follow-up drafted", "t": "9m" },
+      { "ic": "✍", "html": "<b>Prep brief</b> filed for tomorrow's 2pm — from last session notes", "t": "12m" }
+    ]
+  },
+  "keywords": [
+    "coaching practice management",
+    "mentor platform",
+    "lead pipeline",
+    "session summaries",
+    "coaching CRM",
+    "Practice Agent",
+    "Autopilot",
+    "Marketing Studio",
+    "Client Delivery",
+    "Coach & Mentor Directory",
+    "done-for-you marketing",
+    "approval-first AI"
+  ]
+}

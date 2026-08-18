@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# Generated preview build and the legacy v2 tree duplicate the live pages.
+# They are not part of the site and must not be indexed.
+Disallow: /final/
+Disallow: /v2/
+
 Sitemap: https://amir9078.github.io/coachos-site/sitemap.xml

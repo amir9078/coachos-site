@@ -1,0 +1,26 @@
+{
+  "name": "CoachOS Marketing Site",
+  "install": "npm ci\nnode scripts/apply-research-voices.mjs\nnode scripts/build-content-final.mjs --preview",
+  "terminals": [
+    {
+      "name": "site-original",
+      "command": "python3 -m http.server 8080 --bind 0.0.0.0",
+      "description": "Original marketing site (repo root)"
+    },
+    {
+      "name": "site-final",
+      "command": "python3 -m http.server 8082 --bind 0.0.0.0 --directory final",
+      "description": "Research-aligned final site (built from content/*.json)"
+    }
+  ],
+  "ports": [
+    {
+      "port": 8080,
+      "name": "Original site"
+    },
+    {
+      "port": 8082,
+      "name": "Final site"
+    }
+  ]
+}

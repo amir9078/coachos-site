@@ -1,0 +1,707 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Roster — your professional network</title>
+<meta name="description" content="The Roster is CoachOS's members-only professional network — one profile built from your practice, with posts, referrals, and peer connections that mean something.">
+<link rel="canonical" href="https://amir9078.github.io/coachos-site/business/roster.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Roster — your professional network">
+<meta property="og:description" content="The Roster is CoachOS's members-only professional network — one profile built from your practice, with posts, referrals, and peer connections that mean something.">
+<meta property="og:url" content="https://amir9078.github.io/coachos-site/business/roster.html">
+<meta property="og:site_name" content="CoachOS">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css?v=20260815c">
+<style>
+.rtabs{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin:0 0 1.8rem}
+.rtab{font-family:var(--display);font-size:.8rem;font-weight:600;padding:.55rem 1.15rem;border-radius:999px;border:1px solid var(--line-strong);background:transparent;color:var(--ink-soft);cursor:pointer;transition:all .25s var(--ease)}
+.rtab.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.rframe{max-width:620px;margin:0 auto;background:#f3f2ef;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow-deep);overflow:hidden}
+.rchrome{display:flex;align-items:center;gap:.35rem;padding:.6rem .9rem;background:#e8e6e1;font-family:var(--mono);font-size:.68rem;color:#555}
+.rdot{width:9px;height:9px;border-radius:50%;background:#c9c6bf;flex:none}
+.raddr{background:#f7f6f3;border-radius:6px;padding:.28rem .75rem;margin-left:.4rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rfeed{padding:.9rem .9rem 0;display:flex;flex-direction:column;gap:.9rem;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+.rpost{background:#fff;border:1px solid #e0ded9;border-radius:10px;padding:1rem 1.1rem .5rem;color:#1c1c1c;text-align:left}
+.rhead{display:flex;gap:.65rem;align-items:center}
+.rav{width:44px;height:44px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-size:24px}
+.rav.sm{width:28px;height:28px;font-size:15px}
+.rwho{line-height:1.3;min-width:0}
+.rwho b{font-size:.85rem;display:block;color:#111}
+.rrole{font-size:.72rem;color:#666;display:block}
+.rtime{font-size:.7rem;color:#888}
+.rbadge{display:inline-block;font-size:.6rem;font-weight:700;background:#e7f3e7;color:#1f6f36;border-radius:4px;padding:.08rem .38rem;margin-left:.4rem;vertical-align:1px}
+.rtxt{font-size:.85rem;line-height:1.5;margin-top:.75rem;white-space:pre-line}
+.rstats{display:flex;justify-content:space-between;font-size:.72rem;color:#777;padding:.65rem 0 .45rem;border-bottom:1px solid #eceae6;margin-top:.5rem}
+.rcmt{display:flex;gap:.55rem;margin:.7rem 0 .3rem;align-items:flex-start}
+.rcmt .bub{background:#f4f3f0;border-radius:0 10px 10px 10px;padding:.55rem .75rem;font-size:.78rem;line-height:1.45}
+.rcmt .bub b{font-size:.75rem;display:block;margin-bottom:.15rem}
+.racts{display:flex;justify-content:space-around;padding:.25rem 0 .3rem}
+.ract{background:none;border:none;font-size:.75rem;font-weight:600;color:#555;padding:.5rem .6rem;border-radius:6px;cursor:pointer;font-family:inherit}
+.ract:hover{background:#f0efec}
+/* tweet card */
+.rtw{border:1px solid #d8d6d0;border-radius:12px;padding:.9rem 1rem;margin-top:.75rem;background:#fff}
+.rtw .twh{display:flex;gap:.5rem;align-items:center}
+.rtw .twh b{font-size:.8rem}
+.rtw .twhandle{font-size:.72rem;color:#777}
+.rtw .twx{margin-left:auto;font-weight:800;font-size:1rem;color:#111}
+.rtw .twt{font-size:.92rem;line-height:1.45;margin-top:.55rem;white-space:pre-line}
+.rtw .twm{display:flex;gap:1.2rem;font-size:.7rem;color:#888;margin-top:.6rem}
+/* linkedin share card */
+.rli{border:1px solid #d8d6d0;border-radius:12px;padding:.9rem 1rem;margin-top:.75rem;background:#fff}
+.rli .lih{display:flex;gap:.5rem;align-items:center}
+.rli .lih b{font-size:.8rem}
+.rli .lirole{font-size:.7rem;color:#777;display:block}
+.rli .liin{margin-left:auto;background:#0a66c2;color:#fff;font-weight:800;font-size:.72rem;border-radius:3px;padding:.1rem .3rem}
+.rli .lit{font-size:.88rem;line-height:1.5;margin-top:.55rem}
+.rli .lim{font-size:.72rem;margin-top:.55rem}
+/* carousel */
+.rcar{position:relative;margin-top:.75rem;border-radius:10px;overflow:hidden}
+.rslide{display:none;aspect-ratio:4/3.1;padding:1.5rem 1.4rem;box-sizing:border-box;flex-direction:column;justify-content:center;color:#fff}
+.rslide.on{display:flex}
+.rslide .sk{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;opacity:.75;margin-bottom:.7rem}
+.rslide h4{font-family:var(--display);font-size:1.25rem;line-height:1.25;letter-spacing:-.01em;margin:0}
+.rslide p{font-size:.82rem;line-height:1.5;margin:.7rem 0 0;opacity:.92}
+.rcarnav{position:absolute;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;border:none;background:rgba(255,255,255,.88);color:#111;font-size:.9rem;font-weight:700;cursor:pointer;line-height:1}
+.rcarnav.prev{left:.6rem}.rcarnav.next{right:.6rem}
+.rdots{position:absolute;bottom:.6rem;left:0;right:0;display:flex;gap:.3rem;justify-content:center}
+.rdots span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.45)}
+.rdots span.on{background:#fff}
+.rcarpage{position:absolute;top:.6rem;right:.7rem;font-family:var(--mono);font-size:.62rem;color:rgba(255,255,255,.8)}
+/* poll */
+.rpoll{margin-top:.75rem;display:flex;flex-direction:column;gap:.45rem}
+.rpopt{position:relative;border:1px solid #cfcdc7;border-radius:8px;padding:.55rem .8rem;font-size:.8rem;cursor:pointer;overflow:hidden;background:#fff;text-align:left;font-family:inherit;color:#1c1c1c}
+.rpopt .fill{position:absolute;inset:0;background:#eef1e6;z-index:0;border-radius:8px 0 0 8px}
+.rpopt span{position:relative;z-index:1}
+.rpopt .pct{float:right;font-weight:700}
+.rpollmeta{font-size:.7rem;color:#888;margin-top:.2rem}
+.rteaser{position:relative;max-height:130px;overflow:hidden;cursor:pointer}
+.rteaser::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(243,242,239,0) 0%,#f3f2ef 88%)}
+.rmorewrap{padding:.4rem 0 1.2rem;text-align:center}
+.rmore{font-family:var(--display);font-weight:700;font-size:.85rem;padding:.7rem 1.7rem;border-radius:999px;border:none;background:var(--accent);color:#fff;cursor:pointer}
+.rmodal{position:fixed;inset:0;background:rgba(10,10,12,.74);display:none;align-items:center;justify-content:center;z-index:80;padding:1.2rem}
+.rmodal.open{display:flex}
+.rcard{background:var(--card);border:1px solid var(--line-strong);border-radius:16px;max-width:480px;padding:2.4rem 2.2rem;text-align:center;box-shadow:var(--shadow-deep)}
+.rcard h3{font-family:var(--display);font-size:1.7rem;letter-spacing:-.02em}
+.rcard p{color:var(--ink-soft);margin-top:.9rem;font-size:.95rem;line-height:1.55}
+.rcard .fine{font-size:.8rem;color:var(--ink-dim)}
+.rcard .row{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem}
+
+/* full-board layout */
+.rtopbar{display:flex;align-items:center;gap:.7rem;padding:.55rem .9rem;background:#fff;border-bottom:1px solid #e0ded9;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+.rtopbar .rlogo{font-weight:800;font-size:.9rem;color:#111;white-space:nowrap}
+.rtopbar .rlogo span{color:var(--accent)}
+.rsearch{flex:1;max-width:220px;background:#eef3f8;border:none;border-radius:4px;padding:.4rem .7rem;font-size:.75rem;color:#555;text-align:left;cursor:pointer;font-family:inherit}
+.rico{background:none;border:none;font-size:1rem;cursor:pointer;position:relative;padding:.3rem .45rem;border-radius:6px}
+.rico:hover{background:#f0efec}
+.rico .dotb{position:absolute;top:2px;right:2px;background:#c22;color:#fff;font-size:.55rem;font-weight:700;border-radius:999px;padding:0 .25rem;line-height:1.4}
+.rgrid{display:grid;grid-template-columns:215px 1fr 235px;gap:.9rem;padding:.9rem;align-items:start;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+.rrail{display:flex;flex-direction:column;gap:.9rem;position:sticky;top:.9rem}
+.rcardx{background:#fff;border:1px solid #e0ded9;border-radius:10px;padding:1rem;color:#1c1c1c;text-align:left}
+.rcardx h5{margin:0 0 .5rem;font-size:.8rem}
+.rcardx .mut{font-size:.72rem;color:#777;line-height:1.45}
+.rlockrow{display:flex;justify-content:space-between;font-size:.72rem;color:#999;padding:.35rem 0;border-top:1px solid #f0eeea}
+.rmemrow{display:flex;gap:.5rem;align-items:center;padding:.35rem 0}
+.rmemrow b{font-size:.75rem;display:block;color:#111}
+.rmemrow .mr{font-size:.66rem;color:#888}
+.rviewall{font-size:.74rem;font-weight:600;color:#555;background:none;border:none;cursor:pointer;padding:.4rem 0 0;font-family:inherit}
+.rviewall:hover{color:#111}
+.rcomposer{background:#fff;border:1px solid #e0ded9;border-radius:10px;padding:.9rem 1rem;text-align:left}
+.rcomposer .rin{width:100%;border:1px solid #d5d3cd;border-radius:999px;background:#fff;padding:.65rem 1rem;font-size:.8rem;color:#888;text-align:left;cursor:pointer;font-family:inherit}
+.rcomposer .rbtns{display:flex;justify-content:space-around;margin-top:.55rem}
+.rcomposer .rcb{background:none;border:none;font-size:.74rem;font-weight:600;color:#555;cursor:pointer;padding:.45rem .5rem;border-radius:6px;font-family:inherit}
+.rcomposer .rcb:hover{background:#f0efec}
+.ranon .rav{background:linear-gradient(135deg,#4a4a52,#17171c)!important}
+.ranon .anontag{display:inline-block;font-size:.6rem;font-weight:700;background:#ececf2;color:#55555e;border-radius:4px;padding:.08rem .38rem;margin-left:.4rem;vertical-align:1px}
+.ranon .privnote{display:flex;gap:.45rem;align-items:center;background:#f6f5f8;border:1px dashed #d9d7e0;border-radius:8px;padding:.5rem .7rem;font-size:.72rem;color:#66666e;margin-top:.6rem}
+.rarticle{overflow:hidden;padding:0!important}
+.rarticle .band{padding:1.3rem 1.2rem;color:#fff}
+.rarticle .band .atag{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;opacity:.8}
+.rarticle .band h4{font-family:var(--display);font-size:1.2rem;margin:.4rem 0 0;line-height:1.25}
+.rarticle .abody{padding:.85rem 1.1rem}
+.rarticle .abody .am{font-size:.72rem;color:#888}
+.rarticle .abody p{font-size:.82rem;color:#444;margin:.45rem 0 .6rem;line-height:1.45}
+.rarticle .aread{font-size:.78rem;font-weight:700;color:var(--accent);background:none;border:none;cursor:pointer;padding:0;font-family:inherit}
+.rgate{background:linear-gradient(180deg,#fff,#faf9f7);border:1px solid #e0ded9;border-radius:10px;padding:1.1rem;text-align:center}
+.rgate b{font-size:.85rem;color:#111;display:block}
+.rgate p{font-size:.74rem;color:#888;margin:.35rem 0 .6rem}
+.rgate .rmore{padding:.55rem 1.3rem;font-size:.78rem}
+.rlocked{position:relative;overflow:hidden}
+.rlocked .inner{filter:blur(7px);user-select:none;pointer-events:none}
+.rlocked .veil{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(243,242,239,.35);cursor:pointer}
+.rlocked .veil span{background:#fff;border:1px solid #e0ded9;border-radius:999px;padding:.45rem 1rem;font-size:.72rem;font-weight:700;color:#555}
+@media(max-width:900px){.rgrid{grid-template-columns:1fr}.rrail{display:none}.rframe{max-width:620px}}
+@media(max-width:480px){.rtopbar{gap:.4rem;padding:.5rem .6rem}#rroom{display:none}.rsearch{font-size:.7rem;padding:.35rem .5rem}.rico{padding:.3rem .25rem}}
+.rframe{max-width:1020px}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <a class="wordmark" href="../index.html" aria-label="CoachOS home">
+      <span>Coach<em>OS</em></span>
+    </a>
+    <div class="nav-links">
+      <div class="nav-item">
+        <a href="index.html">For small business</a>
+        <div class="nav-drop" hidden="">
+          <div class="nd-col">
+            <span class="nd-h">Switch fit</span>
+          <a href="../coach/">Coach</a>
+          <a href="../freelancer/">Freelancer</a>
+          <a href="../mentor/">Mentor</a>
+          <a href="../corporate/">Corporate &amp; enterprise</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="services.html">Services</a>
+        <div class="nav-drop" hidden="">
+          <div class="nd-col">
+            <a class="nd-all" href="services.html">All services for this fit →</a>
+          </div>
+          <div class="nd-col">
+            <span class="nd-h">Strategy</span>
+            <a href="services/business-strategy-and-consulting.html">Business strategy &amp; consulting</a>
+            <span class="nd-h">Position</span>
+            <a href="services/personal-branding.html">Personal branding</a>
+          </div>
+          <div class="nd-col">
+            <span class="nd-h">Launch</span>
+            <a href="services/website-that-stays-current.html">Website that stays current</a>
+            <a href="services/hosting-and-domain.html">Hosting &amp; domain</a>
+            <a href="services/business-email.html">Business email</a>
+            <a href="services/handles-and-listings-corrected.html">Handles &amp; listings, corrected</a>
+            <span class="nd-h">Grow</span>
+            <a href="services/social-media-marketing.html">Social media marketing</a>
+            <a href="services/content-marketing.html">Content marketing</a>
+            <a href="services/email-marketing.html">Email marketing</a>
+            <a href="services/lead-generation.html">Lead generation</a>
+            <a href="services/paid-ads-management.html">Paid ads management</a>
+          </div>
+          <div class="nd-col">
+            <span class="nd-h">Run</span>
+            <a href="services/lead-management-and-sales-support.html">Lead management &amp; sales support</a>
+            <a href="services/sales-closing-support.html">Sales &amp; closing support</a>
+            <span class="nd-h">Courses</span>
+            <a href="services/course-creation.html">Course creation &amp; launch</a>
+          </div>
+        </div>
+      </div>
+      <a href="problems.html">Problems</a>
+      <div class="nav-item">
+        <a href="platform.html" class="active">Platform</a>
+        <div class="nav-drop" hidden="">
+          <div class="nd-col">
+            <a class="nd-all" href="platform.html">The Platform →</a>
+            <span class="nd-h">The four parts</span>
+            <a href="desk.html">CoachOS Desk</a>
+            <a href="roundtable.html">The Roundtable</a>
+            <a href="roster.html">The Roster</a>
+            <a href="shortlist.html">The Shortlist</a>
+          </div>
+        </div>
+      </div>
+      <a href="why.html">Why</a>
+      <a href="contact.html">Contact</a>
+      <a class="nav-cta" href="contact.html">Talk to us</a>
+    </div>
+    <button class="theme-btn" role="switch" aria-checked="false" aria-label="Switch to light mode"></button>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+  </nav>
+</header>
+
+<section class="pagehero">
+  <div class="lattice" aria-hidden="true"></div>
+  <span class="stamp abs reveal">Members only</span>
+  <div class="wrap pagehero-inner">
+    <span class="label crumb">The Roster · the small business room · live — members only</span>
+    <h1>Your people, <em>not the whole feed.</em></h1>
+    <p class="sub">Referrals bring most clients. Directories bring almost none. Peers who already get the work — inside the system you use.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#peek">Open your room</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="peek">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label">The Roster · your room</span>
+      <h2>This is your feed. <em>The public end of it.</em></h2>
+      <p class="after">Posts, carousels, polls, referrals — then the wall. Members see the rest.</p>
+    </div>
+    <div class="rframe reveal">
+      <div class="rchrome"><span class="rdot"></span><span class="rdot"></span><span class="rdot"></span><span class="raddr" id="raddr">roster.coachos — members</span></div>
+      <div class="rtopbar">
+        <span class="rlogo">Roster<span>.</span> <span id="rroom" style="color:#666;font-weight:600;font-size:.78rem"></span></span>
+        <button class="rsearch gate" type="button">Search the room…</button>
+        <span style="flex:1"></span>
+        <button class="rico gate" type="button" aria-label="Home">🏠</button>
+        <button class="rico gate" type="button" aria-label="Notifications">🔔<span class="dotb">3</span></button>
+        <button class="rico gate" type="button" aria-label="Profile">🙂</button>
+      </div>
+      <div class="rgrid">
+        <div class="rrail" id="rleft"></div>
+        <div style="min-width:0">
+          <div class="rcomposer" style="margin-bottom:.9rem">
+            <button class="rin gate" type="button">Share something with the room…</button>
+            <div class="rbtns">
+              <button class="rcb gate" type="button">📝 Post</button>
+              <button class="rcb gate" type="button">🕶️ Ask anonymously</button>
+              <button class="rcb gate" type="button">📄 Article</button>
+            </div>
+          </div>
+          <div class="rfeed" id="rfeed" style="padding:0"></div>
+        </div>
+        <div class="rrail" id="rright"></div>
+      </div>
+    </div>
+    <noscript><p style="text-align:center;color:var(--ink-dim);margin-top:1rem">The feed needs JavaScript &mdash; and the room itself is members-only anyway.</p></noscript>
+  </div>
+</section>
+
+<section class="sec-tight">
+  <div class="wrap-narrow">
+    <div class="sec-head left reveal">
+      <span class="label">The part nobody else built</span>
+      <h2>Ask without <em>your name on it</em></h2>
+    </div>
+    <div class="reveal" style="color:var(--ink-soft);font-size:1.05rem">
+      <p>Every profession has questions its people can’t ask in public. What you really charge. The client relationship that’s gone wrong. The month you couldn’t pay yourself. On every other network those questions stay unasked, because your name — and your clients — are watching.</p>
+      <p style="margin-top:1.1rem">On the Roster, any member can post a question anonymously. The room sees the question, never the asker. The answers come back privately — only the asker reads them, nothing ever appears on their profile, and even we present it unlinked. It’s the confessional the profession never had, sitting inside the network it always needed.</p>
+      <p style="margin-top:1.1rem">And when you have something bigger to say than a post: write an article. Something smaller: a two-line take. The feed carries all of it — full posts, quick takes, articles, polls, and the questions nobody signs.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label">Why a room like this matters</span>
+      <h2>A feed of <em>only your people</em></h2>
+    </div>
+    <div class="packages">
+      <div class="package reveal">
+        <span class="numeral">i.</span>
+        <h3>Like-minded, by design</h3>
+        <p class="tag">One profession per room</p>
+        <ul>
+          <li>Every post is from someone doing your work</li>
+          <li>No recruiters, no crypto pitches, no strangers selling</li>
+          <li>The problems in your feed are your problems</li>
+        </ul>
+      </div>
+      <div class="package reveal">
+        <span class="numeral">ii.</span>
+        <h3>The best of the niche</h3>
+        <p class="tag">Signal, not scroll</p>
+        <ul>
+          <li>A handful of strong posts a day — not five hundred</li>
+          <li>What’s worth reading rises, because the room is small</li>
+          <li>Shares always credit the original author</li>
+        </ul>
+      </div>
+      <div class="package reveal">
+        <span class="numeral">iii.</span>
+        <h3>Connected to your business</h3>
+        <p class="tag">Not just a feed</p>
+        <ul>
+          <li>The Verified badge — reviewed by a person, never sold</li>
+          <li>Your profile links your site and your <a href="shortlist.html" style="color:inherit">Shortlist</a> listing</li>
+          <li>A referral here becomes an enquiry on your <a href="desk.html" style="color:inherit">Desk</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rooms-strip">
+  <div class="lattice" aria-hidden="true"></div>
+  <div class="wrap inner reveal">
+    <h2>The other three rooms, on the same membership.</h2>
+    <div class="links">
+      <a href="desk.html">CoachOS Desk</a>
+      <a href="roundtable.html">The Roundtable</a>
+      <a href="shortlist.html">The Shortlist</a>
+    </div>
+    <p class="note">Four rooms, one door in — and we hold the door.</p>
+  </div>
+</section>
+
+<section class="close-sec">
+  <div class="wrap reveal">
+    <span class="label">Membership · chosen, not sold</span>
+    <h2>The door is <em>the work.</em></h2>
+    <p class="under" style="margin-top:1rem">Members come from the people we build for. Start there, and let the work speak.</p>
+    <a class="btn btn-primary" href="../services.html">Start with the services</a>
+    <p class="under">Think you already belong inside? <a href="../contact.html">Talk to us.</a></p>
+  </div>
+</section>
+
+<div class="rmodal" id="rmodal" role="dialog" aria-modal="true" aria-labelledby="rmodal-h">
+  <div class="rcard">
+    <h3 id="rmodal-h">Oops.</h3>
+    <p>This is only for our members — we can’t allow you more than this.</p>
+    <p class="fine">The feed you’ve been reading is the public face of the room. The real one — members’ own posts, names, and referrals — stays inside, with the people we’ve chosen.</p>
+    <div class="row">
+      <a class="btn btn-primary" href="../services.html">Start with the services</a>
+      <button class="btn btn-ghost" id="rclose" type="button">Close</button>
+    </div>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="foot">
+    <p>CoachOS — the operating system for coaching &amp; mentoring practices. Services today; Desk, Roundtable, Roster, and Shortlist for members.</p>
+    <nav>
+      <a href="../index.html#doors">Find your fit</a>
+      <a href="../services.html">Services</a>
+      <a href="../problems.html">Problems</a>
+      <a href="desk.html">Desk</a>
+      <a href="roundtable.html">Roundtable</a>
+      <a href="shortlist.html">Shortlist</a>
+      <a href="../why.html">Why</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../assets/main.js?v=20260815c"></script>
+<script>
+(function(){
+  var G = {
+    orange:'linear-gradient(135deg,#FF6B3D,#C42B00)',
+    blue:'linear-gradient(135deg,#3D6BFF,#122B8A)',
+    green:'linear-gradient(135deg,#0E9F6E,#064E36)',
+    purple:'linear-gradient(135deg,#8B5CF6,#3B1687)',
+    dark:'linear-gradient(135deg,#2B2B2B,#101010)'
+  };
+  var AV = {
+    nadia:{av:'👩🏽‍💼',bg:'linear-gradient(135deg,#FFB199,#FF4A21)'}, tom:{av:'🧔🏻',bg:'linear-gradient(135deg,#9BB8FF,#2D5BFF)'},
+    priya:{av:'👩🏻‍🏫',bg:'linear-gradient(135deg,#C9A0FF,#7B2DFF)'}, jonas:{av:'🧑🏼‍🎨',bg:'linear-gradient(135deg,#8FE3C0,#0E9F6E)'},
+    elena:{av:'👩🏾‍💻',bg:'linear-gradient(135deg,#FFD37A,#E8930C)'}, marcus:{av:'🧔🏾',bg:'linear-gradient(135deg,#FFB199,#FF4A21)'},
+    aisha:{av:'👩🏿‍💼',bg:'linear-gradient(135deg,#C9A0FF,#7B2DFF)'}, rob:{av:'🧑🏻‍🔬',bg:'linear-gradient(135deg,#8FE3C0,#0E9F6E)'},
+    lin:{av:'👩🏼‍🎓',bg:'linear-gradient(135deg,#FFD37A,#E8930C)'}, dev:{av:'🧑🏽‍💻',bg:'linear-gradient(135deg,#9BB8FF,#2D5BFF)'},
+    marta:{av:'👩🏻‍🎨',bg:'linear-gradient(135deg,#FFB199,#FF4A21)'}, chris:{av:'🧔🏼',bg:'linear-gradient(135deg,#8FE3C0,#0E9F6E)'},
+    sam:{av:'🧑🏻‍🎤',bg:'linear-gradient(135deg,#FFD37A,#E8930C)'}, hana:{av:'👩🏽‍🍳',bg:'linear-gradient(135deg,#FFB199,#FF4A21)'},
+    omar:{av:'🧔🏽',bg:'linear-gradient(135deg,#9BB8FF,#2D5BFF)'}, grace:{av:'👩🏼‍🏭',bg:'linear-gradient(135deg,#C9A0FF,#7B2DFF)'},
+    claire:{av:'👩🏻‍💼',bg:'linear-gradient(135deg,#9BB8FF,#2D5BFF)'}, daniel:{av:'🧔🏼',bg:'linear-gradient(135deg,#8FE3C0,#0E9F6E)'},
+    ingrid:{av:'👩🏼‍💻',bg:'linear-gradient(135deg,#C9A0FF,#7B2DFF)'}, kwame:{av:'🧑🏿‍🏫',bg:'linear-gradient(135deg,#FFB199,#FF4A21)'}
+  };;
+
+  var P = {
+    coach: { label:'For coaches', addr:'roster.coachos/coaches — members', posts:[
+      { type:'post', who:AV.elena, name:'Elena S.', role:'Business coach for solo founders', time:'3d', likes:1842, cmts:167,
+        txt:'10 things I wish someone had told me before I started my coaching practice:\n\nCertification gets you confidence, not clients.\nYour niche is whoever keeps saying yes.\nFree sessions attract people who value free.\nThe website matters less than the follow-up.\nPost twice a week or don’t bother.\nRaise your price the day you’re fully booked.\nA quiet month in marketing becomes a quiet quarter in revenue.\nTestimonials beat credentials, every time.\nThe admin will eat you alive if you let it.\nNobody hires you for your certificate. They hire you after one conversation.\n\nWhat would you add?',
+        cmt:{ who:AV.tom, name:'Tom H.', txt:'“A quiet month in marketing becomes a quiet quarter in revenue” — learned that one the expensive way.' } },
+      { type:'carousel', who:AV.priya, name:'Priya M.', role:'Leadership coach · ex-HR director', time:'4d', likes:2318, cmts:146,
+        cap:'Saved by 900+ people last week. The five questions, one per slide →',
+        bg:G.orange, slides:[
+          {k:'For coaches · 5 slides', h:'The 5 questions that unstick any client', p:'Not advice. Not frameworks. Questions — the only tool that scales to every client.'},
+          {k:'01', h:'“What are you pretending not to know?”', p:'Then silence. Don’t rescue them from it. The session starts when they answer.'},
+          {k:'02', h:'“What would this look like if it were easy?”', p:'Strips the drama off the problem. What’s left is usually a to-do list.'},
+          {k:'03', h:'“What did you do the last time this happened?”', p:'Clients forget they have a track record. Hand it back to them.'},
+          {k:'04', h:'“Whose permission are you waiting for?”', p:'Nine times out of ten, the answer is “nobody’s” — said out loud, it breaks.'},
+          {k:'05', h:'“What will you actually do by Friday?”', p:'A session without a Friday is a conversation. Close every loop with a date.'} ] },
+      { type:'post', who:AV.priya, name:'Priya M.', role:'Leadership coach · ex-HR director', time:'5d', likes:927, cmts:58,
+        txt:'Clients don’t pay for the hour.\n\nThey pay for the ten years that taught you what to say in it.\n\nPrice the decade.' },
+      { type:'poll', who:AV.jonas, name:'Jonas K.', role:'Wellness & burnout coach', time:'6d', likes:432, cmts:61,
+        txt:'Honest one, coaches: what actually eats your non-coaching hours? (We keep saying “admin” — let’s get specific.)',
+        poll:{ meta:'1,847 votes · poll closed', opts:[
+          ['Content & posting',38],['Follow-ups & lead admin',27],['Invoices & chasing payment',21],['Website & tech upkeep',14] ] } },
+      { type:'post', who:AV.tom, name:'Tom H.', role:'Career transition coach', time:'1w', likes:1376, cmts:143,
+        txt:'31 clients in my first year of career coaching. No audience. No ads. No funnel.\n\nHere’s exactly what worked.\n\nPeople kept asking how I’d switched careers three times without a single unemployed month. So I wrote down all 25 steps I’d used. Every one.\n\nThen I turned the list into a self-scored checklist and gave it away. Score yourself out of 25.\n\nMost people scored under 8.\n\nI never had to convince anyone they needed help. The checklist did it for me.\n\nMy mistake? I charged €400 for a package that changed careers. Far too cheap. But those 31 clients became 31 referrers — and year two booked itself.' },
+      { type:'post', who:AV.jonas, name:'Jonas K.', role:'Wellness &amp; burnout coach', time:'6d', likes:684, cmts:59,
+        txt:'Client: “Can we do a quick 15-minute call?”\n\nNarrator: it was not 15 minutes.\n\nAnyway — that’s why my booking link has buffers now. 😌' },
+      { type:'teaser', who:AV.nadia, name:'Nadia R.', role:'Executive coach · 12 yrs', time:'1w',
+        txt:'€19,000 in certifications before my first paying client.\n\nNobody tells you this at the start: the certification industry doesn’t need you to succeed. It needs you to keep enrolling.\n\n€2,400 for the foundation. €4,800 for “practitioner.” €6,000 for “master.” Then a €5,800 business accelerator to learn to sell what the first three never taught me to sell.\n\nThat’s not education. That’s a subscription.\n\n“You need more credentials before you can charge that.” “Clients check certifications.” “One more course and you’ll feel ready.” I believed all three. All three were wrong.\n\nDoes training matter? Of course it does — I use it weekly.\n\nBut here’s what actually got me clients:\n1. Fifty coffee conversations with no agenda…' } ] },
+
+    mentor: { label:'For mentors', addr:'roster.coachos/mentors — members', posts:[
+      { type:'post', who:AV.lin, name:'Lin W.', role:'Career mentor for new grads', time:'2d', likes:1204, cmts:118,
+        txt:'I cold-messaged the COO I’d admired for years. She replied in four hours.\n\nI was two years into my career, coordinating other people’s calendars.\n\nFull honesty about my one opening: she’d spoken at my university, and I’d taken eleven pages of notes.\n\nSo that’s what I sent. Everything I’d already applied from her talk, what happened when I did — and the three questions I still couldn’t answer.\n\nShe gave me 45 minutes. I took a day’s leave and a train across the country for it.\n\nWhat that hour taught me:\n1. Lead with what you’ve already done with their thinking. Not flattery — evidence.\n2. Ask questions a search engine can’t answer.\n3. Follow up with results, not thanks. That turned one meeting into a decade of mentorship.' },
+      { type:'carousel', who:AV.aisha, name:'Aisha T.', role:'Founder mentor · 3 exits', time:'3d', likes:2054, cmts:98,
+        cap:'The 12-session arc I rebuilt my mentorship around. Steal it →',
+        bg:G.purple, slides:[
+          {k:'For mentors · 5 slides', h:'12 sessions, one arc', p:'The structure that turned “same time next month?” into renewals asked for by session ten.'},
+          {k:'Sessions 1–2', h:'Map the decision', p:'Not “what do you want to learn” — what decision do you face in the next 90 days?'},
+          {k:'Sessions 3–8', h:'Work the decision', p:'Every session ends with one commitment and a date. The recap carries it forward.'},
+          {k:'Sessions 9–10', h:'Prove the change', p:'Write down what moved, in the mentee’s own words. This becomes your proof — with consent.'},
+          {k:'Sessions 11–12', h:'Open the next arc', p:'The renewal conversation happens before the goodbye session. Always.'},
+          {k:'The rule', h:'People renew programs.', p:'They drift out of arrangements. Which one are you running?'} ] },
+      { type:'post', who:AV.rob, name:'Rob F.', role:'Engineering mentor', time:'4d', likes:836, cmts:47,
+        txt:'Advice is a gift.\n\nMentorship is a structure.\n\nOnly one of them gets renewed.' },
+      { type:'poll', who:AV.lin, name:'Lin W.', role:'Career mentor for new grads', time:'6d', likes:389, cmts:44,
+        txt:'Be honest, mentors — do you have a written structure for your mentorship, or is it “calls when they need me”?',
+        poll:{ meta:'1,212 votes · poll closed', opts:[
+          ['Written arc, sessions defined',22],['Half-structured, mostly vibes',31],['Calls whenever they ask',47] ] } },
+      { type:'post', who:AV.marcus, name:'Marcus D.', role:'Product mentor · ex-VP Product', time:'6d', likes:1051, cmts:94,
+        txt:'In 2011 I asked my mentor whether to take the head-of-product job.\n\nHe answered with a question: “Do you want to be paid for what you build, or for what you decide?”\n\nThen he gave me the split I still quote: “Spend 70% of your time understanding the problem and 30% building. Juniors do the reverse.”\n\nI interviewed. I didn’t get it — they said I needed two more years.\n\nBut the hiring manager introduced me to a founder who needed exactly my profile, and that coffee became the job that made my career.\n\nMentorship isn’t the wise line. It’s the chain of doors that keeps opening after the first one closes.',
+        cmt:{ who:AV.aisha, name:'Aisha T.', txt:'The chain is the whole thing. My best intro came from an interview I failed.' } },
+      { type:'post', who:AV.rob, name:'Rob F.', role:'Engineering mentor', time:'6d', likes:512, cmts:44,
+        txt:'Mentee: “Last question, I promise.”\n\nAlso mentee: shares a doc titled “Just 3 more things (final) (v2)”\n\nWouldn’t trade it for anything. 😄' },
+      { type:'teaser', who:AV.aisha, name:'Aisha T.', role:'Founder mentor · 3 exits', time:'1w',
+        txt:'I still remember my first mentor. She changed everything.\n\nI was 24 — sharp on paper, terrified in rooms.\n\nShe did three things nobody had done for me before. She put me in front of clients before I felt ready. She stopped me every time I ended a statement like a question. And she made me build relationships two levels above my title.\n\nBefore the biggest meeting of my life, she said five words I’ve repeated to every mentee since: “You belong at this table.”\n\nTwenty years on, the founders I mentor tell me the same story with different names. And the data says…' } ] },
+
+    freelancer: { label:'For freelancers', addr:'roster.coachos/freelancers — members', posts:[
+      { type:'post', who:AV.marta, name:'Marta P.', role:'Copywriter · fintech', time:'2d', likes:2103, cmts:184,
+        txt:'7 things I stopped doing as a freelancer that made me more money (and made me less tired):\n\nAnswering emails like I’m being graded on speed.\nGiving away round three when the contract says two.\nQuoting on calls instead of in writing, after a night’s sleep.\nSaying “no worries!” when there were, in fact, worries.\nTreating January’s drought as a personal failing instead of a pipeline fact.\nDiscounting for “exposure” from companies with more followers than me.\nWorking weekends to hit deadlines I was too polite to renegotiate.\n\nStopped all seven. Revenue up a third. Resentment down to zero.',
+        cmt:{ who:AV.dev, name:'Dev A.', txt:'The “quoting after a night’s sleep” one paid for itself the first week I tried it.' } },
+      { type:'carousel', who:AV.marta, name:'Marta P.', role:'Copywriter · fintech', time:'3d', likes:1892, cmts:121,
+        cap:'Half my yeses this year came after day 8. The follow-up calendar →',
+        bg:G.blue, slides:[
+          {k:'For freelancers · 5 slides', h:'The follow-up calendar that closes proposals', p:'“Just checking in” is not a strategy. This is.'},
+          {k:'Day 3', h:'Add something', p:'A relevant example, a case, an answer to a question they didn’t ask. Value, not pressure.'},
+          {k:'Day 8', h:'Make it easier', p:'Break the scope into phases. A smaller first yes beats a stalled big one.'},
+          {k:'Day 15', h:'Name a deadline — yours', p:'“I’m booking September this week” is honest scarcity. Vague availability closes nothing.'},
+          {k:'Day 21', h:'Close the loop', p:'“Shall I close the file?” gets more replies than any follow-up. Nobody likes a closing door.'},
+          {k:'The math', h:'Most freelancers stop at day 3.', p:'The ones who don’t, eat. Half my yeses this year came after day 8.'} ] },
+      { type:'post', who:AV.dev, name:'Dev A.', role:'Brand designer · B2B SaaS', time:'4d', likes:1188, cmts:73,
+        txt:'Scope creep isn’t a client problem.\n\nIt’s a silence problem.\n\nName it the first time, kindly, in writing — and it never becomes a pattern.' },
+      { type:'poll', who:AV.sam, name:'Sam O.', role:'SEO consultant', time:'6d', likes:512, cmts:74,
+        txt:'The famine starts during the feast. Proof — answer honestly: when do you follow up on a sent proposal?',
+        poll:{ meta:'2,306 votes · poll closed', opts:[
+          ['Day 1–3, always',18],['About a week later',24],['When I remember',41],['I don’t. They know where I am',17] ] } },
+      { type:'post', who:AV.chris, name:'Chris B.', role:'Web developer · e-commerce', time:'6d', likes:1467, cmts:201,
+        txt:'I tracked all 47 leads from my first year freelancing. Every enquiry. Every ghost. Every win.\n\nI’d quit my job with zero pipeline and two months of savings.\n\nWhat the spreadsheet says:\n→ 11 of 47 became paying clients.\n→ Referrals from old colleagues converted 4× better than cold enquiries.\n→ Nearly half the losses were timing, not price — and most came back months later.\n→ Every client who fought hard on price became a headache later. Every single one.\n\nBut the numbers were only half the story. The other half: the follow-up I almost didn’t send brought in my biggest client of the year. Day 12. One line.' },
+      { type:'post', who:AV.chris, name:'Chris B.', role:'Web developer · e-commerce', time:'6d', likes:876, cmts:71,
+        txt:'Freelance mood calendar:\n\nWeek 1: I am unstoppable.\nWeek 2: I am unstoppable.\nWeek 3: I have forgotten how to write an email.\nWeek 4: invoice day. I am unstoppable.' },
+      { type:'teaser', who:AV.sam, name:'Yuki N.', role:'Motion designer', time:'1w',
+        txt:'Time for a very honest update about my freelance business.\n\nThree years ago this week, I posted that I was going independent. Today’s anniversary post is a different kind: I’m closing the studio.\n\nDo I feel strange writing that? Yes. Am I sure? Also yes.\n\nFirst, the honest good: the clients were wonderful, the money was the best of my career, and I grew more in three years than in the previous eight.\n\nSo why stop? Two reasons — and the first one is a character flaw.\n\n1. I’m terrible at hard conversations. Here’s what being bad at them cost me:\n→ The scope that grew 40% because I wouldn’t name it…' } ] },
+
+    business: { label:'For small business', addr:'roster.coachos/business — members', posts:[
+      { type:'post', who:AV.grace, name:'Grace T.', role:'Owner · boutique fitness studio', time:'2d', likes:1522, cmts:246,
+        txt:'Hard lessons from scaling my studio to three locations as a mum of two:\n\n1. I had to grieve the version of me who thought she could take every class, fix every rota, and repair every treadmill herself.\n2. Past a certain size, someone is always unhappy with you. Choose who.\n3. If people aren’t buying, you don’t have a marketing problem. You have an offer problem.\n4. The customers who fight hardest on price never become regulars. Ever.\n5. Hire for the job you’ll have in six months, not the one drowning you today.\n6. The books don’t lie. Feelings do.\n7. Protect one evening a week like a supplier contract. It is one — with your family.\n\nWhat’s the hardest one you’ve learned this year?' },
+      { type:'carousel', who:AV.omar, name:'Omar S.', role:'Owner · auto detailing, 2 locations', time:'4d', likes:1439, cmts:88,
+        cap:'31 reviews to 240 in a year. The system, slide by slide →',
+        bg:G.green, slides:[
+          {k:'For owners · 5 slides', h:'The review engine', p:'Reviews are a system, not a favour. Here’s the one that took us from 31 to 240.'},
+          {k:'01', h:'Ask every happy customer', p:'Not “when you remember.” Every one. The morning after, while the glow is warm.'},
+          {k:'02', h:'One message, one link', p:'No “if you have a moment, maybe…” — a direct link, one sentence, signed with your name.'},
+          {k:'03', h:'Reply to every review', p:'Future customers read your replies more carefully than the reviews themselves.'},
+          {k:'04', h:'Put the number everywhere', p:'“240 five-star reviews” closes more than any ad we’ve run. Social proof compounds.'},
+          {k:'The result', h:'“Found you on Google” became our #1 source', p:'It outran referrals in month eight. A system did that — not luck.'} ] },
+      { type:'post', who:AV.omar, name:'Omar S.', role:'Owner · auto detailing, 2 locations', time:'4d', likes:964, cmts:71,
+        txt:'Speed is a feature.\n\nThe first business to reply looks like the best business.\n\nUsually becomes it, too.' },
+      { type:'poll', who:AV.grace, name:'Grace T.', role:'Owner · boutique fitness studio', time:'6d', likes:398, cmts:57,
+        txt:'Owners — no judgment, real numbers only. How fast does a new enquiry actually get answered at your place?',
+        poll:{ meta:'1,594 votes · poll closed', opts:[
+          ['Within the hour',19],['Same day',34],['Next day',29],['When we get to it',18] ] } },
+      { type:'post', who:AV.hana, name:'Neha J.', role:'Owner · tutoring centre', time:'6d', likes:1108, cmts:89,
+        txt:'Twelve years running this business this month. Twelve things I know for sure — the short version:\n\nIf money comes in the door, you live. If it doesn’t, you die. Everything else is commentary.\n\nGrowth isn’t one big idea. It’s ten small edges, stacked: answer first, quote same-day, invoice same-week, follow up twice, ask for the review.\n\nRecurring revenue is heaven. Repeat customers are good. Pure project work is a treadmill with teeth.\n\nCheap customers are the most expensive thing you will ever buy.\n\nAnd the one that took me a decade to accept: there are no business problems. Only people problems, wearing disguises.' },
+      { type:'post', who:AV.grace, name:'Grace T.', role:'Owner · boutique fitness studio', time:'6d', likes:743, cmts:66,
+        txt:'The four horsemen of small business:\n\n1. “Do you do discounts?”\n2. “Can you hold it till Friday?”\n3. “I saw it cheaper online.”\n4. “Actually, cancel.”\n\nStill love this job. Mostly. 😅' },
+      { type:'teaser', who:AV.hana, name:'Hana L.', role:'Owner · catering studio', time:'1w',
+        txt:'It’s been 72 hours since this community saved my business.\n\nOn Tuesday I posted something I never thought I’d share publicly: we had six weeks of cash left. Fourteen years of work — six weeks of runway.\n\nI hit post and felt sick. I wasn’t sure what would happen next.\n\nHere’s what happened:\n✨ 214 orders in three days — more than the previous two months combined\n✨ Three corporate contracts from people who’d never heard of us on Monday\n✨ The autumn collection is fully funded\n✨ And the part I didn’t expect…' } ] },
+
+    corporate: { label:'For corporate & L&D', addr:'roster.coachos/programs — members', posts:[
+      { type:'post', who:AV.ingrid, name:'Ingrid B.', role:'Talent development · pharma', time:'2d', likes:876, cmts:92,
+        txt:'Asking for a mentor without knowing what you need is like grocery shopping hungry, without a list.\n\nYou leave with a trolley full of impressive things and nothing that makes a meal.\n\nWe rebuilt our program’s intake around one question: “What decision are you facing in the next 90 days?”\n\nNot “what do you want to learn.” Not “who do you admire.” A decision, with a date.\n\nPairs matched against a decision meet more, stall less, and finish with something to show. The mentor knows why they’re in the room. The mentee knows what done looks like.\n\nShopping list first. Then the store.' },
+      { type:'carousel', who:AV.daniel, name:'Daniel R.', role:'People programs lead · tech', time:'4d', likes:1358, cmts:79,
+        cap:'Why mentoring programs die at month 3 — and the four signals that catch it →',
+        bg:G.blue, slides:[
+          {k:'For programs · 5 slides', h:'Programs don’t fail. They fade.', p:'The four signals that catch the fade while it’s still fixable.'},
+          {k:'Signal 01', h:'Sessions stop logging', p:'Not “satisfaction drops” — meetings simply stop happening. Track sessions, not smiles.'},
+          {k:'Signal 02', h:'One side goes quiet', p:'Mentor still books, mentee stops confirming — or the reverse. The asymmetry is the tell.'},
+          {k:'Signal 03', h:'Goals stop moving', p:'A pair can meet monthly and progress nothing. Meeting ≠ mentoring.'},
+          {k:'Signal 04', h:'The admin becomes the bottleneck', p:'When chasing attendance is a person’s job, the program is already dying of friction.'},
+          {k:'The rule', h:'Flag at week 3 of silence.', p:'Not at the year-end survey. By then you’re not fixing — you’re archaeologising.'} ] },
+      { type:'post', who:AV.kwame, name:'Lucia F.', role:'HR director · manufacturing', time:'4d', likes:702, cmts:39,
+        txt:'If your mentoring data feeds performance reviews, you don’t have a mentoring program.\n\nYou have a surveillance program with coffee.\n\nWrite the firewall down. Watch participation double.' },
+      { type:'poll', who:AV.kwame, name:'Kwame A.', role:'OD consultant · ex-corporate L&D', time:'6d', likes:341, cmts:49,
+        txt:'Program owners, honestly: how do you know your mentoring pairs are actually meeting?',
+        poll:{ meta:'987 votes · poll closed', opts:[
+          ['We track sessions, live',16],['Quarterly surveys',38],['We assume good faith',46] ] } },
+      { type:'post', who:AV.daniel, name:'Daniel R.', role:'People programs lead · tech', time:'6d', likes:948, cmts:87,
+        txt:'“What makes a good mentor?” A mentee asked me this week — and I’ve been lucky: two CEOs and one very patient plant manager mentored me.\n\nWhat the best ones had in common:\n1. They gave me problems slightly too big for me, then didn’t rescue me early.\n2. They told me the thing nobody else would say to my face.\n3. They opened doors — and then disappeared from the story so I walked through alone.\n4. They kept showing up after the promotion, when there was nothing left in it for them.\n\nWe now select mentors for our program against those four. Seniority isn’t on the list.',
+        cmt:{ who:AV.claire, name:'Claire V.', txt:'Number 4 is the real filter. It removes half the volunteers and keeps the right half.' } },
+      { type:'post', who:AV.ingrid, name:'Ingrid B.', role:'Talent development · pharma', time:'6d', likes:428, cmts:39,
+        txt:'Year-end mentoring survey:\n\n“Did your pair meet regularly?” — 94% yes\nCalendar data: 31% met after March\n\nAnyway. That’s why we track sessions now, not vibes. 🙃' },
+      { type:'teaser', who:AV.claire, name:'Claire V.', role:'Head of L&D · 1,200-person firm', time:'1w',
+        txt:'It’s been 90 days since we rebuilt our mentoring program, and I owe this community an update.\n\nIn March I posted that our program was dying quietly: 214 pairs on paper, and I couldn’t tell you how many had met that month. The year-end survey said “great.” The calendars said otherwise.\n\nI wasn’t sure publishing that was wise. Neither was my CHRO.\n\nHere’s what 90 days of visibility changed:\n✦ Active pairs: 31% → 78%\n✦ Quiet pairs get flagged at week three — five saved matches last month alone\n✦ The quarterly report went from a satisfaction slide to…' } ] }
+  };;
+
+  var tabsEl = null, feedEl = document.getElementById('rfeed'), addrEl = document.getElementById('raddr');
+  var modal = document.getElementById('rmodal');
+  function openModal(){ modal.classList.add('open'); }
+  function closeModal(){ modal.classList.remove('open'); }
+  document.getElementById('rclose').addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+
+  function avatar(w, small){
+    return '<span class="rav' + (small ? ' sm' : '') + '" style="background:' + w.bg + '" aria-hidden="true">' + w.av + '</span>';
+  }
+  function head(p){
+    return '<div class="rhead">' + avatar(p.who)
+      + '<span class="rwho"><b>' + p.name + '<span class="rbadge">✓ Verified</span></b>'
+      + '<span class="rrole">' + p.role + '</span><span class="rtime">' + p.time + ' · 🌐</span></span></div>';
+  }
+  function statsActs(p){
+    var h = '<div class="rstats"><span>👍❤️💡 ' + p.likes.toLocaleString('en-US') + '</span><span>' + p.cmts + ' comments</span></div>';
+    if (p.cmt) h += '<div class="rcmt">' + avatar(p.cmt.who, true)
+      + '<div class="bub"><b>' + p.cmt.name + ' <span style="font-weight:400;color:#888;font-size:.68rem">· member</span></b>' + p.cmt.txt + '</div></div>';
+    h += '<div class="racts">'
+      + '<button class="ract" type="button">👍 Like</button>'
+      + '<button class="ract" type="button">💬 Comment</button>'
+      + '<button class="ract" type="button">🔁 Repost</button>'
+      + '<button class="ract" type="button">➤ Send</button></div>';
+    return h;
+  }
+  function postHtml(p, idx){
+    if (p.type === 'teaser') {
+      return '<article class="rpost rteaser">' + head(p) + '<p class="rtxt">' + p.txt + '</p></article>';
+    }
+    var body = '';
+    if (p.type === 'post') body = '<p class="rtxt">' + p.txt + '</p>';
+    if (p.type === 'tweet') {
+      body = '<p class="rtxt">' + p.cap + '</p>'
+        + '<div class="rtw"><div class="twh"><span class="rav sm" style="background:' + p.tw.bg + '">' + p.tw.av + '</span>'
+        + '<span><b>' + p.tw.name + '</b><span class="twhandle"> ' + p.tw.handle + '</span></span><span class="twx">𝕏</span></div>'
+        + '<p class="twt">' + p.tw.txt + '</p>'
+        + '<div class="twm"><span>' + p.tw.date + '</span><a href="' + p.tw.url + '" target="_blank" rel="noopener" style="color:#4a76c9;text-decoration:none;font-weight:600">View on X →</a></div></div>';
+    }
+    if (p.type === 'lipost') {
+      var ini = p.li.name.replace(/&[a-z]+;/g, '').split(' ').map(function(w){ return w.charAt(0); }).join('').slice(0, 2).toUpperCase();
+      return '<article class="rpost">'
+        + '<div class="rhead"><span class="rav" style="background:linear-gradient(135deg,#5f83b5,#0a66c2);color:#fff;font-size:15px;font-weight:700;font-family:inherit">' + ini + '</span>'
+        + '<span class="rwho"><b>' + p.li.name + '<span class="rbadge" style="background:#e9f0f8;color:#0a66c2">in LinkedIn</span></b>'
+        + '<span class="rrole">' + p.li.role + '</span><span class="rtime">' + p.time + ' · shared into the room</span></span></div>'
+        + '<p class="rtxt">' + p.li.hook + ' &hellip;</p>'
+        + '<div class="rstats"><span>' + p.li.stats + '</span>'
+        + '<a href="' + p.li.url + '" target="_blank" rel="noopener" style="color:#0a66c2;text-decoration:none;font-weight:600">Read the full post →</a></div>'
+        + '<div class="racts">'
+        + '<button class="ract" type="button">👍 Like</button>'
+        + '<button class="ract" type="button">💬 Comment</button>'
+        + '<button class="ract" type="button">🔁 Repost</button>'
+        + '<button class="ract" type="button">➤ Send</button></div></article>';
+    }
+    if (p.type === 'lishare') {
+      body = '<p class="rtxt">' + p.cap + '</p>'
+        + '<div class="rli"><div class="lih"><span class="rav sm" style="background:' + p.li.bg + '">' + p.li.av + '</span>'
+        + '<span><b>' + p.li.name + '</b><span class="lirole">' + p.li.lirole + '</span></span><span class="liin">in</span></div>'
+        + '<p class="lit">' + p.li.excerpt + '</p>'
+        + '<div class="lim"><a href="' + p.li.url + '" target="_blank" rel="noopener" style="color:#0a66c2;text-decoration:none;font-weight:600">Read the full post on LinkedIn →</a></div></div>';
+    }
+    if (p.type === 'carousel') {
+      var slides = p.slides.map(function(s, i){
+        return '<div class="rslide' + (i === 0 ? ' on' : '') + '" style="background:' + p.bg + '">'
+          + '<span class="sk">' + s.k + '</span><h4>' + s.h + '</h4><p>' + s.p + '</p></div>';
+      }).join('');
+      var dots = p.slides.map(function(_, i){ return '<span' + (i === 0 ? ' class="on"' : '') + '></span>'; }).join('');
+      body = '<p class="rtxt">' + p.cap + '</p>'
+        + '<div class="rcar" data-car="' + idx + '">' + slides
+        + '<button class="rcarnav prev" type="button" aria-label="Previous slide">‹</button>'
+        + '<button class="rcarnav next" type="button" aria-label="Next slide">›</button>'
+        + '<span class="rcarpage">1/' + p.slides.length + '</span>'
+        + '<div class="rdots">' + dots + '</div></div>';
+    }
+    if (p.type === 'poll') {
+      var opts = p.poll.opts.map(function(o){
+        return '<button class="rpopt" type="button"><span class="fill" style="width:' + o[1] + '%"></span>'
+          + '<span>' + o[0] + '<span class="pct">' + o[1] + '%</span></span></button>';
+      }).join('');
+      body = '<p class="rtxt">' + p.txt + '</p><div class="rpoll">' + opts + '</div><p class="rpollmeta">' + p.poll.meta + '</p>';
+    }
+    return '<article class="rpost">' + head(p) + body + statsActs(p) + '</article>';
+  }
+var EXTRA = [
+    { type:'post', who:AV.priya, name:'Priya M.', role:'Leadership coach · ex-HR director', time:'2w', likes:743, cmts:61,
+        txt:'Ran the numbers on my last 40 discovery calls.\n\nWon 9 of the 11 where I named a price on the call.\nWon 2 of the 29 where I “sent a proposal after.”\n\nThe proposal isn’t a document. It’s a delay.' },
+    { type:'post', who:AV.jonas, name:'Jonas K.', role:'Wellness & burnout coach', time:'2w', likes:892, cmts:74,
+        txt:'A client ended today’s session with: “That’s the first time I’ve said that out loud.”\n\nSix years in, that sentence is still the entire job.\n\nEverything else — the website, the funnel, the content — exists so that sentence can happen.' },
+    { type:'post', who:AV.elena, name:'Elena S.', role:'Business coach for solo founders', time:'3w', likes:655, cmts:88,
+        txt:'Unpopular opinion: your package names are costing you sales.\n\n“Signature 1:1 Transformation Journey” tells me nothing.\n“Twelve weeks to a calmer Monday” sells itself.\n\nName the after, not the process.' }
+  ];;
+  var ANON = {
+    coach: { q:'Am I the only one who still feels like a fraud charging €150/hr after six years? A client praised me today and my first thought was “if only you knew.” How do the rest of you deal with this — honestly?', n:'5 answers delivered — visible only to the asker' },
+    mentor: { q:'A mentee’s company is about to do layoffs, and I know before they do. Where exactly is the ethical line between mentor and insider here? I need answers from people who’ve actually been in this seat.', n:'7 answers delivered — visible only to the asker' },
+    freelancer: { q:'My biggest client is 70% of my income and their payments keep arriving later each month. I’m terrified to push. What would you actually do — realistically, not the confident-post version?', n:'9 answers delivered — visible only to the asker' },
+    business: { q:'Revenue looks fine from the outside, but I haven’t paid myself properly in four months and I’m ashamed to tell my spouse. Has anyone here actually broken this pattern — and how?', n:'6 answers delivered — visible only to the asker' },
+    corporate: { q:'Leadership wants me to report who’s “engaged” in mentoring for succession planning. I promised participants a firewall. How do I push back without getting the program cut?', n:'4 answers delivered — visible only to the asker' }
+  };;
+  function anonHtml(key, label){
+    var a = ANON[key];
+    return '<article class="rpost ranon">'
+      + '<div class="rhead"><span class="rav" aria-hidden="true">🕶️</span>'
+      + '<span class="rwho"><b>Anonymous member<span class="anontag">identity hidden</span></b>'
+      + '<span class="rrole">' + label + ' · question to the room</span><span class="rtime">3h</span></span></div>'
+      + '<p class="rtxt">' + a.q + '</p>'
+      + '<div class="privnote">🔒 ' + a.n + ' — anonymous questions are answered in private, never on a profile.</div>'
+      + '<div class="racts">'
+      + '<button class="ract gate" type="button">💬 Answer privately</button>'
+      + '<button class="ract gate" type="button">🕶️ Ask your own</button></div></article>';
+  }
+  function articleHtml(car){
+    return '<article class="rpost rarticle">'
+      + '<div class="band" style="background:' + car.bg + '"><span class="atag">Article</span><h4>' + car.slides[0].h + '</h4></div>'
+      + '<div class="abody"><span class="am">' + car.name + ' · ' + car.role + ' · 7 min read</span>'
+      + '<p>' + car.slides[0].p + '</p>'
+      + '<button class="aread gate" type="button">Read the full article →</button></div></article>';
+  }
+  function gateHtml(){
+    return '<div class="rgate"><b>You’ve reached the guest limit.</b>'
+      + '<p>The rest of today’s room — and everything blurred below — is members only.</p>'
+      + '<button class="rmore gate" type="button">View all posts</button></div>';
+  }
+  function lockedHtml(p){
+    return '<div class="rpost rlocked" style="padding:0;border:none"><div class="inner">' + postHtml(p) + '</div>'
+      + '<div class="veil gate"><span>🔒 Members-only post</span></div></div>';
+  }
+  function railLeft(){
+    return '<div class="rcardx"><div style="display:flex;gap:.6rem;align-items:center">'
+      + '<span class="rav" style="background:linear-gradient(135deg,#8a8a92,#3c3c44);color:#fff;font-size:18px;font-weight:700">?</span>'
+      + '<span><b style="font-size:.85rem">You, maybe</b><span class="mut" style="display:block">Guest view — the public sliver</span></span></div>'
+      + '<div class="rlockrow" style="margin-top:.7rem;border-top:none"><span>Profile views</span><span>🔒</span></div>'
+      + '<div class="rlockrow"><span>Post impressions</span><span>🔒</span></div>'
+      + '<div class="rlockrow"><span>Saved posts</span><span>🔒</span></div></div>'
+      + '<div class="rcardx"><h5>🕶️ Anonymous mode</h5><p class="mut">Ask what you can’t ask with your name on it. The room answers; only you see the answers. Nothing ever shows on your profile.</p>'
+      + '<button class="rviewall gate" type="button">Ask a question →</button></div>';
+  }
+  function railRight(d){
+    var seen = {}, rows = '';
+    for (var i = 0; i < d.posts.length && Object.keys(seen).length < 4; i++) {
+      var p = d.posts[i];
+      if (!p.name || seen[p.name]) continue;
+      seen[p.name] = 1;
+      rows += '<div class="rmemrow">' + avatar(p.who, true)
+        + '<span><b>' + p.name + '</b><span class="mr">' + p.role + '</span></span></div>';
+    }
+    return '<div class="rcardx"><h5>In this room</h5><p class="mut" style="margin:.1rem 0 .4rem"><span style="color:#2e8b57">●</span> 183 members &middot; 11 in the room now</p>' + rows
+      + '<button class="rviewall gate" type="button">and 200+ more · View all →</button></div>'
+      + '<div class="rcardx"><h5>This week inside</h5><div class="rlockrow" style="border-top:none;padding:.3rem 0"><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:170px">Thread: What did Google reviews actu&hellip;</span><span>🔒</span></div><div class="rlockrow" style="border-top:none;padding:.3rem 0"><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:170px">Office hours: hiring your first mana&hellip;</span><span>🔒</span></div><div class="rlockrow" style="border-top:none;padding:.3rem 0"><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:170px">Supplier board &mdash; 4 recommendations</span><span>🔒</span></div><button class="rviewall gate" type="button">Open this week →</button></div>'
+      + '<div class="rcardx"><h5>How this room works</h5><p class="mut">No connection requests — being in the room is the connection. Everyone here was chosen. No AI posts on anyone’s behalf. Anonymous questions are answered privately.</p></div>';
+  }
+  function render(key){
+    var d = P[key];
+    addrEl.textContent = d.addr;
+    document.getElementById('rroom').textContent = '— ' + d.label.replace('For ', '') + ' room';
+    document.getElementById('rleft').innerHTML = railLeft();
+    document.getElementById('rright').innerHTML = railRight(d);
+    // order: full post, anonymous question, short take, poll, article, gated big post, gate, blurred members-only
+    feedEl.innerHTML = postHtml(d.posts[0])
+      + anonHtml(key, d.label.replace('For ', ''))
+      + postHtml(d.posts[2])
+      + postHtml(d.posts[3])
+      + articleHtml(d.posts[1])
+      + EXTRA.map(function(x){ return postHtml(x); }).join('')
+      + postHtml(d.posts[6])
+      + gateHtml()
+      + lockedHtml(d.posts[5])
+      + lockedHtml(d.posts[4]);
+    var frame = document.querySelector('.rframe');
+    frame.querySelectorAll('.ract, .rpopt, .gate').forEach(function(b){
+      if (b.dataset.g) return; b.dataset.g = '1';
+      b.addEventListener('click', openModal);
+    });
+    var t = feedEl.querySelector('.rteaser'); if (t) t.addEventListener('click', openModal);
+  }
+
+  render('business');
+})();
+</script>
+
+
+</body></html>

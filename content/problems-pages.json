@@ -1,0 +1,316 @@
+{
+  "intro": {
+    "label": "The pattern",
+    "heading": "Same gaps. Every practice.",
+    "sub": "These numbers show up in almost every onboarding call. Each one maps to a service we run today.",
+    "stats": [
+      { "stat": "54%", "text": "of small business owners still run all marketing themselves" },
+      { "stat": "63%", "text": "of freelancers name irregular income as their top challenge" },
+      { "stat": "72%", "text": "mentee retention with a structured program vs 49% without one" },
+      { "stat": "122,974", "text": "professional coaches worldwide in a $5.34B industry" },
+      { "stat": "26%", "text": "of employees rate company mentoring programs 8/10 or higher" },
+      { "stat": "5 min", "text": "to reply beats a 42-hour average when a lead is warm" }
+    ],
+    "afterNote": "Below: the moment, then what CoachOS runs instead — under your name, after you approve."
+  },
+  "categories": [
+    {
+      "num": "01",
+      "title": "Website & presence",
+      "sub": "when the only proof you exist is a feed",
+      "items": [
+        {
+          "stat": "17%",
+          "title": "No real website, so a prospect can't verify you're legitimate",
+          "avatar": "CO",
+          "quote": "Someone asked for my website on a Tuesday and I sent them my Instagram. She said thanks, that's great, and then just — nothing. It's the ones that don't come through that you never hear about.",
+          "role": "Leadership coach · 6 years solo",
+          "after": "Tuesday's \"what's your website?\" gets a real link — fast, specific, with booking built in",
+          "service": "Website, built for you",
+          "serviceHref": "services/website.html",
+          "audiences": ["coach", "business", "freelancer", "mentor"]
+        },
+        {
+          "stat": "~1 week",
+          "title": "A missed domain renewal takes the whole business offline",
+          "avatar": "SB",
+          "quote": "The email went first. Then a client rang to say my site was showing a page of adverts. The renewal notices had been going to an address on that same domain — and the card on file had expired in January.",
+          "role": "Small-business owner · retail",
+          "after": "Renewal notices come to us, and the card on file is ours to watch. The site simply stays up",
+          "service": "Hosting & domain",
+          "serviceHref": "services/hosting-domain.html",
+          "audiences": ["business", "freelancer", "coach"]
+        },
+        {
+          "stat": "23–33%",
+          "title": "The handle available on one platform is already gone on the next",
+          "avatar": "SB",
+          "quote": "I'm one thing on Instagram, the same thing with an underscore on TikTok, and something completely different on LinkedIn. A client messaged an account using my old logo and got nothing back.",
+          "role": "Studio owner · wellness",
+          "after": "One name, every platform, old accounts cleaned up — your printed cards match the internet again",
+          "service": "Social handle setup",
+          "serviceHref": "services/social-handles.html",
+          "audiences": ["business", "freelancer", "coach", "mentor"]
+        }
+      ]
+    },
+    {
+      "num": "02",
+      "title": "Marketing & visibility",
+      "sub": "what happens when client work gets busy",
+      "items": [
+        {
+          "stat": "51%",
+          "title": "Posting stops the moment client work picks up — and nobody notices until the pipeline does",
+          "avatar": "CO",
+          "quote": "I checked the analytics on a Tuesday and realised the last thing I'd posted was in March. It's May. I signed two clients in April and just stopped. Enquiries kept trickling in off older stuff for a while. They've stopped now.",
+          "role": "Career coach · cohort model",
+          "after": "Three weeks into a full cohort, the feed is still publishing — you approved it two Sundays ago, in ten minutes",
+          "service": "Social media marketing",
+          "serviceHref": "services/social-media-marketing.html",
+          "audiences": ["coach", "business", "freelancer"]
+        },
+        {
+          "stat": "49%",
+          "title": "Feast-or-famine repeats because marketing only restarts once the pipeline is already empty",
+          "avatar": "FR",
+          "quote": "January and February I was turning work away. By April I was down to two clients, so I started posting again. That work landed in June — by which point I was flat out and stopped doing all of it. Fourth year running.",
+          "role": "Brand designer · freelance",
+          "after": "The June work lands while April is still busy — because the posting never stopped",
+          "service": "Marketing & visibility",
+          "serviceHref": "services/content-marketing.html",
+          "audiences": ["freelancer", "business"]
+        },
+        {
+          "stat": "122,974",
+          "title": "Generic positioning gets lost in an increasingly crowded field",
+          "avatar": "EC",
+          "quote": "Someone at a networking thing asked what I do and I said 'executive coaching, mainly leadership and confidence' — and watched her face do absolutely nothing. The other two coaches in the room said more or less the same.",
+          "role": "Executive coach · corporate niche",
+          "after": "The networking answer takes one sentence now. Faces react. Referrals follow",
+          "service": "Personal branding",
+          "serviceHref": "services/personal-branding.html",
+          "audiences": ["coach", "mentor", "freelancer"]
+        }
+      ]
+    },
+    {
+      "num": "03",
+      "title": "Leads & follow-up",
+      "sub": "what happens to an inbound lead in the wild",
+      "items": [
+        {
+          "stat": "21×",
+          "title": "A callback within two hours can still lose to one within twenty minutes",
+          "avatar": "CO",
+          "quote": "The enquiry came in at 9:40 and I rang back at half eleven. Two hours — felt fine to me. She was lovely about it. Said she'd already booked a call with someone for Thursday.",
+          "role": "Life coach · discovery calls",
+          "after": "The 9:40 inquiry gets a 9:44 reply — booked before the coffee's done",
+          "service": "Lead management",
+          "serviceHref": "services/lead-management.html",
+          "audiences": ["coach", "business", "freelancer"]
+        },
+        {
+          "stat": "42 hrs",
+          "title": "The average business takes 42 hours to respond to its own leads",
+          "avatar": "SB",
+          "quote": "The contact form goes to an inbox that also gets invoices, newsletters, and whatever the accountant is sending. Found four quote requests sitting in there once, the oldest from Monday.",
+          "role": "Trades business owner · 3-person team",
+          "after": "Quote requests stop sharing a room with invoices. The oldest unanswered lead is minutes old, not from Monday",
+          "service": "Lead management",
+          "serviceHref": "services/lead-management.html",
+          "audiences": ["business", "freelancer"]
+        },
+        {
+          "stat": "69%",
+          "title": "Most small businesses track leads on a spreadsheet, or nowhere at all",
+          "avatar": "SO",
+          "quote": "Somebody messaged in November asking about corporate sessions and I replied from the train. Meant to log it that evening. Found the thread again in February — she had followed up once and I never saw it.",
+          "role": "Studio owner · group programs",
+          "after": "Every conversation reads booked, declined, or waiting — and nothing waits long",
+          "service": "Lead management",
+          "serviceHref": "services/lead-management.html",
+          "audiences": ["coach", "business", "mentor"]
+        }
+      ]
+    },
+    {
+      "num": "04",
+      "title": "Sales & closing",
+      "sub": "what kills a deal that felt basically done",
+      "items": [
+        {
+          "stat": "8 touches",
+          "title": "Deals that closed needed far more follow-up than most people ever attempt",
+          "avatar": "FR",
+          "quote": "I sent two emails and decided she wasn't interested. Found out in March she'd signed with someone else — someone who emailed her six times. I sat there looking at my sent folder.",
+          "role": "Consultant · B2B projects",
+          "after": "Touches three, five, and seven go out on schedule, warm and specific. Polite no longer means gone",
+          "service": "Sales & closing support",
+          "serviceHref": "services/sales-closing-support.html",
+          "audiences": ["freelancer", "coach", "business"]
+        },
+        {
+          "stat": "70–80%",
+          "title": "A booked call is not the same as a call that happens",
+          "avatar": "CO",
+          "quote": "The two o'clock on Thursday is the one that gets me. I clear the hour before it, read the intake form, sit there with the link open. Then nothing — and at twelve past I send the message I keep saved, because I send it so often.",
+          "role": "Coach · discovery sessions",
+          "after": "The Thursday two o'clock shows up — reminded yesterday, confirmed this morning",
+          "service": "Lead management",
+          "serviceHref": "services/lead-management.html",
+          "audiences": ["coach", "mentor"]
+        }
+      ]
+    },
+    {
+      "num": "05",
+      "title": "Programs & structure",
+      "sub": "mentoring without a system underneath it",
+      "items": [
+        {
+          "stat": "$244/hr",
+          "title": "Years of mentoring, and still no real answer when someone asks what you offer",
+          "avatar": "ME",
+          "quote": "A woman at my nephew's christening asked what I do, and eleven years in, I heard myself say 'it depends.' I can tell you exactly what happened with any one of my mentees. I can't tell you what the thing is that I sell.",
+          "role": "Mentor · independent practice",
+          "after": "The christening question gets a one-line answer with a price in it — and a page to send afterward",
+          "service": "Mentor positioning",
+          "serviceHref": "services/mentor-positioning.html",
+          "audiences": ["mentor"]
+        },
+        {
+          "stat": "25–50",
+          "title": "Manual matching tops out at 25–50 people — most cohorts are bigger",
+          "avatar": "HR",
+          "quote": "Cohort one was 32 people and I did the matching in an evening. Cohort two was 58 and took a whole weekend — and on Sunday night I found I'd matched someone with her own line manager. Cohort three is meant to be 90.",
+          "role": "HR programs lead · enterprise",
+          "after": "Cohort three's ninety people: matched in days, zero line managers paired, zero Sunday redos",
+          "service": "Mentee matching",
+          "serviceHref": "services/mentee-matching.html",
+          "audiences": ["corporate", "mentor"]
+        },
+        {
+          "stat": "4.2/5",
+          "title": "A satisfaction score is not a number a CFO can act on",
+          "avatar": "LD",
+          "quote": "The finance review is in November and the only real number I have is 4.2 out of 5, from a survey most people ignored. The CFO asked what would happen if we didn't run the program.",
+          "role": "L&D manager · global firm",
+          "after": "November's finance review gets participation, goals met, and outcomes per pair — sitting next to the budget line they defend",
+          "service": "CoachOS for enterprise",
+          "serviceHref": "corporate/services.html",
+          "audiences": ["corporate"]
+        }
+      ]
+    },
+    {
+      "num": "06",
+      "title": "Communities & marketplaces",
+      "sub": "what the alternatives cost",
+      "items": [
+        {
+          "stat": "22–34%",
+          "title": "Marketplace fees quietly take a much bigger bite than the headline rate",
+          "avatar": "FR",
+          "quote": "I only worked it out because I was doing my tax return and the numbers didn't match what I thought I'd earned. Gross was fine. Then the commission, then the Connects, then the wire fee every month.",
+          "role": "Freelancer · marketplace-heavy",
+          "after": "The tax return matches what you actually earned. Nothing is skimmed between the work and the money",
+          "service": "The services",
+          "serviceHref": "services.html",
+          "audiences": ["freelancer"]
+        },
+        {
+          "stat": "$500+",
+          "title": "Paying for a lead does not mean being the only one who paid for it",
+          "avatar": "SV",
+          "quote": "The notification came in at 7:40. I paid for the lead, wrote a proper reply inside four minutes. She already had three others, one at half my price. I never heard back from her at all.",
+          "role": "Service-business owner · local",
+          "after": "The 7:40 lead is yours alone — nobody else paid for her, and the reply was out by 7:44",
+          "service": "Lead generation",
+          "serviceHref": "services/lead-generation.html",
+          "audiences": ["business", "coach"]
+        },
+        {
+          "stat": "90%",
+          "title": "A paid community can still leave every real question unanswered",
+          "avatar": "CO",
+          "quote": "Seventy-nine a month. I've asked four questions since March — two got a thumbs-up emoji, and one got answered by somebody warming me up to sell me something. I ended up back on Google anyway.",
+          "role": "Coach · paid Slack group",
+          "after": "Questions get answers from people running real practices — because nobody else got in",
+          "service": "The Roundtable",
+          "serviceHref": "roundtable/",
+          "audiences": ["coach", "mentor", "freelancer"]
+        }
+      ]
+    }
+  ],
+  "arcs": {
+    "num": "07",
+    "title": "The whole arc",
+    "sub": "one engagement, start to finish",
+    "intro": "Single problems get single fixes. Most people arrive with five tangled together — here's how a full engagement runs, and what's different at the end.",
+    "items": [
+      {
+        "title": "The coach with a full roster and an empty pipeline",
+        "arrives": "A calendar full for this cohort and silent for the next one. Feed dead since week three, inquiries landing on a page that still says \"coaching services,\" follow-ups living in her head.",
+        "weeks": "Strategy call and the one-sentence positioning first. Then the site rebuilt around her specialty, handles unified, a content calendar drafted from her own thinking, and lead management switched on — every inquiry answered in minutes, even mid-session.",
+        "chips": ["Marketing no longer stops when coaching starts", "The next cohort fills while this one runs", "Sunday nights are hers again"]
+      },
+      {
+        "title": "The freelancer in year four of feast-or-famine",
+        "arrives": "The same annual shape every year — busy spring, empty April, panic posting, June recovery. Two-email follow-ups, marketplace commissions eating the margin.",
+        "weeks": "Rate and niche strategy, then a portfolio site off the marketplaces. Referral asks timed to happy clients, content publishing while he delivers, the eight-touch follow-through running on every open deal, one pipeline view.",
+        "chips": ["The pipeline fills during delivery months, not after them", "Deals stop dying at touch two", "Nothing skimmed between the work and the money"]
+      },
+      {
+        "title": "The HR lead with a 90-person cohort and a spreadsheet",
+        "arrives": "Matching that eats a weekend and still pairs someone with her line manager, no visibility into which pairs meet, and a 4.2-out-of-5 to show the CFO.",
+        "weeks": "Criteria workshop, the whole cohort matched in days with conflicts caught before pairing, light session tracking with quiet-pair flags in week six, and a per-pair outcomes report ready for the finance review.",
+        "chips": ["The weekend comes back", "Problems fixed in week 6, not found at the survey", "A number the budget can stand on"]
+      }
+    ],
+    "footnote": "Your version starts with one email — tell us what's tangled."
+  },
+  "audienceClose": {
+    "coach": {
+      "heading": "Every answer above is a service we run today.",
+      "links": [
+        { "text": "Services for coaches", "href": "services.html" },
+        { "text": "All problems", "href": "../problems.html" }
+      ],
+      "note": "If you saw your week in a few of these, that's the point. Write in and tell us which one."
+    },
+    "business": {
+      "heading": "Every answer above is a service we run today.",
+      "links": [
+        { "text": "Services for your business", "href": "services.html" },
+        { "text": "All problems", "href": "../problems.html" }
+      ],
+      "note": "If you saw your week in a few of these, write in and tell us which one."
+    },
+    "freelancer": {
+      "heading": "Every answer above is a service we run today.",
+      "links": [
+        { "text": "Services for freelancers", "href": "services.html" },
+        { "text": "All problems", "href": "../problems.html" }
+      ],
+      "note": "If the cycle looks familiar, write in — a person reads it and replies."
+    },
+    "mentor": {
+      "heading": "Every answer above is a service we run today.",
+      "links": [
+        { "text": "Services for mentors", "href": "services.html" },
+        { "text": "All problems", "href": "../problems.html" }
+      ],
+      "note": "Structure, page, program, matching — tell us which one is stuck."
+    },
+    "corporate": {
+      "heading": "Every answer above is a service we run today.",
+      "links": [
+        { "text": "Services for enterprise", "href": "services.html" },
+        { "text": "All problems", "href": "../problems.html" }
+      ],
+      "note": "Matching, tracking, reporting — describe your cohort and we'll map the fix."
+    }
+  }
+}

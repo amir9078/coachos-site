@@ -107,13 +107,13 @@
   var feedList=document.getElementById('feed-list');
   if(feedList && !reduce){
     var pool=[
-      {ic:'✉', html:'<b>Drafted a reply</b> to a new inquiry &mdash; 2 minutes after it landed', t:'now'},
-      {ic:'📄', html:'<b>Contract prepared</b> from the member’s template, queued for sign-off', t:'1m'},
-      {ic:'📣', html:'<b>Next week’s posts</b> drafted and scheduled for approval', t:'3m'},
-      {ic:'💰', html:'<b>Invoice raised</b> and reminder sequence queued', t:'6m'},
-      {ic:'🔁', html:'<b>Follow-up 3 of 8</b> sent on an open deal', t:'9m'},
-      {ic:'📅', html:'<b>Discovery call booked</b> &mdash; confirmation and reminder sent', t:'12m'},
-      {ic:'✍', html:'<b>Session notes filed</b> to the client record', t:'15m'}
+      {ic:'✉', html:'<b>Pipeline Agent</b> drafted follow-up — quiet 6 days after discovery call', t:'now'},
+      {ic:'📣', html:'<b>Marketing Studio</b> queued 4 LinkedIn drafts from Voice &amp; Rules', t:'2m'},
+      {ic:'📄', html:'<b>Agreement</b> pre-filled from accepted proposal — awaiting sign-off', t:'5m'},
+      {ic:'✍', html:'<b>Client delivery</b> session summary drafted — approval queue', t:'8m'},
+      {ic:'💰', html:'<b>Stripe invoice</b> raised — Autopilot reminder armed', t:'11m'},
+      {ic:'📅', html:'<b>Booking</b> confirmed — prep brief scheduled 30 min before session', t:'14m'},
+      {ic:'🔁', html:'<b>Autopilot</b> touch 3 of 8 on open proposal', t:'17m'}
     ];
     var idx=0;
     setInterval(function(){
