@@ -254,12 +254,12 @@
           <input id="roi-rate" type="number" value="40" min="0" max="1000" style="width:5rem;padding:.45rem .5rem;background:transparent;border:1px solid var(--line);border-radius:6px;color:var(--ink);font:inherit">
         </label>
       </div>
-      <p class="reveal" style="font-size:1.15rem;color:var(--ink)"><b id="roi-out">$1,730 a month</b> &mdash; that&rsquo;s what the do-it-yourself version already costs you, before a single lead goes unanswered. A written scope with a flat price is the cheaper habit.</p>
+      <p class="reveal" style="font-size:1.15rem;color:var(--ink)"><b id="roi-out">$1,700 a month</b> &mdash; that&rsquo;s what the do-it-yourself version already costs you, before a single lead goes unanswered. A written scope with a flat price is the cheaper habit.</p>
     </div>
     <script>
       (function(){
         var h=document.getElementById('roi-hours'),r=document.getElementById('roi-rate'),o=document.getElementById('roi-out');
-        function f(){var v=(parseFloat(h.value)||0)*(parseFloat(r.value)||0)*4.33;o.textContent='$'+Math.round(v).toLocaleString('en-US')+' a month';}
+        function f(){var v=(parseFloat(h.value)||0)*(parseFloat(r.value)||0)*4.25;o.textContent='$'+Math.round(v).toLocaleString('en-US')+' a month';}
         h.addEventListener('input',f);r.addEventListener('input',f);f();
       })();
     </script>
