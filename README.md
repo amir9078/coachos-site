@@ -1,6 +1,6 @@
 # CoachOS — Marketing Site
 
-The public landing page for CoachOS — the all-in-one platform for coaches and mentors.
+The public landing page for CoachOS — done-for-you marketing, leads, and follow-up for coaches, mentors, freelancers, and small teams. Not another all-in-one app: a specialist runs the work on our platform, under your name.
 
 **Live site:** https://amir9078.github.io/coachos-site/
 
