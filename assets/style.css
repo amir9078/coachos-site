@@ -25,9 +25,9 @@
   --ink-dim:#828282;
   --line:rgba(240,240,240,.08);
   --line-strong:rgba(240,240,240,.16);
-  --accent:#FF4A21;
-  --accent-bright:#FF6B3D;
-  --accent-wash:rgba(255,74,33,.09);
+  --accent:#FB3640;
+  --accent-bright:#F7646B;
+  --accent-wash:rgba(251,54,64,.09);
   --stamp:var(--accent);
   --green:var(--accent); /* legacy alias */
   --display:'Space Grotesk',ui-sans-serif,sans-serif;
@@ -81,7 +81,7 @@ img{max-width:100%}
 }
 .chip{display:inline-block;background:var(--card-2);color:var(--ink-soft);border-radius:var(--r-pill);padding:.35rem .95rem;font-size:.8rem;font-weight:500}
 .status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-right:.55rem;vertical-align:1px;animation:pulse 2.4s infinite}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,74,33,.55)}50%{box-shadow:0 0 0 7px rgba(255,74,33,0)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(251,54,64,.55)}50%{box-shadow:0 0 0 7px rgba(251,54,64,0)}}
 @media(prefers-reduced-motion:reduce){.status-dot{animation:none}}
 
 /* ---------- Stamp → exclusivity badge ---------- */
@@ -91,7 +91,7 @@ img{max-width:100%}
   text-transform:uppercase;letter-spacing:.16em;color:#fff;
   background:var(--accent);border-radius:var(--r-pill);
   padding:.6rem 1.25rem;transform:rotate(-4deg);white-space:nowrap;
-  box-shadow:0 12px 34px rgba(255,74,33,.35);
+  box-shadow:0 12px 34px rgba(251,54,64,.35);
 }
 .stamp::before{content:'';width:8px;height:8px;border-radius:50%;background:#fff}
 .stamp.abs{position:absolute;z-index:3}
@@ -181,7 +181,7 @@ header.site.scrolled{border-bottom-color:var(--line)}
 
 /* ---------- Buttons ---------- */
 .btn{font-family:var(--display);font-size:.92rem;font-weight:700;text-decoration:none;padding:.95rem 1.9rem;border-radius:var(--r-pill);transition:all .3s var(--ease);display:inline-block}
-.btn-primary{background:var(--accent);color:#fff;box-shadow:0 16px 40px rgba(255,74,33,.3)}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 16px 40px rgba(251,54,64,.3)}
 .btn-primary:hover{background:var(--accent-bright);transform:translateY(-2px)}
 .btn-ghost{color:var(--ink);background:var(--card-2)}
 .btn-ghost:hover{background:#343338;transform:translateY(-2px)}
@@ -526,7 +526,7 @@ html.js body.loaded .hero h1 .w>span{transform:none}
 .show:hover{transform:translateY(-7px);box-shadow:var(--shadow-deep)}
 .show .viz{position:relative;height:190px;overflow:hidden;display:flex;align-items:flex-end;padding:1.3rem 1.6rem;background:
   radial-gradient(120% 160% at 85% -20%,var(--accent-wash),transparent 55%),var(--card-2)}
-.show .viz::before{content:'';position:absolute;inset:0;background:radial-gradient(60% 90% at 80% 10%,rgba(255,74,33,.35),transparent 60%);opacity:0;transition:opacity .5s var(--ease)}
+.show .viz::before{content:'';position:absolute;inset:0;background:radial-gradient(60% 90% at 80% 10%,rgba(251,54,64,.35),transparent 60%);opacity:0;transition:opacity .5s var(--ease)}
 .show:hover .viz::before{opacity:1}
 .show .viz .big{position:absolute;top:-12px;right:8px;font-family:var(--display);font-weight:700;font-size:9rem;line-height:1;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.5px rgba(240,240,240,.14);transition:transform .6s var(--ease)}
 .show:hover .viz .big{transform:translateY(-8px) scale(1.04)}
