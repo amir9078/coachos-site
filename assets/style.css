@@ -38,6 +38,7 @@
   --r-pill:999px;
   --ease:cubic-bezier(.16,1,.3,1);
   --header-bg:rgba(20,19,22,.8);
+  --nav-h:85px;
   --shadow-deep:0 30px 70px rgba(0,0,0,.45);
   --shadow-panel:0 34px 90px rgba(0,0,0,.55);
 }
@@ -125,14 +126,14 @@ header.site.scrolled{border-bottom-color:var(--line)}
 .nav-links a:hover,.nav-links a.active{color:var(--ink)}
 .nav-cta{font-weight:700;color:#fff!important;background:var(--accent);padding:.6rem 1.35rem;border-radius:var(--r-pill);text-decoration:none;transition:background .3s var(--ease),transform .3s var(--ease)}
 .nav-cta:hover{background:var(--accent-bright);transform:translateY(-1px)}
-.nav-toggle{display:none;background:none;border:none;font-size:1.4rem;color:var(--ink);cursor:pointer;padding:.2rem .4rem}
-@media(min-width:981px){
+.nav-toggle{display:none;background:none;border:none;font-size:1.4rem;color:var(--ink);cursor:pointer;padding:.2rem .4rem;min-width:44px;min-height:44px;align-items:center;justify-content:center}
+@media(min-width:1101px){
   .nav{justify-content:flex-start}
   .nav-links{margin-left:auto}
   .nav-links .nav-cta{margin-left:.4rem}
   .theme-btn{margin-left:.2rem}
 }
-@media(max-width:980px){
+@media(max-width:1100px){
   .nav{justify-content:flex-start;gap:1.1rem}
   .theme-btn{margin-left:auto}
 }
@@ -154,13 +155,13 @@ header.site.scrolled{border-bottom-color:var(--line)}
 .nav-drop a:hover{background:var(--card-2);color:var(--ink)}
 .nav-drop a.nd-all{font-weight:700;color:var(--ink)}
 .nd-toggle{display:none}
-@media(max-width:980px){
+@media(max-width:1100px){
   .nav-drop[hidden]{display:none}
   .nav-item>a::after{content:''}
   .nav-item{width:100%;display:block}
   .nav-links .nav-item>a{display:block;width:100%;text-align:center;padding:.85rem 1.8rem}
   .nav-links>a{display:block}
-  .nav-cta{margin:.6rem 1.8rem;text-align:center}
+  .nav-links .nav-cta{width:auto;align-self:stretch;margin:.6rem 1.8rem;text-align:center}
   .nd-toggle{display:flex;align-items:center;justify-content:center;position:absolute;right:.9rem;top:.45rem;width:38px;height:34px;background:var(--card);border:1px solid var(--line-strong);border-radius:8px;color:var(--ink-soft);font-size:.72rem;cursor:pointer;transition:transform .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease)}
   .nav-item.open .nd-toggle{transform:rotate(180deg);color:var(--accent);border-color:var(--accent)}
   .nav-item.open .nav-drop[hidden]{display:flex;position:static;transform:none;opacity:1;visibility:visible;flex-direction:column;gap:0;min-width:0;background:var(--card);border-radius:12px;box-shadow:none;margin:0 1.2rem .7rem;padding:.5rem 0}
@@ -168,10 +169,11 @@ header.site.scrolled{border-bottom-color:var(--line)}
   .nav-item.open .nav-drop a{white-space:normal;text-align:center;padding:.55rem 1rem}
   .nav-item.open .nav-drop .nd-h{text-align:center;padding:.55rem 1rem .15rem}
 }
-@media(max-width:980px){
-  .nav-toggle{display:block}
+@media(max-width:1100px){
+  .nav-toggle{display:flex}
   header.site .nav{position:relative}
-  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bg-2);border-bottom:1px solid var(--line);padding:.6rem 0 1rem;z-index:41}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bg-2);border-bottom:1px solid var(--line);padding:.6rem 0 1rem;z-index:41;
+    max-height:calc(100vh - var(--nav-h));max-height:calc(100dvh - var(--nav-h));overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
   .nav-links.open{display:flex}
   .nav-links a{padding:.85rem 1.8rem;width:100%;text-align:center}
 }
@@ -276,7 +278,7 @@ html.js body.loaded .hero h1 .line:nth-child(3)>span{transition-delay:.18s}
 .pains{max-width:800px;margin:0}
 .pain{display:flex;gap:1.4rem;padding:1.5rem 0;border-top:1px solid var(--line);align-items:baseline}
 .pain:last-child{border-bottom:1px solid var(--line)}
-.pain .numeral{font-family:var(--display);font-weight:700;color:var(--accent);flex:none;font-size:.85rem;width:2.2rem}
+.pain .numeral{font-family:var(--display);font-weight:700;color:var(--accent);flex:none;font-size:.85rem;min-width:2.2rem;white-space:nowrap}
 .pain p{color:var(--ink-soft);font-size:1.02rem}
 .pain p b{color:var(--ink);font-weight:700}
 
@@ -339,7 +341,7 @@ html.js body.loaded .hero h1 .line:nth-child(3)>span{transition-delay:.18s}
 /* ---------- Ledger (redacted member extract) ---------- */
 .ledger{background:var(--paper);color:#161616;font-family:var(--mono);padding:1.9rem 2rem 1.4rem;border-radius:var(--r-card);position:relative;box-shadow:var(--shadow-panel);max-width:640px}
 .ledger .lhead{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:#7a786f;display:flex;justify-content:space-between;gap:1rem;border-bottom:2px solid #161616;padding-bottom:.7rem;flex-wrap:wrap}
-.ledger-row{display:flex;gap:1.2rem;justify-content:space-between;align-items:center;padding:.85rem 0;border-bottom:1px dashed rgba(22,22,22,.25);font-size:.8rem}
+.ledger-row{display:flex;flex-wrap:wrap;gap:.2rem 1.2rem;justify-content:space-between;align-items:center;padding:.85rem 0;border-bottom:1px dashed rgba(22,22,22,.25);font-size:.8rem}
 .ledger-row:last-child{border-bottom:none}
 .ledger-row .role{color:#3d3c38}
 .ledger-row .since{color:#8a887f;font-size:.7rem;white-space:nowrap}
@@ -466,6 +468,10 @@ html[data-theme="light"] .theme-btn::before{content:'\263E\FE0E';right:auto;left
 html[data-theme="light"] .theme-btn::after{transform:translateX(22px)}
 .theme-btn:hover{border-color:var(--accent)}
 html[data-theme="light"] .btn-ghost:hover{background:#DBD7CC}
+@media(max-width:1100px){
+  .theme-btn{height:34px}
+  .theme-btn::after{top:8px}
+}
 
 /* ---------- Voice cards (problems in users' words) ---------- */
 .voice{display:flex;gap:.95rem;margin:.2rem 0 1rem;align-items:flex-start}
@@ -612,3 +618,60 @@ html.js .doors .reveal:nth-child(2),html.js .show-grid .reveal:nth-child(2),html
 html.js .doors .reveal:nth-child(3),html.js .show-grid .reveal:nth-child(3),html.js .rooms .reveal:nth-child(3),html.js .steps .reveal:nth-child(3),html.js .numbers .reveal:nth-child(3){transition-delay:.16s}
 html.js .doors .reveal:nth-child(4),html.js .show-grid .reveal:nth-child(4),html.js .rooms .reveal:nth-child(4),html.js .numbers .reveal:nth-child(4){transition-delay:.24s}
 html.js .doors .reveal:nth-child(5),html.js .show-grid .reveal:nth-child(5){transition-delay:.32s}
+
+/* ===========================================================
+   Responsive hardening
+   Two root causes behind the broken mobile layouts:
+   1. unbreakable tokens (emails, URLs) forcing containers
+      wider than the screen;
+   2. grid/flex children defaulting to min-width:auto, so a
+      too-wide child pushed content outside its own card.
+   =========================================================== */
+
+/* 1 — long words break instead of blowing out their container */
+h1,h2,h3,h4,h5,h6,p,li,blockquote,cite,dt,dd,td,th,summary,figcaption,label,.chip,.label,.crumb,.desc,.ans,.after,.sub{
+  overflow-wrap:break-word;
+}
+
+/* 2 — let grid/flex children shrink below their content width */
+.prob>*,.svc>*,.svc-row>*,.feedwrap>*,.proofviz>*,.founder>*,
+.rooms-strip .inner>*,.voice>.bubble,.pain>p,
+.show .body>*,.step>*,.num>*,.package>*,.door>*{
+  min-width:0;
+}
+
+/* images never exceed their box, and never distort */
+img{max-width:100%;height:auto}
+
+/* native selects can't wrap — keep long option labels inside the field */
+.contact-form select{text-overflow:ellipsis}
+
+/* iOS Safari zooms the page whenever a focused control is under 16px */
+@media(max-width:1100px){
+  .contact-form input,.contact-form select,.contact-form textarea{font-size:16px}
+}
+
+/* wide data tables scroll inside their own frame, not the page */
+.cmp-wrap{-webkit-overflow-scrolling:touch}
+
+/* comfortable tap targets in the mobile menu */
+@media(max-width:1100px){
+  .nav-links a{min-height:44px;display:flex;align-items:center;justify-content:center}
+  .nav-links .nav-item>a{display:flex}
+  .nd-toggle{min-width:44px;min-height:38px}
+}
+
+/* very narrow phones (<=360px): trim the gutters so copy keeps its measure */
+@media(max-width:360px){
+  .wrap,.wrap-narrow{padding:0 1.15rem}
+  .nav{padding:1.1rem 1.15rem}
+  .foot{padding:0 1.15rem}
+  .prob,.svc-row{padding:1.4rem 1.2rem}
+  .svc{padding:1.2rem 1.1rem}
+  .door{padding:1.7rem 1.4rem 1.6rem}
+  .package,.step,.num,.room{padding:1.5rem 1.3rem}
+  .ledger{padding:1.5rem 1.3rem 1.1rem}
+  .faq details{padding:.4rem 1.1rem}
+  .nav-links a,.nav-links .nav-item>a{padding-left:1.15rem;padding-right:1.15rem}
+  .nav-links .nav-cta{margin-left:1.15rem;margin-right:1.15rem}
+}

@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=20260818b">
+<link rel="stylesheet" href="../assets/style.css?v=20260822c">
 <style>
 .sltabs{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin:0 0 1.8rem}
 .sltab{font-family:var(--display);font-size:.8rem;font-weight:600;padding:.55rem 1.15rem;border-radius:999px;border:1px solid var(--line-strong);background:transparent;color:var(--ink-soft);cursor:pointer;transition:all .25s var(--ease)}
@@ -132,6 +132,23 @@
 .slsimcard .sp{margin-left:auto;font-weight:800;font-size:.82rem;color:#111;white-space:nowrap}
 @media(max-width:700px){.slpgrid{grid-template-columns:1fr}.slsim{grid-template-columns:1fr}}
 @media(max-width:640px){.slcard{flex-wrap:wrap}.slside{flex-direction:row;align-items:center;justify-content:space-between;width:100%;min-width:0}}
+
+/* mobile tap targets: the page's own tab/filter controls */
+@media(max-width:700px){
+  .sltab,.rtab,.cmobiletabs button{min-height:44px;padding-top:.6rem;padding-bottom:.6rem}
+  .slpill,.slcat{min-height:40px}
+}
+/* profile header: the save/message column is an unclassed div, so it never
+   reflowed and squeezed the name/tagline column to ~40px on a phone */
+@media(max-width:640px){
+  .slphead>div:last-child{width:100%;margin-top:.6rem}
+}
+@media(max-width:380px){
+  .slcard{padding:1rem .9rem}
+  .slphead .slav{width:56px;height:56px;font-size:30px}
+  .slsimcard{padding:.8rem .85rem;flex-wrap:wrap}
+  .slsimcard .slav{width:36px;height:36px;font-size:20px}
+}
 </style>
 </head>
 <body>
@@ -324,7 +341,7 @@
   </div>
 </footer>
 
-<script src="../assets/main.js?v=20260818b"></script>
+<script src="../assets/main.js?v=20260822c"></script>
 <script>
 (function(){
   var G = {

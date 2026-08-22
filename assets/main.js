@@ -78,10 +78,12 @@
     track.innerHTML+=track.innerHTML;
   });
 
-  // Reveal on scroll
+  // Reveal on scroll.
+  // threshold must stay 0: a section taller than ~8x the viewport can never
+  // reach a 12% visible ratio on a phone, and would stay opacity:0 forever.
   var io=new IntersectionObserver(function(es){
     es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  },{threshold:.12});
+  },{threshold:0});
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 
   // Count-up stats
