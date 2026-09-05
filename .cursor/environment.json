@@ -1,5 +1,5 @@
 {
-  "name": "CoachOS Marketing Site",
+  "name": "Evensteer Marketing Site",
   "install": "npm ci\nnode scripts/apply-research-voices.mjs\nnode scripts/build-content-final.mjs --preview",
   "terminals": [
     {

@@ -139,7 +139,7 @@
       var email=document.getElementById('c-email').value.trim();
       var topic=document.getElementById('c-topic');
       var msg=document.getElementById('c-message').value.trim();
-      var subject='CoachOS — '+topic.options[topic.selectedIndex].text;
+      var subject='Evensteer — '+topic.options[topic.selectedIndex].text;
       var body=msg+'\n\n— '+name+' ('+email+')';
       location.href='mailto:shaikhamirhussain2000@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
     });

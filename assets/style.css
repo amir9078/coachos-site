@@ -1,18 +1,10 @@
 /* ===========================================================
-   CoachOS — design system v4 "Bold Studio"
+   Evensteer — design system v4 "Bold Studio"
    Inspired by modern Framer portfolio language: layered dark
    grays, Space Grotesk set huge and tight, one hot crimson
    accent, pill buttons, rounded cards, tag chips, big air.
    Single dark theme, deliberately.
    =========================================================== */
-
-@font-face{
-  font-family:'Ballison';
-  src:url('fonts/ballison.ttf') format('truetype');
-  font-weight:normal;
-  font-style:normal;
-  font-display:swap;
-}
 
 :root{
   --bg:#141316;
@@ -117,10 +109,13 @@ header.site{
 }
 header.site.scrolled{border-bottom-color:var(--line)}
 .nav{max-width:var(--maxw);margin:0 auto;padding:1.1rem 1.8rem;display:flex;align-items:center;justify-content:space-between;gap:2rem}
-.wordmark{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--ink)}
+/* Wordmark / logo: assets/logo.svg — Montserrat Light outlined to paths (no font
+   dependency), stem-less three-bar E, orange→salmon gradient, per the approved
+   mockup. Height sets the size; width follows the SVG's aspect ratio. */
+.wordmark{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
 .wordmark svg{display:block}
-.wordmark span{font-family:'Ballison',var(--display);font-size:1.8rem;font-weight:700;letter-spacing:0;-webkit-text-stroke:.5px currentColor}
-.wordmark em{font-style:normal;color:var(--accent)}
+.wordmark img{display:block;height:clamp(1.6rem,2.3vw,2rem);width:auto;transition:opacity .35s var(--ease)}
+.wordmark:hover img{opacity:.8}
 .nav-links{display:flex;align-items:center;gap:1.8rem}
 .nav-links a{font-family:var(--display);font-size:.88rem;font-weight:500;color:var(--ink-soft);text-decoration:none;transition:color .3s var(--ease)}
 .nav-links a:hover,.nav-links a.active{color:var(--ink)}

@@ -1,11 +1,11 @@
--- CoachOS marketing site — lead capture table
+-- Evensteer marketing site — lead capture table
 --
 -- Run this once in the Supabase SQL Editor, on a fresh project
 -- (https://supabase.com -> New project -> SQL Editor -> paste -> Run).
 --
 -- This is deliberately just a lead-capture table for the marketing site
 -- (waitlist signups + quiz-result requests), not the real product's user
--- accounts. Same project the real CoachOS app will eventually run on
+-- accounts. Same project the real Evensteer app will eventually run on
 -- (per docs/07-architecture.md), so leads captured here need no migration
 -- later -- they'll already be sitting in the right database.
 

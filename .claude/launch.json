@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "coachos-preview",
-      "runtimeExecutable": "bash",
-      "runtimeArgs": ["-c", "python -m http.server $PORT --directory 'C:\\Users\\USER\\Desktop\\Claude Code\\coachos-site'"],
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8113", "--directory", "C:\\Users\\USER\\Desktop\\Claude Code\\coachos-site"],
       "port": 8113,
       "autoPort": true
     }
