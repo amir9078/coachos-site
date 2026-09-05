@@ -110,8 +110,8 @@ header.site{
 header.site.scrolled{border-bottom-color:var(--line)}
 .nav{max-width:var(--maxw);margin:0 auto;padding:1.1rem 1.8rem;display:flex;align-items:center;justify-content:space-between;gap:2rem}
 /* Wordmark / logo: assets/logo.svg — Montserrat Light outlined to paths (no font
-   dependency), stem-less three-bar E, orange→salmon gradient, per the approved
-   mockup. Height sets the size; width follows the SVG's aspect ratio. */
+   dependency), stem-less three-bar E, brand crimson gradient #FB3640 → #F7646B.
+   Height sets the size; width follows the SVG's aspect ratio. */
 .wordmark{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
 .wordmark svg{display:block}
 .wordmark img{display:block;height:clamp(1.6rem,2.3vw,2rem);width:auto;transition:opacity .35s var(--ease)}
