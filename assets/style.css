@@ -108,17 +108,15 @@ header.site{
   transition:border-color .4s var(--ease);
 }
 header.site.scrolled{border-bottom-color:var(--line)}
-/* Tagline strip: sits right after the sticky header, in normal flow (not sticky itself),
-   so it scrolls away under the header and never touches --nav-h or the nav row's layout. */
-.tagline-strip{border-bottom:1px solid var(--line);background:var(--bg-2)}
-.tagline-strip p{max-width:var(--maxw);margin:0 auto;padding:.55rem 1.8rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;text-align:center;color:var(--accent-bright)}
 .nav{max-width:var(--maxw);margin:0 auto;padding:1.1rem 1.8rem;display:flex;align-items:center;justify-content:space-between;gap:2rem}
-/* Wordmark / logo: assets/logo.svg — Montserrat Light outlined to paths (no font
-   dependency), stem-less three-bar E, brand crimson gradient #FB3640 → #F7646B.
-   Height sets the size; width follows the SVG's aspect ratio. */
+/* Wordmark / logo: assets/logo.svg — the licensed Coretta script, set as live text
+   with the font embedded inside the SVG (Coretta's connected cursive strokes need
+   real font shaping, unlike the old Montserrat mark's outlined paths). Bold is
+   faked with a stroke, since Coretta ships one weight only. Height sets the size;
+   width follows the SVG's aspect ratio (~2.48:1, far squarer than the old logo). */
 .wordmark{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
 .wordmark svg{display:block}
-.wordmark img{display:block;height:clamp(1.6rem,2.3vw,2rem);width:auto;transition:opacity .35s var(--ease)}
+.wordmark img{display:block;height:clamp(2.6rem,4vw,3rem);width:auto;transition:opacity .35s var(--ease)}
 .wordmark:hover img{opacity:.8}
 .nav-links{display:flex;align-items:center;gap:1.8rem}
 .nav-links a{font-family:var(--display);font-size:.88rem;font-weight:500;color:var(--ink-soft);text-decoration:none;transition:color .3s var(--ease)}
@@ -433,12 +431,15 @@ html.js body.loaded .hero h1 .line:nth-child(3)>span{transition-delay:.18s}
 .close-sec .under a{color:var(--accent-bright)}
 
 /* ---------- Footer ---------- */
-footer.site{border-top:1px solid var(--line);padding:2.6rem 0;background:var(--bg)}
+footer.site{border-top:1px solid var(--line);padding:2.6rem 0 0;background:var(--bg)}
 .foot{max-width:var(--maxw);margin:0 auto;padding:0 1.8rem;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap}
 .foot p{font-size:.9rem;color:var(--ink-dim)}
 .foot nav{display:flex;gap:1.4rem;flex-wrap:wrap}
 .foot nav a{font-family:var(--display);font-size:.82rem;font-weight:500;color:var(--ink-soft);text-decoration:none}
 .foot nav a:hover{color:var(--ink)}
+/* Tagline bar: the very last strip on the page, below the main footer content. */
+.tagline-bar{margin-top:2.2rem;border-top:1px solid var(--line);padding:1rem 1.8rem}
+.tagline-bar p{max-width:var(--maxw);margin:0 auto;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;text-align:center;color:var(--accent-bright)}
 
 /* ---------- Home simplicity variants ---------- */
 .svc-rows.plain .svc-row{background:transparent;border-radius:0;box-shadow:none;border:none;border-top:1px solid var(--line);padding:1.35rem 0}
