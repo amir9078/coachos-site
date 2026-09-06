@@ -108,6 +108,10 @@ header.site{
   transition:border-color .4s var(--ease);
 }
 header.site.scrolled{border-bottom-color:var(--line)}
+/* Tagline strip: sits right after the sticky header, in normal flow (not sticky itself),
+   so it scrolls away under the header and never touches --nav-h or the nav row's layout. */
+.tagline-strip{border-bottom:1px solid var(--line);background:var(--bg-2)}
+.tagline-strip p{max-width:var(--maxw);margin:0 auto;padding:.55rem 1.8rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;text-align:center;color:var(--accent-bright)}
 .nav{max-width:var(--maxw);margin:0 auto;padding:1.1rem 1.8rem;display:flex;align-items:center;justify-content:space-between;gap:2rem}
 /* Wordmark / logo: assets/logo.svg — Montserrat Light outlined to paths (no font
    dependency), stem-less three-bar E, brand crimson gradient #FB3640 → #F7646B.
